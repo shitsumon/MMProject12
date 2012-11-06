@@ -1,4 +1,3 @@
-
 //helper struct
 function imageItem(name, filename, folder, xPos, yPos){
 	this.name   = name;
