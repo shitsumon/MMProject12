@@ -12,18 +12,18 @@ function imageItem(name, filename, folder, xPos, yPos){
 //to be defined!
 var imageItems = [
 	new imageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),
-	new imageItem('doorOverlay', 'door_overlay.png', 'Szene1' , 27.5, 30),
-	new imageItem('windowOverlay', 'windowOverlay.png', 'Szene1' , 80, 30),
-	new imageItem('dummySpot', 'dummySpot.png', 'Szene1' , 0, 0)
+	new imageItem('doorOverlay', 'door_overlay.png', 'Szene 1' , 27.5, 30),
+	new imageItem('windowOverlay', 'windowOverlay.png', 'Szene 1' , 80, 30),
+	new imageItem('dummySpot', 'dummySpot.png', 'Szene 1' , 0, 0)
 	];
 
 //Main function which is called when HTML-document is loaded
 function starte_szene(szene){
-		
+	
 	hintergrund_laden(szene);
 	
 	switch (szene){
-		case "Szene1":
+		case "Szene 1":
 		loadSubImagesToStartPosition();
 		text_anzeigen("Protagonist 1","Wo bin ich?");
 		break;
