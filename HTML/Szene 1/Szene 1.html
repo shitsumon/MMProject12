@@ -8,9 +8,12 @@
 <script type="text/javascript" src="Funktionen.js"></script>
 </head>
 
-<body onLoad="starte_szene('Szene 1')">
+<body onLoad="starte_szene('Szene1')">
 <canvas id="hintergrund_canvas"></canvas>
 <canvas id="protagonist1"></canvas>
 <canvas id="textbox"></canvas>
+<canvas id="doorOverlay" onclick="globalTarget='doorOverlay';moveP1();"></canvas>
+<canvas id="windowOverlay" onclick="globalTarget='windowOverlay';moveP1();"></canvas>
+<canvas id="dummySpot""></canvas>
 </body>
 </html>

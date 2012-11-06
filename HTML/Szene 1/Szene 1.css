@@ -19,7 +19,31 @@ html, body{
 	position:absolute;
 	top:0px;
 	left:0px;
-	z-index:1;
+	z-index:10;
+}
+
+#doorOverlay{
+	position: absolute;
+	z-index:3;
+	top: 0px;
+	left: 0px;
+	visibility:visible;
+}
+
+#windowOverlay{
+	position: absolute;
+	z-index:4;
+	top: 0px;
+	left: 0px;
+	visibility:visible;
+}
+
+#dummySpot{
+	position: absolute;
+	z-index:3;
+	top: 0px;
+	left: 0px;
+	visibility:hidden;
 }
 
 #textbox{
