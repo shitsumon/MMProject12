@@ -1,0 +1,31 @@
+html, body{
+	height:100%;
+	width:100%;
+	margin:0px;
+}
+
+#hintergrund_canvas{
+	height:100%;
+	width:100%;
+	margin:0px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-1;
+}
+
+#protagonist1{
+	height:45%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:1;
+}
+
+#textbox{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	z-index:998;
+	display:none;
+}
