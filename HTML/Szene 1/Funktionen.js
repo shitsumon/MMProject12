@@ -1,3 +1,4 @@
+//kommentar test
 function starte_szene(szene){
 		
 	hintergrund_laden(szene);
