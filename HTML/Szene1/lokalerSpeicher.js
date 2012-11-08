@@ -1,5 +1,7 @@
 function lokalerspeicher_start(){
 	
+	alert(localStorage);
+	
 	//erzeugt ein bild zur demonstration
 	var bild=new Image();
 	bild.onload=function(){

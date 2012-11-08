@@ -28,9 +28,9 @@ var gTimeoutDescriptor; //descriptor which is used to call a halt on setTimeout 
 //Temporary struct which contains vital data of objects within scene 1
 var imageItems = [
                     new sImageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),
-                    new sImageItem('doorOverlay', 'door_overlay.png', 'Szene 1' , 27.5, 30),
-                    new sImageItem('windowOverlay', 'windowOverlay.png', 'Szene 1' , 80, 30),
-                    new sImageItem('dummySpot', 'dummySpot.png', 'Szene 1' , 0, 0)
+                    new sImageItem('doorOverlay', 'door_overlay.png', 'Szene1' , 27.5, 30),
+                    new sImageItem('windowOverlay', 'windowOverlay.png', 'Szene1' , 80, 30),
+                    new sImageItem('dummySpot', 'dummySpot.png', 'Szene1' , 0, 0)
                  ];
 /*************************************/
 
@@ -41,7 +41,7 @@ function starte_szene(szene){
     hintergrund_laden(szene);
 
     switch (szene){
-    case "Szene 1":
+    case "Szene1":
         loadSubImagesToStartPosition();
         text_anzeigen("Protagonist 1","Wo bin ich?");
         break;

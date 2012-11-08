@@ -1,0 +1,8 @@
+#Specific files to ignore
+
+#Filestypes to ignore
+
+*.pro
+*.pro.user
+
+#Directories to ignore
