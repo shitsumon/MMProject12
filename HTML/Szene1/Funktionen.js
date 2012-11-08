@@ -41,7 +41,7 @@ function starte_szene(szene){
     hintergrund_laden(szene);
 
     switch (szene){
-    case "Szene 1":
+    case "Szene1":
         loadSubImagesToStartPosition();
         text_anzeigen("Protagonist 1","Wo bin ich?");
         break;
