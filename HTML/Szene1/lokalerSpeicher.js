@@ -1,13 +1,49 @@
 function lokalerspeicher_start(){
+
+	//löscht den speicher
+	localStorage.clear();
+
+	lokalerspeicher_ladebilder(lokalerspeicher_lesebilderausxml());
 	
-	alert(localStorage);
+	setTimeout("alert(localStorage.length+\" Elemente in localStorage gespeichert\")",5000);
+}
+
+function lokalerspeicher_lesebilderausxml(){
+	//liest die pfade der zu ladenden bilder aus der xml datei
+	var xmlpfad="./../../Bilder/bilder.xml";
 	
-	//erzeugt ein bild zur demonstration
-	var bild=new Image();
-	bild.onload=function(){
-		lokalerspeicher_speicherebild(this);
-		};
-	bild.src="./../../Bilder/Szene 1/Hintergrund.jpg";
+	//xmlhttprequest muss auf der selben domain wie das skript ausgeführt werden, um xml-datei zu finden
+	var httprequest = new XMLHttpRequest();
+	httprequest.open("GET", xmlpfad, false);
+	httprequest.setRequestHeader('Content-Type', 'text/xml');
+	httprequest.send();
+	
+	//wenn anfrage erfolgreich war
+	if (httprequest.readyState==4 && httprequest.status==200){
+		//lese alle bild-elemente aus
+		var bilder_xml=httprequest.responseXML.getElementsByTagName("bild");
+		var bilder=new Array(bilder_xml.length);
+		
+		//lese die pfade aus und speichere sie im array
+		for(var i=0; i<bilder_xml.length; i++){
+			bilder[i]="./../../Bilder/"+bilder_xml[i].parentNode.getAttribute("name")+"/"+bilder_xml[i].getAttribute("name");
+		}
+	}else{
+		alert("bilder xml-datei nicht geladen");
+	}
+	
+	return bilder;
+}
+
+function lokalerspeicher_ladebilder(bilder){
+	//erhält ein array aus pfadangaben zu den bildern
+	for(var i=0; i<bilder.length; i++){
+		var bild=new Image();
+		bild.onload=function(){
+			lokalerspeicher_speicherebild(this);
+		}
+		bild.src=bilder[i];
+	}
 }
 
 function lokalerspeicher_speicherebild(bild){
@@ -38,16 +74,17 @@ function lokalerspeicher_speicherebild(bild){
 	canvas.height=org_height;
 	canvas.width=org_width;
 	
-	bild=new Image();
-	bild.onload=function(){
+	var org_bild=new Image();
+	org_bild.onload=function(){
 		context.drawImage(this,0,0);
 		};
-	bild.src=original;
+	org_bild.src=original;
 	//schreibe in localstorage
-	lokalerspeicher_speichere("bild",bild_url);
+	lokalerspeicher_speichere(bild.src,bild_url);
 }
 
 function lokalerspeicher_speichere(key, value){
+//	alert("key: "+key+" value: "+value);
 	localStorage.setItem(key,value);
-	alert(localStorage.getItem(key));
+//	alert(localStorage.getItem(key));
 }

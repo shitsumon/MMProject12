@@ -1,0 +1,21 @@
+<bilder>
+  <ordner name="Allgemein">
+    <bild name="Protagonist1.png">
+      <startposition x="0" y="0"/>
+    </bild>
+  </ordner>
+  <ordner name="Szene1">
+    <bild name="door_overlay.png">
+      <startposition x="0" y="0"/>
+    </bild>
+    <bild name="dummySpot.png">
+      <startposition x="0" y="0"/>
+    </bild>
+    <bild name="Hintergrund.jpg">
+      <startposition x="0" y="0"/>
+    </bild>
+    <bild name="windowOverlay.png">
+      <startposition x="0" y="0"/>
+    </bild>
+  </ordner>
+</bilder>
