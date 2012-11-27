@@ -25,6 +25,9 @@ var gTargetIdentifier = ""; //used to set an overlay from HTML code as movement 
 
 var gTimeoutDescriptor; //descriptor which is used to call a halt on setTimeout events
 
+var gLastKnownGoodXPos = 999999;
+var gLastKnownGoodYPos = 999999;
+
 //Temporary struct which contains vital data of objects within scene 1
 var imageItems = [
                     new sImageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),
@@ -147,125 +150,6 @@ function text_anzeigen(person, text){
     context.fillText( person + ": " + text, 0, 0);
 }
 
-//Globale Variablen
-//var protagonist, ziel, xZiel, yZiel, xProt, yProt, deltaX, deltaY, yFactor, bgWidth, bgHeight;
-//var usedOnce = false;
-
-//function updatePositions(){
-
-//    protagonist 	= document.getElementById("protagonist1");
-//    ziel		= document.getElementById(globalTarget);
-//    bg		= document.getElementById("hintergrund_canvas");
-
-//    bgWidth  	= bg.width;
-//    bgHeight 	= bg.height;
-
-//    var p1XString = protagonist.style.left;
-//    var p1YString = protagonist.style.top;
-
-//    var zielXString = ziel.style.left;
-//    var zielYString = ziel.style.top;
-
-//    xProt = Math.round((bgWidth / 100) * parseInt(p1XString.replace("%","")));
-//    yProt = Math.round((bgHeight / 100) * parseInt(p1YString.replace("%","")));
-
-//    xZiel = Math.round((bgWidth / 100) * parseInt(zielXString.replace("%","")));
-//    yZiel = Math.round((bgHeight / 100) * parseInt(zielYString.replace("%","")));
-
-//}
-
-//function berechneBewegungsfaktor(){
-
-//    updatePositions();
-
-//    deltaX = xProt - xZiel;
-//    deltaY = yProt - yZiel;
-
-//    yFactor = deltaX / deltaY;
-
-//    /*alert("x-prot: " + xProt + "\n" +
-//          "y-prot: " + yProt + "\n" +
-//          "x-ziel: " + xZiel + "\n" +
-//          "y-ziel: " + yZiel + "\n" +
-//          "delta-x: " + deltaX + "\n" +
-//          "delta-y: " + deltaY + "\n" +
-//          "yFactor: " + yFactor + "\n");*/
-//}
-
-//function areWeThereYet(zielName){
-
-//    protagonist = document.getElementById("protagonist1");
-//    ziel		= document.getElementById(zielName);
-
-//    var p1XString = protagonist.style.left;
-//    var p1YString = protagonist.style.top;
-
-//    var zielXString = ziel.style.left;
-//    var zielYString = ziel.style.top;
-
-//    var xP1 = perc2pix(bgWidth, p1XString);
-//    var yP1 = perc2pix(bgHeight, p1YString);
-
-//    var xZ = perc2pix(bgWidth, zielXString);
-//    var yZ = perc2pix(bgHeight, zielYString);
-
-//    //updatePositions();
-
-//    /*alert("x-prot: " + xP1 + "\n" +
-//          "y-prot: " + yP1 + "\n" +
-//          "x-ziel: " + xZ + "\n" +
-//          "y-ziel: " + yZ + "\n");*/
-
-//    /*alert("x-prot: " + xProt + "\n" +
-//          "y-prot: " + yProt + "\n" +
-//          "x-ziel: " + xZiel + "\n" +
-//          "y-ziel: " + yZiel + "\n");*/
-
-//    if((xP1 - xZ) === 0 || (yP1 - yZ) === 0){
-//        return true;
-//    }else{
-//        return false;
-//    }
-
-//    /*if((xProt - xZiel) == 0 || (yProt - yZiel) == 0){
-//        return true;
-//    }else{
-//        return false;
-//    }*/
-//}
-
-
-//function resetGlobals(){
-//    xProt 	= 0;
-//    yProt	= 0;
-//    xZiel 	= 0;
-//    yZiel   = 0;
-//    deltaX  = 0;
-//    deltaY  = 0;
-//    yFactor = 0;
-//}
-
-//function moveP1(){
-
-//    //alert(globalTarget);
-
-//    if(!usedOnce){
-//        berechneBewegungsfaktor();
-//        usedOnce = true;
-//    }
-
-//    bewegeObjekt();
-
-//    var aktiv = setTimeout(function(){moveP1()}, 75);
-
-//    if(areWeThereYet(globalTarget)){
-//        resetGlobals();
-//        clearTimeout(aktiv);
-//        usedOnce = false;
-//        alert("Stopped");
-//    }
-//}
-
 function moveObject(tx, ty, hx, hy, mR, velocity){
 
     var tmp = Math.round(mR * velocity);
@@ -282,12 +166,23 @@ function moveObject(tx, ty, hx, hy, mR, velocity){
         var newHy = hy + velocity;
     }
 
-    if(newHx === hx && newHy === hy){
+    /*if(newHx === hx && newHy === hy){
 
         newHx += 1;
         newHy += 1;
-    }
+    }*/
 
+
+//    if((newHx - tx) > gLastKnownGoodXPos || (newHy - ty) > gLastKnownGoodYPos){
+//        clearTimeout(gTimeoutDescriptor);
+//        gTargetIdentifier = "";
+//        gLastKnownGoodXPos = 999999;
+//        gLastKnownGoodYPos = 999999;
+//        return;
+//    }else{
+//        gLastKnownGoodXPos = newHx - tx;
+//        gLastKnownGoodYPos = newHy - ty;
+//    }
 
     var hero             = document.getElementById("protagonist1");
     var backgroundHeight = document.body.clientHeight;
@@ -299,8 +194,13 @@ function moveObject(tx, ty, hx, hy, mR, velocity){
     hero.style.left = hxperc;
     hero.style.top  = hyperc;
 
-    if((newHx - tx) === 0 || (newHy - ty) === 0){
+    if(Math.abs(newHx - tx) < 1.0 || Math.abs(newHy - ty) < 1.0){
         clearTimeout(gTimeoutDescriptor);
+        gTargetIdentifier = "";
+//        gLastKnownGoodXPos = 999999;
+//        gLastKnownGoodYPos = 999999;
+    }else{
+        heroMovement();
     }
 }
 
@@ -308,24 +208,66 @@ function heroMovement(){
 
 
     //Get objects of target and hero picture
-    var hero = document.getElementById("protagonist1");
-    var target = document.getElementById(gTargetIdentifier);
+    var hero = $("#protagonist1");
+    var target = $("#"+gTargetIdentifier);
 
     //Fetch background dimensions
-    var backgroundHeight = document.body.clientHeight;
-    var backgroundWidth = document.body.clientWidth;
+    var backgroundHeight = $(window).height;
+    var backgroundWidth = $(window).width;
+
+    var targetPos = target.offset();
+    var heroPos = hero.offset();
 
     //Get current position of protagonist object and target clickable object
-    var targetX = perc2pix(backgroundWidth, target.style.left);
-    var targetY = perc2pix(backgroundHeight, target.style.top);
+    var targetX = targetPos.left;
+    var targetY = targetPos.top;
 
-    var heroX = perc2pix(backgroundWidth, hero.style.left);
-    var heroY = perc2pix(backgroundHeight, hero.style.top);
+    var heroX = heroPos.left;
+    var heroY = heroPos.top;
 
     var movementRatio = (heroX - targetX) / (heroY - targetY);
 
 
-    moveObject(targetX, targetY, heroX, heroY, movementRatio, 1.00);
-    //gTimeoutDescriptor = setTimeout(function(){moveObject(targetX, targetY, heroX, heroY, movementRatio, 1.00)}, 75);
+    //moveObject(targetX, targetY, heroX, heroY, movementRatio, 1.00);
+    //gTimeoutDescriptor = setTimeout(function(){moveObject(targetX, targetY, heroX, heroY, movementRatio, 2.5)}, 75);
+    //function moveObject(tx, ty, hx, hy, mR, velocity){
+
+    var tmp = Math.round(movementRatio * 2.5);
+
+    if(heroX > targetX){
+        var newHx = heroX - tmp;
+    }else{
+        var newHx = heroX + tmp;
+    }
+
+    if(heroX > targetX){
+        var newHy = heroY - 2.5;
+    }else{
+        var newHy = heroY + 2.5;
+    }
+
+//    var hero             = document.getElementById("protagonist1");
+//    var backgroundHeight = document.body.clientHeight;
+//    var backgroundWidth  = document.body.clientWidth;
+
+//    var hxperc = pix2perc(backgroundWidth, newHx);
+//    var hyperc = pix2perc(backgroundHeight, newHy);
+
+//    hero.css.style.left = hxperc;
+//    hero.css.style.top  = hyperc;
+
+    var newPos = {
+                left: newHx,
+                top: newHy
+            };
+
+    hero.offset(newPos);
+
+    if(Math.abs(newHx - targetX) < 1.0 || Math.abs(newHy - targetY) < 1.0){
+        clearTimeout(gTimeoutDescriptor);
+        gTargetIdentifier = "";
+    }else{
+        gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 75);
+    }
 }
 
