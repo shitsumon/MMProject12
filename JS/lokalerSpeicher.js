@@ -18,37 +18,44 @@ function Bild(name, pfad, position, daten){
 }
 
 //Prototyp/Klasse für eine Szene
-function Szene(name, bilder){
+function Szene(name, bilder, anzahl_bilder){
 	//Name der Szene
 	this.name=name;
-	//Array aus Bild-Objekten
+	//assoziatives Array aus Bild-Objekten -> Objekt mit den Bildnamen als Eigenschaft (bilder[bild_name])
 	this.bilder=bilder;
+	this.anzahl_bilder=anzahl_bilder;
+	//Namen der enthaltenen Bilder
+	this.bilder_namen=new Array(anzahl_bilder);
 }
 
 //enthält alle Szenen-Objekte aus der XML-Datei
 var szenen_global=new Array();
 //Zähler zur Verfolgung des Ladevorgangs
-var zu_ladende_bilder=0;
-var geladene_bilder=0;
+var zu_ladende_bilder_global=0;
+var geladene_bilder_global=0;
 //Pfad zur XML-Datei
 var xml_pfad_global="./../../Bilder/bilder.xml";
+var bilder_stamm_ordner_global="./../../Bilder/";
 
 //-------------------------------------------------------------------
 
 //Eintrittsfunktion
-function lokalerspeicher_start(){
+function lokalerspeicher_initialisieren(){
 
 	//löscht den Speicher
 	localStorage.clear();
 
+	//beinhaltet später die Namen aller gespeicherten Szenen
+	localStorage.setItem("gespeicherte_szenen", "");
+	
 	//liest Szenen und Bilder aus der XML-Datei aus
 	lokalerspeicher_lesebilderausxml();
 	
 	//läd die Bilder und speichert alles
 	lokalerspeicher_ladebilder();
 	
-	//zeigt das Ergebnis nach x sek an
-	setTimeout("alert(localStorage.length+\" Elemente in localStorage gespeichert\")",5000);
+	//Testfunktion
+	setTimeout("lokalerspeicher_get_bild('Hintergrund.jpg','Szene1')",5000);
 }
 
 function lokalerspeicher_lesebilderausxml(){
@@ -71,7 +78,7 @@ function lokalerspeicher_lesebilderausxml(){
 		//für alle Szenen
 		for(var i=0; i<ordner_xml.length; i++){
 			//erzeuge neues Szene-Objekt
-			szenen_global[i]=new Szene(ordner_xml[i].getAttribute("name"), new Array(ordner_xml[i].childElementCount));
+			szenen_global[i]=new Szene(ordner_xml[i].getAttribute("name"), new Object(), ordner_xml[i].childElementCount);
 			
 			//für alle Bilder dieser Szene
 			for(var j=0; j<ordner_xml[i].childElementCount; j++){
@@ -81,7 +88,7 @@ function lokalerspeicher_lesebilderausxml(){
 				/*der name des Bilder*/
 				ordner_xml[i].children[j].getAttribute("name"),
 				/*der Pfad zum Bild: Stamm+Szenenname+Bildname*/
-				"./../../Bilder/"+ordner_xml[i].getAttribute("name")+"/"+ordner_xml[i].children[j].getAttribute("name"),
+				bilder_stamm_ordner_global+ordner_xml[i].getAttribute("name")+"/"+ordner_xml[i].children[j].getAttribute("name"),
 				/*die Startposition des Bildes als Position-Objekt*/
 				new Position(
 				ordner_xml[i].children[j].firstElementChild.getAttribute("x"),
@@ -91,9 +98,10 @@ function lokalerspeicher_lesebilderausxml(){
 				"");
 				
 				//speichere Bild im globalen Array
-				szenen_global[i].bilder[j]=bild;
+				szenen_global[i].bilder[bild.name]=bild;
+				szenen_global[i].bilder_namen[j]=bild.name;
 				//zähle die Anzahl der Bilder
-				zu_ladende_bilder++;
+				zu_ladende_bilder_global++;
 			}
 		}
 	}else{
@@ -104,30 +112,30 @@ function lokalerspeicher_lesebilderausxml(){
 function lokalerspeicher_ladebilder(){
 	//sorgt für das Laden aller Bilder
 	for(var i=0; i<szenen_global.length; i++){
-		for(var j=0; j<szenen_global[i].bilder.length; j++){
-			lokalerspeicher_ladebild(i,j);
+		for(var bild_name in szenen_global[i].bilder){
+			lokalerspeicher_ladebild(i,bild_name);
 		}
 	}
 }
-function lokalerspeicher_ladebild(szene_nr, bild_nr){
+function lokalerspeicher_ladebild(szene_nr, bild_name){
 	/*läd ein Bild. Funktion muss extra aufgerufen werden, da die Übergabeparameter in der aufrufenden Funktion sonst beim Aufruf von bild.onload als call by reference statt call by value ausgewertet werden.*/
 	
 	//erzeugt ein neues Image-Objekt und legt die onload-Funktion fest
 	var bild=new Image();
 	bild.onload=function(){
 		//speichere die base64-Repräsentation des Bildes im globalen Array
-		szenen_global[szene_nr].bilder[bild_nr].daten=lokalerspeicher_bild_zu_base64(this);
+		szenen_global[szene_nr].bilder[bild_name].daten=lokalerspeicher_bild_zu_base64(this);
 		
 		//zähle die geladenenen Bilder mit
-		geladene_bilder++;
+		geladene_bilder_global++;
 		//sobald alle Bilder geladen wurden
-		if(zu_ladende_bilder==geladene_bilder){
+		if(zu_ladende_bilder_global==geladene_bilder_global){
 			//speichere im HTML5 localStorage
 			lokalerspeicher_speichere();
 		}
 	}
 	//starte den Ladevorgang des angegebenen Bildes
-	bild.src=szenen_global[szene_nr].bilder[bild_nr].pfad;
+	bild.src=szenen_global[szene_nr].bilder[bild_name].pfad;
 }
 
 function lokalerspeicher_bild_zu_base64(bild){
@@ -174,5 +182,36 @@ function lokalerspeicher_speichere(){
 	//key=Szenenname, value=JSON-String des Szene-Objekts
 	for(var i=0; i<szenen_global.length; i++){		
 		localStorage.setItem(szenen_global[i].name,JSON.stringify(szenen_global[i]));
+		//speichert zusätzlich die Namen aller Szenen
+		localStorage.setItem("gespeicherte_szenen",localStorage.getItem("gespeicherte_szenen")+","+szenen_global[i].name);
 	}
+}
+
+function lokalerspeicher_get_szene(szene_name){
+	//liest eine Szene aus dem localStorage
+	var szene=localStorage.getItem(szene_name);
+	
+	if(szene!=null){
+		//wandle JSON-String zurück
+		szene=JSON.parse(szene);
+	}else{
+		alert("Szene '"+szene_name+"' nicht im Speicher gefunden!");
+	}
+	
+	return szene;
+}
+
+function lokalerspeicher_get_bild(bild_name, szene_name){
+	//liest ein Bild aus einer gegebenen Szene im localstorage
+	var szene=lokalerspeicher_get_szene(szene_name);
+	
+	var bild;
+	if(szene!=null){
+		bild=szene.bilder[bild_name];
+	}
+	if(bild==null){
+		alert("Bild '"+bild_name+"' nicht in Szene '"+szene_name+"' gefunden!");
+	}
+	
+	return bild;
 }
