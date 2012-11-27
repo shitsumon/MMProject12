@@ -38,6 +38,14 @@ html, body{
 	visibility:visible;
 }
 
+#bedOverlay{
+        position: absolute;
+        z-index:5;
+        top: 0px;
+        left: 0px;
+        visibility:visible;
+}
+
 #dummySpot{
 	position: absolute;
 	z-index:3;
