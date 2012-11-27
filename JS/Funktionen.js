@@ -31,11 +31,12 @@ var gMovementRatio = 0.0;
 
 //Temporary struct which contains vital data of objects within scene 1
 var imageItems = [
-                    new sImageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),
-                    new sImageItem('doorOverlay', 'door_overlay.png', 'Szene1' , 27.5, 30),
-                    new sImageItem('windowOverlay', 'windowOverlay.png', 'Szene1' , 80, 30),
-                    new sImageItem('dummySpot', 'dummySpot.png', 'Szene1' , 0, 0)
-                 ];
+            new sImageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),
+            new sImageItem('doorOverlay', 'door_overlay.png', 'Szene1' , 27.5, 30),
+            new sImageItem('windowOverlay', 'windowOverlay.png', 'Szene1' , 80, 30),
+            new sImageItem('bedOverlay', 'bedOverlay.png', 'Szene1' , 80, 84),
+            new sImageItem('dummySpot', 'dummySpot.png', 'Szene1' , 0, 0)
+        ];
 /*************************************/
 
 
@@ -47,7 +48,7 @@ function starte_szene(szene){
     switch (szene){
     case "Szene1":
         loadSubImagesToStartPosition();
-        text_anzeigen("Protagonist 1","Wo bin ich?");
+        //text_anzeigen("Protagonist 1","Wo bin ich?");
         break;
 
     default:
@@ -153,7 +154,7 @@ function text_anzeigen(person, text){
 
 function heroMovement(){
 
-    var velocityParam = 2.5;
+    var velocityParam = 1.0;
 
     //Get objects of target and hero picture
     var hero = $("#protagonist1");
@@ -169,40 +170,146 @@ function heroMovement(){
     var heroX = heroPos.left;
     var heroY = heroPos.top;
 
+//    var heroX = 0;
+//    var heroY = 0;
+
+//    if(targetX < heroPos.left){
+//        heroX = heroPos.left;
+//    }else if(targetX > heroPos.left){
+//        heroX = heroPos.left + hero.width();
+//    }
+
+//    if(targetY < heroPos.top){
+//        heroY = heroPos.top;
+//    }else if(targetY > heroPos.top){
+//        heroY = heroPos.top + hero.height();
+//    }
+
     if(!gMRset){
-        gMovementRatio = (heroX - targetX) / (heroY - targetY);
+        gMovementRatio = Math.abs((heroX - targetX)) / Math.abs((heroY - targetY));
         gMRset = true;
     }
 
-    var tmp = Math.round(gMovementRatio * velocityParam);
+
+    var tmp = gMovementRatio * velocityParam;
+
+    var newHx = 0;
+    var newHy = 0;
 
     if(heroX > targetX){
-        var newHx = heroX - tmp;
+        newHx = heroX - tmp;
+    }else if(heroX < targetX){
+        newHx = heroX + tmp;
     }else{
-        var newHx = heroX + tmp;
+        newHx = targetX;
     }
 
     if(heroY > targetY){
-        var newHy = heroY - velocityParam;
+        newHy = heroY - velocityParam;
+    }else if(heroY < targetY){
+        newHy = heroY + velocityParam;
     }else{
-        var newHy = heroY + velocityParam;
+        newHy = targetY;
     }
 
-    var newPos = {
-                    left: newHx,
-                    top: newHy
-                 };
+    switch(borderCollisionDetection("protagonist1")){
+    case 1:
+        newHx = heroX;
+        break;
+    case 2:
+        newHy = heroY;
+        break;
+    case 0:
+    default:
+        break;
+    }
 
-    hero.offset(newPos);
+    if(Math.abs(newHx - targetX) < 5 && Math.abs(newHy - targetY) < 5){
 
-    if(Math.abs(newHx - targetX) < 1.0 || Math.abs(newHy - targetY) < 1.0){
+        var newPos = {
+            left: targetX,
+            top: targetY
+        };
+
+        hero.offset(newPos);
+    }else{
+
+        var newPos = {
+            left: newHx,
+            top: newHy
+        };
+
+        hero.offset(newPos);
+    }
+
+    if(newHx === targetX || newHy === targetY){
         clearTimeout(gTimeoutDescriptor);
         gTargetIdentifier = "";
-        gMovementRatio = 0.0;
+        gMovementRatio = 0;
         gMRset = false;
         return;
     }else{
-        gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 75);
+        gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 5);
     }
 }
 
+function borderCollisionDetection(objectName){
+
+    var movingObject        = $("#"+objectName);
+    var objLeft             = movingObject.offset().left;
+    var objTop              = movingObject.offset().top;
+    var objLeftWithWidth    = movingObject.offset().left + movingObject.width();
+    var objTopWithHeight    = movingObject.offset().top  + movingObject.height();
+
+    var newPos = 0;
+
+    //collision with left border
+    if(objLeft <= 0){
+
+        newPos = {
+            left: 0,
+            top: movingObject.offset().top
+        };
+
+        movingObject.offset(newPos);
+
+        return 1;
+    }
+
+    //collision with upper border
+    if(objTop <= 0){
+
+        newPos = {
+            left: movingObject.offset().left,
+            top: 0
+        };
+
+        movingObject.offset(newPos);
+
+        return 2;
+    }
+
+    //collision with right border
+    if(objLeftWithWidth >= $(document).width()){
+
+        newPos = {
+            left: $(document).width(),
+            top: movingObject.offset().top
+        };
+
+        return 1;
+    }
+
+    //collision with lower border
+    if(objTopWithHeight >= $(document).height()){
+
+        newPos = {
+            left: movingObject.offset().left,
+            top: $(document).height()
+        };
+
+        return 2;
+    }
+
+    return 0;
+}
