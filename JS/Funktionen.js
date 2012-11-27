@@ -25,8 +25,9 @@ var gTargetIdentifier = ""; //used to set an overlay from HTML code as movement 
 
 var gTimeoutDescriptor; //descriptor which is used to call a halt on setTimeout events
 
-var gLastKnownGoodXPos = 999999;
-var gLastKnownGoodYPos = 999999;
+var gMRset = false;
+
+var gMovementRatio = 0.0;
 
 //Temporary struct which contains vital data of objects within scene 1
 var imageItems = [
@@ -150,70 +151,13 @@ function text_anzeigen(person, text){
     context.fillText( person + ": " + text, 0, 0);
 }
 
-function moveObject(tx, ty, hx, hy, mR, velocity){
-
-    var tmp = Math.round(mR * velocity);
-
-    if(hx > tx){
-        var newHx = hx - tmp;
-    }else{
-        var newHx = hx + tmp;
-    }
-
-    if(hy > ty){
-        var newHy = hy - velocity;
-    }else{
-        var newHy = hy + velocity;
-    }
-
-    /*if(newHx === hx && newHy === hy){
-
-        newHx += 1;
-        newHy += 1;
-    }*/
-
-
-//    if((newHx - tx) > gLastKnownGoodXPos || (newHy - ty) > gLastKnownGoodYPos){
-//        clearTimeout(gTimeoutDescriptor);
-//        gTargetIdentifier = "";
-//        gLastKnownGoodXPos = 999999;
-//        gLastKnownGoodYPos = 999999;
-//        return;
-//    }else{
-//        gLastKnownGoodXPos = newHx - tx;
-//        gLastKnownGoodYPos = newHy - ty;
-//    }
-
-    var hero             = document.getElementById("protagonist1");
-    var backgroundHeight = document.body.clientHeight;
-    var backgroundWidth  = document.body.clientWidth;
-
-    var hxperc = pix2perc(backgroundWidth, newHx);
-    var hyperc = pix2perc(backgroundHeight, newHy);
-
-    hero.style.left = hxperc;
-    hero.style.top  = hyperc;
-
-    if(Math.abs(newHx - tx) < 1.0 || Math.abs(newHy - ty) < 1.0){
-        clearTimeout(gTimeoutDescriptor);
-        gTargetIdentifier = "";
-//        gLastKnownGoodXPos = 999999;
-//        gLastKnownGoodYPos = 999999;
-    }else{
-        heroMovement();
-    }
-}
-
 function heroMovement(){
 
+    var velocityParam = 2.5;
 
     //Get objects of target and hero picture
     var hero = $("#protagonist1");
     var target = $("#"+gTargetIdentifier);
-
-    //Fetch background dimensions
-    var backgroundHeight = $(window).height;
-    var backgroundWidth = $(window).width;
 
     var targetPos = target.offset();
     var heroPos = hero.offset();
@@ -225,14 +169,12 @@ function heroMovement(){
     var heroX = heroPos.left;
     var heroY = heroPos.top;
 
-    var movementRatio = (heroX - targetX) / (heroY - targetY);
+    if(!gMRset){
+        gMovementRatio = (heroX - targetX) / (heroY - targetY);
+        gMRset = true;
+    }
 
-
-    //moveObject(targetX, targetY, heroX, heroY, movementRatio, 1.00);
-    //gTimeoutDescriptor = setTimeout(function(){moveObject(targetX, targetY, heroX, heroY, movementRatio, 2.5)}, 75);
-    //function moveObject(tx, ty, hx, hy, mR, velocity){
-
-    var tmp = Math.round(movementRatio * 2.5);
+    var tmp = Math.round(gMovementRatio * velocityParam);
 
     if(heroX > targetX){
         var newHx = heroX - tmp;
@@ -240,32 +182,25 @@ function heroMovement(){
         var newHx = heroX + tmp;
     }
 
-    if(heroX > targetX){
-        var newHy = heroY - 2.5;
+    if(heroY > targetY){
+        var newHy = heroY - velocityParam;
     }else{
-        var newHy = heroY + 2.5;
+        var newHy = heroY + velocityParam;
     }
 
-//    var hero             = document.getElementById("protagonist1");
-//    var backgroundHeight = document.body.clientHeight;
-//    var backgroundWidth  = document.body.clientWidth;
-
-//    var hxperc = pix2perc(backgroundWidth, newHx);
-//    var hyperc = pix2perc(backgroundHeight, newHy);
-
-//    hero.css.style.left = hxperc;
-//    hero.css.style.top  = hyperc;
-
     var newPos = {
-                left: newHx,
-                top: newHy
-            };
+                    left: newHx,
+                    top: newHy
+                 };
 
     hero.offset(newPos);
 
     if(Math.abs(newHx - targetX) < 1.0 || Math.abs(newHy - targetY) < 1.0){
         clearTimeout(gTimeoutDescriptor);
         gTargetIdentifier = "";
+        gMovementRatio = 0.0;
+        gMRset = false;
+        return;
     }else{
         gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 75);
     }
