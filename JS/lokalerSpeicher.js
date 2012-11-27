@@ -36,11 +36,21 @@ var geladene_bilder_global=0;
 //Pfad zur XML-Datei
 var xml_pfad_global="./../../Bilder/bilder.xml";
 var bilder_stamm_ordner_global="./../../Bilder/";
+var weiterleitung_global="./Szene1/Szene1.html";
 
 //-------------------------------------------------------------------
 
 //Eintrittsfunktion
-function lokalerspeicher_initialisieren(){
+function lokalerspeicher_initialisieren(xml_pfad, bilder_pfad){
+
+	//ermöglicht es den Pfad zu überschreiben
+	if(xml_pfad!=null){
+		xml_pfad_global=xml_pfad;
+	}
+	
+	if(bilder_pfad!=null){
+		bilder_stamm_ordner_global=bilder_pfad;
+	}
 
 	//löscht den Speicher
 	localStorage.clear();
@@ -55,7 +65,7 @@ function lokalerspeicher_initialisieren(){
 	lokalerspeicher_ladebilder();
 	
 	//Testfunktion
-	setTimeout("lokalerspeicher_get_bild('Hintergrund.jpg','Szene1')",5000);
+//	setTimeout("lokalerspeicher_get_bild('Hintergrund.jpg','Szene1')",5000);
 }
 
 function lokalerspeicher_lesebilderausxml(){
@@ -132,6 +142,8 @@ function lokalerspeicher_ladebild(szene_nr, bild_name){
 		if(zu_ladende_bilder_global==geladene_bilder_global){
 			//speichere im HTML5 localStorage
 			lokalerspeicher_speichere();
+		}else{
+			lokalerspeicher_setze_ladebalken(geladene_bilder_global/zu_ladende_bilder_global);
 		}
 	}
 	//starte den Ladevorgang des angegebenen Bildes
@@ -185,6 +197,9 @@ function lokalerspeicher_speichere(){
 		//speichert zusätzlich die Namen aller Szenen
 		localStorage.setItem("gespeicherte_szenen",localStorage.getItem("gespeicherte_szenen")+","+szenen_global[i].name);
 	}
+	
+	//Weiterleitung
+	document.location.href=weiterleitung_global;
 }
 
 function lokalerspeicher_get_szene(szene_name){
@@ -214,4 +229,12 @@ function lokalerspeicher_get_bild(bild_name, szene_name){
 	}
 	
 	return bild;
+}
+
+function lokalerspeicher_setze_ladebalken(prozent){
+	//ändert die auslenkung des ladebalkens prozentual entsprechend den geladenen bildern
+	var ladebalken=document.getElementById("ladebalken");
+	
+	ladebalken.setAttribute("width",ladebalken.parentNode.parentNode.clientWidth*prozent);
+//	alert(prozent);
 }
