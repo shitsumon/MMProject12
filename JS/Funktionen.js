@@ -170,20 +170,20 @@ function heroMovement(){
     var heroX = heroPos.left;
     var heroY = heroPos.top;
 
-//    var heroX = 0;
-//    var heroY = 0;
+    //    var heroX = 0;
+    //    var heroY = 0;
 
-//    if(targetX < heroPos.left){
-//        heroX = heroPos.left;
-//    }else if(targetX > heroPos.left){
-//        heroX = heroPos.left + hero.width();
-//    }
+    //    if(targetX < heroPos.left){
+    //        heroX = heroPos.left;
+    //    }else if(targetX > heroPos.left){
+    //        heroX = heroPos.left + hero.width();
+    //    }
 
-//    if(targetY < heroPos.top){
-//        heroY = heroPos.top;
-//    }else if(targetY > heroPos.top){
-//        heroY = heroPos.top + hero.height();
-//    }
+    //    if(targetY < heroPos.top){
+    //        heroY = heroPos.top;
+    //    }else if(targetY > heroPos.top){
+    //        heroY = heroPos.top + hero.height();
+    //    }
 
     if(!gMRset){
         gMovementRatio = Math.abs((heroX - targetX)) / Math.abs((heroY - targetY));
@@ -214,35 +214,24 @@ function heroMovement(){
 
     switch(borderCollisionDetection("protagonist1")){
     case 1:
-        newHx = heroX;
+        //newHx = heroX;
         break;
     case 2:
-        newHy = heroY;
+        //        newHy = heroY;
         break;
     case 0:
     default:
         break;
     }
 
-    if(Math.abs(newHx - targetX) < 5 && Math.abs(newHy - targetY) < 5){
+    var newPos = {
+        left: newHx,
+        top: newHy
+    };
 
-        var newPos = {
-            left: targetX,
-            top: targetY
-        };
+    hero.offset(newPos);
 
-        hero.offset(newPos);
-    }else{
-
-        var newPos = {
-            left: newHx,
-            top: newHy
-        };
-
-        hero.offset(newPos);
-    }
-
-    if(newHx === targetX || newHy === targetY){
+    if(hero.intersectsWith(gTargetIdentifier)){
         clearTimeout(gTimeoutDescriptor);
         gTargetIdentifier = "";
         gMovementRatio = 0;
@@ -313,3 +302,39 @@ function borderCollisionDetection(objectName){
 
     return 0;
 }
+
+/*JQuery Plugin which checks wether the hero intersects with it's target*/
+(function($){
+     $.fn.intersectsWith = function(targetname) {
+                 //alert(targetname);
+                 var hero = this;
+                 var target = $("#"+targetname);
+                 var c = $([]);
+
+                 if(!hero || !target){
+                     return false;
+                 }
+
+                 var heroOffset = hero.offset();
+                 var heroMinX   = heroOffset.left;
+                 var heroMinY   = heroOffset.top;
+                 var heroMaxX   = heroMinX + hero.outerWidth();
+                 var heroMaxY   = heroMinY + hero.outerHeight();
+
+                 var targetOffset = target.offset();
+                 var targetMinX   = targetOffset.left;
+                 var targetMinY   = targetOffset.top;
+                 var targetMaxX   = targetMinX + target.outerWidth();
+                 var targetMaxY   = targetMinY + target.outerHeight();
+
+                 //No intersection
+                 if(heroMinX >= targetMaxX ||
+                         heroMaxX <= targetMinX ||
+                         heroMinY >= targetMaxY ||
+                         heroMaxY <= targetMinY){
+                     return false;
+                 }else{
+                     return true;
+                 }
+             }
+ })(jQuery);
