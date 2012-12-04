@@ -152,9 +152,12 @@ function text_anzeigen(person, text){
     context.fillText( person + ": " + text, 0, 0);
 }
 
+var gVecX = 0.0;
+var gVecY = 0.0;
+
 function heroMovement(){
 
-    var velocityParam = 1.0;
+    var velocityParam = 25.0;
 
     //Get objects of target and hero picture
     var hero = $("#protagonist1");
@@ -170,60 +173,53 @@ function heroMovement(){
     var heroX = heroPos.left;
     var heroY = heroPos.top;
 
-    //    var heroX = 0;
-    //    var heroY = 0;
-
-    //    if(targetX < heroPos.left){
-    //        heroX = heroPos.left;
-    //    }else if(targetX > heroPos.left){
-    //        heroX = heroPos.left + hero.width();
-    //    }
-
-    //    if(targetY < heroPos.top){
-    //        heroY = heroPos.top;
-    //    }else if(targetY > heroPos.top){
-    //        heroY = heroPos.top + hero.height();
-    //    }
-
+    //Calculate directional vector in dependence from velocity parameter
     if(!gMRset){
-        gMovementRatio = Math.abs((heroX - targetX)) / Math.abs((heroY - targetY));
-        gMRset = true;
+
+        gVecX = Math.abs(heroX - targetX) / velocityParam;
+        gVecY = Math.abs(heroY - targetY) / velocityParam;
     }
-
-
-    var tmp = gMovementRatio * velocityParam;
 
     var newHx = 0;
     var newHy = 0;
 
+    //calculate next movement step for x and y depending from direction
     if(heroX > targetX){
-        newHx = heroX - tmp;
+        newHx = heroX - gVecX;
     }else if(heroX < targetX){
-        newHx = heroX + tmp;
+        newHx = heroX + gVecX;
     }else{
         newHx = targetX;
     }
 
     if(heroY > targetY){
-        newHy = heroY - velocityParam;
+        newHy = heroY - gVecY;
     }else if(heroY < targetY){
-        newHy = heroY + velocityParam;
+        newHy = heroY + gVecY;
     }else{
         newHy = targetY;
     }
 
+    //Check if hero collides with viewport borders
     switch(borderCollisionDetection("protagonist1")){
     case 1:
-        //newHx = heroX;
+        newHx = 1;
         break;
     case 2:
-        //        newHy = heroY;
+        newHy = 1;
+        break;
+    case 3:
+        newHx = $(window).width - hero.outerWidth() - 1;
+        break;
+    case 4:
+        newHy = $(window).height - hero.outerHeight() - 1;
         break;
     case 0:
     default:
         break;
     }
 
+    //set new position of hero
     var newPos = {
         left: newHx,
         top: newHy
@@ -231,24 +227,70 @@ function heroMovement(){
 
     hero.offset(newPos);
 
+    //Check if hero intersects with clicked target, if yes stop movement action
     if(hero.intersectsWith(gTargetIdentifier)){
+
+        //in case the hero object collided with a border on its way to the target,
+        //the object is set one pixel away from it, to avoid remaining sticked
+        //to the border
+        if((hero.offset().top + hero.outerHeight()) > ($(window).height / 2)){
+            newPos = {
+                left: hero.offset().left,
+                top: hero.offset().top += 1
+            };
+
+            hero.offset(newPos);
+        }else{
+            newPos = {
+                left: hero.offset().left,
+                top: hero.offset().top -= 1
+            };
+
+            hero.offset(newPos);
+        }
+
+        if((hero.offset().left + hero.outerWidth()) > ($(window).width / 2)){
+            newPos = {
+                left: hero.offset().left += 1,
+                top: hero.offset().top
+            };
+
+            hero.offset(newPos);
+        }else{
+            newPos = {
+                left: hero.offset().left -= 1,
+                top: hero.offset().top
+            };
+
+            hero.offset(newPos);
+        }
+
+        //Stop intervall in order to stop the movement
         clearTimeout(gTimeoutDescriptor);
+
+        //reset global variables
         gTargetIdentifier = "";
-        gMovementRatio = 0;
-        gMRset = false;
+        gVecX             = 0.0;
+        gVecY             = 0.0;
+        gMRset            = false;
+
         return;
     }else{
-        gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 5);
+        gTimeoutDescriptor = setTimeout(function(){heroMovement()}, 25);
     }
 }
 
+/*
+    Checks if the hero object has collided with
+    one of the viewports borders
+*/
 function borderCollisionDetection(objectName){
 
     var movingObject        = $("#"+objectName);
     var objLeft             = movingObject.offset().left;
     var objTop              = movingObject.offset().top;
-    var objLeftWithWidth    = movingObject.offset().left + movingObject.width();
-    var objTopWithHeight    = movingObject.offset().top  + movingObject.height();
+    var objLeftWithWidth    = objLeft + movingObject.width();
+    var objTopWithHeight    = objTop  + movingObject.height();
 
     var newPos = 0;
 
@@ -257,7 +299,7 @@ function borderCollisionDetection(objectName){
 
         newPos = {
             left: 0,
-            top: movingObject.offset().top
+            top: objTop
         };
 
         movingObject.offset(newPos);
@@ -269,7 +311,7 @@ function borderCollisionDetection(objectName){
     if(objTop <= 0){
 
         newPos = {
-            left: movingObject.offset().left,
+            left: objLeft,
             top: 0
         };
 
@@ -279,37 +321,38 @@ function borderCollisionDetection(objectName){
     }
 
     //collision with right border
-    if(objLeftWithWidth >= $(document).width()){
+    if(objLeftWithWidth >= $(window).width()){
 
         newPos = {
-            left: $(document).width(),
-            top: movingObject.offset().top
+            left: ($(window).width() - movingObject.width()),
+            top: objTop
         };
 
-        return 1;
+        movingObject.offset(newPos);
+        return 3;
     }
 
     //collision with lower border
-    if(objTopWithHeight >= $(document).height()){
+    if(objTopWithHeight >= $(window).height()){
 
         newPos = {
-            left: movingObject.offset().left,
-            top: $(document).height()
+            left: objLeft,
+            top: ($(window).height() - movingObject.height())
         };
 
-        return 2;
+        movingObject.offset(newPos);
+        return 4;
     }
 
     return 0;
 }
 
-/*JQuery Plugin which checks wether the hero intersects with it's target*/
+/*JQuery Plugin which checks whether the hero intersects with it's target*/
 (function($){
      $.fn.intersectsWith = function(targetname) {
                  //alert(targetname);
                  var hero = this;
                  var target = $("#"+targetname);
-                 var c = $([]);
 
                  if(!hero || !target){
                      return false;
