@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialoge><!--Anzahl: 1-->
+  <dialog id=""><!--Anzahl: 1-N-->
+    <text><!--Anzahl: 1-->
+      <sprecher><!--Anzahl: 1-->
+        <name><!--Anzahl: 1-->
+          <!-- Name des Sprechers: string -->
+        </name>
+        <bild_id><!--Anzahl: 1-->
+          <!-- ID des anzuzeigenden Bildes: int -->
+        </bild_id>
+      </sprecher>
+      <satz><!--Anzahl: 1-->
+        <!-- Was er sagt: string -->
+      </satz>
+    </text>
+  </dialog>
+</dialoge>
