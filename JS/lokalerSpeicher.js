@@ -44,7 +44,7 @@ var weiterleitung_global="./Szene1/Szene1.html";
 function lokalerspeicher_initialisieren(xml_pfad, bilder_pfad){
 
 	//ermöglicht es den Pfad zu überschreiben
-	if(xml_pfad!=null){
+    if(xml_pfad!= null){
 		xml_pfad_global=xml_pfad;
 	}
 	

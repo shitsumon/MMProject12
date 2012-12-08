@@ -1,72 +1,27 @@
 /*
-Netzwerkstar scene parser
-Written to implement a comfortable way of creating HTML documents
-which represent scenes of the games. The parser extracts any vital
-information from specified XML documents and uses the extracted
-information to create a proper looking game scene.
+    sceneParser.js - Parses XML documents to create a HTML view of the specified scene
+
+    Written to implement a comfortable way of creating HTML documents
+    which represent scenes of the games. The parser extracts any vital
+    information from specified XML documents and uses the extracted
+    information to create a proper looking game scene.
 */
 
-/*globals*/
-var sceneXML = "testSzenen.xml"; //there is currently an issue with relative pathnames
-
-//Scene struct where the xml reader part stores all extracted information
-function sceneStruct(id){
-    this.sceneID = id;
-    this.staticBackgroundObjects  = new Array();
-    this.dynamicBackgroundObjects = new Array();
-    this.staticForegroundObjects  = new Array();
-    this.dynamicForegroundObjects = new Array();
-    this.persons                  = new Array();
-
-    /*This might be removed in a future version*/
-    this.hasQuiz                  = false;
-    this.quizSteps                = new Array();
-}
-
-//Struct for person information includes Position and Size struct
-function personStruct(id, imgID, xPos, yPos, width, height){
-    this.personID   = id;
-    this.imageID    = imgID;
-    this.position   = new Position(xPos, yPos);
-    this.size       = new Size(width, height);
-}
-//Struct for object information includes Position and Size struct
-function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
-
-    this.imageID    = imgID;
-    this.dialogueID = diagID;
-
-    this.position   = new Position(xPos, yPos);
-    this.size       = new Size(width, height);
-
-    this.clickable  = typeof clickable === 'undefined' ? false : clickable;
-}
-
-//includes information about one step of quiz within a scene
-//This might be removed in a future version
-function quizStep(objID, diagReactID, diagTipID, code){
-
-    this.objectID           = objID;
-    this.dialogueReactionID = diagReactID;
-    this.dialogueTipID      = diagTipID;
-    this.code               = code;
-}
-
-//Struct for object position on the browsers viewport
-function Position(x, y){
-    this.xPos = typeof x === 'undefined' ? 0 : x;
-    this.yPos = typeof y === 'undefined' ? 0 : y;
-}
-
-//Struct for object size on the browsers viewport
-function Size(w, h){
-    this.width  = typeof w === 'undefined' ? 0 : w;
-    this.height = typeof h === 'undefined' ? 0 : h;
-}
-
 /*
-Extracts all information which stated
-within the tags of specified scene ID
+    getSceneInformation() -
+
+    Extracts all information which are stated
+    within the tags of specified scene ID.
+
+    Input arguments:
+
+    sceneID - ID of the scene to create
+    sceneFilename - filename of the XML file where the information are located
+
+    Return value:
+
+    None until now, there are currently issues returning information
+    from asynchronous ajax request!
 */
 function getSceneInformation(sceneID, sceneFilename){
 
@@ -76,18 +31,23 @@ function getSceneInformation(sceneID, sceneFilename){
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
 
-//    var xmlRequestObject = new XMLHttpRequest();
-//    try
-//    {
-//    xmlRequestObject.open("GET", sceneFilename, false);
-//    xmlRequestObject.send(null);
-//    }
-//    catch (e) {
-//        window.alert("Unable to load the requested file.");
-//        return;
-//    }
+/*
+  If the JQuery ajax request turns out to be not
+  an option, it might be doable with an XMLHttpRequest Object!
 
-//    alert(xmlRequestObject.responseXML);
+  var xmlRequestObject = new XMLHttpRequest();
+  try
+  {
+    xmlRequestObject.open("GET", sceneFilename, false);
+    xmlRequestObject.send(null);
+  }
+  catch (e) {
+    window.alert("Unable to load the requested file.");
+    return;
+  }
+
+  alert(xmlRequestObject.responseXML);
+*/
 
     if(window.DOMParser)
     var parser = new DOMParser();
@@ -104,7 +64,7 @@ function getSceneInformation(sceneID, sceneFilename){
                    url: sceneFilename,
                    type: "GET",
                    dataType: "xml",
-                   async: false,
+                   //async: false, //this not the best way, blocks browser until finished
                    success:function(xmlContent){
                                alert("gotXML");
                                //iterate over each scene object and check its id against input id
@@ -154,22 +114,13 @@ function getSceneInformation(sceneID, sceneFilename){
                  .fail(function() { alert("error"); });
 }
 
-$(document).ready(function(){
+/*
+    JQuery testing function which will be
+    executed immediately after loading script.
 
-//                      $.ajax({
-//                                 url: "testSzenen.xml",
-//                                 type: "GET",
-//                                 dataType: "xml",
-//                                 success:function(foo){
-//                                             $(foo).find('szene').each(function(){
-//                                                                          var test = $(this);
-//                                                                          alert(test.attr('id'));
-//                                                                      })
-//                                         }
-//                             })
-//                      .done(function() { alert("success"); })
-//                      .fail(function() { alert("error"); })
-//                      .always(function() { alert("complete"); });
+    !!! Will be removed in final release!!!
+*/
+$(document).ready(function(){
 
                       getSceneInformation("Szene_1", sceneXML);
                       var test;

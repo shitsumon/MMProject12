@@ -12,7 +12,7 @@
     <!--Breite in Pixel eines einzelnen Tiles: int-->
 	<skalierung><!--Anzahl: 1-->
 	<!--Skalierung des Bildes in Abhängigkeit seiner Anzeigegröße definiert in der Szene-->
-	<stufe x="" y="" z=""/><!--Anzahl: 1-N-->
+        <stufe x="" y="" z=""/><!--Anzahl: 1-N-->
 	<!--eine Skalierungsstufe-->
 	<!--Skalierung in x-Richtung in %: float-->
 	<!--Skalierung in y-Richtung in %: float-->
