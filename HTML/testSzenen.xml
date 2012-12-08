@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<szenen><!--Anzahl: 1-->
+  <szene id="Szene_1"><!--Anzahl: 1-N-->
+    <ebenen><!--Anzahl: 6-7-->
+      <!--Die einzelnen Ebenen der Objekte-->
+      <hg_statisch><!--Anzahl: 1-->
+        <!--das Hintergrundbild-->
+        <hg_statisch_objekt bild_id="hgStImg1" dialog_id="dia1" klickbar="true"><!--Anzahl: 1-N-->
+          <!--ID des verknüpften Dialogs: string-->
+          <position x="50" y="75"/>
+          <!--Anzahl: 1-->
+          <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
+          <groesse width="200" height="400"/>
+          <!--Anzahl: 1-->
+          <!--Größe des  Objekts in % der Anzeigefläche: float-->
+        </hg_statisch_objekt>
+      </hg_statisch>
+      <hg_animiert><!--Anzahl: 1-->
+        <!--Die animierten HG-Objekte-->
+        <hg_animiert_objekt bild_id="hgDynImg1" dialog_id="dia2" klickbar="false"><!--Anzahl: 1-N-->
+          <!--ID des verknüpften Dialogs: string-->
+          <position x="100" y="125"/>
+          <!--Anzahl: 1-->
+          <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
+          <groesse width="50" height="60"/>
+          <!--Anzahl: 1-->
+          <!--Größe des  Objekts in % der Anzeigefläche: float-->
+        </hg_animiert_objekt>
+      </hg_animiert>
+      <personen><!--Anzahl: 1-->
+        <person id="p1" bild_id="p1Img"><!--Anzahl: 1-N-->
+          <position x="80" y="95"/>
+          <!--Anzahl: 1-->
+          <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
+          <groesse width="20" height="20"/>
+          <!--Anzahl: 1-->
+          <!--Größe des  Objekts in % der Anzeigefläche: float-->
+        </person>
+      </personen>
+      <vg_statisch><!--Anzahl: 1-->
+        <!--der statische Vordergrund-->
+        <vg_statisch_objekt bild_id="vgStImg1" dialog_id="dia3" klickbar="true"><!--Anzahl: 1-N-->
+          <!--ID des verknüpften Dialogs: string-->
+          <position x="150" y="175"/>
+          <!--Anzahl: 1-->
+          <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
+          <groesse width="60" height="10"/>
+          <!--Anzahl: 1-->
+          <!--Größe des  Objekts in % der Anzeigefläche: float-->
+        </vg_statisch_objekt>
+      </vg_statisch>
+      <vg_animiert><!--Anzahl: 1-->
+        <!--Die animierten VG-Objekte-->
+        <vg_animiert_objekt bild_id="vgDynImg1" dialog_id="dia4" klickbar="false"><!--Anzahl: 1-N-->
+          <!--ID des verknüpften Dialogs: string-->
+          <position x="200" y="300"/>
+          <!--Anzahl: 1-->
+          <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
+          <groesse width="450" height="230"/>
+          <!--Anzahl: 1-->
+          <!--Größe des  Objekts in % der Anzeigefläche: float-->
+        </vg_animiert_objekt>
+      </vg_animiert>
+    </ebenen>
+    <raetsel><!--Anzahl: 1-->
+      <!--Die Rätsel in diesem Raum-->
+      <schritt objekt_id="quiz1" dialog_reaktion_id="dia4" dialog_hinweis_id="dia2" code="XYZ123"><!--Anzahl: 1-N-->
+        <!--ein Schritt des Rätsels-->
+        <!--zu klickendes/auslösendes Objekt-->
+        <!--entsprechende Reaktion-->
+        <!--automatischer Hinweisdialog, falls keine Eingabe erfolgt-->
+        <!--Code der das Spiel an dieser Stelle fortsetzt-->
+        <veraenderung><!--Anzahl: 1-->
+          <!--die Veränderungen die die Aktion auslöst-->
+          <objekt id_alt="vgStImg1" id_neu="vgStImg2"/>
+          <!--Anzahl: 1-N-->
+          <!--Ersetze ein Objekt durch ein anderes-->
+        </veraenderung>
+      </schritt>
+    </raetsel>
+  </szene>
+</szenen>
