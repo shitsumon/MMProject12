@@ -124,12 +124,12 @@ function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält
 }
 
 //Prototyp für ein Bild, nutzt alle vorherigen Prototypen und kümmert sich um das Laden der eigentlichen Bilder
-function Bild(_id, _pfad, _abmessungen, _animiert, _animation, _skalierungsstufen){
+function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalierungsstufen){
 	this.id=_id;					//ID des Bildes					-> string
 	this.pfad=_pfad;				//Dateipfad						-> String
 	this.abmessungen=_abmessungen;	//Abmessungen in Pixel			-> Abmessungen
 	this.animiert=_animiert;		//animiert oder nicht			-> boolean
-	this.animation=_animation;		//Eigenschaften der Animation	-> Animationsmerkmale
+	this.animationsmerkmale=_animationsmerkmale;//Eigenschaften der Animation	-> Animationsmerkmale
 	this.bild=new Image();			//das eigentliche Bild			-> Image
 	this.bild.onload=function(){	/*aufgerufen nachdem das Bilde geladen wurde*/
 		gBilder.geladen++;			/*Zähler für die fertig geladenen Bilder -> int*/

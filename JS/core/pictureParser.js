@@ -32,7 +32,7 @@ function verarbeiteXML(daten){
 
                                 $(bild).attr("animiert") === "false" ? false : true,
 
-                                new Animation(
+                                new Animationsmerkmale(
                                 parseFloat($(bild).find("animation").attr("fps")),
                                 parseInt($(bild).find("animation").attr("tile_anzahl")),
                                 parseInt($(bild).find("animation").attr("tile_width"))
