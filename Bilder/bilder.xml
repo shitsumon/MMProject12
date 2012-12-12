@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <bilder><!--Anzahl: 1-->
   <bild id="bild_protagonist" pfad="../../Bilder/Szene1/Protagonist1.png" animiert="false">
     <abmessungen height="243" width="307"/>
@@ -7,6 +8,9 @@
         <stufe x="1" y="1" z="1"/>
         </skalierung>
   </bild>
+=======
+<bilder>
+>>>>>>> 37da2cdd030134adbdc9eb16adf0d306c3cfb63a
   <bild id="bild_windowoverlay" pfad="../../Bilder/Szene1/windowOverlay.png" animiert="false">
     <abmessungen height="30" width="63"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
@@ -43,8 +47,8 @@
 	</skalierung>
   </bild>
   <bild id="bild_testtileset" pfad="../../Bilder/Szene1/testTileset.png" animiert="true">
-    <abmessungen height="32" width="96"/>
-    <animation fps="3" tile_anzahl="3" tile_width="32"/>
+    <abmessungen height="32" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
