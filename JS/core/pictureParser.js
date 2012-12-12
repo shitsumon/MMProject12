@@ -18,24 +18,6 @@ function verarbeiteXML(daten){
     gBilder.anzahl = $(daten).find("bild").length;
 	
 	$(daten).find("bild").each(function(index, bild) {
-<<<<<<< HEAD
-		id=$(bild).attr("id");
-		gBilder[id]=new Bild(
-		id,
-		$(bild).attr("pfad"),
-		new Abmessungen(
-				parseInt($(bild).find("abmessungen").attr("height")),
-				parseInt($(bild).find("abmessungen").attr("width"))
-			),
-		$(bild).attr("animiert")==="false"?false:true,
-		new Animationsmerkmale(
-			parseFloat($(bild).find("animation").attr("fps")),
-			parseInt($(bild).find("animation").attr("tile_anzahl")),
-			parseInt($(bild).find("animation").attr("tile_width"))
-		),
-		parseInt($(bild).find("stufe").length)
-=======
-
         id = $(bild).attr("id");
 
         gBilder[id] = new Bild(
@@ -57,7 +39,6 @@ function verarbeiteXML(daten){
                                 ),
 
                                 parseInt($(bild).find("stufe").length)
->>>>>>> f01068181239add9ad669dc0ab54a4606c28edb6
 		);
 		
 		$(bild).find("stufe").each(function(index, stufe) {
@@ -75,7 +56,6 @@ function verarbeiteXML(daten){
 Hook zur Anzeige des Ladevorgangs
 */
 function aktualisiereLadebalken(){
-<<<<<<< HEAD
 //	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
 }
 
@@ -88,7 +68,3 @@ function statusPruefen(){
 		alert("Alle Bilder geladen!");
 	}
 }
-=======
-	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
-}
->>>>>>> f01068181239add9ad669dc0ab54a4606c28edb6
