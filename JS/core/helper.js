@@ -28,7 +28,6 @@
 /****************
  *sceneParser.js*
  ****************/
-var sceneXML = "testSzenen.xml"; //there is currently an issue with relative pathnames
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -51,8 +50,9 @@ function personStruct(id, imgID, xPos, yPos, width, height){
     this.position   = new Position(xPos, yPos);
     this.size       = new Size(width, height);
 }
+
 //Struct for object information includes Position and Size struct
-function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
+function objectStruct(imgID, diagID, clickable, xPos, yPos, width, height){
 
     this.imageID    = imgID;
     this.dialogueID = diagID;
@@ -85,6 +85,9 @@ function Size(w, h){
     this.height = typeof h === 'undefined' ? 0 : h;
 }
 
+
+var sceneXML = "testSzenen.xml"; //there is currently an issue with relative pathnames
+var gTestSceneStruct = new sceneStruct("undefined");
 
 /**************
  *animation.js*
