@@ -99,40 +99,58 @@ var gVecY              = 0.0;  // Computed stepwidth in y direction
 /******************
  *pictureParser.js*
  ******************/
-var gBilder=new Object();
-gBilder.anzahl=0;
-gBilder.geladen=0;
+var gBilder=new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
+gBilder.anzahl=0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
+gBilder.geladen=0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
+							Ladebalken genutzt werden*/
 
-var gbilderXMLPfad="../../Bilder/Bilder.xml";
+var gbilderXMLPfad="../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
 
-function Abmessungen(_height, _width){
+function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
 	this.height=_height;
 	this.width=_width;
 }
 
-function Animation(_fps, _tile_anzahl, _tile_width){
+function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){	//Prototyp für die Bildanimation
 	this.fps=_fps;
 	this.tile_anzahl=_tile_anzahl;
 	this.tile_width=_tile_width;
 }
 
-function Skalierung(_x, _y, _z){
+function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält x/y-Skalierung in % und z-Ebene
 	this.x=_x;
 	this.y=_y;
 	this.z=_z;
 }
 
+//Prototyp für ein Bild, nutzt alle vorherigen Prototypen und kümmert sich um das Laden der eigentlichen Bilder
 function Bild(_id, _pfad, _abmessungen, _animiert, _animation, _skalierungsstufen){
-	this.id=_id;
-	this.pfad=_pfad;
-	this.abmessungen=_abmessungen;
-	this.animiert=_animiert;
-	this.animation=_animation;
-	this.bild=new Image();
-	this.bild.onload=function(){
-		gBilder.geladen++;
-		aktualisiereLadebalken();
+	this.id=_id;					//ID des Bildes					-> string
+	this.pfad=_pfad;				//Dateipfad						-> String
+	this.abmessungen=_abmessungen;	//Abmessungen in Pixel			-> Abmessungen
+	this.animiert=_animiert;		//animiert oder nicht			-> boolean
+	this.animation=_animation;		//Eigenschaften der Animation	-> Animationsmerkmale
+	this.bild=new Image();			//das eigentliche Bild			-> Image
+	this.bild.onload=function(){	/*aufgerufen nachdem das Bilde geladen wurde*/
+		gBilder.geladen++;			/*Zähler für die fertig geladenen Bilder -> int*/
+		aktualisiereLadebalken();	/*Hook für den Ladebalken*/
+		statusPruefen();			/*Hook zur Benachrichtigung: Laden beendet*/
 	}
-	this.bild.src=_pfad;
-	this.skalierung=new Array(_skalierungsstufen);
+	this.bild.src=_pfad;			//initiiert das Laden des Bilde	-> string
+	this.skalierung=new Array(_skalierungsstufen);//				-> Skalierung
+}
+
+/*********************
+ *pictureAnimation.js*
+ *********************/
+//verwaltet die Animationen; enthält die zugehörigen Timer als Attribute, erreichbar über die Bild-ID
+var gAnimationTimer=new Object();
+gAnimationTimer.anzahl=0;//zählt die aktiven Timer im Objekt -> int
+
+function Animation(_canvas_id, _bild_id){
+	this.bild_nr=0;
+	this.canvas_id=_canvas_id;
+	this.bild_id=_bild_id;
+	this.timer=null;
+	this.running=true;
 }
