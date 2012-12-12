@@ -87,7 +87,6 @@ function Size(w, h){
 
 
 var sceneXML = "testSzenen.xml"; //there is currently an issue with relative pathnames
-var gTestSceneStruct = new sceneStruct("undefined");
 
 /**************
  *animation.js*
@@ -106,7 +105,7 @@ var gBilder=new Object();
 gBilder.anzahl=0;
 gBilder.geladen=0;
 
-var gbilderXMLPfad="../../Bilder/Bilder.xml";
+var gbilderXMLPfad="../../Bilder/bilder.xml";
 
 function Abmessungen(_height, _width){
 	this.height=_height;

@@ -28,7 +28,7 @@
         </hg_animiert_objekt>
       </hg_animiert>
       <personen><!--Anzahl: 1-->
-        <person id="" bild_id=""><!--Anzahl: 1-N-->
+        <person person_id="" bild_id=""><!--Anzahl: 1-N-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
           <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->

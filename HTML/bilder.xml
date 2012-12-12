@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bilder><!--Anzahl: 1-->
-  <bild id="bild_protagonist" pfad="../../Bilder/Szene1/Protagonist1.png" animiert="false">
+  <bild id="bild_protagonist" pfad="../Bilder/Allgemein/Protagonist1.png" animiert="false">
     <abmessungen height="243" width="307"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
         <skalierung>
         <stufe x="1" y="1" z="1"/>
         </skalierung>
   </bild>
-  <bild id="bild_windowoverlay" pfad="../../Bilder/Szene1/windowOverlay.png" animiert="false">
+  <bild id="bild_windowoverlay" pfad="../Bilder/Szene1/windowOverlay.png" animiert="false">
     <abmessungen height="30" width="63"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_bedoverlay" pfad="../../Bilder/Szene1/bedOverlay.png" animiert="false">
+  <bild id="bild_bedoverlay" pfad="../Bilder/Szene1/bedOverlay.png" animiert="false">
     <abmessungen height="27" width="72"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_dooroverlay" pfad="../../Bilder/Szene1/door_overlay.png" animiert="false">
+  <bild id="bild_dooroverlay" pfad="../Bilder/Szene1/door_overlay.png" animiert="false">
     <abmessungen height="36" width="57"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_dummyspot" pfad="../../Bilder/Szene1/dummySpot.png" animiert="false">
+  <bild id="bild_dummyspot" pfad="../Bilder/Szene1/dummySpot.png" animiert="false">
     <abmessungen height="1" width="1"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_hintergrund" pfad="../../Bilder/Szene1/Hintergrund.jpg" animiert="false">
+  <bild id="bild_hintergrund" pfad="../Bilder/Szene1/Hintergrund.jpg" animiert="false">
     <abmessungen height="400" width="800"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_testtileset" pfad="../../Bilder/Szene1/testTileset.png" animiert="true">
+  <bild id="bild_testtileset" pfad="../Bilder/Szene1/testTileset.png" animiert="true">
     <abmessungen height="32" width="96"/>
     <animation fps="3" tile_anzahl="3" tile_width="32"/>
 	<skalierung>

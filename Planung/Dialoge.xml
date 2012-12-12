@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dialoge><!--Anzahl: 1-->
   <dialog id=""><!--Anzahl: 1-N-->
-    <satz sprecher_name="" bild_id=""><!--Anzahl: 1-N-->
+    <satz person_id="" bild_id=""><!--Anzahl: 1-N-->
       <!--Name des Sprechers: string-->
       <!--ID des anzuzeigenden Bildes: int-->
       <!--Was er sagt: string-->

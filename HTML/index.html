@@ -6,18 +6,19 @@
 <link rel="stylesheet" type="text/css" href="Netzwerkstar.css"/>
 <script type="text/javascript" src="../JS/external/jquery.js"></script>
 <script type="text/javascript" src="../JS/core/helper.js"></script>
-<script type="text/javascript" src="../JS/lokalerSpeicher.js"></script>
+<!--<script type="text/javascript" src="../JS/lokalerSpeicher.js"></script>-->
+<script type="text/javascript" src="../JS/core/pictureParser.js"></script>
 <script type="text/javascript" src="../JS/core/sceneParser.js"></script>
 </head>
 
 <!--<body onLoad="lokalerspeicher_initialisieren('../Bilder/bilder.xml','../Bilder/');">-->
-<body>
-<div> <svg xmlns="http://www.w3.org/2000/svg"
+<body onLoad="ladeBilder();getSceneInformation('Szene_1', 'testSzenen.xml');">
+<!--<div> <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
      version="1.1" baseProfile="full">
 
   <rect id="ladebalken" width="0" height="50" x="0" y="0" rx="3" stroke="lightblue" stroke-width="2" fill="blue"/>
-  </svg> </div>
-<canvas id="dummySpot"></canvas>
+  </svg> </div>-->
+<!--<canvas id="dummySpot"></canvas>-->
 </body>
 </html>
