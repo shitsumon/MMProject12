@@ -5,7 +5,7 @@
     to enhance the readability for all participants:
 
     -- All structs, global variables and helper function belong into this file to separate it from the actual application logic
-    -- global variables need to be marked as such, so the naming convention is to start ever global variable with a lower 'g' character
+    -- global variables need to be marked as such, so the naming convention is to start every global variable with a lower 'g' character
     -- When editing this file in order to introduce some new variables please mark the js-file with a comment in the new varables/structs are used
 
     At the time you link your js-file to the correspondig HTML document obey the following link order:
@@ -95,3 +95,44 @@ var gMRset             = false;// Flag which marks if the stepwidth of the curre
 var gVelocityParam     = 25.0; // Movement speed parameter
 var gVecX              = 0.0;  // Computed stepwidth in x direction
 var gVecY              = 0.0;  // Computed stepwidth in y direction
+
+/******************
+ *pictureParser.js*
+ ******************/
+var gBilder=new Object();
+gBilder.anzahl=0;
+gBilder.geladen=0;
+
+var gbilderXMLPfad="../../Bilder/Bilder.xml";
+
+function Abmessungen(_height, _width){
+	this.height=_height;
+	this.width=_width;
+}
+
+function Animation(_fps, _tile_anzahl, _tile_width){
+	this.fps=_fps;
+	this.tile_anzahl=_tile_anzahl;
+	this.tile_width=_tile_width;
+}
+
+function Skalierung(_x, _y, _z){
+	this.x=_x;
+	this.y=_y;
+	this.z=_z;
+}
+
+function Bild(_id, _pfad, _abmessungen, _animiert, _animation, _skalierungsstufen){
+	this.id=_id;
+	this.pfad=_pfad;
+	this.abmessungen=_abmessungen;
+	this.animiert=_animiert;
+	this.animation=_animation;
+	this.bild=new Image();
+	this.bild.onload=function(){
+		gBilder.geladen++;
+		aktualisiereLadebalken();
+	}
+	this.bild.src=_pfad;
+	this.skalierung=new Array(_skalierungsstufen);
+}
