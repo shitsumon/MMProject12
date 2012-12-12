@@ -32,6 +32,7 @@ function heroMovement(){
 
         gVecX = Math.abs(heroX - targetX) / gVelocityParam;
         gVecY = Math.abs(heroY - targetY) / gVelocityParam;
+        gMRset = true; //Comment this out for a decelerated movement
     }
 
     var newHx = 0;

@@ -7,6 +7,7 @@
     information to create a proper looking game scene.
 */
 
+
 /*
     getSceneInformation() -
 
@@ -31,87 +32,95 @@ function getSceneInformation(sceneID, sceneFilename){
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
 
-/*
-  If the JQuery ajax request turns out to be not
-  an option, it might be doable with an XMLHttpRequest Object!
+    $.get(sceneFilename, function(data){
+              $(data).find('szene').each(function(){
+                                             var currentScene = $(this);
 
-  var xmlRequestObject = new XMLHttpRequest();
-  try
-  {
-    xmlRequestObject.open("GET", sceneFilename, false);
-    xmlRequestObject.send(null);
-  }
-  catch (e) {
-    window.alert("Unable to load the requested file.");
-    return;
-  }
+                                             if(sceneID === currentScene.attr('id')){
 
-  alert(xmlRequestObject.responseXML);
-*/
+                                                 $(currentScene).find('hg_statisch_objekt').each(function(){
+                                                                                                     sceneObject.staticBackgroundObjects.push(getSceneElementData($(this)));
+                                                                                                 })
 
-    if(window.DOMParser)
-    var parser = new DOMParser();
+                                                 $(currentScene).find('hg_animiert_objekt').each(function(){
+                                                                                                     sceneObject.dynamicBackgroundObjects.push(getSceneElementData($(this)));
+                                                                                                 })
 
-        var test = $.ajax(sceneFilename)
-        .done(function() { alert("success"); })
-        .fail(function() { alert("error"); })
-        .always(function() { alert("complete"); });
+                                                 $(currentScene).find('vg_statisch_objekt').each(function(){
+                                                                                                     sceneObject.staticForegroundObjects.push(getSceneElementData($(this)));
+                                                                                                 })
 
-        alert(test.responseXML);
+                                                 $(currentScene).find('vg_animiert_objekt').each(function(){
+                                                                                                     sceneObject.dynamicForegroundObjects.push(getSceneElementData($(this)));
+                                                                                                 })
 
-        /*open xml file and search scene tag with input scene id*/
-                   $.ajax({
-                   url: sceneFilename,
-                   type: "GET",
-                   dataType: "xml",
-                   //async: false, //this not the best way, blocks browser until finished
-                   success:function(xmlContent){
-                               alert("gotXML");
-                               //iterate over each scene object and check its id against input id
-                               $(xmlContent).find('szene').each(function(){
-                                                                    var sceneObject = $(this);
-                                                                    alert(sceneObject.attr('id'));
-                                                                    alert(sceneID);
-                                                                    if(sceneObject.attr('id') === sceneID){
-                                                                        alert("found object!");
-                                                                        //parse out static background objects
-                                                                        $(sceneObject).find('hg_statisch_objekt').each(function(){
-                                                                                                                           alert("now get info!");
-                                                                                                                           var hgStaticXMLObj = $(this);
-                                                                                                                           var hgStaticObject = new objectStruct(hgStaticXMLObj.attr('bild_id'),
-                                                                                                                                                                 hgStaticXMLObj.attr('dialog_id'));
-                                                                                                                           alert(hgStaticXMLObj.attr('bild_id'));
-                                                                                                                          alert(hgStaticXMLObj.attr('dialog_id'));
+                                                 $(currentScene).find('person').each(function(){
+                                                                                        sceneObject.persons.push(getPersonElementData($(this)));
+                                                                                    })
 
-                                                                                                                           hgStaticObject.clickable     = hgStaticXMLObj.attr('klickbar') === "true";
-                                                                                                                           hgStaticObject.position.xPos = parseInt(hgStaticXMLObj.find('position').attr('x'));
-                                                                                                                           hgStaticObject.position.yPos = parseInt(hgStaticXMLObj.find('position').attr('y'));
-                                                                                                                           hgStaticObject.size.width    = parseInt(hgStaticXMLObj.find('groesse').attr('width'));
-                                                                                                                           hgStaticObject.size.height   = parseInt(hgStaticXMLObj.find('groesse').attr('height'));
+                                             }
 
-                                                                                                                           alert(hgStaticXMLObj.find('position').attr('x'));
-                                                                                                                           alert(hgStaticXMLObj.find('position').attr('y'));
-                                                                                                                           alert(hgStaticXMLObj.find('groesse').attr('width'));
-                                                                                                                           alert(hgStaticXMLObj.find('groesse').attr('height'));
-                                                                                                                           alert(hgStaticXMLObj.attr('klickbar'));
+                                         })
+          })
 
-                                                                                                                           alert(hgStaticObject.imageID);
-                                                                                                                           alert(hgStaticObject.dialogueID);
-                                                                                                                           alert(hgStaticObject.position.xPos);
-                                                                                                                           alert(hgStaticObject.position.yPos);
-                                                                                                                           alert(hgStaticObject.size.width);
-                                                                                                                           alert(hgStaticObject.size.height);
-                                                                                                                           alert(hgStaticObject.clickable);
+//    alert("Scene ID:" + sceneObject.sceneID);
+//    alert("hg_static image id: "   + sceneObject.staticBackgroundObjects[0].imageID);
+//    alert("hg_static dialog id: "  + sceneObject.staticBackgroundObjects[0].dialogueID);
+//    alert("hg_static position-x: " + sceneObject.staticBackgroundObjects[0].position.xPos);
+//    alert("hg_static position-y: " + sceneObject.staticBackgroundObjects[0].position.yPos);
+//    alert("hg_static width: "      + sceneObject.staticBackgroundObjects[0].size.width);
+//    alert("hg_static height: "     + sceneObject.staticBackgroundObjects[0].size.height);
 
-                                                                                                                           sceneObject.staticBackgroundObjects.push(hgStaticObject);
+//    alert("hg_dynamic image id: "   + sceneObject.dynamicBackgroundObjects[0].imageID);
+//    alert("hg_dynamic dialog id: "  + sceneObject.dynamicBackgroundObjects[0].dialogueID);
+//    alert("hg_dynamic position-x: " + sceneObject.dynamicBackgroundObjects[0].position.xPos);
+//    alert("hg_dynamic position-y: " + sceneObject.dynamicBackgroundObjects[0].position.yPos);
+//    alert("hg_dynamic width: "      + sceneObject.dynamicBackgroundObjects[0].size.width);
+//    alert("hg_dynamic height: "     + sceneObject.dynamicBackgroundObjects[0].size.height);
 
-                                                                                                                           //need to find a way to return object from asynchronous ajax request!!!
-                                                                                                                })
-                                                                    }
-                                                                })
-                           }
-               }).done(function() { alert("success");})
-                 .fail(function() { alert("error"); });
+
+    $('body').append($('<div/>', {'id':'root_div'})); //root tag
+
+    var newCanvas = $('<canvas/>',{'id':'canvas_bg_static'}) //static background canvas
+        .width($(window).width)
+        .height($(window).height);
+
+    $('#root_div').append(newCanvas);
+
+
+}
+
+function getSceneElementData(sceneElement){
+
+    tmpObject = new objectStruct(sceneElement.attr('bild_id'),
+                                 sceneElement.attr('dialog_id'),
+                                 sceneElement.attr('klickbar') === "true");
+    tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
+    tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
+    tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
+    tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
+
+//    alert("Image id: " + sceneElement.attr('bild_id'));
+//    alert("dialog id: " + sceneElement.attr('dialog_id'));
+//    alert("Klickbar: " + sceneElement.attr('klickbar') === "true");
+//    alert("PosX: " + parseInt(sceneElement.find('position').attr('x')));
+//    alert("PosY: " + parseInt(sceneElement.find('position').attr('y')));
+//    alert("width: " + parseInt(sceneElement.find('groesse').attr('width')));
+//    alert("height: " + parseInt(sceneElement.find('groesse').attr('height')));
+
+    return tmpObject;
+}
+
+function getPersonElementData(sceneElement){
+
+    tmpObject = new personStruct(sceneElement.attr('id'),
+                                 sceneElement.attr('bild_id'));
+    tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
+    tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
+    tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
+    tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
+
+    return tmpObject;
 }
 
 /*
@@ -122,7 +131,5 @@ function getSceneInformation(sceneID, sceneFilename){
 */
 $(document).ready(function(){
 
-                      getSceneInformation("Szene_1", sceneXML);
-                      var test;
-
+                      getSceneInformation("Szene_1", "testSzenen.xml");
                   });
