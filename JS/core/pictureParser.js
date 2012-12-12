@@ -23,23 +23,23 @@ function verarbeiteXML(daten){
 		id,
 		$(bild).attr("pfad"),
 		new Abmessungen(
-			$(bild).find("abmessungen").attr("height"),
-			$(bild).find("abmessungen").attr("width")
+			parseInt($(bild).find("abmessungen").attr("height")),
+			parseInt($(bild).find("abmessungen").attr("width"))
 			),
 		$(bild).attr("animiert")==="false"?false:true,
 		new Animation(
-		$(bild).find("animation").attr("fps"),
-		$(bild).find("animation").attr("tile_anzahl"),
-		$(bild).find("animation").attr("tile_width")
+		parseFloat($(bild).find("animation").attr("fps")),
+		parseInt($(bild).find("animation").attr("tile_anzahl")),
+		parseInt($(bild).find("animation").attr("tile_width"))
 		),
-		$(bild).find("stufe").length
+		parseInt($(bild).find("stufe").length)
 		);
 		
 		$(bild).find("stufe").each(function(index, stufe) {
            gBilder[id].skalierung[index]=new Skalierung(
-			   $(stufe).attr("x"),
-			   $(stufe).attr("y"),
-			   $(stufe).attr("z")
+			   parseFloat($(stufe).attr("x")),
+			   parseFloat($(stufe).attr("y")),
+			   parseInt($(stufe).attr("z"))
 		   );
         });
     });
@@ -49,5 +49,5 @@ function verarbeiteXML(daten){
 wird von der onload-Funktion jedes Bildes aufgerufen, um den Ladevorgang anzuzeigen
 */
 function aktualisiereLadebalken(){
-//	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
+	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
 }

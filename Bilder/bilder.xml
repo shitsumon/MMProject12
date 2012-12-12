@@ -35,4 +35,11 @@
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
+  <bild id="bild_testtileset" pfad="../../Bilder/Szene1/testTileset.png" animiert="true">
+    <abmessungen height="32" width="96"/>
+    <animation fps="3" tile_anzahl="3" tile_width="32"/>
+	<skalierung>
+        <stufe x="1" y="1" z="1"/>
+	</skalierung>
+  </bild>
 </bilder>
