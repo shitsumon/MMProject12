@@ -3,13 +3,8 @@ läd alle Bilder aus der XML-Datei beim Aufruf der Seite
 .get erhält den Pfad zur XML und stellt ein XMLDocument-Object bereit -> daten
 bestimmt den typ des zu ladenden Dokumentes -> "xml"
 */
-<<<<<<< HEAD
-function ladeBilder(){
-    jQuery.get(gbilderXMLPfad,function(daten){
-=======
 function ladeBilder(){		
 	jQuery.get(gbilderXMLPfad,function(daten){
->>>>>>> 37da2cdd030134adbdc9eb16adf0d306c3cfb63a
 		verarbeiteXML(daten);
     },"xml");
 }
@@ -37,19 +32,11 @@ function verarbeiteXML(daten){
 
                                 $(bild).attr("animiert") === "false" ? false : true,
 
-<<<<<<< HEAD
-                                new Animation(
+                                new Animationsmerkmale(
                                     parseFloat($(bild).find("animation").attr("fps")),
                                     parseInt($(bild).find("animation").attr("tile_anzahl")),
                                     parseInt($(bild).find("animation").attr("tile_width"))
-                                    ),
-=======
-                                new Animationsmerkmale(
-                                parseFloat($(bild).find("animation").attr("fps")),
-                                parseInt($(bild).find("animation").attr("tile_anzahl")),
-                                parseInt($(bild).find("animation").attr("tile_width"))
                                 ),
->>>>>>> 37da2cdd030134adbdc9eb16adf0d306c3cfb63a
 
                                 parseInt($(bild).find("stufe").length)
 		);
