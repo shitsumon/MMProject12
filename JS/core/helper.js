@@ -99,22 +99,22 @@ var gVecY              = 0.0;  // Computed stepwidth in y direction
 /******************
  *pictureParser.js*
  ******************/
-var gBilder=new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
-gBilder.anzahl=0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
-gBilder.geladen=0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
-							Ladebalken genutzt werden*/
+var gBilder			= new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
+gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
+gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
+									Ladebalken genutzt werden*/
 
-var gbilderXMLPfad="../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
+var gbilderXMLPfad	= "../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
-	this.height=_height;	//Pixel int
-	this.width=_width;		//Pixel int
+	this.height	= _height;	//Pixel int
+	this.width	= _width;	//Pixel int
 }
 
 function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){	//Prototyp für die Bildanimation
-	this.fps=_fps;					//Bilder pro Sekunde		-> float
-	this.tile_anzahl=_tile_anzahl;	//Anzahl der Einzelbilder	-> int
-	this.tile_width=_tile_width;	//Breite eines Einzelbildes	-> Pixel int
+	this.fps			= _fps;			//Bilder pro Sekunde		-> float
+	this.tile_anzahl	= _tile_anzahl;	//Anzahl der Einzelbilder	-> int
+	this.tile_width		= _tile_width;	//Breite eines Einzelbildes	-> Pixel int
 }
 
 function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält x/y-Skalierung in % und z-Ebene
@@ -125,33 +125,59 @@ function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält
 
 //Prototyp für ein Bild, nutzt alle vorherigen Prototypen und kümmert sich um das Laden der eigentlichen Bilder
 function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalierungsstufen){
-	this.id=_id;					//ID des Bildes					-> string
-	this.pfad=_pfad;				//Dateipfad						-> String
-	this.abmessungen=_abmessungen;	//Abmessungen in Pixel			-> Abmessungen
-	this.animiert=_animiert;		//animiert oder nicht			-> boolean
-	this.animationsmerkmale=_animationsmerkmale;//Eigenschaften der Animation	-> Animationsmerkmale
-	this.bild=new Image();			//das eigentliche Bild			-> Image
+	this.id					= _id;					//ID des Bildes					-> string
+	this.pfad				= _pfad;				//Dateipfad						-> String
+	this.abmessungen		= _abmessungen;			//Abmessungen in Pixel			-> Abmessungen
+	this.animiert			= _animiert;			//animiert oder nicht			-> boolean
+	this.animationsmerkmale	= _animationsmerkmale;	//Eigenschaften der Animation	-> Animationsmerkmale
+	this.bild				= new Image();			//das eigentliche Bild			-> Image
 	this.bild.onload=function(){	/*aufgerufen nachdem das Bilde geladen wurde*/
 		gBilder.geladen++;			/*Zähler für die fertig geladenen Bilder -> int*/
 		aktualisiereLadebalken();	/*Hook für den Ladebalken*/
 		statusPruefen();			/*Hook zur Benachrichtigung: Laden beendet*/
 	}
-	this.bild.src=_pfad;			//initiiert das Laden des Bilde	-> string
-	this.skalierung=new Array(_skalierungsstufen);//				-> Skalierung
+	this.bild.src			=_pfad;					//initiiert das Laden des Bilde	-> string
+	this.skalierung			= new Array(_skalierungsstufen);//						-> Skalierung
 }
 
 /*********************
  *pictureAnimation.js*
  *********************/
 //verwaltet die Animationen; enthält die zugehörigen Timer als Attribute, erreichbar über die Bild-ID
-var gAnimationTimer=new Object();
-gAnimationTimer.anzahl=0;//zählt die aktiven Timer im Objekt -> int
+var gAnimationTimer		= new Object();
+gAnimationTimer.anzahl	= 0;		//zählt die aktiven Timer im Objekt -> int
 
 //Prototyp für ein animiertes Bild-Objekt, speichert den zugehörigen Timer
 function Animation(_canvas_id, _bild_id){
-	this.bild_nr=0;				//der Index des aktuell angezeigten Einzelbildes	-> int
-	this.canvas_id=_canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
-	this.bild_id=_bild_id;		//ID des Bildes, das genutzt wird					-> string
-	this.timer=null;			//Timer der Animation, wird beim Erzeugen gesetzt	-> Timer (int)
-	this.running=true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
+	this.bild_nr	= 0;			//der Index des aktuell angezeigten Einzelbildes	-> int
+	this.canvas_id	= _canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
+	this.bild_id	= _bild_id;		//ID des Bildes, das genutzt wird					-> string
+	this.timer		= null;			//Timer der Animation, wird beim Erzeugen gesetzt	-> Timer (int)
+	this.running	= true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
 }
+
+/*****************
+ *dialogParser.js*
+ *****************/
+ //der Pfad zur Dialoge.xml
+ var gDialogeXMLPfad	= "../../Dialoge.xml";
+ //verwaltet alle Dialoge aus der XML-Datei
+ var gDialoge			= new Object();
+ //ein Zähler für die Anzahl der Dialoge
+ gDialoge.anzahl		= 0;
+ 
+ //Prototyp für einen Dialog mit mindestens einem Satz
+ function Dialog(_id, _anzahl_saetze){
+	 
+	 this.id			= _id;							//die ID dieses Dialogs					-> string
+	 this.anzahl_saetze	= _anzahl_saetze;				//die Anzahl der Sätze in diesem Dialog	-> int
+	 this.saetze		= new Array(_anzahl_saetze);	//die Sätze des Dialogs					-> Satz
+ }
+ 
+ //Prototyp für einen Satz in einem Dialog
+ function Satz(_person_id, _bild_id, _inhalt){
+	 
+	 this.person_id	= _person_id;	//ID der sprechenden Person voraussichtlich ihr Anzeigename	-> string
+	 this.bild_id	= _bild_id;		//ID des anzuzeigenden Bildes aus gBilder					-> string
+	 this.inhalt	= _inhalt;		//der Text dieses Satzes									-> string
+ }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dialoge>
+  <dialog id="dialog_eins">
+    <satz person_id="person_protagonist1" bild_id="bild_protagonist1">Hallo Welt!</satz>
+	<satz person_id="person_protagonist2" bild_id="bild_protagonist2">Sei doch ruhig!</satz>
+  </dialog>
+   <dialog id="dialog_zwei">
+    <satz person_id="person_protagonist1" bild_id="bild_protagonist1">Lorem ipsum dolor sit amet.</satz>
+  </dialog>
+</dialoge>

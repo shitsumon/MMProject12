@@ -5,14 +5,14 @@ bestimmt den typ des zu ladenden Dokumentes -> "xml"
 */
 function ladeBilder(){		
 	jQuery.get(gbilderXMLPfad,function(daten){
-		verarbeiteXML(daten);
+		verarbeiteBilderXML(daten);
     },"xml");
 }
 
 /*
 speichert die ausgelesenen Bilder und ihre Eigenschaften im globalen Objekt -> gBilder
 */
-function verarbeiteXML(daten){
+function verarbeiteBilderXML(daten){
 	var id;
 
     gBilder.anzahl = $(daten).find("bild").length;
@@ -65,6 +65,6 @@ Hook für die Aktion nach dem Laden aller Bilder
 function statusPruefen(){
 	//vergleicht die Anzahl geladener mit der Gesamtzahl der Bilder
 	if(gBilder.geladen==gBilder.anzahl){
-		alert("Alle Bilder geladen!");
+//		alert("Alle Bilder geladen!");
 	}
 }
