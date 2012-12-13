@@ -107,20 +107,20 @@ gBilder.geladen=0;			/*Zähler für die vollständig geladenen Bilder, wird von 
 var gbilderXMLPfad="../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
-	this.height=_height;
-	this.width=_width;
+	this.height=_height;	//Pixel int
+	this.width=_width;		//Pixel int
 }
 
 function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){	//Prototyp für die Bildanimation
-	this.fps=_fps;
-	this.tile_anzahl=_tile_anzahl;
-	this.tile_width=_tile_width;
+	this.fps=_fps;					//Bilder pro Sekunde		-> float
+	this.tile_anzahl=_tile_anzahl;	//Anzahl der Einzelbilder	-> int
+	this.tile_width=_tile_width;	//Breite eines Einzelbildes	-> Pixel int
 }
 
 function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält x/y-Skalierung in % und z-Ebene
-	this.x=_x;
-	this.y=_y;
-	this.z=_z;
+	this.x=_x;	//Skalierung in x-Richtung		-> % float
+	this.y=_y;	//Skalierung in y-Richtung		-> % float
+	this.z=_z;	//z-Index der Skalierungsstufe	-> int
 }
 
 //Prototyp für ein Bild, nutzt alle vorherigen Prototypen und kümmert sich um das Laden der eigentlichen Bilder
@@ -147,10 +147,11 @@ function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalier
 var gAnimationTimer=new Object();
 gAnimationTimer.anzahl=0;//zählt die aktiven Timer im Objekt -> int
 
+//Prototyp für ein animiertes Bild-Objekt, speichert den zugehörigen Timer
 function Animation(_canvas_id, _bild_id){
-	this.bild_nr=0;
-	this.canvas_id=_canvas_id;
-	this.bild_id=_bild_id;
-	this.timer=null;
-	this.running=true;
+	this.bild_nr=0;				//der Index des aktuell angezeigten Einzelbildes	-> int
+	this.canvas_id=_canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
+	this.bild_id=_bild_id;		//ID des Bildes, das genutzt wird					-> string
+	this.timer=null;			//Timer der Animation, wird beim Erzeugen gesetzt	-> Timer (int)
+	this.running=true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
 }
