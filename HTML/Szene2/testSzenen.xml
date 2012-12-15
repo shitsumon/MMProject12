@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<szenen>
+  <szene id="Szene_1">
+    <ebenen>
+
+      <hg_statisch>
+        <hg_statisch_objekt bild_id="bild_hintergrund" dialog_id="#none#" klickbar="false">
+          <position x="0" y="0"/>
+          <groesse width="1280" height="720"/>
+        </hg_statisch_objekt>
+        <!--<hg_statisch_objekt bild_id="bild_dummyspot" dialog_id="#none#" klickbar="false">
+          <position x="0" y="0"/>
+          <groesse width="1" height="1"/>
+        </hg_statisch_objekt>-->
+      </hg_statisch>
+
+      <hg_animiert>
+        <!--<hg_animiert_objekt bild_id="bild_bedoverlay" dialog_id="dia2" klickbar="false">
+          <position x="100" y="125"/>
+          <groesse width="50" height="60"/>
+        </hg_animiert_objekt>-->
+      </hg_animiert>
+
+      <personen>
+        <person person_id="protagonist1" bild_id="bild_protagonist">
+          <position x="90" y="90"/>
+          <groesse width="243" height="307"/>
+        </person>
+      </personen>
+
+      <vg_statisch>
+        <vg_statisch_objekt bild_id="bild_dooroverlay" dialog_id="#none#" klickbar="true">
+          <position x="28" y="30"/>
+          <groesse width="57" height="36"/>
+        </vg_statisch_objekt>
+        <vg_statisch_objekt bild_id="bild_windowoverlay" dialog_id="#none#" klickbar="true">
+          <position x="80" y="30"/>
+          <groesse width="200" height="400"/>
+        </vg_statisch_objekt>
+        <vg_statisch_objekt bild_id="bild_bedoverlay" dialog_id="#none#" klickbar="true">
+          <position x="80" y="84"/>
+          <groesse width="72" height="27"/>
+        </vg_statisch_objekt>
+      </vg_statisch>
+
+      <vg_animiert>
+        <!--<vg_animiert_objekt bild_id="vgDynImg1" dialog_id="dia4" klickbar="false">
+          <position x="200" y="300"/>
+          <groesse width="450" height="230"/>
+        </vg_animiert_objekt>-->
+      </vg_animiert>
+
+    </ebenen>
+    <raetsel>
+      <schritt objekt_id="quiz1" dialog_reaktion_id="dia4" dialog_hinweis_id="dia2" code="XYZ123">
+        <veraenderung>
+          <objekt id_alt="vgStImg1" id_neu="vgStImg2"/>
+        </veraenderung>
+      </schritt>
+    </raetsel>
+  </szene>
+</szenen>
