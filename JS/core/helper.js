@@ -104,7 +104,7 @@ gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, w
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
 									Ladebalken genutzt werden*/
 
-var gbilderXMLPfad	= "../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
+var gbilderXMLPfad	= "../../Bilder/bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
 	this.height	= _height;	//Pixel int
