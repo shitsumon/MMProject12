@@ -181,3 +181,17 @@ function Animation(_canvas_id, _bild_id){
 	 this.bild_id	= _bild_id;		//ID des anzuzeigenden Bildes aus gBilder					-> string
 	 this.inhalt	= _inhalt;		//der Text dieses Satzes									-> string
  }
+
+/***********
+ *Utilities*
+ ***********/
+
+//Calculates the effective pixel value from a CSS percentage string
+function pix2perc(absolute, pixelValue){
+    return (100 * pixelValue) / absolute + "%";
+}
+
+//Generates a CSS percentage from a numeric pixel value
+function perc2pix(absolute, percString){
+    return (absolute / 100) * parseInt(percString.replace("%",""));
+}

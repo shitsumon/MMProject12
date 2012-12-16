@@ -88,7 +88,7 @@ function heroMovement(){
         //in case the hero object collided with a border on its way to the target,
         //the object is set one pixel away from it, to avoid remaining sticked
         //to the border
-        if((hero.offset().top + hero.outerHeight()) > ($(window).height / 2)){
+        if((hero.offset().top + hero.outerHeight()) > ($(window).height() / 2)){
             newPos = {
                 left: hero.offset().left,
                 top: hero.offset().top += 1
@@ -104,7 +104,7 @@ function heroMovement(){
             hero.offset(newPos);
         }
 
-        if((hero.offset().left + hero.outerWidth()) > ($(window).width / 2)){
+        if((hero.offset().left + hero.outerWidth()) > ($(window).width() / 2)){
             newPos = {
                 left: hero.offset().left += 1,
                 top: hero.offset().top

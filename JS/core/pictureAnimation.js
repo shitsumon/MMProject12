@@ -3,20 +3,20 @@ zuständig für das Erzeugen der Animationen. Schreibt Einzelbilder in einen geg
 */
 function animiereCanvas(canvas_id, bild_id){
 	
-	//falls noch kein EIntrag für dieses Bild vorhanden ist, erzeuge ihn
-	if(typeof gAnimationTimer[bild_id]==="undefined"){
+    //falls noch kein Eintrag für dieses Bild vorhanden ist, erzeuge ihn
+    if(typeof gAnimationTimer[bild_id] === "undefined"){
 		//legt einen neuen Eintrag an
-		gAnimationTimer[bild_id]=new Animation(
+        gAnimationTimer[bild_id] = new Animation(
 				canvas_id,
 				bild_id
 			);
-		//startet die Aanimation
+        //startet die Animation
 		starteAnimation(bild_id);
 	}
 
 	//erfasst den Canvas und liest den Zeichenkontext aus
-	var canvas=$("#"+canvas_id)[0];	
-	var ctx=canvas.getContext("2d");
+    var canvas = $("#" + canvas_id)[0];
+    var ctx = canvas.getContext("2d");
 	
 	//löscht das aktuelle Bild
 	ctx.clearRect ( 0, 0, canvas.width, canvas.height);
@@ -30,38 +30,37 @@ function animiereCanvas(canvas_id, bild_id){
 	width, height Breite und Höhe des Bildes im Canvas -> Pixel int
 	*/
 	ctx.drawImage(
-	gBilder[bild_id].bild,
-	/*aktuelles Einzelbild * Breite eines Einzelbildes*/
-	gAnimationTimer[bild_id].bild_nr*gBilder[bild_id].animationsmerkmale.tile_width,
-	0,
-	gBilder[bild_id].animationsmerkmale.tile_width,
-	gBilder[bild_id].abmessungen.height,
-	0,0,
-	gBilder[bild_id].animationsmerkmale.tile_width,
-	gBilder[bild_id].abmessungen.height);
+            gBilder[bild_id].bild,
+            /*aktuelles Einzelbild * Breite eines Einzelbildes*/
+            gAnimationTimer[bild_id].bild_nr * gBilder[bild_id].animationsmerkmale.tile_width,
+            0,
+            gBilder[bild_id].animationsmerkmale.tile_width,
+            gBilder[bild_id].abmessungen.height,
+            0,
+            0,
+            gBilder[bild_id].animationsmerkmale.tile_width,
+            gBilder[bild_id].abmessungen.height
+                );
 
 	//erhöht den Zähler für das aktuell angezeigte Einzelbild oder setzt ihn zurück
-	gAnimationTimer[bild_id].bild_nr=gAnimationTimer[bild_id].bild_nr<gBilder[bild_id].animationsmerkmale.tile_anzahl-1?
-	gAnimationTimer[bild_id].bild_nr+1:0;
+    gAnimationTimer[bild_id].bild_nr = gAnimationTimer[bild_id].bild_nr < ( gBilder[bild_id].animationsmerkmale.tile_anzahl - 1 )
+            ? (gAnimationTimer[bild_id].bild_nr + 1) : 0;
 }
 
 //stoppt die Animation indem der Timer gelöscht wird
 function stoppeAnimation(bild_id){
 	window.clearInterval(gAnimationTimer[bild_id].timer);
-	gAnimationTimer[bild_id].running=false;
+    gAnimationTimer[bild_id].running = false;
 	gAnimationTimer.anzahl--;
 }
 
 //startet die Animation und erzeugt einen neuen Timer
 function starteAnimation(bild_id){
-	gAnimationTimer[bild_id].timer=window.setInterval(function(){
-					animiereCanvas(
-						gAnimationTimer[bild_id].canvas_id,
-						bild_id);
-					},
-					/*berechnet die Bildwiederholrate -> 1 Sekunde/fps*/
-				(1000/gBilder[bild_id].animationsmerkmale.fps));
-	gAnimationTimer[bild_id].running=true;
+    gAnimationTimer[bild_id].timer = window.setInterval(function(){
+                    animiereCanvas( gAnimationTimer[bild_id].canvas_id, bild_id ); },
+                    (1000 / gBilder[bild_id].animationsmerkmale.fps)
+                                                        );
+    gAnimationTimer[bild_id].running = true;
 	gAnimationTimer.anzahl++;
 }
 

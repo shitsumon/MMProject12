@@ -6,12 +6,8 @@
       <hg_statisch>
         <hg_statisch_objekt bild_id="bild_hintergrund" dialog_id="#none#" klickbar="false">
           <position x="0" y="0"/>
-          <groesse width="1280" height="720"/>
+          <groesse width="800" height="400"/>
         </hg_statisch_objekt>
-        <!--<hg_statisch_objekt bild_id="bild_dummyspot" dialog_id="#none#" klickbar="false">
-          <position x="0" y="0"/>
-          <groesse width="1" height="1"/>
-        </hg_statisch_objekt>-->
       </hg_statisch>
 
       <hg_animiert>

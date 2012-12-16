@@ -21,7 +21,7 @@
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
-  <bild id="bild_dummyspot" pfad="../../Bilder/Szene1/dummySpot.png" animiert="false">
+ <bild id="bild_dummyspot" pfad="../../Bilder/Szene1/dummySpot.png" animiert="false">
     <abmessungen height="1" width="1"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
 	<skalierung>
