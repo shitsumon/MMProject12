@@ -12,42 +12,30 @@
 
       <hg_animiert>
         <hg_animiert_objekt bild_id="bild_bedoverlay" dialog_id="dia2" klickbar="true">
-          <position x="50" y="50"/>
-          <groesse width="100" height="100"/>
-        </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="bild_dooroverlay" dialog_id="#none#" klickbar="true">
-          <position x="25" y="25"/>
+          <position x="70" y="80    "/>
           <groesse width="100" height="100"/>
         </hg_animiert_objekt>
       </hg_animiert>
 
       <personen>
-        <person person_id="protagonist1" bild_id="bild_protagonist">
-          <position x="90" y="90"/>
-          <groesse width="243" height="307"/>
+        <person person_id="protagonist1" bild_id="bild_protagonist1">
+          <position x="50" y="50"/>
+          <groesse width="80" height="80"/>
         </person>
       </personen>
 
       <vg_statisch>
-        <vg_statisch_objekt bild_id="bild_dooroverlay" dialog_id="#none#" klickbar="true">
-          <position x="28" y="30"/>
-          <groesse width="57" height="36"/>
-        </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="bild_windowoverlay" dialog_id="#none#" klickbar="true">
-          <position x="80" y="30"/>
-          <groesse width="200" height="400"/>
-        </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="bild_bedoverlay" dialog_id="#none#" klickbar="true">
-          <position x="80" y="84"/>
-          <groesse width="72" height="27"/>
+          <position x="75" y="23"/>
+          <groesse width="100" height="100"/>
         </vg_statisch_objekt>
       </vg_statisch>
 
       <vg_animiert>
-        <!--<vg_animiert_objekt bild_id="vgDynImg1" dialog_id="dia4" klickbar="false">
-          <position x="200" y="300"/>
-          <groesse width="450" height="230"/>
-        </vg_animiert_objekt>-->
+      <vg_animiert_objekt bild_id="bild_dooroverlay" dialog_id="#none#" klickbar="true">
+        <position x="24" y="25"/>
+        <groesse width="100" height="100"/>
+      </vg_animiert_objekt>
       </vg_animiert>
 
     </ebenen>

@@ -42,4 +42,11 @@
         <stufe x="1" y="1" z="1"/>
 	</skalierung>
   </bild>
+  <bild id="bild_protagonist1" pfad="../../Bilder/Allgemein/Protagonist1.png" animiert="false">
+    <abmessungen height="307" width="243"/>
+    <animation fps="0" tile_anzahl="0" tile_width="0"/>
+        <skalierung>
+        <stufe x="1" y="1" z="1"/>
+        </skalierung>
+  </bild>
 </bilder>

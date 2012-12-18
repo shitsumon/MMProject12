@@ -78,10 +78,10 @@ function drawScene(sceneObject){
 
     $('body').append(newCanvas);
 
-    var canvasContext = $("#canvas_bg_static")[0].getContext("2d");
+    var canvasContext = newCanvas[0].getContext("2d");
 
-    $('#canvas_bg_static')[0].width  = screenWidth;
-    $('#canvas_bg_static')[0].height = screenHeight;
+    newCanvas[0].width  = screenWidth;
+    newCanvas[0].height = screenHeight;
 
     //draw static background objects
     for(var index1 = 0; index1 < sceneObject.staticBackgroundObjects.length; ++index1){
@@ -99,7 +99,7 @@ function drawScene(sceneObject){
     }
 
     //draw dynamic background objects
-    for(var index1 = 0; index1 < sceneObject.dynamicBackgroundObjects.length; ++index1){
+    for(index1 = 0; index1 < sceneObject.dynamicBackgroundObjects.length; ++index1){
 
             if(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].id === sceneObject.dynamicBackgroundObjects[index1].imageID){
 
@@ -107,12 +107,10 @@ function drawScene(sceneObject){
 
                 if(sceneObject.dynamicBackgroundObjects[index1].clickable){
 
-                    alert("clickable");
-
                 newCanvas = $('<canvas/>',
                               {
                                id : canvasID,
-                               onclick:'javascript:gTargetIdentifier=' + canvasID + ';heroMovement();'
+                                  onclick:'javascript:gTargetIdentifier="' + canvasID + '";heroMovement();'
                               }
                              );
 
@@ -123,11 +121,8 @@ function drawScene(sceneObject){
 
                 $('body').append(newCanvas);
 
-//                alert("Screenheight: " + screenHeight + " Screenwidth: " + screenWidth);
-
-//                alert("New Pos: " + perc2pix(screenWidth,  parseInt(sceneObject.dynamicBackgroundObjects[index1].position.xPos)) + "/" +
-//                      perc2pix(screenHeight, parseInt(sceneObject.dynamicBackgroundObjects[index1].position.yPos)));
-
+                newCanvas.css('left', sceneObject.dynamicBackgroundObjects[index1].position.xPos + '%');
+                newCanvas.css('top', sceneObject.dynamicBackgroundObjects[index1].position.yPos + '%');
 
                 var pxWidth = perc2pix(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].abmessungen.width,
                                        sceneObject.dynamicBackgroundObjects[index1].size.width);
@@ -135,18 +130,12 @@ function drawScene(sceneObject){
                 var pxHeight = perc2pix(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].abmessungen.height,
                                        sceneObject.dynamicBackgroundObjects[index1].size.height);
 
-                $('#' + canvasID)[0].width  = pxWidth;
+                newCanvas[0].width  = pxWidth;
 
-                $('#' + canvasID)[0].height = pxHeight;
+                newCanvas[0].height = pxHeight;
 
-                var newPos = {
-                    left: perc2pix(screenWidth,  parseInt(sceneObject.dynamicBackgroundObjects[index1].position.xPos)),
-                    top:  perc2pix(screenHeight, parseInt(sceneObject.dynamicBackgroundObjects[index1].position.yPos))
-                };
 
-                $(canvasID).offset(newPos);
-
-                canvasContext = $('#' + canvasID)[0].getContext("2d");
+                canvasContext = newCanvas[0].getContext("2d");
 
                 canvasContext.drawImage(
                                         gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].bild,
@@ -155,6 +144,148 @@ function drawScene(sceneObject){
                                         pxWidth,
                                         pxHeight
                                        );
+
+            }
+    }
+
+    //draw static foreground objects
+    for(index1 = 0; index1 < sceneObject.staticForegroundObjects.length; ++index1){
+
+            if(gBilder[sceneObject.staticForegroundObjects[index1].imageID].id === sceneObject.staticForegroundObjects[index1].imageID){
+
+                var canvasID = 'canvas_fg_static' + index1;
+
+                if(sceneObject.staticForegroundObjects[index1].clickable){
+
+                newCanvas = $('<canvas/>',
+                              {
+                               id : canvasID,
+                                  onclick:'javascript:gTargetIdentifier="' + canvasID + '";heroMovement();'
+                              }
+                             );
+
+                }else{
+
+                    newCanvas = $('<canvas/>',{'id': canvasID});
+                }
+
+                $('body').append(newCanvas);
+
+                newCanvas.css('left', sceneObject.staticForegroundObjects[index1].position.xPos + '%');
+                newCanvas.css('top', sceneObject.staticForegroundObjects[index1].position.yPos + '%');
+
+                var pxWidth = perc2pix(gBilder[sceneObject.staticForegroundObjects[index1].imageID].abmessungen.width,
+                                       sceneObject.staticForegroundObjects[index1].size.width);
+
+                var pxHeight = perc2pix(gBilder[sceneObject.staticForegroundObjects[index1].imageID].abmessungen.height,
+                                       sceneObject.staticForegroundObjects[index1].size.height);
+
+                newCanvas[0].width  = pxWidth;
+
+                newCanvas[0].height = pxHeight;
+
+
+                canvasContext = newCanvas[0].getContext("2d");
+
+                canvasContext.drawImage(
+                                        gBilder[sceneObject.staticForegroundObjects[index1].imageID].bild,
+                                        0,
+                                        0,
+                                        pxWidth,
+                                        pxHeight
+                                       );
+
+            }
+    }
+
+
+    //draw dynamic foreground objects
+    for(index1 = 0; index1 < sceneObject.dynamicForegroundObjects.length; ++index1){
+
+            if(gBilder[sceneObject.dynamicForegroundObjects[index1].imageID].id === sceneObject.dynamicForegroundObjects[index1].imageID){
+
+                var canvasID = 'canvas_fg_dynamic' + index1;
+
+                if(sceneObject.dynamicForegroundObjects[index1].clickable){
+
+                newCanvas = $('<canvas/>',
+                              {
+                               id : canvasID,
+                                  onclick:'javascript:gTargetIdentifier="' + canvasID + '";heroMovement();'
+                              }
+                             );
+
+                }else{
+
+                    newCanvas = $('<canvas/>',{'id': canvasID});
+                }
+
+                $('body').append(newCanvas);
+
+                newCanvas.css('left', sceneObject.dynamicForegroundObjects[index1].position.xPos + '%');
+                newCanvas.css('top', sceneObject.dynamicForegroundObjects[index1].position.yPos + '%');
+
+                var pxWidth = perc2pix(gBilder[sceneObject.dynamicForegroundObjects[index1].imageID].abmessungen.width,
+                                       sceneObject.dynamicForegroundObjects[index1].size.width);
+
+                var pxHeight = perc2pix(gBilder[sceneObject.dynamicForegroundObjects[index1].imageID].abmessungen.height,
+                                       sceneObject.dynamicForegroundObjects[index1].size.height);
+
+                newCanvas[0].width  = pxWidth;
+
+                newCanvas[0].height = pxHeight;
+
+
+                canvasContext = newCanvas[0].getContext("2d");
+
+                canvasContext.drawImage(
+                                        gBilder[sceneObject.dynamicForegroundObjects[index1].imageID].bild,
+                                        0,
+                                        0,
+                                        pxWidth,
+                                        pxHeight
+                                       );
+
+            }
+    }
+
+    //draw person objects
+    for(index1 = 0; index1 < sceneObject.persons.length; ++index1){
+
+            if(gBilder[sceneObject.persons[index1].imageID].id === sceneObject.persons[index1].imageID){
+
+                var canvasID = 'canvas_person' + index1;
+
+                newCanvas = $('<canvas/>',{'id': canvasID});
+
+                $('body').append(newCanvas);
+
+                newCanvas.css('left', sceneObject.persons[index1].position.xPos + '%');
+                newCanvas.css('top', sceneObject.persons[index1].position.yPos + '%');
+//                newCanvas.css('width', sceneObject.persons[index1].size.width + '%');
+//                newCanvas.css('height', sceneObject.persons[index1].size.height + '%');
+
+
+                var pxWidth = perc2pix(gBilder[sceneObject.persons[index1].imageID].abmessungen.width,
+                                       sceneObject.persons[index1].size.width);
+
+                var pxHeight = perc2pix(gBilder[sceneObject.persons[index1].imageID].abmessungen.height,
+                                       sceneObject.persons[index1].size.height);
+
+                newCanvas[0].width  = pxWidth;
+                newCanvas[0].height = pxHeight;
+
+
+                canvasContext = newCanvas[0].getContext("2d");
+
+                canvasContext.drawImage(
+                                        gBilder[sceneObject.persons[index1].imageID].bild,
+                                        0,
+                                        0,
+                                        pxWidth,
+                                        pxHeight
+                                       );
+
             }
     }
 }
@@ -162,19 +293,19 @@ function drawScene(sceneObject){
 function getSceneElementData(sceneElement){
 
     tmpObject = new objectStruct(sceneElement.attr('bild_id'),
-                                 sceneElement.attr('dialog_id'),
-                                 sceneElement.attr('klickbar') === "true");
+                                 sceneElement.attr('dialog_id'));
     tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
     tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
+    tmpObject.clickable     = sceneElement.attr('klickbar') === "true";
 
     return tmpObject;
 }
 
 function getPersonElementData(sceneElement){
 
-    tmpObject = new personStruct(sceneElement.attr('id'),
+    tmpObject = new personStruct(sceneElement.attr('person_id'),
                                  sceneElement.attr('bild_id'));
     tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
