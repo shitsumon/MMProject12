@@ -31,7 +31,6 @@ function getSceneInformation(sceneID, sceneFilename){
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
 
-    jQuery.ajaxSetup({async:false});
 
     /*Extract scene information from xml file*/
     $.get(sceneFilename, function(data){
@@ -73,35 +72,89 @@ function getSceneInformation(sceneID, sceneFilename){
 /*Not finished*/
 function drawScene(sceneObject){
 
-    $('body').append($('<div/>', {'id':'root_div'}));
+    var screenWidth  = $(window).width();
+    var screenHeight = $(window).height();
+    var newCanvas = $('<canvas/>',{id:'canvas_bg_static'});
 
-    var newCanvas = $('<canvas/>',{'id':'canvas_bg_static'});
+    $('body').append(newCanvas);
 
-    $('#root_div').append(newCanvas);
+    var canvasContext = $("#canvas_bg_static")[0].getContext("2d");
 
-    var canvasContext = $('#canvas_bg_static')[0].getContext('2d');
+    $('#canvas_bg_static')[0].width  = screenWidth;
+    $('#canvas_bg_static')[0].height = screenHeight;
 
-    $('#canvas_bg_static').width($(window).width());
-    $('#canvas_bg_static').height($(window).height());
-
-
+    //draw static background objects
     for(var index1 = 0; index1 < sceneObject.staticBackgroundObjects.length; ++index1){
 
             if(gBilder[sceneObject.staticBackgroundObjects[index1].imageID].id === sceneObject.staticBackgroundObjects[index1].imageID){
 
-//                alert("PosX:" + sceneObject.staticBackgroundObjects[index1].position.xPos);
-//                alert("PosY:" + sceneObject.staticBackgroundObjects[index1].position.yPos);
-
-//                alert("Display width: " + sceneObject.staticBackgroundObjects[index1].size.width);
-//                alert("Display height: " + sceneObject.staticBackgroundObjects[index1].size.height);
-
                 canvasContext.drawImage(
                                         gBilder[sceneObject.staticBackgroundObjects[index1].imageID].bild,
-                                        sceneObject.staticBackgroundObjects[index1].position.xPos,
-                                        sceneObject.staticBackgroundObjects[index1].position.yPos,
-                                        sceneObject.staticBackgroundObjects[index1].size.width,
-                                        sceneObject.staticBackgroundObjects[index1].size.height
-                                        );
+                                        perc2pix(screenWidth, parseInt(sceneObject.staticBackgroundObjects[index1].position.xPos)),
+                                        perc2pix(screenHeight, parseInt(sceneObject.staticBackgroundObjects[index1].position.yPos)),
+                                        perc2pix(screenWidth, parseInt(sceneObject.staticBackgroundObjects[index1].size.width)),
+                                        perc2pix(screenHeight, parseInt(sceneObject.staticBackgroundObjects[index1].size.height))
+                                       );
+            }
+    }
+
+    //draw dynamic background objects
+    for(var index1 = 0; index1 < sceneObject.dynamicBackgroundObjects.length; ++index1){
+
+            if(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].id === sceneObject.dynamicBackgroundObjects[index1].imageID){
+
+                var canvasID = 'canvas_bg_dynamic' + index1;
+
+                if(sceneObject.dynamicBackgroundObjects[index1].clickable){
+
+                    alert("clickable");
+
+                newCanvas = $('<canvas/>',
+                              {
+                               id : canvasID,
+                               onclick:'javascript:gTargetIdentifier=' + canvasID + ';heroMovement();'
+                              }
+                             );
+
+                }else{
+
+                    newCanvas = $('<canvas/>',{'id': canvasID});
+                }
+
+                $('body').append(newCanvas);
+
+//                alert("Screenheight: " + screenHeight + " Screenwidth: " + screenWidth);
+
+//                alert("New Pos: " + perc2pix(screenWidth,  parseInt(sceneObject.dynamicBackgroundObjects[index1].position.xPos)) + "/" +
+//                      perc2pix(screenHeight, parseInt(sceneObject.dynamicBackgroundObjects[index1].position.yPos)));
+
+
+                var pxWidth = perc2pix(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].abmessungen.width,
+                                       sceneObject.dynamicBackgroundObjects[index1].size.width);
+
+                var pxHeight = perc2pix(gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].abmessungen.height,
+                                       sceneObject.dynamicBackgroundObjects[index1].size.height);
+
+                $('#' + canvasID)[0].width  = pxWidth;
+
+                $('#' + canvasID)[0].height = pxHeight;
+
+                var newPos = {
+                    left: perc2pix(screenWidth,  parseInt(sceneObject.dynamicBackgroundObjects[index1].position.xPos)),
+                    top:  perc2pix(screenHeight, parseInt(sceneObject.dynamicBackgroundObjects[index1].position.yPos))
+                };
+
+                $(canvasID).offset(newPos);
+
+                canvasContext = $('#' + canvasID)[0].getContext("2d");
+
+                canvasContext.drawImage(
+                                        gBilder[sceneObject.dynamicBackgroundObjects[index1].imageID].bild,
+                                        0,
+                                        0,
+                                        pxWidth,
+                                        pxHeight
+                                       );
             }
     }
 }

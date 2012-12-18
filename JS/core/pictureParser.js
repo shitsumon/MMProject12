@@ -3,10 +3,15 @@ läd alle Bilder aus der XML-Datei beim Aufruf der Seite
 .get erhält den Pfad zur XML und stellt ein XMLDocument-Object bereit -> daten
 bestimmt den typ des zu ladenden Dokumentes -> "xml"
 */
-function ladeBilder(){		
+function ladeBilder(){
+
+    jQuery.ajaxSetup({async:false});
+
 	jQuery.get(gbilderXMLPfad,function(daten){
 		verarbeiteBilderXML(daten);
     },"xml");
+
+    getSceneInformation('Szene_1', 'testSzenen.xml');
 }
 
 /*

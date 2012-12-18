@@ -9,16 +9,6 @@ function sImageItem(name, filename, folder, xPos, yPos){
     this.yPos       = yPos;
 }
 
-//Calculates the effective pixel value from a CSS percentage string
-function pix2perc(absolute, pixelValue){
-    return (100 * pixelValue) / absolute + "%";
-}
-
-//Generates a CSS percentage from a numeric pixel value
-function perc2pix(absolute, percString){
-    return (absolute / 100) * parseInt(percString.replace("%",""));
-}
-
 //Temporary struct which contains vital data of objects within scene 1
 var imageItems = [
             new sImageItem('protagonist1', 'Protagonist1.png', 'Allgemein', 90, 90),

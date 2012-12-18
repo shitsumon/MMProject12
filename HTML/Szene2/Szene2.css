@@ -5,16 +5,24 @@ html, body{
 }
 
 #canvas_bg_static{
-	height:100%;
+        height:100%;
 	width:100%;
+        position:absolute;
 	margin:0px;
-	position:absolute;
 	top:0px;
 	left:0px;
-	z-index:-1;
+        z-index:0;
 }
 
-#protagonist1{
+canvas[id*="canvas_bg_dynamic"]{
+        position: absolute;
+        z-index:1;
+        top: 0px;
+        left: 0px;
+        visibility:visible;
+}
+
+/*#protagonist1{
 	height:45%;
 	position:absolute;
 	top:0px;
@@ -60,4 +68,4 @@ html, body{
 	left:0px;
 	z-index:998;
 	display:none;
-}
+}*/

@@ -192,6 +192,6 @@ function pix2perc(absolute, pixelValue){
 }
 
 //Generates a CSS percentage from a numeric pixel value
-function perc2pix(absolute, percString){
-    return (absolute / 100) * parseInt(percString.replace("%",""));
+function perc2pix(absolute, perc){
+    return (absolute / 100) * perc;
 }
