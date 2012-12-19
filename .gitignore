@@ -4,5 +4,6 @@
 
 *.pro
 *.pro.user
+*.uxf
 
 #Directories to ignore

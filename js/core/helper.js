@@ -28,7 +28,7 @@
 /****************
  *sceneParser.js*
  ****************/
-var sceneXML = "testSzenen.xml"; //there is currently an issue with relative pathnames
+var sceneXML = "szenen.xml"; //there is currently an issue with relative pathnames
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -105,7 +105,7 @@ gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, w
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
 									Ladebalken genutzt werden*/
 
-var gbilderXMLPfad	= "../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
+var gbilderXMLPfad	= "../../bilder/bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
 	this.height	= _height;	//Pixel int
@@ -164,7 +164,7 @@ function Animation(_canvas_id, _bild_id){
  *****************/
  
  //der Pfad zur Dialoge.xml
- var gDialogeXMLPfad	= "../../Dialoge.xml";
+ var gDialogeXMLPfad	= "../../dialoge.xml";
  //verwaltet alle Dialoge aus der XML-Datei
  var gDialoge			= new Object();
  //ein Zähler für die Anzahl der Dialoge
@@ -238,8 +238,8 @@ function perc2pix(absolute, perc){
 //prüft ob Bilder und Dialoge vollständig geladen wurden
 function waitforparser(){
 	//wenn alle Elemente geladen wurden
-	if(gBilder.anzahl==gBilder.geladen && gDialoge.anzahl==gDialoge.geladen){
+    if(gBilder.anzahl === gBilder.geladen && gDialoge.anzahl === gDialoge.geladen){
 		//lese Szene ein
-		getSceneInformation("Szene_1", "../../Szenen.xml");
+        getSceneInformation("Szene_1", "../../szenen.xml");
 	}
 }

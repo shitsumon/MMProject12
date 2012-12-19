@@ -4,7 +4,7 @@
 - unbedingt an den entscheidenden stellen prüfen, ob die entsprechenden objekte vorhanden sind
 - gTalk als aktuellen dialog vielleicht übergeben statt global zu speichern
 - positionierung des dialogfensters
-- text sollte antialiasing oÄ erhalten
+- text sollte antialiasing oä erhalten
 */
 function dialogStart(dialog_id)
 {	

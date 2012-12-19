@@ -82,7 +82,7 @@ function getPersonElementData(sceneElement){
 function getSceneInformation(sceneID, sceneFilename){
 
     /*check for input filename, else use default*/
-    sceneFilename = typeof( sceneFilename ) === 'undefined' ? "testSzenen.xml" : sceneFilename;
+    sceneFilename = typeof( sceneFilename ) === 'undefined' ? "szenen.xml" : sceneFilename;
 
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
