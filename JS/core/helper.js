@@ -104,7 +104,7 @@ gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, w
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
 									Ladebalken genutzt werden*/
 
-var gbilderXMLPfad	= "../../Bilder/bilder.xml";	//Pfad zur Bilder-XML
+var gbilderXMLPfad	= "../../Bilder/Bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
 	this.height	= _height;	//Pixel int
@@ -131,10 +131,11 @@ function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalier
 	this.animiert			= _animiert;			//animiert oder nicht			-> boolean
 	this.animationsmerkmale	= _animationsmerkmale;	//Eigenschaften der Animation	-> Animationsmerkmale
 	this.bild				= new Image();			//das eigentliche Bild			-> Image
-	this.bild.onload=function(){	/*aufgerufen nachdem das Bilde geladen wurde*/
-		gBilder.geladen++;			/*Zähler für die fertig geladenen Bilder -> int*/
-		aktualisiereLadebalken();	/*Hook für den Ladebalken*/
-		statusPruefen();			/*Hook zur Benachrichtigung: Laden beendet*/
+	this.bild.onload=function(){					/*aufgerufen nachdem das Bilde geladen wurde*/
+		gBilder.geladen++;							/*Zähler für die fertig geladenen Bilder -> int*/
+		aktualisiereLadebalken_Bilder();			/*Hook für den Ladebalken*/
+		statusPruefen_Bilder();						/*Hook zur Benachrichtigung: Laden beendet*/
+		waitforparser();							/*prüft ob Bilder und Dialoge vollständig geladen wurden*/
 	}
 	this.bild.src			=_pfad;					//initiiert das Laden des Bilde	-> string
 	this.skalierung			= new Array(_skalierungsstufen);//						-> Skalierung
@@ -165,6 +166,8 @@ function Animation(_canvas_id, _bild_id){
  var gDialoge			= new Object();
  //ein Zähler für die Anzahl der Dialoge
  gDialoge.anzahl		= 0;
+ //Zähler für die bereits geladenen Dialoge
+ gDialoge.geladen		= 0;
  
  //Prototyp für einen Dialog mit mindestens einem Satz
  function Dialog(_id, _anzahl_saetze){
@@ -172,6 +175,10 @@ function Animation(_canvas_id, _bild_id){
 	 this.id			= _id;							//die ID dieses Dialogs					-> string
 	 this.anzahl_saetze	= _anzahl_saetze;				//die Anzahl der Sätze in diesem Dialog	-> int
 	 this.saetze		= new Array(_anzahl_saetze);	//die Sätze des Dialogs					-> Satz
+	 gDialoge.geladen++;								/*Zähler für die fertig geladenen Bilder -> int*/
+	 aktualisiereLadebalken_Dialoge();					/*Hook für den Ladebalken*/
+	 statusPruefen_Dialoge();							/*Hook zur Benachrichtigung: Laden beendet*/
+	 waitforparser();									/*prüft ob Bilder und Dialoge vollständig geladen wurden*/
  }
  
  //Prototyp für einen Satz in einem Dialog
@@ -194,4 +201,15 @@ function pix2perc(absolute, pixelValue){
 //Generates a CSS percentage from a numeric pixel value
 function perc2pix(absolute, perc){
     return (absolute / 100) * perc;
+}
+
+//prüft ob Bilder und Dialoge vollständig geladen wurden
+function waitforparser(){
+	//wenn alle Elemente geladen wurden
+	if(gBilder.anzahl==gBilder.geladen && gDialoge.anzahl==gDialoge.geladen){
+		//deaktiviere asynchrone Anfragen
+		jQuery.ajaxSetup({async:false});
+		//lese Szene ein
+		getSceneInformation("Szene_1", "../../Szenen.xml");
+	}
 }

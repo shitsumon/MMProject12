@@ -5,13 +5,9 @@ bestimmt den typ des zu ladenden Dokumentes -> "xml"
 */
 function ladeBilder(){
 
-    jQuery.ajaxSetup({async:false});
-
 	jQuery.get(gbilderXMLPfad,function(daten){
 		verarbeiteBilderXML(daten);
     },"xml");
-
-    getSceneInformation('Szene_1', 'testSzenen.xml');
 }
 
 /*
@@ -58,16 +54,16 @@ function verarbeiteBilderXML(daten){
 }
 
 /*
-Hook zur Anzeige des Ladevorgangs
+Hook zur Anzeige des Ladevorgangs. aufgerufen in Image.onload in helper.js
 */
-function aktualisiereLadebalken(){
+function aktualisiereLadebalken_Bilder(){
 //	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
 }
 
 /*
-Hook für die Aktion nach dem Laden aller Bilder
+Hook für die Aktion nach dem Laden aller Bilder. aufgerufen in Image.onload in helper.js
 */
-function statusPruefen(){
+function statusPruefen_Bilder(){
 	//vergleicht die Anzahl geladener mit der Gesamtzahl der Bilder
 	if(gBilder.geladen==gBilder.anzahl){
 //		alert("Alle Bilder geladen!");

@@ -45,3 +45,20 @@ function verarbeiteDialogXML(daten){
 		});
     });
 }
+
+/*
+Hook zur Anzeige des Ladevorgangs. aufgerufen in new Dialog(..)
+*/
+function aktualisiereLadebalken_Dialoge(){
+//	alert(gDialoge.geladen+" von "+gDialoge.anzahl+" geladen");
+}
+
+/*
+Hook für die Aktion nach dem Laden aller Bilder. aufgerufen in new Dialog(..)
+*/
+function statusPruefen_Dialoge(){
+	//vergleicht die Anzahl geladener mit der Gesamtzahl der Bilder
+	if(gDialoge.geladen==gDialoge.anzahl){
+		//alert("Alle Dialoge geladen!");
+	}
+}

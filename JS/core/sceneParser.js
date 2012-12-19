@@ -87,7 +87,6 @@ function getSceneInformation(sceneID, sceneFilename){
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
 
-
     /*Extract scene information from xml file*/
     $.get(sceneFilename, function(data){
               $(data).find('szene').each(function(){
@@ -118,7 +117,9 @@ function getSceneInformation(sceneID, sceneFilename){
                     }
               })
 
-    })
+    }).error(function(xhr, status, error){
+		alert(error);
+	});
 
     drawScene(sceneObject);
 
