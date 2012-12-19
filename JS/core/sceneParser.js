@@ -82,7 +82,7 @@ function getPersonElementData(sceneElement){
 function getSceneInformation(sceneID, sceneFilename){
 
     /*check for input filename, else use default*/
-    sceneFilename = typeof sceneFilename === 'undefined' ? "testSzenen.xml" : sceneFilename;
+    sceneFilename = typeof( sceneFilename ) === 'undefined' ? "testSzenen.xml" : sceneFilename;
 
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
@@ -116,14 +116,12 @@ function getSceneInformation(sceneID, sceneFilename){
                         })
                     }
               })
+			  
+			  drawScene(sceneObject);
 
     }).error(function(xhr, status, error){
 		alert(error);
 	});
-
-    drawScene(sceneObject);
-
-    var breakpoint;
 }
 
 /*
@@ -144,7 +142,7 @@ function getSceneInformation(sceneID, sceneFilename){
 function drawScene(sceneObject){
 
     //draw static background
-    drawObjectsOfSameType('canvas_bg_static', sceneObject.staticBackgroundObjects, true);
+    drawObjectsOfSameType();//'canvas_bg_static', sceneObject.staticBackgroundObjects, true);
     //draw dynamic background
     drawObjectsOfSameType('canvas_bg_dynamic', sceneObject.dynamicBackgroundObjects);
     //draw static foreground
@@ -182,17 +180,17 @@ function drawScene(sceneObject){
 function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
     //faulty input error checking
-    if(sharedIdString === '' || sharedIdString === 'undefined'){
+    if(sharedIdString === '' || typeof(sharedIdString) === 'undefined'){
         alert("Id string not set!");
         return;
     }
 
-    if(objectsToDraw === 'undefined'){
+    if(typeof(objectsToDraw) === 'undefined'){
         alert("Object array uninitialized!");
         return;
     }
 
-    hasSingleCanvas = typeof hasSingleCanvas === 'undefined' ? false : hasSingleCanvas;
+    hasSingleCanvas = typeof( hasSingleCanvas ) === 'undefined' ? false : hasSingleCanvas;
 
     //initialization
     var screenWidth  = $(window).width();

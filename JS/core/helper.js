@@ -60,7 +60,7 @@ function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
     this.position   = new Position(xPos, yPos);
     this.size       = new Size(width, height);
 
-    this.clickable  = typeof clickable === 'undefined' ? false : clickable;
+    this.clickable  = typeof( clickable ) === 'undefined' ? false : clickable;
 }
 
 //includes information about one step of quiz within a scene
@@ -75,14 +75,14 @@ function quizStep(objID, diagReactID, diagTipID, code){
 
 //Struct for object position on the browsers viewport
 function Position(x, y){
-    this.xPos = typeof x === 'undefined' ? 0 : x;
-    this.yPos = typeof y === 'undefined' ? 0 : y;
+    this.xPos = typeof( x ) === 'undefined' ? 0 : x;
+    this.yPos = typeof( y ) === 'undefined' ? 0 : y;
 }
 
 //Struct for object size on the browsers viewport
 function Size(w, h){
-    this.width  = typeof w === 'undefined' ? 0 : w;
-    this.height = typeof h === 'undefined' ? 0 : h;
+    this.width  = typeof( w ) === 'undefined' ? 0 : w;
+    this.height = typeof( h ) === 'undefined' ? 0 : h;
 }
 
 
@@ -207,8 +207,6 @@ function perc2pix(absolute, perc){
 function waitforparser(){
 	//wenn alle Elemente geladen wurden
 	if(gBilder.anzahl==gBilder.geladen && gDialoge.anzahl==gDialoge.geladen){
-		//deaktiviere asynchrone Anfragen
-		jQuery.ajaxSetup({async:false});
 		//lese Szene ein
 		getSceneInformation("Szene_1", "../../Szenen.xml");
 	}
