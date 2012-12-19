@@ -151,6 +151,8 @@ function drawScene(sceneObject){
     drawObjectsOfSameType('canvas_fg_dynamic', sceneObject.dynamicForegroundObjects);
     //draw persons
     drawObjectsOfSameType('canvas_person', sceneObject.persons, false);
+
+    $('body').append($('<canvas/>', {id: 'textbox'}));
 }
 
 /*

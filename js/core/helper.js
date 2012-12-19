@@ -198,16 +198,20 @@ function Animation(_canvas_id, _bild_id){
  
  //Globale Variable die alle Einstellungen für Dialoge Abspeichert
  //gTalk - (soll keine schleichwerbung sein, sondern einfach nur kurz).
-var gTalk			=new Object();
-gTalk.bild_id 		="null";			//MUSS mit dialogSettings(...) initialisiert
-gTalk.canvas_id		="null";			//MUSS mit dialogSettings(...) initialisiert
-gTalk.font_color	="white";			//kann mit dialogSettings(...) verändert werden
-gTalk.font_style	="bold 16px Arial"; //kann mit dialogSettings(...) verändert werden
-gTalk.lineletters   =40;				//kann mit dialogSettings(...) verändert werden
-gTalk.line_distance =15;				//kann mit dialogSettings(...) verändert werden
-gTalk.dialog_id		="null";
-gTalk.SatzGerade	=0;			
-gTalk.SatzMax		=0;
+var gTalk			= new Object();
+gTalk.bild_id 		= "null";			 //MUSS mit dialogSettings(...) initialisiert
+gTalk.canvas_id		= "null";			 //MUSS mit dialogSettings(...) initialisiert
+gTalk.font_color	= "white";			 //kann mit dialogSettings(...) verändert werden
+gTalk.font_style	= "bold 16px Arial"; //kann mit dialogSettings(...) verändert werden
+gTalk.lineletters   = 40;				 //kann mit dialogSettings(...) verändert werden
+gTalk.line_distance = 15;				 //kann mit dialogSettings(...) verändert werden
+gTalk.dialog_id		= "null";
+gTalk.SatzGerade	= 0;
+gTalk.SatzMax		= 0;
+gTalk.TBPercPosX    = 37; //in %
+gTalk.TBPercPosY    = 0;  //in %
+
+var gTBDrawn = false;
 
 //muss einmal aufgerufen werden
 //Einstellungen für alle späteren DialogAufrufe
@@ -220,7 +224,7 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _linelet
 	gTalk.lineletters	=_lineletters		//Zahl der Buchstaben bis Zeilenumbruch
 	gTalk.line_distance	=_line_distance		//Zeilenabstand
 }
- 
+
 /***********
  *Utilities*
  ***********/

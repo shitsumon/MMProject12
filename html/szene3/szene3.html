@@ -10,7 +10,9 @@
 <script type="text/javascript" src="../../js/core/pictureParser.js"></script>
 <script type="text/javascript" src="../../js/core/dialogParser.js"></script>
 <script type="text/javascript" src="../../js/core/animation.js"></script>
-<script type="text/javascript" src="../../js/core/dialogControl.js"></script>
+<script type="text/javascript" src="../../js/core/dialogControl.js">
+
+</script>
 </head>
 <body onLoad="
 ladeBilder();
@@ -23,17 +25,9 @@ dialogSettings(
 '16px Arial',			//Schriftart
 30,						//Maximale Zahl an Zeichen pro Zeile
 16);					//Zeilenabstand
-
 setTimeout(function(){
-	dialogStart('dialog_eins')	//Aufruf Dialog
-    },3000);
+        dialogStart('dialog_eins')	//Aufruf Dialog
+    },500);
 ">
-<canvas id="hintergrund_canvas"></canvas>
-<canvas id="protagonist1"></canvas>
-<canvas id="textbox"></canvas>
-<canvas id="doorOverlay" onclick="gTargetIdentifier='doorOverlay';heroMovement();"></canvas>
-<canvas id="windowOverlay" onclick="gTargetIdentifier='windowOverlay';heroMovement();"></canvas>
-<canvas id="bedOverlay" onclick="gTargetIdentifier='bedOverlay';heroMovement();"></canvas>
-<canvas id="dummySpot"></canvas>
 </body>
 </html>
