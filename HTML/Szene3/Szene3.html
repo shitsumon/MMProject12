@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<meta charset="utf-8">
+<title>Szene 3 - DialogTest</title>
+<link rel="stylesheet" type="text/css" href="Szene3.css"/>
+<script type="text/javascript" src="../../JS/external/jquery.js"></script>
+<script type="text/javascript" src="../../JS/core/helper.js"></script>
+<script type="text/javascript" src="../../JS/core/sceneParser.js"></script>
+<script type="text/javascript" src="../../JS/core/pictureParser.js"></script>
+<script type="text/javascript" src="../../JS/core/dialogParser.js"></script>
+<script type="text/javascript" src="../../JS/core/animation.js"></script>
+<script type="text/javascript" src="../../JS/core/dialogControl.js"></script>
+</head>
+
+<body onLoad="
+
+jQuery.ajaxSetup({async:false});	//Schaltet async-AJAX aus, kann sonst nicht auf gDialoge zugreifen!
+
+ladeBilder();
+ladeDialoge();
+
+dialogSettings(	
+'bild_texthg',			//Hintergrund für Dialoge
+'textbox',				//CSS/Canvas
+'white',				//Schriftfarbe
+'16px Arial',			//Schriftart
+30,						//Maximale Zahl an Zeichen pro Zeile
+16);					//Zeilenabstand
+
+setTimeout(
+
+function(){dialogStart('dialog_eins')	//Aufruf Dialog
+
+},1000);
+
+">
+<canvas id="hintergrund_canvas"></canvas>
+<canvas id="protagonist1"></canvas>
+<canvas id="textbox"></canvas>
+<canvas id="doorOverlay" onclick="gTargetIdentifier='doorOverlay';heroMovement();"></canvas>
+<canvas id="windowOverlay" onclick="gTargetIdentifier='windowOverlay';heroMovement();"></canvas>
+<canvas id="bedOverlay" onclick="gTargetIdentifier='bedOverlay';heroMovement();"></canvas>
+
+<canvas id="dummySpot"></canvas>
+</body>
+</html>

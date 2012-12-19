@@ -1,0 +1,62 @@
+html, body{
+	height:100%;
+	width:100%;
+	margin:0px;
+}
+
+#hintergrund_canvas{
+	height:100%;
+	width:100%;
+	margin:0px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-1;
+}
+
+#protagonist1{
+	height:45%;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:10;
+}
+
+#doorOverlay{
+	position: absolute;
+	z-index:3;
+	top: 0px;
+	left: 0px;
+	visibility:visible;
+}
+
+#windowOverlay{
+	position: absolute;
+	z-index:4;
+	top: 0px;
+	left: 0px;
+	visibility:visible;
+}
+
+#bedOverlay{
+        position: absolute;
+        z-index:5;
+        top: 0px;
+        left: 0px;
+        visibility:visible;
+}
+
+#dummySpot{
+	position: absolute;
+	z-index:3;
+	top: 0px;
+	left: 0px;
+	visibility:hidden;
+}
+
+#textbox{
+	position:relative; 
+	height:150px;
+	width:800px;
+	z-index:50;
+}
