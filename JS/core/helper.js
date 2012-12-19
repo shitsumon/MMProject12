@@ -99,6 +99,7 @@ var gVecY              = 0.0;  // Computed stepwidth in y direction
 /******************
  *pictureParser.js*
  ******************/
+ 
 var gBilder			= new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
 gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
@@ -144,6 +145,7 @@ function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalier
 /*********************
  *pictureAnimation.js*
  *********************/
+ 
 //verwaltet die Animationen; enthält die zugehörigen Timer als Attribute, erreichbar über die Bild-ID
 var gAnimationTimer		= new Object();
 gAnimationTimer.anzahl	= 0;		//zählt die aktiven Timer im Objekt -> int
@@ -160,6 +162,7 @@ function Animation(_canvas_id, _bild_id){
 /*****************
  *dialogParser.js*
  *****************/
+ 
  //der Pfad zur Dialoge.xml
  var gDialogeXMLPfad	= "../../Dialoge.xml";
  //verwaltet alle Dialoge aus der XML-Datei
@@ -189,6 +192,35 @@ function Animation(_canvas_id, _bild_id){
 	 this.inhalt	= _inhalt;		//der Text dieses Satzes									-> string
  }
 
+/*****************
+ *dialogControl.js*
+ *****************/
+ 
+ //Globale Variable die alle Einstellungen für Dialoge Abspeichert
+ //gTalk - (soll keine schleichwerbung sein, sondern einfach nur kurz).
+var gTalk			=new Object();
+gTalk.bild_id 		="null";			//MUSS mit dialogSettings(...) initialisiert
+gTalk.canvas_id		="null";			//MUSS mit dialogSettings(...) initialisiert
+gTalk.font_color	="white";			//kann mit dialogSettings(...) verändert werden
+gTalk.font_style	="bold 16px Arial"; //kann mit dialogSettings(...) verändert werden
+gTalk.lineletters   =40;				//kann mit dialogSettings(...) verändert werden
+gTalk.line_distance =15;				//kann mit dialogSettings(...) verändert werden
+gTalk.dialog_id		="null";
+gTalk.SatzGerade	=0;			
+gTalk.SatzMax		=0;
+
+//muss einmal aufgerufen werden
+//Einstellungen für alle späteren DialogAufrufe
+function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _lineletters, _line_distance)
+{
+	gTalk.bild_id		=_bild_id;			//Hintergrundbild
+	gTalk.canvas_id		=_canvas_id;		//CSS-Objekt-Name
+	gTalk.font_color	=_font_color;		//Schriftfarbe
+	gTalk.font_style	=_font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
+	gTalk.lineletters	=_lineletters		//Zahl der Buchstaben bis Zeilenumbruch
+	gTalk.line_distance	=_line_distance		//Zeilenabstand
+}
+ 
 /***********
  *Utilities*
  ***********/

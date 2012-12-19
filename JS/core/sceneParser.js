@@ -142,7 +142,7 @@ function getSceneInformation(sceneID, sceneFilename){
 function drawScene(sceneObject){
 
     //draw static background
-    drawObjectsOfSameType();//'canvas_bg_static', sceneObject.staticBackgroundObjects, true);
+    drawObjectsOfSameType('canvas_bg_static', sceneObject.staticBackgroundObjects, true);
     //draw dynamic background
     drawObjectsOfSameType('canvas_bg_dynamic', sceneObject.dynamicBackgroundObjects);
     //draw static foreground

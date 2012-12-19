@@ -2,16 +2,16 @@
 <dialoge>
   <dialog id="dialog_eins">
     <satz person_id="person_protagonist1" bild_id="bild_test1">Hallo Welt</satz>
-	<satz person_id="person_protagonist2" bild_id="bild_test2">Sei doch ruhig! Aber Klick schön weiter</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test1">Um Dialoge Ablaufen zu lassen muss die Funktion dialogSettings(...) einmal aufgerufen werden</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test1">Danach kann man alle Dialoge mit dialogStart(ID) initialisieren. Das Dialogfenster verwendet den CSS Eintrag Textbox</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test1">Die OnClick Ereignisse etc, brauchen keine zusätzliche HTML Implementierung</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test1">Der Hintergrund, Schriftfarbe, Zeilenabstand... kann mit dialogSettings(...) verändert werden.</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test1">Das Dialogfenster verschwindet, nach einem Klick, wenn der letzte Satz erreicht wurde</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test2">Wie zum Beispiel gleich</satz>
-	<satz person_id="person_protagonist1" bild_id="bild_test3">Bazinga!</satz>
+    <satz person_id="person_protagonist2" bild_id="bild_test2">Sei doch ruhig! Aber Klick schön weiter</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test1">Um Dialoge Ablaufen zu lassen muss die Funktion dialogSettings(...) einmal aufgerufen werden</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test1">Danach kann man alle Dialoge mit dialogStart(ID) initialisieren. Das Dialogfenster verwendet den CSS Eintrag Textbox</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test1">Die OnClick Ereignisse etc, brauchen keine zusätzliche HTML Implementierung</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test1">Der Hintergrund, Schriftfarbe, Zeilenabstand... kann mit dialogSettings(...) verändert werden.</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test1">Das Dialogfenster verschwindet, nach einem Klick, wenn der letzte Satz erreicht wurde</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test2">Wie zum Beispiel gleich</satz>
+    <satz person_id="person_protagonist1" bild_id="bild_test3">Bazinga!</satz>
   </dialog>
-   <dialog id="dialog_zwei">
+  <dialog id="dialog_zwei">
     <satz person_id="person_protagonist1" bild_id="bild_protagonist1">Lorem ipsum dolor sit amet.</satz>
   </dialog>
 </dialoge>
