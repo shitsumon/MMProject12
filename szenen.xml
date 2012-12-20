@@ -9,7 +9,7 @@
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="bild_bedoverlay" dialog_id="dia2" klickbar="true">
+        <hg_animiert_objekt bild_id="bild_bedoverlay" dialog_id="dialog_zwei" klickbar="true">
           <position x="70" y="80    "/>
           <groesse width="100" height="100"/>
         </hg_animiert_objekt>
@@ -38,7 +38,8 @@
       <schritt objekt_id="bild_bedoverlay" dialog_reaktion_id="dialog_eins" dialog_hinweis_id="dialog_zwei" code="XYZ123">
         <veraenderung>
           <objekt id_alt="bild_windowoverlay" id_neu="bild_dooroverlay"/>
-		  <objekt id_alt="bild_dooroverlay" id_neu="bild_windowoverlay"/>
+		  <objekt id_alt="bild_dooroverlay" id_neu="bild_bedoverlay"/>
+		  <objekt id_alt="bild_bedoverlay" id_neu="bild_windowoverlay"/>
         </veraenderung>
       </schritt>
     </raetsel>
