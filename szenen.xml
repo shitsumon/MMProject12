@@ -35,9 +35,10 @@
       </vg_animiert>
     </ebenen>
     <raetsel>
-      <schritt objekt_id="quiz1" dialog_reaktion_id="dia4" dialog_hinweis_id="dia2" code="XYZ123">
+      <schritt objekt_id="bild_bedoverlay" dialog_reaktion_id="dialog_eins" dialog_hinweis_id="dialog_zwei" code="XYZ123">
         <veraenderung>
-          <objekt id_alt="vgStImg1" id_neu="vgStImg2"/>
+          <objekt id_alt="bild_windowoverlay" id_neu="bild_dooroverlay"/>
+		  <objekt id_alt="bild_dooroverlay" id_neu="bild_windowoverlay"/>
         </veraenderung>
       </schritt>
     </raetsel>

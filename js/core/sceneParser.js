@@ -25,7 +25,7 @@
 */
 function getSceneElementData(sceneElement){
 
-    tmpObject = new objectStruct(sceneElement.attr('bild_id'),
+    var tmpObject = new objectStruct(sceneElement.attr('bild_id'),
                                  sceneElement.attr('dialog_id'));
     tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
@@ -39,7 +39,7 @@ function getSceneElementData(sceneElement){
 /*
     getPersonElementData()
 
-    Parses an XML object for an persons
+    Parses an XML object for a persons
     information and stores it in temporary
     person object which is then returned.
 
@@ -54,7 +54,7 @@ function getSceneElementData(sceneElement){
 */
 function getPersonElementData(sceneElement){
 
-    tmpObject = new personStruct(sceneElement.attr('person_id'),
+    var tmpObject = new personStruct(sceneElement.attr('person_id'),
                                  sceneElement.attr('bild_id'));
     tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
@@ -62,6 +62,42 @@ function getPersonElementData(sceneElement){
     tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
 
     return tmpObject;
+}
+
+/*
+    getQuizElementData()
+
+    Parses an XML object for quiz step
+    information and stores it in temporary
+    quizStep object which is then returned.
+
+    Input arguments:
+
+    sceneElement - XML object which contains information
+
+    Return values:
+
+    tmpObject - has type quizStep, which will be stored
+                in sceneStruct wrapper Object
+*/
+function getQuizElementData(sceneElement){
+	
+	var tmpObject = new quizStep(
+		sceneElement.attr('objekt_id'),
+		sceneElement.attr('dialog_reaktion_id'),
+		sceneElement.attr('dialog_hinweis_id'),
+		sceneElement.attr('code')
+	);
+	
+	$(sceneElement).find("objekt").each(function(index, objekt) {
+		tmpObject.changes.push( new quizChange(
+				$(objekt).attr('id_alt'),
+				$(objekt).attr('id_neu')
+			)
+		);
+    });
+	
+	return tmpObject;
 }
 
 /*
@@ -114,13 +150,22 @@ function getSceneInformation(sceneID, sceneFilename){
                         $(currentScene).find('person').each(function(){
                             sceneObject.persons.push(getPersonElementData($(this)));
                         })
+						
+						if($(currentScene).find('schritt').length > 0)
+						{
+							sceneObject.hasQuiz = true;
+							
+							$(currentScene).find('schritt').each(function(){
+								sceneObject.quizSteps.push(getQuizElementData($(this)));
+							})
+						}
                     }
               })
 			  
 			  drawScene(sceneObject);
 
     }).error(function(xhr, status, error){
-		alert(error);
+		alert("Es ist ein Fehler aufgetreten: " + error);
 	});
 }
 
@@ -151,6 +196,13 @@ function drawScene(sceneObject){
     drawObjectsOfSameType('canvas_fg_dynamic', sceneObject.dynamicForegroundObjects);
     //draw persons
     drawObjectsOfSameType('canvas_person', sceneObject.persons, false);
+	
+	//
+	if(sceneObject.hasQuiz){
+		
+		addQuizFunctionality(sceneObject.quizSteps);
+	}
+	//
 
     $('body').append($('<canvas/>', {id: 'textbox'}));
 }
@@ -238,12 +290,11 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
             //Check if clickable, if yes set it as such
             if(objectsToDraw[index].clickable){
-
-
+				
                 newCanvas = $('<canvas/>',
                               {
                                id : canvasID,
-                               onclick:'javascript:gTargetIdentifier="' + canvasID + '";heroMovement();'
+                               onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();"
                               }
                              );
             }else{
@@ -294,4 +345,46 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			}
         }
     }
+}
+
+/*
+fügt den Canvas onclick-Events die Funktion zum Wechseln der Inhalte hinzu
+erwartet ein Array aus quizStep-Objekten
+*/
+function addQuizFunctionality(quizSteps){
+	
+	$(quizSteps).each(function(index, quizStep) {
+		
+		//schneide den Teil bis zum ersten _ aus der ID heraus -> "bild_name" -> "name"
+		var canvas_id = quizStep.objectID.slice(
+			quizStep.objectID.indexOf("_")+1,
+			quizStep.objectID.length
+		);
+		
+		//finde ein Canvas dessen ID den gegebenen String enthält
+		var canvas = $('canvas[id*="'+ canvas_id +'"]');
+		
+		//erzeuge den String mit den Aktionen die hinzugefügt werden sollen
+		
+		//
+		//change_according_to_quiz muss noch definiert werden. sie soll die änderung ausführen
+		//problem:	wechselseitige änderungen: a->b, b->a
+		//			wie die onclick-funktionalität erhalten?
+		//
+		var add_action = /*"dialogStart('"+ quizStep.dialogueReactionID +"');"*/ + "change_according_to_quiz('";
+		
+		//für jede Änderung die in der XML-Datei vorgesehen ist
+		$(quizStep.changes).each(function(index, quizChange) {
+            
+			//übergabeparameter von change_according_to_quiz -> a>b#c>d#...
+			//sollen in der funktion von String zum Array umgewandelt werden
+			add_action=add_action.concat(quizChange.id_old+">"+quizChange.id_new+"#");
+        });
+		
+		//schließe die klammer für change_according_to_quiz
+		add_action=add_action.concat("');");
+		
+		//überschreibe die onclick-Aktion
+		canvas.attr("onclick", canvas.attr("onclick") + add_action);
+    });
 }

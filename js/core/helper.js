@@ -76,6 +76,15 @@ function quizStep(objID, diagReactID, diagTipID, code){
     this.dialogueReactionID = diagReactID;
     this.dialogueTipID      = diagTipID;
     this.code               = code;
+	this.changes			= new Array();
+}
+
+//includes information about on change within a quiz step
+//This might be removed in a future version
+function quizChange(_id_old, _id_new){
+	
+	this.id_old	= _id_old;
+	this.id_new	= _id_new;	
 }
 
 //Struct for object position on the browsers viewport
