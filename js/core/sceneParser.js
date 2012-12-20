@@ -82,7 +82,7 @@ function getPersonElementData(sceneElement){
 function getSceneInformation(sceneID, sceneFilename){
 
     /*check for input filename, else use default*/
-    sceneFilename = typeof( sceneFilename ) === 'undefined' ? "szenen.xml" : sceneFilename;
+    sceneFilename = typeof( sceneFilename ) === 'undefined' ? sceneXML : sceneFilename;
 
     /*Create new scene structure object*/
     var sceneObject = new sceneStruct(sceneID);
@@ -231,7 +231,10 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
             //create id with a unique combination
             //of common string and index number
-            var canvasID = sharedIdString + index;
+            var canvasID = sharedIdString + "_" +
+			objectsToDraw[index].imageID.slice(
+					(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
+				);
 
             //Check if clickable, if yes set it as such
             if(objectsToDraw[index].clickable){

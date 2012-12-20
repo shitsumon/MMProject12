@@ -28,7 +28,12 @@
 /****************
  *sceneParser.js*
  ****************/
-var sceneXML = "szenen.xml"; //there is currently an issue with relative pathnames
+//Pfad zur szenen.xml
+var sceneXML				= "../../szenen.xml";
+//Index der aktuellen Szene
+var gcurrent_scene_counter	= 1;
+//ID der aktuellen Szene
+var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -246,6 +251,6 @@ function waitforparser(){
 	//wenn alle Elemente geladen wurden
     if(gBilder.anzahl === gBilder.geladen && gDialoge.anzahl === gDialoge.geladen){
 		//lese Szene ein
-        getSceneInformation("Szene_1", "../../szenen.xml");
+        getSceneInformation(gcurrent_scene_id, sceneXML);
 	}
 }
