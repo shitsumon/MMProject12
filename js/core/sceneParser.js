@@ -255,8 +255,16 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             newCanvas.css('top',  objectsToDraw[index].position.yPos + '%');
 
             //calculate pixel dimensions from percentage values
-            var pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
-                                   objectsToDraw[index].size.width);
+			var pxWidth;
+			
+			if(gBilder[objectsToDraw[index].imageID].animiert){
+				
+				pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
+									   objectsToDraw[index].size.width);
+			}else{
+				pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
+									   objectsToDraw[index].size.width);
+			}
 
             var pxHeight = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
                                    objectsToDraw[index].size.height);
@@ -268,14 +276,19 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //get context
             canvasContext = newCanvas[0].getContext("2d");
 
-            //draw image to its canvas
-            canvasContext.drawImage(
-                                    gBilder[objectsToDraw[index].imageID].bild,
-                                    0,
-                                    0,
-                                    pxWidth,
-                                    pxHeight
-                                   );
+			if(gBilder[objectsToDraw[index].imageID].animiert){
+				
+				animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight);
+			}else{
+				//draw image to its canvas
+				canvasContext.drawImage(
+										gBilder[objectsToDraw[index].imageID].bild,
+										0,
+										0,
+										pxWidth,
+										pxHeight
+									   );
+			}
         }
     }
 }

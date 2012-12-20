@@ -151,12 +151,14 @@ var gAnimationTimer		= new Object();
 gAnimationTimer.anzahl	= 0;		//zählt die aktiven Timer im Objekt -> int
 
 //Prototyp für ein animiertes Bild-Objekt, speichert den zugehörigen Timer
-function Animation(_canvas_id, _bild_id){
+function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
 	this.bild_nr	= 0;			//der Index des aktuell angezeigten Einzelbildes	-> int
 	this.canvas_id	= _canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
 	this.bild_id	= _bild_id;		//ID des Bildes, das genutzt wird					-> string
 	this.timer		= null;			//Timer der Animation, wird beim Erzeugen gesetzt	-> Timer (int)
 	this.running	= true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
+	this.anzeige_width	= _anzeige_width;	//Größe des Bildes in Pixel
+	this.anzeige_height	= _anzeige_height;
 }
 
 /*****************
