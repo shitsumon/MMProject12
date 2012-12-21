@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <szenen><!--Anzahl: 1-->
-  <szene id=""><!--Anzahl: 1-N-->
+  <szene id="" raetselschritte=""><!--Anzahl: 1-N-->
     <ebenen><!--Anzahl: 6-7-->
       <!--Die einzelnen Ebenen der Objekte-->
       <hg_statisch><!--Anzahl: 1-->
         <!--das Hintergrundbild-->
-        <hg_statisch_objekt bild_id="" dialog_id="" klickbar=""><!--Anzahl: 1-N-->
+        <hg_statisch_objekt bild_id="" dialog_id="" klickbar=""
+		raetselschritt="" raetsel_ausloeser="true/false"><!--Anzahl: 1-N-->
           <!--ID des verknüpften Dialogs: string-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
@@ -17,7 +18,8 @@
       </hg_statisch>
       <hg_animiert><!--Anzahl: 1-->
         <!--Die animierten HG-Objekte-->
-        <hg_animiert_objekt bild_id="" dialog_id="" klickbar=""><!--Anzahl: 1-N-->
+        <hg_animiert_objekt bild_id="" dialog_id="" klickbar=""
+		raetselschritt="" raetsel_ausloeser="true/false"><!--Anzahl: 1-N-->
           <!--ID des verknüpften Dialogs: string-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
@@ -28,7 +30,8 @@
         </hg_animiert_objekt>
       </hg_animiert>
       <personen><!--Anzahl: 1-->
-        <person person_id="" bild_id=""><!--Anzahl: 1-N-->
+        <person person_id="" bild_id=""
+		raetselschritt="" raetsel_ausloeser="true/false"><!--Anzahl: 1-N-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
           <!--Position der linken, oberen Ecke in % der Anzeigefläche: float-->
@@ -39,7 +42,8 @@
       </personen>
       <vg_statisch><!--Anzahl: 1-->
         <!--der statische Vordergrund-->
-        <vg_statisch_objekt bild_id="" dialog_id="" klickbar=""><!--Anzahl: 1-N-->
+        <vg_statisch_objekt bild_id="" dialog_id="" klickbar=""
+		raetselschritt="" raetsel_ausloeser="true/false"><!--Anzahl: 1-N-->
           <!--ID des verknüpften Dialogs: string-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
@@ -51,7 +55,8 @@
       </vg_statisch>
       <vg_animiert><!--Anzahl: 1-->
         <!--Die animierten VG-Objekte-->
-        <vg_animiert_objekt bild_id="" dialog_id="" klickbar=""><!--Anzahl: 1-N-->
+        <vg_animiert_objekt bild_id="" dialog_id="" klickbar=""
+		raetselschritt="" raetsel_ausloeser="true/false"><!--Anzahl: 1-N-->
           <!--ID des verknüpften Dialogs: string-->
           <position x="" y=""/>
           <!--Anzahl: 1-->
@@ -62,21 +67,5 @@
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
-    <raetsel><!--Anzahl: 1-->
-      <!--Die Rätsel in diesem Raum-->
-      <schritt objekt_id="" dialog_reaktion_id="" dialog_hinweis_id="" code=""><!--Anzahl: 1-N-->
-        <!--ein Schritt des Rätsels-->
-        <!--zu klickendes/auslösendes Objekt-->
-        <!--entsprechende Reaktion-->
-        <!--automatischer Hinweisdialog, falls keine Eingabe erfolgt-->
-        <!--Code der das Spiel an dieser Stelle fortsetzt-->
-        <veraenderung><!--Anzahl: 1-->
-          <!--die Veränderungen die die Aktion auslöst-->
-          <objekt id_alt="" id_neu=""/>
-          <!--Anzahl: 1-N-->
-          <!--Ersetze ein Objekt durch ein anderes-->
-        </veraenderung>
-      </schritt>
-    </raetsel>
   </szene>
 </szenen>

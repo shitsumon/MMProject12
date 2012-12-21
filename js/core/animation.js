@@ -14,7 +14,7 @@
 function heroMovement(){
 
     //Get objects of target and hero picture
-    var hero = $("#canvas_person_testtileset");
+    var hero = $("canvas[id*=canvas_person]");
     var target = $("#"+gTargetIdentifier);
 
 
@@ -57,7 +57,7 @@ function heroMovement(){
     }
 
     //Check if hero collides with viewport borders
-    switch(borderCollisionDetection("canvas_person_testtileset")){
+    switch(borderCollisionDetection("canvas[id*=canvas_person]")){
     case 1:
         newHx = 1;
         break;
@@ -157,7 +157,7 @@ function heroMovement(){
 */
 function borderCollisionDetection(objectName){
 
-    var movingObject        = $("#"+objectName);
+    var movingObject        = $(objectName);
     var objLeft             = movingObject.offset().left;
     var objTop              = movingObject.offset().top;
     var objLeftWithWidth    = objLeft + movingObject.width();

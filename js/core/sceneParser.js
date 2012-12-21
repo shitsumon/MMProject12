@@ -32,6 +32,9 @@ function getSceneElementData(sceneElement){
     tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
     tmpObject.clickable     = sceneElement.attr('klickbar') === "true";
+	
+	tmpObject.quizTrigger	= sceneElement.attr('raetsel_ausloeser') === "true";
+	tmpObject.quizStep		= parseInt(sceneElement.attr('raetselschritt'));
 
     return tmpObject;
 }
@@ -60,44 +63,11 @@ function getPersonElementData(sceneElement){
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
     tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
+	
+	tmpObject.quizTrigger	= sceneElement.attr('raetsel_ausloeser') === "true";
+	tmpObject.quizStep		= parseInt(sceneElement.attr('raetselschritt'));
 
     return tmpObject;
-}
-
-/*
-    getQuizElementData()
-
-    Parses an XML object for quiz step
-    information and stores it in temporary
-    quizStep object which is then returned.
-
-    Input arguments:
-
-    sceneElement - XML object which contains information
-
-    Return values:
-
-    tmpObject - has type quizStep, which will be stored
-                in sceneStruct wrapper Object
-*/
-function getQuizElementData(sceneElement){
-	
-	var tmpObject = new quizStep(
-		sceneElement.attr('objekt_id'),
-		sceneElement.attr('dialog_reaktion_id'),
-		sceneElement.attr('dialog_hinweis_id'),
-		sceneElement.attr('code')
-	);
-	
-	$(sceneElement).find("objekt").each(function(index, objekt) {
-		tmpObject.changes.push( new quizChange(
-				$(objekt).attr('id_alt'),
-				$(objekt).attr('id_neu')
-			)
-		);
-    });
-	
-	return tmpObject;
 }
 
 /*
@@ -130,6 +100,8 @@ function getSceneInformation(sceneID, sceneFilename){
                 var currentScene = $(this);
 
                     if(sceneID === currentScene.attr('id')){
+						
+						gQuiz_steps = parseInt($(currentScene).attr('reatselschritte'));
 
                         $(currentScene).find('hg_statisch_objekt').each(function(){
                             sceneObject.staticBackgroundObjects.push(getSceneElementData($(this)));
@@ -150,15 +122,6 @@ function getSceneInformation(sceneID, sceneFilename){
                         $(currentScene).find('person').each(function(){
                             sceneObject.persons.push(getPersonElementData($(this)));
                         })
-						
-						if($(currentScene).find('schritt').length > 0)
-						{
-							sceneObject.hasQuiz = true;
-							
-							$(currentScene).find('schritt').each(function(){
-								sceneObject.quizSteps.push(getQuizElementData($(this)));
-							})
-						}
                     }
               })
 			  
@@ -196,13 +159,6 @@ function drawScene(sceneObject){
     drawObjectsOfSameType('canvas_fg_dynamic', sceneObject.dynamicForegroundObjects);
     //draw persons
     drawObjectsOfSameType('canvas_person', sceneObject.persons, false);
-	
-	//
-	if(sceneObject.hasQuiz){
-		
-		addQuizFunctionality(sceneObject.quizSteps);
-	}
-	//
 
     $('body').append($('<canvas/>', {id: 'textbox'}));
 }
@@ -250,11 +206,15 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
     var newCanvas;
+	//css-class of quiz elements and whether they trigger quiz advancements
+	var quizClass, quizTrigger;
 
     //draw to single canvas
     if(hasSingleCanvas){
-
-        newCanvas = $('<canvas/>', {id: sharedIdString});
+		
+        newCanvas = $('<canvas/>', {
+			id: sharedIdString
+			});
 
         //append to html body
         $('body').append(newCanvas);
@@ -280,13 +240,20 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     else{
 
         for(var index = 0; index < objectsToDraw.length; ++index){
-
+			
+			//will trigger quiz advancement on click if true, do nothing otherwise
+			quizTrigger	= objectsToDraw[index].quizTrigger ? "advanceQuizStep();" : "";
+			//sets visibility by css "display" value through css class attribute
+			quizClass	= objectsToDraw[index].quizStep > 0 ? "quiz_hidden" : "quiz_shown";
+					
             //create id with a unique combination
-            //of common string and index number
-            var canvasID = sharedIdString + "_" +
-			objectsToDraw[index].imageID.slice(
-					(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
-				);
+            //of common string, picture id and quiz step
+            var canvasID =
+				sharedIdString + "_" +
+				objectsToDraw[index].imageID.slice(
+						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
+					) + "_" +
+				"quizStep_" + objectsToDraw[index].quizStep.toString();
 
             //Check if clickable, if yes set it as such
             if(objectsToDraw[index].clickable){
@@ -294,11 +261,15 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                 newCanvas = $('<canvas/>',
                               {
                                id : canvasID,
-                               onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();"
+							   "class": quizClass + " " + "clickable",
+                               onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();" + quizTrigger
                               }
                              );
             }else{
-                newCanvas = $('<canvas/>', {id: canvasID});
+                newCanvas = $('<canvas/>', {
+						id: canvasID,
+						"class": quizClass
+					});
             }
 
             //append to html body

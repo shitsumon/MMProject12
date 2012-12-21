@@ -1,81 +1,47 @@
 /*
-fügt den Canvas onclick-Events die Funktion zum Wechseln der Inhalte hinzu
-erwartet ein Array aus quizStep-Objekten
+Wendet die Veränderungen eines Rätselschrittes auf die Szene an, indem die entsprechenden Objekte ein-/ausgeblendet werden.
+Darüber hinaus wird der Zähler für den aktuellen Rätsel-Schritt erhöht und geprüft, ob das Rätsel gelöst wurde.
 */
-function addQuizFunctionality(quizSteps){
+function advanceQuizStep(){
 	
-	$(quizSteps).each(function(index, quizStep) {
+	var canvas;
+	
+	//2 Durchläufe: alte Elemente verstecken und neue einblenden
+	for(var i = 0; i < 2; i++){
 		
-		//schneide den Teil bis zum ersten _ aus der ID heraus -> "bild_name" -> "name"
-		var canvas_id = quizStep.objectID.slice(
-			quizStep.objectID.indexOf("_")+1,
-			quizStep.objectID.length
-		);
+		//finde alle Canvas deren ID "quizStep_X" enthält
+		canvas = $("canvas[id*=quizStep_" + ( gcurrent_quiz_step + i ).toString() + "]");
 		
-		//finde ein Canvas dessen ID den gegebenen String enthält
-		var canvas = $('canvas[id*="'+ canvas_id +'"]');
-		
-		//erzeuge den String mit den Aktionen die hinzugefügt werden sollen
-		/*"dialogStart('"+ quizStep.dialogueReactionID +"');" + */
-		var add_action = "change_according_to_quiz('" + canvas_id + "', '";
-		
-		//für jede Änderung die in der XML-Datei vorgesehen ist
-		$(quizStep.changes).each(function(index, quizChange) {
+		canvas.each(function(index, element) {
 			
-			//ID für das alte Bild wird auf den eigentlichen Namen gekürzt und dient zum Canvas Suchen
-			//ID fürs Neue wird übernommen
-			add_action=add_action.concat(
-				quizChange.id_old.slice(
-					quizChange.id_old.indexOf("_")+1, quizChange.id_old.length
-				)+">"+
-				quizChange.id_new+"#"
-			);
-        });
-		
-		//schließe die klammer für change_according_to_quiz
-		add_action=add_action.concat("');");
-		
-		//überschreibe die onclick-Aktion
-		canvas.attr("onclick", canvas.attr("onclick") + add_action);
-    });
+			//schalte die angegebenen CSS-Klassen für das Element um
+			$(element).toggleClass('quiz_shown quiz_hidden');
+		});
+	}
+	
+	//erhöhe den aktuellen Rätselschritt dieser Szene
+	gcurrent_quiz_step++;
+	
+	//prüfe, ob das Rätsel gelöst wurde
+	checkQuizfinished();
 }
 
 /*
-führt eine Änderung entsprechend der Quizvorgaben aus
-erwartet:
-	die ID des geklickten Canvas
-	einen String bestehend aus den IDs der zu verändernden Elemente -> a_ID>b_bild#c_ID>d_bild
+Überprüft die Lösung des Rätsels nach jedem Schritt und erhöht in dem Fall den Zähler für die aktuelle Szene.
+Die nächste Szene kann dann geladen werden.
 */
-function change_according_to_quiz(clicked_canvas_id, id_array){
-
-	//zerlege den String, um die Einzelaktionen zu erhalten
-	id_array = id_array.split("#");
+function checkQuizfinished(){
 	
-	//enthalten die extrahierten IDs
-	var alt_id, neu_id;
-	//enthalten das zu verändernde Canvas-Element und seinen Context
-	var canvas, ctx;
+	if(gcurrent_quiz_step > gQuiz_steps){
+		
+		alert("Szene beendet!");
+		
+		gcurrent_scene_counter++;
+		gcurrent_scene_id = "Szene_" + gcurrent_scene_counter.toString();
+	}
 	
-	//für alle übergebenen Schritte bis auf den Letzte -> ist immer leer
-	for(var i=0; i<( id_array.length-1 ); i++){
-        
-		//extrahiere beide IDs und speichere sie auf den Variablen
-		alt_id = id_array[i].split(">");
-		neu_id = alt_id[1];
-		alt_id = alt_id[0];
-
-		//erfasse den Canvas
-		canvas	= $('canvas[id*="'+ alt_id +'"]');
-		ctx		= canvas[0].getContext("2d");
+	if(gcurrent_quiz_step == gQuiz_steps){
 		
-		//lösche ihn
-		ctx.clearRect( 0, 0, canvas[0].width, canvas[0].height );
-		
-		//zeichne das neue Bild
-		ctx.drawImage(
-			gBilder[neu_id].bild,
-			0,0,
-			canvas[0].width,canvas[0].height
-		);
-    };
+		alert("Laden der nächsten Szene gestartet!");
+	}
 }

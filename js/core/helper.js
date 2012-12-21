@@ -34,6 +34,10 @@ var sceneXML				= "../../szenen.xml";
 var gcurrent_scene_counter	= 1;
 //ID der aktuellen Szene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
+//Anzahl der Rätselschritte der aktuellen Szene
+var gQuiz_steps				= 0;
+//derzeitiger Rätselschritt
+var gcurrent_quiz_step		= 0;
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -43,20 +47,19 @@ function sceneStruct(id){
     this.staticForegroundObjects  = new Array();
     this.dynamicForegroundObjects = new Array();
     this.persons                  = new Array();
-
-    /*This might be removed in a future version*/
-    this.hasQuiz                  = false;
-    this.quizSteps                = new Array();
 }
 
-//Struct for person information includes Position and Size struct
+//Struct for person information includes Position struct, Size struct and Quiz info
 function personStruct(id, imgID, xPos, yPos, width, height){
     this.personID   = id;
     this.imageID    = imgID;
     this.position   = new Position(xPos, yPos);
     this.size       = new Size(width, height);
+	
+	this.quizTrigger= false;
+	this.quizStep	= 0;
 }
-//Struct for object information includes Position and Size struct
+//Struct for object information includes Position struct, Size struct and Quiz info
 function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
 
     this.imageID    = imgID;
@@ -66,25 +69,9 @@ function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
     this.size       = new Size(width, height);
 
     this.clickable  = typeof( clickable ) === 'undefined' ? false : clickable;
-}
-
-//includes information about one step of quiz within a scene
-//This might be removed in a future version
-function quizStep(objID, diagReactID, diagTipID, code){
-
-    this.objectID           = objID;
-    this.dialogueReactionID = diagReactID;
-    this.dialogueTipID      = diagTipID;
-    this.code               = code;
-	this.changes			= new Array();
-}
-
-//includes information about on change within a quiz step
-//This might be removed in a future version
-function quizChange(_id_old, _id_new){
 	
-	this.id_old	= _id_old;
-	this.id_new	= _id_new;	
+	this.quizTrigger= false;
+	this.quizStep	= 0;
 }
 
 //Struct for object position on the browsers viewport
