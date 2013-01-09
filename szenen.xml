@@ -3,7 +3,7 @@
   <szene id="Szene_1" reatselschritte="2">
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="bild_hintergrund" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="bild_bruecke" dialog_id="#none#" klickbar="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0"/>
           <groesse width="100" height="100"/>
@@ -31,7 +31,7 @@
         <person person_id="protagonist1" bild_id="bild_testtileset"
 		raetselschritt="-1" raetsel_ausloeser="false">
           <position x="50" y="50"/>
-          <groesse width="300" height="300"/>
+          <groesse width="700" height="700"/>
         </person>
       </personen>
       <vg_statisch>
@@ -54,17 +54,17 @@
       <vg_animiert>
         <vg_animiert_objekt bild_id="bild_dooroverlay" dialog_id="#none#" klickbar="true"
 		raetselschritt="0" raetsel_ausloeser="false">
-          <position x="24" y="25"/>
+          <position x="10" y="50"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="bild_bedoverlay" dialog_id="#none#" klickbar="true"
 		raetselschritt="1" raetsel_ausloeser="false">
-          <position x="24" y="25"/>
+          <position x="10" y="50"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="bild_windowoverlay" dialog_id="#none#" klickbar="true"
 		raetselschritt="2" raetsel_ausloeser="true">
-          <position x="24" y="25"/>
+          <position x="10" y="50"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
       </vg_animiert>

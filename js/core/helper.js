@@ -90,12 +90,13 @@ function Size(w, h){
 /**************
  *animation.js*
  **************/
-var gTimeoutDescriptor = 0;    // descriptor which is used to call a halt on setTimeout events
-var gTargetIdentifier  = "";   // used to set an overlay from HTML code as movement target
-var gMRset             = false;// Flag which marks if the stepwidth of the current movement has already been computed
-var gVelocityParam     = 25.0; // Movement speed parameter
-var gVecX              = 0.0;  // Computed stepwidth in x direction
-var gVecY              = 0.0;  // Computed stepwidth in y direction
+var gTimeoutDescriptor		= 0;    // descriptor which is used to call a halt on setTimeout events
+var gTargetIdentifier  		= "";   // used to set an overlay from HTML code as movement target
+var gTargetIdentifierOffset	= null;	// stores the targets offset while moving to avoid confusion by quiz changes
+var gMRset             		= false;// Flag which marks if the stepwidth of the current movement has already been computed
+var gVelocityParam     		= 25.0; // Movement speed parameter
+var gVecX              		= 0.0;  // Computed stepwidth in x direction
+var gVecY              		= 0.0;  // Computed stepwidth in y direction
 
 /******************
  *pictureParser.js*

@@ -35,6 +35,13 @@
       <stufe x="1" y="1" z="1"/>
     </skalierung>
   </bild>
+  <bild id="bild_bruecke" pfad="../../bilder/szene1/bruecke.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+    <animation fps="0" tile_anzahl="0" tile_width="0"/>
+    <skalierung>
+      <stufe x="1" y="1" z="1"/>
+    </skalierung>
+  </bild>
   <bild id="bild_testtileset" pfad="../../bilder/szene1/testTileset.png" animiert="true">
     <abmessungen height="32" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32"/>

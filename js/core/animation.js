@@ -17,8 +17,17 @@ function heroMovement(){
     var hero = $("canvas[id*=canvas_person]");
     var target = $("#"+gTargetIdentifier);
 
-
-    var targetPos = target.offset();
+    var targetPos;
+	
+	//checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
+	if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
+		
+		targetPos = gTargetIdentifierOffset = target.offset();
+	} else{
+		
+		targetPos = gTargetIdentifierOffset;
+	}
+	
     var heroPos = hero.offset();
 
     //Get current position of protagonist object and target clickable object
@@ -39,7 +48,7 @@ function heroMovement(){
     var newHx = 0;
     var newHy = 0;
 
-    //calculate next movement step for x and y depending from direction
+    //calculate next movement step for x and y depending on direction
     if(heroX > targetX){
         newHx = heroX - gVecX;
     }else if(heroX < targetX){
@@ -126,6 +135,7 @@ function heroMovement(){
 
         //reset global variables
         gTargetIdentifier = "";
+		gTargetIdentifierOffset = undefined;
         gVecX             = 0.0;
         gVecY             = 0.0;
         gMRset            = false;
@@ -247,7 +257,17 @@ function borderCollisionDetection(objectName){
                  var heroMaxX   = heroMinX + hero.outerWidth();
                  var heroMaxY   = heroMinY + hero.outerHeight();
 
-                 var targetOffset = target.offset();
+                 var targetOffset;
+				 
+				 //checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
+				 if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
+		
+					targetOffset = gTargetIdentifierOffset = target.offset();
+				} else{
+					
+					targetOffset = gTargetIdentifierOffset;
+				}
+				 
                  var targetMinX   = targetOffset.left;
                  var targetMinY   = targetOffset.top;
                  var targetMaxX   = targetMinX + target.outerWidth();
