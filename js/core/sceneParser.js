@@ -27,16 +27,9 @@ function getSceneElementData(sceneElement){
 
     var tmpObject = new objectStruct(sceneElement.attr('bild_id'),
                                  sceneElement.attr('dialog_id'));
-    tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
-    tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
-    tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
-    tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
-    tmpObject.clickable     = sceneElement.attr('klickbar') === "true";
+	tmpObject.clickable     = sceneElement.attr('klickbar') === "true";
 	
-	tmpObject.quizTrigger	= sceneElement.attr('raetsel_ausloeser') === "true";
-	tmpObject.quizStep		= parseInt(sceneElement.attr('raetselschritt'));
-
-    return tmpObject;
+	return getElementData(tmpObject, sceneElement);
 }
 
 /*
@@ -59,8 +52,15 @@ function getPersonElementData(sceneElement){
 
     var tmpObject = new personStruct(sceneElement.attr('person_id'),
                                  sceneElement.attr('bild_id'));
-    tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
+	
+	return getElementData(tmpObject, sceneElement);
+}
+
+function getElementData(tmpObject, sceneElement){
+	
+	tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
+	tmpObject.position.zPos = parseInt(sceneElement.find('position').attr('z'));
     tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
 	
@@ -226,6 +226,11 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
         var canvasContext = newCanvas[0].getContext("2d");
 
+		//sort objects following .position.zPos
+		objectsToDraw.sort(function(a, b){
+				return a.position.zPos - b.position.zPos;
+			});
+
         //draw objects onto canvas
         for(var index = 0; index < objectsToDraw.length; ++index){
             canvasContext.drawImage(
@@ -278,6 +283,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //object positioning
             newCanvas.css('left', objectsToDraw[index].position.xPos + '%');
             newCanvas.css('top',  objectsToDraw[index].position.yPos + '%');
+			newCanvas.css('z-index',  objectsToDraw[index].position.zPos);
 
             //calculate pixel dimensions from percentage values
 			var pxWidth;
@@ -294,6 +300,22 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             var pxHeight = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
                                    objectsToDraw[index].size.height);
 
+			//read scaling from object and apply to canvas
+			var skalierung;
+			
+			if(objectsToDraw[index].position.zPos < 200){
+				skalierung = 0.2;
+			}else if(objectsToDraw[index].position.zPos < 300){
+				skalierung = 0.4;
+			}else if(objectsToDraw[index].position.zPos < 400){
+				skalierung = 0.6;
+			}else {
+				skalierung = 0.8;
+			}
+			
+			pxWidth		*= skalierung;
+			pxHeight	*= skalierung;
+			
             //set canvas dimensions
             newCanvas[0].width  = pxWidth;
             newCanvas[0].height = pxHeight;

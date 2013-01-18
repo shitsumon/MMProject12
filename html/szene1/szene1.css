@@ -14,25 +14,25 @@ html, body {
 }
 canvas[id*="canvas_bg_dynamic"] {
 	position: absolute;
-	z-index: 1;
+	z-index: 100;
 	top: 0px;
 	left: 0px;
 }
 canvas[id*="canvas_person"] {
 	position: absolute;
-	z-index: 2;
+	z-index: 200;
 	top: 0px;
 	left: 0px;
 }
 canvas[id*="canvas_fg_static"] {
 	position: absolute;
-	z-index: 3;
+	z-index: 300;
 	top: 0px;
 	left: 0px;
 }
 canvas[id*="canvas_fg_dynamic"] {
 	position: absolute;
-	z-index: 4;
+	z-index: 400;
 	top: 0px;
 	left: 0px;
 }

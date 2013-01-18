@@ -50,17 +50,17 @@ function sceneStruct(id){
 }
 
 //Struct for person information includes Position struct, Size struct and Quiz info
-function personStruct(id, imgID, xPos, yPos, width, height){
+function personStruct(id, imgID, xPos, yPos, zPos, width, height){
     this.personID   = id;
     this.imageID    = imgID;
-    this.position   = new Position(xPos, yPos);
+    this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
 	
 	this.quizTrigger= false;
 	this.quizStep	= 0;
 }
 //Struct for object information includes Position struct, Size struct and Quiz info
-function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
+function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height, clickable){
 
     this.imageID    = imgID;
     this.dialogueID = diagID;
@@ -75,9 +75,10 @@ function objectStruct(imgID, diagID, xPos, yPos, width, height, clickable){
 }
 
 //Struct for object position on the browsers viewport
-function Position(x, y){
+function Position(x, y, z){
     this.xPos = typeof( x ) === 'undefined' ? 0 : x;
     this.yPos = typeof( y ) === 'undefined' ? 0 : y;
+	this.zPos = typeof( z ) === 'undefined' ? 0 : z;
 }
 
 //Struct for object size on the browsers viewport
