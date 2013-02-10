@@ -54,8 +54,8 @@ canvas[id*="canvas_fg_dynamic"]{
 
 #textbox{
         position:absolute;
-        height:150px;
-        width:800px;
+        /*height:150px;
+        width:200px;*/
         z-index:50;
         top: 0px;
         left: 0px;

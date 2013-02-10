@@ -208,25 +208,33 @@ gTalk.bild_id 		= "null";			 //MUSS mit dialogSettings(...) initialisiert
 gTalk.canvas_id		= "null";			 //MUSS mit dialogSettings(...) initialisiert
 gTalk.font_color	= "white";			 //kann mit dialogSettings(...) verändert werden
 gTalk.font_style	= "bold 16px Arial"; //kann mit dialogSettings(...) verändert werden
-gTalk.lineletters   = 40;				 //kann mit dialogSettings(...) verändert werden
-gTalk.line_distance = 15;				 //kann mit dialogSettings(...) verändert werden
+gTalk.line_distance = 10;				 //kann mit dialogSettings(...) verändert werden
 gTalk.dialog_id		= "null";
 gTalk.SatzGerade	= 0;
 gTalk.SatzMax		= 0;
-gTalk.TBPercPosX    = 37; //in %
-gTalk.TBPercPosY    = 0;  //in %
+
+gTalk.TBPercPosX        = 50; //Textbox X position in %
+gTalk.TBPercPosY        = 0;  //Textbox Y position in %
+gTalk.TBPercWidth       = 80; //Textbox width in %
+gTalk.TBPercHeight      = 80; //Textbox height in %
+gTalk.TBPercTextPosX    = 17; //Textbox text X position in %
+gTalk.TBPercTextPosY    = 20; //Textbox text Y position in %
+gTalk.TBPercImagePosX   = 2;  //Textbox image X position in %
+gTalk.TBPercImagePosY   = 5;  //Textbox image Y position in %
+gTalk.TBPercImageWidth  = 20; //Textbox image width in %
+gTalk.TBPercImageHeight = 20; //Textbox image height in %
+
 
 var gTBDrawn = false;
 
 //muss einmal aufgerufen werden
 //Einstellungen für alle späteren DialogAufrufe
-function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _lineletters, _line_distance)
+function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_distance)
 {
 	gTalk.bild_id		=_bild_id;			//Hintergrundbild
 	gTalk.canvas_id		=_canvas_id;		//CSS-Objekt-Name
 	gTalk.font_color	=_font_color;		//Schriftfarbe
 	gTalk.font_style	=_font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
-	gTalk.lineletters	=_lineletters		//Zahl der Buchstaben bis Zeilenumbruch
 	gTalk.line_distance	=_line_distance		//Zeilenabstand
 }
 

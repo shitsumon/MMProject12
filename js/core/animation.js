@@ -18,16 +18,16 @@ function heroMovement(){
     var target = $("#"+gTargetIdentifier);
 
     var targetPos;
-	
-	//checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
-	if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
-		
-		targetPos = gTargetIdentifierOffset = target.offset();
-	} else{
-		
-		targetPos = gTargetIdentifierOffset;
-	}
-	
+
+    //checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
+    if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
+
+        targetPos = gTargetIdentifierOffset = target.offset();
+    } else{
+
+        targetPos = gTargetIdentifierOffset;
+    }
+
     var heroPos = hero.offset();
 
     //Get current position of protagonist object and target clickable object
@@ -135,7 +135,7 @@ function heroMovement(){
 
         //reset global variables
         gTargetIdentifier = "";
-		gTargetIdentifierOffset = undefined;
+        gTargetIdentifierOffset = undefined;
         gVecX             = 0.0;
         gVecY             = 0.0;
         gMRset            = false;
@@ -258,16 +258,16 @@ function borderCollisionDetection(objectName){
                  var heroMaxY   = heroMinY + hero.outerHeight();
 
                  var targetOffset;
-				 
-				 //checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
-				 if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
-		
-					targetOffset = gTargetIdentifierOffset = target.offset();
-				} else{
-					
-					targetOffset = gTargetIdentifierOffset;
-				}
-				 
+
+                 //checks if gTargetIdentifierOffset is defined and uses its value representing the inital targets offset
+                 if( typeof(gTargetIdentifierOffset) === 'undefined' || gTargetIdentifierOffset == null){
+
+                     targetOffset = gTargetIdentifierOffset = target.offset();
+                 } else{
+
+                     targetOffset = gTargetIdentifierOffset;
+                 }
+
                  var targetMinX   = targetOffset.left;
                  var targetMinY   = targetOffset.top;
                  var targetMaxX   = targetMinX + target.outerWidth();

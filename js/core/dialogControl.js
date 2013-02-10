@@ -27,15 +27,21 @@ function dialog_zeichneDialog()
     var Satz   = Dialog.saetze[gTalk.SatzGerade];
     var Text   = Satz.inhalt;
 	
+    //background textbox dimensions
+    var textBoxImageWidth  = gBilder[gTalk.bild_id].abmessungen.width;
+    var textBoxImageHeight = gBilder[gTalk.bild_id].abmessungen.height;
+
     //Textbox protagonist bild dimensionen
-    var ProtImgXPos        = 10;  //xPos text Bild
-    var ProtImgYPos        = 20;  //yPos text Bild
-    var ProtImgWidth       = 50;  //width text Bild
-    var ProtImgHeight      = 110; //height text Bild
+    var ProtImgXPos        = perc2pix(textBoxImageWidth,  gTalk.TBPercImagePosX);   //xPos text Bild
+    var ProtImgYPos        = perc2pix(textBoxImageHeight, gTalk.TBPercImagePosY);   //yPos text Bild
+    var ProtImgWidth       = perc2pix(gBilder[Satz.bild_id].abmessungen.width,  gTalk.TBPercImageWidth);  //width text Bild
+    var ProtImgHeight      = perc2pix(gBilder[Satz.bild_id].abmessungen.height, gTalk.TBPercImageHeight); //height text Bild
 
     //Text positioning values
-    var textXPos    = 75;
-    var textYOffset = 35;
+    var textXPos    = perc2pix(textBoxImageWidth,  gTalk.TBPercTextPosX);
+    var textYOffset = perc2pix(textBoxImageHeight, gTalk.TBPercTextPosY);
+
+    var pixSize = Math.round((textBoxImageWidth - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
 
     //screen dimensions
     var screenWidth  = $(window).width();
@@ -44,6 +50,8 @@ function dialog_zeichneDialog()
 	//Prinzip von pictureAnimation.js übernommen.
     var canvas = $("#" + gTalk.canvas_id)[0];
 
+    canvas.width  = perc2pix(textBoxImageWidth,  gTalk.TBPercWidth);
+    canvas.height = perc2pix(textBoxImageHeight, gTalk.TBPercHeight);
     /*
         Setze position der Textbox mit prozentualen Werten.
 
@@ -63,14 +71,13 @@ function dialog_zeichneDialog()
     //hole kontext
     var ctx    = canvas.getContext("2d");
 	
-	//Leere Inahlt des Bereiches (löscht alten text etc)
+    //Leere Inhalt des Bereiches (löscht alten text etc)
 	ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
-	//Zeichne die Textbox
+    //Draws background box
     ctx.drawImage( gBilder[gTalk.bild_id].bild, 0, 0 );
 	
-    /*Zeichne Protagonistenbild ein
-     TODO: Fix scaling bug bug!*/
+    //Draw character image
     ctx.drawImage( gBilder[Satz.bild_id].bild,
                    ProtImgXPos,
                    ProtImgYPos,
@@ -83,14 +90,14 @@ function dialog_zeichneDialog()
     ctx.font      =	gTalk.font_style;
 	
 	//Breche Text in Zeilen
-    var text = dialog_SatzZeilenBruch(Satz.inhalt);
+    var text = dialog_SatzZeilenBruch(Satz.inhalt, pixSize);
 	
 	//Fülle Box mit Text Zeilenweise aus
     for( var i = 0; i < text.length; i++ )
-	{
+    {
         ctx.fillText(text[i], textXPos, textYOffset + ( gTalk.line_distance * i )); //Magic numbers, siehe oben!
-	};
-	
+    };
+
 	//Inkrementiere Satzcounter
     ++gTalk.SatzGerade;
 	
@@ -116,20 +123,20 @@ function dialog_zeichneDialog()
 /*Diese Funktion bricht längere Text in Zeilen auf
   Die Maximiale Zeilenlänge wird in gTalk.lineletters
   definiert*/
-function dialog_SatzZeilenBruch(text)
+function dialog_SatzZeilenBruch(text, pixelSize)
 {
     var subtext = "";
     var result  = new Array();
     var search  = 0;
 	
-    if ( text.length > gTalk.lineletters )
+    if ( text.length > pixelSize )
 	{
         /*falls text zu lange, nimm maximale-länge string
           suche nach letztem Space speichere String als Zeile
           mach das so lange weiter bis alles rein passt*/
-        while(text.length>gTalk.lineletters){
+        while(text.length > pixelSize){
 
-            subtext =	text.substr( 0, gTalk.lineletters);
+            subtext =	text.substr( 0, pixelSize);
             search  =	subtext.lastIndexOf(" ") + 1;
 
             result.push (text.substr( 0, search));

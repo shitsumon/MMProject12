@@ -18,14 +18,12 @@
 <body onLoad="
 ladeBilder();
 ladeDialoge();
-/*dieser aufrufe sollte irgendwo anders stattfinden, vielleicht in helper.js*/
 dialogSettings(	
 'bild_texthg',			//Hintergrund für Dialoge
-'textbox',				//CSS/Canvas
-'white',				//Schriftfarbe
-'16px Arial',			//Schriftart
-30,						//Maximale Zahl an Zeichen pro Zeile
-16);					//Zeilenabstand
+'textbox',			//CSS/Canvas
+'white',			//Schriftfarbe
+'bold 18px Arial',		//Schriftart
+20);				//Zeilenabstand
 setTimeout(function(){
         dialogStart('dialog_eins')	//Aufruf Dialog
     },500);
