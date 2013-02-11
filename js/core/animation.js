@@ -33,20 +33,48 @@ function heroMovement(){
     //Get current position of protagonist object and target clickable object
     var targetX = targetPos.left;
     var targetY = targetPos.top;
+	var targetZ = parseInt($(target).css("z-index"));
 
     var heroX = heroPos.left;
     var heroY = heroPos.top;
+	var heroZ = parseInt($(hero).css("z-index"));
 
     //Calculate directional vector in dependence from velocity parameter
     if(!gMRset){
 
         gVecX = Math.abs(heroX - targetX) / gVelocityParam;
         gVecY = Math.abs(heroY - targetY) / gVelocityParam;
+		
+		//rechne Z-Index in Zoommultiplikator um
+		var skalierungTarget	= z2mult(targetZ);
+		var skalierungHero		= z2mult(heroZ);
+		
+		//berechne das Verhaeltnis zwischen aktueller Skalierung und Zielskalierung -> Pixeldifferenz / gVelocityParam
+		gVecZ[0]	= Math.abs(hero.outerWidth() - (hero.outerWidth()
+			* (1.0 / skalierungHero) * skalierungTarget)) / gVelocityParam;
+		gVecZ[1]	= Math.abs(hero.outerHeight() - (hero.outerHeight()
+			* (1.0 / skalierungHero) * skalierungTarget)) / gVelocityParam;
+		
+		//speichere die aktuellen Abmessungen
+		gDim[0]		= hero.outerWidth();
+		gDim[1]		= hero.outerHeight();
+		
+		//falls das Bild vergroessert wird/nach vorn/heraus geht, vergroessere die Zeichenflaeche des Canvas
+		if(skalierungHero < skalierungTarget){
+			
+			var context = hero[0].getContext("2d");
+			var bild = context.getImageData(0, 0, hero[0].width, hero[0].height);
+			hero[0].width *= skalierungTarget / skalierungHero;
+			hero[0].height *= skalierungTarget / skalierungHero;
+			context.putImageData(bild, 0, 0);
+		}
+		
         gMRset = true; //Comment this out for a decelerated movement
     }
 
     var newHx = 0;
     var newHy = 0;
+	var newHz = new Array(0, 0);
 
     //calculate next movement step for x and y depending on direction
     if(heroX > targetX){
@@ -64,6 +92,31 @@ function heroMovement(){
     }else{
         newHy = targetY;
     }
+	
+	//addiere den Vektor auf W und H und errechne das Verhaeltnis zwischen neuen und alten Werten
+	//speichere die neuen Abmessungen
+	if(heroZ > targetZ){
+		
+		newHz[0] = (gDim[0]-gVecZ[0])/gDim[0];
+		newHz[1] = (gDim[1]-gVecZ[1])/gDim[1];
+		
+		gDim[0] -= gVecZ[0];
+		gDim[1] -= gVecZ[1];
+    }else if(heroZ < targetZ){
+		
+		newHz[0] = (gDim[0]+gVecZ[0])/gDim[0];
+		newHz[1] = (gDim[1]+gVecZ[1])/gDim[1];
+		
+		gDim[0] += gVecZ[0];
+		gDim[1] += gVecZ[1];
+	}else{
+		
+		newHz[0] = 1.0;
+		newHz[1] = 1.0;
+    }
+	
+	//skaliere den INHALT des Canvas, Abmessungen bleiben erhalten
+	hero[0].getContext("2d").scale(newHz[0], newHz[1]);
 
     //Check if hero collides with viewport borders
     switch(borderCollisionDetection("canvas[id*=canvas_person]")){
@@ -132,13 +185,31 @@ function heroMovement(){
 
         //Stop intervall in order to stop the movement
         clearTimeout(gTimeoutDescriptor);
-
+		
+		//falls das Bild verkleinert wurde, passe die Abmessungen des Canvas abschliessend daran an
+		var skalierungTarget	= z2mult(targetZ);
+		var skalierungHero		= z2mult(heroZ);
+		
+		if(skalierungHero > skalierungTarget){
+			
+			var context = hero[0].getContext("2d");
+			var bild = context.getImageData(0, 0, hero[0].width, hero[0].height);
+			hero[0].width *= skalierungTarget / skalierungHero;
+			hero[0].height *= skalierungTarget / skalierungHero;
+			context.putImageData(bild, 0, 0);
+		}
+		
+		//setze den neuen Z-Index
+		hero.css("z-index", targetZ.toString());
+		
         //reset global variables
-        gTargetIdentifier = "";
+        gTargetIdentifier		= "";
         gTargetIdentifierOffset = undefined;
-        gVecX             = 0.0;
-        gVecY             = 0.0;
-        gMRset            = false;
+        gVecX	= 0.0;
+        gVecY	= 0.0;
+		gVecZ	= new Array(2);
+		gDim	= new Array(2);
+        gMRset	= false;
 
         return;
     }else{

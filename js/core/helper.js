@@ -38,6 +38,8 @@ var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 var gQuiz_steps				= 0;
 //derzeitiger Rätselschritt
 var gcurrent_quiz_step		= 0;
+//Multiplikatoren der Zoomstufen nach Z-Index
+var gZoomsteps				= new Array(0.3, 0.6, 0.9, 1.0);
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -95,9 +97,11 @@ var gTimeoutDescriptor		= 0;    // descriptor which is used to call a halt on se
 var gTargetIdentifier  		= "";   // used to set an overlay from HTML code as movement target
 var gTargetIdentifierOffset	= null;	// stores the targets offset while moving to avoid confusion by quiz changes
 var gMRset             		= false;// Flag which marks if the stepwidth of the current movement has already been computed
-var gVelocityParam     		= 25.0; // Movement speed parameter
+var gVelocityParam     		= 50.0; // Movement speed parameter
 var gVecX              		= 0.0;  // Computed stepwidth in x direction
 var gVecY              		= 0.0;  // Computed stepwidth in y direction
+var gVecZ					= new Array(2);
+var gDim					= new Array(2);
 
 /******************
  *pictureParser.js*
@@ -259,4 +263,22 @@ function waitforparser(){
 		//lese Szene ein
         getSceneInformation(gcurrent_scene_id, sceneXML);
 	}
+}
+
+//rechnet den Z-Index in den Multiplikator der Zoomstufe um
+function z2mult(z_index){
+	
+	var skalierung;
+	
+	if(z_index < 200){
+		skalierung = gZoomsteps[0];
+	}else if(z_index < 300){
+		skalierung = gZoomsteps[1];
+	}else if(z_index < 400){
+		skalierung = gZoomsteps[2];
+	}else {
+		skalierung = gZoomsteps[3];
+	}
+	
+	return skalierung;
 }

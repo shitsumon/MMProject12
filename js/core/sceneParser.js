@@ -301,17 +301,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                                    objectsToDraw[index].size.height);
 
 			//read scaling from object and apply to canvas
-			var skalierung;
-			
-			if(objectsToDraw[index].position.zPos < 200){
-				skalierung = 0.2;
-			}else if(objectsToDraw[index].position.zPos < 300){
-				skalierung = 0.4;
-			}else if(objectsToDraw[index].position.zPos < 400){
-				skalierung = 0.6;
-			}else {
-				skalierung = 0.8;
-			}
+			var skalierung = z2mult(objectsToDraw[index].position.zPos);
 			
 			pxWidth		*= skalierung;
 			pxHeight	*= skalierung;

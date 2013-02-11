@@ -80,6 +80,6 @@ function toggleAnimation(bild_id){
 	if(gAnimationTimer[bild_id].running){
 		stoppeAnimation(bild_id);
 	}else{
-		gAnimationTimer[bild_id](bild_id);
+		starteAnimation(bild_id);
 	}
 }
