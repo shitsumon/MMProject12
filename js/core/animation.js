@@ -34,16 +34,21 @@ function heroMovement(){
     var targetX = targetPos.left;
     var targetY = targetPos.top;
 	var targetZ = parseInt($(target).css("z-index"));
+	//Zentrumskoordinaten um die Wegbestimmung auf der Bildmitte zu basieren
+	var targetCenterX = targetX + (target.outerWidth() / 2.0)
+	var targetCenterY = targetY + (target.outerHeight() / 2.0)
 
     var heroX = heroPos.left;
     var heroY = heroPos.top;
 	var heroZ = parseInt($(hero).css("z-index"));
+	var heroCenterX = heroX + (hero.outerWidth() / 2.0)
+	var heroCenterY = heroY + (hero.outerHeight() / 2.0)
 
     //Calculate directional vector in dependence from velocity parameter
     if(!gMRset){
 
-        gVecX = Math.abs(heroX - targetX) / gVelocityParam;
-        gVecY = Math.abs(heroY - targetY) / gVelocityParam;
+        /*gVecX = Math.abs(heroX - targetX) / gVelocityParam;
+        gVecY = Math.abs(heroY - targetY) / gVelocityParam;*/
 		
 		//rechne Z-Index in Zoommultiplikator um
 		var skalierungTarget	= z2mult(targetZ);
@@ -69,6 +74,9 @@ function heroMovement(){
 			context.putImageData(bild, 0, 0);
 		}
 		
+		gVecX = Math.abs( (heroX + (hero.outerWidth() / 2.0)) - (targetX + (target.outerWidth() / 2.0))) / gVelocityParam;
+		gVecY = Math.abs( (heroY + (hero.outerHeight() / 2.0)) - (targetY + (target.outerHeight() / 2.0))) / gVelocityParam;
+		
         gMRset = true; //Comment this out for a decelerated movement
     }
 
@@ -77,7 +85,7 @@ function heroMovement(){
 	var newHz = new Array(0, 0);
 
     //calculate next movement step for x and y depending on direction
-    if(heroX > targetX){
+    /*if(heroX > targetX){
         newHx = heroX - gVecX;
     }else if(heroX < targetX){
         newHx = heroX + gVecX;
@@ -91,6 +99,22 @@ function heroMovement(){
         newHy = heroY + gVecY;
     }else{
         newHy = targetY;
+    }*/
+	//prueft die Differenz zwischen den Zentren von Held und Ziel
+	if(heroCenterX > targetCenterX){
+        newHx = heroX - gVecX;
+    }else if(heroCenterX < targetCenterX){
+        newHx = heroX + gVecX;
+    }else{
+        newHx = targetCenterX;
+    }
+
+    if(heroCenterY > targetCenterY){
+        newHy = heroY - gVecY;
+    }else if(heroCenterY < targetCenterY){
+        newHy = heroY + gVecY;
+    }else{
+        newHy = targetCenterY;
     }
 	
 	//addiere den Vektor auf W und H und errechne das Verhaeltnis zwischen neuen und alten Werten
@@ -127,10 +151,10 @@ function heroMovement(){
         newHy = 1;
         break;
     case 3:
-        newHx = $(window).width - hero.outerWidth() - 1;
+        newHx = $(window).width() - hero.outerWidth() - 1;
         break;
     case 4:
-        newHy = $(window).height - hero.outerHeight() - 1;
+        newHy = $(window).height() - hero.outerHeight() - 1;
         break;
     case 0:
     default:
@@ -325,8 +349,11 @@ function borderCollisionDetection(objectName){
                  var heroOffset = hero.offset();
                  var heroMinX   = heroOffset.left;
                  var heroMinY   = heroOffset.top;
-                 var heroMaxX   = heroMinX + hero.outerWidth();
-                 var heroMaxY   = heroMinY + hero.outerHeight();
+                 var heroMaxX   = heroMinX + gDim[0];//hero.outerWidth();
+                 var heroMaxY   = heroMinY + gDim[1];//hero.outerHeight();
+				 
+				 var heroCenterX = heroMinX + (gDim[0] / 2.0);
+				 var heroCenterY = heroMinY + (gDim[1] / 2.0);
 
                  var targetOffset;
 
@@ -343,15 +370,30 @@ function borderCollisionDetection(objectName){
                  var targetMinY   = targetOffset.top;
                  var targetMaxX   = targetMinX + target.outerWidth();
                  var targetMaxY   = targetMinY + target.outerHeight();
+				 
+				 var targetCenterX = targetMaxX - (target.outerWidth() / 2.0);
+				 var targetCenterY = targetMaxY - (target.outerHeight() / 2.0);
+
+				//prueft die Zentren der beiden Objekte auf Uebereinstimmung mit x% Umkreis
+				if(
+					heroCenterX >= (targetCenterX + (target.outerWidth() * 0.25)) ||
+                    heroCenterX <= (targetCenterX - (target.outerWidth() * 0.25)) ||
+                    heroCenterY >= (targetCenterY + (target.outerHeight() * 0.25)) ||
+                    heroCenterY <= (targetCenterY - (target.outerHeight() * 0.25))
+					){
+                     return false;
+                 }else{
+                     return true;
+                 }
 
                  //No intersection
-                 if(heroMinX >= targetMaxX ||
+                 /*if(heroMinX >= targetMaxX ||
                          heroMaxX <= targetMinX ||
                          heroMinY >= targetMaxY ||
                          heroMaxY <= targetMinY){
                      return false;
                  }else{
                      return true;
-                 }
+                 }*/
              }
  })(jQuery);
