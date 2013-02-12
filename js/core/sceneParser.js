@@ -267,7 +267,8 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                               {
                                id : canvasID,
 							   "class": quizClass + " " + "clickable",
-                               onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();" + quizTrigger
+                               /*onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();" + quizTrigger*/
+							   onclick:"javascript:gTargetIdentifier='" + canvasID + "';bewegePerson();" + quizTrigger
                               }
                              );
             }else{
