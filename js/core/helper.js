@@ -107,16 +107,17 @@ var gDim					= new Array(2);
  *walkAnimation.js*
  **************/
 var gWegPos		= new Array(
-					new Array(600, 0, gZoomsteps[0]),	/*Position der Wegpunkte des zentralen Pfades*/
-					new Array(600, 100, gZoomsteps[1]),	/*er dient der Figur als Weg zwischen den Tiefenebenen*/
-					new Array(600, 200, gZoomsteps[2]),	/*sollten in szenen.xml hinterlegt und von dort gelesen werden*/
-					new Array(600, 300, gZoomsteps[3])
+					new Array(600, 100, gZoomsteps[0]),	/*Position der Wegpunkte des zentralen Pfades*/
+					new Array(600, 200, gZoomsteps[1]),	/*er dient der Figur als Weg zwischen den Tiefenebenen*/
+					new Array(600, 300, gZoomsteps[2]),	/*sollten in szenen.xml hinterlegt und von dort gelesen werden*/
+					new Array(600, 400, gZoomsteps[3])
 					);
 var gTargets		= new Array(	/*x, y-Koordinaten der Wegpunkte, die nacheinander angesteuert werden*/
 					new Array(2),
 					new Array(2),
 					new Array(2)
 					);
+var gStartAbmessungen	= new Array(2);
 var gMoveVec			= new Array(new Array(3), new Array(3), new Array(3));//Bewegungsvektoren über die drei Abschnitte
 var gWegBerechnet		= false;	//zur einmaligen Berechnung der Vektoren
 var gAufrufeProSekunde	= 25;

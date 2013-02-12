@@ -9,19 +9,44 @@ function bewegePerson(){
 	var targetPos	= new Array(3);
 
 	//Koordinaten erfassen
-	heroPos[0] = hero.offset().left + (hero.outerWidth() / 2.0);
-	heroPos[1] = hero.offset().top + (hero.outerHeight() / 2.0);
-	heroPos[2] = z2mult(parseInt(hero.css("z-index")));
+	heroPos[2]		= z2mult(parseInt(hero.css("z-index")));
+	targetPos[2]	= z2mult(parseInt(target.css("z-index")));
 	
-	targetPos[0] = target.offset().left + (target.outerWidth() / 2.0);
-	targetPos[1] = target.offset().top + (target.outerHeight() / 2.0);
-	targetPos[2] = z2mult(parseInt(target.css("z-index")));
+	if(!gWegBerechnet){		
+		//speichert die Abmessungen vor der Skalierung
+		gStartAbmessungen[0] = hero.width();
+		gStartAbmessungen[1] = hero.height();
+		
+		if(heroPos[2] <= targetPos[2]){
+			//vergrößern		
+			//hier muss der Canvas zu Beginn vergrößert werden damit das Bild nicht abgeschnitten wird
+			skaliereHeld( targetPos[2] / heroPos[2], hero);
+		}
+		
+		/*zeichnet die punkte des zentralpfades*/
+		var hg=$("canvas[id*=canvas_bg_static]")[0].getContext("2d");
+		hg.fillStyle = "rgb(255, 0, 0)";
+		$.each(gWegPos,function(index, value){
+			hg.fillRect( value[0], value[1], 10, 10 );
+		});
+		/**/
+	}
 	
+	//berücksichtige den Zoomfaktor bei der Berechnung der Position, sodass die Figur nachher mittig auf dem Ziel landet
+	heroPos[0] = hero.offset().left + (gStartAbmessungen[0] / 2.0);
+	heroPos[1] = hero.offset().top + (gStartAbmessungen[1] / 2.0);
+	
+	targetPos[0] = target.offset().left + (target.width() / 2.0);
+	targetPos[1] = target.offset().top + (target.height() / 2.0);
 	
 	//berechne die Bewegungsvektoren
 	if(!gWegBerechnet){
 		
 		var wegindex = new Array(2);
+		
+		/*
+			gWegPos als prozentuale Angabe und hier umrechnen!
+		*/
 		
 		$.each(gWegPos, function(index, value){
 			if(heroPos[2] == value[2]){
@@ -51,9 +76,16 @@ function bewegePerson(){
 			}
 		});
 		
-		gMoveVec[1][0] = (gWegPos[wegindex[1]][0] - gWegPos[wegindex[0]][0]) / gPixelProAufruf;
-		gMoveVec[1][1] = (gWegPos[wegindex[1]][1] - gWegPos[wegindex[0]][1]) / gPixelProAufruf;
-		gMoveVec[1][2] = (gWegPos[wegindex[1]][2] - gWegPos[wegindex[0]][2]) / gPixelProAufruf;
+		var zoomFaktor = targetPos[2] / heroPos[2];
+		
+		gMoveVec[1][0] = ((gWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
+			- (gWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+		gMoveVec[1][1] = ((gWegPos[wegindex[1]][1] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
+			- (gWegPos[wegindex[0]][1] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+		//berechne Schrittweite zwischen Start- und Zielabmessungen abhängig vom Z-Index
+		//aktuelle Abmessungen / Startmultiplikator = reale Abmessungen * Zielmultiplikator = Zielabmessungen
+		gMoveVec[1][2] = ( ((gStartAbmessungen[0] * gMoveVec[2][2] / gMoveVec[0][2])) - gStartAbmessungen[0]) / gPixelProAufruf;
+		gMoveVec[1][3] = ( ((gStartAbmessungen[1] * gMoveVec[2][2] / gMoveVec[0][2])) - gStartAbmessungen[1]) / gPixelProAufruf;
 		
 		//drittes Laufziel, das eigentliche Ziel
 		gTargets[2][0] = targetPos[0];
@@ -70,27 +102,53 @@ function bewegePerson(){
 			left:	hero.offset().left	+ gMoveVec[gAktuellesZiel][0],
 			top:	hero.offset().top	+ gMoveVec[gAktuellesZiel][1]
 			});
+
+		//skaliere
+		if(gAktuellesZiel == 1){
+		
+			//gMoveVec[1][2] >=0 -> vergrößern, sonst verkleinern
+			var skalierungsFaktor = new Array(
+				(gStartAbmessungen[0] + gMoveVec[1][2]) / gStartAbmessungen[0],
+				(gStartAbmessungen[1] + gMoveVec[1][3]) / gStartAbmessungen[1]
+				);
+			
+			hero[0].getContext("2d").scale(skalierungsFaktor[0], skalierungsFaktor[1]);
+			
+			gStartAbmessungen[0] += gMoveVec[1][2];
+			gStartAbmessungen[1] += gMoveVec[1][3];
+		}		
 	}else{
 		
 		//sobald wir in Reichweite des Ziels sind, setze den Helden genau auf dessen Koordinaten
 		hero.offset({
-			left:	gTargets[gAktuellesZiel][0] - (hero.outerWidth() / 2.0),
-			top:	gTargets[gAktuellesZiel][1] - (hero.outerHeight() / 2.0)
+			left:	gTargets[gAktuellesZiel][0] - (gStartAbmessungen[0] / 2.0),
+			top:	gTargets[gAktuellesZiel][1] - (gStartAbmessungen[1] / 2.0)
 			});
+
 		//steuere das nächste Ziel an
-		gAktuellesZiel++;		
+		gAktuellesZiel++;
 	}
 	
 	if(gAktuellesZiel < 3){
 		//es können maximal drei Ziele sein, Held -> Wegpunkt 1 -> Wegpkt 2 -> Ziel
 		setTimeout(function(){ bewegePerson() }, gIntervall);
 	}else{
+		
+		hero.css("z-index", target.css("z-index"));
+		
+		if(heroPos[2] > targetPos[2]){
+			//verkleinern		
+			//hier muss der Canvas am Ende verkleinert werden damit das Bild ihn ausfüllt
+			skaliereHeld(targetPos[2] / heroPos[2], hero);
+		}
+		
 		//alles zurücksetzen
-		gAktuellesZiel	= 0;
-		heroPos			= new Array(3);
-		targetPos		= new Array(3);
-		gMoveVec		= new Array(new Array(3), new Array(3), new Array(3));
-		gWegBerechnet	= false;
+		gAktuellesZiel		= 0;
+		heroPos				= new Array(3);
+		targetPos			= new Array(3);
+		gStartAbmessungen	= new Array(2);
+		gMoveVec			= new Array(new Array(3), new Array(4), new Array(3));
+		gWegBerechnet		= false;
 	}
 }
 
@@ -109,4 +167,16 @@ function zielErreicht(heroPos, targetPos){
 		
 		return false;
 	}
+}
+
+function skaliereHeld(faktor, canvas){
+	
+	canvas		= $(canvas);
+	var context	= canvas[0].getContext("2d");
+	var inhalt	= context.getImageData(0, 0, Math.round(gStartAbmessungen[0]), Math.round(gStartAbmessungen[1]));
+	
+	canvas[0].width	*= faktor;
+	canvas[0].height*= faktor;
+	
+	context.putImageData(inhalt, 0, 0);
 }
