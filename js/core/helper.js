@@ -39,7 +39,7 @@ var gQuiz_steps				= 0;
 //derzeitiger Rätselschritt
 var gcurrent_quiz_step		= 0;
 //Multiplikatoren der Zoomstufen nach Z-Index
-var gZoomsteps				= new Array(0.3, 0.6, 0.9, 1.0);
+var gZoomsteps				= new Array(4);
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -89,34 +89,15 @@ function Size(w, h){
     this.height = typeof( h ) === 'undefined' ? 0 : h;
 }
 
-
-/**************
- *animation.js*
- **************/
-var gTimeoutDescriptor		= 0;    // descriptor which is used to call a halt on setTimeout events
-var gTargetIdentifier  		= "";   // used to set an overlay from HTML code as movement target
-var gTargetIdentifierOffset	= null;	// stores the targets offset while moving to avoid confusion by quiz changes
-var gMRset             		= false;// Flag which marks if the stepwidth of the current movement has already been computed
-var gVelocityParam     		= 50.0; // Movement speed parameter
-var gVecX              		= 0.0;  // Computed stepwidth in x direction
-var gVecY              		= 0.0;  // Computed stepwidth in y direction
-var gVecZ					= new Array(2);
-var gDim					= new Array(2);
-
 /**************
  *walkAnimation.js*
  **************/
-var gWegPos		= new Array(
-					new Array(600, 100, gZoomsteps[0]),	/*Position der Wegpunkte des zentralen Pfades*/
-					new Array(600, 200, gZoomsteps[1]),	/*er dient der Figur als Weg zwischen den Tiefenebenen*/
-					new Array(600, 300, gZoomsteps[2]),	/*sollten in szenen.xml hinterlegt und von dort gelesen werden*/
-					new Array(600, 400, gZoomsteps[3])
-					);
-var gTargets		= new Array(	/*x, y-Koordinaten der Wegpunkte, die nacheinander angesteuert werden*/
-					new Array(2),
-					new Array(2),
-					new Array(2)
-					);
+var gTargetIdentifier  	= "";   // used to set an overlay from HTML code as movement target
+//Position der Wegpunkte des zentralen Pfades
+//er dient der Figur als Weg zwischen den Tiefenebenen
+var gWegPos				= new Array(4);
+//x, y-Koordinaten der Wegpunkte, die nacheinander angesteuert werden
+var gTargets			= new Array(new Array(2), new Array(4), new Array(2));
 var gStartAbmessungen	= new Array(2);
 var gMoveVec			= new Array(new Array(3), new Array(3), new Array(3));//Bewegungsvektoren über die drei Abschnitte
 var gWegBerechnet		= false;	//zur einmaligen Berechnung der Vektoren
@@ -268,12 +249,12 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
  *Utilities*
  ***********/
 
-//Calculates the effective pixel value from a CSS percentage string
+//Generates a CSS percentage from a numeric pixel value
 function pix2perc(absolute, pixelValue){
     return (100 * pixelValue) / absolute + "%";
 }
 
-//Generates a CSS percentage from a numeric pixel value
+//Calculates the effective pixel value from a CSS percentage string
 function perc2pix(absolute, perc){
     return (absolute / 100) * perc;
 }

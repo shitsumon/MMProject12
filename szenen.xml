@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <szenen>
   <szene id="Szene_1" reatselschritte="2">
+    <zentralpfad>
+      <wegpunkt x="52" y="75" zoom="0.3"/>
+      <wegpunkt x="50" y="80" zoom="0.6"/>
+      <wegpunkt x="48" y="85" zoom="0.9"/>
+      <wegpunkt x="46" y="90" zoom="1.0"/>
+    </zentralpfad>
     <ebenen>
       <hg_statisch>
         <hg_statisch_objekt bild_id="bild_bruecke" dialog_id="#none#" klickbar="false"

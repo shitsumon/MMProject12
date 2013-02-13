@@ -20,16 +20,8 @@ function bewegePerson(){
 		if(heroPos[2] <= targetPos[2]){
 			//vergrößern		
 			//hier muss der Canvas zu Beginn vergrößert werden damit das Bild nicht abgeschnitten wird
-			skaliereHeld( targetPos[2] / heroPos[2], hero);
+			skaliereCanvas( targetPos[2] / heroPos[2], hero);
 		}
-		
-		/*zeichnet die punkte des zentralpfades*/
-		var hg=$("canvas[id*=canvas_bg_static]")[0].getContext("2d");
-		hg.fillStyle = "rgb(255, 0, 0)";
-		$.each(gWegPos,function(index, value){
-			hg.fillRect( value[0], value[1], 10, 10 );
-		});
-		/**/
 	}
 	
 	//berücksichtige den Zoomfaktor bei der Berechnung der Position, sodass die Figur nachher mittig auf dem Ziel landet
@@ -42,35 +34,51 @@ function bewegePerson(){
 	//berechne die Bewegungsvektoren
 	if(!gWegBerechnet){
 		
-		var wegindex = new Array(2);
+		var wegindex	= new Array(2);
+		var lWegPos		= new Array(new Array(2), new Array(2), new Array(2), new Array(2));
 		
-		/*
-			gWegPos als prozentuale Angabe und hier umrechnen!
-		*/
+		var fensterabmessungen = new Array(
+										$(window).width(),
+										$(window).height()
+									);
 		
 		$.each(gWegPos, function(index, value){
-			if(heroPos[2] == value[2]){
+			
+			lWegPos[index][0] = perc2pix(fensterabmessungen[0], value[0]);
+			lWegPos[index][1] = perc2pix(fensterabmessungen[1], value[1]);
+		});
+		
+		/*zeichnet die punkte des zentralpfades*/
+		var hg=$("canvas[id*=canvas_bg_static]")[0].getContext("2d");
+		hg.fillStyle = "rgb(255, 0, 0)";
+		$.each(lWegPos,function(index, value){
+			hg.fillRect( value[0], value[1], 10, 10 );
+		});
+		/**/
+		
+		$.each(gZoomsteps, function(index, value){
+			if(heroPos[2] == value){
 				//Zielposition - Startposition = Richtungsvektor
 				//Richtungsvektor / Pixel pro Sekunde = Pixel pro Schritt
-				gMoveVec[0][0] = (gWegPos[index][0] - heroPos[0]) / gPixelProAufruf;
-				gMoveVec[0][1] = (gWegPos[index][1] - heroPos[1]) / gPixelProAufruf;
+				gMoveVec[0][0] = (lWegPos[index][0] - heroPos[0]) / gPixelProAufruf;
+				gMoveVec[0][1] = (lWegPos[index][1] - heroPos[1]) / gPixelProAufruf;
 				gMoveVec[0][2] = heroPos[2];
 				
 				//erstes Laufziel, zum Zentralpfad
-				gTargets[0][0] = gWegPos[index][0];
-				gTargets[0][1] = gWegPos[index][1];
+				gTargets[0][0] = lWegPos[index][0];
+				gTargets[0][1] = lWegPos[index][1];
 				
 				wegindex[0] = index;
 			}
 			
-			if(targetPos[2] == value[2]){
-				gMoveVec[2][0] = (targetPos[0] - gWegPos[index][0]) / gPixelProAufruf;
-				gMoveVec[2][1] = (targetPos[1] - gWegPos[index][1]) / gPixelProAufruf;
+			if(targetPos[2] == value){
+				gMoveVec[2][0] = (targetPos[0] - lWegPos[index][0]) / gPixelProAufruf;
+				gMoveVec[2][1] = (targetPos[1] - lWegPos[index][1]) / gPixelProAufruf;
 				gMoveVec[2][2] = targetPos[2];
 				
 				//zweites Laufziel, am Ende des Zentralpfades
-				gTargets[1][0] = gWegPos[index][0];
-				gTargets[1][1] = gWegPos[index][1];
+				gTargets[1][0] = lWegPos[index][0];
+				gTargets[1][1] = lWegPos[index][1];
 				
 				wegindex[1] = index;
 			}
@@ -78,14 +86,19 @@ function bewegePerson(){
 		
 		var zoomFaktor = targetPos[2] / heroPos[2];
 		
-		gMoveVec[1][0] = ((gWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
-			- (gWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
-		gMoveVec[1][1] = ((gWegPos[wegindex[1]][1] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
-			- (gWegPos[wegindex[0]][1] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+		gMoveVec[1][0] = ((lWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
+			- (lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+		gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
+			- (lWegPos[wegindex[0]][1] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+			
 		//berechne Schrittweite zwischen Start- und Zielabmessungen abhängig vom Z-Index
 		//aktuelle Abmessungen / Startmultiplikator = reale Abmessungen * Zielmultiplikator = Zielabmessungen
-		gMoveVec[1][2] = ( ((gStartAbmessungen[0] * gMoveVec[2][2] / gMoveVec[0][2])) - gStartAbmessungen[0]) / gPixelProAufruf;
-		gMoveVec[1][3] = ( ((gStartAbmessungen[1] * gMoveVec[2][2] / gMoveVec[0][2])) - gStartAbmessungen[1]) / gPixelProAufruf;
+		//speichert die Zielabmessungen zum Vergleich
+		gTargets[1][2] = (gStartAbmessungen[0] * gMoveVec[2][2] / gMoveVec[0][2]);
+		gTargets[1][3] = (gStartAbmessungen[1] * gMoveVec[2][2] / gMoveVec[0][2]);
+		//speichert die Schrittweite in x- und y-Richtung in Abhängigkeit von Z
+		gMoveVec[1][2] = ( gTargets[1][2] - gStartAbmessungen[0]) / gPixelProAufruf;
+		gMoveVec[1][3] = ( gTargets[1][3] - gStartAbmessungen[1]) / gPixelProAufruf;
 		
 		//drittes Laufziel, das eigentliche Ziel
 		gTargets[2][0] = targetPos[0];
@@ -103,17 +116,15 @@ function bewegePerson(){
 			top:	hero.offset().top	+ gMoveVec[gAktuellesZiel][1]
 			});
 
-		//skaliere
+		//skaliere falls wir auf dem Zentralpfad sind
 		if(gAktuellesZiel == 1){
-		
-			//gMoveVec[1][2] >=0 -> vergrößern, sonst verkleinern
-			var skalierungsFaktor = new Array(
-				(gStartAbmessungen[0] + gMoveVec[1][2]) / gStartAbmessungen[0],
-				(gStartAbmessungen[1] + gMoveVec[1][3]) / gStartAbmessungen[1]
-				);
-			
-			hero[0].getContext("2d").scale(skalierungsFaktor[0], skalierungsFaktor[1]);
-			
+			//gMoveVec[1][2] >= 0 -> vergrößern, sonst verkleinern
+			skaliereHeld(
+				(gStartAbmessungen[0] + gMoveVec[1][2]),
+				(gStartAbmessungen[1] + gMoveVec[1][3]),
+				hero);
+							
+			//speichere die neuen Abmessungen als Ausgangswert für den nächsten Durchlauf
 			gStartAbmessungen[0] += gMoveVec[1][2];
 			gStartAbmessungen[1] += gMoveVec[1][3];
 		}		
@@ -124,7 +135,12 @@ function bewegePerson(){
 			left:	gTargets[gAktuellesZiel][0] - (gStartAbmessungen[0] / 2.0),
 			top:	gTargets[gAktuellesZiel][1] - (gStartAbmessungen[1] / 2.0)
 			});
-
+		
+		if(gAktuellesZiel == 1){
+			//wir sind am Ende des Zentralpfades, skaliere auf den Zielwert
+			skaliereHeld(gTargets[1][2], gTargets[1][3], hero);
+		}
+			
 		//steuere das nächste Ziel an
 		gAktuellesZiel++;
 	}
@@ -139,8 +155,20 @@ function bewegePerson(){
 		if(heroPos[2] > targetPos[2]){
 			//verkleinern		
 			//hier muss der Canvas am Ende verkleinert werden damit das Bild ihn ausfüllt
-			skaliereHeld(targetPos[2] / heroPos[2], hero);
+			skaliereCanvas(targetPos[2] / heroPos[2], hero);
 		}
+		
+		//damit die Skalierung am Ziel erhalten bleibt muss der animierte Canvas angepasst werden
+		$.each(gAnimationTimer,function(index, bild){
+			//finde den animierten Canvas anhand seiner ID
+			if((typeof(bild.canvas_id) !== "undefined") && bild.canvas_id === hero[0].id){
+				//setze die Transformationsmatrix auf die Einheistmatrix zurück
+				hero[0].getContext("2d").setTransform(1, 0, 0, 1, 0, 0);
+				//setze die Zielabmessungen der Animation auf die letzten skalierten Abmessungen
+				bild.anzeige_width	= gStartAbmessungen[0];
+				bild.anzeige_height	= gStartAbmessungen[1];
+			}
+		});
 		
 		//alles zurücksetzen
 		gAktuellesZiel		= 0;
@@ -169,8 +197,8 @@ function zielErreicht(heroPos, targetPos){
 	}
 }
 
-function skaliereHeld(faktor, canvas){
-	
+function skaliereCanvas(faktor, canvas){
+	//skaliert den Canvas um den gegebenen Faktor und verändert seine Abmessunge
 	canvas		= $(canvas);
 	var context	= canvas[0].getContext("2d");
 	var inhalt	= context.getImageData(0, 0, Math.round(gStartAbmessungen[0]), Math.round(gStartAbmessungen[1]));
@@ -179,4 +207,12 @@ function skaliereHeld(faktor, canvas){
 	canvas[0].height*= faktor;
 	
 	context.putImageData(inhalt, 0, 0);
+}
+
+function skaliereHeld(faktor1, faktor2, held){
+	//skaliert den Inhalt des Canvas um die gegebenen Faktoren
+	held[0].getContext("2d").scale(
+		faktor1 / (gStartAbmessungen[0]),
+		faktor2 / (gStartAbmessungen[1])
+		);
 }

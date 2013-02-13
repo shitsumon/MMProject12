@@ -103,6 +103,16 @@ function getSceneInformation(sceneID, sceneFilename){
 						
 						gQuiz_steps = parseInt($(currentScene).attr('reatselschritte'));
 
+						$(currentScene).find('wegpunkt').each(function(index){
+							
+							gWegPos[index] = new Array(
+								parseFloat($(this).attr("x")),
+								parseFloat($(this).attr("y"))/*,
+								parseFloat($(this).attr("zoom"))*/
+								);
+							gZoomsteps[index] = parseFloat($(this).attr("zoom"));
+                        })
+						
                         $(currentScene).find('hg_statisch_objekt').each(function(){
                             sceneObject.staticBackgroundObjects.push(getSceneElementData($(this)));
                         })
