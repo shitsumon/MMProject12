@@ -1,11 +1,38 @@
+
+Primaer
+-------
+
+- Bewegungshandling mehrerer Personen
+- Dialogcode überarbeiten, an Entwurf anpassen
+- Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Macht Micha
+
+
+Sekundaer
+---------
+
 - freistellen der Einzelbilder der Szenen
 	- mit Transparenz speichern, PNG
-- Dialogcode überarbeiten, an Entwurf anpassen
 - Szenenbeschreibung in szenen.xml umsetzen
 	- alle Bilder/Dialoge berücksichtigen
+- Dokumentation schreiben
+
+
+Neu
+---
+
 - Szenenübergänge
+- Anlegen aller benoetigten Szenen
 - Hauptmenü
 - Intro
 - Testen, testen, testen
 
 Wem fällt noch was ein?
+
+
+ANMERKUNG
+---------
+
+Bevor ihr mit hacken anfangt und das Rad neu erfindet, lest euch bitte die bestehenden Sourcen
+durch, und versucht euren Code in das bestehende System zu integrieren und vorhandenen Sachen zu nutzen.
+Das hat sonst nur mehr Nachbereitung des Codes zur Folge, was hinsichtlich der verbleibenden Zeit nicht
+wuenschenswert ist!
