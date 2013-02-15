@@ -1,0 +1,11 @@
+- freistellen der Einzelbilder der Szenen
+	- mit Transparenz speichern, PNG
+- Dialogcode überarbeiten, an Entwurf anpassen
+- Szenenbeschreibung in szenen.xml umsetzen
+	- alle Bilder/Dialoge berücksichtigen
+- Szenenübergänge
+- Hauptmenü
+- Intro
+- Testen, testen, testen
+
+Wem fällt noch was ein?
