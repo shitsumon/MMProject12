@@ -32,6 +32,22 @@
     <abmessungen height="307" width="243"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
+  <bild id="bild_herotilesetfront" pfad="../../bilder/allgemein/heroTilesetFront.png" animiert="true">
+    <abmessungen height="32" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
+  <bild id="bild_herotilesetback" pfad="../../bilder/allgemein/heroTilesetBack.png" animiert="true">
+    <abmessungen height="32" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
+  <bild id="bild_herotilesetleft" pfad="../../bilder/allgemein/heroTilesetLeft.png" animiert="true">
+    <abmessungen height="32" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
+  <bild id="bild_herotilesetright" pfad="../../bilder/allgemein/heroTilesetRight.png" animiert="true">
+    <abmessungen height="32" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
   <bild id="bild_texthg" pfad="../../bilder/szene3/text.png" animiert="false">
     <abmessungen height="165" width="800"/>
     <animation fps="1" tile_anzahl="1" tile_width="0"/>
