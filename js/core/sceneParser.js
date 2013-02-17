@@ -298,15 +298,15 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
             //calculate pixel dimensions from percentage values
 			var pxWidth;
-			
+
 			if(gBilder[objectsToDraw[index].imageID].animiert){
 				
 				pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
-									   objectsToDraw[index].size.width);
+                                       objectsToDraw[index].size.width);
 			}else{
-				pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
+                pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
 									   objectsToDraw[index].size.width);
-			}
+            }
 
             var pxHeight = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
                                    objectsToDraw[index].size.height);
@@ -325,8 +325,29 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             canvasContext = newCanvas[0].getContext("2d");
 
 			if(gBilder[objectsToDraw[index].imageID].animiert){
-				
-				animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight);
+
+                //Check if we deal with person objects
+                if(!strContains(sharedIdString, 'person')){
+                    /*
+                        if not, the tileset does not have a vertical expansion greater than 1.
+                        That means it is no person animation. The tileset is handled as a
+                        regular animated object.
+                    */
+                    animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight);
+                }else{
+                    /*
+                        if yes, the tileset is a persons tileset. That means we have 5 sub-tilesets
+                        to deal with. Special switches are invoked to handle these tilesets, which
+                        have a vertical expansion greater than one.
+                    */
+                    animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection);
+
+                    /*
+                        For referencing the persons later, the fixed imageID part is
+                        stored in a global array.
+                    */
+                    //gOnClickMovablePersons.push(objectsToDraw[index].imageID);
+                }
 			}else{
 				//draw image to its canvas
 				canvasContext.drawImage(

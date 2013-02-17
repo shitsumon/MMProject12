@@ -105,7 +105,7 @@ var gAufrufeProSekunde	= 25;
 var gPixelProAufruf		= 100;		//steuert die Bewegungsgeschwindigkeit
 var gIntervall			= 1000 / gAufrufeProSekunde;
 var gAktuellesZiel		= 0;		//Index des derzeitigen Ziels
-
+var gLastDirection      = 'standing';//Stores last known direction
 /******************
  *pictureParser.js*
  ******************/
@@ -161,7 +161,7 @@ var gAnimationTimer		= new Object();
 gAnimationTimer.anzahl	= 0;		//zählt die aktiven Timer im Objekt -> int
 
 //Prototyp für ein animiertes Bild-Objekt, speichert den zugehörigen Timer
-function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
+function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height, _isPerson){
 	this.bild_nr	= 0;			//der Index des aktuell angezeigten Einzelbildes	-> int
 	this.canvas_id	= _canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
 	this.bild_id	= _bild_id;		//ID des Bildes, das genutzt wird					-> string
@@ -169,7 +169,16 @@ function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
 	this.running	= true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
 	this.anzeige_width	= _anzeige_width;	//Größe des Bildes in Pixel
 	this.anzeige_height	= _anzeige_height;
+    this.isPerson = _isPerson;      //Marks a timer object as a person object
 }
+
+var gDirections       = new Array('front',  //Possible directions for a person object
+                                  'back',
+                                  'right',
+                                  'left',
+                                  'standing');
+var gInitialDirection = 4;                  //Sets initial direction of a person object to 'standing'
+var gCurrentDirection = gInitialDirection;  //Saves last known direction to compare against new directional values
 
 /*****************
  *dialogParser.js*
@@ -271,17 +280,18 @@ function waitforparser(){
 //rechnet den Z-Index in den Multiplikator der Zoomstufe um
 function z2mult(z_index){
 	
-	var skalierung;
-	
 	if(z_index < 200){
-		skalierung = gZoomsteps[0];
+        return gZoomsteps[0];
 	}else if(z_index < 300){
-		skalierung = gZoomsteps[1];
+        return gZoomsteps[1];
 	}else if(z_index < 400){
-		skalierung = gZoomsteps[2];
+        return gZoomsteps[2];
 	}else {
-		skalierung = gZoomsteps[3];
+        return gZoomsteps[3];
 	}
-	
-	return skalierung;
+}
+
+//checks whether the passed string contains the passed substring
+function strContains(string, substring){
+    return string.indexOf(substring) === -1 ? false : true;
 }

@@ -28,24 +28,8 @@
     <abmessungen height="32" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32"/>
   </bild>
-  <bild id="bild_protagonist1" pfad="../../bilder/allgemein/protagonist1.png" animiert="false">
-    <abmessungen height="307" width="243"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
-  </bild>
-  <bild id="bild_herotilesetfront" pfad="../../bilder/allgemein/heroTilesetFront.png" animiert="true">
-    <abmessungen height="32" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
-  </bild>
-  <bild id="bild_herotilesetback" pfad="../../bilder/allgemein/heroTilesetBack.png" animiert="true">
-    <abmessungen height="32" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
-  </bild>
-  <bild id="bild_herotilesetleft" pfad="../../bilder/allgemein/heroTilesetLeft.png" animiert="true">
-    <abmessungen height="32" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
-  </bild>
-  <bild id="bild_herotilesetright" pfad="../../bilder/allgemein/heroTilesetRight.png" animiert="true">
-    <abmessungen height="32" width="128"/>
+  <bild id="bild_herotileset" pfad="../../bilder/allgemein/heroFullTileset.png" animiert="true">
+    <abmessungen height="160" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32"/>
   </bild>
   <bild id="bild_texthg" pfad="../../bilder/szene3/text.png" animiert="false">

@@ -34,7 +34,7 @@
       </hg_animiert>
       <personen>
         <!--<person person_id="protagonist1" bild_id="bild_protagonist1">-->
-        <person person_id="protagonist1" bild_id="bild_testtileset"
+        <person person_id="protagonist1" bild_id="bild_herotileset"
 		raetselschritt="-1" raetsel_ausloeser="false">
           <position x="50" y="50" z="200"/>
           <groesse width="700" height="700"/>
