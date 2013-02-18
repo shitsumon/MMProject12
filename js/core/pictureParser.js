@@ -33,26 +33,17 @@ function verarbeiteBilderXML(daten){
                                     parseInt($(bild).find("abmessungen").attr("width"))
                                     ),
 
-                                $(bild).attr("animiert") === "false" ? false : true,
-
-                                new Animationsmerkmale(
-                                    parseFloat($(bild).find("animation").attr("fps")),
-                                    parseInt($(bild).find("animation").attr("tile_anzahl")),
-                                    parseInt($(bild).find("animation").attr("tile_width"))
-                                ),
-
-                                parseInt($(bild).find("stufe").length)
+                                $(bild).attr("animiert") === "false" ? false : true
 		);
 		
-		//brauchen wir das noch?
-		$(bild).find("stufe").each(function(index, stufe) {
-
-           gBilder[id].skalierung[index] = new Skalierung(
-			   parseFloat($(stufe).attr("x")),
-			   parseFloat($(stufe).attr("y")),
-			   parseInt($(stufe).attr("z"))
-		   );
-        });
+		if(gBilder[id].animiert){
+			
+			gBilder[id].animationsmerkmale = new Animationsmerkmale(
+				parseFloat($(bild).find("animation").attr("fps")),
+				parseInt($(bild).find("animation").attr("tile_anzahl")),
+				parseInt($(bild).find("animation").attr("tile_width"))
+			)
+		}
     });
 }
 
