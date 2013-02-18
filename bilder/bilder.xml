@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bilder>
-  <bild id="bild_windowoverlay" pfad="../../bilder/szene1/windowOverlay.png" animiert="false">
+  <bild id="bild_windowoverlay" pfad="../bilder/szene1/windowOverlay.png" animiert="false">
     <abmessungen height="30" width="63"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_bedoverlay" pfad="../../bilder/szene1/bedOverlay.png" animiert="false">
+  <bild id="bild_bedoverlay" pfad="../bilder/szene1/bedOverlay.png" animiert="false">
     <abmessungen height="27" width="72"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_dooroverlay" pfad="../../bilder/szene1/doorOverlay.png" animiert="false">
+  <bild id="bild_dooroverlay" pfad="../bilder/szene1/doorOverlay.png" animiert="false">
     <abmessungen height="36" width="57"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_dummyspot" pfad="../../bilder/szene1/dummySpot.png" animiert="false">
+  <bild id="bild_dummyspot" pfad="../bilder/szene1/dummySpot.png" animiert="false">
     <abmessungen height="1" width="1"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_hintergrund" pfad="../../bilder/szene1/hintergrund.jpg" animiert="false">
+  <bild id="bild_hintergrund" pfad="../bilder/szene1/hintergrund.jpg" animiert="false">
     <abmessungen height="400" width="800"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_bruecke" pfad="../../bilder/szene1/bruecke.png" animiert="false">
+  <bild id="bild_bruecke" pfad="../bilder/szene1/bruecke.png" animiert="false">
     <abmessungen height="720" width="1280"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
-  <bild id="bild_testtileset" pfad="../../bilder/szene1/testTileset.png" animiert="true">
+  <bild id="bild_testtileset" pfad="../bilder/szene1/testTileset.png" animiert="true">
     <abmessungen height="32" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32"/>
   </bild>
-  <bild id="bild_herotileset" pfad="../../bilder/allgemein/heroFullTileset.png" animiert="true">
+  <bild id="bild_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32"/>
   </bild>
-  <bild id="bild_texthg" pfad="../../bilder/szene3/text.png" animiert="false">
+  <bild id="bild_texthg" pfad="../bilder/szene3/text.png" animiert="false">
     <abmessungen height="165" width="800"/>
     <animation fps="1" tile_anzahl="1" tile_width="0"/>
   </bild>
-  <bild id="bild_test1" pfad="../../bilder/szene3/test1.jpg" animiert="false">
+  <bild id="bild_test1" pfad="../bilder/szene3/test1.jpg" animiert="false">
     <abmessungen height="544" width="537"/>
     <animation fps="1" tile_anzahl="1" tile_width="0"/>
   </bild>
-  <bild id="bild_test2" pfad="../../bilder/szene3/test2.jpg" animiert="false">
+  <bild id="bild_test2" pfad="../bilder/szene3/test2.jpg" animiert="false">
     <abmessungen height="544" width="537"/>
     <animation fps="1" tile_anzahl="1" tile_width="0"/>
   </bild>
-  <bild id="bild_test3" pfad="../../bilder/szene3/test3.jpg" animiert="false">
+  <bild id="bild_test3" pfad="../bilder/szene3/test3.jpg" animiert="false">
     <abmessungen height="362" width="376"/>
     <animation fps="1" tile_anzahl="1" tile_width="0"/>
   </bild>

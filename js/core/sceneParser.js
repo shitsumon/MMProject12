@@ -243,6 +243,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
         //draw objects onto canvas
         for(var index = 0; index < objectsToDraw.length; ++index){
+			try{
             canvasContext.drawImage(
                                     gBilder[objectsToDraw[index].imageID].bild,
                                     perc2pix(screenWidth,  objectsToDraw[index].position.xPos),
@@ -250,6 +251,9 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                                     perc2pix(screenWidth,  objectsToDraw[index].size.width),
                                     perc2pix(screenHeight, objectsToDraw[index].size.height)
                                    );
+			}catch (error){
+				alert(error + objectsToDraw[index].imageID);
+			}
         }
     }//draw to multiple canvasses
     else{
