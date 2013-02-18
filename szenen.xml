@@ -76,4 +76,51 @@
       </vg_animiert>
     </ebenen>
   </szene>
+  
+  <!--<szene id="Szene_" reatselschritte="">
+    <zentralpfad>
+      <wegpunkt x="52" y="75" zoom="0.3"/>
+      <wegpunkt x="50" y="80" zoom="0.6"/>
+      <wegpunkt x="48" y="85" zoom="0.9"/>
+      <wegpunkt x="46" y="90" zoom="1.0"/>
+    </zentralpfad>
+    <ebenen>
+      <hg_statisch>
+        <hg_statisch_objekt bild_id="" dialog_id="#none#" klickbar="false"
+		raetselschritt="0" raetsel_ausloeser="false">
+          <position x="0" y="0" z="0"/>
+          <groesse width="100" height="100"/>
+        </hg_statisch_objekt>
+      </hg_statisch>
+      <hg_animiert>
+        <hg_animiert_objekt bild_id="" dialog_id="#none#" klickbar="true"
+		raetselschritt="0" raetsel_ausloeser="true">
+          <position x="70" y="80" z="100"/>
+          <groesse width="100" height="100"/>
+        </hg_animiert_objekt>
+      </hg_animiert>
+      <personen>
+        <person person_id="" bild_id="bild_herotileset"
+		raetselschritt="-1" raetsel_ausloeser="false">
+          <position x="50" y="50" z="200"/>
+          <groesse width="700" height="700"/>
+        </person>
+      </personen>
+      <vg_statisch>
+        <vg_statisch_objekt bild_id="" dialog_id="#none#" klickbar="true"
+		raetselschritt="0" raetsel_ausloeser="false">
+          <position x="75" y="23" z="300"/>
+          <groesse width="100" height="100"/>
+        </vg_statisch_objekt>
+      </vg_statisch>
+      <vg_animiert>
+        <vg_animiert_objekt bild_id="" dialog_id="#none#" klickbar="true"
+		raetselschritt="0" raetsel_ausloeser="false">
+          <position x="10" y="50" z="400"/>
+          <groesse width="100" height="100"/>
+        </vg_animiert_objekt>
+      </vg_animiert>
+    </ebenen>
+  </szene>-->
+  
 </szenen>

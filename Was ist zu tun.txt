@@ -5,6 +5,7 @@ Primaer
 - Bewegungshandling mehrerer Personen
 - Dialogcode überarbeiten, an Entwurf anpassen
 - Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Macht Micha
+- die aktuelle Szene sollte die zu ladenden Bilder bestimmen
 
 
 Sekundaer
@@ -16,6 +17,7 @@ Sekundaer
 	- alle Bilder/Dialoge berücksichtigen	--> Hannes
 - Dokumentation schreiben
 - Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
+- Bilderparser anpassen, damit Animationsinformationen nur noch bei animierten Bildern gelesen werden
 
 
 Neu
