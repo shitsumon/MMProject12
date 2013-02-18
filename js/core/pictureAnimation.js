@@ -30,14 +30,16 @@ function animiereCanvas(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTile
     }
 
     //erfasst den Canvas und liest den Zeichenkontext aus
-    var canvas    = $("#" + canvas_id)[0];
-//    canvas.width  = pxWidth;
-//    canvas.height = pxHeight;
-
-    var ctx = canvas.getContext("2d");
+    var canvas  = $("#" + canvas_id)[0];
+    var ctx     = canvas.getContext("2d");
 
     //löscht das aktuelle Bild
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
+
+    //Set canvas height to tile sub-tileset height
+    if(isPerson){
+        canvas.height = tilesetHeight;
+    }
 
     //zeichnet den neuen Bildausschnitt nach folgendem Schema
     /*
@@ -49,14 +51,14 @@ function animiereCanvas(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTile
     */
     ctx.drawImage(
                 gBilder[bild_id].bild, //image
-                gAnimationTimer[bild_id].bild_nr * gBilder[bild_id].animationsmerkmale.tile_width, /*aktuelles Einzelbild * Breite eines Einzelbildes*/
-                gAnimationTimer[bild_id].isPerson ? (gBilder[bild_id].abmessungen.height / gDirections.length) * gCurrentDirection : 0,
-                gBilder[bild_id].animationsmerkmale.tile_width,
-                gAnimationTimer[bild_id].isPerson ? gBilder[bild_id].abmessungen.height / gDirections.length : gBilder[bild_id].abmessungen.height,
-                0,
-                0,
-                pxWidth,
-                pxHeight
+                gAnimationTimer[bild_id].bild_nr * gBilder[bild_id].animationsmerkmale.tile_width, //clipping x-direction
+                gAnimationTimer[bild_id].isPerson ? (gBilder[bild_id].abmessungen.height / gDirections.length) * gCurrentDirection : 0, //clipping y-direction
+                gBilder[bild_id].animationsmerkmale.tile_width, //clipped image width
+                gAnimationTimer[bild_id].isPerson ? gBilder[bild_id].abmessungen.height / gDirections.length : gBilder[bild_id].abmessungen.height, //clipped image height
+                0,       //image x-pos in canvas
+                0,       //image y-pos in canvas
+                pxWidth, //width of whole tileset image
+                pxHeight //height of whole tileset image
                 );
 
     //erhöht den Zähler für das aktuell angezeigte Einzelbild oder setzt ihn zurück

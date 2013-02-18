@@ -106,8 +106,6 @@ var gPixelProAufruf		= 100;		//steuert die Bewegungsgeschwindigkeit
 var gIntervall			= 1000 / gAufrufeProSekunde;
 var gAktuellesZiel		= 0;		//Index des derzeitigen Ziels
 var gLastDirection      = 'standing';//Stores last known direction
-
-var gIsDividedByHeight  = false; //Initial division by number of tilesets perPerson
 /******************
  *pictureParser.js*
  ******************/
