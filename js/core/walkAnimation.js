@@ -17,7 +17,14 @@ function bewegePerson(){
 	if(!gWegBerechnet){		
 		//speichert die Abmessungen vor der Skalierung
         gStartAbmessungen[0] = hero.width();
-        gStartAbmessungen[1] = hero.height() / gDirections.length;
+
+        //After a scene is loaded the canvas height must be divided by the
+        //number of subtilesets.
+        if(!gIsDividedByHeight){
+            gStartAbmessungen[1] = hero.height() / gDirections.length;
+        }else{
+            gStartAbmessungen[1] = hero.height();
+        }
 
 		if(heroPos[2] <= targetPos[2]){
 			//vergrößern		
@@ -220,7 +227,11 @@ function skaliereCanvas(faktor, canvas){
 	
     canvas[0].width	 *= faktor;
     canvas[0].height *= faktor;
-    canvas[0].height /= gDirections.length;
+
+    if(! gIsDividedByHeight ){
+        canvas[0].height /= gDirections.length;
+        gIsDividedByHeight = true;
+    }
 
     context.putImageData(inhalt, 0, 0);
 }
