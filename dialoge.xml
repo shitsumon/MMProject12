@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dialoge>
-  <dialog id="dialog_eins">
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Hallo Welt</satz>
-    <satz person_id="person_protagonist2" bild_id="bild_test2">Sei doch ruhig! Aber Klick schön weiter</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Um Dialoge Ablaufen zu lassen muss die Funktion dialogSettings(...) einmal aufgerufen werden</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Danach kann man alle Dialoge mit dialogStart(ID) initialisieren. Das Dialogfenster verwendet den CSS Eintrag Textbox</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Das ist ein langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer langer Text</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Die OnClick Ereignisse etc, brauchen keine zusätzliche HTML Implementierung</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Der Hintergrund, Schriftfarbe, Zeilenabstand... kann mit dialogSettings(...) verändert werden.</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test1">Das Dialogfenster verschwindet, nach einem Klick, wenn der letzte Satz erreicht wurde</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test2">Wie zum Beispiel gleich</satz>
-    <satz person_id="person_protagonist1" bild_id="bild_test3">Bazinga!</satz>
+
+<!-- Beginn Szene 1 -->
+  <dialog id="1.1">
+    <satz person_id="p1" bild_id="protagonist_1">Was zum ... Was ist hier los? Ich will schlafen, also Ruhe!</satz>
   </dialog>
-  <dialog id="dialog_zwei">
-    <satz person_id="person_protagonist1" bild_id="bild_protagonist1">Lorem ipsum dolor sit amet.</satz>
+  
+  <dialog id="1.2">
+   <satz person_id="p1" bild_id="protagonist_1">Na geht doch ... Licht, würdest du jetzt auch bitte wieder ausgehen?</satz>
   </dialog>
+  
+  <dialog id="1.3">
+   <satz person_id="p1" bild_id="protagonist_1">RUHE!!!</satz>
+   <satz person_id="p1" bild_id="protagonist_1">MÄCK!!!</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Mäck stell diesen Lärm und das Licht aus!</satz>
+   <satz person_id="bc" bild_id="bordcomputer">???? ??????? ???? ?????</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
+  </dialog>
+  
+  <dialog id="1.4">
+   <satz person_id="p1" bild_id="protagonist_1">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
+  </dialog>    
+   
+  <dialog id="1.5">
+   <satz person_id="p1" bild_id="protagonist_1">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann…
+Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
+  </dialog>       
+
+  <dialog id="1.6">
+   <satz person_id="p1" bild_id="protagonist_1">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann…
+Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
+  </dialog>
+  
+  <dialog id="1.7">
+   <satz person_id="u1" bild_id="unbekannter_1">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
+   <satz person_id="u2" bild_id="unbekannter_2">Die Ausgabe hab ich auch gelesen, da war ein genialer Bericht über das neue Raumschiff von WMB.</satz>
+  </dialog>       
+ 
+  <dialog id="1.8">
+   <satz person_id="p1" bild_id="protagonist_1">Werd ich etwa auch beobachtet? Ich sollte die Anleitung finden ... und zwar schnell.</satz>
+  </dialog>
+  
+  <dialog id="1.9">
+   <satz person_id="u1" bild_id="unbekannter_1">Was für hässliche Kleidung sie trägt.</satz>
+   <satz person_id="u2" bild_id="unbekannter_2">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Hilfe</satz>
+  </dialog>
+
+  <dialog id="1.10">
+  	<satz person_id="p1" bild_id="protagonist_1">Nein, hier ist nur eine alte Einkaufliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2 (ÄNDERUNG)? Wenn ich den in die Finger bekomme ...</satz>
+	<satz person_id="u1" bild_id="unbekannter_1">Die ist aber aufbrausend.</satz>
+    <satz person_id="u2" bild_id="unbekannter_2">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
+	<satz person_id="p1" bild_id="protagonist_1">Schnell zum Computer.</satz>
+  </dialog>
+
+  <dialog id="1.11">
+   <satz person_id="p1" bild_id="protagonist_1">Deswegen wurde ich also aus meinem wohlverdienten Schlaf gerissen und muss mir diese Kommentare anhören ...</satz>
+   <satz person_id="u1" bild_id="unbekannter_1">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
+   <satz person_id="u2" bild_id="unbekannter_2">Psst, ich will wissen wie es weitergeht. Ist doch grad so spannend.</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Jemand hat also meine Einstellungen von Privat auf öffentlich gestellt ... Dann wollen wir das mal wieder ändern.</satz>
+  </dialog>
+
+  <dialog id="1.11.1">
+   <satz person_id="p1" bild_id="protagonist_1">Das wäre mir noch nicht sicher genug.</satz>
+  </dialog>     
+  
+  <dialog id="1.11.2">
+   <satz person_id="p1" bild_id="protagonist_1">Ah diese herrliche Stille ...</satz>
+  </dialog>  
+
+  <dialog id="1.12">
+   <satz person_id="p1" bild_id="protagonist_1">Mäck, weisst du wer meine Einstellungen geändert hat? War das etwa P2 (ÄNDERUNG)?</satz>
+   <satz person_id="bc" bild_id="bordcomputer">Hallo P1(ÄNDERUNG), leider kann ich dir da nicht weiterhelfen.</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Merkwürdig ... ich werde der Sache auf den Grund gehen, schlafen wär gerade eh nicht drin. Mäck, habe ich noch irgendwelche Einstellungen bezüglich meiner Privatsphäre vergessen?</satz>
+   <satz person_id="bc" bild_id="bordcomputer">Du solltest deine Einstellungen immer so treffen, das der Zugriff auf wichtige Daten:</satz>
+   <satz person_id="bc" bild_id="bordcomputer">1.) Auf deine Freunde und dich ODER</satz>
+   <satz person_id="bc" bild_id="bordcomputer">2.) Nur auf dich beschränkt ist.</satz>
+   <satz person_id="bc" bild_id="bordcomputer">So stellst du sicher, dass kein Unfug mit deinen Daten gemacht wird.</satz>
+   <satz person_id="p1" bild_id="protagonist_1">Danke Mäck, ein einfaches "Ja" hätte es auch getan. Ich gehe jetzt zur Brücke und suche P2 (ÄNDERUNG).</satz>
+  </dialog>  
+
+<!-- Beginn Szene 2 -->
+  <dialog id="2.1">
+   <satz person_id="p1" bild_id="protagonist_1">Mäck, könntest du bitte das Licht auf der Brücke an machen? Ich wusste nicht mal das man es ausmachen kann ...</satz>  	
+  </dialog>
+
 </dialoge>
