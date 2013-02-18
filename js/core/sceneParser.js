@@ -58,11 +58,11 @@ function getPersonElementData(sceneElement){
 
 function getElementData(tmpObject, sceneElement){
 	
-	tmpObject.position.xPos = parseInt(sceneElement.find('position').attr('x'));
-    tmpObject.position.yPos = parseInt(sceneElement.find('position').attr('y'));
-	tmpObject.position.zPos = parseInt(sceneElement.find('position').attr('z'));
-    tmpObject.size.width    = parseInt(sceneElement.find('groesse').attr('width'));
-    tmpObject.size.height   = parseInt(sceneElement.find('groesse').attr('height'));
+	tmpObject.position.xPos = parseFloat(sceneElement.find('position').attr('x'));
+    tmpObject.position.yPos = parseFloat(sceneElement.find('position').attr('y'));
+	tmpObject.position.zPos = parseFloat(sceneElement.find('position').attr('z'));
+    tmpObject.size.width    = parseFloat(sceneElement.find('groesse').attr('width'));
+    tmpObject.size.height   = parseFloat(sceneElement.find('groesse').attr('height'));
 	
 	tmpObject.quizTrigger	= sceneElement.attr('raetsel_ausloeser') === "true";
 	tmpObject.quizStep		= parseInt(sceneElement.attr('raetselschritt'));

@@ -50,7 +50,10 @@
   <bild id="szene1_kamera" pfad="../bilder/neu/szene1/kamera.png" animiert="false">
     <abmessungen height="88" width="133"/>
   </bild>
-  <bild id="szene1_lautsprecher" pfad="../bilder/neu/szene1/lautsprecher.png" animiert="false">
+  <bild id="szene1_lautsprecher_links" pfad="../bilder/neu/szene1/lautsprecher_links.png" animiert="false">
+    <abmessungen height="64" width="55"/>
+  </bild>
+  <bild id="szene1_lautsprecher_rechts" pfad="../bilder/neu/szene1/lautsprecher_rechts.png" animiert="false">
     <abmessungen height="64" width="55"/>
   </bild>
   <bild id="szene1_muelleimer" pfad="../bilder/neu/szene1/muelleimer.png" animiert="false">
@@ -65,7 +68,10 @@
   <bild id="szene1_schreibtisch" pfad="../bilder/neu/szene1/schreibtisch.png" animiert="false">
     <abmessungen height="251" width="357"/>
   </bild>
-  <bild id="szene1_sound" pfad="../bilder/neu/szene1/sound.png" animiert="false">
+  <bild id="szene1_sound_links" pfad="../bilder/neu/szene1/sound_links.png" animiert="false">
+    <abmessungen height="102" width="95"/>
+  </bild>
+  <bild id="szene1_sound_rechts" pfad="../bilder/neu/szene1/sound_rechts.png" animiert="false">
     <abmessungen height="102" width="95"/>
   </bild>
   
