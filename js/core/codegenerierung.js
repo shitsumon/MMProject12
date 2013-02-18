@@ -3,7 +3,7 @@
 function verschluesseln(szene, protagonist)
  {
     var code = "";
-	var helper = scene.concat(protagonist); //zusammenfügen von Szenennummer und Name des Protagonisten(Spielers)
+	var helper = scene.concat(protagonist); //Zusammenfügen von Szenennummer und Name des Protagonisten(Spielers)
 	
     for (i=0; i<helper.length;i++)
 	 {
@@ -15,20 +15,21 @@ function verschluesseln(szene, protagonist)
     return code;
 }
 
-
+//Zurückgeben der Szenennummer aus einem gegebenen Level-Code 
 function entschluesseln_szene(code)
   {
-	var szene = "";
+	var szene = "-1";
 	var a = code.charAt(code.length-1);
 	var szene = a ^ 123;
 	alert(szene);
 	return szene;
   }
+
   
-  
+//Zurückgeben des Protagonistennames aus einem gegebenen Level-Code 
 function entschluesseln_name(code)
   {
-	  var protagonist = ""
+	  var protagonist = "-1";
 	  var helper = code;
 	 	 
       for (i=0; i<helper.length-1;i++)
