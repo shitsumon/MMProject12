@@ -252,7 +252,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                                     perc2pix(screenHeight, objectsToDraw[index].size.height)
                                    );
 			}catch (error){
-				alert(error + objectsToDraw[index].imageID);
+				alert(error + " " + objectsToDraw[index].imageID);
 			}
         }
     }//draw to multiple canvasses

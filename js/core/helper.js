@@ -29,7 +29,6 @@
  *sceneParser.js*
  ****************/
 //Pfad zur szenen.xml
-//var sceneXML				= "../../szenen.xml";
 var sceneXML				= "../szenen.xml";
 //Index der aktuellen Szene
 var gcurrent_scene_counter	= 1;
@@ -116,7 +115,6 @@ gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, w
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
 									Ladebalken genutzt werden*/
 
-//var gbilderXMLPfad	= "../../bilder/bilder.xml";	//Pfad zur Bilder-XML
 var gbilderXMLPfad	= "../bilder/bilder.xml";	//Pfad zur Bilder-XML
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
@@ -144,13 +142,13 @@ function Bild(_id, _pfad, _abmessungen, _animiert, _animationsmerkmale, _skalier
 	this.animiert			= _animiert;			//animiert oder nicht			-> boolean
 	this.animationsmerkmale	= _animationsmerkmale;	//Eigenschaften der Animation	-> Animationsmerkmale
 	this.bild				= new Image();			//das eigentliche Bild			-> Image
-	this.bild.onload=function(){					/*aufgerufen nachdem das Bilde geladen wurde*/
+	this.bild.onload = function(){					/*aufgerufen nachdem das Bilde geladen wurde*/
 		gBilder.geladen++;							/*Zähler für die fertig geladenen Bilder -> int*/
 		aktualisiereLadebalken_Bilder();			/*Hook für den Ladebalken*/
 		statusPruefen_Bilder();						/*Hook zur Benachrichtigung: Laden beendet*/
 		waitforparser();							/*prüft ob Bilder und Dialoge vollständig geladen wurden*/
 	}
-	this.bild.src			=_pfad;					//initiiert das Laden des Bildes-> string
+	this.bild.src			= _pfad;					//initiiert das Laden des Bildes-> string
 	this.skalierung			= new Array(_skalierungsstufen);//						-> Skalierung
 }
 
@@ -187,8 +185,7 @@ var gCurrentDirection = gInitialDirection;  //Saves last known direction to comp
  *****************/
  
  //der Pfad zur Dialoge.xml
-// var gDialogeXMLPfad	= "../../dialoge.xml";
-  var gDialogeXMLPfad	= "../dialoge.xml";
+ var gDialogeXMLPfad	= "../dialoge.xml";
  //verwaltet alle Dialoge aus der XML-Datei
  var gDialoge			= new Object();
  //ein Zähler für die Anzahl der Dialoge
@@ -274,7 +271,7 @@ function perc2pix(absolute, perc){
 //prüft ob Bilder und Dialoge vollständig geladen wurden
 function waitforparser(){
 	//wenn alle Elemente geladen wurden
-    if(gBilder.anzahl === gBilder.geladen && gDialoge.anzahl === gDialoge.geladen){
+    if((gBilder.anzahl == gBilder.geladen) && (gDialoge.anzahl == gDialoge.geladen)){
 		//lese Szene ein
         getSceneInformation(gcurrent_scene_id, sceneXML);
 	}

@@ -6,8 +6,10 @@ bestimmt den typ des zu ladenden Dokumentes -> "xml"
 function ladeBilder(){
 
 	jQuery.get(gbilderXMLPfad,function(daten){
-		verarbeiteBilderXML(daten);
-    },"xml");
+			verarbeiteBilderXML(daten);
+    },"xml").fail(function(data){
+			alert(data + " Fehler bilder.xml laden")
+		});
 }
 
 /*
@@ -16,7 +18,7 @@ speichert die ausgelesenen Bilder und ihre Eigenschaften im globalen Objekt -> g
 function verarbeiteBilderXML(daten){
 	var id;
 
-    gBilder.anzahl = $(daten).find("bild").length;
+    gBilder.anzahl = $(daten).find("bild").length - 1;
 	
 	$(daten).find("bild").each(function(index, bild) {
         id = $(bild).attr("id");
@@ -42,6 +44,7 @@ function verarbeiteBilderXML(daten){
                                 parseInt($(bild).find("stufe").length)
 		);
 		
+		//brauchen wir das noch?
 		$(bild).find("stufe").each(function(index, stufe) {
 
            gBilder[id].skalierung[index] = new Skalierung(
