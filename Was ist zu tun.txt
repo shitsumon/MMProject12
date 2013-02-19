@@ -1,7 +1,6 @@
 Primaer
 -------
 
-- Bewegungshandling mehrerer Personen
 - Dialogcode überarbeiten, an Entwurf anpassen --> Macht Micha
 - Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Funktioniert soweit
 - Szenenübergang
