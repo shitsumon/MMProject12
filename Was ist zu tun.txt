@@ -5,7 +5,7 @@ Primaer
 - Bewegungshandling mehrerer Personen
 - Dialogcode überarbeiten, an Entwurf anpassen
 - Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Macht Micha
-- die aktuelle Szene sollte die zu ladenden Bilder bestimmen
+- die aktuelle Szene sollte die zu ladenden Bilder bestimmen	--> Hannes
 
 
 Sekundaer
@@ -13,21 +13,27 @@ Sekundaer
 
 - freistellen der Einzelbilder der Szenen
 	- mit Transparenz speichern, PNG	--> hat Oli angefangen
-- Szenenbeschreibung in szenen.xml umsetzen
-	- alle Bilder/Dialoge berücksichtigen	--> Hannes
+- Szenenbeschreibung vervollständigen
+	- Dialoge verknüpfen
+	- Rätsel einfügen
+	- Bilder durch schattenfreie Versionen ersetzen
 - Dokumentation schreiben
 - Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
-- Bilderparser anpassen, damit Animationsinformationen nur noch bei animierten Bildern gelesen werden
+- in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
+	- Meldungen am besten per Flag an/abschalten
 
 
 Neu
 ---
 
 - Szenenübergänge
-- Anlegen aller benoetigten Szenen
 - Hauptmenü
 - Intro
 - Testen, testen, testen
+	- Fehlerverhalten
+	- verschiedene Auflösungen
+	- Veränderung des Anzeigefensters
+	- ...
 
 Wem fällt noch was ein?
 
