@@ -11,7 +11,6 @@
   </bild>
   <bild id="bild_dummyspot" pfad="../bilder/szene1/dummySpot.png" animiert="false">
     <abmessungen height="1" width="1"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="bild_hintergrund" pfad="../bilder/szene1/hintergrund.jpg" animiert="false">
     <abmessungen height="400" width="800"/>

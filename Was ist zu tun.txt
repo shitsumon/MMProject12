@@ -5,7 +5,10 @@ Primaer
 - Bewegungshandling mehrerer Personen
 - Dialogcode überarbeiten, an Entwurf anpassen
 - Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Macht Micha
-- die aktuelle Szene sollte die zu ladenden Bilder bestimmen	--> Hannes
+- Szenenübergang
+	- Szenenzähler inkrementieren
+	- übrige Variablen zurücksetzen
+	- Bilder, Dialoge -> Szene laden
 
 
 Sekundaer

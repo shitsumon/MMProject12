@@ -16,32 +16,36 @@ function ladeBilder(){
 speichert die ausgelesenen Bilder und ihre Eigenschaften im globalen Objekt -> gBilder
 */
 function verarbeiteBilderXML(daten){
-	var id;
-
-    gBilder.anzahl = $(daten).find("bild").length - 1;
+	var id, animation;
 	
-	$(daten).find("bild").each(function(index, bild) {
+	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
+	
+    gBilder.anzahl = jquery_bilder.length;
+	
+	jquery_bilder.each(function(index, bild) {
+		
         id = $(bild).attr("id");
 
         gBilder[id] = new Bild(
-                                id,
-
+								id,
                                 $(bild).attr("pfad"),
-
                                 new Abmessungen(
+								
                                     parseInt($(bild).find("abmessungen").attr("height")),
                                     parseInt($(bild).find("abmessungen").attr("width"))
                                     ),
-
                                 $(bild).attr("animiert") === "false" ? false : true
 		);
 		
 		if(gBilder[id].animiert){
 			
+			animation = $(bild).find("animation");
+			
 			gBilder[id].animationsmerkmale = new Animationsmerkmale(
-				parseFloat($(bild).find("animation").attr("fps")),
-				parseInt($(bild).find("animation").attr("tile_anzahl")),
-				parseInt($(bild).find("animation").attr("tile_width"))
+			
+				parseFloat(animation.attr("fps")),
+				parseInt(animation.attr("tile_anzahl")),
+				parseInt(animation.attr("tile_width"))
 			)
 		}
     });

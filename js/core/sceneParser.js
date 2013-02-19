@@ -101,14 +101,17 @@ function getSceneInformation(sceneID, sceneFilename){
 
                     if(sceneID === currentScene.attr('id')){
 						
-						gQuiz_steps = parseInt($(currentScene).attr('reatselschritte'));
+						gQuiz_steps	= parseInt($(currentScene).attr('reatselschritte'));
+						
+						var wegpunkte	= $(currentScene).find('wegpunkt');
+						gWegPos			= new Array(wegpunkte.length);
+						gZoomsteps		= new Array(wegpunkte.length);
 
-						$(currentScene).find('wegpunkt').each(function(index){
+						wegpunkte.each(function(index){
 							
 							gWegPos[index] = new Array(
 								parseFloat($(this).attr("x")),
-								parseFloat($(this).attr("y"))/*,
-								parseFloat($(this).attr("zoom"))*/
+								parseFloat($(this).attr("y"))
 								);
 							gZoomsteps[index] = parseFloat($(this).attr("zoom"));
                         })

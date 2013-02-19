@@ -12,20 +12,23 @@ function ladeDialoge(){
 
 function verarbeiteDialogXML(daten){
 	
+	var jquery_saetze;
+	
 	//findet alle Dialog-Elemente
-	var jquery_dialoge=$(daten).find("dialog");
+	var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
 	
 	//speichert die Anzahl der hinterlegten Dialoge
-	gDialoge.anzahl=jquery_dialoge.length;
+	gDialoge.anzahl = jquery_dialoge.length;
 	
 	//für jeden Dialog
 	jquery_dialoge.each(function(dialog_index, dialog_element) {
 		
 		//ermittle alle Sätze in diesem Dialog
-		var jquery_saetze=$(dialog_element).find("satz");
+		jquery_saetze = $(dialog_element).find("satz");
 		
 		//erzeuge ein neues Dialog-Objekt
         gDialoge[$(dialog_element).attr("id")] = new Dialog(
+		
 			$(dialog_element).attr("id"),
 			jquery_saetze.length
 		);

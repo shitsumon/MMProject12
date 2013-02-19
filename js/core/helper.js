@@ -106,10 +106,10 @@ var gPixelProAufruf		= 100;		//steuert die Bewegungsgeschwindigkeit
 var gIntervall			= 1000 / gAufrufeProSekunde;
 var gAktuellesZiel		= 0;		//Index des derzeitigen Ziels
 var gLastDirection      = 'standing';//Stores last known direction
+
 /******************
  *pictureParser.js*
- ******************/
- 
+ ******************/ 
 var gBilder			= new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
 gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den

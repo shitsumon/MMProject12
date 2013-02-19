@@ -5,15 +5,15 @@
 	Charakter-Bilder nötig: protagonist_1, protagonist_2, protagonist_12 (1+2), unbekannter_1, unbekannter_2, bordcomputer, tädiber, dr_chaos -->
 
 <!-- Beginn Szene 1 -->
-  <dialog id="1.1">
+  <dialog id="szene1.1">
     <satz person_id="p1" bild_id="protagonist_1">Was zum ... Was ist hier los? Ich will schlafen, also Ruhe!</satz>
   </dialog>
   
-  <dialog id="1.2">
+  <dialog id="szene1.2">
    <satz person_id="p1" bild_id="protagonist_1">Na geht doch ... Licht, würdest du jetzt auch bitte wieder ausgehen?</satz>
   </dialog>
   
-  <dialog id="1.3">
+  <dialog id="szene1.3">
    <satz person_id="p1" bild_id="protagonist_1">RUHE!!!</satz>
    <satz person_id="p1" bild_id="protagonist_1">MÄCK!!!</satz>
    <satz person_id="p1" bild_id="protagonist_1">Mäck stell diesen Lärm und das Licht aus!</satz>
@@ -21,58 +21,58 @@
    <satz person_id="p1" bild_id="protagonist_1">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
   </dialog>
   
-  <dialog id="1.4">
+  <dialog id="szene1.4">
    <satz person_id="p1" bild_id="protagonist_1">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
   </dialog>    
    
-  <dialog id="1.5">
+  <dialog id="szene1.5">
    <satz person_id="p1" bild_id="protagonist_1">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann…
 Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>       
 
-  <dialog id="1.6">
+  <dialog id="szene1.6">
    <satz person_id="p1" bild_id="protagonist_1">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann…
 Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>
   
-  <dialog id="1.7">
+  <dialog id="szene1.7">
    <satz person_id="u1" bild_id="unbekannter_1">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
    <satz person_id="u2" bild_id="unbekannter_2">Die Ausgabe hab ich auch gelesen, da war ein genialer Bericht über das neue Raumschiff von WMB.</satz>
   </dialog>       
  
-  <dialog id="1.8">
+  <dialog id="szene1.8">
    <satz person_id="p1" bild_id="protagonist_1">Werd ich etwa auch beobachtet? Ich sollte die Anleitung finden ... und zwar schnell.</satz>
   </dialog>
   
-  <dialog id="1.9">
+  <dialog id="szene1.9">
    <satz person_id="u1" bild_id="unbekannter_1">Was für hässliche Kleidung sie trägt.</satz>
    <satz person_id="u2" bild_id="unbekannter_2">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Hilfe</satz>
   </dialog>
 
-  <dialog id="1.10">
+  <dialog id="szene1.10">
   	<satz person_id="p1" bild_id="protagonist_1">Nein, hier ist nur eine alte Einkaufliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2 (ÄNDERUNG)? Wenn ich den in die Finger bekomme ...</satz>
 	<satz person_id="u1" bild_id="unbekannter_1">Die ist aber aufbrausend.</satz>
     <satz person_id="u2" bild_id="unbekannter_2">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Schnell zum Computer.</satz>
   </dialog>
 
-  <dialog id="1.11">
+  <dialog id="szene1.11">
    <satz person_id="p1" bild_id="protagonist_1">Deswegen wurde ich also aus meinem wohlverdienten Schlaf gerissen und muss mir diese Kommentare anhören ...</satz>
    <satz person_id="u1" bild_id="unbekannter_1">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
    <satz person_id="u2" bild_id="unbekannter_2">Psst, ich will wissen wie es weitergeht. Ist doch grad so spannend.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Jemand hat also meine Einstellungen von Privat auf öffentlich gestellt ... Dann wollen wir das mal wieder ändern.</satz>
   </dialog>
 
-  <dialog id="1.11.1">
+  <dialog id="szene1.11.1">
    <satz person_id="p1" bild_id="protagonist_1">Das wäre mir noch nicht sicher genug.</satz>
   </dialog>     
   
-  <dialog id="1.11.2">
+  <dialog id="szene1.11.2">
    <satz person_id="p1" bild_id="protagonist_1">Ah diese herrliche Stille ...</satz>
   </dialog>  
 
-  <dialog id="1.12">
+  <dialog id="szene1.12">
    <satz person_id="p1" bild_id="protagonist_1">Mäck, weisst du wer meine Einstellungen geändert hat? War das etwa P2 (ÄNDERUNG)?</satz>
    <satz person_id="bc" bild_id="bordcomputer">Hallo P1(ÄNDERUNG), leider kann ich dir da nicht weiterhelfen.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Merkwürdig ... ich werde der Sache auf den Grund gehen, schlafen wär gerade eh nicht drin. Mäck, habe ich noch irgendwelche Einstellungen bezüglich meiner Privatsphäre vergessen?</satz>
@@ -84,7 +84,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
   </dialog>  
 
 <!-- Beginn Szene 2 -->
-  <dialog id="2.1">
+  <dialog id="szene2.1">
    <satz person_id="p1" bild_id="protagonist_1">Mäck, könntest du bitte das Licht auf der Brücke an machen? Ich wusste nicht mal das man es ausmachen kann ...</satz>
    <satz person_id="bc" bild_id="bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul oder?"</satz>
@@ -93,7 +93,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="p1" bild_id="protagonist_1">Jaaa, das würde es auch tun ...</satz>
   </dialog>
 
-  <dialog id="2.2">
+  <dialog id="szene2.2">
    <satz person_id="p1" bild_id="protagonist_1">Ohh...kaayy ... was passiert hier?</satz>
    <satz person_id="bc" bild_id="bordcomputer">Es scheint, dass die Zugriffsberechtigung der Türen verändert wurde. Du hast keinen Zugriff mehr.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Lass mich raten, du hast auch keine mehr, richtig?</satz>
@@ -102,7 +102,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="bc" bild_id="bordcomputer">Zuerst musst du dich mit dem Admin-Account am Computerterminal anmelden.</satz> 
   </dialog>  
 
-  <dialog id="2.3">
+  <dialog id="szene2.3">
    <satz person_id="p1" bild_id="protagonist_1">So, dann schauen wir mal. Benutzername ist "admin" und das passwort ist "passwo…</satz>
    <satz person_id="bc" bild_id="bordcomputer">Ihr habt das Passwort nie geändert?!</satz>
    <satz person_id="p1" bild_id="protagonist_1">Nein, natürlich nicht. So kann man schließlich schnell drauf zugreifen und muss nicht erst lange überlegen. Außerdem, wer hätte schon Interesse sich dort einzuloggen?</satz>
@@ -110,22 +110,22 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="p1" bild_id="protagonist_1">Könnten wir uns die Belehrung an dieser Stelle sparen. Wenn wir geklärt haben, wer vorhin an meinem Wecker gespielt und mich hier eingeschlossen hat, dann ändere ich es sofort. Also einloggen ...</satz>
   </dialog>  
 
-  <dialog id="2.4">
+  <dialog id="szene2.4">
    <satz person_id="p1" bild_id="protagonist_1">Eingeloggt, wie ist der nächste Schritt?</satz>
    <satz person_id="bc" bild_id="bordcomputer">Du musst nun "Zugriffsberechtigungen für Brücke" auswählen.</satz>
   </dialog>
 
-  <dialog id="2.5">
+  <dialog id="szene2.5">
    <satz person_id="bc" bild_id="bordcomputer">Als nächstes musst du dir Rechte geben.</satz>
   </dialog>
 
-  <dialog id="2.6">
+  <dialog id="szene2.6">
    <satz person_id="p1" bild_id="protagonist_1">Hey, wer ist dieser Gast? Der hat ja volle Zugriffsberechtigung!</satz>
    <satz person_id="bc" bild_id="bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wieder herstellen.</satz>
   </dialog>
 
-  <dialog id="2.7">
+  <dialog id="szene2.7">
    <satz person_id="p1" bild_id="protagonist_1">Gut, so viel dazu. Ich muss schnellstens mit P2 sprechen wegen den seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
    <satz person_id="bc" bild_id="bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Du hast es erraten ... P2(ÄNDERUNG) kannst du mich hören?</satz>
@@ -136,7 +136,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
 
 
 <!-- Beginn Szene 3 -->
-  <dialog id="3.1">
+  <dialog id="szene3.1">
    <satz person_id="p1" bild_id="protagonist_1">Wieso hat das so lange gedauert?</satz>
    <satz person_id="p2" bild_id="protagonist_2">Ja ich hab mich ja beeilt. Ich wollte halt noch einen Download starten ... und ... nun ja ... das hat halt länger gedauert als ich dachte. Aber jetzt bin ich ja da.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Das nächste Mal komm bitte sof... warum versuch ich es eigentlich noch? Wir haben jetzt wichtigere Probleme: Jemand hat sich in unserer Schiffsdatenbank einen Account angelegt, der volle Zugriffe auf so ziemlich alles hat ...</satz>
@@ -153,7 +153,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="p1" bild_id="protagonist_1">Du klingst schon fast wie Mäck, aber ganz unrecht hast du nicht. Vielleicht finden wir ja selbst das Problem.</satz>
   </dialog>
 
-  <dialog id="3.2">
+  <dialog id="szene3.2">
    <satz person_id="p1" bild_id="protagonist_1">Sag mal kann es sein, dass sich das Bild verändert hat? Das ist mir vorhin schon aufgefallen ... Ist dieser VirenLoader nicht neu? Und seit wann hat das Antivirus-Symbol so ein rotes Kreuz?</satz>
    <satz person_id="p2" bild_id="protagonist_2">Ja, also den VirenLoader musste ich installieren, damit ich meine Lieblingsserie downloaden kann. Das Problem war, dass das Antivirus Programm die Installation verhindert hat. Da kam auch eine Hinweis-Meldung, die hab ich aber einfach weggeklickt. Interessiert doch keinen. Danach hab ich das Antiviren-Programm ausgeschaltet und den VirenLoader installiert. Ging ganz einfach. Wir sollten jetzt aber nach der Ursache suchen, warum jemand unseren Computer hacken konnte.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Dann ist die Sache doch glasklar. Der VirenLoader wurde von dem Unbekannten als "Hintertür" zu unserem Schiffscomputer benutzt. Das Antiviren-Programm wollte dich noch davor warnen, doch du warst ja zu faul zum Lesen. Du bist also die Ursache, warum dieser "Gast" sich hier einnisten konnte!</satz>
@@ -161,27 +161,27 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
 	<satz person_id="p1" bild_id="protagonist_1">Ganz einfach, erst mal versuchen wir das Antiviren-Programm wieder zu aktivieren.</satz>
   </dialog>
   
-  <dialog id="3.3.1">
+  <dialog id="szene3.3.1">
    <satz person_id="p1" bild_id="protagonist_1">Die unendlichen Weiten des SpaceNets.</satz>
   </dialog>
   
-  <dialog id="3.3.2">
+  <dialog id="szene3.3.2">
    <satz person_id="p1" bild_id="protagonist_1">Als ob einem bei dem Programm keine Zweifel kommen können ...</satz>
   </dialog>
 
-  <dialog id="3.3.3">
+  <dialog id="szene3.3.3">
    <satz person_id="p1" bild_id="protagonist_1">Den Schlaf muss ich nachholen!</satz>
   </dialog>
  
-  <dialog id="3.4.1">
+  <dialog id="szene3.4.1">
    <satz person_id="p1" bild_id="protagonist_1">Das wäre ein riesiger Fehler. Wir sollten unsere Wahl nochmal überdenken.</satz>
   </dialog>
  
-  <dialog id="3.4.2">
+  <dialog id="szene3.4.2">
    <satz person_id="p1" bild_id="protagonist_1">Weg damit!</satz>
   </dialog>
   
-  <dialog id="3.5">
+  <dialog id="szene3.5">
    <satz person_id="p1" bild_id="protagonist_1">So diese Sicherheitslücke wär gestopft, wir hatten aber auch Glück, dass sich dieser VirenLoader so einfach löschen lies.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Na toll und was hat uns das gebracht? Jetzt kann ich meine Lieblingsserie nicht mehr runterladen ...</satz>
    <satz person_id="bc" bild_id="bordcomputer">Ihr habt es geschafft, er hat keinen Einfluss mehr auf mich. Ich wär sicher überglücklich, wenn ich Gefühle empfinden könnte. Umarmen kann ich euch leider auch nicht, dazu fehlen mir ... nun ja ... Arme. Danke.</satz>
@@ -199,16 +199,16 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
 
 
 <!-- Beginn Szene 4 -->
-  <dialog id="4.1">
+  <dialog id="szene4.1">
    <satz person_id="p1" bild_id="protagonist_1">So P2(Änderung), dann zeig mir mal deine heiße Spur.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
   </dialog>
   
-  <dialog id="4.2">
+  <dialog id="szene4.2">
    <satz person_id="p2" bild_id="protagonist_2">Hier war jemand. Die Schuhe haben ungefähr die gleiche Größe wie meine. Was wohl diese schwarze Masse ist?</satz>
   </dialog>
   
-  <dialog id="4.3">
+  <dialog id="szene4.3">
    <satz person_id="p1" bild_id="protagonist_1">Das könnte daran liegen, dass es deine Schuhabdrücke sind.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Meine? Wie kommst du darauf?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim sauber machen gestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du dass jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
@@ -216,19 +216,19 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="p1" bild_id="protagonist_1">Aber unser Weg war, glaub ich, nicht ganz umsonst. Irgendetwas passt hier nicht.</satz>
   </dialog>
   
-  <dialog id="4.4.1">
+  <dialog id="szene4.4.1">
    <satz person_id="p1" bild_id="protagonist_1">Nein, ich bin mir sicher, irgendetwas stimmt hier nicht.</satz>
   </dialog>
   
-  <dialog id="4.4.2">
+  <dialog id="szene4.4.2">
    <satz person_id="p1" bild_id="protagonist_1">Nicht mehr ganz neu, aber verlässlich und robust.</satz>
   </dialog>
   
-  <dialog id="4.4.3">
+  <dialog id="szene4.4.3">
    <satz person_id="p2" bild_id="protagonist_2">Irgendwie hab ich Kopfschmerzen ...</satz>
   </dialog>
   
-  <dialog id="4.4.4">
+  <dialog id="szene4.4.4">
    <satz person_id="p1" bild_id="protagonist_1">Dieser Teddybär ... was macht der hier? Und wieso trägt er ein Dirndl?</satz>
    <satz person_id="tb" bild_id="tädiber">Warum ich ein Dirndl trage? Die Geschichte dahinter macht mich viel zu traurig, um sie zu erzählen.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Er spricht! Vielleicht war die Kopfverletzung doch stärker als ich dachte.</satz>
@@ -250,16 +250,16 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="tb" bild_id="tädiber">Leider muss ich euch für jeden Gegenstand ein Rätsel aufgeben. Das erste Rätsel: Manche haben eine lange Leitung.</satz>
   </dialog>
   
-  <dialog id="4.5">
+  <dialog id="szene4.5">
    <satz person_id="tb" bild_id="tädiber">Ihr habt das erste Rätsel gelöst, wie schön für euch. Das zweite Rätsel: Manche treten in die Fußstapfen von P2(ÄNDERUNG) und finden schwarzes Gold.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Hey, ich bin ein Teil des Rätsels. Dann weiß ich auch bestimmt die Lösu ... ich weiß sie doch nicht.</satz>
   </dialog>
 
-  <dialog id="4.6">
+  <dialog id="szene4.6">
    <satz person_id="tb" bild_id="tädiber">Ihr habt das zweite Rätsel gelöst, beeindruckend finde ich das aber nicht. Das letzte Rätsel: Manchen gibt es den Durchblick.</satz>
   </dialog>
 
-  <dialog id="4.7">
+  <dialog id="szene4.7">
    <satz person_id="p1" bild_id="protagonist_1">So, jetzt hast du, was du wolltest. Könntest du uns jetzt bitte sagen, wie wir diese elektronischen Spuren loswerden?</satz>
    <satz person_id="tb" bild_id="tädiber">Danke für eure Mühe. Ich habe noch ein letztes Rätsel für euch, bevor ich euch helfe.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Noch ein Rätsel? Aber du hast doch gesagt, das eben wäre das ...</satz>
@@ -268,7 +268,7 @@ Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</sat
    <satz person_id="p12" bild_id="protagonist_12">Was?</satz>
   </dialog>
   
-  <dialog id="4.8">
+  <dialog id="szene4.8">
     <satz person_id="p1" bild_id="protagonist_1">Er ist weg! Mit unseren Sachen!</satz>
 	<satz person_id="p2" bild_id="protagonist_2">Ah, jetzt versteh ich das Rätsel.</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Das freut mich für dich, aber wir wurden gerade reingelegt. Wir hätten diesem Teddy nicht trauen dürfen. Mäck, wir brauchen deine Hilfe.</satz>
@@ -294,7 +294,7 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
   
           
 <!-- Beginn Szene 5 -->
-  <dialog id="5.1">
+  <dialog id="szene5.1">
    <satz person_id="p1" bild_id="protagonist_1">P2 (ÄNDERUNG) weißt du wer das ist?</satz>
    <satz person_id="p2" bild_id="protagonist_2">Keine Ahnung, vielleicht die neue Putzfrau?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Wir hatten noch nie eine Putzfrau und es ist ein Mann.</satz>
@@ -302,13 +302,13 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
    <satz person_id="p1" bild_id="protagonist_1">Das machen wir auf jeden Fall!</satz> 
   </dialog>
   
-  <dialog id="5.2">
+  <dialog id="szene5.2">
    <satz person_id="dr" bild_id="dr_chaos">Man möge mich nicht stören, ich arbeite hier.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Tja, wenn das so ist, könnten wir ja eigentlich erst mal was essen gehen und dann später ...</satz>
    <satz person_id="p1" bild_id="protagonist_1">WAS MACHEN SIE AUF MEINER BRÜCKE?</satz>
   </dialog>
   
-  <dialog id="5.3">
+  <dialog id="szene5.3">
    <satz person_id="dr" bild_id="dr_chaos">Man möge sich erklären, wieso deine Brücke? Man möge sich merken, ihr steht auf MEINER neuen Brücke.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Wieso redet er so komisch?</satz>
    <satz person_id="p1" bild_id="protagonist_1">Ich weiß es wirklich nicht P2(ÄNDERUNG). Wer sind sie?</satz>
@@ -317,11 +317,11 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
    <satz person_id="dr" bild_id="dr_chaos">Man möge verschwinden, verschwindet!</satz>
   </dialog>
   
-  <dialog id="5.4.1">
+  <dialog id="szene5.4.1">
    <satz person_id="dr" bild_id="dr_chaos">Man möge verschwinden, verschwindet!</satz>
   </dialog>
   
-  <dialog id="5.4.2">
+  <dialog id="szene5.4.2">
    <satz person_id="p1" bild_id="protagonist_1">Täd! Da bist du ja du elender Schwindler. Gib uns unsere Sachen wieder!</satz>
    <satz person_id="tb" bild_id="tädiber">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Wieso geht das nicht?</satz>
@@ -343,12 +343,12 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
    <satz person_id="tb" bild_id="tädiber">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz>
   </dialog> 
   
-  <dialog id="5.5">
+  <dialog id="szene5.5">
    <satz person_id="p1" bild_id="protagonist_1">Fehlen nur die Arbeitsstiefel.</satz>
    <satz person_id="p2" bild_id="protagonist_2">Wir könnten Täd ja erst mal die beiden Sachen geben.</satz>
   </dialog>  
  
-  <dialog id="5.6">
+  <dialog id="szene5.6">
    <satz person_id="p2" bild_id="protagonist_2">Er ist ... weg.</satz>
    <satz person_id="p1" bild_id="protagonist_1">Nein P2(ÄNDERUNG), BEIDE sind weg. Das war ein ganz billiger Trick und wir sind darauf reingefallen. Soviel zu "Vertrau mir".</satz>
    <satz person_id="p2" bild_id="protagonist_2">Aber warum sollte er ohne die Sachen gehen?</satz>
@@ -371,79 +371,79 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
    <satz person_id="p2" bild_id="protagonist_2">Ja ja.</satz>
   </dialog> 
   
-  <dialog id="5.7.1">
+  <dialog id="szene5.7.1">
     <satz person_id="bc" bild_id="bordcomputer">Bisher habt ihr keine Ideen gesammelt, sucht erst mal weiter.</satz>
   </dialog>		
   
-  <dialog id="5.7.2">
+  <dialog id="szene5.7.2">
     <satz person_id="p1" bild_id="protagonist_1">Quantenphysik – Ein einfacher Leitfaden zum eigenen Quantenbeschleuniger</satz>
   </dialog>	
   
-  <dialog id="5.7.3">
+  <dialog id="szene5.7.3">
     <satz person_id="p1" bild_id="protagonist_1">Kochen für Dummies – Keine Angst wir kochen für alle</satz>
   </dialog>		
 
-  <dialog id="5.7.4">
+  <dialog id="szene5.7.4">
     <satz person_id="p2" bild_id="protagonist_2">Zeichensprache des 21. Jahrhunderts - Alles von :) über -.- bis zu =(</satz>
   </dialog>
 
-  <dialog id="5.7.5">
+  <dialog id="szene5.7.5">
     <satz person_id="p1" bild_id="protagonist_1">Lexikon der Bananen – Krumm, krummer, am krummsten</satz>
   </dialog>
   
-  <dialog id="5.7.6">
+  <dialog id="szene5.7.6">
     <satz person_id="p1" bild_id="protagonist_1">Tobias die Schnecke – Kindergeschichten</satz>
   </dialog>	
   
-  <dialog id="5.7.7">
+  <dialog id="szene5.7.7">
     <satz person_id="p1" bild_id="protagonist_1">Die Zeit – Eine Abhandlung in 5854256 Sekunden</satz>
   </dialog>	
   
-  <dialog id="5.7.8">
+  <dialog id="szene5.7.8">
     <satz person_id="p2" bild_id="protagonist_2">Über den Sternen – Raumfahrhandbuch Version 1.0</satz>
   </dialog>	
   
-  <dialog id="5.7.9">
+  <dialog id="szene5.7.9">
     <satz person_id="p2" bild_id="protagonist_2">Einfach – der einfache Leitfaden</satz>
   </dialog>	
   
-  <dialog id="5.7.10">
+  <dialog id="szene5.7.10">
     <satz person_id="p2" bild_id="protagonist_2">SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS</satz>
   </dialog>	
   
-  <dialog id="5.7.11">
+  <dialog id="szene5.7.11">
     <satz person_id="p1" bild_id="protagonist_1">Buch ohne Titel – Der Klassiker von 1999</satz>
   </dialog>	
   
-  <dialog id="5.7.12">
+  <dialog id="szene5.7.12">
     <satz person_id="p1" bild_id="protagonist_1">So jetzt haben wir genug Ideen, wir sollten jetzt ein Passwort erstellen.</satz>
   </dialog>	  
 
-  <dialog id="5.8">
+  <dialog id="szene5.8">
     <satz person_id="bc" bild_id="bordcomputer">So dann wollen wir mal sehen ...</satz>
   </dialog>	
 
-  <dialog id="5.9.1">
+  <dialog id="szene5.9.1">
     <satz person_id="bc" bild_id="bordcomputer">Das ist keine sichere Grundlage. Vielleicht müsst ihr doch noch ein paar Ideen sammeln.</satz>
   </dialog>
   
-  <dialog id="5.9.2">
+  <dialog id="szene5.9.2">
     <satz person_id="bc" bild_id="bordcomputer">Sehr gut, das ist eine sichere Grundlage. Weiter geht's.</satz>
   </dialog>	
 
-  <dialog id="5.9.3">
+  <dialog id="szene5.9.3">
     <satz person_id="bc" bild_id="bordcomputer">Sehr gut, diese Zahlenkette sollte gut mit dem Wort kombinierbar sein. Weiter geht's.</satz>
   </dialog>	
 
-  <dialog id="5.9.4">
+  <dialog id="szene5.9.4">
     <satz person_id="bc" bild_id="bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sachen fehlt noch.</satz>
   </dialog>	
 
-  <dialog id="5.9.5">
+  <dialog id="szene5.9.5">
     <satz person_id="bc" bild_id="bordcomputer">Stimmt, Großbuchstaben runden das Ganze ab.</satz>
   </dialog>	
 
-  <dialog id="5.10">
+  <dialog id="szene5.10">
   	<satz person_id="bc" bild_id="bordcomputer">So das Passwort wurde erfolgreich geändert und ist sicher genug.</satz>
     <satz person_id="p1" bild_id="protagonist_1">Wunderbar. Jetzt kann Dr. Chaos auf nichts mehr in unserem Computersystem zu greifen.</satz>
 	<satz person_id="p2" bild_id="protagonist_2">Ich find das Passwort jetzt schon arg kompliziert ...</satz>
@@ -456,7 +456,7 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 		
 		        	
 <!-- Beginn Szene 6 -->
-  <dialog id="6.1">
+  <dialog id="szene6.1">
 	<satz person_id="p2" bild_id="protagonist_2">Ähm, P1 kannst du mir nochmal sagen, was wir hier genau machen? Sieht nicht so aus als ob Dr. Chaos hier draußen ist.</satz>  
     <satz person_id="p1" bild_id="protagonist_1">Manchmal machst du mich echt wahnsinnig. Also zum wiederholten und letzten Mal:</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Wir waren eben auf der Suche nach Dr. Chaos, richtig?</satz>
@@ -470,29 +470,29 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 	<satz person_id="p1" bild_id="protagonist_1">Folg mir einfach!</satz>					
   </dialog>
   
- <dialog id="6.2.1">
+ <dialog id="szene6.2.1">
 	<satz person_id="p2" bild_id="protagonist_2">Ah, die unendlichen Weiten des ... </satz>  
     <satz person_id="p1" bild_id="protagonist_1">Sag es bloß nicht!</satz>					
   </dialog>  
 
- <dialog id="6.2.2">
+ <dialog id="szene6.2.2">
     <satz person_id="p1" bild_id="protagonist_1">P2(ÄNDERUNG), mach die Schleuse auf!</satz>
 	<satz person_id="p2" bild_id="protagonist_2">Warum ich?</satz> 
     <satz person_id="p1" bild_id="protagonist_1">Weil ich der Käpt'n bin und irgendeinen Vorteil muss das ja haben.</satz>
 	<satz person_id="p2" bild_id="protagonist_2">Wenn es sein muss.</satz> 						
   </dialog>  
 
- <dialog id="6.3">
+ <dialog id="szene6.3">
 	<satz person_id="p2" bild_id="protagonist_2">Sie geht nicht auf, sie ist auch verriegelt.</satz> 
     <satz person_id="p1" bild_id="protagonist_1">Wir müssen die Luftschleuse unbedingt aufbekommen ... haben wir hier draußen nicht einen Sicherheitskasten.</satz>					
   </dialog>  
 
- <dialog id="6.4">
+ <dialog id="szene6.4">
 	<satz person_id="p2" bild_id="protagonist_2">Dieser hier?</satz> 
     <satz person_id="p1" bild_id="protagonist_1">Siehst du hier noch einen anderen? Öffne ihn mal bitte.</satz>					
   </dialog>
   
- <dialog id="6.5">
+ <dialog id="szene6.5">
 	<satz person_id="p12" bild_id="protagonist_12">Täd?</satz> 
     <satz person_id="tb" bild_id="tädiber">Nein, Täd ist mein böser Zwillingsbruder ... ok, Spaß beiseite ich bin es.</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Mit dir haben wir ein Hühnchen zu rupfen!</satz>
@@ -503,11 +503,11 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 	<satz person_id="p1" bild_id="protagonist_1">Hmm ... zu den wichtigen Funktionen unseres Anzuges gehört es nicht, also könnten wir es mal ausprobieren. Ich werde es zuerst versuchen.</satz>
   </dialog>  
   
- <dialog id="6.6">
+ <dialog id="szene6.6">
     <satz person_id="p1" bild_id="protagonist_1">Ich glaub das war's und mir geht's gut. So P2(ÄNDERUNG), du bist dran</satz>					
  </dialog>
   
- <dialog id="6.7">
+ <dialog id="szene6.7">
 	<satz person_id="tb" bild_id="tädiber">Diesmal könnt ihr mir wirklich trauen. Dr. Chaos hat ein für alle Mal übertrieben. Ich lass mir das nicht mehr gefallen. Und diese dämlichen Kostüme hab ich schon lange satt!</satz>
    	<satz person_id="p1" bild_id="protagonist_1">Überzeugt bin ich immer noch nicht so richtig.</satz>
 	<satz person_id="tb" bild_id="tädiber">Ich helfe euch das Passwort zu knacken, vielleicht überzeugt euch das. Dr. Chaos benutzt immer ein Passwort, das mit den Sternenbildern zu tun hat.</satz>
@@ -515,18 +515,18 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 	<satz person_id="tb" bild_id="tädiber">Ihr seht drei Sternbilder. Er hat erst geradeaus, dann nach links und anschließend nach rechts geschaut, bevor er das Passwort eingegeben hat, vielleicht hilft euch das.</satz>			
  </dialog> 
 
- <dialog id="6.8.1">
+ <dialog id="szene6.8.1">
     <satz person_id="tb" bild_id="tädiber">Nein, das war falsch. Nochmal von vorne.</satz>				
  </dialog>
 
- <dialog id="6.8.2">
+ <dialog id="szene6.8.2">
     <satz person_id="tb" bild_id="tädiber">Das Passwort ist: StierWaageKrebs</satz>
 	<satz person_id="p1" bild_id="protagonist_1">So einfach sind seine Passwörter?</satz>
 	<satz person_id="tb" bild_id="tädiber">Ja, das Passwort für die Brücke war zum Beispiel "Schütze", weil er kein anderes gefunden hat.</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Oh man. Und das Passwort geht?</satz>			
  </dialog>
 
- <dialog id="6.9">
+ <dialog id="szene6.9">
 	<satz person_id="p1" bild_id="protagonist_1">Oh ...</satz>
 	<satz person_id="p2" bild_id="protagonist_2">Geht es denn jetzt?</satz> 
 	<satz person_id="tb" bild_id="tädiber">Natürlich geht es.</satz>
@@ -539,7 +539,7 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
  
     
 <!-- Beginn Szene 7 --> 
- <dialog id="7.1">
+ <dialog id="szene7.1">
 	<satz person_id="dr" bild_id="dr_chaos">Man hat sie schon erwartet, ich wusste das ihr kommen würdet. Deshalb heiß ich euch herzlich Willkommen in meiner Falle.</satz>
 	<satz person_id="p12" bild_id="protagonist_12">Falle?</satz> 
 	<satz person_id="tb" bild_id="tädiber">Ach ja die Falle, jetzt haben wir aber Angst.</satz>
@@ -550,11 +550,11 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 	<satz person_id="dr" bild_id="dr_chaos">Man wird jetzt eingeweiht in den genialen Plan, ich sag es euch. Die Tür hinter euch hat sich verriegelt nachdem ihr den Raum betreten habt. Man möge es überprüfen.</satz>
  </dialog>
  
- <dialog id="7.2"> 
+ <dialog id="szene7.2"> 
 	<satz person_id="p2" bild_id="protagonist_2">Die Tür ist wirklich verriegelt.</satz>
  </dialog>	
 
- <dialog id="7.3"> 
+ <dialog id="szene7.3"> 
 	<satz person_id="dr" bild_id="dr_chaos">Man merkt ich sage die Wahrheit, sag ich doch. Täd hat vorhin außerdem programmiert, dass die Frachtraumklappe 1 Minute und 30 Sekunden nach Öffnen der Tür, auf geht. Ich bin natürlich hinter dem Schutzschild sicher, ihr hingegen müsst das Raumschiff gezwungenermaßen  verlassen. Das passiert in 10 ... 9 ... 8 ... 7 ... 6 ... 5 ... 4 ... 3 ... 2 ... 1 ... JETZT!</satz>
 	<satz person_id="tb" bild_id="tädiber">Es könnte sein, dass ich statt 1 Minute und 30 Sekunden, 1 Tag und 30 Minuten eingestellt habe.</satz>
 	<satz person_id="dr" bild_id="dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen…Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm. Dann warten wir eben hier bis morgen die Frachtraumklappe auf geht. Ihr könnt natürlich auch einfach den Knopf dort vorne drücken um euch selbst raus zu befördern.</satz>
@@ -566,26 +566,26 @@ Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten spei
 	<satz person_id="p1" bild_id="protagonist_1">Aha, daran hat der ach so schlaue Doktor also nicht gedacht. Na dann wollen wir mal.</satz>
  </dialog>	
 
- <dialog id="7.4.1">
+ <dialog id="szene7.4.1">
  	<satz person_id="dr" bild_id="dr_chaos">Bitte, bitte!</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Keine Chance!</satz>
  </dialog>
 
- <dialog id="7.4.2">
+ <dialog id="szene7.4.2">
 	<satz person_id="p1" bild_id="protagonist_1">Das wäre jetzt	keine so gute Idee!</satz>
  </dialog>
 
- <dialog id="7.4.3">
+ <dialog id="szene7.4.3">
 	<satz person_id="tb" bild_id="tädiber">Um das Passwort zu umgehen, müsst ihr ein paar Fragen beantworten. Die dürften aber nach euren Erlebnissen heute kein Problem sein</satz>
  </dialog>
   
- <dialog id="7.5">
+ <dialog id="szene7.5">
  	<satz person_id="dr" bild_id="dr_chaos">NEIN! Das darf nicht wahr sein! Täd bitte, denk an die schöne Zeit die wir zusammen hatten!</satz>
 	<satz person_id="tb" bild_id="tädiber">Wenn ich an die Zeit denke, will ich dich nur noch schneller loswerden .</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Das war es Doktor Chaos, auf nimmer Wiedersehen!</satz>
  </dialog>
   
- <dialog id="7.6">
+ <dialog id="szene7.6">
 	<satz person_id="p1" bild_id="protagonist_1">Das war's!</satz>
 	<satz person_id="p2" bild_id="protagonist_1">Endlich, das wäre geschafft.</satz>
 	<satz person_id="p1" bild_id="protagonist_1">Da haben wir ja heute einiges gelernt.</satz>
