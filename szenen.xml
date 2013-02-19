@@ -86,44 +86,44 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene1_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_bett" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_bett" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="25" y="25" z="0"/>
           <groesse width="30" height="45"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_lautsprecher_links" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_lautsprecher_links" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="16" y="20" z="0"/>
           <groesse width="5" height="7"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_lautsprecher_rechts" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_lautsprecher_rechts" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="80" y="20" z="0"/>
           <groesse width="5" height="7"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_muelleimer" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_muelleimer" dialog_id="#none#" klickbar="false" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="18" y="66" z="0"/>
           <groesse width="9" height="16"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_schreibtisch" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene1_schreibtisch" dialog_id="#none#" klickbar="false" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="53" y="45" z="0"/>
           <groesse width="28" height="33"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene1_sound_links" dialog_id="#none#" klickbar="false"
+        <hg_animiert_objekt bild_id="szene1_sound_links" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="20" y="17" z="100"/>
           <groesse width="300" height="300"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_sound_rechts" dialog_id="#none#" klickbar="false"
+        <hg_animiert_objekt bild_id="szene1_sound_rechts" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="74" y="17" z="100"/>
           <groesse width="300" height="300"/>
@@ -137,12 +137,12 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="0" y="27" z="300"/>
           <groesse width="112" height="108"/>
         </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="szene1_schrank_zu" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene1_schrank_zu" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="1" raetsel_ausloeser="false">
           <position x="0" y="27" z="300"/>
           <groesse width="112" height="108"/>
@@ -160,27 +160,27 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene2_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene2_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene2_fischglas" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene2_fischglas" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene2_knopf" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene2_knopf" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="86" y="51" z="0"/>
           <groesse width="2.5" height="6"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene2_sitz" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene2_sitz" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="70" y="55" z="1"/>
           <groesse width="14" height="30"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene2_terminal" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene2_terminal" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="25" y="40" z="0"/>
           <groesse width="48" height="40"/>
@@ -195,7 +195,7 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene2_tuer" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene2_tuer" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="86" y="25" z="300"/>
           <groesse width="110" height="108"/>
@@ -213,27 +213,27 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene3_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene3_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_fischglas" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene3_fischglas" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_knopf" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene3_knopf" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="86" y="51" z="0"/>
           <groesse width="2.5" height="6"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_sitz" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene3_sitz" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="70" y="55" z="1"/>
           <groesse width="14" height="30"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_terminal" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene3_terminal" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="25" y="40" z="0"/>
           <groesse width="48" height="40"/>
@@ -248,7 +248,7 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene3_tuer" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene3_tuer" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="86" y="25" z="300"/>
           <groesse width="110" height="108"/>
@@ -266,19 +266,19 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene4_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene4_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene4_haken" dialog_id="#none#" klickbar="false"
-		raetselschritt="0" raetsel_ausloeser="false">
+        <hg_statisch_objekt bild_id="szene4_haken" dialog_id="#none#" klickbar="false" walkto="true"
+		raetselschritt="1" raetsel_ausloeser="false">
           <position x="57" y="41" z="0"/>
           <groesse width="2" height="4"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene4_kabel" dialog_id="#none#" klickbar="true"
+        <hg_animiert_objekt bild_id="szene4_kabel" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="56.65" y="41" z="100"/>
           <groesse width="250" height="325"/>
@@ -292,33 +292,28 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene4_fussabdruck" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene4_fussabdruck" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="35" y="88" z="300"/>
           <groesse width="100" height="100"/>
         </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="szene4_oelkanne" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene4_oelkanne" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="25" y="75" z="300"/>
           <groesse width="100" height="100"/>
         </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="szene4_scheibe" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene4_scheibe" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="59" y="69" z="300"/>
           <groesse width="100" height="100"/>
         </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="szene4_schreibtisch" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene4_schreibtisch" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="78.3" y="51.5" z="300"/>
           <groesse width="115" height="110"/>
         </vg_statisch_objekt>
       </vg_statisch>
       <vg_animiert>
-        <vg_animiert_objekt bild_id="" dialog_id="#none#" klickbar="true"
-		raetselschritt="0" raetsel_ausloeser="false">
-          <position x="10" y="50" z="400"/>
-          <groesse width="100" height="100"/>
-        </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
   </szene>
@@ -331,27 +326,27 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene5_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene5_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene5_fischglas" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene5_fischglas" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene5_knopf" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene5_knopf" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="86" y="51" z="0"/>
           <groesse width="2.5" height="6"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene5_sitz" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene5_sitz" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="70" y="55" z="1"/>
           <groesse width="14" height="30"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene5_terminal" dialog_id="#none#" klickbar="true"
+        <hg_statisch_objekt bild_id="szene5_terminal" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="25" y="40" z="0"/>
           <groesse width="48" height="40"/>
@@ -366,7 +361,7 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene5_tuer" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene5_tuer" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="86" y="25" z="300"/>
           <groesse width="110" height="108"/>
@@ -384,19 +379,19 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene6_hg" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene6_hg" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene6_kasten_zu" dialog_id="#none#" klickbar="true"
+        <hg_animiert_objekt bild_id="szene6_kasten_zu" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="46.5" y="65" z="100"/>
           <groesse width="320" height="320"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene6_kasten_offen" dialog_id="#none#" klickbar="false"
+        <hg_animiert_objekt bild_id="szene6_kasten_offen" dialog_id="#none#" klickbar="false" walkto="true"
 		raetselschritt="1" raetsel_ausloeser="false">
           <position x="46.5" y="65" z="100"/>
           <groesse width="320" height="320"/>
@@ -410,11 +405,11 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene6_luke_links" dialog_id="#none#" klickbar="true">
+        <vg_statisch_objekt bild_id="szene6_luke_links" dialog_id="#none#" klickbar="true" walkto="true">
           <position x="5.5" y="80.5" z="300"/>
           <groesse width="110" height="110"/>
         </vg_statisch_objekt>
-        <vg_statisch_objekt bild_id="szene6_luke_rechts" dialog_id="#none#" klickbar="true">
+        <vg_statisch_objekt bild_id="szene6_luke_rechts" dialog_id="#none#" klickbar="true" walkto="true">
           <position x="75" y="70" z="300"/>
           <groesse width="110" height="110"/>
         </vg_statisch_objekt>
@@ -431,19 +426,19 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene7_hg_zu" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene7_hg_zu" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene7_hg_offen" dialog_id="#none#" klickbar="false"
+        <hg_statisch_objekt bild_id="szene7_hg_offen" dialog_id="#none#" klickbar="false" walkto="false"
 		raetselschritt="1" raetsel_ausloeser="false">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene7_generator" dialog_id="#none#" klickbar="true"
+        <hg_animiert_objekt bild_id="szene7_generator" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="true">
           <position x="11" y="54" z="100"/>
           <groesse width="320" height="340"/>
@@ -457,7 +452,7 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene7_roter_knopf" dialog_id="#none#" klickbar="true"
+        <vg_statisch_objekt bild_id="szene7_roter_knopf" dialog_id="#none#" klickbar="true" walkto="true"
 		raetselschritt="0" raetsel_ausloeser="false">
           <position x="11" y="51" z="300"/>
           <groesse width="100" height="100"/>

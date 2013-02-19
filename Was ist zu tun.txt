@@ -9,6 +9,8 @@ Primaer
 	- Szenenzähler inkrementieren
 	- übrige Variablen zurücksetzen
 	- Bilder, Dialoge -> Szene laden
+- Unterscheidung wohin man gehen kann, was man klicken kann, was das Quiz voran bringt, was einen Hinweis gibt
+	- teilweise in sceneparser enthalten -> var xyzTrigger
 
 
 Sekundaer

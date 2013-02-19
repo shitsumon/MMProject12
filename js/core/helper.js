@@ -62,15 +62,16 @@ function personStruct(id, imgID, xPos, yPos, zPos, width, height){
 	this.quizStep	= 0;
 }
 //Struct for object information includes Position struct, Size struct and Quiz info
-function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height, clickable){
+function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height, clickable, walkto){
 
     this.imageID    = imgID;
     this.dialogueID = diagID;
 
-    this.position   = new Position(xPos, yPos);
+    this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
 
     this.clickable  = typeof( clickable ) === 'undefined' ? false : clickable;
+	this.walkto		= typeof( walkto ) === 'undefined' ? false : walkto;
 	
 	this.quizTrigger= false;
 	this.quizStep	= 0;

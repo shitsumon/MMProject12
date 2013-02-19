@@ -25,9 +25,10 @@
 */
 function getSceneElementData(sceneElement){
 
-    var tmpObject = new objectStruct(sceneElement.attr('bild_id'),
-                                 sceneElement.attr('dialog_id'));
-	tmpObject.clickable     = sceneElement.attr('klickbar') === "true";
+    var tmpObject		= new objectStruct(sceneElement.attr('bild_id'),
+							sceneElement.attr('dialog_id'));
+	tmpObject.clickable	= sceneElement.attr('klickbar') === "true";
+	tmpObject.walkto	= sceneElement.attr('walkto') === "true";
 	
 	return getElementData(tmpObject, sceneElement);
 }
@@ -219,8 +220,10 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
     var newCanvas;
-	//css-class of quiz elements and whether they trigger quiz advancements
-	var quizClass, quizTrigger;
+	//css-class of quiz elements
+	var quizClass;
+	//whether element triggers quiz advancements, movement or dialogs
+	var quizTrigger, moveTrigger, dialogTrigger;
 
     //draw to single canvas
     if(hasSingleCanvas){
@@ -262,11 +265,6 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     else{
 
         for(var index = 0; index < objectsToDraw.length; ++index){
-			
-			//will trigger quiz advancement on click if true, do nothing otherwise
-			quizTrigger	= objectsToDraw[index].quizTrigger ? "advanceQuizStep();" : "";
-			//sets visibility by css "display" value through css class attribute
-			quizClass	= objectsToDraw[index].quizStep > 0 ? "quiz_hidden" : "quiz_shown";
 					
             //create id with a unique combination
             //of common string, picture id and quiz step
@@ -276,6 +274,17 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
 					) + "_" +
 				"quizStep_" + objectsToDraw[index].quizStep.toString();
+			
+			//will trigger movement of character if clicked
+			moveTrigger		= objectsToDraw[index].walkto ? "gTargetIdentifier='" + canvasID + "';bewegePerson();" : "";
+			//will trigger quiz advancement on click if true, do nothing otherwise
+			quizTrigger		= objectsToDraw[index].quizTrigger ? "advanceQuizStep();" : "";
+			//sets visibility by css "display" value through css class attribute
+			quizClass		= objectsToDraw[index].quizStep > 0 ? "quiz_hidden" : "quiz_shown";
+			//will trigger dialog if present
+			dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
+								typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
+								"dialogStart("+ objectsToDraw[index].dialogueID +");";
 
             //Check if clickable, if yes set it as such
             if(objectsToDraw[index].clickable){
@@ -284,8 +293,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                               {
                                id : canvasID,
 							   "class": quizClass + " " + "clickable",
-                               /*onclick:"javascript:gTargetIdentifier='" + canvasID + "';heroMovement();" + quizTrigger*/
-							   onclick:"javascript:gTargetIdentifier='" + canvasID + "';bewegePerson();" + quizTrigger
+							   onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
                               }
                              );
             }else{
