@@ -39,6 +39,19 @@
     <abmessungen height="362" width="376"/>
   </bild>
   
+ <!--allgemein-->
+  <bild id="allg_dialogbox" pfad="../bilder/neu/allgemein/dialogbox.png" animiert="false">
+    <abmessungen height="257" width="854"/>
+  </bild>
+  <bild id="allg_hero_male" pfad="../bilder/neu/allgemein/hero_male.png" animiert="false">
+    <abmessungen height="133" width="122"/>
+  </bild>
+  <bild id="allg_hero_female" pfad="../bilder/neu/allgemein/hero_female.png" animiert="false">
+    <abmessungen height="133" width="122"/>
+  </bild>
+  <bild id="allg_teddy" pfad="../bilder/neu/allgemein/teddy.png" animiert="false">
+    <abmessungen height="133" width="122"/>
+  </bild>
   <!--szene1-->
   <bild id="szene1_hg" pfad="../bilder/neu/szene1/hintergrund_kabine.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
