@@ -3,8 +3,8 @@ Primaer
 -------
 
 - Bewegungshandling mehrerer Personen
-- Dialogcode überarbeiten, an Entwurf anpassen
-- Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Macht Micha
+- Dialogcode überarbeiten, an Entwurf anpassen --> Macht Micha
+- Auswahl des richtigen Tilesets bei Bewegung nach Rechts, Links, ... --> Funktioniert soweit
 - Szenenübergang
 	- Szenenzähler inkrementieren
 	- übrige Variablen zurücksetzen
@@ -22,23 +22,40 @@ Sekundaer
 	- Bilder durch schattenfreie Versionen ersetzen
 	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
-- Dokumentation schreiben
 - Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
-	- Meldungen am besten per Flag an/abschalten
+    -> Meldungen am besten per Flag an/abschalten
+- Lokalisierung der Code Kommentare, entweder Deutsch oder Englisch (Mir egal, Hauptsache einheitlich und ausfuehrlich fuer jede Funktion)
 
+    Ausfuerhlich bedeutet:
+        -> Beschreibung was die Funktion macht
+        -> Beschreibung der uebergabe Parameter
+        -> Beschreibung der moeglichen Rueckgabewerte
 
 Neu
 ---
 
 - Szenenübergänge
 - Hauptmenü
-- Intro
+- Intro                                         --> Erste Version implementiert, Text wird dann statisch eingetragen
 - Testen, testen, testen
-	- Fehlerverhalten
-	- verschiedene Auflösungen
-	- Veränderung des Anzeigefensters
-	- ...
+        -> Fehlerverhalten
+        -> verschiedene Auflösungen
+        -> Veränderung des Anzeigefensters
+        -> ...
+
+- Dokumentation
+    -> Fuer Wen ist das Spiel gedacht
+    -> Wer hat es in Auftrag gegeben
+    -> Warum ist das Spiel notwendig (Aufklaerung, Gefahren im Netz,...)
+    -> Codedokumentation (Ausfuehrlich!)
+    -> Beschreibung der einzelnen Code Module
+
+-Praesentation
+    -> Wahrscheinlich die Dokumentation in Kurzform (?)
+    -> Fuer die Praesentation sind 2 Stunden angesetzt, dementsprechend sollte die Praesentation
+      aufgebaut sein
+
 
 Wem fällt noch was ein?
 
