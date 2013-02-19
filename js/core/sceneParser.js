@@ -140,6 +140,8 @@ function getSceneInformation(sceneID, sceneFilename){
               })
 			  
 			  drawScene(sceneObject);
+			  
+			  gdisplay_next_scene = false;
 
     }).error(function(xhr, status, error){
 		alert("Es ist ein Fehler aufgetreten: " + error);

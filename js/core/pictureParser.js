@@ -20,7 +20,9 @@ function verarbeiteBilderXML(daten){
 	
 	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
 	
-    gBilder.anzahl = jquery_bilder.length;
+	gpictureparser_xml_geladen = true;
+	
+    gBilder.anzahl += jquery_bilder.length;
 	
 	jquery_bilder.each(function(index, bild) {
 		

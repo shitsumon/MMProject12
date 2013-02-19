@@ -40,6 +40,10 @@ var gQuiz_steps				= 0;
 var gcurrent_quiz_step		= 0;
 //Multiplikatoren der Zoomstufen nach Z-Index
 var gZoomsteps				= new Array(4);
+//steuert die Darstellung der aktuellen/nächsten Szene
+//true erlaubt waitforparser den start des sceneparser, false verhindert ihn
+//sceneparser setzt am ende auf false, sodass bilder und dialoge gelden werden können während die vorige szene noch läuft
+var gdisplay_next_scene		= true;
 
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
@@ -110,13 +114,14 @@ var gLastDirection      = 'standing';//Stores last known direction
 
 /******************
  *pictureParser.js*
- ******************/ 
+ ******************/
+var gbilderXMLPfad	= "../bilder/bilder.xml";	//Pfad zur Bilder-XML
 var gBilder			= new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
 gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
 gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
 									Ladebalken genutzt werden*/
-
-var gbilderXMLPfad	= "../bilder/bilder.xml";	//Pfad zur Bilder-XML
+//zeigt erfolgreiches Laden der xml-Datei
+gpictureparser_xml_geladen = false;
 
 function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
 	this.height	= _height;	//Pixel int
@@ -192,6 +197,8 @@ var gCurrentDirection = gInitialDirection;  //Saves last known direction to comp
  gDialoge.anzahl		= 0;
  //Zähler für die bereits geladenen Dialoge
  gDialoge.geladen		= 0;
+ //zeigt erfolgreiches Laden der xml-Datei
+ gdialogparser_xml_geladen = false;
  
  //Prototyp für einen Dialog mit mindestens einem Satz
  function Dialog(_id, _anzahl_saetze){
@@ -240,7 +247,6 @@ gTalk.TBPercImagePosY   = 5;  //Textbox image Y position in %
 gTalk.TBPercImageWidth  = 20; //Textbox image width in %
 gTalk.TBPercImageHeight = 20; //Textbox image height in %
 
-
 var gTBDrawn = false;
 
 //muss einmal aufgerufen werden
@@ -271,7 +277,9 @@ function perc2pix(absolute, perc){
 //prüft ob Bilder und Dialoge vollständig geladen wurden
 function waitforparser(){
 	//wenn alle Elemente geladen wurden
-    if((gBilder.anzahl == gBilder.geladen) && (gDialoge.anzahl == gDialoge.geladen)){
+    if(gpictureparser_xml_geladen && gdialogparser_xml_geladen &&
+		(gBilder.anzahl == gBilder.geladen) && (gDialoge.anzahl == gDialoge.geladen) &&
+		gdisplay_next_scene){
 		//lese Szene ein
         getSceneInformation(gcurrent_scene_id, sceneXML);
 	}

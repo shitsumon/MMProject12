@@ -43,6 +43,10 @@
   <bild id="szene1_hg" pfad="../bilder/neu/szene1/hintergrund_kabine.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
+  <bild id="szene1_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
+    <abmessungen height="160" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
   <bild id="szene1_bett" pfad="../bilder/neu/szene1/bett.png" animiert="false">
     <abmessungen height="355" width="405"/>
   </bild>

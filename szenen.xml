@@ -130,7 +130,7 @@
         </hg_animiert_objekt>
       </hg_animiert>
       <personen>
-        <person person_id="" bild_id="bild_herotileset"
+        <person person_id="" bild_id="szene1_herotileset"
 		raetselschritt="-1" raetsel_ausloeser="false">
           <position x="50" y="50" z="200"/>
           <groesse width="700" height="700"/>
