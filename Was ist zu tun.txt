@@ -17,6 +17,8 @@ Sekundaer
 	- Dialoge verknüpfen
 	- Rätsel einfügen
 	- Bilder durch schattenfreie Versionen ersetzen
+	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
+- Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 - Dokumentation schreiben
 - Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
