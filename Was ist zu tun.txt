@@ -1,4 +1,3 @@
-
 Primaer
 -------
 
@@ -69,3 +68,49 @@ Bevor ihr mit hacken anfangt und das Rad neu erfindet, lest euch bitte die beste
 durch, und versucht euren Code in das bestehende System zu integrieren und vorhandenen Sachen zu nutzen.
 Das hat sonst nur mehr Nachbereitung des Codes zur Folge, was hinsichtlich der verbleibenden Zeit nicht
 wuenschenswert ist!
+
+Probleme in den Szenen
+----------------------
+
+szene 1
+
+raum wird hell -> dunkles bild benötigt
+einzelne schubladen des schreibtisches -> einzelbilder?
+
+szene 2
+
+wieder dunkel
+
+szene 4
+
+die rätselsätze sollen sichtbar bleiben
+	-> vllt wie eine missionsübersicht, transparanter text am rand
+
+szene 5
+
+ein abstellraum soll dargestellt werden
+auslöser für das umsehen der figuren
+	-> links, rechts, fertig
+10 anklickbare bücher -> bilder fehlen
+
+szene 6
+
+eine person muss klickbar sein
+
+szene 7
+
+generatorschaltfläche vom generator trennen
+	-> separates bild
+
+dr chaos soll sich drehen und kleiner werden
+	-> nicht wiederholende animation
+
+allgemein
+
+quiz zurücksetzen bei falscheingabe
+rätsel-bilder fehlen
+rätselbilder müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
+dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
+scripted dialoge -> wie machen wir das?
+	-> startdialog in szenen.xml angeben, dialog bestätigen als quiztrigger
+	-> letzter dialog als trigger für nächste szene
