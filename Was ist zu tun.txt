@@ -9,6 +9,7 @@ Primaer
 Sekundaer
 ---------
 
+- Dialoge korrigieren, siehe Datei
 - freistellen der Einzelbilder der Szenen
 	- mit Transparenz speichern, PNG	--> hat Oli angefangen
 - Szenenbeschreibung vervollständigen

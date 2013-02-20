@@ -52,13 +52,13 @@
   <bild id="allg_teddy" pfad="../bilder/neu/allgemein/teddy.png" animiert="false">
     <abmessungen height="133" width="122"/>
   </bild>
+  <bild id="allg_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
+    <abmessungen height="160" width="128"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+  </bild>
   <!--szene1-->
   <bild id="szene1_hg" pfad="../bilder/neu/szene1/hintergrund_kabine.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
-  </bild>
-  <bild id="szene1_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
-    <abmessungen height="160" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
   </bild>
   <bild id="szene1_bett" pfad="../bilder/neu/szene1/bett.png" animiert="false">
     <abmessungen height="355" width="405"/>
@@ -109,6 +109,12 @@
   </bild>
   <bild id="szene2_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
     <abmessungen height="511" width="182"/>
+  </bild>
+  <bild id="szene2_leuchten_links" pfad="../bilder/neu/szene2/leuchten_links.png" animiert="false">
+    <abmessungen height="174" width="258"/>
+  </bild>
+  <bild id="szene2_leuchten_rechts" pfad="../bilder/neu/szene2/leuchten_rechts.png" animiert="false">
+    <abmessungen height="174" width="258"/>
   </bild>
   
   <!--szene3-->
@@ -188,11 +194,23 @@
   <bild id="szene6_kasten_zu" pfad="../bilder/neu/szene6/kasten_zu.png" animiert="false">
     <abmessungen height="254" width="221"/>
   </bild>
-  <bild id="szene6_luke_links" pfad="../bilder/neu/szene6/luke_links.png" animiert="false">
+  <bild id="szene6_luke_links_zu" pfad="../bilder/neu/szene6/luke_links_zu.png" animiert="false">
     <abmessungen height="141" width="275"/>
+  </bild>
+    <bild id="szene6_luke_links_offen" pfad="../bilder/neu/szene6/luke_links_offen.png" animiert="false">
+    <abmessungen height="219" width="270"/>
   </bild>
   <bild id="szene6_luke_rechts" pfad="../bilder/neu/szene6/luke_rechts.png" animiert="false">
     <abmessungen height="219" width="270"/>
+  </bild>
+  <bild id="szene6_krebs_schein" pfad="../bilder/neu/szene6/krebs_schein.png" animiert="false">
+    <abmessungen height="205" width="262"/>
+  </bild>
+  <bild id="szene6_stier_schein" pfad="../bilder/neu/szene6/stier_schein.png" animiert="false">
+    <abmessungen height="267" width="354"/>
+  </bild>
+  <bild id="szene6_waage_schein" pfad="../bilder/neu/szene6/waage_schein.png" animiert="false">
+    <abmessungen height="272" width="288"/>
   </bild>
   
   <!--szene7-->
@@ -205,10 +223,13 @@
   <bild id="szene7_generator" pfad="../bilder/neu/szene7/generator.png" animiert="false">
     <abmessungen height="245" width="320"/>
   </bild>
+  <bild id="szene7_generator_schalter" pfad="../bilder/neu/szene7/generator_schalter.png" animiert="false">
+    <abmessungen height="58" width="81"/>
+  </bild>
   <bild id="szene7_laserwand_links" pfad="../bilder/neu/szene7/laserwand_links.png" animiert="false">
     <abmessungen height="720" width="637"/>
   </bild>
-  <bild id="szene7_laswerand_rechts" pfad="../bilder/neu/szene7/laserwand_rechts.png" animiert="false">
+  <bild id="szene7_laserwand_rechts" pfad="../bilder/neu/szene7/laserwand_rechts.png" animiert="false">
     <abmessungen height="720" width="627"/>
   </bild>
   <bild id="szene7_roter_knopf" pfad="../bilder/neu/szene7/roter_knopf.png" animiert="false">
