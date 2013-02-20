@@ -1,2 +1,0 @@
-Ein erster Prototyp des Spiels. Im Unterordner HTML/Szene 1 befindet sich die Datei Szene 1.html.
-Es folgen bald weitere.

@@ -157,6 +157,11 @@ function bewegePerson(){
             gLastDirection = direction;
             switchWalkingAnimation(direction);
         }
+		
+		if(gAktuellesZiel == 2){
+			
+			hero.css("z-index", target.css("z-index"));
+		}
 
 		//es können maximal drei Ziele sein, Held -> Wegpunkt 1 -> Wegpkt 2 -> Ziel
 		setTimeout(function(){ bewegePerson() }, gIntervall);
@@ -164,8 +169,6 @@ function bewegePerson(){
 
         //When target is reached, standing animation is invoked
         switchWalkingAnimation('standing');
-
-		hero.css("z-index", target.css("z-index"));
 		
 		if(heroPos[2] > targetPos[2]){
 			//verkleinern		
