@@ -20,11 +20,22 @@ function verarbeiteBilderXML(daten){
 	
 	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
 	
-	gpictureparser_xml_geladen = true;
-	
     gBilder.anzahl += jquery_bilder.length;
 	
-	jquery_bilder.each(function(index, bild) {
+	verarbeiteBilder(jquery_bilder);
+	
+	if(gcurrent_scene_counter == 1){
+		
+		jquery_bilder = $(daten).find("bild[id*=allg_]");
+		
+		gBilder.anzahl += jquery_bilder.length;
+		
+		verarbeiteBilder(jquery_bilder);
+	}
+	
+	gpictureparser_xml_geladen = true;
+	
+	/*jquery_bilder.each(function(index, bild) {
 		
         id = $(bild).attr("id");
 
@@ -50,7 +61,40 @@ function verarbeiteBilderXML(daten){
 				parseInt(animation.attr("tile_width"))
 			)
 		}
-    });
+    });*/
+}
+
+function verarbeiteBilder(bilder){
+	
+	var jquery_bilder = $(bilder);
+	
+	jquery_bilder.each(function(index, bild) {
+		
+		id = $(bild).attr("id");
+	
+		gBilder[id] = new Bild(
+								id,
+								$(bild).attr("pfad"),
+								new Abmessungen(
+								
+									parseInt($(bild).find("abmessungen").attr("height")),
+									parseInt($(bild).find("abmessungen").attr("width"))
+									),
+								$(bild).attr("animiert") === "false" ? false : true
+		);
+		
+		if(gBilder[id].animiert){
+			
+			animation = $(bild).find("animation");
+			
+			gBilder[id].animationsmerkmale = new Animationsmerkmale(
+			
+				parseFloat(animation.attr("fps")),
+				parseInt(animation.attr("tile_anzahl")),
+				parseInt(animation.attr("tile_width"))
+			)
+		}
+	});
 }
 
 /*

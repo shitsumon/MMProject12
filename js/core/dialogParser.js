@@ -17,8 +17,6 @@ function verarbeiteDialogXML(daten){
 	//findet alle Dialog-Elemente
 	var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
 	
-	gdialogparser_xml_geladen = true;
-	
 	//speichert die Anzahl der hinterlegten Dialoge
 	gDialoge.anzahl += jquery_dialoge.length;
 	
@@ -49,6 +47,8 @@ function verarbeiteDialogXML(daten){
 			);
 		});
     });
+	
+	gdialogparser_xml_geladen = true;
 }
 
 /*

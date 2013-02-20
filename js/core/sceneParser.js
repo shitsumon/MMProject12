@@ -174,7 +174,7 @@ function drawScene(sceneObject){
     //draw dynamic foreground
     drawObjectsOfSameType('canvas_fg_dynamic', sceneObject.dynamicForegroundObjects);
     //draw persons
-    drawObjectsOfSameType('canvas_person', sceneObject.persons, false);
+    drawObjectsOfSameType('canvas_person', sceneObject.persons);
 
     $('body').append($('<canvas/>', {id: 'textbox'}));
 }
@@ -227,7 +227,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 	//whether element triggers quiz advancements, movement or dialogs
 	var quizTrigger, moveTrigger, dialogTrigger;
 
-    //draw to single canvas
+    //draw to single canvas -> bg_static
     if(hasSingleCanvas){
 		
         newCanvas = $('<canvas/>', {
@@ -263,6 +263,9 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 				alert(error + " " + objectsToDraw[index].imageID);
 			}
         }
+		
+		//set z-index to lowest value of all elements
+		newCanvas.css("z-index", objectsToDraw[0].position.zPos);
     }//draw to multiple canvasses
     else{
 
@@ -286,7 +289,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			//will trigger dialog if present
 			dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
 								typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
-								"dialogStart("+ objectsToDraw[index].dialogueID +");";
+								"dialogStart('"+ objectsToDraw[index].dialogueID +"');";
 
             //Check if clickable, if yes set it as such
             if(objectsToDraw[index].clickable){

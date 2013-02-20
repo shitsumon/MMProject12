@@ -17,6 +17,13 @@ function dialogStart(dialog_id)
     gTalk.SatzMax	 = Laenge;
     gTalk.dialog_id	 = dialog_id;
 	
+	dialogSettings(	
+		'allg_dialogbox',	//Hintergrund für Dialoge
+		'textbox',			//CSS/Canvas
+		'white',			//Schriftfarbe
+		'bold 18px Arial',	//Schriftart
+		20);				//Zeilenabstand
+
 	dialog_zeichneDialog();
 }
 

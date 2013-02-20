@@ -253,11 +253,11 @@ var gTBDrawn = false;
 //Einstellungen für alle späteren DialogAufrufe
 function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_distance)
 {
-	gTalk.bild_id		=_bild_id;			//Hintergrundbild
-	gTalk.canvas_id		=_canvas_id;		//CSS-Objekt-Name
-	gTalk.font_color	=_font_color;		//Schriftfarbe
-	gTalk.font_style	=_font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
-	gTalk.line_distance	=_line_distance		//Zeilenabstand
+	gTalk.bild_id		= _bild_id;			//Hintergrundbild
+	gTalk.canvas_id		= _canvas_id;		//CSS-Objekt-Name
+	gTalk.font_color	= _font_color;		//Schriftfarbe
+	gTalk.font_style	= _font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
+	gTalk.line_distance	= _line_distance	//Zeilenabstand
 }
 
 /***********
@@ -289,13 +289,13 @@ function waitforparser(){
 function z2mult(z_index){
 	
 	if(z_index < 200){
-        return gZoomsteps[0];
+        return gZoomsteps[0];//hg_dynamisch
 	}else if(z_index < 300){
-        return gZoomsteps[1];
+        return gZoomsteps[1];//person
 	}else if(z_index < 400){
-        return gZoomsteps[2];
+        return gZoomsteps[2];//vg_statisch
 	}else {
-        return gZoomsteps[3];
+        return gZoomsteps[3];//vg_dynamisch
 	}
 }
 
