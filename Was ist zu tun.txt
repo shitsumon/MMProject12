@@ -9,7 +9,6 @@ Primaer
 Sekundaer
 ---------
 
-- Dialogrechtschreibung korrigieren, siehe Datei
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
 	- Rätsel einfügen

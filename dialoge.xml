@@ -14,7 +14,7 @@
   <dialog id="szene1.3">
     <satz person_id="p1" bild_id="allg_hero_female">RUHE!!!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">MÄCK!!!</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Mäck stell diesen Lärm und das Licht aus!</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Mäck, stell diesen Lärm und das Licht aus!</satz>
     <satz person_id="bc" bild_id="bordcomputer">???? ??????? ???? ?????</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
   </dialog>
@@ -22,7 +22,7 @@
     <satz person_id="p1" bild_id="allg_hero_female">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
   </dialog>
   <dialog id="szene1.5">
-    <satz person_id="p1" bild_id="allg_hero_female">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann…
+    <satz person_id="p1" bild_id="allg_hero_female">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann?
       Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>
   <dialog id="szene1.6">
@@ -42,7 +42,7 @@
     <satz person_id="p1" bild_id="allg_hero_female">Hilfe</satz>
   </dialog>
   <dialog id="szene1.10">
-    <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2 (ÄNDERUNG)? Wenn ich den in die Finger bekomme ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufsliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2 (ÄNDERUNG)? Wenn ich den in die Finger bekomme ...</satz>
     <satz person_id="u1" bild_id="unbekannter_1">Die ist aber aufbrausend.</satz>
     <satz person_id="u2" bild_id="unbekannter_2">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Schnell zum Computer.</satz>
@@ -50,8 +50,8 @@
   <dialog id="szene1.11">
     <satz person_id="p1" bild_id="allg_hero_female">Deswegen wurde ich also aus meinem wohlverdienten Schlaf gerissen und muss mir diese Kommentare anhören ...</satz>
     <satz person_id="u1" bild_id="unbekannter_1">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
-    <satz person_id="u2" bild_id="unbekannter_2">Psst, ich will wissen wie es weitergeht. Ist doch grad so spannend.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Jemand hat also meine Einstellungen von Privat auf öffentlich gestellt ... Dann wollen wir das mal wieder ändern.</satz>
+    <satz person_id="u2" bild_id="unbekannter_2">Psst, ich will wissen, wie es weitergeht. Ist doch grad so spannend.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Jemand hat also meine Einstellungen von "privat" auf "öffentlich" gestellt ... Dann wollen wir das mal wieder ändern.</satz>
   </dialog>
   <dialog id="szene1.11.1">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre mir noch nicht sicher genug.</satz>
@@ -60,10 +60,10 @@
     <satz person_id="p1" bild_id="allg_hero_female">Ah diese herrliche Stille ...</satz>
   </dialog>
   <dialog id="szene1.12">
-    <satz person_id="p1" bild_id="allg_hero_female">Mäck, weisst du wer meine Einstellungen geändert hat? War das etwa P2 (ÄNDERUNG)?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Mäck, weißt du wer meine Einstellungen geändert hat? War das etwa P2 (ÄNDERUNG)?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Hallo P1(ÄNDERUNG), leider kann ich dir da nicht weiterhelfen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Merkwürdig ... ich werde der Sache auf den Grund gehen, schlafen wär gerade eh nicht drin. Mäck, habe ich noch irgendwelche Einstellungen bezüglich meiner Privatsphäre vergessen?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Du solltest deine Einstellungen immer so treffen, das der Zugriff auf wichtige Daten:</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Du solltest deine Einstellungen immer so treffen, dass der Zugriff auf wichtige Daten:</satz>
     <satz person_id="bc" bild_id="bordcomputer">1.) Auf deine Freunde und dich ODER</satz>
     <satz person_id="bc" bild_id="bordcomputer">2.) Nur auf dich beschränkt ist.</satz>
     <satz person_id="bc" bild_id="bordcomputer">So stellst du sicher, dass kein Unfug mit deinen Daten gemacht wird.</satz>
@@ -72,9 +72,9 @@
   
   <!-- Beginn Szene 2 -->
   <dialog id="szene2.1">
-    <satz person_id="p1" bild_id="allg_hero_female">Mäck, könntest du bitte das Licht auf der Brücke an machen? Ich wusste nicht mal das man es ausmachen kann ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Mäck, könntest du bitte das Licht auf der Brücke anmachen? Ich wusste nicht mal, dass man es ausmachen kann ...</satz>
     <satz person_id="bc" bild_id="bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul oder?"</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul, oder?"</satz>
     <satz person_id="bc" bild_id="bordcomputer">Nein, aber du könntest es mit dem Lichtschalter versuchen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Jaaa, das würde es auch tun ...</satz>
@@ -90,9 +90,9 @@
   <dialog id="szene2.3">
     <satz person_id="p1" bild_id="allg_hero_female">So, dann schauen wir mal. Benutzername ist "admin" und das passwort ist "passwo…</satz>
     <satz person_id="bc" bild_id="bordcomputer">Ihr habt das Passwort nie geändert?!</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Nein, natürlich nicht. So kann man schließlich schnell drauf zugreifen und muss nicht erst lange überlegen. Außerdem, wer hätte schon Interesse sich dort einzuloggen?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Nein, natürlich nicht. So kann man schließlich schnell drauf zugreifen und muss nicht erst lange überlegen. Außerdem, wer hätte schon Interesse, sich dort einzuloggen?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Passwörter sollten immer geändert und individualisiert werden, egal wie unwichtig es auch erscheint!</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Könnten wir uns die Belehrung an dieser Stelle sparen. Wenn wir geklärt haben, wer vorhin an meinem Wecker gespielt und mich hier eingeschlossen hat, dann ändere ich es sofort. Also einloggen ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Könnten wir uns die Belehrung an dieser Stelle sparen? Wenn wir geklärt haben, wer vorhin an meinem Wecker gespielt und mich hier eingeschlossen hat, dann ändere ich es sofort. Also einloggen ...</satz>
   </dialog>
   <dialog id="szene2.4">
     <satz person_id="p1" bild_id="allg_hero_female">Eingeloggt, wie ist der nächste Schritt?</satz>
@@ -104,13 +104,13 @@
   <dialog id="szene2.6">
     <satz person_id="p1" bild_id="allg_hero_female">Hey, wer ist dieser Gast? Der hat ja volle Zugriffsberechtigung!</satz>
     <satz person_id="bc" bild_id="bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wieder herstellen.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wiederherstellen.</satz>
   </dialog>
   <dialog id="szene2.7">
-    <satz person_id="p1" bild_id="allg_hero_female">Gut, so viel dazu. Ich muss schnellstens mit P2 sprechen wegen den seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Gut, so viel dazu. Ich muss schnellstens mit P2 sprechen wegen der seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Du hast es erraten ... P2(ÄNDERUNG) kannst du mich hören?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Captain? Ich dachte du schläfst ... Ist was passiert?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Du hast es erraten ... P2(ÄNDERUNG), kannst du mich hören?</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Captain? Ich dachte, du schläfst ... Ist was passiert?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das kann man so sagen, komm bitte auf die Brücke. Lagebesprechung.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aye, aye Captain! Bin unterwegs.</satz>
   </dialog>
@@ -118,26 +118,26 @@
   <!-- Beginn Szene 3 -->
   <dialog id="szene3.1">
     <satz person_id="p1" bild_id="allg_hero_female">Wieso hat das so lange gedauert?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Ja ich hab mich ja beeilt. Ich wollte halt noch einen Download starten ... und ... nun ja ... das hat halt länger gedauert als ich dachte. Aber jetzt bin ich ja da.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Ja, ich hab mich ja beeilt. Ich wollte halt noch einen Download starten ... und ... nun ja ... das hat halt länger gedauert als ich dachte. Aber jetzt bin ich ja da.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das nächste Mal komm bitte sof... warum versuch ich es eigentlich noch? Wir haben jetzt wichtigere Probleme: Jemand hat sich in unserer Schiffsdatenbank einen Account angelegt, der volle Zugriffe auf so ziemlich alles hat ...</satz>
     <satz person_id="bc" bild_id="bordcomputer">Ich muss dich leider korrigieren: Auf ALLES.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Das meinte ich ... sag mal Mäck, heißt das er hat auch Zugriff auf dich?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Das meinte ich ... sag mal Mäck, heißt das, er hat auch Zugriff auf dich?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Nein, natürlich nicht. Außerdem soll ich euch von ihm sagen, dass das mit Gast-Account nur ein Anzeigefehler war und alles normal ist.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Na, siehst du P1(ÄNDERUNG)? Selbst du irrst dich mal. Wenn Mäck sagt, das alles ok ist, hätte ich mich nicht so hetzen müssen ...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das du auf diesen plumpen Trick reinfallen würdest, war ja klar. Unser Mister Gast-Account hat auch auf Mäck vollen Zugriff. Was passiert als nächstes?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Vielleicht werden wir aus unserem Raumschiff rausgeschmissen.</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Er sagt gerade, er findet die Idee von P2 genial und wundert sich, warum er nicht selbst darauf gekommen ist. Er wird sofort anfangen an einem entsprechendem Plan zu arbeiten.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Tja, wurde ja auch mal Zeit das jemand meine Genialität anerkennt.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Das einzige wofür es Zeit wird, wäre dich in eine Rakete zu stecken und auf den nächsten Planeten in Reichweite zu feuern ... Ich werde dieses Schiff niemals aufgeben. Wie konnte er nur in unseren Computer kommen?</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Er sagt gerade, er findet die Idee von P2 genial und wundert sich, warum er nicht selbst darauf gekommen ist. Er wird sofort anfangen, an einem entsprechendem Plan zu arbeiten.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Tja, wurde ja auch mal Zeit, dass jemand meine Genialität anerkennt.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Das einzige, wofür es Zeit wird, wäre, dich in eine Rakete zu stecken und auf den nächsten Planeten in Reichweite zu feuern ... Ich werde dieses Schiff niemals aufgeben. Wie konnte er nur in unseren Computer kommen?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Keine Ahnung. Vielleicht finden wir ja im Spacenet eine Lösung ...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Du klingst schon fast wie Mäck, aber ganz unrecht hast du nicht. Vielleicht finden wir ja selbst das Problem.</satz>
   </dialog>
   <dialog id="szene3.2">
-    <satz person_id="p1" bild_id="allg_hero_female">Sag mal kann es sein, dass sich das Bild verändert hat? Das ist mir vorhin schon aufgefallen ... Ist dieser VirenLoader nicht neu? Und seit wann hat das Antivirus-Symbol so ein rotes Kreuz?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Ja, also den VirenLoader musste ich installieren, damit ich meine Lieblingsserie downloaden kann. Das Problem war, dass das Antivirus Programm die Installation verhindert hat. Da kam auch eine Hinweis-Meldung, die hab ich aber einfach weggeklickt. Interessiert doch keinen. Danach hab ich das Antiviren-Programm ausgeschaltet und den VirenLoader installiert. Ging ganz einfach. Wir sollten jetzt aber nach der Ursache suchen, warum jemand unseren Computer hacken konnte.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Sag mal, kann es sein, dass sich das Bild verändert hat? Das ist mir vorhin schon aufgefallen ... Ist dieser VirenLoader nicht neu? Und seit wann hat das Antivirus-Symbol so ein rotes Kreuz?</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Ja, also den VirenLoader musste ich installieren, damit ich meine Lieblingsserie downloaden kann. Das Problem war, dass das Antivirus-Programm die Installation verhindert hat. Da kam auch eine Hinweis-Meldung, die hab ich aber einfach weggeklickt. Interessiert doch keinen. Danach hab ich das Antiviren-Programm ausgeschaltet und den VirenLoader installiert. Ging ganz einfach. Wir sollten jetzt aber nach der Ursache suchen, warum jemand unseren Computer hacken konnte.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Dann ist die Sache doch glasklar. Der VirenLoader wurde von dem Unbekannten als "Hintertür" zu unserem Schiffscomputer benutzt. Das Antiviren-Programm wollte dich noch davor warnen, doch du warst ja zu faul zum Lesen. Du bist also die Ursache, warum dieser "Gast" sich hier einnisten konnte!</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich bin doch kein Sicherheitsproblem! Obwohl es logisch ist, was du sagst ... was tun wir jetzt?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ganz einfach, erst mal versuchen wir das Antiviren-Programm wieder zu aktivieren.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ganz einfach, erst mal versuchen wir, das Antiviren-Programm wieder zu aktivieren.</satz>
   </dialog>
   <dialog id="szene3.3.1">
     <satz person_id="p1" bild_id="allg_hero_female">Die unendlichen Weiten des SpaceNets.</satz>
@@ -155,15 +155,15 @@
     <satz person_id="p1" bild_id="allg_hero_female">Weg damit!</satz>
   </dialog>
   <dialog id="szene3.5">
-    <satz person_id="p1" bild_id="allg_hero_female">So diese Sicherheitslücke wär gestopft, wir hatten aber auch Glück, dass sich dieser VirenLoader so einfach löschen lies.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">So diese Sicherheitslücke wäre gestopft, wir hatten aber auch Glück, dass sich dieser VirenLoader so einfach löschen lies.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Na toll und was hat uns das gebracht? Jetzt kann ich meine Lieblingsserie nicht mehr runterladen ...</satz>
     <satz person_id="bc" bild_id="bordcomputer">Ihr habt es geschafft, er hat keinen Einfluss mehr auf mich. Ich wär sicher überglücklich, wenn ich Gefühle empfinden könnte. Umarmen kann ich euch leider auch nicht, dazu fehlen mir ... nun ja ... Arme. Danke.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Freut uns, dass du wieder bei uns bist. Siehst du P2(ÄNDERUNG), jetzt weißt du was uns das gebracht hat. Alles nur wegen deiner Lieblingsserie, die du ... hast du die ILLEGAL runtergeladen?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Wie Illegal?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Illegal bedeutet, dass man gegen Gesetze verstößt. Im Falle von Filmen oder deiner Lieblingsserie spricht man auch oft von Raubkopie. Das bedeutet, dass man die Leute, die den Film oder die Serie gemacht haben "beraubt". Das Problem ist, dass dann kein Geld für Fortsetzungen da ist und deine Lieblingsserie abgesetzt wird. Außerdem wie du gesehen hast, ist es mit Gefahren für den Computer verbunden, da viele illegale Daten mit Viren und schlimmerem verseucht sind.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Freut uns, dass du wieder bei uns bist. Siehst du, P2(ÄNDERUNG), jetzt weißt du, was uns das gebracht hat. Alles nur wegen deiner Lieblingsserie, die du ... hast du die ILLEGAL runtergeladen?</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Wie illegal?</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Illegal bedeutet, dass man gegen Gesetze verstößt. Im Falle von Filmen oder deiner Lieblingsserie spricht man auch oft von Raubkopie. Das bedeutet, dass man die Leute, die den Film oder die Serie gemacht haben, "beraubt". Das Problem ist, dass dann kein Geld für Fortsetzungen da ist und deine Lieblingsserie abgesetzt wird. Außerdem, wie du gesehen hast, ist es mit Gefahren für den Computer verbunden, da viele illegale Daten mit Viren und Schlimmerem verseucht sind.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Also hat es nicht nur uns geschadet, sondern auch meiner Lieblingsserie? Dann werd ich sie lieber im SpaceNet bestellen, sie kostet eh nicht so viel Geld ..."</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich wär echt glücklich, wenn so etwas nicht wieder vorkommt. Das mit dem Bestellen kannst du ja später machen, jetzt müssen wir uns dringend um den "Gast" kümmern. Eine Idee wo wir suchen?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Wir sollten in den Maschinenraum gehen, als du mich vorhin angefunkt hast, hatte ich da gerade eine heiße Spur.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Wir sollten in den Maschinenraum gehen. Als du mich vorhin angefunkt hast, hatte ich da gerade eine heiße Spur.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wieso sagst du das erst jetzt?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich hatte es vergessen ..."</satz>
     <satz person_id="p1" bild_id="allg_hero_female">...</satz>
@@ -173,7 +173,7 @@
   <!-- Beginn Szene 4 -->
   <dialog id="szene4.1">
     <satz person_id="p1" bild_id="allg_hero_female">So P2(Änderung), dann zeig mir mal deine heiße Spur.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte, dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
   </dialog>
   <dialog id="szene4.2">
     <satz person_id="p2" bild_id="allg_hero_male">Hier war jemand. Die Schuhe haben ungefähr die gleiche Größe wie meine. Was wohl diese schwarze Masse ist?</satz>
@@ -181,7 +181,7 @@
   <dialog id="szene4.3">
     <satz person_id="p1" bild_id="allg_hero_female">Das könnte daran liegen, dass es deine Schuhabdrücke sind.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Meine? Wie kommst du darauf?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim sauber machen gestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du dass jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim Sauber machengestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du das jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ach stimmt, da war ja was. Die Stelle schmerzt immer noch, wenn ich sie anfasse.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aber unser Weg war, glaub ich, nicht ganz umsonst. Irgendetwas passt hier nicht.</satz>
   </dialog>
@@ -197,8 +197,8 @@
   <dialog id="szene4.4.4">
     <satz person_id="p1" bild_id="allg_hero_female">Dieser Teddybär ... was macht der hier? Und wieso trägt er ein Dirndl?</satz>
     <satz person_id="tb" bild_id="tädiber">Warum ich ein Dirndl trage? Die Geschichte dahinter macht mich viel zu traurig, um sie zu erzählen.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Er spricht! Vielleicht war die Kopfverletzung doch stärker als ich dachte.</satz>
-    <satz person_id="tb" bild_id="tädiber">Von dem was ich bisher von dir gehört habe, MUSS sie stärker gewesen sein.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Er spricht! Vielleicht war die Kopfverletzung doch stärker, als ich dachte.</satz>
+    <satz person_id="tb" bild_id="tädiber">Von dem, was ich bisher von dir gehört habe, MUSS sie stärker gewesen sein.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wer bist du?</satz>
     <satz person_id="tb" bild_id="tädiber">Mein Name ist Täd.  Täd I. Ber. Ich bin ein Teddybär, wie man sieht.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Was für ein ... ähm ... hübscher ... Name. Was machst du hier ... ähm ... Täd?</satz>
@@ -207,11 +207,11 @@
     <satz person_id="tb" bild_id="tädiber">An eurer Stelle wär ich sehr deprimiert deswegen.  Er weiß alles von euch und was ihr im Moment macht.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Wie macht er das denn?</satz>
     <satz person_id="tb" bild_id="tädiber">Ihr hinterlasst Spuren, aber so etwas stört euch ja anscheinend nicht.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Naja die Schuhabdrücke hab ich ja nicht absichtlich.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Du meinst elektronische Spuren oder?</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Naja, die Schuhabdrücke hab ich ja nicht absichtlich.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Du meinst elektronische Spuren, oder?</satz>
     <satz person_id="tb" bild_id="tädiber">Ja. Jedes Gespräch mit Mäck, euer Funkkontakt vorhin, jede Benutzung eines Computerterminals und natürlich auch eure Schiffsroute hinterlassen elektronische Spuren. Ist das nicht traurig?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich hab's geahnt. Technik ist gut, aber wer weiß schon, ob sie sicher ist!? Was können wir dagegen machen?</satz>
-    <satz person_id="tb" bild_id="tädiber">Das könnte ich euch sagen, aber es muss sich für mich lohnen. Ich benötige ein paar Gegenstände aus dem Maschinenraum</satz>
+    <satz person_id="tb" bild_id="tädiber">Das könnte ich euch sagen, aber es muss sich für mich lohnen. Ich benötige ein paar Gegenstände aus dem Maschinenraum.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Welche Gegenstände wären das denn?</satz>
     <satz person_id="tb" bild_id="tädiber">Leider muss ich euch für jeden Gegenstand ein Rätsel aufgeben. Das erste Rätsel: Manche haben eine lange Leitung.</satz>
   </dialog>
@@ -235,30 +235,30 @@
     <satz person_id="p2" bild_id="allg_hero_male">Ah, jetzt versteh ich das Rätsel.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das freut mich für dich, aber wir wurden gerade reingelegt. Wir hätten diesem Teddy nicht trauen dürfen. Mäck, wir brauchen deine Hilfe.</satz>
     <satz person_id="bc" bild_id="bordcomputer">Was kann ich für euch tun?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Alle unsere Schritte werden anscheinend von unserem "Gast" elektronisch verfolgt, zumindest hat uns das der Teddy von eben gesagt. Weißt du wie das passieren kann?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Alle unsere Schritte werden anscheinend von unserem "Gast" elektronisch verfolgt, zumindest hat uns das der Teddy von eben gesagt. Weißt du, wie das passieren kann?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Viele Dinge, die ihr macht, werden elektronisch aufgezeichnet. Nehmen wir zum Beispiel das Surfen im SpaceNet:</satz>
     <satz person_id="bc" bild_id="bordcomputer">Jede SpaceNet-Seite, die ihr aufruft, wird in einer Chronik gespeichert, um sie später schneller wieder aufzurufen. 
       Wenn ihr auf einer Seite eure Adressdaten in Bestellformulare eingebt, werden diese oft gespeichert, damit ihr später nicht nochmal alles eingeben müsst.
       Genau nach diesem Prinzip könnt ihr auch Anmeldedaten für SpaceNet-Seiten speichern. Diese Daten werden in sogenannte "Cookies" ...</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Hmmmm ... Kekse.</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Nein, P2(ÄNDERUNG), keine Kekse. Es ist nur der Name von den Datenpaketen. Es werden viele Daten gespeichert, um euch die Bedienung leichter zu machen, dies birgt aber auch Gefahren. Wenn es jemand schafft in euer System einzudringen, könnte er die Daten auslesen und so tatsächlich eure Schritte nachverfolgen. (VIELLEICHT ERKLÄRUNG NOCH VERBESSERN)</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Nein, P2(ÄNDERUNG), keine Kekse. Es ist nur der Name von den Datenpaketen. Es werden viele Daten gespeichert, um euch die Bedienung leichter zu machen, dies birgt aber auch Gefahren. Wenn es jemand schafft, in euer System einzudringen, könnte er die Daten auslesen und so tatsächlich eure Schritte nachverfolgen. (VIELLEICHT ERKLÄRUNG NOCH VERBESSERN)</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aha. So hat der "Gast" dies also gemacht.</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Nein Captain, da muss ich dich leider enttäuschen. Er hat sich, selbst als er mich unter Kontrolle hatte, nicht dafür interessiert. Es scheint dieser Teddy hat euch getäuscht.</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Nein Captain, da muss ich dich leider enttäuschen. Er hat sich, selbst als er mich unter Kontrolle hatte, nicht dafür interessiert. Es scheint, dieser Teddy hat euch getäuscht.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Und wir haben ihm unsere Sachen gegeben. Ich glaub es einfach nicht.</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Man sollte Fremden gegenüber immer vorsichtig sein, egal ob man ihnen gegenüber steht oder sie im SpaceNet trifft. Hat euch das niemand beigebracht? Vor allem im Netz/Online ist es ziemlich einfach sich für jemanden auszugeben, der man nicht ist.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Du hast ja Recht Mäck, jetzt wissen wir es auch besser. So einen Fehler machen wir nicht nochmal oder P2(ÄNDERUNG)?</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Man sollte Fremden gegenüber immer vorsichtig sein, egal ob man ihnen gegenübersteht oder sie im SpaceNet trifft. Hat euch das niemand beigebracht? Vor allem im Netz/online ist es ziemlich einfach, sich für jemanden auszugeben, der man nicht ist.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Du hast ja Recht, Mäck, jetzt wissen wir es auch besser. So einen Fehler machen wir nicht nochmal, oder P2(ÄNDERUNG)?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Nein, tückischen Teddys trauen wir träumenden Trottel nicht mehr.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ähm, alles ok mit dir?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Hmm? Ach, ich war in Gedanken.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Oh...kay ... lass uns zurück zur Brücke gehen, ich ahne Schlimmes</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Oh...kay ... lass uns zurück zur Brücke gehen, ich ahne Schlimmes.</satz>
   </dialog>
   
   <!-- Beginn Szene 5 -->
   <dialog id="szene5.1">
-    <satz person_id="p1" bild_id="allg_hero_female">P2 (ÄNDERUNG) weißt du wer das ist?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">P2, (ÄNDERUNG) weißt du wer das ist?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Keine Ahnung, vielleicht die neue Putzfrau?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wir hatten noch nie eine Putzfrau und es ist ein Mann.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Oh, ja jetzt wo du es sagst. Sollten wir ihn nicht einfach fragen wer er ist?</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Oh, ja jetzt, wo du es sagst. Sollten wir ihn nicht einfach fragen, wer er ist?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das machen wir auf jeden Fall!</satz>
   </dialog>
   <dialog id="szene5.2">
@@ -269,7 +269,7 @@
   <dialog id="szene5.3">
     <satz person_id="dr" bild_id="dr_chaos">Man möge sich erklären, wieso deine Brücke? Man möge sich merken, ihr steht auf MEINER neuen Brücke.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Wieso redet er so komisch?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich weiß es wirklich nicht P2(ÄNDERUNG). Wer sind sie?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich weiß es wirklich nicht ,P2(ÄNDERUNG). Wer sind Sie?</satz>
     <satz person_id="dr" bild_id="dr_chaos">Man möge sich den Namen merken, ich heiße Dr. Chaos. Vielleicht habt ihr schon von mir gehört.</satz>
     <satz person_id="p12" bild_id="allg_hero_female2">Nein.</satz>
     <satz person_id="dr" bild_id="dr_chaos">Man möge verschwinden, verschwindet!</satz>
@@ -278,7 +278,7 @@
     <satz person_id="dr" bild_id="dr_chaos">Man möge verschwinden, verschwindet!</satz>
   </dialog>
   <dialog id="szene5.4.2">
-    <satz person_id="p1" bild_id="allg_hero_female">Täd! Da bist du ja du elender Schwindler. Gib uns unsere Sachen wieder!</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Täd! Da bist du ja, du elender Schwindler. Gib uns unsere Sachen wieder!</satz>
     <satz person_id="tb" bild_id="tädiber">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wieso geht das nicht?</satz>
     <satz person_id="tb" bild_id="tädiber">ER hat sie jetzt.</satz>
@@ -288,14 +288,14 @@
     <satz person_id="tb" bild_id="tädiber">...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Oh, ich kann es mir denken.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich nicht.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Das interessiert auch keinen. Täd kannst du uns was von Dr. Chaos erzählen?  Sonst kommen wir nicht mit ihm ins Gespräch.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Das interessiert auch keinen. Täd, kannst du uns was von Dr. Chaos erzählen?  Sonst kommen wir nicht mit ihm ins Gespräch.</satz>
     <satz person_id="tb" bild_id="tädiber">Wenn ihr mir ein paar Sachen bringt, helf ich euch.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ok, das machen wir.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Hey, woher sollen wir wissen, dass er uns nicht erneut reinlegen will?</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Vertrau mir einfach. Außerdem schaffen wir es ohne sein Wissen nicht mit Dr. Chaos zu sprechen.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Vertrau mir einfach. Außerdem schaffen wir es ohne sein Wissen nicht, mit Dr. Chaos zu sprechen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">OK P2(ÄNDERUNG), dieses eine Mal vertrau ich dir. Etwas anderes fällt mir gerade auch nicht ein. Gut Täd, wir helfen dir. Was möchtest du?</satz>
     <satz person_id="tb" bild_id="tädiber">Das erste Rätsel:...</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Schon wieder Rätsel? Kannst du uns nicht einfach so Fragen?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Schon wieder Rätsel? Kannst du uns nicht einfach so fragen?</satz>
     <satz person_id="tb" bild_id="tädiber">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz>
   </dialog>
   <dialog id="szene5.5">
@@ -306,22 +306,22 @@
     <satz person_id="p2" bild_id="allg_hero_male">Er ist ... weg.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Nein P2(ÄNDERUNG), BEIDE sind weg. Das war ein ganz billiger Trick und wir sind darauf reingefallen. Soviel zu "Vertrau mir".</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aber warum sollte er ohne die Sachen gehen?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Täd war nie an den Sachen interessiert. Mich würde eher interessieren, was hat Dr. Chaos am Computerterminal gemacht? Mäck, würdest du das mal bitte überprüfen?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Täd war nie an den Sachen interessiert. Mich würde eher interessieren, was Dr. Chaos am Computerterminal gemacht hat. Mäck, würdest du das mal bitte überprüfen?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Dr. Chaos hat eure Benutzerkonten komplett gelöscht und das Gast-Benutzerkonto mit dem Admin-Konto zusammengelegt. Das neue Benutzerkonto heißt "Chaos" und er hat dafür ein eigenes Passwort gewählt.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das klingt wirklich gar nicht gut.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Aber er hat uns nicht angelogen, als er sagte er arbeitet.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Aber er hat uns nicht angelogen, als er sagte, er arbeitet.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, können wir etwas dagegen machen? Können wir das Konto löschen oder unsere Konten wiederherstellen?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Da es nur noch das Chaos-Benutzerkonto gibt, kann es nicht gelöscht werden. Somit würde auch das Herstellen euer Konten nichts bewirken.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Können wir nicht sein Passwort ändern? Dann könnte er nichts mehr machen.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">P2(ÄNDERUNG), das ist wirklich keine gu... das ist eine geniale Idee! Mäck können wir das machen?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Ich könnte das Passwort zurücksetzen und ihr dann ein neues wählen. Doch es müsste diesmal wirklich sicher sein, damit Dr. Chaos es nicht ändern kann</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">P2(ÄNDERUNG), das ist wirklich keine gu... das ist eine geniale Idee! Mäck, können wir das machen?</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Ich könnte das Passwort zurücksetzen und ihr dann ein neues wählen. Doch es müsste diesmal wirklich sicher sein, damit Dr. Chaos es nicht ändern kann.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Können wir nicht wieder das alte Passwort nehmen? Ich fand "passwort" konnte man sich leicht merken.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Und vor allem konnte Dr. Chaos "passwort" leicht knacken. Gut Mäck, wie machen wir uns ein sicheres Passwort?</satz>
     <satz person_id="bc" bild_id="bordcomputer">Für ein sicheres Passwort nimmt man Buchstaben, Großbuchstaben, Zahlen und Sonderzeichen. Als Grundlage nimmt man ein komplexes Wort und ersetzt Buchstaben durch Großbuchstaben, Zahlen und Sonderzeichen. Ein Beispiel für das Wort Keks wäre "k5/S" wobei dies nur ein Beispiel ist. Ihr solltet euer Passwort möglichst lang machen, allerdings gibt es vor allem im SpaceNet Begrenzungen, was die Länge betrifft.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Klingt kompliziert, aber wenn wir einen Zettel an den Bildschirm kleben, sollte es kein Problem sein.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Schade, deine geniale Idee von eben war wohl eine einmalige Sache. Wir müssen uns das Passwort natürlich merken, damit Dr. Chaos es nicht einfach ablesen kann. Um es uns zu merken, brauchen wir Eselsbrücken. Sag mal stand in der Abstellkammer nicht ein Bücherregal? Vielleicht finden wir dort etwas Sinnvolles.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Aber dort kann Dr. Chaos doch auch das Passwort nachlesen oder nicht?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich bezweifle, dass er auf die Idee kommt sich durch den ganzen Müll durch zu wühlen, um ein paar veraltete Bücher durch zu wälzen. Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Schade, deine geniale Idee von eben war wohl eine einmalige Sache. Wir müssen uns das Passwort natürlich merken, damit Dr. Chaos es nicht einfach ablesen kann. Um es uns zu merken, brauchen wir Eselsbrücken. Sag mal, stand in der Abstellkammer nicht ein Bücherregal? Vielleicht finden wir dort etwas Sinnvolles.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Aber dort kann Dr. Chaos doch auch das Passwort nachlesen, oder nicht?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich bezweifle, dass er auf die Idee kommt, sich durch den ganzen Müll durchzuwühlen, um ein paar veraltete Bücher durchzuwälzen. Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz>
   </dialog>
   <dialog id="szene5.7.1">
@@ -361,7 +361,7 @@
     <satz person_id="p1" bild_id="allg_hero_female">So jetzt haben wir genug Ideen, wir sollten jetzt ein Passwort erstellen.</satz>
   </dialog>
   <dialog id="szene5.8">
-    <satz person_id="bc" bild_id="bordcomputer">So dann wollen wir mal sehen ...</satz>
+    <satz person_id="bc" bild_id="bordcomputer">So, dann wollen wir mal sehen ...</satz>
   </dialog>
   <dialog id="szene5.9.1">
     <satz person_id="bc" bild_id="bordcomputer">Das ist keine sichere Grundlage. Vielleicht müsst ihr doch noch ein paar Ideen sammeln.</satz>
@@ -373,24 +373,24 @@
     <satz person_id="bc" bild_id="bordcomputer">Sehr gut, diese Zahlenkette sollte gut mit dem Wort kombinierbar sein. Weiter geht's.</satz>
   </dialog>
   <dialog id="szene5.9.4">
-    <satz person_id="bc" bild_id="bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sachen fehlt noch.</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sache fehlt noch.</satz>
   </dialog>
   <dialog id="szene5.9.5">
     <satz person_id="bc" bild_id="bordcomputer">Stimmt, Großbuchstaben runden das Ganze ab.</satz>
   </dialog>
   <dialog id="szene5.10">
-    <satz person_id="bc" bild_id="bordcomputer">So das Passwort wurde erfolgreich geändert und ist sicher genug.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Wunderbar. Jetzt kann Dr. Chaos auf nichts mehr in unserem Computersystem zu greifen.</satz>
+    <satz person_id="bc" bild_id="bordcomputer">So, das Passwort wurde erfolgreich geändert und ist sicher genug.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Wunderbar. Jetzt kann Dr. Chaos auf nichts mehr in unserem Computersystem zugreifen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich find das Passwort jetzt schon arg kompliziert ...</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Sieh es so, es ist ein Passwort, was du nicht jeden Tag brauchst. Für alltägliche Passwörter, würde ein kürzeres Wort, mit nur einem Großbuchstaben und einem Sonderzeichen reichen.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich glaub zum Thema Passwörter war das heute eindeutig genug. Wir sollten jetzt versuchen Dr. Chaos aus unserem Schiff ... zu entfernen.</satz>
+    <satz person_id="bc" bild_id="bordcomputer">Sieh es so, es ist ein Passwort, was du nicht jeden Tag brauchst. Für alltägliche Passwörter würde ein kürzeres Wort mit nur einem Großbuchstaben und einem Sonderzeichen reichen.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich glaub, zum Thema Passwörter war das heute eindeutig genug. Wir sollten jetzt versuchen, Dr. Chaos aus unserem Schiff ... zu entfernen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Du hast recht.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Komm, wir suchen ihn.</satz>
   </dialog>
   
   <!-- Beginn Szene 6 -->
   <dialog id="szene6.1">
-    <satz person_id="p2" bild_id="allg_hero_male">Ähm, P1 kannst du mir nochmal sagen, was wir hier genau machen? Sieht nicht so aus als ob Dr. Chaos hier draußen ist.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Ähm, P1, kannst du mir nochmal sagen, was wir hier genau machen? Sieht nicht so aus als, ob Dr. Chaos hier draußen ist.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Manchmal machst du mich echt wahnsinnig. Also zum wiederholten und letzten Mal:</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wir waren eben auf der Suche nach Dr. Chaos, richtig?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja.</satz>
@@ -398,7 +398,7 @@
     <satz person_id="p2" bild_id="allg_hero_male">Stimmt.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Und dann standen wir vor unserem Frachtraum und wollten ihn auch betreten, aber er war komischerweise verriegelt.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich erinnere mich dunkel, weiter.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Die Verriegelung ließ sich nicht mal mit Hilfe von Mäck lösen, deshalb hab ich vorgeschlagen den zweiten Eingang zum Frachtraum zu nehmen, hier über die Außenhülle, zu der Luftschleuse da vorne.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Die Verriegelung ließ sich nicht mal mit Hilfe von Mäck lösen, deshalb hab ich vorgeschlagen, den zweiten Eingang zum Frachtraum zu nehmen, hier über die Außenhülle, zu der Luftschleuse da vorne.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aha, so ist das also ... ich versteh es immer noch nicht.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Folg mir einfach!</satz>
   </dialog>
@@ -414,7 +414,7 @@
   </dialog>
   <dialog id="szene6.3">
     <satz person_id="p2" bild_id="allg_hero_male">Sie geht nicht auf, sie ist auch verriegelt.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Wir müssen die Luftschleuse unbedingt aufbekommen ... haben wir hier draußen nicht einen Sicherheitskasten.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Wir müssen die Luftschleuse unbedingt aufbekommen ... haben wir hier draußen nicht einen Sicherheitskasten?</satz>
   </dialog>
   <dialog id="szene6.4">
     <satz person_id="p2" bild_id="allg_hero_male">Dieser hier?</satz>
@@ -422,7 +422,7 @@
   </dialog>
   <dialog id="szene6.5">
     <satz person_id="p12" bild_id="allg_hero_female2">Täd?</satz>
-    <satz person_id="tb" bild_id="tädiber">Nein, Täd ist mein böser Zwillingsbruder ... ok, Spaß beiseite ich bin es.</satz>
+    <satz person_id="tb" bild_id="tädiber">Nein, Täd ist mein böser Zwillingsbruder ... ok, Spaß beiseite. Ich bin es.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mit dir haben wir ein Hühnchen zu rupfen!</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Was machst du hier?</satz>
     <satz person_id="tb" bild_id="tädiber">Dr. Chaos fand es lustig, mich hier oben einzusperren. Er wusste, dass ihr kommt, denn ihr habt eine ständige Funkverbindung mit euren Raumanzügen, die immer euren genauen Standort übermitteln.</satz>
@@ -431,13 +431,13 @@
     <satz person_id="p1" bild_id="allg_hero_female">Hmm ... zu den wichtigen Funktionen unseres Anzuges gehört es nicht, also könnten wir es mal ausprobieren. Ich werde es zuerst versuchen.</satz>
   </dialog>
   <dialog id="szene6.6">
-    <satz person_id="p1" bild_id="allg_hero_female">Ich glaub das war's und mir geht's gut. So P2(ÄNDERUNG), du bist dran</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich glaub, das war's und mir geht's gut. So P2(ÄNDERUNG), du bist dran</satz>
   </dialog>
   <dialog id="szene6.7">
     <satz person_id="tb" bild_id="tädiber">Diesmal könnt ihr mir wirklich trauen. Dr. Chaos hat ein für alle Mal übertrieben. Ich lass mir das nicht mehr gefallen. Und diese dämlichen Kostüme hab ich schon lange satt!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Überzeugt bin ich immer noch nicht so richtig.</satz>
-    <satz person_id="tb" bild_id="tädiber">Ich helfe euch das Passwort zu knacken, vielleicht überzeugt euch das. Dr. Chaos benutzt immer ein Passwort, das mit den Sternenbildern zu tun hat.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Wehe du sagst nicht die Wahrheit. Also wie finden wir heraus, welches Sternenbild?</satz>
+    <satz person_id="tb" bild_id="tädiber">Ich helfe euch das Passwort zu knacken, vielleicht überzeugt euch das. Dr. Chaos benutzt immer ein Passwort, das mit den Sternbildern zu tun hat.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Wehe du sagst nicht die Wahrheit. Also wie finden wir heraus, welches Sternbild?</satz>
     <satz person_id="tb" bild_id="tädiber">Ihr seht drei Sternbilder. Er hat erst geradeaus, dann nach links und anschließend nach rechts geschaut, bevor er das Passwort eingegeben hat, vielleicht hilft euch das.</satz>
   </dialog>
   <dialog id="szene6.8.1">
@@ -447,41 +447,41 @@
     <satz person_id="tb" bild_id="tädiber">Das Passwort ist: StierWaageKrebs</satz>
     <satz person_id="p1" bild_id="allg_hero_female">So einfach sind seine Passwörter?</satz>
     <satz person_id="tb" bild_id="tädiber">Ja, das Passwort für die Brücke war zum Beispiel "Schütze", weil er kein anderes gefunden hat.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Oh man. Und das Passwort geht?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Oh Mann. Und das Passwort geht?</satz>
   </dialog>
   <dialog id="szene6.9">
     <satz person_id="p1" bild_id="allg_hero_female">Oh ...</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Geht es denn jetzt?</satz>
     <satz person_id="tb" bild_id="tädiber">Natürlich geht es.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Täd, es tut mir leid. Wie wär es mit einem Neuanfang? Würdest du uns bitte helfen Dr. Chaos los zu werden?</satz>
-    <satz person_id="tb" bild_id="tädiber">Gerne, aber nur wenn ihr in eurer Crew noch Platz für einen Teddy habt. Aber gekuschelt wird nicht.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ok du bist dabei, du kannst mein 1. Maat sein.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Täd, es tut mir leid. Wie wär es mit einem Neuanfang? Würdest du uns bitte helfen, Dr. Chaos loszuwerden?</satz>
+    <satz person_id="tb" bild_id="tädiber">Gerne, aber nur, wenn ihr in eurer Crew noch Platz für einen Teddy habt. Aber gekuschelt wird nicht.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ok, du bist dabei, du kannst mein 1. Maat sein.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Moment mal, bin ich das nicht?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">So nun lasst uns Dr. Chaos schnappen!</satz>
   </dialog>
   
   <!-- Beginn Szene 7 -->
   <dialog id="szene7.1">
-    <satz person_id="dr" bild_id="dr_chaos">Man hat sie schon erwartet, ich wusste das ihr kommen würdet. Deshalb heiß ich euch herzlich Willkommen in meiner Falle.</satz>
+    <satz person_id="dr" bild_id="dr_chaos">Man hat Sie schon erwartet, ich wusste, dass ihr kommen würdet. Deshalb heiße ich euch herzlich willkommen in meiner Falle.</satz>
     <satz person_id="p12" bild_id="allg_hero_female2">Falle?</satz>
     <satz person_id="tb" bild_id="tädiber">Ach ja die Falle, jetzt haben wir aber Angst.</satz>
-    <satz person_id="dr" bild_id="dr_chaos">Man möge sich erklären, Täd was machst du hier? Und wo ist deine Kleidung?</satz>
-    <satz person_id="tb" bild_id="tädiber">Die habe ich abgelegt und werde mir auch nie wieder welche anziehen lassen. Du bist diesmal zu weit gegangen Dr. Chaos!</satz>
+    <satz person_id="dr" bild_id="dr_chaos">Man möge sich erklären, Täd, was machst du hier? Und wo ist deine Kleidung?</satz>
+    <satz person_id="tb" bild_id="tädiber">Die habe ich abgelegt und werde mir auch nie wieder welche anziehen lassen. Du bist diesmal zu weit gegangen, Dr. Chaos!</satz>
     <satz person_id="dr" bild_id="dr_chaos">Man hat uns verraten, Verräter! Dann wirst du genauso wie die anderen aus dem Raumschiff entfernt.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wer wird hier aus dem Raumschiff entfernt, wir? Und wie soll das gehen?</satz>
-    <satz person_id="dr" bild_id="dr_chaos">Man wird jetzt eingeweiht in den genialen Plan, ich sag es euch. Die Tür hinter euch hat sich verriegelt nachdem ihr den Raum betreten habt. Man möge es überprüfen.</satz>
+    <satz person_id="dr" bild_id="dr_chaos">Man wird jetzt eingeweiht in den genialen Plan, ich sag es euch. Die Tür hinter euch hat sich verriegelt, nachdem ihr den Raum betreten habt. Man möge es überprüfen.</satz>
   </dialog>
   <dialog id="szene7.2">
     <satz person_id="p2" bild_id="allg_hero_male">Die Tür ist wirklich verriegelt.</satz>
   </dialog>
   <dialog id="szene7.3">
-    <satz person_id="dr" bild_id="dr_chaos">Man merkt ich sage die Wahrheit, sag ich doch. Täd hat vorhin außerdem programmiert, dass die Frachtraumklappe 1 Minute und 30 Sekunden nach Öffnen der Tür, auf geht. Ich bin natürlich hinter dem Schutzschild sicher, ihr hingegen müsst das Raumschiff gezwungenermaßen  verlassen. Das passiert in 10 ... 9 ... 8 ... 7 ... 6 ... 5 ... 4 ... 3 ... 2 ... 1 ... JETZT!</satz>
+    <satz person_id="dr" bild_id="dr_chaos">Man merkt, ich sage die Wahrheit, sag ich doch. Täd hat vorhin außerdem programmiert, dass die Frachtraumklappe 1 Minute und 30 Sekunden nach dem Öffnen der Tür, aufgeht. Ich bin natürlich hinter dem Schutzschild sicher, ihr hingegen müsst das Raumschiff gezwungenermaßen  verlassen. Das passiert in 10 ... 9 ... 8 ... 7 ... 6 ... 5 ... 4 ... 3 ... 2 ... 1 ... JETZT!</satz>
     <satz person_id="tb" bild_id="tädiber">Es könnte sein, dass ich statt 1 Minute und 30 Sekunden, 1 Tag und 30 Minuten eingestellt habe.</satz>
-    <satz person_id="dr" bild_id="dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen…Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm. Dann warten wir eben hier bis morgen die Frachtraumklappe auf geht. Ihr könnt natürlich auch einfach den Knopf dort vorne drücken um euch selbst raus zu befördern.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich glaube nicht, das ist unser Schiff! Genieß ruhig die letzten Momente in unserem Frachtraum Dr. Chaos.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Hast du einen Plan P1(ÄNDERUNG)?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ja, wir benutzen den Schutzschildgenerator hier links um das Feld umzudrehen. Dann sind wir geschützt und Dr. Chaos verschwindet beim Öffnen der Frachtraumklappe im dunklen Weltall. Allerdings weiß ich nicht wie wir das Passwort knacken sollen ...</satz>
-    <satz person_id="tb" bild_id="tädiber">Ich werde euch helfen, wir können zwar das Passwort nicht herausfinden, aber ich weiß wie man das System umgehen kann.</satz>
+    <satz person_id="dr" bild_id="dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen…Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm. Dann warten wir eben hier, bis morgen die Frachtraumklappe aufgeht. Ihr könnt natürlich auch einfach den Knopf dort vorne drücken, um euch selbst hinauszubefördern.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich glaube nicht. Das ist unser Schiff! Genieß ruhig die letzten Momente in unserem Frachtraum, Dr. Chaos.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Hast du einen Plan, P1(ÄNDERUNG)?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ja, wir benutzen den Schutzschildgenerator hier links, um das Feld umzudrehen. Dann sind wir geschützt und Dr. Chaos verschwindet beim Öffnen der Frachtraumklappe im dunklen Weltall. Allerdings weiß ich nicht, wie wir das Passwort knacken sollen ...</satz>
+    <satz person_id="tb" bild_id="tädiber">Ich werde euch helfen, wir können zwar das Passwort nicht herausfinden, aber ich weiß, wie man das System umgehen kann.</satz>
     <satz person_id="dr" bild_id="dr_chaos">Man sollte nicht voreilig handeln, lasst das! Wollen wir nicht nochmal darüber reden?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aha, daran hat der ach so schlaue Doktor also nicht gedacht. Na dann wollen wir mal.</satz>
   </dialog>
@@ -493,19 +493,19 @@
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre jetzt	keine so gute Idee!</satz>
   </dialog>
   <dialog id="szene7.4.3">
-    <satz person_id="tb" bild_id="tädiber">Um das Passwort zu umgehen, müsst ihr ein paar Fragen beantworten. Die dürften aber nach euren Erlebnissen heute kein Problem sein</satz>
+    <satz person_id="tb" bild_id="tädiber">Um das Passwort zu umgehen, müsst ihr ein paar Fragen beantworten. Die dürften aber nach euren Erlebnissen heute kein Problem sein.</satz>
   </dialog>
   <dialog id="szene7.5">
-    <satz person_id="dr" bild_id="dr_chaos">NEIN! Das darf nicht wahr sein! Täd bitte, denk an die schöne Zeit die wir zusammen hatten!</satz>
+    <satz person_id="dr" bild_id="dr_chaos">NEIN! Das darf nicht wahr sein! Täd bitte, denk an die schöne Zeit, die wir zusammen hatten!</satz>
     <satz person_id="tb" bild_id="tädiber">Wenn ich an die Zeit denke, will ich dich nur noch schneller loswerden .</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Das war es Doktor Chaos, auf nimmer Wiedersehen!</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Das war es Dr. Chaos, auf nimmer Wiedersehen!</satz>
   </dialog>
   <dialog id="szene7.6">
     <satz person_id="p1" bild_id="allg_hero_female">Das war's!</satz>
     <satz person_id="p2" bild_id="allg_hero_female">Endlich, das wäre geschafft.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Da haben wir ja heute einiges gelernt.</satz>
     <satz person_id="p2" bild_id="allg_hero_female">Ja, das stimmt.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich weiß schon was ich jetzt mache.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich weiß schon, was ich jetzt mache.</satz>
     <satz person_id="tb" bild_id="tädiber">Was denn?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich geh wieder schlafen, bis morgen.</satz>
   </dialog>
