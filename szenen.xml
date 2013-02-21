@@ -103,7 +103,7 @@
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="szene1.1" klickbar="t|t|f" walkto="t|t|f"
+        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="szene1.1" klickbar="t|t|f" walkto="f|t|f"
 		raetsel_sichtbar="t|t|f" raetsel_ausloeser="f|f|f">
           <position x="27" y="25" z="101"/>
           <groesse width="150" height="170"/>

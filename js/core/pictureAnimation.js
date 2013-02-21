@@ -62,7 +62,8 @@ function animiereCanvas(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTile
                 );
 
     //erhöht den Zähler für das aktuell angezeigte Einzelbild oder setzt ihn zurück
-    gAnimationTimer[bild_id].bild_nr = gAnimationTimer[bild_id].bild_nr < ( gBilder[bild_id].animationsmerkmale.tile_anzahl - 1 )
+    gAnimationTimer[bild_id].bild_nr =
+		(gAnimationTimer[bild_id].bild_nr < ( gBilder[bild_id].animationsmerkmale.tile_anzahl - 1 ))
             ? (gAnimationTimer[bild_id].bild_nr + 1) : 0;
 }
 
@@ -84,7 +85,12 @@ function starteAnimation(bild_id, canvas_id){
     }else{
         gBilderIDString = bild_id;
     }
-
+	
+	if(typeof(gAnimationTimer[bild_id].timer) !== "undefined"){
+		//delete existing same timer
+		stoppeAnimation(bild_id);
+	}
+	
     gAnimationTimer[bild_id].timer = window.setInterval(function(){
         animiereCanvas(
                     gAnimationTimer[bild_id].canvas_id,
@@ -110,20 +116,20 @@ function toggleAnimation(bild_id){
 function switchWalkingAnimation(direction){
 
     switch(direction){
-    case 'front':
-        gCurrentDirection = 0;
-        break;
-    case 'back':
-        gCurrentDirection = 1;
-        break;
-    case 'right':
-        gCurrentDirection = 2;
-        break;
-    case 'left':
-        gCurrentDirection = 3;
-        break;
-    case 'standing':
-        gCurrentDirection = 4;
-        break;
+		case 'front':
+			gCurrentDirection = 0;
+			break;
+		case 'back':
+			gCurrentDirection = 1;
+			break;
+		case 'right':
+			gCurrentDirection = 2;
+			break;
+		case 'left':
+			gCurrentDirection = 3;
+			break;
+		case 'standing':
+			gCurrentDirection = 4;
+			break;
     }
 }

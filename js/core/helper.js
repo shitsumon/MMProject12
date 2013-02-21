@@ -34,10 +34,6 @@ var sceneXML				= "../szenen.xml";
 var gcurrent_scene_counter	= 1;
 //ID der aktuellen Szene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
-//Anzahl der Rätselschritte der aktuellen Szene
-var gQuiz_steps				= 0;
-//derzeitiger Rätselschritt
-var gcurrent_quiz_step		= 0;
 //Multiplikatoren der Zoomstufen nach Z-Index
 var gZoomsteps				= new Array(4);
 //steuert die Darstellung der aktuellen/nächsten Szene
@@ -104,7 +100,8 @@ function Size(w, h){
 /**************
  *walkAnimation.js*
  **************/
-var gTargetIdentifier  	= "";   // used to set an overlay from HTML code as movement target
+var gTargetIdentifier  	= "";   //used to set an overlay from HTML code as movement target
+var gisWalkingTo		= "";	//flag to compare current and newly clicked aim and to signal active movement
 //Position der Wegpunkte des zentralen Pfades
 //er dient der Figur als Weg zwischen den Tiefenebenen
 var gWegPos				= new Array(4);
@@ -266,6 +263,16 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 	gTalk.font_style	= _font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
 	gTalk.line_distance	= _line_distance	//Zeilenabstand
 }
+
+/***************
+ *quizControl*
+ ***************/
+//number of quizsteps per scene
+var gQuizsteps				= 0;
+//current quizstep
+var gCurrentQuizstep		= 0;
+//stores quiztrigger flag of aimed canvas while moving
+var gQuiztriggerAfterMoving	= "";
 
 /***********
  *Utilities*

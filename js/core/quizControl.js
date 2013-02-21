@@ -4,13 +4,23 @@ Darüber hinaus wird der Zähler für den aktuellen Rätsel-Schritt erhöht und 
 */
 function advanceQuizStep(clicked_canvas_quiz_flags){
 	
+	if(gisWalkingTo !== ""){
+		//store parameter in global variable if movement is active and exit
+		gQuiztriggerAfterMoving = clicked_canvas_quiz_flags;
+		
+		return;
+	}else{
+		//restore saved parameter as walking is over
+		clicked_canvas_quiz_flags = gQuiztriggerAfterMoving;
+	}
+	
 	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
-	if(clicked_canvas_quiz_flags[gcurrent_quiz_step] === "t"){
+	if(clicked_canvas_quiz_flags[gCurrentQuizstep] === "t"){
 		//if the clicked canvas is supposed to advance the quiz now
 		
 		//erhöhe den aktuellen Rätselschritt dieser Szene
-		gcurrent_quiz_step++;
+		gCurrentQuizstep++;
 	
 		var canvas_id_flags;
 		
@@ -29,7 +39,7 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 			canvas.removeClass();
 			
 			//consult visibility flag
-			if (canvas_id_flags[1][gcurrent_quiz_step] === "t"){
+			if (canvas_id_flags[1][gCurrentQuizstep] === "t"){
 				//this should now be visible
 				canvas.addClass("quiz_shown");
 			}else{
@@ -38,7 +48,7 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 			}
 			
 			//consult clickable flag
-			if (canvas_id_flags[2][gcurrent_quiz_step] === "t"){
+			if (canvas_id_flags[2][gCurrentQuizstep] === "t"){
 				//this should now be clickable
 				canvas.addClass("clickable");
 			}
@@ -54,14 +64,14 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 */
 function checkQuizfinished(){
 	
-	if(gcurrent_quiz_step == gQuiz_steps){
+	if(gCurrentQuizstep == gQuiz_steps){
 		//starte die nächste szene
 		//erzeuge id der nächsten szene
 		gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 		
 		//setze das quiz zurück
-		gQuiz_steps					= 0;
-		gcurrent_quiz_step			= 0;
+		gQuizsteps					= 0;
+		gCurrentQuizstep			= 0;
 		
 		//bereite neue zoomstufen vor
 		gZoomsteps					= new Array(4);
@@ -90,7 +100,7 @@ function checkQuizfinished(){
 		waitforparser();
 	}
 	
-	if(gcurrent_quiz_step >= (gQuiz_steps - 1)){
+	if(gCurrentQuizstep >= (gQuizsteps - 1)){
 		//lade alles nötige für die nächste szene
 		gcurrent_scene_counter++;
 		ladeBilder();
