@@ -45,10 +45,10 @@ function bewegePerson(){
 	
 	//considers zoomfactor while computing the position to ensure canvas centers are hit
 	heroPos[0] = hero.offset().left + (gStartAbmessungen[0] / 2.0);
-	heroPos[1] = hero.offset().top + (gStartAbmessungen[1] / 2.0);
+	heroPos[1] = hero.offset().top + (gStartAbmessungen[1]);
 	
 	targetPos[0] = target.offset().left + (target.width() / 2.0);
-	targetPos[1] = target.offset().top + (target.height() / 2.0);
+	targetPos[1] = target.offset().top + (target.height());
 	
 	//compute movement vectors
 	if(!gWegBerechnet){
@@ -68,14 +68,14 @@ function bewegePerson(){
 		});
 		
 		/*draws central path points*/
-		/*
+		
         var hg = $("canvas[id*=canvas_bg_static]")[0].getContext("2d");
 		hg.fillStyle = "rgb(255, 0, 0)";
 
 		$.each(lWegPos,function(index, value){
 			hg.fillRect( value[0], value[1], 10, 10 );
 		});
-		*/
+		
 		
 		$.each(gZoomsteps, function(index, value){
             if(heroPos[2] === value){
@@ -110,16 +110,16 @@ function bewegePerson(){
 		//copmute movement vector on central path considering differing zoom factors
 		gMoveVec[1][0] = ((lWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
 			- (lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
-			
-		gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
-			- (lWegPos[wegindex[0]][1] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
+
+		gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
+			- (lWegPos[wegindex[0]][1] - gStartAbmessungen[1])) / gPixelProAufruf;
 
 		//computes stepwidth between start and target dimension in relation to z-index
 		//current dimensions / start multiplicator = real dimensions * target multiplicator = target dimensions
 		//stores target dimensions for comparison
-		gTargets[1][2] = (gStartAbmessungen[0] * gMoveVec[2][2] / gMoveVec[0][2]);
-		gTargets[1][3] = (gStartAbmessungen[1] * gMoveVec[2][2] / gMoveVec[0][2]);
-		//stores stepwidth in x- and y-direction in relation to z-index
+		gTargets[1][2] = (gStartAbmessungen[0] * zoomFaktor);
+		gTargets[1][3] = (gStartAbmessungen[1] * zoomFaktor);
+		//computes stepwidth for width and height in relation to z-index
 		gMoveVec[1][2] = ( gTargets[1][2] - gStartAbmessungen[0]) / gPixelProAufruf;
 		gMoveVec[1][3] = ( gTargets[1][3] - gStartAbmessungen[1]) / gPixelProAufruf;
 
@@ -156,7 +156,7 @@ function bewegePerson(){
 		//put hero on targets coordinates if we are in range
 		hero.offset({
 			left:	gTargets[gAktuellesZiel][0] - (gStartAbmessungen[0] / 2.0),
-			top:	gTargets[gAktuellesZiel][1] - (gStartAbmessungen[1] / 2.0)
+			top:	gTargets[gAktuellesZiel][1] - gStartAbmessungen[1]
 			});
 		
 		if(gAktuellesZiel == 1){
@@ -222,14 +222,19 @@ function bewegePerson(){
 }
 
 function zielErreicht(heroPos, targetPos){
-	//computes heros distance to the target and compares it to hier next step
-	var abstand, betrag;
+	//computes heros distance to the target and compares it to the previous step
+	var distance_target, distance_previous, vector_length;
 	
-	abstand	= Math.sqrt(Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
-	betrag	= Math.sqrt(Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
+	//no need for square root while computing vector length -> sqrt(x^2 + y^2)
+	distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
+	distance_previous	= (
+							Math.pow(((heroPos[0] - gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
+							+ Math.pow(((heroPos[1] - gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
+							);
+	vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
 	
 	//goal is reached if the computation evaluates to the set amount or if movement vector is 0
-	if((abstand <= (betrag * 2)) || betrag == 0){
+	if((distance_previous <= distance_target) || vector_length == 0){
 		
 		return true;
 	}else{

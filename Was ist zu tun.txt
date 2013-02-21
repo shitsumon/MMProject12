@@ -4,15 +4,11 @@ Primaer
 - Dialogcode überarbeiten, an Entwurf anpassen --> Macht Micha
 - Dialoge müssen in szene.xml als "array" eingetragen und entsprechend ausgelesen werden
 	- String der Form: "id1|id2|..."
-- Laufziel der Figur verlagern
-	- nicht mehr die Mittelpunkte beider Canvas übereinander
-	- stattdessen Füße der Figur unten, mittig vorm Canvas
 
 
 Sekundaer
 ---------
 
-- Laufziel anklicken während die Figur läuft wird nicht berücksichtigt
 - Dialogrechtschreibung korrigieren, siehe Datei
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
