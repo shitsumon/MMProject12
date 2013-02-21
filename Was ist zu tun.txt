@@ -2,7 +2,7 @@ Primaer
 -------
 
 - Dialogcode überarbeiten, an Entwurf anpassen --> Macht Micha
-- Unterscheidung wohin man gehen kann, was man klicken kann, was das Quiz voran bringt, was einen Hinweis gibt
+- Unterscheidung wohin man gehen kann, was man klicken kann, was das Quiz voran bringt, was einen Hinweis gibt	--> Hannes
 	- teilweise in sceneparser enthalten -> var xyzTrigger
 
 
@@ -10,14 +10,13 @@ Sekundaer
 ---------
 
 - Dialoge korrigieren, siehe Datei
-- freistellen der Einzelbilder der Szenen
-	- mit Transparenz speichern, PNG	--> hat Oli angefangen
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
 	- Rätsel einfügen
 	- Bilder durch schattenfreie Versionen ersetzen
 	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
+	- Skalierung beeinflusst Positionierung der Bilder!
 - Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
@@ -33,7 +32,7 @@ Neu
 
 - Szenenübergänge
 - Hauptmenü
-- Intro                                         --> Erste Version implementiert, Text wird dann statisch eingetragen
+- Intro		--> Erste Version, Text wird statisch eingetragen
 - Testen, testen, testen
         -> Fehlerverhalten
         -> verschiedene Auflösungen
@@ -41,15 +40,15 @@ Neu
         -> ...
 
 - Dokumentation
-    -> Fuer Wen ist das Spiel gedacht
+    -> Für Wen ist das Spiel gedacht
     -> Wer hat es in Auftrag gegeben
-    -> Warum ist das Spiel notwendig (Aufklaerung, Gefahren im Netz,...)
-    -> Codedokumentation (Ausfuehrlich!)
+    -> Warum ist das Spiel notwendig (Aufklärung, Gefahren im Netz,...)
+    -> Codedokumentation -> zur problemlosen Einarbeitung für spätere Erweiterungen
     -> Beschreibung der einzelnen Code Module
 
--Praesentation
+- Präsentation
     -> Wahrscheinlich die Dokumentation in Kurzform (?)
-    -> Fuer die Praesentation sind 2 Stunden angesetzt, dementsprechend sollte die Praesentation
+    -> Fuer die Praesentation sind 2 Stunden angesetzt, dementsprechend sollte die Präsentation
       aufgebaut sein
 
 
