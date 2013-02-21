@@ -2,14 +2,18 @@ Primaer
 -------
 
 - Dialogcode überarbeiten, an Entwurf anpassen --> Macht Micha
-- Unterscheidung wohin man gehen kann, was man klicken kann, was das Quiz voran bringt, was einen Hinweis gibt	--> Hannes
-	- teilweise in sceneparser enthalten -> var xyzTrigger
+- Dialoge müssen in szene.xml als "array" eingetragen und entsprechend ausgelesen werden
+	- String der Form: "id1|id2|..."
+- Laufziel der Figur verlagern
+	- nicht mehr die Mittelpunkte beider Canvas übereinander
+	- stattdessen Füße der Figur unten, mittig vorm Canvas
 
 
 Sekundaer
 ---------
 
-- Dialoge korrigieren, siehe Datei
+- Laufziel anklicken während die Figur läuft wird nicht berücksichtigt
+- Dialogrechtschreibung korrigieren, siehe Datei
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
 	- Rätsel einfügen
@@ -17,7 +21,8 @@ Sekundaer
 	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
-- Codegenerator zum Speichern des Fortschritts	--> Entwurf von Oli
+- Codegenerator zum Speichern des Fortschritts
+	- Entwurf von Oli vollenden
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
 - Lokalisierung der Code Kommentare, entweder Deutsch oder Englisch (Mir egal, Hauptsache einheitlich und ausfuehrlich fuer jede Funktion)

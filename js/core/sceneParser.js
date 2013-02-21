@@ -27,8 +27,16 @@ function getSceneElementData(sceneElement){
 
     var tmpObject		= new objectStruct(sceneElement.attr('bild_id'),
 							sceneElement.attr('dialog_id'));
-	tmpObject.clickable	= sceneElement.attr('klickbar') === "true";
-	tmpObject.walkto	= sceneElement.attr('walkto') === "true";
+	
+	tmpObject.quiz[0] = sceneElement.attr('raetsel_sichtbar');//.split("|");
+	tmpObject.quiz[1] = sceneElement.attr('raetsel_ausloeser');//.split("|");
+	tmpObject.quiz[2] = sceneElement.attr('klickbar');//.split("|");
+	tmpObject.quiz[3] = sceneElement.attr('walkto');//.split("|");
+	
+	/*$(tmpObject.quiz[0]).each(function(index, element) {
+        
+		tmpObject.quiz[0][index] = parseInt(element);
+    });*/
 	
 	return getElementData(tmpObject, sceneElement);
 }
@@ -64,9 +72,6 @@ function getElementData(tmpObject, sceneElement){
 	tmpObject.position.zPos = parseFloat(sceneElement.find('position').attr('z'));
     tmpObject.size.width    = parseFloat(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseFloat(sceneElement.find('groesse').attr('height'));
-	
-	tmpObject.quizTrigger	= sceneElement.attr('raetsel_ausloeser') === "true";
-	tmpObject.quizStep		= parseInt(sceneElement.attr('raetselschritt'));
 
     return tmpObject;
 }
@@ -102,7 +107,8 @@ function getSceneInformation(sceneID, sceneFilename){
 
                     if(sceneID === currentScene.attr('id')){
 						
-						gQuiz_steps	= parseInt($(currentScene).attr('reatselschritte'));
+						gQuiz_steps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
+										parseInt($(currentScene).attr('reatselschritte'));
 						
 						var wegpunkte	= $(currentScene).find('wegpunkt');
 						gWegPos			= new Array(wegpunkte.length);
@@ -277,44 +283,57 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 				sharedIdString + "_" +
 				objectsToDraw[index].imageID.slice(
 						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
-					) + "_" +
-				"quizStep_" + objectsToDraw[index].quizStep.toString();
+					);
 			
-			//will trigger movement of character if clicked
-			moveTrigger		= objectsToDraw[index].walkto ? "gTargetIdentifier='" + canvasID + "';bewegePerson();" : "";
-			//will trigger quiz advancement on click if true, do nothing otherwise
-			quizTrigger		= objectsToDraw[index].quizTrigger ? "advanceQuizStep();" : "";
-			//sets visibility by css "display" value through css class attribute
-			quizClass		= objectsToDraw[index].quizStep > 0 ? "quiz_hidden" : "quiz_shown";
-			//will trigger dialog if present
-			dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
-								typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
-								"dialogStart('"+ objectsToDraw[index].dialogueID +"');";
-
-            //Check if clickable, if yes set it as such
-            if(objectsToDraw[index].clickable){
+			if(sharedIdString !== "canvas_person"){
+				//set targetident to canvas id + moveflags to trigger movement if appropriate
+				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
+				//will trigger quiz advancement on click if flag of current quizstep equals to true, do nothing otherwise
+				quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');"
+				//sets visibility by css "display" value through css class attribute
+				//following first flag corresponding to the first quizstep
+				quizClass		= objectsToDraw[index].quiz[0].split("|");
+				quizClass		= quizClass[0] !== "t" ? "quiz_hidden" : "quiz_shown";
 				
-                newCanvas = $('<canvas/>',
-                              {
-                               id : canvasID,
-							   "class": quizClass + " " + "clickable",
-							   onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
-                              }
-                             );
-            }else{
-                newCanvas = $('<canvas/>', {
-						id: canvasID,
-						"class": quizClass
-					});
-            }
+				//add visibility flags
+				canvasID += ":"+objectsToDraw[index].quiz[0];
+				//add clickable flags
+				canvasID += ":"+objectsToDraw[index].quiz[2];
+				
+				if(objectsToDraw[index].quiz[2].split("|")[0] === "t"){
+					//if first step defines clickable == true				
+					quizClass += " " + "clickable";
+				}
+				
+				//will trigger dialog if present
+				dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
+									typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
+									"dialogStart('"+ objectsToDraw[index].dialogueID +"');";
+				
+				newCanvas = $('<canvas/>',
+								{
+									id : canvasID,
+									"class": quizClass,
+									onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
+								}
+							);
+			}else{
+				//if sharedid == canvas_person
+				newCanvas = $('<canvas/>',
+								{
+									id : canvasID,
+									"class": "quiz_shown"
+								}
+							);
+			}
 
             //append to html body
             $('body').append(newCanvas);
 
             //object positioning
             newCanvas.css('left', objectsToDraw[index].position.xPos + '%');
-            newCanvas.css('top',  objectsToDraw[index].position.yPos + '%');
-			newCanvas.css('z-index',  objectsToDraw[index].position.zPos);
+            newCanvas.css('top', objectsToDraw[index].position.yPos + '%');
+			newCanvas.css('z-index', objectsToDraw[index].position.zPos);
 
             //calculate pixel dimensions from percentage values
 			var pxWidth;

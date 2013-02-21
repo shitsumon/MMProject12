@@ -2,25 +2,48 @@
 Wendet die Veränderungen eines Rätselschrittes auf die Szene an, indem die entsprechenden Objekte ein-/ausgeblendet werden.
 Darüber hinaus wird der Zähler für den aktuellen Rätsel-Schritt erhöht und geprüft, ob das Rätsel gelöst wurde.
 */
-function advanceQuizStep(){
+function advanceQuizStep(clicked_canvas_quiz_flags){
 	
-	var canvas;
+	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
-	//2 Durchläufe: alte Elemente verstecken und neue einblenden
-	for(var i = 0; i < 2; i++){
+	if(clicked_canvas_quiz_flags[gcurrent_quiz_step] === "t"){
+		//if the clicked canvas is supposed to advance the quiz now
 		
-		//finde alle Canvas deren ID "quizStep_X" enthält
-		canvas = $("canvas[id*=quizStep_" + ( gcurrent_quiz_step + i ).toString() + "]");
+		//erhöhe den aktuellen Rätselschritt dieser Szene
+		gcurrent_quiz_step++;
+	
+		var canvas_id_flags;
 		
-		canvas.each(function(index, element) {
+		//get all canvas with visbility flags -> quiz relevant
+		$("canvas[id*='|']").each(function(index, canvas) {
+			//split id and flags, take flags
+			//[0] = id, [1] = visibility flags, [2] = clickable flags
+			canvas_id_flags = $(canvas).attr("id").split(":");
+			//split flags
+			canvas_id_flags[1] = canvas_id_flags[1].split("|");
+			canvas_id_flags[2] = canvas_id_flags[2].split("|");
 			
-			//schalte die angegebenen CSS-Klassen für das Element um
-			$(element).toggleClass('quiz_shown quiz_hidden');
-		});
+			canvas = $(canvas);
+			
+			//remove all class attributes
+			canvas.removeClass();
+			
+			//consult visibility flag
+			if (canvas_id_flags[1][gcurrent_quiz_step] === "t"){
+				//this should now be visible
+				canvas.addClass("quiz_shown");
+			}else{
+				//this should now be hidden
+				canvas.addClass("quiz_hidden");
+			}
+			
+			//consult clickable flag
+			if (canvas_id_flags[2][gcurrent_quiz_step] === "t"){
+				//this should now be clickable
+				canvas.addClass("clickable");
+			}
+        });
 	}
-	
-	//erhöhe den aktuellen Rätselschritt dieser Szene
-	gcurrent_quiz_step++;
 	
 	//prüfe, ob das Rätsel gelöst wurde
 	checkQuizfinished();
@@ -49,7 +72,7 @@ function checkQuizfinished(){
 			clearInterval(animation.timer);            
         });
 		gAnimationTimer				= new Object();
-		gAnimatimer.anzahl			= 0;
+		gAnimationTimer.anzahl		= 0;
 		
 		//setze die laufrichtung zurück
 		gInitialDirection			= 4;

@@ -1,8 +1,22 @@
 function bewegePerson(){
+
+	if(!gWegBerechnet){
 		
+		gTargetIdentifier		= gTargetIdentifier.split(":");
+		
+		gTargetIdentifier[1]	= gTargetIdentifier[1].split("|");
+	}
+	
+	/*
+	if(gTargetIdentifier[1][gcurrent_quiz_step] !== "t"){
+			//wenn das Ziel in diesem Rätselschritt nicht ansteuerbar sein soll
+			return;
+	}
+	*/
+	
 	//Get objects of target and hero picture
-    var hero	= $("canvas[id*=canvas_person_herotileset]");
-    var target	= $("#"+gTargetIdentifier);
+    var hero	= $("canvas[id*='canvas_person_herotileset']");
+    var target	= $("canvas[id*='" + gTargetIdentifier[0] + "']");
 	
     //alert(hero.attr('id'));
 

@@ -57,28 +57,35 @@ function sceneStruct(id){
 
 //Struct for person information includes Position struct, Size struct and Quiz info
 function personStruct(id, imgID, xPos, yPos, zPos, width, height){
+	
     this.personID   = id;
     this.imageID    = imgID;
+	
     this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
 	
-	this.quizTrigger= false;
-	this.quizStep	= 0;
+/*	this.quizTrigger= false;
+	this.quizStep	= 0;*/
 }
+
 //Struct for object information includes Position struct, Size struct and Quiz info
-function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height, clickable, walkto){
+function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height){
 
     this.imageID    = imgID;
+	//Array der Dialoge je Rätselschritt
     this.dialogueID = diagID;
 
     this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
-
-    this.clickable  = typeof( clickable ) === 'undefined' ? false : clickable;
-	this.walkto		= typeof( walkto ) === 'undefined' ? false : walkto;
 	
-	this.quizTrigger= false;
-	this.quizStep	= 0;
+	//enthält 4 Strings für quizstep, quiztrigger, clickable, walkto
+	//sie repräsentieren Arrays getrennt durch "|"	--> eventuell auf Objekte umstellen, Punktnotation
+	//quiz_step		[0] = "f|t|f|t" -> steuert die Anzeige, hier angezeigt im 2. und 4., jedoch nicht im 1. und 3. Rätselschritt
+	//quiz_trigger	[1] = "t|t|f|f" ->	steuert die Auslösung eines Rätselschrittes je Runde,
+	//									hier in Runde 0 und 1, jedoch nicht in 2 und 4
+	//clickable		[2] = "t|f|t|f" -> ob das Objekt in der entsprechenden Runde klickbar ist
+	//walkto		[3] = "t|t|t|f" -> ob man es ansteuern kann
+	this.quiz		= new Array(4);
 }
 
 //Struct for object position on the browsers viewport
