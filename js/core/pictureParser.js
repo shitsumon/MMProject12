@@ -1,7 +1,7 @@
 /*
-läd alle Bilder aus der XML-Datei beim Aufruf der Seite
-.get erhält den Pfad zur XML und stellt ein XMLDocument-Object bereit -> daten
-bestimmt den typ des zu ladenden Dokumentes -> "xml"
+loads all pictures from xml file when accessing the site
+.get is given the xml path and return an XMLDocument object -> daten
+determines type of returned object by "xml"
 */
 function ladeBilder(){
 
@@ -12,18 +12,17 @@ function ladeBilder(){
 		});
 }
 
-/*
-speichert die ausgelesenen Bilder und ihre Eigenschaften im globalen Objekt -> gBilder
-*/
+//stores xml properties in global object gBilder
 function verarbeiteBilderXML(daten){
+	
 	var id, animation;
-	
+	//get all picture elements corresponding to current scene
 	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
-	
+	//store element count
     gBilder.anzahl += jquery_bilder.length;
-	
+	//compute pictures
 	verarbeiteBilder(jquery_bilder);
-	
+	//load common files with first scene
 	if(gcurrent_scene_counter == 1){
 		
 		jquery_bilder = $(daten).find("bild[id*=allg_]");
@@ -32,84 +31,53 @@ function verarbeiteBilderXML(daten){
 		
 		verarbeiteBilder(jquery_bilder);
 	}
-	
+	//signal xml file has been loaded
 	gpictureparser_xml_geladen = true;
-	
-	/*jquery_bilder.each(function(index, bild) {
-		
-        id = $(bild).attr("id");
-
-        gBilder[id] = new Bild(
-								id,
-                                $(bild).attr("pfad"),
-                                new Abmessungen(
-								
-                                    parseInt($(bild).find("abmessungen").attr("height")),
-                                    parseInt($(bild).find("abmessungen").attr("width"))
-                                    ),
-                                $(bild).attr("animiert") === "false" ? false : true
-		);
-		
-		if(gBilder[id].animiert){
-			
-			animation = $(bild).find("animation");
-			
-			gBilder[id].animationsmerkmale = new Animationsmerkmale(
-			
-				parseFloat(animation.attr("fps")),
-				parseInt(animation.attr("tile_anzahl")),
-				parseInt(animation.attr("tile_width"))
-			)
-		}
-    });*/
 }
 
 function verarbeiteBilder(bilder){
-	
+
 	var jquery_bilder = $(bilder);
-	
+	//for each picture
 	jquery_bilder.each(function(index, bild) {
-		
+		//get picture id
 		id = $(bild).attr("id");
-	
+		//create picture object from prototype
 		gBilder[id] = new Bild(
 								id,
-								$(bild).attr("pfad"),
+								$(bild).attr("pfad"),/*picture path*/
 								new Abmessungen(
-								
+									//picture dimensions
 									parseInt($(bild).find("abmessungen").attr("height")),
 									parseInt($(bild).find("abmessungen").attr("width"))
 									),
+								/*animated flag*/
 								$(bild).attr("animiert") === "false" ? false : true
 		);
 		
 		if(gBilder[id].animiert){
-			
+			//if picture is animated
 			animation = $(bild).find("animation");
 			
 			gBilder[id].animationsmerkmale = new Animationsmerkmale(
-			
+				//create animation object from prototype
 				parseFloat(animation.attr("fps")),
-				parseInt(animation.attr("tile_anzahl")),
-				parseInt(animation.attr("tile_width"))
+				parseInt(animation.attr("tile_anzahl")),	/*tile count*/
+				parseInt(animation.attr("tile_width"))		/*tile width*/
 			)
 		}
 	});
 }
 
-/*
-Hook zur Anzeige des Ladevorgangs. aufgerufen in Image.onload in helper.js
-*/
+//hook to display loading progess bar called by Image.onload in helper.js picture object
 function aktualisiereLadebalken_Bilder(){
 //	alert(gBilder.geladen+" von "+gBilder.anzahl+" geladen");
 }
 
-/*
-Hook für die Aktion nach dem Laden aller Bilder. aufgerufen in Image.onload in helper.js
-*/
+//hook to do something after loading finished
 function statusPruefen_Bilder(){
-	//vergleicht die Anzahl geladener mit der Gesamtzahl der Bilder
-	if(gBilder.geladen==gBilder.anzahl){
+	//compares loaded and to be loaded pictures
+	if(gBilder.geladen == gBilder.anzahl){
 //		alert("Alle Bilder geladen!");
 	}
 }

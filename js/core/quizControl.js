@@ -1,6 +1,5 @@
 /*
-Wendet die Veränderungen eines Rätselschrittes auf die Szene an, indem die entsprechenden Objekte ein-/ausgeblendet werden.
-Darüber hinaus wird der Zähler für den aktuellen Rätsel-Schritt erhöht und geprüft, ob das Rätsel gelöst wurde.
+executes quizsteps implications by showing/hiding objects and increments current quizstep while checking whether the quiz was finished
 */
 function advanceQuizStep(clicked_canvas_quiz_flags){
 	
@@ -19,7 +18,7 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 	if(clicked_canvas_quiz_flags[gCurrentQuizstep] === "t"){
 		//if the clicked canvas is supposed to advance the quiz now
 		
-		//erhöhe den aktuellen Rätselschritt dieser Szene
+		//increment current quizstep
 		gCurrentQuizstep++;
 	
 		var canvas_id_flags;
@@ -55,53 +54,52 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
         });
 	}
 	
-	//prüfe, ob das Rätsel gelöst wurde
+	//check whether quiz has finished
 	checkQuizfinished();
 }
 
 /*
-Überprüft den Fortschritt des Rätsels in jedem Schritt und leitet das Laden der Bilder und Dialoge der nächsten Szene ein. Zusätzlich werden alle wichtigen Variablen zurückgesetzt und die alte Szene ausgeblendet.
+checks whether the quiz has finished and initiates loading of next scenes pictures and dialogues as well as resetting all needed variables
 */
 function checkQuizfinished(){
 	
-	if(gCurrentQuizstep == gQuiz_steps){
-		//starte die nächste szene
-		//erzeuge id der nächsten szene
+	if(gCurrentQuizstep == gQuizsteps){
+		//start next scene if quiz finished
+		//create scene id
 		gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 		
-		//setze das quiz zurück
+		//reset quiz
 		gQuizsteps					= 0;
 		gCurrentQuizstep			= 0;
 		
-		//bereite neue zoomstufen vor
+		//prepare new zoomsteps
 		gZoomsteps					= new Array(4);
 
-		//leere die animation
+		//clear animation
 		$(gAnimationTimer).each(function(index, animation) {
 			
-			clearInterval(animation.timer);            
+			stoppeAnimation(animation.bild_id);
         });
-		gAnimationTimer				= new Object();
-		gAnimationTimer.anzahl		= 0;
 		
-		//setze die laufrichtung zurück
+		//reset walking direction
 		gInitialDirection			= 4;
 		gCurrentDirection			= gInitialDirection;
 		
-		//entferne die alte szene
+		//remove old scene
 		$("canvas").remove();
 		
-		//setze die flags zurück
+		//reset flags
 		gdisplay_next_scene			= true;
 		gpictureparser_xml_geladen	= false;
 		gdialogparser_xml_geladen	= false;
 		
-		//prüfe ob die szene geladen wurde und zeige sie an
+		//check whether scene elements finished loading and display scene
 		waitforparser();
 	}
 	
+	//last step before quiz finishes
 	if(gCurrentQuizstep >= (gQuizsteps - 1)){
-		//lade alles nötige für die nächste szene
+		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
 		ladeDialoge();

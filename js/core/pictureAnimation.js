@@ -1,53 +1,59 @@
 /*
-zuständig für das Erzeugen der Animationen. Schreibt Einzelbilder in einen gegeben Canvas und erzeugt einen Timer, der die Animation wiederholt.
+controls picture animation by drawing frames to the given canvas and creating a timer to repeat it
+
+parameters include:
+	targeted canvas id
+	id of picture to be used
+	displayed dimensions of to be drawn frame
+	flags
 */
 function animiereCanvas(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTileset){
 
     isPerson = typeof(isPerson)   === 'undefined' ? false : isPerson;
     isPerson = typeof(subTileset) === 'undefined' ? false : isPerson;
 
-    //prüfe die Werte für die Ausgabegröße des Bildes
+    //check given target dimensions
     pxWidth		= typeof(pxWidth)	=== 'undefined' ? gBilder[bild_id].animationsmerkmale.tile_width	: pxWidth;
     pxHeight	= typeof(pxHeight)	=== 'undefined' ? gBilder[bild_id].abmessungen.height				: pxHeight;
 
     if(isPerson){
+		
         gCurrentDirection = subTileset;
         var tilesetHeight = pxHeight / gDirections.length;
     }
 
     if(typeof gAnimationTimer[bild_id] === "undefined"){
-        //legt einen neuen Eintrag an
+        //create new animation object
         gAnimationTimer[bild_id] = new Animation(
-                    canvas_id,
-                    bild_id,
-                    pxWidth,
-                    isPerson ? tilesetHeight : pxHeight,
-                    isPerson
+						canvas_id,
+						bild_id,
+						pxWidth,
+						isPerson ? tilesetHeight : pxHeight,
+						isPerson
                     );
 
-        //Startet die Animation.
+        //start animation
         starteAnimation(bild_id);
     }
 
-    //erfasst den Canvas und liest den Zeichenkontext aus
+    //get canvas and its drawing context
     var canvas  = $("#" + canvas_id)[0];
     var ctx     = canvas.getContext("2d");
 
-    //löscht das aktuelle Bild
+    //delete content
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
-    //Set canvas height to tile sub-tileset height
     if(isPerson){
+	    //Set canvas height to tile sub-tileset height
         canvas.height = tilesetHeight;
     }
 
-    //zeichnet den neuen Bildausschnitt nach folgendem Schema
-    /*
-    img das Bild selbst -> Image,
-    sx, sy Beginn des Ausschnitts -> Pixel int,
-    swidth, sheight Breite und Höhe des Ausschnitts -> Pixel int,
-    x, y Zeichenposition innerhalb des Canvas -> Pixel int,
-    width, height Breite und Höhe des Bildes im Canvas -> Pixel int
+    /*draws frame following this scheme
+		img the picture itself					-> Image,
+		sx, sy start coordinates of frame		-> Pixel int,
+		swidth, sheight frame dimensions		-> Pixel int,
+		x, y upper left corner inside canvas	-> Pixel int,
+		width, height dimensions inside canvas	-> Pixel int
     */
     ctx.drawImage(
                 gBilder[bild_id].bild, //image
@@ -61,54 +67,61 @@ function animiereCanvas(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTile
                 pxHeight //height of whole tileset image
                 );
 
-    //erhöht den Zähler für das aktuell angezeigte Einzelbild oder setzt ihn zurück
+    //computes current frame counter
     gAnimationTimer[bild_id].bild_nr =
 		(gAnimationTimer[bild_id].bild_nr < ( gBilder[bild_id].animationsmerkmale.tile_anzahl - 1 ))
             ? (gAnimationTimer[bild_id].bild_nr + 1) : 0;
 }
 
-//stoppt die Animation indem der Timer gelöscht wird
+//stops animation by deleting the timer
 function stoppeAnimation(bild_id){
+	
     window.clearInterval(gAnimationTimer[bild_id].timer);
     gAnimationTimer[bild_id].running = false;
     gAnimationTimer.anzahl--;
 }
 
-//startet die Animation und erzeugt einen neuen Timer
+//starts animation and creates new timer
 function starteAnimation(bild_id, canvas_id){
 
-    var delimiter = '#';
-    var gBilderIDString = '';
-
-    if(strContains(bild_id, delimiter)){
-        gBilderIDString = bild_id.split(delimiter)[0];
-    }else{
-        gBilderIDString = bild_id;
-    }
+	var delimiter = '#';
+	var gBilderIDString = '';
+	
+	if(strContains(bild_id, delimiter)){
+		
+		gBilderIDString = bild_id.split(delimiter)[0];
+	}else{
+		
+		gBilderIDString = bild_id;
+	}
 	
 	if(typeof(gAnimationTimer[bild_id].timer) !== "undefined"){
 		//delete existing same timer
 		stoppeAnimation(bild_id);
 	}
 	
-    gAnimationTimer[bild_id].timer = window.setInterval(function(){
-        animiereCanvas(
-                    gAnimationTimer[bild_id].canvas_id,
-                    bild_id,
-                    gAnimationTimer[bild_id].anzeige_width,
-                    gAnimationTimer[bild_id].anzeige_height
-                    ); },
-    (1000 / gBilder[gBilderIDString].animationsmerkmale.fps)
-    );
-    gAnimationTimer[bild_id].running = true;
-    gAnimationTimer.anzahl++;
+	gAnimationTimer[bild_id].timer = window.setInterval(function(){
+			animiereCanvas(
+							gAnimationTimer[bild_id].canvas_id,
+							bild_id,
+							gAnimationTimer[bild_id].anzeige_width,
+							gAnimationTimer[bild_id].anzeige_height
+						); },
+			(1000 / gBilder[gBilderIDString].animationsmerkmale.fps)
+		);
+		
+	gAnimationTimer[bild_id].running = true;
+	gAnimationTimer.anzahl++;
 }
 
-//schaltet zwischen laufender und pausierter Animation um
+//toggles running and paused animation
 function toggleAnimation(bild_id){
+	
     if(gAnimationTimer[bild_id].running){
+		
         stoppeAnimation(bild_id);
     }else{
+		
         starteAnimation(bild_id);
     }
 }

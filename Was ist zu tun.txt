@@ -20,8 +20,7 @@ Sekundaer
 	- Entwurf von Oli vollenden
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
-- Lokalisierung der Code Kommentare, entweder Deutsch oder Englisch (Mir egal, Hauptsache einheitlich und ausfuehrlich fuer jede Funktion)
-
+- Kommentare ausfuehrlich fuer jede Funktion
     Ausfuerhlich bedeutet:
         -> Beschreibung was die Funktion macht
         -> Beschreibung der uebergabe Parameter

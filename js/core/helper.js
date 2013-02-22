@@ -28,19 +28,18 @@
 /****************
  *sceneParser.js*
  ****************/
-//Pfad zur szenen.xml
+//szenen.xml path
 var sceneXML				= "../szenen.xml";
-//Index der aktuellen Szene
+//index of current scene
 var gcurrent_scene_counter	= 1;
-//ID der aktuellen Szene
+//id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
-//Multiplikatoren der Zoomstufen nach Z-Index
+//z-index multiplicators
 var gZoomsteps				= new Array(4);
-//steuert die Darstellung der aktuellen/nächsten Szene
-//true erlaubt waitforparser den start des sceneparser, false verhindert ihn
-//sceneparser setzt am ende auf false, sodass bilder und dialoge gelden werden können während die vorige szene noch läuft
+//controls display of curent and next scene
+//true makes waitforparser start sceneParser while false prevents it
+//sceneParser sets it to false when finished to make dialogues and pictures load while the cuurrent scene is still running
 var gdisplay_next_scene		= true;
-
 //Scene struct where the xml reader part stores all extracted information
 function sceneStruct(id){
     this.sceneID = id;
@@ -50,7 +49,6 @@ function sceneStruct(id){
     this.dynamicForegroundObjects = new Array();
     this.persons                  = new Array();
 }
-
 //Struct for person information includes Position struct, Size struct and Quiz info
 function personStruct(id, imgID, xPos, yPos, zPos, width, height){
 	
@@ -59,38 +57,32 @@ function personStruct(id, imgID, xPos, yPos, zPos, width, height){
 	
     this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
-	
-/*	this.quizTrigger= false;
-	this.quizStep	= 0;*/
 }
-
 //Struct for object information includes Position struct, Size struct and Quiz info
 function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height){
 
     this.imageID    = imgID;
-	//Array der Dialoge je Rätselschritt
+	//dialog array per quizstep
     this.dialogueID = diagID;
 
     this.position   = new Position(xPos, yPos, zPos);
     this.size       = new Size(width, height);
-	
-	//enthält 4 Strings für quizstep, quiztrigger, clickable, walkto
-	//sie repräsentieren Arrays getrennt durch "|"	--> eventuell auf Objekte umstellen, Punktnotation
-	//quiz_step		[0] = "f|t|f|t" -> steuert die Anzeige, hier angezeigt im 2. und 4., jedoch nicht im 1. und 3. Rätselschritt
-	//quiz_trigger	[1] = "t|t|f|f" ->	steuert die Auslösung eines Rätselschrittes je Runde,
-	//									hier in Runde 0 und 1, jedoch nicht in 2 und 4
-	//clickable		[2] = "t|f|t|f" -> ob das Objekt in der entsprechenden Runde klickbar ist
-	//walkto		[3] = "t|t|t|f" -> ob man es ansteuern kann
+	//contains 4 strings -> quizstep, quiztrigger, clickable, walkto
+	//represented by arrays denoted by "|"
+	//maybe transform to use objects instead of arrays
+	//quiz_step		[0] = "f|t|f|t" -> controls display of canvas -> shown in step 2 and 4, invisible in 1 and 3
+	//quiz_trigger	[1] = "t|t|f|f" ->	controls whether this canvas triggers the quiz
+	//									step 1 and 2 do, while 3 and 4 don't
+	//clickable		[2] = "t|f|t|f" -> whether the canvas is clickable in this quizstep
+	//walkto		[3] = "t|t|t|f" -> whether the player can walk there
 	this.quiz		= new Array(4);
 }
-
 //Struct for object position on the browsers viewport
 function Position(x, y, z){
     this.xPos = typeof( x ) === 'undefined' ? 0 : x;
     this.yPos = typeof( y ) === 'undefined' ? 0 : y;
 	this.zPos = typeof( z ) === 'undefined' ? 0 : z;
 }
-
 //Struct for object size on the browsers viewport
 function Size(w, h){
     this.width  = typeof( w ) === 'undefined' ? 0 : w;
@@ -100,142 +92,141 @@ function Size(w, h){
 /**************
  *walkAnimation.js*
  **************/
-var gTargetIdentifier  	= "";   //used to set an overlay from HTML code as movement target
-var gisWalkingTo		= "";	//flag to compare current and newly clicked aim and to signal active movement
-//Position der Wegpunkte des zentralen Pfades
-//er dient der Figur als Weg zwischen den Tiefenebenen
+ //used to set an overlay from HTML code as movement target
+var gTargetIdentifier  	= "";
+//flag to compare current and newly clicked aim and to signal active movement
+var gisWalkingTo		= "";
+//waypoint positions of central path
+//hero uses it as path between differing z-index
 var gWegPos				= new Array(4);
-//x, y-Koordinaten der Wegpunkte, die nacheinander angesteuert werden
+//x- and y-coordinates of waypoints -> hero pos to waypt1 to waypt 2 to goal
+//[2][2/3] contains computed hero dimensions stepwidth for zooming on central path
 var gTargets			= new Array(new Array(2), new Array(4), new Array(2));
+//hero dimensions continuously updated while walking
 var gStartAbmessungen	= new Array(2);
-var gMoveVec			= new Array(new Array(3), new Array(3), new Array(3));//Bewegungsvektoren über die drei Abschnitte
-var gWegBerechnet		= false;	//zur einmaligen Berechnung der Vektoren
+//movement vector for the three waypoints
+//[0/2][2] contain hero and goal z-index, [1][2] contains z movement vector
+var gMoveVec			= new Array(new Array(3), new Array(3), new Array(3));
+//flag to compute movement vector just once per goal, set by walkAnimation if vector has been computed/goal is reached
+var gWegBerechnet		= false;	
 var gAufrufeProSekunde	= 25;
-var gPixelProAufruf		= 100;		//steuert die Bewegungsgeschwindigkeit
+//controls movement speed
+var gPixelProAufruf		= 100;
 var gIntervall			= 1000 / gAufrufeProSekunde;
-var gAktuellesZiel		= 0;		//Index des derzeitigen Ziels
-var gLastDirection      = 'standing';//Stores last known direction
+//index of current aim
+var gAktuellesZiel		= 0;
+//Stores last known direction
+var gLastDirection      = 'standing';
 
 /******************
  *pictureParser.js*
  ******************/
-var gbilderXMLPfad	= "../bilder/bilder.xml";	//Pfad zur Bilder-XML
-var gBilder			= new Object();	//globales Bilder-Objekt; enthält alle Bilder als Attribute, erreichbar über ihre ID
-gBilder.anzahl		= 0;			//Zähler für die Anzahl alle Bilder in der XML-Datei, wird von pictureParser gesetzt
-gBilder.geladen		= 0;			/*Zähler für die vollständig geladenen Bilder, wird von pictureParser gesetzt und kann für den
-									Ladebalken genutzt werden*/
-//zeigt erfolgreiches Laden der xml-Datei
+//path to bilder.xml
+var gbilderXMLPfad	= "../bilder/bilder.xml";
+//global picture objekt, contains all pictures as attribute accesible by id
+var gBilder			= new Object();
+//number of pictures to be loaded from bilder.xml set by pictureParser depending on scene number
+gBilder.anzahl		= 0;
+//counter for succesfully loaded pictures set by pictureParser
+gBilder.geladen		= 0;
+//signals succesful loading of xml file
 gpictureparser_xml_geladen = false;
-
-function Abmessungen(_height, _width){	//Prototyp für die Abmessungen des Bildes in Pixel -> int
+//prototype for picture dimensions in pixel
+function Abmessungen(_height, _width){
 	this.height	= _height;	//Pixel int
 	this.width	= _width;	//Pixel int
 }
-
-function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){	//Prototyp für die Bildanimation
-	this.fps			= _fps;			//Bilder pro Sekunde		-> float
-	this.tile_anzahl	= _tile_anzahl;	//Anzahl der Einzelbilder	-> int
-	this.tile_width		= _tile_width;	//Breite eines Einzelbildes	-> Pixel int
+//prototype of picture animation
+function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){
+	this.fps			= _fps;			//frames per second	-> float
+	this.tile_anzahl	= _tile_anzahl;	//frame number		-> int
+	this.tile_width		= _tile_width;	//frame width		-> Pixel int
 }
-
-function Skalierung(_x, _y, _z){	//Prototyp für eine Skalierungsstufe, enthält x/y-Skalierung in % und z-Ebene
-	this.x=_x;	//Skalierung in x-Richtung		-> % float
-	this.y=_y;	//Skalierung in y-Richtung		-> % float
-	this.z=_z;	//z-Index der Skalierungsstufe	-> int
-}
-
-//Prototyp für ein Bild, nutzt alle vorherigen Prototypen und kümmert sich um das Laden der eigentlichen Bilder
+//picture prototype uses all previous prototypes and loads pictures
 function Bild(_id, _pfad, _abmessungen, _animiert){
-	this.id					= _id;					//ID des Bildes					-> string
-	this.pfad				= _pfad;				//Dateipfad						-> String
-	this.abmessungen		= _abmessungen;			//Abmessungen in Pixel			-> Abmessungen
-	this.animiert			= _animiert;			//animiert oder nicht			-> boolean
-	this.animationsmerkmale	= null;					//Eigenschaften der Animation	-> Animationsmerkmale
-	this.bild				= new Image();			//das eigentliche Bild			-> Image
-	this.bild.onload = function(){					/*aufgerufen nachdem das Bilde geladen wurde*/
-		gBilder.geladen++;							/*Zähler für die fertig geladenen Bilder -> int*/
-		aktualisiereLadebalken_Bilder();			/*Hook für den Ladebalken*/
-		statusPruefen_Bilder();						/*Hook zur Benachrichtigung: Laden beendet*/
-		waitforparser();							/*prüft ob Bilder und Dialoge vollständig geladen wurden*/
+	this.id					= _id;					//picture id					-> string
+	this.pfad				= _pfad;				//filepath						-> String
+	this.abmessungen		= _abmessungen;			//pixel dimensions				-> Abmessungen
+	this.animiert			= _animiert;			//animated flag					-> boolean
+	this.animationsmerkmale	= null;					//animation properties			-> Animationsmerkmale
+	this.bild				= new Image();			//the picture itself			-> Image
+	this.bild.onload = function(){					/*called after loading has finished*/
+		gBilder.geladen++;							/*counter for succesfully loaded pictures -> int*/
+		aktualisiereLadebalken_Bilder();			/*progressbar hook*/
+		statusPruefen_Bilder();						/*loading finished hook*/
+		waitforparser();							/*checks whether dialogues and pictures where loaded completely*/
 	}
-	this.bild.src			= _pfad;					//initiiert das Laden des Bildes-> string
+	this.bild.src			= _pfad;				//initializes picture loading	-> string
 }
 
 /*********************
  *pictureAnimation.js*
  *********************/
- 
-//verwaltet die Animationen; enthält die zugehörigen Timer als Attribute, erreichbar über die Bild-ID
+//manages animation and contains all attributes accessible by picture id
 var gAnimationTimer		= new Object();
-gAnimationTimer.anzahl	= 0;		//zählt die aktiven Timer im Objekt -> int
-
-//Prototyp für ein animiertes Bild-Objekt, speichert den zugehörigen Timer
+//active timer counter	-> int
+gAnimationTimer.anzahl	= 0;
+//prototype of an animated picture, stores corresponding timer
 function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height, _isPerson){
-	this.bild_nr	= 0;			//der Index des aktuell angezeigten Einzelbildes	-> int
-	this.canvas_id	= _canvas_id;	//ID des Canvas in den gezeichnet wird				-> string
-	this.bild_id	= _bild_id;		//ID des Bildes, das genutzt wird					-> string
-	this.timer		= null;			//Timer der Animation, wird beim Erzeugen gesetzt	-> Timer (int)
-	this.running	= true;			//zeigt an ob die Animation gerade aktiv ist		-> bool
-	this.anzeige_width	= _anzeige_width;	//Größe des Bildes in Pixel
-	this.anzeige_height	= _anzeige_height;
+	this.bild_nr	= 0;			//index of currently displayed frame	-> int
+	this.canvas_id	= _canvas_id;	//id of targeted canvas					-> string
+	this.bild_id	= _bild_id;		//used picture id						-> string
+	this.timer		= null;			//animation timer id set when creating	-> Timer (int)
+	this.running	= true;			//flag if animation is active			-> bool
+	this.anzeige_width	= _anzeige_width;	//pixel picture dimensions
+	this.anzeige_height	= _anzeige_height;	//determines dimensions inside canvas
     this.isPerson = _isPerson;      //Marks a timer object as a person object
 }
-
-var gDirections       = new Array('front',  //Possible directions for a person object
-                                  'back',
-                                  'right',
-                                  'left',
-                                  'standing');
-var gInitialDirection = 4;                  //Sets initial direction of a person object to 'standing'
-var gCurrentDirection = gInitialDirection;  //Saves last known direction to compare against new directional values
+//Possible directions for a person object
+var gDirections       = new Array('front', 'back', 'right', 'left', 'standing');
+//Sets initial direction of a person object to 'standing'
+var gInitialDirection = 4;
+//Saves last known direction to compare against new directional values
+var gCurrentDirection = gInitialDirection;
 
 /*****************
  *dialogParser.js*
- *****************/
- 
- //der Pfad zur Dialoge.xml
- var gDialogeXMLPfad	= "../dialoge.xml";
- //verwaltet alle Dialoge aus der XML-Datei
- var gDialoge			= new Object();
- //ein Zähler für die Anzahl der Dialoge
- gDialoge.anzahl		= 0;
- //Zähler für die bereits geladenen Dialoge
- gDialoge.geladen		= 0;
- //zeigt erfolgreiches Laden der xml-Datei
- gdialogparser_xml_geladen = false;
- 
- //Prototyp für einen Dialog mit mindestens einem Satz
- function Dialog(_id, _anzahl_saetze){
-	 
-	 this.id			= _id;							//die ID dieses Dialogs					-> string
-	 this.anzahl_saetze	= _anzahl_saetze;				//die Anzahl der Sätze in diesem Dialog	-> int
-	 this.saetze		= new Array(_anzahl_saetze);	//die Sätze des Dialogs					-> Satz
-	 gDialoge.geladen++;								/*Zähler für die fertig geladenen Bilder -> int*/
-	 aktualisiereLadebalken_Dialoge();					/*Hook für den Ladebalken*/
-	 statusPruefen_Dialoge();							/*Hook zur Benachrichtigung: Laden beendet*/
-	 waitforparser();									/*prüft ob Bilder und Dialoge vollständig geladen wurden*/
- }
- 
- //Prototyp für einen Satz in einem Dialog
- function Satz(_person_id, _bild_id, _inhalt){
-	 
-	 this.person_id	= _person_id;	//ID der sprechenden Person voraussichtlich ihr Anzeigename	-> string
-	 this.bild_id	= _bild_id;		//ID des anzuzeigenden Bildes aus gBilder					-> string
-	 this.inhalt	= _inhalt;		//der Text dieses Satzes									-> string
- }
+*****************/
+//dialoge.xml path
+var gDialogeXMLPfad	= "../dialoge.xml";
+//manages all dialogues from xml
+var gDialoge			= new Object();
+//dialogues to be loaded in the current scene
+gDialoge.anzahl		= 0;
+//counter for succesfully loaded dialogues
+gDialoge.geladen		= 0;
+//signals succesfull loading of xml-file
+gdialogparser_xml_geladen = false;
+//prototype of dialogue object with at least one single sentence
+function Dialog(_id, _anzahl_saetze){
+	
+	this.id				= _id;							//dialogue id								-> string
+	this.anzahl_saetze	= _anzahl_saetze;				//number of sentences per dialogue			-> int
+	this.saetze			= new Array(_anzahl_saetze);	//dialogues senences						-> Satz
+	gDialoge.geladen++;									/*counter for succesfully loaded dialogues	-> int*/
+	aktualisiereLadebalken_Dialoge();					/*progressbar hook*/
+	statusPruefen_Dialoge();							/*loading finished hook*/
+	waitforparser();									/*checks whether pictures and dialogues have finished loading*/
+}
+//prototype of single sentence in a dialogue
+function Satz(_person_id, _bild_id, _inhalt){
+	
+	this.person_id	= _person_id;	//talking persons id		-> string
+	this.bild_id	= _bild_id;		//picture id inside gBilder	-> string
+	this.inhalt		= _inhalt;		//sentence content			-> string
+}
 
 /*****************
  *dialogControl.js*
  *****************/
- 
- //Globale Variable die alle Einstellungen für Dialoge Abspeichert
- //gTalk - (soll keine schleichwerbung sein, sondern einfach nur kurz).
+//global variable to store dialogues properties
+//prototype of dialogue object
 var gTalk			= new Object();
-gTalk.bild_id 		= "null";			 //MUSS mit dialogSettings(...) initialisiert
-gTalk.canvas_id		= "null";			 //MUSS mit dialogSettings(...) initialisiert
-gTalk.font_color	= "white";			 //kann mit dialogSettings(...) verändert werden
-gTalk.font_style	= "bold 16px Arial"; //kann mit dialogSettings(...) verändert werden
-gTalk.line_distance = 10;				 //kann mit dialogSettings(...) verändert werden
+gTalk.bild_id 		= "null";			 //has to be initialised by dialogSettings()
+gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
+gTalk.font_color	= "white";			 //can be customized by dialogSettings()
+gTalk.font_style	= "bold 16px Arial"; //can be customized by dialogSettings()
+gTalk.line_distance = 10;				 //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzGerade	= 0;
 gTalk.SatzMax		= 0;
@@ -253,15 +244,14 @@ gTalk.TBPercImageHeight = 20; //Textbox image height in %
 
 var gTBDrawn = false;
 
-//muss einmal aufgerufen werden
-//Einstellungen für alle späteren DialogAufrufe
-function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_distance)
-{
-	gTalk.bild_id		= _bild_id;			//Hintergrundbild
-	gTalk.canvas_id		= _canvas_id;		//CSS-Objekt-Name
-	gTalk.font_color	= _font_color;		//Schriftfarbe
-	gTalk.font_style	= _font_style;		//Schriftart (format: "flags size type"). z.B: "bold 16px Arial");
-	gTalk.line_distance	= _line_distance	//Zeilenabstand
+//has to be called once to configure dialogues
+function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_distance){
+
+	gTalk.bild_id		= _bild_id;			//background picture id
+	gTalk.canvas_id		= _canvas_id;		//CSS object name
+	gTalk.font_color	= _font_color;		//font colour
+	gTalk.font_style	= _font_style;		//font (properties: "flags size type") -> "bold 16px Arial"
+	gTalk.line_distance	= _line_distance	//line distance
 }
 
 /***************
@@ -277,29 +267,25 @@ var gQuiztriggerAfterMoving	= "";
 /***********
  *Utilities*
  ***********/
-
 //Generates a CSS percentage from a numeric pixel value
 function pix2perc(absolute, pixelValue){
     return (100 * pixelValue) / absolute + "%";
 }
-
 //Calculates the effective pixel value from a CSS percentage string
 function perc2pix(absolute, perc){
     return (absolute / 100) * perc;
 }
-
-//prüft ob Bilder und Dialoge vollständig geladen wurden
+//checks whether dialogues and pictures completed loading before calling sceneParser
 function waitforparser(){
-	//wenn alle Elemente geladen wurden
+	//if everything finished and the next scene should be displayed
     if(gpictureparser_xml_geladen && gdialogparser_xml_geladen &&
 		(gBilder.anzahl == gBilder.geladen) && (gDialoge.anzahl == gDialoge.geladen) &&
 		gdisplay_next_scene){
-		//lese Szene ein
+		//display next scene
         getSceneInformation(gcurrent_scene_id, sceneXML);
 	}
 }
-
-//rechnet den Z-Index in den Multiplikator der Zoomstufe um
+//converts z-index to zoomstep multiplicator
 function z2mult(z_index){
 	
 	if(z_index < 200){
@@ -312,7 +298,6 @@ function z2mult(z_index){
         return gZoomsteps[3];//vg_dynamisch
 	}
 }
-
 //checks whether the passed string contains the passed substring
 function strContains(string, substring){
     return string.indexOf(substring) === -1 ? false : true;
