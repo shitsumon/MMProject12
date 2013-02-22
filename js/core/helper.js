@@ -302,3 +302,6 @@ function z2mult(z_index){
 function strContains(string, substring){
     return string.indexOf(substring) === -1 ? false : true;
 }
+//array for encoding/decoding numbers to numerals in game save code
+var n2n = new Array(
+	"null", "eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn");

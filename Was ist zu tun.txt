@@ -17,7 +17,7 @@ Sekundaer
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
 - Codegenerator zum Speichern des Fortschritts
-	- Entwurf von Oli vollenden
+	- Code muss angezeigt werden
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
 - Kommentare ausfuehrlich fuer jede Funktion

@@ -20,6 +20,9 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 		
 		//increment current quizstep
 		gCurrentQuizstep++;
+		
+		//encode current savestate
+		verschluesseln();
 	
 		var canvas_id_flags;
 		
