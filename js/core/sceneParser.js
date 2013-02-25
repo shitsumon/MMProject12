@@ -103,7 +103,7 @@ function getSceneInformation(sceneID, sceneFilename){
 
 				if(sceneID === currentScene.attr('id')){
 					//get quiz step count
-					gQuiz_steps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
+					gQuizsteps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
 									parseInt($(currentScene).attr('reatselschritte'));
 					//get waypoints of central path
 					var wegpunkte	= $(currentScene).find('wegpunkt');
@@ -334,20 +334,22 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			newCanvas.css('z-index', objectsToDraw[index].position.zPos);
 
             //calculate pixel dimensions from percentage values
-			var pxWidth;
+			var pxWidth, pxHeight;
 
 			if(gBilder[objectsToDraw[index].imageID].animiert){
-				//picture is animated, use tile width
-				pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
-                                       objectsToDraw[index].size.width);
+				//picture is animated, use tile width and height
+				pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
+									objectsToDraw[index].size.width);
+				pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_height,
+									objectsToDraw[index].size.height);
+									   
 			}else{
-				//picture is not animated, use picture width
-                pxWidth = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
-									   objectsToDraw[index].size.width);
-            }
-
-            var pxHeight = perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
-                                   objectsToDraw[index].size.height);
+				//picture is not animated, use picture width and height
+                pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
+									objectsToDraw[index].size.width);
+				pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
+									objectsToDraw[index].size.height);
+			}
 
 			//read scaling from object and apply to canvas
 			var skalierung = z2mult(objectsToDraw[index].position.zPos);
@@ -370,14 +372,14 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                         That means it is no person animation. The tileset is handled as a
                         regular animated object.
                     */
-                    animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight);
+                    starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight);
                 }else{
                     /*
                         if yes, the tileset is a persons tileset. That means we have 5 sub-tilesets
                         to deal with. Special switches are invoked to handle these tilesets, which
                         have a vertical expansion greater than one.
                     */
-                    animiereCanvas(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection);
+                    starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection);
 
                     /*
                         For referencing the persons later, the fixed imageID part is

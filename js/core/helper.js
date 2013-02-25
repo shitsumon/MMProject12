@@ -137,10 +137,11 @@ function Abmessungen(_height, _width){
 	this.width	= _width;	//Pixel int
 }
 //prototype of picture animation
-function Animationsmerkmale(_fps, _tile_anzahl, _tile_width){
+function Animationsmerkmale(_fps, _tile_anzahl, _tile_width, _tile_height){
 	this.fps			= _fps;			//frames per second	-> float
 	this.tile_anzahl	= _tile_anzahl;	//frame number		-> int
 	this.tile_width		= _tile_width;	//frame width		-> Pixel int
+	this.tile_height	= _tile_height;	//frame height		-> Pixel int
 }
 //picture prototype uses all previous prototypes and loads pictures
 function Bild(_id, _pfad, _abmessungen, _animiert){

@@ -65,46 +65,68 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 checks whether the quiz has finished and initiates loading of next scenes pictures and dialogues as well as resetting all needed variables
 */
 function checkQuizfinished(){
-	
+	//start next scene if quiz finished
 	if(gCurrentQuizstep == gQuizsteps){
-		//start next scene if quiz finished
-		//create scene id
-		gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 		
-		//reset quiz
-		gQuizsteps					= 0;
-		gCurrentQuizstep			= 0;
+		$('body').append($('<canvas/>', {
+			id: 'uebergang'
+		}));
 		
-		//prepare new zoomsteps
-		gZoomsteps					= new Array(4);
-
-		//clear animation
-		$(gAnimationTimer).each(function(index, animation) {
-			
-			stoppeAnimation(animation.bild_id);
-        });
+		starteAnimation("uebergang", "allg_uebergang", $(window).width(), $(window).height(), false, "");
 		
-		//reset walking direction
-		gInitialDirection			= 4;
-		gCurrentDirection			= gInitialDirection;
+		var frametime	= 1000 / gBilder["allg_uebergang"].animationsmerkmale.fps;
+		var framecount	= gBilder["allg_uebergang"].animationsmerkmale.tile_anzahl;
 		
-		//remove old scene
-		$("canvas").remove();
-		
-		//reset flags
-		gdisplay_next_scene			= true;
-		gpictureparser_xml_geladen	= false;
-		gdialogparser_xml_geladen	= false;
-		
-		//check whether scene elements finished loading and display scene
-		waitforparser();
+		window.setTimeout("advanceNextScene();", frametime * (framecount / 2));
+		window.setTimeout(function(){
+				
+				stoppeAnimation("allg_uebergang");
+				$("canvas[id*='uebergang']").remove();
+			}, frametime * framecount);
 	}
 	
 	//last step before quiz finishes
-	if(gCurrentQuizstep >= (gQuizsteps - 1)){
+	if(gCurrentQuizstep == (gQuizsteps - 1)){
 		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
 		ladeDialoge();
 	}
+}
+
+function advanceNextScene(){
+	
+	//create scene id
+	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
+	
+	//reset quiz
+	gQuizsteps					= 0;
+	gCurrentQuizstep			= 0;
+	
+	//prepare new zoomsteps
+	gZoomsteps					= new Array(4);
+
+	//clear animation
+	$(gAnimationTimer).each(function(index, animation) {
+		
+		if((typeof(animation.bild_id) !== "undefined") && (animation.bild_id !== "allg_uebergang")){
+			
+			stoppeAnimation(animation.bild_id);
+		}
+	});
+	
+	//reset walking direction
+	gInitialDirection			= 4;
+	gCurrentDirection			= gInitialDirection;
+	
+	//remove old scene
+	$("canvas[id!='uebergang']").remove();
+	
+	//reset flags
+	gdisplay_next_scene			= true;
+//	gpictureparser_xml_geladen	= false;
+//	gdialogparser_xml_geladen	= false;
+	
+	//check whether scene elements finished loading and display scene
+	waitforparser();
 }

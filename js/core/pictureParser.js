@@ -63,7 +63,8 @@ function verarbeiteBilder(bilder){
 				//create animation object from prototype
 				parseFloat(animation.attr("fps")),
 				parseInt(animation.attr("tile_anzahl")),	/*tile count*/
-				parseInt(animation.attr("tile_width"))		/*tile width*/
+				parseInt(animation.attr("tile_width")),		/*tile width*/
+				parseInt(animation.attr("tile_height"))		/*tile height*/
 			)
 		}
 	});
