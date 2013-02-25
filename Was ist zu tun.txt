@@ -96,6 +96,7 @@ dr chaos soll sich drehen und kleiner werden
 allgemein
 
 quiz zurücksetzen bei falscheingabe
+der Protagonist wandert beim erneuten Klicken auf ein Objekt, zum Pfad und dann wieder zurück zum Objekt -> Protagonist sollte stehen bleiben
 rätsel-bilder fehlen
 rätselbilder müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
 dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
