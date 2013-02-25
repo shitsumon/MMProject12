@@ -76,10 +76,10 @@
     <abmessungen height="110" width="105"/>
   </bild>
   <bild id="szene1_schrank_offen" pfad="../bilder/neu/szene1/schrank_offen.png" animiert="false">
-    <abmessungen height="535" width="284"/>
+    <abmessungen height="450" width="284"/>
   </bild>
   <bild id="szene1_schrank_zu" pfad="../bilder/neu/szene1/schrank_zu.png" animiert="false">
-    <abmessungen height="535" width="284"/>
+    <abmessungen height="450" width="197"/>
   </bild>
   <bild id="szene1_schreibtisch" pfad="../bilder/neu/szene1/schreibtisch.png" animiert="false">
     <abmessungen height="251" width="357"/>
@@ -102,13 +102,13 @@
     <abmessungen height="47" width="34"/>
   </bild>
   <bild id="szene2_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
-    <abmessungen height="195" width="171"/>
+    <abmessungen height="162" width="145"/>
   </bild>
   <bild id="szene2_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
   </bild>
   <bild id="szene2_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
-    <abmessungen height="511" width="182"/>
+    <abmessungen height="481" width="150"/>
   </bild>
   <bild id="szene2_leuchten_links" pfad="../bilder/neu/szene2/leuchten_links.png" animiert="false">
     <abmessungen height="174" width="258"/>
@@ -128,7 +128,7 @@
     <abmessungen height="47" width="34"/>
   </bild>
   <bild id="szene3_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
-    <abmessungen height="195" width="171"/>
+    <abmessungen height="162" width="145"/>
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene3_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
@@ -136,7 +136,7 @@
     <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene3_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
-    <abmessungen height="511" width="182"/>
+    <abmessungen height="481" width="150"/>
   </bild>
   
   <!--szene4-->
@@ -154,13 +154,13 @@
     <abmessungen height="109" width="37"/>
   </bild>
   <bild id="szene4_oelkanne" pfad="../bilder/neu/szene4/oelkanne.png" animiert="false">
-    <abmessungen height="123" width="166"/>
+    <abmessungen height="61" width="75"/>
   </bild>
   <bild id="szene4_scheibe" pfad="../bilder/neu/szene4/scheibe.png" animiert="false">
     <abmessungen height="183" width="154"/>
   </bild>
   <bild id="szene4_schreibtisch" pfad="../bilder/neu/szene4/schreibtisch.png" animiert="false">
-    <abmessungen height="343" width="268"/>
+    <abmessungen height="294" width="268"/>
   </bild>
   
   <!--szene5-->
@@ -175,13 +175,13 @@
     <abmessungen height="47" width="34"/>
   </bild>
   <bild id="szene5_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
-    <abmessungen height="195" width="171"/>
+    <abmessungen height="162" width="145"/>
   </bild>
   <bild id="szene5_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
   </bild>
   <bild id="szene5_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
-    <abmessungen height="511" width="182"/>
+    <abmessungen height="481" width="150"/>
   </bild>
   
   <!--szene6-->
@@ -189,19 +189,19 @@
     <abmessungen height="720" width="1280"/>
   </bild>
   <bild id="szene6_kasten_offen" pfad="../bilder/neu/szene6/kasten_offen.png" animiert="false">
-    <abmessungen height="254" width="221"/>
+    <abmessungen height="120" width="128"/>
   </bild>
   <bild id="szene6_kasten_zu" pfad="../bilder/neu/szene6/kasten_zu.png" animiert="false">
-    <abmessungen height="254" width="221"/>
+    <abmessungen height="120" width="128"/>
   </bild>
   <bild id="szene6_luke_links_zu" pfad="../bilder/neu/szene6/luke_links_zu.png" animiert="false">
     <abmessungen height="141" width="275"/>
   </bild>
     <bild id="szene6_luke_links_offen" pfad="../bilder/neu/szene6/luke_links_offen.png" animiert="false">
-    <abmessungen height="219" width="270"/>
+    <abmessungen height="179" width="223"/>
   </bild>
   <bild id="szene6_luke_rechts" pfad="../bilder/neu/szene6/luke_rechts.png" animiert="false">
-    <abmessungen height="219" width="270"/>
+    <abmessungen height="178" width="220"/>
   </bild>
   <bild id="szene6_krebs_schein" pfad="../bilder/neu/szene6/krebs_schein.png" animiert="false">
     <abmessungen height="205" width="262"/>
@@ -221,7 +221,7 @@
     <abmessungen height="720" width="1280"/>
   </bild>
   <bild id="szene7_generator" pfad="../bilder/neu/szene7/generator.png" animiert="false">
-    <abmessungen height="245" width="320"/>
+    <abmessungen height="168" width="200"/>
   </bild>
   <bild id="szene7_generator_schalter" pfad="../bilder/neu/szene7/generator_schalter.png" animiert="false">
     <abmessungen height="58" width="81"/>

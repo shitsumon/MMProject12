@@ -144,13 +144,13 @@
       <vg_animiert>
         <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.11.1" klickbar="t|f|f" walkto="t|f|f"
 		raetsel_sichtbar="t|f|f" raetsel_ausloeser="t|f|f">
-          <position x="0" y="27" z="400"/>
-          <groesse width="112" height="108"/>
+          <position x="0" y="28" z="400"/>
+          <groesse width="88" height="86"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="szene1.11.2" klickbar="f|t|f" walkto="f|t|f"
 		raetsel_sichtbar="f|t|f" raetsel_ausloeser="f|f|f">
-          <position x="0" y="27" z="400"/>
-          <groesse width="112" height="108"/>
+          <position x="0" y="28" z="400"/>
+          <groesse width="122" height="86"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
