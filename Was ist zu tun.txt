@@ -24,12 +24,20 @@ Sekundaer
         -> Beschreibung was die Funktion macht
         -> Beschreibung der uebergabe Parameter
         -> Beschreibung der moeglichen Rueckgabewerte
+- Intro
+	- Text schreiben und später vorm Hauptmenü einfügen
+- quiz zurücksetzen bei falscheingabe
+- rätsel-bilder fehlen
+	- müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
+- dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
+- scripted dialoge -> wie machen wir das?
+	-> startdialog in szenen.xml angeben, dialog bestätigen als quiztrigger
+	-> letzter dialog als trigger für nächste szene
 
 Neu
 ---
 
 - Hauptmenü
-- Intro		--> Erste Version, Text wird statisch eingetragen
 - Testen, testen, testen
         -> Fehlerverhalten
         -> verschiedene Auflösungen
@@ -92,14 +100,3 @@ szene 7
 
 dr chaos soll sich drehen und kleiner werden
 	-> nicht wiederholende animation
-
-allgemein
-
-quiz zurücksetzen bei falscheingabe
-der Protagonist wandert beim erneuten Klicken auf ein Objekt, zum Pfad und dann wieder zurück zum Objekt -> Protagonist sollte stehen bleiben
-rätsel-bilder fehlen
-rätselbilder müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
-dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
-scripted dialoge -> wie machen wir das?
-	-> startdialog in szenen.xml angeben, dialog bestätigen als quiztrigger
-	-> letzter dialog als trigger für nächste szene

@@ -43,12 +43,17 @@ function bewegePerson(){
 		}
     }
 	
-	//considers zoomfactor while computing the position to ensure canvas centers are hit
+	//considers zoomfactor while computing the position to ensure canvas bottom center is hit
 	heroPos[0] = hero.offset().left + (gStartAbmessungen[0] / 2.0);
 	heroPos[1] = hero.offset().top + (gStartAbmessungen[1]);
 	
 	targetPos[0] = target.offset().left + (target.width() / 2.0);
 	targetPos[1] = target.offset().top + (target.height());
+	
+	if(zielErreicht(heroPos, targetPos, true)){
+		//check whether we already are in front of the goal and return
+		return;
+	}
 	
 	//compute movement vectors
 	if(!gWegBerechnet){
@@ -131,7 +136,7 @@ function bewegePerson(){
 	}
 	
 	//move hero
-	if(!zielErreicht(heroPos, gTargets[gAktuellesZiel])){
+	if(!zielErreicht(heroPos, gTargets[gAktuellesZiel], false)){
 		
 		//if target is not reached add movement vector
 		hero.offset({
@@ -221,25 +226,44 @@ function bewegePerson(){
 	}
 }
 
-function zielErreicht(heroPos, targetPos){
+function zielErreicht(heroPos, targetPos, justDistance){
 	//computes heros distance to the target and compares it to the previous step
 	var distance_target, distance_previous, vector_length;
 	
-	//no need for square root while computing vector length -> sqrt(x^2 + y^2)
-	distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
-	distance_previous	= (
-							Math.pow(((heroPos[0] - gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
-							+ Math.pow(((heroPos[1] - gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
-							);
-	vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
+	justDistance = typeof(justDistance) === "undefined" ? false : justDistance;
 	
-	//goal is reached if the computation evaluates to the set amount or if movement vector is 0
-	if((distance_previous <= distance_target) || vector_length == 0){
-		
-		return true;
+	if(!justDistance){
+		//no need for square root while computing vector length -> sqrt(x^2 + y^2)
+		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
+		//compute distance to target and previous steps distance as well as movement vector length
+		distance_previous	= (
+								Math.pow(((heroPos[0] - gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
+								+ Math.pow(((heroPos[1] - gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
+								);
+		vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
+	
+		//goal is reached if the computation evaluates to the set amount or if movement vector is 0
+		if((distance_previous <= distance_target) || (vector_length == 0)){
+			
+			return true;
+		}else{
+			
+			return false;
+		}
 	}else{
-		
-		return false;
+		//consider z-index while checking if hero pos and goal pos is the same
+		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) +
+								Math.pow((heroPos[1] - targetPos[1]), 2) +
+								Math.pow((heroPos[2] - targetPos[2]), 2)
+								);
+		//just check distance to target otherwise
+		if(distance_target <= 0.1){
+			
+			return true;
+		}else{
+			
+			return false;
+		}
 	}
 }
 
