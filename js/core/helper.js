@@ -255,9 +255,13 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 }
 
 //scene id array for dialog referencing
-var gDialogIDs          = new Array();
-var gNumberOfDialogues  = 0;
-var gDialogCounter      = 0;
+var gDialogIDs                  = new Array();
+//Lookup table for imageID dialogID mapping
+var gImageToObjectSceneReferrer = new Array();
+//Overall number of dialogs per scene
+var gNumberOfDialogues          = 0;
+//Point always to the current dialog in gDialogIDs
+var gDialogCounter              = 0;
 
 //Proxy names to filter for in dialog sentences
 var gP1Proxy = "P1_DYN_NAME";
@@ -270,6 +274,7 @@ var gFallbacknameP2 = "John Doe";
 //Variables which hold the characters and the sidekicks names
 var gP1Name = "undefined";
 var gP2Name = "undefined";
+
 
 /***************
  *quizControl*

@@ -27,25 +27,14 @@ function dialogStart(dialog_id)
 	dialog_zeichneDialog();
 }
 
-function printCurrentTextToDialogBox(){
-
-    var dialog = gDialoge[gDialogIDs[gDialogCounter]];
-
-    for(var idx = 0; idx < dialog.anzahl_saetze; ++idx){
-        alert(dialog.saetze[idx].inhalt);
-    }
-
-    //ende
-    ++gDialogCounter;
-}
-
 function dialog_zeichneDialog()
 {
 	//Greife auf Dialogdaten zu
+    alert(gTalk.dialog_id);
     var Dialog = gDialoge[gTalk.dialog_id];
     var Satz   = Dialog.saetze[gTalk.SatzGerade];
     var Text   = Satz.inhalt;
-	
+
     //background textbox dimensions
     var textBoxImageWidth  = gBilder[gTalk.bild_id].abmessungen.width;
     var textBoxImageHeight = gBilder[gTalk.bild_id].abmessungen.height;
@@ -66,8 +55,8 @@ function dialog_zeichneDialog()
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
 
-	//Prinzip von pictureAnimation.js übernommen.
-    var canvas = $("#" + gTalk.canvas_id)[0];
+    //Prinzip von pictureAnimation.js übernommen.
+    var canvas = $("canvas[id*='" + gTalk.canvas_id + "']"); // $("#" + gTalk.canvas_id)[0];
 
     canvas.width  = perc2pix(textBoxImageWidth,  gTalk.TBPercWidth);
     canvas.height = perc2pix(textBoxImageHeight, gTalk.TBPercHeight);
@@ -82,20 +71,20 @@ function dialog_zeichneDialog()
     var percPosX = pix2perc(screenWidth, realXPos);
     var percPosY = pix2perc(screenHeight, perc2pix(screenHeight, gTalk.TBPercPosY));
 
-    var c = document.getElementById(gTalk.canvas_id);
+    //var c = document.getElementById(gTalk.canvas_id);
 
-    c.style.left = percPosX;
-    c.style.top  = percPosY;
+    //c.style.left = percPosX;
+    //c.style.top  = percPosY;
 
     //hole kontext
-    var ctx    = canvas.getContext("2d");
-	
+    var ctx    = canvas[0].getContext("2d");
+
     //Leere Inhalt des Bereiches (löscht alten text etc)
-	ctx.clearRect ( 0, 0, canvas.width, canvas.height);
+    ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     //Draws background box
     ctx.drawImage( gBilder[gTalk.bild_id].bild, 0, 0 );
-	
+
     //Draw character image
     ctx.drawImage( gBilder[Satz.bild_id].bild,
                    ProtImgXPos,
@@ -103,39 +92,39 @@ function dialog_zeichneDialog()
                    ProtImgWidth,
                    ProtImgHeight
                    );
-	
-	//Initiere Einstellungen für Text
-	ctx.fillStyle = gTalk.font_color;
+
+    //Initiere Einstellungen für Text
+    ctx.fillStyle = gTalk.font_color;
     ctx.font      =	gTalk.font_style;
-	
-	//Breche Text in Zeilen
+
+    //Breche Text in Zeilen
     var text = dialog_SatzZeilenBruch(Satz.inhalt, pixSize);
-	
-	//Fülle Box mit Text Zeilenweise aus
+
+    //Fülle Box mit Text Zeilenweise aus
     for( var i = 0; i < text.length; i++ ){
         ctx.fillText(text[i], textXPos, textYOffset + ( gTalk.line_distance * i )); //Magic numbers, siehe oben!
     };
 
-	//Inkrementiere Satzcounter
+    //Inkrementiere Satzcounter
     ++gTalk.SatzGerade;
 	
     /*Erstelle einen Mouse-onClickListener für übergang zum nächstem Satz
       Zerstöre danach eigenes Binding Falls letzter Satz erreicht wurde,
       erstelle kein Binding und lösche Dialogbox (Dialogende)*/
-	canvas.addEventListener('click', function() 
-	{ 
-		//überprüfe ob Dialogende erreicht wurde
-        if( gTalk.SatzGerade < gTalk.SatzMax ){
+//	canvas.addEventListener('click', function()
+//	{
+//		//überprüfe ob Dialogende erreicht wurde
+//        if( gTalk.SatzGerade < gTalk.SatzMax ){
 
-			dialog_zeichneDialog(); 	//rekursiver Aufruf
-		}
-		else{
+//			dialog_zeichneDialog(); 	//rekursiver Aufruf
+//		}
+//		else{
 
-			ctx.clearRect ( 0, 0, canvas.width, canvas.height);
-		}
+//			ctx.clearRect ( 0, 0, canvas.width, canvas.height);
+//		}
 		
-		this.removeEventListener('click',arguments.callee,false); 
-	}, false);
+//		this.removeEventListener('click',arguments.callee,false);
+//	}, false);
 }
 
 /*Diese Funktion bricht längere Text in Zeilen auf
@@ -179,16 +168,18 @@ function dialog_SatzZeilenBruch(text, pixelSize)
 
 
 /**
+ * swapProxiesWithNames(string sentence)
+ *
  * Checks every dialog sentence for the occurence of a preset name proxy.
  * If one of those proxies is found, the proxy will be exchanged for the
  * players choosen name. If no name was choosen by the player, it will use
  * a fallback name for the respective character ("John Doe" | "Jane Doe").
  *
  * Input values:
- * sentence : string >> The sentence to be examined
+ * sentence (string) - The sentence to be examined
  *
  * Return values:
- * sentence : string >> The sentence with the filled in player names, if present
+ * sentence (string) - The sentence with the filled in player names, if present
  */
 function swapProxiesWithNames(sentence){
 
@@ -205,4 +196,86 @@ function swapProxiesWithNames(sentence){
     }
 
     return sentence;
+}
+
+/**
+ * justClicked(string imgID)
+ *
+ * Every object's got an onclick method anyway. So
+ * it is utilized, to mark the just clicked image.
+ * When the image gets clicked this function is invoked.
+ * The function checks whether the just clicked image.
+ * Is the next object to be clicked in the dialog chain.
+ *
+ * This done by comparing the imageID with gImageToObjectSceneReferrer
+ * saved up imageIDs. IF the image id is found within the array and IF
+ * gDialogCounter points to a dialog id mapped with the just clicked
+ * image id, the next dialog piece is triggerd to show up in the
+ * dialogbox.
+ *
+ * Input arguments:
+ * imageID (string) -  presetted by sceneParser
+ *
+ * Return values:
+ * none
+ */
+
+function justClicked(imgID){
+
+    var lutListLength = gImageToObjectSceneReferrer.length;
+
+    for(var idx = 0; idx < lutListLength; ++idx){
+
+        //alert('bar');
+
+        if(imgID === gImageToObjectSceneReferrer[idx].bildID){
+            var sceneDialogues = gImageToObjectSceneReferrer[idx].scenes;
+
+            for(var idx2 = 0; idx2 < sceneDialogues.length; ++idx2){
+
+                //alert('foobar');
+
+                if(sceneDialogues[idx2] === gDialogIDs[gDialogCounter]){
+                    //trigger next dialog
+                    //alert('foo');
+                    printCurrentTextToDialogBox();
+                    ++gDialogCounter;
+                    break; //When current dialog was displayed stop looping
+                }
+            }
+
+            break; //When current dialog was displayed stop looping
+        }
+    }
+}
+
+/**
+ * printCurrentTextToDialogBox()
+ *
+ * Prints current text piece to dialog box.
+ *
+ * Input arguments:
+ * none
+ *
+ * Return values:
+ * none
+ */
+
+function printCurrentTextToDialogBox(){
+
+    var dialog = gDialoge[gDialogIDs[gDialogCounter]];
+
+    if(dialog === 'undefined'){
+
+        return;
+    }
+
+    //alerts dienen nur als test, später wird
+    //hier der text in die dialogbox eingefügt
+    for(var idx = 0; idx < dialog.anzahl_saetze; ++idx){
+        gTalk.dialog_id = gDialogIDs[gDialogCounter];
+        //alert(swapProxiesWithNames(dialog.saetze[idx].inhalt));
+        dialog_zeichneDialog();
+    }
+
 }

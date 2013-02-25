@@ -27,6 +27,17 @@ function getSceneElementData(sceneElement){
 
     var tmpObject		= new objectStruct(sceneElement.attr('bild_id'),
 							sceneElement.attr('dialog_id'));
+
+    //Create a lookup table which maps the imageID to it's
+    //dialogIDs
+    if(sceneElement.attr('dialog_id') !== '#none#'){
+        var img2SceneObj = new Object();
+        //alert(sceneElement.attr('dialog_id'));
+        img2SceneObj.bildID = sceneElement.attr('bild_id');
+        img2SceneObj.scenes = sceneElement.attr('dialog_id').split('|');
+        gImageToObjectSceneReferrer.push(img2SceneObj);
+    }
+
 	//get quiz attributes					-> string like "t|f|t|f"
 	tmpObject.quiz[0] = sceneElement.attr('raetsel_sichtbar');	//visibility
 	tmpObject.quiz[1] = sceneElement.attr('raetsel_ausloeser');	//quiztrigger
@@ -283,6 +294,12 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
 					);
 			
+            //preset gTalk.canvasID for later referencing
+            if(strContains(canvasID, "dialogbox")){
+                alert(canvasID);
+                gTalk.canvas_id = canvasID;
+            }
+
 			if(sharedIdString !== "canvas_person"){
 				//set targetidentifier to canvas id + moveflags to trigger movement if appropriate
 				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
@@ -312,7 +329,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 								{
 									id : canvasID,
 									"class": quizClass,
-									onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
+                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "');" + moveTrigger + quizTrigger + dialogTrigger
 								}
 							);
 			}else{
