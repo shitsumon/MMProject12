@@ -11,11 +11,11 @@ function verschluesseln(){
 		//get charcode corresponding to ascii and shift by 13
 		dummy = helper.charCodeAt(i) + 13; //ROT13 ;)
 		//check whether we exceed a-z range and rotate instead of just shift if appropriate
-		dummy = dummy > 122 ? dummy - 26 : dummy;
+		dummy = dummy > 122 ? dummy - 26 : dummy;// "x" = 122; "x" - 26 = "a"
 		//everything smaller than about half of range a-z stays if i is even
-		if((dummy > 109) || ((i % 2) != 0)){
+		if((dummy > 109) || ((i % 2) != 0)){//109 = "m"
 			//everything else is converted to upper case
-			dummy -= 32;
+			dummy -= 32;//"a" - 32 = "A"
 		}
 		
 		code += String.fromCharCode(dummy);
@@ -33,7 +33,7 @@ function entschluesseln(code){
 		
 		dummy = code.charCodeAt(i);
 		//convert every second letter to lower case if upper case
-		if((dummy <= 90) || ((i % 2) != 0)){
+		if((dummy <= 90) || ((i % 2) != 0)){//90 = "Z"
 			
 			dummy += 32;
 		}
@@ -42,9 +42,9 @@ function entschluesseln(code){
 		//shift back
 		result += String.fromCharCode(dummy - 13);
     }
-	
+	//split scene number and quiz counter
 	result = result.split("x");
-	
+	//convert back to number
 	$(n2n).each(function(index, numeral) {
         
 		if(result[0] === numeral){

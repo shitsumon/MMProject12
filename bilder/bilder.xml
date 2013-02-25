@@ -20,11 +20,11 @@
   </bild>
   <bild id="bild_testtileset" pfad="../bilder/szene1/testTileset.png" animiert="true">
     <abmessungen height="32" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
   <bild id="bild_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
   <bild id="bild_texthg" pfad="../bilder/szene3/text.png" animiert="false">
     <abmessungen height="165" width="800"/>
@@ -54,7 +54,11 @@
   </bild>
   <bild id="allg_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32"/>
+    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
+  </bild>
+  <bild id="allg_uebergang" pfad="../bilder/neu/allgemein/uebergang.png" animiert="true">
+    <abmessungen height="80" width="1536"/>
+    <animation fps="5" tile_anzahl="12" tile_width="128" tile_height="80"/>
   </bild>
   <!--szene1-->
   <bild id="szene1_hg" pfad="../bilder/neu/szene1/hintergrund_kabine.jpg" animiert="false">
@@ -129,11 +133,9 @@
   </bild>
   <bild id="szene3_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
     <abmessungen height="162" width="145"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene3_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene3_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
@@ -148,7 +150,6 @@
   </bild>
   <bild id="szene4_haken" pfad="../bilder/neu/szene4/haken.png" animiert="false">
     <abmessungen height="31" width="28"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene4_kabel" pfad="../bilder/neu/szene4/kabel.png" animiert="false">
     <abmessungen height="109" width="37"/>
@@ -169,7 +170,6 @@
   </bild>
   <bild id="szene5_fischglas" pfad="../bilder/neu/allgemein/fischglas.png" animiert="false">
     <abmessungen height="235" width="131"/>
-    <animation fps="0" tile_anzahl="0" tile_width="0"/>
   </bild>
   <bild id="szene5_knopf" pfad="../bilder/neu/allgemein/knopf.png" animiert="false">
     <abmessungen height="47" width="34"/>

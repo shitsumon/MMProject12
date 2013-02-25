@@ -12,12 +12,11 @@ Sekundaer
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
 	- Rätsel einfügen
-	- Bilder durch schattenfreie Versionen ersetzen
+	- Bilder durch schattenfreie Versionen ersetzen, wenn sie zu groß sind
 	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
-- Codegenerator zum Speichern des Fortschritts
-	- Code muss angezeigt werden
+- Codegenerator Code anzeigen
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
 - Kommentare ausfuehrlich fuer jede Funktion
@@ -29,7 +28,6 @@ Sekundaer
 Neu
 ---
 
-- Szenenübergänge
 - Hauptmenü
 - Intro		--> Erste Version, Text wird statisch eingetragen
 - Testen, testen, testen
@@ -92,15 +90,13 @@ eine person muss klickbar sein
 
 szene 7
 
-generatorschaltfläche vom generator trennen
-	-> separates bild
-
 dr chaos soll sich drehen und kleiner werden
 	-> nicht wiederholende animation
 
 allgemein
 
 quiz zurücksetzen bei falscheingabe
+der Protagonist wandert beim erneuten Klicken auf ein Objekt, zum Pfad und dann wieder zurück zum Objekt -> Protagonist sollte stehen bleiben
 rätsel-bilder fehlen
 rätselbilder müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
 dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
