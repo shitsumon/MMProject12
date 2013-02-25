@@ -222,7 +222,7 @@ function Satz(_person_id, _bild_id, _inhalt){
 //global variable to store dialogues properties
 //prototype of dialogue object
 var gTalk			= new Object();
-gTalk.bild_id 		= "null";			 //has to be initialised by dialogSettings()
+gTalk.bild_id 		= "allg_dialogbox";			 //has to be initialised by dialogSettings()
 gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
 gTalk.font_color	= "white";			 //can be customized by dialogSettings()
 gTalk.font_style	= "bold 16px Arial"; //can be customized by dialogSettings()
@@ -253,6 +253,23 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 	gTalk.font_style	= _font_style;		//font (properties: "flags size type") -> "bold 16px Arial"
 	gTalk.line_distance	= _line_distance	//line distance
 }
+
+//scene id array for dialog referencing
+var gDialogIDs          = new Array();
+var gNumberOfDialogues  = 0;
+var gDialogCounter      = 0;
+
+//Proxy names to filter for in dialog sentences
+var gP1Proxy = "P1_DYN_NAME";
+var gP2Proxy = "P2_DYN_NAME";
+
+//Fallback name if name values are not present
+var gFallbackNameP1 = "Jane Doe";
+var gFallbacknameP2 = "John Doe";
+
+//Variables which hold the characters and the sidekicks names
+var gP1Name = "undefined";
+var gP2Name = "undefined";
 
 /***************
  *quizControl*

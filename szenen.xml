@@ -86,6 +86,11 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
+        <hg_statisch_objekt bild_id="allg_dialogbox" dialog_id="common" klickbar="f|f|f" walkto="f|f|f"
+                raetsel_sichtbar="f|f|f" raetsel_ausloeser="f|f|f">
+          <position x="50" y="5" z="20"/>
+          <groesse width="50" height="50"/>
+        </hg_statisch_objekt>
         <hg_statisch_objekt bild_id="szene1_hg" dialog_id="#none#" klickbar="f|f|f" walkto="f|f|f"
 		raetsel_sichtbar="t|t|f" raetsel_ausloeser="f|f|f">
           <position x="0" y="0" z="0"/>
@@ -137,12 +142,12 @@
       </personen>
       <vg_statisch></vg_statisch>
       <vg_animiert>
-        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="#none#" klickbar="t|f|f" walkto="t|f|f"
+        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.11.1" klickbar="t|f|f" walkto="t|f|f"
 		raetsel_sichtbar="t|f|f" raetsel_ausloeser="t|f|f">
           <position x="0" y="27" z="400"/>
           <groesse width="112" height="108"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="f|t|f" walkto="f|t|f"
+        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="szene1.11.2" klickbar="f|t|f" walkto="f|t|f"
 		raetsel_sichtbar="f|t|f" raetsel_ausloeser="f|f|f">
           <position x="0" y="27" z="400"/>
           <groesse width="112" height="108"/>

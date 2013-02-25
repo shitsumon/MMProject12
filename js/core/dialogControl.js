@@ -27,6 +27,18 @@ function dialogStart(dialog_id)
 	dialog_zeichneDialog();
 }
 
+function printCurrentTextToDialogBox(){
+
+    var dialog = gDialoge[gDialogIDs[gDialogCounter]];
+
+    for(var idx = 0; idx < dialog.anzahl_saetze; ++idx){
+        alert(dialog.saetze[idx].inhalt);
+    }
+
+    //ende
+    ++gDialogCounter;
+}
+
 function dialog_zeichneDialog()
 {
 	//Greife auf Dialogdaten zu
@@ -100,8 +112,7 @@ function dialog_zeichneDialog()
     var text = dialog_SatzZeilenBruch(Satz.inhalt, pixSize);
 	
 	//Fülle Box mit Text Zeilenweise aus
-    for( var i = 0; i < text.length; i++ )
-    {
+    for( var i = 0; i < text.length; i++ ){
         ctx.fillText(text[i], textXPos, textYOffset + ( gTalk.line_distance * i )); //Magic numbers, siehe oben!
     };
 
@@ -164,4 +175,34 @@ function dialog_SatzZeilenBruch(text, pixelSize)
 	}
 		
 	return result;
+}
+
+
+/**
+ * Checks every dialog sentence for the occurence of a preset name proxy.
+ * If one of those proxies is found, the proxy will be exchanged for the
+ * players choosen name. If no name was choosen by the player, it will use
+ * a fallback name for the respective character ("John Doe" | "Jane Doe").
+ *
+ * Input values:
+ * sentence : string >> The sentence to be examined
+ *
+ * Return values:
+ * sentence : string >> The sentence with the filled in player names, if present
+ */
+function swapProxiesWithNames(sentence){
+
+    //Put in name of player 1
+    if(strContains(sentence, gP1Proxy)){
+        var splitSentence = sentence.split(gP1Proxy);
+        sentence = splitSentence[0] + typeof(gP1Name) === "undefined" ? gFallbackNameP1 : gP1Name + splitSentence[1];
+    }
+
+    //Put in name of player 2
+    if(strContains(sentence, gP2Proxy)){
+        var splitSentence = sentence.split(gP2Proxy);
+        sentence = splitSentence[0] + typeof(gP2Name) === "undefined" ? gFallbackNameP2 : gP2Name + splitSentence[1];
+    }
+
+    return sentence;
 }

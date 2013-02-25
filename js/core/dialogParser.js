@@ -12,6 +12,7 @@ function ladeDialoge(){
 
 function verarbeiteDialogXML(daten){
 	
+    gDialogIDs = new Array();
 	var jquery_saetze;
 	//get dialogue elements from xml corresponding to current scene
 	var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
@@ -23,11 +24,15 @@ function verarbeiteDialogXML(daten){
 		jquery_saetze = $(dialog_element).find("satz");
 		//create new dialogue object
         gDialoge[$(dialog_element).attr("id")] = new Dialog(
-		
+
 			$(dialog_element).attr("id"),
 			jquery_saetze.length	//sentences count
 		);
-		//each sentence
+
+        //Push IDs to array for dialog referencing
+        gDialogIDs.push($(dialog_element).attr("id"));
+
+        //each sentence
 		jquery_saetze.each(function(satz_index, satz_element) {
 			//create new sentence object and store all properties
 			gDialoge[$(dialog_element).attr("id")].saetze[satz_index] = new Satz(
@@ -41,6 +46,12 @@ function verarbeiteDialogXML(daten){
 		});
     });
 	
+    //save number of dialogues in current scene
+    gNumberOfDialogues = gDialogIDs.length;
+
+    //Set dialog referencing counter back to zero for current scene
+    gDialogCounter = 0;
+
 	gdialogparser_xml_geladen = true;
 }
 
