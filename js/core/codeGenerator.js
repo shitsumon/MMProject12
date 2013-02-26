@@ -24,7 +24,7 @@ function verschluesseln(){
     return code;
 }
 
-//takes pass string, decodes it and returns stored scene and quiz count
+//takes pass string, decodes it and returns stored scene and quiz step
 function entschluesseln(code){
 	
 	var dummy, result = "";
@@ -44,9 +44,9 @@ function entschluesseln(code){
     }
 	//split scene number and quiz counter
 	result = result.split("x");
-	//convert back to number
+
 	$(n2n).each(function(index, numeral) {
-        
+		//convert back to number
 		if(result[0] === numeral){
 			
 			result[0] = index;
@@ -56,7 +56,13 @@ function entschluesseln(code){
 			
 			result[1] = index;
 		}
-    });
+	});
 	
-	return result;
+	if((result.length == 2) && !isNaN(result[0]) && !isNaN(result[1])){
+		//check whether decoding succeeded	
+		return result;
+	}else{
+		//return first scene and quizstep otherwise
+		return new Array(0, 0);
+	}
 }

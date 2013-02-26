@@ -68,7 +68,7 @@
     <abmessungen height="355" width="405"/>
   </bild>
   <bild id="szene1_kamera" pfad="../bilder/neu/szene1/kamera.png" animiert="false">
-    <abmessungen height="88" width="133"/>
+    <abmessungen height="75" width="82"/>
   </bild>
   <bild id="szene1_lautsprecher_links" pfad="../bilder/neu/szene1/lautsprecher_links.png" animiert="false">
     <abmessungen height="64" width="55"/>

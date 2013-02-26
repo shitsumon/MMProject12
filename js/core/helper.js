@@ -327,4 +327,8 @@ function strContains(string, substring){
 }
 //array for encoding/decoding numbers to numerals in game save code
 var n2n = new Array(
-	"null", "eins", "zwei", "drei", "vier", "fuenf", "sechs", "sieben", "acht", "neun", "zehn");
+	"null", "eins", "zwei",
+	"drei", "vier", "fuenf",
+	"sechs", "sieben", "acht",
+	"neun", "zehn", "elf",
+	"zwoelf", "dreizehn", "vierzehn");
