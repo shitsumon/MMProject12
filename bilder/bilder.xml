@@ -1,238 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bilder>
-  <bild id="bild_windowoverlay" pfad="../bilder/szene1/windowOverlay.png" animiert="false">
-    <abmessungen height="30" width="63"/>
-  </bild>
-  <bild id="bild_bedoverlay" pfad="../bilder/szene1/bedOverlay.png" animiert="false">
-    <abmessungen height="27" width="72"/>
-  </bild>
-  <bild id="bild_dooroverlay" pfad="../bilder/szene1/doorOverlay.png" animiert="false">
-    <abmessungen height="36" width="57"/>
-  </bild>
-  <bild id="bild_dummyspot" pfad="../bilder/szene1/dummySpot.png" animiert="false">
-    <abmessungen height="1" width="1"/>
-  </bild>
-  <bild id="bild_hintergrund" pfad="../bilder/szene1/hintergrund.jpg" animiert="false">
-    <abmessungen height="400" width="800"/>
-  </bild>
-  <bild id="bild_bruecke" pfad="../bilder/szene1/bruecke.png" animiert="false">
-    <abmessungen height="720" width="1280"/>
-  </bild>
-  <bild id="bild_testtileset" pfad="../bilder/szene1/testTileset.png" animiert="true">
-    <abmessungen height="32" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
-  </bild>
+ <!--allgemein-->
   <bild id="bild_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
-  <bild id="bild_texthg" pfad="../bilder/szene3/text.png" animiert="false">
-    <abmessungen height="165" width="800"/>
-  </bild>
-  <bild id="bild_test1" pfad="../bilder/szene3/test1.jpg" animiert="false">
-    <abmessungen height="544" width="537"/>
-  </bild>
-  <bild id="bild_test2" pfad="../bilder/szene3/test2.jpg" animiert="false">
-    <abmessungen height="544" width="537"/>
-  </bild>
-  <bild id="bild_test3" pfad="../bilder/szene3/test3.jpg" animiert="false">
-    <abmessungen height="362" width="376"/>
-  </bild>
-  
- <!--allgemein-->
-  <bild id="allg_dialogbox" pfad="../bilder/neu/allgemein/dialogbox.png" animiert="false">
+  <bild id="allg_dialogbox" pfad="../bilder/allgemein/dialogbox.png" animiert="false">
     <abmessungen height="257" width="854"/>
   </bild>
-  <bild id="allg_hero_male" pfad="../bilder/neu/allgemein/hero_male.png" animiert="false">
+  <bild id="allg_hero_male" pfad="../bilder/allgemein/hero_male.png" animiert="false">
     <abmessungen height="133" width="122"/>
   </bild>
-  <bild id="allg_hero_female" pfad="../bilder/neu/allgemein/hero_female.png" animiert="false">
+  <bild id="allg_hero_female" pfad="../bilder/allgemein/hero_female.png" animiert="false">
     <abmessungen height="133" width="122"/>
   </bild>
-  <bild id="allg_teddy" pfad="../bilder/neu/allgemein/teddy.png" animiert="false">
+  <bild id="allg_teddy" pfad="../bilder/allgemein/teddy.png" animiert="false">
     <abmessungen height="133" width="122"/>
   </bild>
   <bild id="allg_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
-  <bild id="allg_uebergang" pfad="../bilder/neu/allgemein/uebergang.png" animiert="true">
+  <bild id="allg_uebergang" pfad="../bilder/allgemein/uebergang.png" animiert="true">
     <abmessungen height="80" width="1536"/>
     <animation fps="5" tile_anzahl="12" tile_width="128" tile_height="80"/>
   </bild>
   <!--szene1-->
-  <bild id="szene1_hg" pfad="../bilder/neu/szene1/hintergrund_kabine.jpg" animiert="false">
+  <bild id="szene1_hg" pfad="../bilder/szene1/hintergrund_kabine.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene1_bett" pfad="../bilder/neu/szene1/bett.png" animiert="false">
+  <bild id="szene1_bett" pfad="../bilder/szene1/bett.png" animiert="false">
     <abmessungen height="355" width="405"/>
   </bild>
-  <bild id="szene1_kamera" pfad="../bilder/neu/szene1/kamera.png" animiert="false">
+  <bild id="szene1_kamera" pfad="../bilder/szene1/kamera.png" animiert="false">
     <abmessungen height="75" width="82"/>
   </bild>
-  <bild id="szene1_lautsprecher_links" pfad="../bilder/neu/szene1/lautsprecher_links.png" animiert="false">
+  <bild id="szene1_lautsprecher_links" pfad="../bilder/szene1/lautsprecher_links.png" animiert="false">
     <abmessungen height="64" width="55"/>
   </bild>
-  <bild id="szene1_lautsprecher_rechts" pfad="../bilder/neu/szene1/lautsprecher_rechts.png" animiert="false">
+  <bild id="szene1_lautsprecher_rechts" pfad="../bilder/szene1/lautsprecher_rechts.png" animiert="false">
     <abmessungen height="64" width="55"/>
   </bild>
-  <bild id="szene1_muelleimer" pfad="../bilder/neu/szene1/muelleimer.png" animiert="false">
+  <bild id="szene1_muelleimer" pfad="../bilder/szene1/muelleimer.png" animiert="false">
     <abmessungen height="110" width="105"/>
   </bild>
-  <bild id="szene1_schrank_offen" pfad="../bilder/neu/szene1/schrank_offen.png" animiert="false">
+  <bild id="szene1_schrank_offen" pfad="../bilder/szene1/schrank_offen.png" animiert="false">
     <abmessungen height="450" width="284"/>
   </bild>
-  <bild id="szene1_schrank_zu" pfad="../bilder/neu/szene1/schrank_zu.png" animiert="false">
+  <bild id="szene1_schrank_zu" pfad="../bilder/szene1/schrank_zu.png" animiert="false">
     <abmessungen height="450" width="197"/>
   </bild>
-  <bild id="szene1_schreibtisch" pfad="../bilder/neu/szene1/schreibtisch.png" animiert="false">
+  <bild id="szene1_schreibtisch" pfad="../bilder/szene1/schreibtisch.png" animiert="false">
     <abmessungen height="251" width="357"/>
   </bild>
-  <bild id="szene1_sound_links" pfad="../bilder/neu/szene1/sound_links.png" animiert="false">
+  <bild id="szene1_sound_links" pfad="../bilder/szene1/sound_links.png" animiert="false">
     <abmessungen height="102" width="95"/>
   </bild>
-  <bild id="szene1_sound_rechts" pfad="../bilder/neu/szene1/sound_rechts.png" animiert="false">
+  <bild id="szene1_sound_rechts" pfad="../bilder/szene1/sound_rechts.png" animiert="false">
     <abmessungen height="102" width="95"/>
   </bild>
   
   <!--szene2-->
-  <bild id="szene2_hg" pfad="../bilder/neu/allgemein/hintergrund_bruecke.jpg" animiert="false">
+  <bild id="szene2_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene2_fischglas" pfad="../bilder/neu/allgemein/fischglas.png" animiert="false">
+  <bild id="szene2_fischglas" pfad="../bilder/allgemein/fischglas.png" animiert="false">
     <abmessungen height="235" width="131"/>
   </bild>
-  <bild id="szene2_knopf" pfad="../bilder/neu/allgemein/knopf.png" animiert="false">
+  <bild id="szene2_knopf" pfad="../bilder/allgemein/knopf.png" animiert="false">
     <abmessungen height="47" width="34"/>
   </bild>
-  <bild id="szene2_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
+  <bild id="szene2_sitz" pfad="../bilder/allgemein/sitz.png" animiert="false">
     <abmessungen height="162" width="145"/>
   </bild>
-  <bild id="szene2_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
+  <bild id="szene2_terminal" pfad="../bilder/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
   </bild>
-  <bild id="szene2_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
+  <bild id="szene2_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  <bild id="szene2_leuchten_links" pfad="../bilder/neu/szene2/leuchten_links.png" animiert="false">
+  <bild id="szene2_leuchten_links" pfad="../bilder/szene2/leuchten_links.png" animiert="false">
     <abmessungen height="174" width="258"/>
   </bild>
-  <bild id="szene2_leuchten_rechts" pfad="../bilder/neu/szene2/leuchten_rechts.png" animiert="false">
+  <bild id="szene2_leuchten_rechts" pfad="../bilder/szene2/leuchten_rechts.png" animiert="false">
     <abmessungen height="174" width="258"/>
   </bild>
   
   <!--szene3-->
-  <bild id="szene3_hg" pfad="../bilder/neu/allgemein/hintergrund_bruecke.jpg" animiert="false">
+  <bild id="szene3_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene3_fischglas" pfad="../bilder/neu/allgemein/fischglas.png" animiert="false">
+  <bild id="szene3_fischglas" pfad="../bilder/allgemein/fischglas.png" animiert="false">
     <abmessungen height="235" width="131"/>
   </bild>
-  <bild id="szene3_knopf" pfad="../bilder/neu/allgemein/knopf.png" animiert="false">
+  <bild id="szene3_knopf" pfad="../bilder/allgemein/knopf.png" animiert="false">
     <abmessungen height="47" width="34"/>
   </bild>
-  <bild id="szene3_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
+  <bild id="szene3_sitz" pfad="../bilder/allgemein/sitz.png" animiert="false">
     <abmessungen height="162" width="145"/>
   </bild>
-  <bild id="szene3_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
+  <bild id="szene3_terminal" pfad="../bilder/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
   </bild>
-  <bild id="szene3_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
+  <bild id="szene3_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
   
   <!--szene4-->
-  <bild id="szene4_hg" pfad="../bilder/neu/szene4/hintergrund_maschinenraum.jpg" animiert="false">
+  <bild id="szene4_hg" pfad="../bilder/szene4/hintergrund_maschinenraum.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene4_fussabdruck" pfad="../bilder/neu/szene4/fussabdruck.png" animiert="false">
+  <bild id="szene4_fussabdruck" pfad="../bilder/szene4/fussabdruck.png" animiert="false">
     <abmessungen height="46" width="153"/>
   </bild>
-  <bild id="szene4_haken" pfad="../bilder/neu/szene4/haken.png" animiert="false">
+  <bild id="szene4_haken" pfad="../bilder/szene4/haken.png" animiert="false">
     <abmessungen height="31" width="28"/>
   </bild>
-  <bild id="szene4_kabel" pfad="../bilder/neu/szene4/kabel.png" animiert="false">
+  <bild id="szene4_kabel" pfad="../bilder/szene4/kabel.png" animiert="false">
     <abmessungen height="109" width="37"/>
   </bild>
-  <bild id="szene4_oelkanne" pfad="../bilder/neu/szene4/oelkanne.png" animiert="false">
+  <bild id="szene4_oelkanne" pfad="../bilder/szene4/oelkanne.png" animiert="false">
     <abmessungen height="61" width="75"/>
   </bild>
-  <bild id="szene4_scheibe" pfad="../bilder/neu/szene4/scheibe.png" animiert="false">
+  <bild id="szene4_scheibe" pfad="../bilder/szene4/scheibe.png" animiert="false">
     <abmessungen height="183" width="154"/>
   </bild>
-  <bild id="szene4_schreibtisch" pfad="../bilder/neu/szene4/schreibtisch.png" animiert="false">
+  <bild id="szene4_schreibtisch" pfad="../bilder/szene4/schreibtisch.png" animiert="false">
     <abmessungen height="294" width="268"/>
   </bild>
   
   <!--szene5-->
-  <bild id="szene5_hg" pfad="../bilder/neu/allgemein/hintergrund_bruecke.jpg" animiert="false">
+  <bild id="szene5_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene5_fischglas" pfad="../bilder/neu/allgemein/fischglas.png" animiert="false">
+  <bild id="szene5_fischglas" pfad="../bilder/allgemein/fischglas.png" animiert="false">
     <abmessungen height="235" width="131"/>
   </bild>
-  <bild id="szene5_knopf" pfad="../bilder/neu/allgemein/knopf.png" animiert="false">
+  <bild id="szene5_knopf" pfad="../bilder/allgemein/knopf.png" animiert="false">
     <abmessungen height="47" width="34"/>
   </bild>
-  <bild id="szene5_sitz" pfad="../bilder/neu/allgemein/sitz.png" animiert="false">
+  <bild id="szene5_sitz" pfad="../bilder/allgemein/sitz.png" animiert="false">
     <abmessungen height="162" width="145"/>
   </bild>
-  <bild id="szene5_terminal" pfad="../bilder/neu/allgemein/terminal.png" animiert="false">
+  <bild id="szene5_terminal" pfad="../bilder/allgemein/terminal.png" animiert="false">
     <abmessungen height="287" width="634"/>
   </bild>
-  <bild id="szene5_tuer" pfad="../bilder/neu/allgemein/tuer.png" animiert="false">
+  <bild id="szene5_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
   
   <!--szene6-->
-  <bild id="szene6_hg" pfad="../bilder/neu/szene6/hintergrund_aussen.jpg" animiert="false">
+  <bild id="szene6_hg" pfad="../bilder/szene6/hintergrund_aussen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene6_kasten_offen" pfad="../bilder/neu/szene6/kasten_offen.png" animiert="false">
+  <bild id="szene6_kasten_offen" pfad="../bilder/szene6/kasten_offen.png" animiert="false">
     <abmessungen height="120" width="128"/>
   </bild>
-  <bild id="szene6_kasten_zu" pfad="../bilder/neu/szene6/kasten_zu.png" animiert="false">
+  <bild id="szene6_kasten_zu" pfad="../bilder/szene6/kasten_zu.png" animiert="false">
     <abmessungen height="120" width="128"/>
   </bild>
-  <bild id="szene6_luke_links_zu" pfad="../bilder/neu/szene6/luke_links_zu.png" animiert="false">
+  <bild id="szene6_luke_links_zu" pfad="../bilder/szene6/luke_links_zu.png" animiert="false">
     <abmessungen height="141" width="275"/>
   </bild>
-    <bild id="szene6_luke_links_offen" pfad="../bilder/neu/szene6/luke_links_offen.png" animiert="false">
+    <bild id="szene6_luke_links_offen" pfad="../bilder/szene6/luke_links_offen.png" animiert="false">
     <abmessungen height="179" width="223"/>
   </bild>
-  <bild id="szene6_luke_rechts" pfad="../bilder/neu/szene6/luke_rechts.png" animiert="false">
+  <bild id="szene6_luke_rechts" pfad="../bilder/szene6/luke_rechts.png" animiert="false">
     <abmessungen height="178" width="220"/>
   </bild>
-  <bild id="szene6_krebs_schein" pfad="../bilder/neu/szene6/krebs_schein.png" animiert="false">
+  <bild id="szene6_krebs_schein" pfad="../bilder/szene6/krebs_schein.png" animiert="false">
     <abmessungen height="205" width="262"/>
   </bild>
-  <bild id="szene6_stier_schein" pfad="../bilder/neu/szene6/stier_schein.png" animiert="false">
+  <bild id="szene6_stier_schein" pfad="../bilder/szene6/stier_schein.png" animiert="false">
     <abmessungen height="267" width="354"/>
   </bild>
-  <bild id="szene6_waage_schein" pfad="../bilder/neu/szene6/waage_schein.png" animiert="false">
+  <bild id="szene6_waage_schein" pfad="../bilder/szene6/waage_schein.png" animiert="false">
     <abmessungen height="272" width="288"/>
   </bild>
   
   <!--szene7-->
-  <bild id="szene7_hg_offen" pfad="../bilder/neu/szene7/hintergrund_frachtraum_offen.jpg" animiert="false">
+  <bild id="szene7_hg_offen" pfad="../bilder/szene7/hintergrund_frachtraum_offen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene7_hg_zu" pfad="../bilder/neu/szene7/hintergrund_frachtraum_zu.jpg" animiert="false">
+  <bild id="szene7_hg_zu" pfad="../bilder/szene7/hintergrund_frachtraum_zu.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene7_generator" pfad="../bilder/neu/szene7/generator.png" animiert="false">
+  <bild id="szene7_generator" pfad="../bilder/szene7/generator.png" animiert="false">
     <abmessungen height="168" width="200"/>
   </bild>
-  <bild id="szene7_generator_schalter" pfad="../bilder/neu/szene7/generator_schalter.png" animiert="false">
+  <bild id="szene7_generator_schalter" pfad="../bilder/szene7/generator_schalter.png" animiert="false">
     <abmessungen height="58" width="81"/>
   </bild>
-  <bild id="szene7_laserwand_links" pfad="../bilder/neu/szene7/laserwand_links.png" animiert="false">
+  <bild id="szene7_laserwand_links" pfad="../bilder/szene7/laserwand_links.png" animiert="false">
     <abmessungen height="720" width="637"/>
   </bild>
-  <bild id="szene7_laserwand_rechts" pfad="../bilder/neu/szene7/laserwand_rechts.png" animiert="false">
+  <bild id="szene7_laserwand_rechts" pfad="../bilder/szene7/laserwand_rechts.png" animiert="false">
     <abmessungen height="720" width="627"/>
   </bild>
-  <bild id="szene7_roter_knopf" pfad="../bilder/neu/szene7/roter_knopf.png" animiert="false">
+  <bild id="szene7_roter_knopf" pfad="../bilder/szene7/roter_knopf.png" animiert="false">
     <abmessungen height="73" width="63"/>
   </bild>
 </bilder>
