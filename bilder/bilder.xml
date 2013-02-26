@@ -59,7 +59,24 @@
   <bild id="szene1_sound_rechts" pfad="../bilder/szene1/sound_rechts.png" animiert="false">
     <abmessungen height="102" width="95"/>
   </bild>
-  
+  <bild id="szene1_auswahl" pfad="../bilder/szene1/auswahl.png" animiert="false">
+    <abmessungen height="73" width="77"/>
+  </bild>
+  <bild id="szene1_kreuz" pfad="../bilder/szene1/kreuz.png" animiert="false">
+    <abmessungen height="50" width="42"/>
+  </bild>
+  <bild id="szene1_muelleimer_fenster" pfad="../bilder/szene1/muelleimer_fenster.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene1_oeffentlich" pfad="../bilder/szene1/oeffentlich.png" animiert="false">
+    <abmessungen height="39" width="168"/>
+  </bild>
+  <bild id="szene1_privat" pfad="../bilder/szene1/privat.png" animiert="false">
+    <abmessungen height="41" width="100"/>
+  </bild>
+  <bild id="szene1_raetsel_fenster" pfad="../bilder/szene1/raetsel_fenster.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
   <!--szene2-->
   <bild id="szene2_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -85,7 +102,42 @@
   <bild id="szene2_leuchten_rechts" pfad="../bilder/szene2/leuchten_rechts.png" animiert="false">
     <abmessungen height="174" width="258"/>
   </bild>
-  
+  <bild id="" pfad="../bilder/szene2/auswahlfeld.png" animiert="false">
+    <abmessungen height="55" width="267"/>
+  </bild>
+  <bild id="szene2_bruecke_auswahl" pfad="../bilder/szene2/bruecke_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_gast_auswahl" pfad="../bilder/szene2/gast_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_kate_auswahl" pfad="../bilder/szene2/kate_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_kommunikation_auswahl" pfad="../bilder/szene2/kommunikation_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_kreuz" pfad="../bilder/szene2/kreuz.png" animiert="false">
+    <abmessungen height="44" width="38"/>
+  </bild>
+  <bild id="szene2_maeck_auswahl" pfad="../bilder/szene2/maeck_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_mannschaftsquartiere_auwahl" pfad="../bilder/szene2/mannschaftsquartiere_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_raetsel_fenster_i" pfad="../bilder/szene2/raetsel_fenster_i.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene2_raetsel_fenster_ii" pfad="../bilder/szene2/raetsel_fenster_ii.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene2_spacenet_auwahl" pfad="../bilder/szene2/spacenet_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
+  <bild id="szene2_spike_auwahl" pfad="../bilder/szene2/spike_auwahl.png" animiert="false">
+    <abmessungen height="63" width="541"/>
+  </bild>
   <!--szene3-->
   <bild id="szene3_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -105,7 +157,30 @@
   <bild id="szene3_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  
+  <bild id="szene3_antivirus_symbol" pfad="../bilder/allgemein/antivirus_symbol.png" animiert="false">
+    <abmessungen height="102" width="81"/>
+  </bild>
+  <bild id="szene3_ja" pfad="../bilder/allgemein/ja.png" animiert="false">
+    <abmessungen height="18" width="67"/>
+  </bild>
+  <bild id="szene3_kreuz" pfad="../bilder/allgemein/kreuz.png" animiert="false">
+    <abmessungen height="64" width="54"/>
+  </bild>
+  <bild id="szene3_nein" pfad="../bilder/allgemein/nein.png" animiert="false">
+    <abmessungen height="18" width="67"/>
+  </bild>
+  <bild id="szene3_popup" pfad="../bilder/allgemein/popup.png" animiert="false">
+    <abmessungen height="180" width="150"/>
+  </bild>
+  <bild id="szene3_raetsel_fenster" pfad="../bilder/allgemein/raetsel_fenster.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene3_reiter" pfad="../bilder/allgemein/reiter.png" animiert="false">
+    <abmessungen height="19" width="153"/>
+  </bild>
+  <bild id="szene3_virenloader_symbol" pfad="../bilder/allgemein/virenloader_symbol.png" animiert="false">
+    <abmessungen height="117" width="112"/>
+  </bild>
   <!--szene4-->
   <bild id="szene4_hg" pfad="../bilder/szene4/hintergrund_maschinenraum.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -128,7 +203,9 @@
   <bild id="szene4_schreibtisch" pfad="../bilder/szene4/schreibtisch.png" animiert="false">
     <abmessungen height="294" width="268"/>
   </bild>
-  
+  <bild id="szene4_fussabdruecke_fenster" pfad="../bilder/szene4/fussabdruecke_fenster.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
   <!--szene5-->
   <bild id="szene5_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -148,7 +225,21 @@
   <bild id="szene5_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  
+  <bild id="szene5_batterie" pfad="../bilder/allgemein/batterie.png" animiert="false">
+    <abmessungen height="86" width="86"/>
+  </bild>
+  <bild id="szene5_buecher" pfad="../bilder/allgemein/buecher.png" animiert="false">
+    <abmessungen height="114" width="356"/>
+  </bild>
+  <bild id="szene5_raetsel_fenster" pfad="../bilder/allgemein/raetsel_fenster.png" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene5_sicherung" pfad="../bilder/allgemein/.sicherungpng" animiert="false">
+    <abmessungen height="46" width="41"/>
+  </bild>
+  <bild id="szene5_zeug" pfad="../bilder/allgemein/zeug.png" animiert="false">
+    <abmessungen height="119" width="264"/>
+  </bild>
   <!--szene6-->
   <bild id="szene6_hg" pfad="../bilder/szene6/hintergrund_aussen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -177,7 +268,6 @@
   <bild id="szene6_waage_schein" pfad="../bilder/szene6/waage_schein.png" animiert="false">
     <abmessungen height="272" width="288"/>
   </bild>
-  
   <!--szene7-->
   <bild id="szene7_hg_offen" pfad="../bilder/szene7/hintergrund_frachtraum_offen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>

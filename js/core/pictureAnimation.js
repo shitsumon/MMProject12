@@ -30,19 +30,16 @@ function animiereCanvas(canvas_id, bild_id){
 		width, height dimensions inside canvas	-> Pixel int
     */
     ctx.drawImage(
-                gBilder[bild_id].bild, /*image*/
-                gAnimationTimer[bild_id].bild_nr * gBilder[bild_id].animationsmerkmale.tile_width, /*clipping x-direction*/
-                gAnimationTimer[bild_id].isPerson ?
-						gBilder[bild_id].animationsmerkmale.tile_height * gCurrentDirection :
-						0, /*clipping y-direction*/
-                gBilder[bild_id].animationsmerkmale.tile_width, /*clipped image width*/
-                gAnimationTimer[bild_id].isPerson ?
-						gBilder[bild_id].animationsmerkmale.tile_height :
-						gBilder[bild_id].abmessungen.height, /*clipped image height*/
-                0,       /*image x-pos in canvas*/
-                0,       /*image y-pos in canvas*/
-                gAnimationTimer[bild_id].anzeige_width, /*width of whole tileset image*/
-                gAnimationTimer[bild_id].anzeige_height /*height of whole tileset image*/
+					gBilder[bild_id].bild, /*image*/
+					gAnimationTimer[bild_id].bild_nr * gBilder[bild_id].animationsmerkmale.tile_width, /*clipping x-direction*/
+					gBilder[bild_id].animationsmerkmale.tile_height
+						* gAnimationTimer[bild_id].subtileset, /*clipping y-direction*/
+					gBilder[bild_id].animationsmerkmale.tile_width, /*clipped image width*/
+					gBilder[bild_id].animationsmerkmale.tile_height, /*clipped image height*/
+					0,       /*image x-pos in canvas*/
+					0,       /*image y-pos in canvas*/
+					gAnimationTimer[bild_id].anzeige_width, /*width of whole tileset image*/
+					gAnimationTimer[bild_id].anzeige_height /*height of whole tileset image*/
                 );
 
     //computes current frame counter
@@ -63,7 +60,7 @@ function stoppeAnimation(bild_id){
 }
 
 //starts animation and creates new timer
-function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTileset){
+function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight){
 
 	var delimiter = '#';
 	var gBilderIDString = '';
@@ -76,23 +73,13 @@ function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight, isPerson, subTil
 		gBilderIDString = bild_id;
 	}
 	
-	//check whether isPerson is defined and set walking direction aspects if so
-	if(typeof(isPerson) === "undefined"){
-		
-		isPerson = false;
-	}else{
-		
-        gCurrentDirection = subTileset;
-    }
-	
 	if(typeof(gAnimationTimer[bild_id]) === "undefined"){
         //create new animation object if none exists
         gAnimationTimer[bild_id] = new Animation(
 						canvas_id,
 						bild_id,
 						pxWidth,
-						pxHeight,
-						isPerson
+						pxHeight
                     );
     }
 	
@@ -128,23 +115,33 @@ function toggleAnimation(bild_id){
     }
 }
 
-function switchWalkingAnimation(direction){
+function switchWalkingAnimation(direction, bild_id){
+	
+	bild_id = bild_id.split("canvas_person_");
 
-    switch(direction){
-		case 'front':
-			gCurrentDirection = 0;
-			break;
-		case 'back':
-			gCurrentDirection = 1;
-			break;
-		case 'right':
-			gCurrentDirection = 2;
-			break;
-		case 'left':
-			gCurrentDirection = 3;
-			break;
-		case 'standing':
-			gCurrentDirection = 4;
-			break;
-    }
+	//check whether given id corresponds to person canvas	
+	if(bild_id.length == 2){
+		//get picture id part
+		bild_id = bild_id[1];
+		
+		switch(direction){
+			case 'front':
+				gAnimationTimer[bild_id].subtileset = 0;
+				break;
+			case 'back':
+				gAnimationTimer[bild_id].subtileset = 1;
+				break;
+			case 'right':
+				gAnimationTimer[bild_id].subtileset = 2;
+				break;
+			case 'left':
+				gAnimationTimer[bild_id].subtileset = 3;
+				break;
+			case 'standing':
+				gAnimationTimer[bild_id].subtileset = 4;
+				break;
+			default:
+				gAnimationTimer[bild_id].subtileset = 4;
+		}
+	}
 }

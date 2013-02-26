@@ -115,10 +115,6 @@ function advanceNextScene(){
 		}
 	});
 	
-	//reset walking direction
-	gInitialDirection			= 4;
-	gCurrentDirection			= gInitialDirection;
-	
 	//remove old scene
 	$("canvas[id!='uebergang']").remove();
 	

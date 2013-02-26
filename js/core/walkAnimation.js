@@ -183,16 +183,16 @@ function bewegePerson(){
         var direction = determineWalkingDirection(hero, gTargets[gAktuellesZiel], gMoveVec[gAktuellesZiel]);
 
         if(direction !== gLastDirection){
-	        //Check against last walking direction, if uneven, change animation
+	        //Check against last walking direction, if different, change animation
             gLastDirection = direction;
-            switchWalkingAnimation(direction);
+            switchWalkingAnimation(direction, hero[0].id);
         }
 
 		//there are only 3 targets: hero -> waypoint 1 -> waypoint 2 -> goal
 		setTimeout(function(){ bewegePerson() }, gIntervall);
 	}else{
         //When goal is reached, standing animation is invoked
-        switchWalkingAnimation('standing');
+        switchWalkingAnimation('standing', hero[0].id);
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
 			//scale down

@@ -168,7 +168,7 @@ var gAnimationTimer		= new Object();
 //active timer counter	-> int
 gAnimationTimer.anzahl	= 0;
 //prototype of an animated picture, stores corresponding timer
-function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height, _isPerson){
+function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
 	this.bild_nr	= 0;			//index of currently displayed frame	-> int
 	this.canvas_id	= _canvas_id;	//id of targeted canvas					-> string
 	this.bild_id	= _bild_id;		//used picture id						-> string
@@ -176,14 +176,12 @@ function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height, _isPer
 	this.running	= true;			//flag if animation is active			-> bool
 	this.anzeige_width	= _anzeige_width;	//pixel picture dimensions
 	this.anzeige_height	= _anzeige_height;	//determines dimensions inside canvas
-    this.isPerson = _isPerson;      //Marks a timer object as a person object
+    this.subtileset	= gInitialDirection;	//defines current subtileset
 }
 //Possible directions for a person object
 var gDirections       = new Array('front', 'back', 'right', 'left', 'standing');
 //Sets initial direction of a person object to 'standing'
 var gInitialDirection = 4;
-//Saves last known direction to compare against new directional values
-var gCurrentDirection = gInitialDirection;
 
 /*****************
  *dialogParser.js*

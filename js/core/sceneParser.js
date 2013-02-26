@@ -329,7 +329,8 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 								{
 									id : canvasID,
 									"class": quizClass,
-                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "');" + moveTrigger + quizTrigger + dialogTrigger
+                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "');"
+								  						+ moveTrigger + quizTrigger + dialogTrigger
 								}
 							);
 			}else{
@@ -353,7 +354,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //calculate pixel dimensions from percentage values
 			var pxWidth, pxHeight;
 
-			if(gBilder[objectsToDraw[index].imageID].animiert){
+			/*if(gBilder[objectsToDraw[index].imageID].animiert){
 				//picture is animated, use tile width and height
 				pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
 									objectsToDraw[index].size.width);
@@ -366,7 +367,10 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 									objectsToDraw[index].size.width);
 				pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
 									objectsToDraw[index].size.height);
-			}
+			}*/
+			
+			pxWidth		= perc2pix(screenWidth, objectsToDraw[index].size.width);
+			pxHeight	= perc2pix(screenHeight, objectsToDraw[index].size.height);
 
 			//read scaling from object and apply to canvas
 			var skalierung = z2mult(objectsToDraw[index].position.zPos);
