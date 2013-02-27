@@ -282,6 +282,27 @@ var gFallbackNameP2 = "John Doe";
 var gP1Name = "undefined";
 var gP2Name = "undefined";
 
+//asking user to input the names of the main characters of the game
+function getCharacterNames()
+{
+  gP1Name=prompt("Wie soll der weibliche Hauptcharakter heißen?","Jane");
+  gP2Name=prompt("Wie soll der männliche Nebencharakter heißen?","John");
+
+if ((name1!=null)&&(name2!=null))
+  {
+  //continue with loading of first scene
+  ladeBilder();
+  ladeDialoge();
+  }
+  else
+  {
+	  //if incorrect or no names are set, mark as undefined and replace later with FallbackNames
+	  gP1Name = "undefined";
+	  gP2Name = "undefined";
+	  ladeBilder();
+  	  ladeDialoge();
+  }
+}
 
 /***************
  *quizControl*
@@ -340,3 +361,4 @@ var n2n = new Array(
 	"zwoelf", "dreizehn", "vierzehn",
 	"fuenfzehn", "sechzehn", "siebzehn",
 	"achtzehn", "neunzehn", "zwanzig");
+

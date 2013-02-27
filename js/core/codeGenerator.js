@@ -63,6 +63,33 @@ function entschluesseln(code){
 		return result;
 	}else{
 		//return first scene and quizstep otherwise
-		return new Array(0, 0);
+		return new Array(1, 0);
+	}
+}
+
+function spiel_fortsetzen(){
+	
+	//remove menu?
+	
+	var code = prompt("Bitte Code eingeben!");	
+	
+	if(code != null && code !== ""){
+		
+		code = entschluesseln(code);
+		
+		gcurrent_scene_counter	= code[0];
+		gCurrentQuizstep		= code[1];
+		
+		gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
+		
+		
+		$("#bg").remove();
+		$("#menu").remove();
+		
+		ladeBilder(true);
+		ladeDialoge();
+	}else{
+		
+		alert("Kein Code eingegeben!");
 	}
 }

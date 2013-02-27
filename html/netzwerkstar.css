@@ -1,23 +1,25 @@
 html, body {
-	height: 100%;
-	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
 	margin: 0px;
 	overflow:hidden;
 }
 
-#menu-wrapper {
-	width: 1280px;
-	height: 720px;
-	border:#CCCCCC outset;
-	margin: 100px auto;
+#menu {
+	position:absolute;
+	top:50%;
+	left:50%;
 	text-align:center;
-	display:block;
 }
 
-#menu {
-	margin: 400px auto;
-	text-align:center;
-	display:block;
+#bg {
+	height:100%;
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	margin:2px auto;
+	z-index:-1;
 }
 
 #canvas_bg_static {
