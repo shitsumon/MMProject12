@@ -353,4 +353,7 @@
   <bild id="szene7_roter_knopf" pfad="../bilder/szene7/roter_knopf.png" animiert="false">
     <abmessungen height="73" width="63"/>
   </bild>
+  <bild id="szene7_dr_chaos" pfad="../bilder/szene7/dr_chaos.png" animiert="false">
+    <abmessungen height="111" width="89"/>
+  </bild>
 </bilder>
