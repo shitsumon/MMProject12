@@ -74,11 +74,6 @@
         </person>
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.10|szene1.12" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="30" y="75" z="50"/>
-          <groesse width="100" height="100"/>
-        </vg_statisch_objekt>
       </vg_statisch>
       <vg_animiert>
         <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.7|szene1.9" klickbar="f|f|f|f|f|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|t|f|f|f|f|f|f"
@@ -135,6 +130,11 @@
 		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="48" y="39" z="402"/>
           <groesse width="10" height="7"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.10|szene1.12" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="25" y="65" z="400"/>
+          <groesse width="75" height="35"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
