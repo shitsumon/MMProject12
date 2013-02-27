@@ -17,14 +17,9 @@ function verarbeiteDialogXML(daten){
 	//get dialogue elements from xml corresponding to current scene
     var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
 	//store count of dialogues to be loaded
-<<<<<<< HEAD
     gDialoge.anzahl += jquery_dialoge.length;
-=======
-	gDialoge.anzahl += jquery_dialoge.length;
 	
-	gdialogparser_xml_geladen = true;
-		
->>>>>>> bf4544a720a681242f69131e2f3fd06e0db5503a
+    gdialogparser_xml_geladen = true;
 	//compute each dialogue
     jquery_dialoge.each(function(dialog_index, dialog_element) {
 		//get all sentences

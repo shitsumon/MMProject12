@@ -375,14 +375,26 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			//read scaling from object and apply to canvas
 			var skalierung = z2mult(objectsToDraw[index].position.zPos);
 			
-			pxWidth		*= skalierung;
-			pxHeight	*= skalierung;
+            //Scaling exception for dialogbox
+            if(!strContains(canvasID, "dialogbox")){
+                pxWidth		*= skalierung;
+                pxHeight	*= skalierung;
+            }else{
+                pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width, objectsToDraw[index].size.width);
+                pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height, objectsToDraw[index].size.height);
+            }
 			
             //set canvas dimensions
             newCanvas[0].width  = pxWidth;
             newCanvas[0].height = pxHeight;
 
             //get context
+
+            //Avoid initial drawing of dialogbox
+            if(strContains(canvasID, "dialogbox")){
+                continue;
+            }
+
             canvasContext = newCanvas[0].getContext("2d");
 
 			if(gBilder[objectsToDraw[index].imageID].animiert){

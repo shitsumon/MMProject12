@@ -20,7 +20,7 @@ function dialogStart(dialog_id)
 	dialogSettings(	
 		'allg_dialogbox',	//Hintergrund für Dialoge
 		'textbox',			//CSS/Canvas
-		'white',			//Schriftfarbe
+        'yellow',			//Schriftfarbe
 		'bold 18px Arial',	//Schriftart
 		20);				//Zeilenabstand
 
@@ -30,7 +30,6 @@ function dialogStart(dialog_id)
 function dialog_zeichneDialog()
 {
 	//Greife auf Dialogdaten zu
-<<<<<<< HEAD
     if(!gTalk.isInitialized){
         gTalk.currentDialog = gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
@@ -38,11 +37,6 @@ function dialog_zeichneDialog()
     }
 
     var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
-=======
-    //alert(gTalk.dialog_id);
-    var Dialog = gDialoge[gTalk.dialog_id];
-    var Satz   = Dialog.saetze[gTalk.SatzGerade];
->>>>>>> bf4544a720a681242f69131e2f3fd06e0db5503a
     var Text   = Satz.inhalt;
 
     Text = swapProxiesWithNames(Text);
@@ -69,6 +63,8 @@ function dialog_zeichneDialog()
 
     //Prinzip von pictureAnimation.js übernommen.
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
+    //var ctx    = canvas[0].getContext("2d");
+    //ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     canvas.width  = perc2pix(textBoxImageWidth,  gTalk.TBPercWidth);
     canvas.height = perc2pix(textBoxImageHeight, gTalk.TBPercHeight);
@@ -89,13 +85,17 @@ function dialog_zeichneDialog()
     //c.style.top  = percPosY;
 
     //hole kontext
-    var ctx    = canvas[0].getContext("2d");
+    var ctx = canvas[0].getContext("2d");
 
     //Leere Inhalt des Bereiches (löscht alten text etc)
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     //Draws background box
-    ctx.drawImage( gBilder[gTalk.bild_id].bild, 0, 0 );
+    ctx.drawImage(gBilder[gTalk.bild_id].bild,
+                  0,
+                  0,
+                  textBoxImageWidth,
+                  textBoxImageHeight);
 
     //Draw character image
     ctx.drawImage( gBilder[Satz.bild_id].bild,

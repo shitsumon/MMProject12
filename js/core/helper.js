@@ -223,25 +223,25 @@ function Satz(_person_id, _bild_id, _inhalt){
 var gTalk			= new Object();
 gTalk.bild_id 		= "allg_dialogbox";			 //has to be initialised by dialogSettings()
 gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
-gTalk.font_color	= "white";			 //can be customized by dialogSettings()
+gTalk.font_color	= "yellow";			 //can be customized by dialogSettings()
 gTalk.font_style	= "bold 16px Arial"; //can be customized by dialogSettings()
-gTalk.line_distance = 10;				 //can be customized by dialogSettings()
+gTalk.line_distance = 15;				 //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzCounter	= 0;
 gTalk.SatzMax		= 0;
 gTalk.currentDialog = 'undefined';
 gTalk.isInitialized = false;
 
-gTalk.TBPercPosX        = 50; //Textbox X position in %
-gTalk.TBPercPosY        = 0;  //Textbox Y position in %
-gTalk.TBPercWidth       = 80; //Textbox width in %
-gTalk.TBPercHeight      = 80; //Textbox height in %
-gTalk.TBPercTextPosX    = 17; //Textbox text X position in %
-gTalk.TBPercTextPosY    = 20; //Textbox text Y position in %
-gTalk.TBPercImagePosX   = 2;  //Textbox image X position in %
-gTalk.TBPercImagePosY   = 5;  //Textbox image Y position in %
-gTalk.TBPercImageWidth  = 20; //Textbox image width in %
-gTalk.TBPercImageHeight = 20; //Textbox image height in %
+gTalk.TBPercPosX        = 100;    //Textbox X position in %
+gTalk.TBPercPosY        = 100;    //Textbox Y position in %
+gTalk.TBPercWidth       = 100;   //Textbox width in %
+gTalk.TBPercHeight      = 100;   //Textbox height in %
+gTalk.TBPercTextPosX    = 30;    //Textbox text X position in %
+gTalk.TBPercTextPosY    = 35;    //Textbox text Y position in %
+gTalk.TBPercImagePosX   = 8.25;  //Textbox image X position in %
+gTalk.TBPercImagePosY   = 27;    //Textbox image Y position in %
+gTalk.TBPercImageWidth  = 100;   //Textbox image width in %
+gTalk.TBPercImageHeight = 100;   //Textbox image height in %
 
 var gTBDrawn = false;
 
