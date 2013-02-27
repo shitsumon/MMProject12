@@ -224,20 +224,20 @@ var gTalk			= new Object();
 gTalk.bild_id 		= "allg_dialogbox";			 //has to be initialised by dialogSettings()
 gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
 gTalk.font_color	= "yellow";			 //can be customized by dialogSettings()
-gTalk.font_style	= "bold 16px Arial"; //can be customized by dialogSettings()
-gTalk.line_distance = 15;				 //can be customized by dialogSettings()
+gTalk.font_style	= "bold 20px Arial"; //can be customized by dialogSettings()
+gTalk.line_distance = 18;				 //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzCounter	= 0;
 gTalk.SatzMax		= 0;
 gTalk.currentDialog = 'undefined';
 gTalk.isInitialized = false;
 
-gTalk.TBPercPosX        = 100;    //Textbox X position in %
-gTalk.TBPercPosY        = 100;    //Textbox Y position in %
+gTalk.TBPercPosX        = 20;    //Textbox X position in %
+gTalk.TBPercPosY        = 20;    //Textbox Y position in %
 gTalk.TBPercWidth       = 100;   //Textbox width in %
 gTalk.TBPercHeight      = 100;   //Textbox height in %
 gTalk.TBPercTextPosX    = 30;    //Textbox text X position in %
-gTalk.TBPercTextPosY    = 35;    //Textbox text Y position in %
+gTalk.TBPercTextPosY    = 40;    //Textbox text Y position in %
 gTalk.TBPercImagePosX   = 8.25;  //Textbox image X position in %
 gTalk.TBPercImagePosY   = 27;    //Textbox image Y position in %
 gTalk.TBPercImageWidth  = 100;   //Textbox image width in %
@@ -253,6 +253,12 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 	gTalk.font_color	= _font_color;		//font colour
 	gTalk.font_style	= _font_style;		//font (properties: "flags size type") -> "bold 16px Arial"
 	gTalk.line_distance	= _line_distance	//line distance
+}
+
+//Stores scene id and whether this step trigger a quiz step
+function DialogIDObject(scene_id, tqs){
+    this.scene_id         = scene_id;
+    this.trigger_quizstep = tqs;
 }
 
 //scene id array for dialog referencing

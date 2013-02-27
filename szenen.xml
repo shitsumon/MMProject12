@@ -31,12 +31,12 @@
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
+        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="szene1.1" klickbar="t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="25" y="26" z="101"/>
           <groesse width="50" height="77"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_muelleimer" dialog_id="szene1.1|szene1.6|szene1.8" klickbar="f|f|f|f|t|t|t|t|f|f|f|f|f" walkto="f|f|f|f|t|t|t|t|f|f|f|f|f"
+        <hg_animiert_objekt bild_id="szene1_muelleimer" dialog_id="szene1.6|szene1.8" klickbar="f|f|f|f|t|t|t|t|f|f|f|f|f" walkto="f|f|f|f|t|t|t|t|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t|t|f|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|t|f|f|f|f|f">
           <position x="24" y="66" z="101"/>
           <groesse width="15" height="25"/>
@@ -133,7 +133,7 @@
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.10|szene1.12" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="25" y="65" z="400"/>
+          <position x="25" y="75" z="400"/>
           <groesse width="75" height="35"/>
         </vg_animiert_objekt>
       </vg_animiert>

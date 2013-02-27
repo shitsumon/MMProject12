@@ -34,12 +34,25 @@ function dialog_zeichneDialog()
         gTalk.currentDialog = gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
         gTalk.isInitialized = true;
+
+        if(gDialogIDs[gDialogCounter].trigger_quizstep){
+            ++gCurrentQuizstep;
+        }
     }
 
     var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
     var Text   = Satz.inhalt;
 
     Text = swapProxiesWithNames(Text);
+
+    //marks an unfinished text chunk
+    if(gTalk.SatzCounter < gTalk.SatzMax - 1){
+        Text += '   >>'      ;
+    }
+
+    //screen dimensions
+    var screenWidth  = $(window).width();
+    var screenHeight = $(window).height();
 
     //background textbox dimensions
     var textBoxImageWidth  = gBilder[gTalk.bild_id].abmessungen.width;
@@ -57,17 +70,14 @@ function dialog_zeichneDialog()
 
     var pixSize = Math.round((textBoxImageWidth - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
 
-    //screen dimensions
-    var screenWidth  = $(window).width();
-    var screenHeight = $(window).height();
 
     //Prinzip von pictureAnimation.js übernommen.
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
     //var ctx    = canvas[0].getContext("2d");
     //ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
-    canvas.width  = perc2pix(textBoxImageWidth,  gTalk.TBPercWidth);
-    canvas.height = perc2pix(textBoxImageHeight, gTalk.TBPercHeight);
+    canvas.width  = perc2pix(screenWidth,  gTalk.TBPercWidth);
+    canvas.height = perc2pix(screenHeight, gTalk.TBPercHeight);
     /*
         Setze position der Textbox mit prozentualen Werten.
 
@@ -119,7 +129,6 @@ function dialog_zeichneDialog()
 
     //Inkrementiere Satzcounter
     ++gTalk.SatzCounter;
-
 
     if( gTalk.SatzCounter === gTalk.SatzMax ){
 
@@ -231,17 +240,17 @@ function justClicked(imgID){
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(gDialoge[gDialogIDs[gDialogCounter]] === 'undefined'){
+                if(gDialoge[gDialogIDs[gDialogCounter].scene_id] === 'undefined'){
                     alert('undefined dialog in gDialoge[]!');
                     return;
                 }
 
                 //if it's the wrong dialog skip it
-                if(sceneDialogues[idx2] !== gDialogIDs[gDialogCounter]){
+                if(sceneDialogues[idx2] !== gDialogIDs[gDialogCounter].scene_id){
                     continue;
                 }
 
-                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : gDialogIDs[gDialogCounter];
+                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : gDialogIDs[gDialogCounter].scene_id;
 
                 dialog_zeichneDialog();
 

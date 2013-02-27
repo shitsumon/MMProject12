@@ -31,8 +31,11 @@ function verarbeiteDialogXML(daten){
 			jquery_saetze.length	//sentences count
 		);
 
-        //Push IDs to array for dialog referencing
-        gDialogIDs.push($(dialog_element).attr("id"));
+        //Push IDs and "advance in quiz" flags
+        //to array for dialog referencing and
+        //quizstep activation
+        gDialogIDs.push(new DialogIDObject($(dialog_element).attr("id"),
+                                           $(dialog_element).attr("increase_quiz_step") === "true" ? true : false));
 
         //each sentence
 		jquery_saetze.each(function(satz_index, satz_element) {

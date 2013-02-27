@@ -61,12 +61,12 @@
   </dialog>
   <dialog id="szene1.12">
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, weißt du wer meine Einstellungen geändert hat? War das etwa P2_DYN_NAME?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Hallo P1_DYN_NAME, leider kann ich dir da nicht weiterhelfen.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Hallo P1_DYN_NAME, leider kann ich dir da nicht weiterhelfen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Merkwürdig ... ich werde der Sache auf den Grund gehen, schlafen wär gerade eh nicht drin. Mäck, habe ich noch irgendwelche Einstellungen bezüglich meiner Privatsphäre vergessen?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Du solltest deine Einstellungen immer so treffen, dass der Zugriff auf wichtige Daten:</satz>
-    <satz person_id="bc" bild_id="bordcomputer">1.) Auf deine Freunde und dich ODER</satz>
-    <satz person_id="bc" bild_id="bordcomputer">2.) Nur auf dich beschränkt ist.</satz>
-    <satz person_id="bc" bild_id="bordcomputer">So stellst du sicher, dass kein Unfug mit deinen Daten gemacht wird.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Du solltest deine Einstellungen immer so treffen, dass der Zugriff auf wichtige Daten:</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">1.) Auf deine Freunde und dich ODER</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">2.) Nur auf dich beschränkt ist.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">So stellst du sicher, dass kein Unfug mit deinen Daten gemacht wird.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Danke Mäck, ein einfaches "Ja" hätte es auch getan. Ich gehe jetzt zur Brücke und suche P2_DYN_NAME.</satz>
   </dialog>
   
