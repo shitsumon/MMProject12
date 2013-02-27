@@ -39,7 +39,7 @@
   <dialog id="szene1.9" increase_quiz_step="false">
     <satz person_id="u1" bild_id="allg_anonym">Was für hässliche Kleidung sie trägt.</satz>
     <satz person_id="u2" bild_id="allg_anonym">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Hilfe</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Hilfe!!!</satz>
   </dialog>
   <dialog id="szene1.10" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufsliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2_DYN_NAME? Wenn ich den in die Finger bekomme ...</satz>

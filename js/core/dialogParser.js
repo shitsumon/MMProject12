@@ -37,6 +37,10 @@ function verarbeiteDialogXML(daten){
         gDialogIDs.push(new DialogIDObject($(dialog_element).attr("id"),
                                            $(dialog_element).attr("increase_quiz_step") === "true" ? true : false));
 
+        if($(dialog_element).attr("increase_quiz_step") === "true"){
+            ++gQuizTrueQuizSteps;
+        }
+
         //each sentence
 		jquery_saetze.each(function(satz_index, satz_element) {
             //create new sentence object and store all properties

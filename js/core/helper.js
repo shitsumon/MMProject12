@@ -313,7 +313,7 @@ var gQuizsteps				= 0;
 var gCurrentQuizstep		= 0;
 //stores quiztrigger flag of aimed canvas while moving
 var gQuiztriggerAfterMoving	= "";
-
+var gQuizTrueQuizSteps      = 0;
 /***********
  *Utilities*
  ***********/

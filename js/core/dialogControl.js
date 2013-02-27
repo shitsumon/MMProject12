@@ -27,7 +27,7 @@ function dialogStart(dialog_id)
 	dialog_zeichneDialog();
 }
 
-function dialog_zeichneDialog()
+function dialog_zeichneDialog(textToDraw)
 {
 	//Greife auf Dialogdaten zu
     if(!gTalk.isInitialized){
@@ -41,7 +41,7 @@ function dialog_zeichneDialog()
     }
 
     var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
-    var Text   = Satz.inhalt;
+    var Text   = typeof(textToDraw) === 'undefined' ? Satz.inhalt : textToDraw;
 
     Text = swapProxiesWithNames(Text);
 
@@ -107,13 +107,15 @@ function dialog_zeichneDialog()
                   textBoxImageWidth,
                   textBoxImageHeight);
 
-    //Draw character image
-    ctx.drawImage( gBilder[Satz.bild_id].bild,
-                   ProtImgXPos,
-                   ProtImgYPos,
-                   ProtImgWidth,
-                   ProtImgHeight
-                   );
+    if(typeof(textToDraw) === 'undefined'){
+        //Draw character image
+        ctx.drawImage( gBilder[Satz.bild_id].bild,
+                      ProtImgXPos,
+                      ProtImgYPos,
+                      ProtImgWidth,
+                      ProtImgHeight
+                      );
+    }
 
     //Initiere Einstellungen für Text
     ctx.fillStyle = gTalk.font_color;
@@ -230,6 +232,13 @@ function swapProxiesWithNames(sentence){
  */
 
 function justClicked(imgID){
+
+    if(gDialogIDs.length === gDialogCounter){
+
+        dialog_zeichneDialog("Ende der Szene.");
+        checkQuizfinished();
+        return;
+    }
 
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){
 

@@ -66,7 +66,7 @@ checks whether the quiz has finished and initiates loading of next scenes pictur
 */
 function checkQuizfinished(){
 	//start next scene if quiz finished
-	if(gCurrentQuizstep == gQuizsteps){
+    if(gCurrentQuizstep == gQuizTrueQuizSteps){
 		
 		$('body').append($('<canvas/>', {
 			id: 'uebergang'
@@ -86,7 +86,7 @@ function checkQuizfinished(){
 	}
 	
 	//last step before quiz finishes
-	if(gCurrentQuizstep == (gQuizsteps - 1)){
+    if(gCurrentQuizstep == (gQuizTrueQuizSteps - 1)){
 		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
