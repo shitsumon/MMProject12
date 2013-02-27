@@ -14,8 +14,32 @@
 <script type="text/javascript" src="../js/core/dialogControl.js"></script>
 <script type="text/javascript" src="../js/core/quizControl.js"></script>
 <script type="text/javascript" src="../js/core/codeGenerator.js"></script>
+<script>
+setTimeout(function() { HideElements(); },25000);
+function HideElements()
+{
+document.getElementById('titles').style.visibility = 'hidden'; 
+document.getElementById('titlesback').style.visibility = 'hidden'; 
+document.getElementById('titlescontent').style.visibility = 'hidden'; 
+};
+</script>
 </head>
 <body>
+
+<div id="titlesback" onclick="HideElements()"><img src="../bilder/allgemein/TEST.png" id="bg" alt=""></div>
+<h1 class="center">Netzwerk Star II<sub>das Spiel</sub></h1>
+<div id="titles">
+<div id="titlecontent">
+		
+
+        <p>Zwei Freunde, Lichtjahre hinweg von uns, bestreiten ihre Reise durch eine weit entfernte Galaxie. </p>
+
+        <p>Mit dem wichtigen Auftrag ein seltenes Artefakt sicher heim zu bringen steuern die beiden aleine ihr Raumschiff durch die Sterne. Bis sie bemerkten, dass sie bei weitem nicht aleine sind... </p>
+        <p>Wirst du Ihnen helfen sicher aus dieser Lage heraus zu kommen? Oder endet das ganze in... </p>
+
+        <p class="center">Chaos</p>
+</div></div>
+
 <img src="../bilder/allgemein/ns2_menu.png" id="bg" alt="">
   <div id="menu">
     <input name="spiel_starten" type="button" onClick="ladeBilder();ladeDialoge();" value="Spiel starten" />
