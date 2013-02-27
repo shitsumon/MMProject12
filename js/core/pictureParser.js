@@ -20,6 +20,10 @@ function verarbeiteBilderXML(daten){
 	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
 	//store element count
     gBilder.anzahl += jquery_bilder.length;
+	
+	//signal xml file has been loaded
+	gpictureparser_xml_geladen = true;
+	
 	//compute pictures
 	verarbeiteBilder(jquery_bilder);
 	//load common files with first scene
@@ -31,8 +35,6 @@ function verarbeiteBilderXML(daten){
 		
 		verarbeiteBilder(jquery_bilder);
 	}
-	//signal xml file has been loaded
-	gpictureparser_xml_geladen = true;
 }
 
 function verarbeiteBilder(bilder){

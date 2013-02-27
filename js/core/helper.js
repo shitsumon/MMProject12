@@ -31,7 +31,7 @@
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 7;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //z-index multiplicators
@@ -331,4 +331,6 @@ var n2n = new Array(
 	"drei", "vier", "fuenf",
 	"sechs", "sieben", "acht",
 	"neun", "zehn", "elf",
-	"zwoelf", "dreizehn", "vierzehn");
+	"zwoelf", "dreizehn", "vierzehn",
+	"fuenfzehn", "sechzehn", "siebzehn",
+	"achtzehn", "neunzehn", "zwanzig");

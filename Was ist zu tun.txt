@@ -26,7 +26,6 @@ Sekundaer
         -> Beschreibung der moeglichen Rueckgabewerte
 - Intro
 	- Text schreiben und später vorm Hauptmenü einfügen
-- quiz zurücksetzen bei falscheingabe
 - rätsel-bilder fehlen
 	- müssen aus einzelbildern aufgebaut sein -> jeweils quiztrigger
 - dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse

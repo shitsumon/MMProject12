@@ -30,6 +30,7 @@ function dialogStart(dialog_id)
 function dialog_zeichneDialog()
 {
 	//Greife auf Dialogdaten zu
+<<<<<<< HEAD
     if(!gTalk.isInitialized){
         gTalk.currentDialog = gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
@@ -37,6 +38,11 @@ function dialog_zeichneDialog()
     }
 
     var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
+=======
+    //alert(gTalk.dialog_id);
+    var Dialog = gDialoge[gTalk.dialog_id];
+    var Satz   = Dialog.saetze[gTalk.SatzGerade];
+>>>>>>> bf4544a720a681242f69131e2f3fd06e0db5503a
     var Text   = Satz.inhalt;
 
     Text = swapProxiesWithNames(Text);

@@ -15,7 +15,17 @@
 <script type="text/javascript" src="../js/core/quizControl.js"></script>
 <script type="text/javascript" src="../js/core/codeGenerator.js"></script>
 </head>
-<body onload="ladeBilder();ladeDialoge();">
+<!-- Alter Quelltext für den Direktstart
+<body onload="ladeBilder();ladeDialoge();"> 
 <!--<input name="spiel_starten" type="button" onClick="ladeBilder();ladeDialoge();" value="Spiel starten" />-->
+
+<body>
+<div id="menu-wrapper" style="background:url(../bilder/allgemein/ns2_menu.png)">
+	<div id="menu">
+    <input name="spiel_starten" type="button" onClick="ladeBilder();ladeDialoge();" value="Spiel starten" /><br />
+    <!-- <input name="spiel_fortsetzen" type="button" onClick="eingabe_code();" value="Spiel fortsetzen" /> -->
+    </div>
+</div>
+
 </body>
 </html>
