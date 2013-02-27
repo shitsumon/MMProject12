@@ -4,6 +4,22 @@ html, body {
 	margin: 0px;
 	overflow:hidden;
 }
+
+#menu-wrapper {
+	width: 1280px;
+	height: 720px;
+	border:#CCCCCC outset;
+	margin: 100px auto;
+	text-align:center;
+	display:block;
+}
+
+#menu {
+	margin: 400px auto;
+	text-align:center;
+	display:block;
+}
+
 #canvas_bg_static {
 	height: 100%;
 	width: 100%;
