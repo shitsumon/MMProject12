@@ -3,17 +3,19 @@ loads all pictures from xml file when accessing the site
 .get is given the xml path and return an XMLDocument object -> daten
 determines type of returned object by "xml"
 */
-function ladeBilder(){
+function ladeBilder(force_load_common){
+	
+	force_load_common = force_load_common == null ? false : force_load_common;
 
 	jQuery.get(gbilderXMLPfad,function(daten){
-			verarbeiteBilderXML(daten);
+			verarbeiteBilderXML(daten, force_load_common);
     },"xml").fail(function(data){
 			alert(data + " Fehler bilder.xml laden")
 		});
 }
 
 //stores xml properties in global object gBilder
-function verarbeiteBilderXML(daten){
+function verarbeiteBilderXML(daten, force_load_common){
 	
 	var id, animation;
 	//get all picture elements corresponding to current scene
@@ -27,7 +29,7 @@ function verarbeiteBilderXML(daten){
 	//compute pictures
 	verarbeiteBilder(jquery_bilder);
 	//load common files with first scene
-	if(gcurrent_scene_counter == 1){
+	if((gcurrent_scene_counter == 1) || (force_load_common)){
 		
 		jquery_bilder = $(daten).find("bild[id*=allg_]");
 		
