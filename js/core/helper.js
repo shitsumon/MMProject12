@@ -286,11 +286,15 @@ if ((name1!=null)&&(name2!=null))
   {
   //continue with loading of first scene
   ladeBilder();
-  ladeDialoge()
+  ladeDialoge();
   }
   else
   {
-	  alert("Ungültige Eingabe!");
+	  //if incorrect or no names are set, mark as undefined and replace later with FallbackNames
+	  gP1Name = "undefined";
+	  gP2Name = "undefined";
+	  ladeBilder();
+  	  ladeDialoge();
   }
 }
 
