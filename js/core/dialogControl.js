@@ -30,7 +30,7 @@ function dialogStart(dialog_id)
 function dialog_zeichneDialog()
 {
 	//Greife auf Dialogdaten zu
-    alert(gTalk.dialog_id);
+    //alert(gTalk.dialog_id);
     var Dialog = gDialoge[gTalk.dialog_id];
     var Satz   = Dialog.saetze[gTalk.SatzGerade];
     var Text   = Satz.inhalt;

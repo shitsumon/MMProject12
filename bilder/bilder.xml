@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bilder>
- <!--allgemein-->
+  <!--allgemein-->
   <bild id="bild_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
     <abmessungen height="160" width="128"/>
     <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
@@ -53,6 +53,12 @@
   <bild id="szene1_schreibtisch" pfad="../bilder/szene1/schreibtisch.png" animiert="false">
     <abmessungen height="251" width="357"/>
   </bild>
+  <bild id="szene1_schublade_zu" pfad="../bilder/szene1/schublade_zu.png" animiert="false">
+    <abmessungen height="34" width="34"/>
+  </bild>
+  <bild id="szene1_schublade_offen" pfad="../bilder/szene1/schublade_offen.png" animiert="false">
+    <abmessungen height="36" width="60"/>
+  </bild>
   <bild id="szene1_sound_links" pfad="../bilder/szene1/sound_links.png" animiert="false">
     <abmessungen height="102" width="95"/>
   </bild>
@@ -102,28 +108,28 @@
   <bild id="szene2_leuchten_rechts" pfad="../bilder/szene2/leuchten_rechts.png" animiert="false">
     <abmessungen height="174" width="258"/>
   </bild>
-  <bild id="" pfad="../bilder/szene2/auswahlfeld.png" animiert="false">
+  <bild id="szene2_auswahlfeld" pfad="../bilder/szene2/auswahlfeld.png" animiert="false">
     <abmessungen height="55" width="267"/>
   </bild>
-  <bild id="szene2_bruecke_auswahl" pfad="../bilder/szene2/bruecke_auwahl.png" animiert="false">
+  <bild id="szene2_bruecke_auswahl" pfad="../bilder/szene2/bruecke_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_gast_auswahl" pfad="../bilder/szene2/gast_auwahl.png" animiert="false">
+  <bild id="szene2_gast_auswahl" pfad="../bilder/szene2/gast_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_kate_auswahl" pfad="../bilder/szene2/kate_auwahl.png" animiert="false">
+  <bild id="szene2_kate_auswahl" pfad="../bilder/szene2/kate_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_kommunikation_auswahl" pfad="../bilder/szene2/kommunikation_auwahl.png" animiert="false">
+  <bild id="szene2_kommunikation_auswahl" pfad="../bilder/szene2/kommunikation_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
   <bild id="szene2_kreuz" pfad="../bilder/szene2/kreuz.png" animiert="false">
     <abmessungen height="44" width="38"/>
   </bild>
-  <bild id="szene2_maeck_auswahl" pfad="../bilder/szene2/maeck_auwahl.png" animiert="false">
+  <bild id="szene2_maeck_auswahl" pfad="../bilder/szene2/maeck_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_mannschaftsquartiere_auwahl" pfad="../bilder/szene2/mannschaftsquartiere_auwahl.png" animiert="false">
+  <bild id="szene2_mannschaftsquartiere_auswahl" pfad="../bilder/szene2/mannschaftsquartiere_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
   <bild id="szene2_raetsel_fenster_i" pfad="../bilder/szene2/raetsel_fenster_i.png" animiert="false">
@@ -132,10 +138,10 @@
   <bild id="szene2_raetsel_fenster_ii" pfad="../bilder/szene2/raetsel_fenster_ii.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene2_spacenet_auwahl" pfad="../bilder/szene2/spacenet_auwahl.png" animiert="false">
+  <bild id="szene2_spacenet_auswahl" pfad="../bilder/szene2/spacenet_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_spike_auwahl" pfad="../bilder/szene2/spike_auwahl.png" animiert="false">
+  <bild id="szene2_spike_auswahl" pfad="../bilder/szene2/spike_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
   <!--szene3-->
@@ -157,28 +163,34 @@
   <bild id="szene3_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  <bild id="szene3_antivirus_symbol" pfad="../bilder/allgemein/antivirus_symbol.png" animiert="false">
+  <bild id="szene3_antivirus_symbol" pfad="../bilder/szene3/antivirus_symbol.png" animiert="false">
     <abmessungen height="102" width="81"/>
   </bild>
-  <bild id="szene3_ja" pfad="../bilder/allgemein/ja.png" animiert="false">
+  <bild id="szene3_ja_reiter" pfad="../bilder/szene3/ja_reiter.png" animiert="false">
     <abmessungen height="18" width="67"/>
   </bild>
-  <bild id="szene3_kreuz" pfad="../bilder/allgemein/kreuz.png" animiert="false">
+  <bild id="szene3_kreuz" pfad="../bilder/szene3/kreuz.png" animiert="false">
     <abmessungen height="64" width="54"/>
   </bild>
-  <bild id="szene3_nein" pfad="../bilder/allgemein/nein.png" animiert="false">
+  <bild id="szene3_nein_reiter" pfad="../bilder/szene3/nein_reiter.png" animiert="false">
     <abmessungen height="18" width="67"/>
   </bild>
-  <bild id="szene3_popup" pfad="../bilder/allgemein/popup.png" animiert="false">
+  <bild id="szene3_popup" pfad="../bilder/szene3/popup.png" animiert="false">
     <abmessungen height="180" width="150"/>
   </bild>
-  <bild id="szene3_raetsel_fenster" pfad="../bilder/allgemein/raetsel_fenster.png" animiert="false">
+  <bild id="szene3_ja_popup" pfad="../bilder/szene3/ja_popup.png" animiert="false">
+    <abmessungen height="18" width="67"/>
+  </bild>
+  <bild id="szene3_nein_popup" pfad="../bilder/szene3/nein_popup.png" animiert="false">
+    <abmessungen height="18" width="67"/>
+  </bild>
+  <bild id="szene3_raetsel_fenster" pfad="../bilder/szene3/raetsel_fenster.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene3_reiter" pfad="../bilder/allgemein/reiter.png" animiert="false">
+  <bild id="szene3_reiter" pfad="../bilder/szene3/reiter.png" animiert="false">
     <abmessungen height="19" width="153"/>
   </bild>
-  <bild id="szene3_virenloader_symbol" pfad="../bilder/allgemein/virenloader_symbol.png" animiert="false">
+  <bild id="szene3_virenloader_symbol" pfad="../bilder/szene3/virenloader_symbol.png" animiert="false">
     <abmessungen height="117" width="112"/>
   </bild>
   <!--szene4-->
@@ -206,6 +218,12 @@
   <bild id="szene4_fussabdruecke_fenster" pfad="../bilder/szene4/fussabdruecke_fenster.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
+  <bild id="szene4_dunkel" pfad="../bilder/szene4/dunkel.png" animiert="false">
+    <abmessungen height="64" width="64"/>
+  </bild>
+  <bild id="szene4_teddy" pfad="../bilder/szene4/teddy.png" animiert="false">
+    <abmessungen height="63" width="102"/>
+  </bild>
   <!--szene5-->
   <bild id="szene5_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -225,20 +243,59 @@
   <bild id="szene5_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  <bild id="szene5_batterie" pfad="../bilder/allgemein/batterie.png" animiert="false">
+  <bild id="szene5_batterie" pfad="../bilder/szene5/batterie.png" animiert="false">
     <abmessungen height="86" width="86"/>
   </bild>
-  <bild id="szene5_buecher" pfad="../bilder/allgemein/buecher.png" animiert="false">
+  <bild id="szene5_buecher" pfad="../bilder/szene5/buecher.png" animiert="false">
     <abmessungen height="114" width="356"/>
   </bild>
-  <bild id="szene5_raetsel_fenster" pfad="../bilder/allgemein/raetsel_fenster.png" animiert="false">
+  <bild id="szene5_raetsel_fenster" pfad="../bilder/szene5/raetsel_fenster.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene5_sicherung" pfad="../bilder/allgemein/.sicherungpng" animiert="false">
+  <bild id="szene5_sicherung" pfad="../bilder/szene5/sicherung.png" animiert="false">
     <abmessungen height="46" width="41"/>
   </bild>
-  <bild id="szene5_zeug" pfad="../bilder/allgemein/zeug.png" animiert="false">
-    <abmessungen height="119" width="264"/>
+  <bild id="szene5_zeug" pfad="../bilder/szene5/zeug.png" animiert="false">
+    <abmessungen height="113" width="232"/>
+  </bild>
+  <bild id="szene5_dr_chaos" pfad="../bilder/szene5/dr_chaos.png" animiert="false">
+    <abmessungen height="111" width="89"/>
+  </bild>
+  <bild id="szene5_dr_chaos_umgedreht" pfad="../bilder/szene5/dr_chaos_umgedreht.png" animiert="false">
+    <abmessungen height="111" width="89"/>
+  </bild>
+  <bild id="szene5_teddy" pfad="../bilder/szene5/teddy.png" animiert="false">
+    <abmessungen height="63" width="102"/>
+  </bild>
+  <bild id="szene5_buch1" pfad="../bilder/szene5/buch1.png" animiert="false">
+    <abmessungen height="86" width="86"/>
+  </bild>
+  <bild id="szene5_buch2" pfad="../bilder/szene5/buch2.png" animiert="false">
+    <abmessungen height="50" width="60"/>
+  </bild>
+  <bild id="szene5_buch3" pfad="../bilder/szene5/buch3.png" animiert="false">
+    <abmessungen height="61" width="66"/>
+  </bild>
+  <bild id="szene5_buch4" pfad="../bilder/szene5/buch4.png" animiert="false">
+    <abmessungen height="59" width="42"/>
+  </bild>
+  <bild id="szene5_buch5" pfad="../bilder/szene5/buch5.png" animiert="false">
+    <abmessungen height="105" width="42"/>
+  </bild>
+  <bild id="szene5_buch6" pfad="../bilder/szene5/buch6.png" animiert="false">
+    <abmessungen height="90" width="22"/>
+  </bild>
+  <bild id="szene5_buch7" pfad="../bilder/szene5/buch7.png" animiert="false">
+    <abmessungen height="103" width="51"/>
+  </bild>
+  <bild id="szene5_buch8" pfad="../bilder/szene5/buch8.png" animiert="false">
+    <abmessungen height="81" width="53"/>
+  </bild>
+  <bild id="szene5_buch9" pfad="../bilder/szene5/buch9.png" animiert="false">
+    <abmessungen height="52" width="82"/>
+  </bild>
+  <bild id="szene5_buch10" pfad="../bilder/szene5/buch10.png" animiert="false">
+    <abmessungen height="44" width="83"/>
   </bild>
   <!--szene6-->
   <bild id="szene6_hg" pfad="../bilder/szene6/hintergrund_aussen.jpg" animiert="false">
@@ -253,7 +310,7 @@
   <bild id="szene6_luke_links_zu" pfad="../bilder/szene6/luke_links_zu.png" animiert="false">
     <abmessungen height="141" width="275"/>
   </bild>
-    <bild id="szene6_luke_links_offen" pfad="../bilder/szene6/luke_links_offen.png" animiert="false">
+  <bild id="szene6_luke_links_offen" pfad="../bilder/szene6/luke_links_offen.png" animiert="false">
     <abmessungen height="179" width="223"/>
   </bild>
   <bild id="szene6_luke_rechts" pfad="../bilder/szene6/luke_rechts.png" animiert="false">

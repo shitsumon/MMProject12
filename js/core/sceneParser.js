@@ -296,7 +296,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
-                alert(canvasID);
+                //alert(canvasID);
                 gTalk.canvas_id = canvasID;
             }
 

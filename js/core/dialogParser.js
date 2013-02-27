@@ -18,6 +18,9 @@ function verarbeiteDialogXML(daten){
 	var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
 	//store count of dialogues to be loaded
 	gDialoge.anzahl += jquery_dialoge.length;
+	
+	gdialogparser_xml_geladen = true;
+		
 	//compute each dialogue
 	jquery_dialoge.each(function(dialog_index, dialog_element) {
 		//get all sentences
@@ -51,8 +54,6 @@ function verarbeiteDialogXML(daten){
 
     //Set dialog referencing counter back to zero for current scene
     gDialogCounter = 0;
-
-	gdialogparser_xml_geladen = true;
 }
 
 //loading progressbar hook called in new Dialog()
