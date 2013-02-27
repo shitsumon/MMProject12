@@ -227,8 +227,10 @@ gTalk.font_color	= "white";			 //can be customized by dialogSettings()
 gTalk.font_style	= "bold 16px Arial"; //can be customized by dialogSettings()
 gTalk.line_distance = 10;				 //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
-gTalk.SatzGerade	= 0;
+gTalk.SatzCounter	= 0;
 gTalk.SatzMax		= 0;
+gTalk.currentDialog = 'undefined';
+gTalk.isInitialized = false;
 
 gTalk.TBPercPosX        = 50; //Textbox X position in %
 gTalk.TBPercPosY        = 0;  //Textbox Y position in %
@@ -268,7 +270,7 @@ var gP2Proxy = "P2_DYN_NAME";
 
 //Fallback name if name values are not present
 var gFallbackNameP1 = "Jane Doe";
-var gFallbacknameP2 = "John Doe";
+var gFallbackNameP2 = "John Doe";
 
 //Variables which hold the characters and the sidekicks names
 var gP1Name = "undefined";

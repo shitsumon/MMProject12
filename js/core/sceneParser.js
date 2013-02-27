@@ -296,7 +296,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 			
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
-                alert(canvasID);
+                //alert(canvasID);
                 gTalk.canvas_id = canvasID;
             }
 
@@ -321,16 +321,16 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 				}
 				
 				//will trigger dialogue if present
-				dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
+                /*dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
 									typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
-									"dialogStart('"+ objectsToDraw[index].dialogueID +"');";
+                                    "dialogStart('"+ objectsToDraw[index].dialogueID +"');";*/
 				
 				newCanvas = $('<canvas/>',
 								{
 									id : canvasID,
 									"class": quizClass,
                                   onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "');"
-								  						+ moveTrigger + quizTrigger + dialogTrigger
+                                                        + moveTrigger + quizTrigger /*+ dialogTrigger*/
 								}
 							);
 			}else{

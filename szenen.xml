@@ -67,16 +67,16 @@
         <vg_statisch_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.10|szene1.12" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="50" y="5" z="20"/>
-          <groesse width="45" height="45"/>
+          <groesse width="100" height="100"/>
         </vg_statisch_objekt>
       </vg_statisch>
       <vg_animiert>
-        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.7" klickbar="f|f|f|f|f|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|t|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.7|szene1.9" klickbar="f|f|f|f|f|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|t|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t|f|f|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f">
           <position x="0" y="33" z="400"/>
           <groesse width="20" height="60"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="szene1.9" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|f|f|f|f|t|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="33" z="400"/>
           <groesse width="28.8" height="60"/>

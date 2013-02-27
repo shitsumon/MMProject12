@@ -15,7 +15,7 @@
     <satz person_id="p1" bild_id="allg_hero_female">RUHE!!!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">MÄCK!!!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, stell diesen Lärm und das Licht aus!</satz>
-    <satz person_id="bc" bild_id="bordcomputer">???? ??????? ???? ?????</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">???? ??????? ???? ?????</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
   </dialog>
   <dialog id="szene1.4">
@@ -30,27 +30,27 @@
       Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>
   <dialog id="szene1.7">
-    <satz person_id="u1" bild_id="unbekannter_1">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
-    <satz person_id="u2" bild_id="unbekannter_2">Die Ausgabe hab ich auch gelesen, da war ein genialer Bericht über das neue Raumschiff von WMB.</satz>
+    <satz person_id="u1" bild_id="allg_anonym">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
+    <satz person_id="u2" bild_id="allg_anonym">Die Ausgabe hab ich auch gelesen, da war ein genialer Bericht über das neue Raumschiff von WMB.</satz>
   </dialog>
   <dialog id="szene1.8">
     <satz person_id="p1" bild_id="allg_hero_female">Werd ich etwa auch beobachtet? Ich sollte die Anleitung finden ... und zwar schnell.</satz>
   </dialog>
   <dialog id="szene1.9">
-    <satz person_id="u1" bild_id="unbekannter_1">Was für hässliche Kleidung sie trägt.</satz>
-    <satz person_id="u2" bild_id="unbekannter_2">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
+    <satz person_id="u1" bild_id="allg_anonym">Was für hässliche Kleidung sie trägt.</satz>
+    <satz person_id="u2" bild_id="allg_anonym">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Hilfe</satz>
   </dialog>
   <dialog id="szene1.10">
-    <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufsliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2 (DYN_NAME)? Wenn ich den in die Finger bekomme ...</satz>
-    <satz person_id="u1" bild_id="unbekannter_1">Die ist aber aufbrausend.</satz>
-    <satz person_id="u2" bild_id="unbekannter_2">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufsliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2_DYN_NAME? Wenn ich den in die Finger bekomme ...</satz>
+    <satz person_id="u1" bild_id="allg_anonym">Die ist aber aufbrausend.</satz>
+    <satz person_id="u2" bild_id="allg_anonym">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Schnell zum Computer.</satz>
   </dialog>
   <dialog id="szene1.11">
     <satz person_id="p1" bild_id="allg_hero_female">Deswegen wurde ich also aus meinem wohlverdienten Schlaf gerissen und muss mir diese Kommentare anhören ...</satz>
-    <satz person_id="u1" bild_id="unbekannter_1">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
-    <satz person_id="u2" bild_id="unbekannter_2">Psst, ich will wissen, wie es weitergeht. Ist doch grad so spannend.</satz>
+    <satz person_id="u1" bild_id="allg_anonym">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
+    <satz person_id="u2" bild_id="allg_anonym">Psst, ich will wissen, wie es weitergeht. Ist doch grad so spannend.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Jemand hat also meine Einstellungen von "privat" auf "öffentlich" gestellt ... Dann wollen wir das mal wieder ändern.</satz>
   </dialog>
   <dialog id="szene1.11.1">

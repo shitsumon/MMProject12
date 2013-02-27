@@ -13,16 +13,16 @@ function ladeDialoge(){
 function verarbeiteDialogXML(daten){
 	
     gDialogIDs = new Array();
-	var jquery_saetze;
+    var jquery_saetze;
 	//get dialogue elements from xml corresponding to current scene
-	var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
+    var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
 	//store count of dialogues to be loaded
-	gDialoge.anzahl += jquery_dialoge.length;
+    gDialoge.anzahl += jquery_dialoge.length;
 	//compute each dialogue
-	jquery_dialoge.each(function(dialog_index, dialog_element) {
+    jquery_dialoge.each(function(dialog_index, dialog_element) {
 		//get all sentences
 		jquery_saetze = $(dialog_element).find("satz");
-		//create new dialogue object
+        //create new dialogue object
         gDialoge[$(dialog_element).attr("id")] = new Dialog(
 
 			$(dialog_element).attr("id"),
@@ -34,9 +34,9 @@ function verarbeiteDialogXML(daten){
 
         //each sentence
 		jquery_saetze.each(function(satz_index, satz_element) {
-			//create new sentence object and store all properties
+            //create new sentence object and store all properties
 			gDialoge[$(dialog_element).attr("id")].saetze[satz_index] = new Satz(
-				/*persons id*/
+                /*persons id*/
 				$(satz_element).attr("person_id"),
 				/*persons picture id in gBilder*/
 				$(satz_element).attr("bild_id"),
