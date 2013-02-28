@@ -43,7 +43,7 @@ function dialog_zeichneDialog(textToDraw)
 
     //marks an unfinished text chunk
     if(gTalk.SatzCounter < gTalk.SatzMax - 1){
-        Text += '   >>'      ;
+        Text += '   >>';
     }
 	
 	if((gTalk.SatzCounter == (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
@@ -232,7 +232,16 @@ function swapProxiesWithNames(sentence){
  * none
  */
 
-function justClicked(imgID){
+function justClicked(imgID, canvasID){
+
+    //check if the clicked object is clickable for the current scene step
+    var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
+
+    var clickable = rawID.split('|');
+
+    if(clickable[gDialogCounter] === 'f'){
+        return;
+    }
 
     if(gDialogIDs.length === gDialogCounter){
 

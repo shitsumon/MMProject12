@@ -332,7 +332,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 								{
 									id : canvasID,
 									"class": quizClass,
-                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "');"
+                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
                                                         + moveTrigger + quizTrigger /*+ dialogTrigger*/
 								}
 							);
