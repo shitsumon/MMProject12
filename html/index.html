@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <title>Netzwerkstar II</title>
 <link rel="stylesheet" type="text/css" href="netzwerkstar.css"/>
 <script type="text/javascript" src="../js/external/jquery.js"></script>
@@ -14,37 +15,23 @@
 <script type="text/javascript" src="../js/core/dialogControl.js"></script>
 <script type="text/javascript" src="../js/core/quizControl.js"></script>
 <script type="text/javascript" src="../js/core/codeGenerator.js"></script>
-<script>
-setTimeout(function() { HideElements(); },25000);
-function HideElements()
-{
-document.getElementById('titles').style.visibility = 'hidden'; 
-document.getElementById('titlesback').style.visibility = 'hidden'; 
-document.getElementById('titlescontent').style.visibility = 'hidden'; 
-};
-</script>
 </head>
 <body>
-
-<div id="titlesback" onclick="HideElements()"><img src="../bilder/allgemein/TEST.png" id="bg" alt=""></div>
+<div id="titlesback" onclick="HideElementsIntro()"><img src="../bilder/allgemein/TEST.png" id="bg" alt=""></div>
 <h1 class="center">Netzwerk Star II<sub>das Spiel</sub></h1>
 <div id="titles">
-<div id="titlecontent">
-		
-
-        <p>Zwei Freunde, Lichtjahre hinweg von uns, bestreiten ihre Reise durch eine weit entfernte Galaxie. </p>
-
-        <p>Mit dem wichtigen Auftrag ein seltenes Artefakt sicher heim zu bringen steuern die beiden aleine ihr Raumschiff durch die Sterne. Bis sie bemerkten, dass sie bei weitem nicht aleine sind... </p>
-        <p>Wirst du Ihnen helfen sicher aus dieser Lage heraus zu kommen? Oder endet das ganze in... </p>
-
-        <p class="center">Chaos</p>
-</div></div>
-
-<img src="../bilder/allgemein/ns2_menu.png" id="bg" alt="">
-  <div id="menu">
-    <input name="spiel_starten" type="button" onClick="ladeBilder();ladeDialoge();" value="Spiel starten" />
-    <br />
-    <input name="spiel_fortsetzen" type="button" onClick="spiel_fortsetzen();" value="Spiel fortsetzen" />
+  <div id="titlecontent">
+    <p>Zwei Freunde, Lichtjahre entfernt von uns, bestreiten ihre Reise durch eine weit entfernte Galaxie. </p>
+    <p>Mit dem wichtigen Auftrag ein seltenes Artefakt sicher heimzubringen steuern die beiden alleine ihr Raumschiff durch die Sterne. Bis sie bemerkten, dass sie bei Weitem nicht alleine sind ... </p>
+    <p>Wirst du Ihnen helfen, sicher aus dieser Lage heraus zu kommen? Oder endet das Ganze in ... </p>
+    <p class="center">Chaos</p>
   </div>
+</div>
+<img src="../bilder/allgemein/ns2_menu.png" id="bg" alt="">
+<div id="menu">
+  <input name="spiel_starten" type="button" onClick="ladeBilder(); ladeDialoge();" value="Spiel starten" />
+  <br />
+  <input name="spiel_fortsetzen" type="button" onClick="spiel_fortsetzen();" value="Spiel fortsetzen" />
+</div>
 </body>
 </html>

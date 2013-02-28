@@ -69,8 +69,6 @@ function entschluesseln(code){
 
 function spiel_fortsetzen(){
 	
-	//remove menu?
-	
 	var code = prompt("Bitte Code eingeben!");	
 	
 	if(code != null && code !== ""){
@@ -81,10 +79,6 @@ function spiel_fortsetzen(){
 		gCurrentQuizstep		= code[1];
 		
 		gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
-		
-		
-		$("#bg").remove();
-		$("#menu").remove();
 		
 		ladeBilder(true);
 		ladeDialoge();

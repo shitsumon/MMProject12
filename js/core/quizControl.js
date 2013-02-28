@@ -8,14 +8,12 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 		gQuiztriggerAfterMoving = clicked_canvas_quiz_flags;
 		
 		return;
-	}else{
-		//restore saved parameter as walking is over
-		clicked_canvas_quiz_flags = gQuiztriggerAfterMoving;
 	}
 	
 	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
-	if(clicked_canvas_quiz_flags[gCurrentQuizstep] === "t"){
+	if((clicked_canvas_quiz_flags[0] === "CalledByDialogue") ||
+		(clicked_canvas_quiz_flags[gCurrentQuizstep] === "t")){
 		//if the clicked canvas is supposed to advance the quiz now
 		
 		//increment current quizstep

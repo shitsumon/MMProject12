@@ -20,7 +20,7 @@ function bewegePerson(){
 	}
 	
 	//Get objects of target and hero picture
-    var hero	= $("canvas[id*='canvas_person_herotileset']");
+    var hero	= $("canvas[id*='canvas_person_']");
     var target	= $("canvas[id*='" + gTargetIdentifier.split(":")[0] + "']");
 
 	//x, y, z-coordinates of canvas centre
@@ -73,13 +73,14 @@ function bewegePerson(){
 		});
 		
 		/*draws central path points*/
-		
+		/*
         var hg = $("canvas[id*=canvas_bg_static]")[0].getContext("2d");
 		hg.fillStyle = "rgb(255, 0, 0)";
 
 		$.each(lWegPos,function(index, value){
 			hg.fillRect( value[0], value[1], 10, 10 );
 		});
+		*/
 		
 		
 		$.each(gZoomsteps, function(index, value){
@@ -222,6 +223,7 @@ function bewegePerson(){
 		gWegBerechnet		= false;
 		gisWalkingTo		= "";
 		
+		//restore saved parameter as walking is now over
 		advanceQuizStep(gQuiztriggerAfterMoving);
 	}
 }

@@ -14,7 +14,7 @@
     3. link your js-file
 
     example:
-    <html>
+    <!--<html>
         <head>
             <script type="text/javascript" src="../../JS/external/jquery.js"></script>  <!-- 1. -->
             <script type="text/javascript" src="../../JS/core/helper.js"></script>      <!-- 2. -->
@@ -22,7 +22,7 @@
         </head>
         <body>
         </body>
-    </html>
+    </html>-->
 */
 
 /****************
@@ -362,3 +362,19 @@ var n2n = new Array(
 	"fuenfzehn", "sechzehn", "siebzehn",
 	"achtzehn", "neunzehn", "zwanzig");
 
+//timer for hiding intro
+setTimeout(function() { HideElementsIntro(); },25000);
+
+function HideElementsIntro(){
+	//hides intro elements
+	$('h1').remove();
+	$("#titles").remove();
+	$("#titlesback").remove();
+	$("#titlecontent").remove();
+};
+
+function HideElementsMenu(){
+	//hides menu elements, called in sceneparser
+	$('#bg').remove();
+	$('#menu').remove();
+}

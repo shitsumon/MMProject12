@@ -34,10 +34,6 @@ function dialog_zeichneDialog(textToDraw)
         gTalk.currentDialog = gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
         gTalk.isInitialized = true;
-
-        if(gDialogIDs[gDialogCounter].trigger_quizstep){
-            ++gCurrentQuizstep;
-        }
     }
 
     var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
@@ -49,6 +45,11 @@ function dialog_zeichneDialog(textToDraw)
     if(gTalk.SatzCounter < gTalk.SatzMax - 1){
         Text += '   >>'      ;
     }
+	
+	if((gTalk.SatzCounter == (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
+		//call this with forced flag if its the last sentence
+		advanceQuizStep("CalledByDialogue");
+	}
 
     //screen dimensions
     var screenWidth  = $(window).width();

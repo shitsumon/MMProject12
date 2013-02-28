@@ -158,6 +158,9 @@ function getSceneInformation(sceneID, sceneFilename){
 			  drawScene(sceneObject);
 			  //scene computation finished, prevent next scene from loading before pictures and dialogues have
 			  gdisplay_next_scene = false;
+			  
+			  //hide menu
+			  HideElementsMenu();
 
     }).error(function(xhr, status, error){
 		alert("Es ist ein Fehler aufgetreten: " + error);
@@ -290,9 +293,9 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //of common string and picture id
             var canvasID =
 				sharedIdString + "_" +
-				objectsToDraw[index].imageID.slice(
+				objectsToDraw[index].imageID;/*.slice(
 						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
-					);
+					);*/
 			
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
