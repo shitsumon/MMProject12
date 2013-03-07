@@ -21,6 +21,8 @@ function verschluesseln(){
 		code += String.fromCharCode(dummy);
     }
 
+	$("#codefeld").val(code);
+
     return code;
 }
 

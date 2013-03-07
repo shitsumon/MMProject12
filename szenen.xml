@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <szenen>
-  <szene id="Szene_1" reatselschritte="13">
+  <szene id="Szene_1" reatselschritte="15">
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -9,60 +9,60 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene1_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene1_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_lautsprecher_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene1_lautsprecher_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="16" y="20" z="0"/>
           <groesse width="5" height="7"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_lautsprecher_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene1_lautsprecher_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="80" y="20" z="0"/>
           <groesse width="5" height="7"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene1_kamera" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene1_kamera" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="88" y="16" z="0"/>
           <groesse width="8" height="10"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="szene1.1" klickbar="t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_bett" dialog_id="szene1.1" klickbar="t|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="25" y="26" z="101"/>
           <groesse width="50" height="77"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_muelleimer" dialog_id="szene1.6|szene1.8" klickbar="f|f|f|f|t|t|t|t|f|f|f|f|f" walkto="f|f|f|f|t|t|t|t|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|f|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|t|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_muelleimer" dialog_id="szene1.9" klickbar="f|f|f|f|f|f|f|f|f|f|t|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|t|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="24" y="66" z="101"/>
           <groesse width="15" height="25"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_schreibtisch" dialog_id="szene1.5|szene1.11|szene1.11.1|szene1.11.2" klickbar="f|f|f|f|t|t|t|t|t|f|f|f|f" walkto="f|f|f|f|t|t|t|t|t|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|t|f|f|f|t|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_schreibtisch" dialog_id="szene1.5|szene1.10" klickbar="f|f|f|f|f|t|f|f|f|f|f|t|f|f|f" walkto="f|f|f|f|f|t|f|f|f|f|f|t|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f">
           <position x="53" y="42" z="101"/>
           <groesse width="45" height="60"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_schublade_zu" dialog_id="szene1.5|szene1.11|szene1.11.1|szene1.11.2" klickbar="f|f|f|f|t|t|f|f|f|f|f|f|f" walkto="f|f|f|f|t|t|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|t|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_schublade_zu" dialog_id="szene1.6" klickbar="f|f|f|f|f|f|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
           <position x="56.5" y="63" z="102"/>
           <groesse width="4.5" height="5"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_schublade_offen" dialog_id="szene1.5|szene1.11|szene1.11.1|szene1.11.2" klickbar="f|f|f|f|f|f|t|t|t|f|f|f|f" walkto="f|f|f|f|f|f|t|t|t|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_schublade_offen" dialog_id="szene1.5|szene1.11|szene1.11.1|szene1.11.2" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="55" y="63" z="102"/>
           <groesse width="7" height="6"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_sound_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_sound_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|f|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="20" y="16" z="100"/>
           <groesse width="20" height="25"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene1_sound_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene1_sound_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|f|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="69" y="16" z="100"/>
           <groesse width="20" height="25"/>
         </hg_animiert_objekt>
@@ -76,63 +76,63 @@
       <vg_statisch>
       </vg_statisch>
       <vg_animiert>
-        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.7|szene1.9" klickbar="f|f|f|f|f|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|t|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|f|f|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_schrank_zu" dialog_id="szene1.8" klickbar="f|f|f|f|f|f|f|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|t|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|f|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|t|f|f|f|f|f|f">
           <position x="0" y="33" z="400"/>
           <groesse width="20" height="60"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|t|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_schrank_offen" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="33" z="400"/>
           <groesse width="28.8" height="60"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_raetsel_fenster" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_raetsel_fenster" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="401"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|t|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f">
+        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="szene1.10.2" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|t|f|f">
           <position x="31" y="55" z="401"/>
           <!--links privat-->
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|t|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="szene1.10.1" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="49.5" y="55" z="401"/>
           <!--mitte freunde-->
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|t|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|t|f|f">
+        <vg_animiert_objekt bild_id="szene1_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="68" y="55" z="401"/>
           <!--rechts oeffentlich-->
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_kreuz" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_kreuz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="31" y="55" z="401"/>
           <!--links-->
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_kreuz" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_kreuz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="68" y="55" z="401"/>
           <!--rechts-->
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_oeffentlich" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|t|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_oeffentlich" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="46" y="39" z="402"/>
           <groesse width="13" height="7"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene1_privat" dialog_id="" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene1_privat" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="48" y="39" z="402"/>
           <groesse width="10" height="7"/>
         </vg_animiert_objekt>
-		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.10|szene1.12" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4|szene1.7|szene1.11" klickbar="f|t|t|t|t|t|t|t|f|t|t|t|t|t|t" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|t|t|f|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|t|f|f|f|f|f|f|f|f|f|f|f">
           <position x="34" y="65" z="400"/>
           <groesse width="75" height="35"/>
         </vg_animiert_objekt>
@@ -447,7 +447,7 @@
       </vg_animiert>
     </ebenen>
   </szene>
-  <szene id="Szene_5" reatselschritte="20">
+<szene id="Szene_5" reatselschritte="24">
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -456,25 +456,30 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene5_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene5_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene5_fischglas" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene5_fragen_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="0" y="0" z="0"/>
+          <groesse width="100" height="100"/>
+        </hg_statisch_objekt>	
+        <hg_statisch_objekt bild_id="szene5_fischglas" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene5_terminal" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|f|t|t|t|t|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|t|f|f|t|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene5_terminal" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|f|t|t|t|t|f|f|f|f|f|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|t|f|f|t|f|f|f|f|f|f|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene5_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene5_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="70" y="63" z="101"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
@@ -487,23 +492,23 @@
       </personen>
       <vg_statisch></vg_statisch>
       <vg_animiert>
-        <vg_animiert_objekt bild_id="szene5_dr_chaos" dialog_id="#none#" klickbar="t|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_dr_chaos" dialog_id="#none#" klickbar="t|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="30" y="50" z="400"/>
           <groesse width="18" height="30"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_dr_chaos_umgedreht" dialog_id="#none#" klickbar="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_dr_chaos_umgedreht" dialog_id="#none#" klickbar="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="30" y="50" z="400"/>
           <groesse width="18" height="30"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_teddy" dialog_id="#none#" klickbar="f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_teddy" dialog_id="#none#" klickbar="f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="40" z="400"/>
           <groesse width="10" height="10"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_tuer" dialog_id="#none#" klickbar="f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="t|t|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|t|f|f|f|t|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_tuer" dialog_id="#none#" klickbar="f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="t|t|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="t|t|t|t|t|t|f|f|f|t|f|f|f|t|f|f|f|f|f|t|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="87" y="26" z="400"/>
           <groesse width="12" height="66"/>
         </vg_animiert_objekt>
@@ -512,76 +517,188 @@
           <position x="83" y="51" z="401"/>
           <groesse width="4" height="7"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_raetsel_fenster" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|t|t|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_raetsel_fenster" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="402"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_batterie" dialog_id="#none#" klickbar="f|f|f|f|f|f|t|f|t|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|t|f|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_batterie" dialog_id="#none#" klickbar="f|f|f|f|f|f|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="36" z="403"/>
           <groesse width="7" height="10"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch1" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch1" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="39" y="50" z="403"/>
           <groesse width="3" height="12"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch2" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch2" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="42" y="57" z="404"/>
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch3" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch3" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="42" y="51" z="403"/>
           <groesse width="5" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch4" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch4" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="47" y="55" z="403"/>
           <groesse width="3" height="8"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch5" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch5" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f||f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="49.6" y="51" z="404"/>
           <groesse width="3" height="13"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch6" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch6" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="51.5" y="52.6" z="405"/>
           <groesse width="2" height="11"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch7" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch7" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="53.3" y="51" z="406"/>
           <groesse width="3" height="13"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch8" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch8" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="55" y="53.7" z="407"/>
           <groesse width="3" height="10"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch9" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch9" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="53" z="404"/>
           <groesse width="7" height="7"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_buch10" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_buch10" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|t|t|t|t|t|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="59.9" y="56.5" z="403"/>
           <groesse width="7" height="7"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_sicherung" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_sicherung" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="40" z="403"/>
           <groesse width="4" height="6"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene5_zeug" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene5_zeug" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="39" y="29" z="403"/>
           <groesse width="24" height="17"/>
         </vg_animiert_objekt>
+		
+        <vg_animiert_objekt bild_id="szene5_frage_1" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="30" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_frage_2" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="30" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_frage_3" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="30" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_frage_4" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="30" height="10"/>
+        </vg_animiert_objekt>
+		
+		<vg_animiert_objekt bild_id="szene5_antwort_1a" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_1b" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_1c" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_1d" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		
+				<vg_animiert_objekt bild_id="szene5_antwort_2a" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_2b" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_2c" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_2d" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		
+		
+				<vg_animiert_objekt bild_id="szene5_antwort_3a" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_3b" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_3c" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_3d" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		
+		
+				<vg_animiert_objekt bild_id="szene5_antwort_4a" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_4b" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_4c" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="szene5_antwort_4d" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t">
+          <position x="55" y="53.7" z="407"/>
+          <groesse width="3" height="10"/>
+        </vg_animiert_objekt>
+
+
+		
+		
+		
       </vg_animiert>
     </ebenen>
   </szene>
