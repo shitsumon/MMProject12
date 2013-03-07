@@ -147,75 +147,80 @@
       <wegpunkt x="48" y="92" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
-      <hg_statisch>
+      <hg_statisch> <!--Background-->
         <hg_statisch_objekt bild_id="szene2_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
-        </hg_statisch_objekt>
+        </hg_statisch_objekt> <!--Fishbowl-->
         <hg_statisch_objekt bild_id="szene2_fischglas" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
-        </hg_statisch_objekt>
+        </hg_statisch_objekt> <!--Door-->
         <hg_statisch_objekt bild_id="szene2_tuer" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="87" y="26" z="0"/>
           <groesse width="12" height="66"/>
         </hg_statisch_objekt>
       </hg_statisch>
-      <hg_animiert>
+      <hg_animiert> <!--Terminal-->
         <hg_animiert_objekt bild_id="szene2_terminal" dialog_id="#none#" klickbar="f|t|t|f|f|f|f" walkto="t|t|t|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|t|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
-        </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene2_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
+        </hg_animiert_objekt> <!--Chair-->
+        <hg_animiert_objekt bild_id="szene2_sitz" dialog_id="szene2.1" klickbar="t|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="70" y="63" z="101"/>
           <groesse width="20" height="35"/>
-        </hg_animiert_objekt>
+        </hg_animiert_objekt> <!--Lights Left-->
         <hg_animiert_objekt bild_id="szene2_leuchten_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="0" y="11" z="100"/>
           <groesse width="35" height="50"/>
-        </hg_animiert_objekt>
+        </hg_animiert_objekt> <!--Lights right-->
         <hg_animiert_objekt bild_id="szene2_leuchten_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="79" y="11" z="100"/>
           <groesse width="35" height="50"/>
         </hg_animiert_objekt>
       </hg_animiert>
-      <personen>
+      <personen> <!--Hero-->
         <person person_id="" bild_id="allg_herotileset">
           <position x="45" y="60" z="200"/>
           <groesse width="10" height="10"/>
         </person>
       </personen>
       <vg_statisch></vg_statisch>
-      <vg_animiert>
+      <vg_animiert> <!--Dialogbox-->
+        <vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f|f|f"
+                raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="34" y="65" z="400"/>
+          <groesse width="75" height="35"/>
+        </vg_animiert_objekt> <!--Button-->
         <vg_animiert_objekt bild_id="szene2_knopf" dialog_id="#none#" klickbar="f|t|f|f|f|f|f" walkto="f|t|f|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="t|t|f|f|f|f|f">
           <position x="83" y="51" z="401"/>
           <groesse width="4" height="7"/>
-        </vg_animiert_objekt>
+        </vg_animiert_objekt> <!--Quiz Window 1-->
         <vg_animiert_objekt bild_id="szene2_raetsel_fenster_i" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="0" y="0" z="402"/>
           <groesse width="100" height="100"/>
-        </vg_animiert_objekt>
+        </vg_animiert_objekt> <!--Selection field-->
         <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="#none#" klickbar="f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|t|f|f|f">
           <position x="53" y="47" z="403"/>
           <!--name-->
           <groesse width="20" height="10"/>
-        </vg_animiert_objekt>
+        </vg_animiert_objekt> <!--Selection field-->
         <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="#none#" klickbar="f|f|f|t|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|t|f|f|f">
           <position x="53" y="57" z="403"/>
           <!--passwort-->
           <groesse width="20" height="10"/>
-        </vg_animiert_objekt>
+        </vg_animiert_objekt> <!--Quiz Window 2-->
         <vg_animiert_objekt bild_id="szene2_raetsel_fenster_ii" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|f|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="0" y="0" z="402"/>
