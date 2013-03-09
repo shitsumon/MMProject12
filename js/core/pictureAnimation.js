@@ -9,8 +9,11 @@ parameters include:
 */
 function animiereCanvas(canvas_id, bild_id){
 
-    //get canvas and its drawing context
-    var canvas  = $("#" + canvas_id)[0];
+	//id can contain flags denoted by ":"
+	canvas_id = canvas_id.split(":")[0];
+	//get canvas and its drawing context
+	var canvas  = $("canvas[id*=" + canvas_id + "]")[0];
+	
 	//exit is this canvas doesn't exist
 	if(typeof(canvas) === "undefined"){
 		
@@ -82,6 +85,11 @@ function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight){
 						pxHeight
                     );
     }
+	
+	if(!strContains(canvas_id, 'person')){
+		//if you're not a person subtilesets should not be used
+		gAnimationTimer[bild_id].subtileset = 0;
+	}
 	
 	//check whether a timer is defined
 	if((typeof(gAnimationTimer[bild_id].timer) !== "undefined") && (gAnimationTimer[bild_id].timer != null)){

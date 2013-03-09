@@ -358,21 +358,6 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
             //calculate pixel dimensions from percentage values
 			var pxWidth, pxHeight;
-
-			/*if(gBilder[objectsToDraw[index].imageID].animiert){
-				//picture is animated, use tile width and height
-				pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_width,
-									objectsToDraw[index].size.width);
-				pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].animationsmerkmale.tile_height,
-									objectsToDraw[index].size.height);
-									   
-			}else{
-				//picture is not animated, use picture width and height
-                pxWidth		= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.width,
-									objectsToDraw[index].size.width);
-				pxHeight	= perc2pix(gBilder[objectsToDraw[index].imageID].abmessungen.height,
-									objectsToDraw[index].size.height);
-			}*/
 			
 			pxWidth		= perc2pix(screenWidth, objectsToDraw[index].size.width);
 			pxHeight	= perc2pix(screenHeight, objectsToDraw[index].size.height);

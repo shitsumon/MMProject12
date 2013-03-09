@@ -65,11 +65,13 @@
   <bild id="szene1_schublade_offen" pfad="../bilder/szene1/schublade_offen.png" animiert="false">
     <abmessungen height="36" width="60"/>
   </bild>
-  <bild id="szene1_sound_links" pfad="../bilder/szene1/sound_links.png" animiert="false">
-    <abmessungen height="102" width="95"/>
+  <bild id="szene1_sound_links" pfad="../bilder/szene1/sound_links.png" animiert="true">
+    <abmessungen height="102" width="380"/>
+    <animation fps="6" tile_anzahl="4" tile_width="95" tile_height="102"/>
   </bild>
-  <bild id="szene1_sound_rechts" pfad="../bilder/szene1/sound_rechts.png" animiert="false">
-    <abmessungen height="102" width="95"/>
+  <bild id="szene1_sound_rechts" pfad="../bilder/szene1/sound_rechts.png" animiert="true">
+    <abmessungen height="102" width="380"/>
+    <animation fps="5" tile_anzahl="4" tile_width="95" tile_height="102"/>
   </bild>
   <bild id="szene1_auswahl" pfad="../bilder/szene1/auswahl.png" animiert="false">
     <abmessungen height="73" width="77"/>
@@ -88,6 +90,9 @@
   </bild>
   <bild id="szene1_raetsel_fenster" pfad="../bilder/szene1/raetsel_fenster.png" animiert="false">
     <abmessungen height="720" width="1280"/>
+  </bild>
+  <bild id="szene1_schlafen" pfad="../bilder/szene1/schlafen.png" animiert="false">
+    <abmessungen height="137" width="281"/>
   </bild>
   <!--szene2-->
   <bild id="szene2_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">

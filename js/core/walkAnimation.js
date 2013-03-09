@@ -50,7 +50,7 @@ function bewegePerson(){
 	targetPos[0] = target.offset().left + (target.width() / 2.0);
 	targetPos[1] = target.offset().top + (target.height());
 	
-	if(zielErreicht(heroPos, targetPos, true)){
+	if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
 		//check whether we already are in front of the goal and return
 		return;
 	}
@@ -203,11 +203,10 @@ function bewegePerson(){
 
 		//to maintain scaling at target the animation data has to be adjusted
 		$.each(gAnimationTimer,function(index, bild){
-			//finde den animierten Canvas anhand seiner ID
+			//find given canvas by id
 			if((typeof(bild.canvas_id) !== "undefined") && bild.canvas_id === hero[0].id){
 				//reset transformation matrix
 				hero[0].getContext("2d").setTransform(1, 0, 0, 1, 0, 0);
-				//setze die Zielabmessungen der Animation auf die letzten skalierten Abmessungen
 				//set animations target dimensions to last computed dimensions
 				bild.anzeige_width	= gStartAbmessungen[0];
 				bild.anzeige_height	= gStartAbmessungen[1];

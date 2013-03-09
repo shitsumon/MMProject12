@@ -18,7 +18,7 @@
     <satz person_id="bc" bild_id="allg_bordcomputer">???? ??????? ???? ?????</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
   </dialog>
-  <dialog id="szene1.4" increase_quiz_step="true">
+  <dialog id="szene1.4" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
   </dialog>
   <dialog id="szene1.5" increase_quiz_step="true">
