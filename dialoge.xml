@@ -69,42 +69,42 @@
   <!-- Beginn Szene 2 -->
   <dialog id="szene2.1" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, könntest du bitte das Licht auf der Brücke anmachen? Ich wusste nicht mal, dass man es ausmachen kann ...</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul, oder?"</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Nein, aber du könntest es mit dem Lichtschalter versuchen.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Nein, aber du könntest es mit dem Lichtschalter versuchen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Jaaa, das würde es auch tun ...</satz>
   </dialog>
   <dialog id="szene2.2" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Ohh...kaayy ... was passiert hier?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Es scheint, dass die Zugriffsberechtigung der Türen verändert wurde. Du hast keinen Zugriff mehr.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Es scheint, dass die Zugriffsberechtigung der Türen verändert wurde. Du hast keinen Zugriff mehr.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Lass mich raten, du hast auch keine mehr, richtig?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Richtig. Aber du könntest ...</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Richtig. Aber du könntest ...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">... wie in meiner Kabine vorhin alles selbst machen, dachte ich mir schon. Was muss ich tun?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Zuerst musst du dich mit dem Admin-Account am Computerterminal anmelden.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Zuerst musst du dich mit dem Admin-Account am Computerterminal anmelden.</satz>
   </dialog>
   <dialog id="szene2.3" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">So, dann schauen wir mal. Benutzername ist "admin" und das passwort ist "passwo…</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Ihr habt das Passwort nie geändert?!</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Ihr habt das Passwort nie geändert?!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Nein, natürlich nicht. So kann man schließlich schnell drauf zugreifen und muss nicht erst lange überlegen. Außerdem, wer hätte schon Interesse, sich dort einzuloggen?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Passwörter sollten immer geändert und individualisiert werden, egal wie unwichtig es auch erscheint!</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Passwörter sollten immer geändert und individualisiert werden, egal wie unwichtig es auch erscheint!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Könnten wir uns die Belehrung an dieser Stelle sparen? Wenn wir geklärt haben, wer vorhin an meinem Wecker gespielt und mich hier eingeschlossen hat, dann ändere ich es sofort. Also einloggen ...</satz>
   </dialog>
   <dialog id="szene2.4" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Eingeloggt, wie ist der nächste Schritt?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Du musst nun "Zugriffsberechtigungen für Brücke" auswählen.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Du musst nun "Zugriffsberechtigungen für Brücke" auswählen.</satz>
   </dialog>
   <dialog id="szene2.5" increase_quiz_step="false">
-    <satz person_id="bc" bild_id="bordcomputer">Als nächstes musst du dir Rechte geben.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Als nächstes musst du dir Rechte geben.</satz>
   </dialog>
   <dialog id="szene2.6" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Hey, wer ist dieser Gast? Der hat ja volle Zugriffsberechtigung!</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wiederherstellen.</satz>
   </dialog>
   <dialog id="szene2.7" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Gut, so viel dazu. Ich muss schnellstens mit P2 sprechen wegen der seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
-    <satz person_id="bc" bild_id="bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Du hast es erraten ... P2_DYN_NAME, kannst du mich hören?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Captain? Ich dachte, du schläfst ... Ist was passiert?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das kann man so sagen, komm bitte auf die Brücke. Lagebesprechung.</satz>

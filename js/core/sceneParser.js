@@ -196,6 +196,8 @@ function drawScene(sceneObject){
     drawObjectsOfSameType('canvas_person', sceneObject.persons);
 	//create dialogues textbox
     $('body').append($('<canvas/>', {id: 'textbox'}));
+
+    forceDialog();
 }
 
 /*
@@ -392,6 +394,13 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
             //get context
             canvasContext = newCanvas[0].getContext("2d");
+
+            //debug
+            if(typeof(gBilder[objectsToDraw[index].imageID]) === 'undefined'){
+
+                alert("Undefined image:" + objectsToDraw[index].imageID);
+            }
+            //debug end
 
 			if(gBilder[objectsToDraw[index].imageID].animiert){
                 //Check if we deal with person objects

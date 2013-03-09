@@ -1,35 +1,35 @@
-//Initiert Dialog. Dialogauswahl nach ID (string)
+/**
+ * Function set to display the text of the game inside the dialogbox.
+ */
 
-/*
-- unbedingt an den entscheidenden stellen prüfen, ob die entsprechenden objekte vorhanden sind
-- gTalk als aktuellen dialog vielleicht übergeben statt global zu speichern
-- positionierung des dialogfensters
-- text sollte antialiasing oä erhalten
-*/
-function dialogStart(dialog_id)
-{	
-	//wähle Dialog aus
-	
-    var Dialog = gDialoge[dialog_id];
-    var Laenge = (Dialog.saetze).length;
-	
-    gTalk.SatzGerade = 0;
-    gTalk.SatzMax	 = Laenge;
-    gTalk.dialog_id	 = dialog_id;
-	
-	dialogSettings(	
-		'allg_dialogbox',	//Hintergrund für Dialoge
-		'textbox',			//CSS/Canvas
-        'yellow',			//Schriftfarbe
-		'bold 18px Arial',	//Schriftart
-		20);				//Zeilenabstand
+/**
+ * forceDialog()
+ *
+ * Forces next dialog to be displayed.
+ * This can be used to initiate a
+ * dialog sequence, at scene start.
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * none
+ */
+function forceDialog(){
 
-	dialog_zeichneDialog();
+    //display next dialog
+    dialog_zeichneDialog();
+
+    //Only increment if current dialog chunk is
+    //at it's end
+    if(!gTalk.isInitialized){
+        ++gDialogCounter;
+    }
 }
 
 function dialog_zeichneDialog(textToDraw)
 {
-	//Greife auf Dialogdaten zu
+    //access dialogdata
     if(!gTalk.isInitialized){
         gTalk.currentDialog = gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
@@ -46,7 +46,7 @@ function dialog_zeichneDialog(textToDraw)
         Text += '   >>';
     }
 	
-	if((gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
+    if((gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
 		//call this with forced flag if its the last sentence
 		advanceQuizStep("CalledByDialogue");
 	}
@@ -71,37 +71,24 @@ function dialog_zeichneDialog(textToDraw)
 
     var pixSize = Math.round((textBoxImageWidth - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
 
-
-    //Prinzip von pictureAnimation.js übernommen.
+    //get dialogbox canvas
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
-    //var ctx    = canvas[0].getContext("2d");
-    //ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     canvas.width  = perc2pix(screenWidth,  gTalk.TBPercWidth);
     canvas.height = perc2pix(screenHeight, gTalk.TBPercHeight);
-    /*
-        Setze position der Textbox mit prozentualen Werten.
 
-        Habe nicht rausgefunden wie man per jQuery auf die
-        style attribute zugreift, wer das weiss, bitte ändern!
-    */
     var realXPos = perc2pix(screenWidth,  gTalk.TBPercPosX) - (canvas.width * 0.5);
 
     var percPosX = pix2perc(screenWidth, realXPos);
     var percPosY = pix2perc(screenHeight, perc2pix(screenHeight, gTalk.TBPercPosY));
 
-    //var c = document.getElementById(gTalk.canvas_id);
-
-    //c.style.left = percPosX;
-    //c.style.top  = percPosY;
-
-    //hole kontext
+    //get canvas context
     var ctx = canvas[0].getContext("2d");
 
-    //Leere Inhalt des Bereiches (löscht alten text etc)
+    //clear dialog box from old text etc.
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
-    //Draws background box
+    //draw background box
     ctx.drawImage(gBilder[gTalk.bild_id].bild,
                   0,
                   0,
@@ -109,7 +96,7 @@ function dialog_zeichneDialog(textToDraw)
                   textBoxImageHeight);
 
     if(typeof(textToDraw) === 'undefined'){
-        //Draw character image
+        //draw character image
         ctx.drawImage( gBilder[Satz.bild_id].bild,
                       ProtImgXPos,
                       ProtImgYPos,
@@ -118,21 +105,22 @@ function dialog_zeichneDialog(textToDraw)
                       );
     }
 
-    //Initiere Einstellungen für Text
+    //set layout settings
     ctx.fillStyle = gTalk.font_color;
     ctx.font      =	gTalk.font_style;
 
-    //Breche Text in Zeilen
+    //split text into lines if necessary
     var text = dialog_SatzZeilenBruch(Text, pixSize);
 
-    //Fülle Box mit Text Zeilenweise aus
+    //fill dialogbox letterwise
     for( var i = 0; i < text.length; i++ ){
         ctx.fillText(text[i], textXPos, textYOffset + ( gTalk.line_distance * i ));
     };
 
-    //Inkrementiere Satzcounter
+    //increment sentence counter
     ++gTalk.SatzCounter;
 
+    //if last sentence is reached, restore start state
     if( gTalk.SatzCounter === gTalk.SatzMax ){
 
         gTalk.currentDialog = 'undefined';
@@ -259,7 +247,7 @@ function justClicked(imgID, canvasID){
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(gDialoge[gDialogIDs[gDialogCounter].scene_id] === 'undefined'){
+                if(typeof(gDialoge[gDialogIDs[gDialogCounter].scene_id]) === 'undefined'){
                     alert('undefined dialog in gDialoge[]!');
                     return;
                 }

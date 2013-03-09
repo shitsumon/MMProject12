@@ -28,15 +28,12 @@ function verarbeiteBilderXML(daten, force_load_common){
 	
 	//compute pictures
 	verarbeiteBilder(jquery_bilder);
-	//load common files with first scene
-	if((gcurrent_scene_counter == 1) || (force_load_common)){
-		
-		jquery_bilder = $(daten).find("bild[id*=allg_]");
-		
-		gBilder.anzahl += jquery_bilder.length;
-		
-		verarbeiteBilder(jquery_bilder);
-	}
+
+    jquery_bilder = $(daten).find("bild[id*=allg_]");
+
+    gBilder.anzahl += jquery_bilder.length;
+
+    verarbeiteBilder(jquery_bilder);
 }
 
 function verarbeiteBilder(bilder){
