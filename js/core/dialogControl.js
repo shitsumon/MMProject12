@@ -114,7 +114,7 @@ function dialog_zeichneDialog(textToDraw)
 
     //fill dialogbox letterwise
     for( var i = 0; i < text.length; i++ ){
-        ctx.fillText(text[i], textXPos, textYOffset + ( gTalk.line_distance * i ));
+        ctx.fillText(text[i].replace(/#KOMMA#/g, ","), textXPos, textYOffset + ( gTalk.line_distance * i ));
     };
 
     //increment sentence counter
@@ -137,6 +137,9 @@ function dialog_SatzZeilenBruch(text, pixelSize)
     var subtext = "";
     var result  = new Array();
     var search  = 0;
+	
+	//replace commas to prevent them from beeing misinterpreted as array separator
+	text = text.replace(/,/g, "#KOMMA#");
 	
     if ( text.length > pixelSize )
 	{
@@ -227,11 +230,12 @@ function justClicked(imgID, canvasID){
 
     var clickable = rawID.split('|');
 
-    if(clickable[gDialogCounter] === 'f'){
+//    if(clickable[gDialogCounter] === 'f'){
+    if(clickable[gCurrentQuizstep] === 'f'){
         return;
     }
 
-    if(gDialogIDs.length === gDialogCounter){
+    if(gDialogIDs.length == gDialogCounter){
 
         dialog_zeichneDialog("Ende der Szene.");
         checkQuizfinished();
