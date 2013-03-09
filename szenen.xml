@@ -137,7 +137,7 @@
           <groesse width="10" height="7"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene1.2|szene1.3|szene1.4" klickbar="f|t|t|t|t|t|f|f" walkto="f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|f|t" raetsel_ausloeser="f|f|f|f|t|t|f|f">
+		raetsel_sichtbar="t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|t|t|f|f">
           <position x="34" y="65" z="400"/>
           <groesse width="75" height="35"/>
         </vg_animiert_objekt>
