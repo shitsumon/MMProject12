@@ -252,8 +252,11 @@ function justClicked(imgID, canvasID){
                     return;
                 }
 
-                //if it's the wrong dialog skip it
-                if(sceneDialogues[idx2] !== gDialogIDs[gDialogCounter].scene_id){
+                //if it's the wrong dialog skip it,
+                //but only if we are not in the middle
+                //of a text chunk, otherwise the click
+                //onto the dialogbox would be blocked
+                if((sceneDialogues[idx2].toLowerCase() != gDialogIDs[gDialogCounter].scene_id.toLowerCase()) && !gTalk.isInitialized){
                     continue;
                 }
 

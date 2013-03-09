@@ -93,7 +93,7 @@ function checkQuizfinished(){
 }
 
 function advanceNextScene(){
-	
+    alert('test');
 	//create scene id
 	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 	
