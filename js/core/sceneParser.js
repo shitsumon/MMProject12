@@ -329,13 +329,13 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                 /*dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
 									typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
                                     "dialogStart('"+ objectsToDraw[index].dialogueID +"');";*/
-				
+
 				newCanvas = $('<canvas/>',
 								{
 									id : canvasID,
 									"class": quizClass,
                                   onclick:"javascript:" + moveTrigger + quizTrigger
-								  			+ "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
+                                            + "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
 								}
 							);
 			}else{

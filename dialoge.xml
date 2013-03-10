@@ -65,7 +65,7 @@
   </dialog>
   
   <!-- Beginn Szene 2 -->
-  <dialog id="szene2.1" increase_quiz_step="true">
+  <dialog id="szene2.1" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, könntest du bitte das Licht auf der Brücke anmachen? Ich wusste nicht mal, dass man es ausmachen kann ...</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul, oder?</satz>
@@ -88,19 +88,19 @@
     <satz person_id="bc" bild_id="allg_bordcomputer">Passwörter sollten immer geändert und individualisiert werden, egal wie unwichtig es auch erscheint!</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Könnten wir uns die Belehrung an dieser Stelle sparen? Wenn wir geklärt haben, wer vorhin an meinem Wecker gespielt und mich hier eingeschlossen hat, dann ändere ich es sofort. Also einloggen ...</satz>
   </dialog>
-  <dialog id="szene2.4" increase_quiz_step="true">
+  <dialog id="szene2.4" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Eingeloggt, wie ist der nächste Schritt?</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Du musst nun "Zugriffsberechtigungen für Brücke" auswählen.</satz>
   </dialog>
-  <dialog id="szene2.5" increase_quiz_step="true">
+  <dialog id="szene2.5" increase_quiz_step="false">
     <satz person_id="bc" bild_id="allg_bordcomputer">Als nächstes musst du dir Rechte geben.</satz>
   </dialog>
-  <dialog id="szene2.6" increase_quiz_step="true">
+  <dialog id="szene2.6" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Hey, wer ist dieser Gast? Der hat ja volle Zugriffsberechtigung!</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wiederherstellen.</satz>
   </dialog>
-  <dialog id="szene2.7" increase_quiz_step="true">
+  <dialog id="szene2.7" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Gut, so viel dazu. Ich muss schnellstens mit P2 sprechen wegen der seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Du hast es erraten ... P2_DYN_NAME, kannst du mich hören?</satz>

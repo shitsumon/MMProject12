@@ -223,7 +223,7 @@ function bewegePerson(){
 		gisWalkingTo		= "";
 		
 		//restore saved parameter as walking is now over
-		advanceQuizStep(gQuiztriggerAfterMoving);
+        //advanceQuizStep(gQuiztriggerAfterMoving);
 	}
 }
 
