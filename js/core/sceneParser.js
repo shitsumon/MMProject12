@@ -197,7 +197,7 @@ function drawScene(sceneObject){
 	//create dialogues textbox
     $('body').append($('<canvas/>', {id: 'textbox'}));
 
-    forceDialog();
+//    forceDialog();
 }
 
 /*
@@ -334,8 +334,8 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 								{
 									id : canvasID,
 									"class": quizClass,
-                                  onclick:"javascript:" + "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
-                                                        + moveTrigger + quizTrigger /*+ dialogTrigger*/
+                                  onclick:"javascript:" + moveTrigger + quizTrigger
+								  			+ "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
 								}
 							);
 			}else{

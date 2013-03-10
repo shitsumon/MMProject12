@@ -46,7 +46,7 @@ function dialog_zeichneDialog(textToDraw)
         Text += '   >>';
     }
 	
-	if(/*(*/gTalk.SatzCounter == 0/*>= (gTalk.SatzMax - 1))*/ && gDialogIDs[gDialogCounter].trigger_quizstep){
+	if((gTalk.SatzCounter /*== 0*/>= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
 		//call this with forced flag if its the last sentence
 		advanceQuizStep("CalledByDialogue");
 	}

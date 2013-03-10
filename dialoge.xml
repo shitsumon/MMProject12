@@ -18,44 +18,42 @@
     <satz person_id="bc" bild_id="allg_bordcomputer">???? ??????? ???? ?????</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Mäck? Ich versteh dich nicht ... immer muss man sich um alles selbst kümmern.</satz>
   </dialog>
-  <dialog id="szene1.4" increase_quiz_step="false">
+  <dialog id="szene1.4" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
   </dialog>
   <dialog id="szene1.5" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann?
       Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>
-  <dialog id="szene1.6" increase_quiz_step="true">
+  <dialog id="szene1.6" increase_quiz_step="false">
     <satz person_id="u1" bild_id="allg_anonym">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
     <satz person_id="u2" bild_id="allg_anonym">Die Ausgabe hab ich auch gelesen, da war ein genialer Bericht über das neue Raumschiff von WMB.</satz>
+	<satz person_id="p1" bild_id="allg_hero_female">Werd ich etwa auch beobachtet? Ich sollte die Anleitung finden ... und zwar schnell.</satz>
   </dialog>
   <dialog id="szene1.7" increase_quiz_step="true">
-    <satz person_id="p1" bild_id="allg_hero_female">Werd ich etwa auch beobachtet? Ich sollte die Anleitung finden ... und zwar schnell.</satz>
-  </dialog>
-  <dialog id="szene1.8" increase_quiz_step="true">
     <satz person_id="u1" bild_id="allg_anonym">Was für hässliche Kleidung sie trägt.</satz>
     <satz person_id="u2" bild_id="allg_anonym">Ja aber die Schutzbrille sieht echt gut aus. Brauchst du die noch?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Hilfe!!!</satz>
   </dialog>
-  <dialog id="szene1.9" increase_quiz_step="true">
+  <dialog id="szene1.8" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Nein, hier ist nur eine alte Einkaufsliste…Moment…das ist die Anleitung. Die Einkaufsliste wurde auf die Rückseite ... ist das nicht die Schrift von P2_DYN_NAME? Wenn ich den in die Finger bekomme ...</satz>
     <satz person_id="u1" bild_id="allg_anonym">Die ist aber aufbrausend.</satz>
     <satz person_id="u2" bild_id="allg_anonym">Da fällt mir ein, ich sollte auch mal wieder den Müll leeren.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Schnell zum Computer.</satz>
   </dialog>
-  <dialog id="szene1.10" increase_quiz_step="false">
+  <dialog id="szene1.9" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Deswegen wurde ich also aus meinem wohlverdienten Schlaf gerissen und muss mir diese Kommentare anhören ...</satz>
     <satz person_id="u1" bild_id="allg_anonym">Dafür hat sie jetzt aber echt lange gebraucht ...</satz>
     <satz person_id="u2" bild_id="allg_anonym">Psst, ich will wissen, wie es weitergeht. Ist doch grad so spannend.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Jemand hat also meine Einstellungen von "privat" auf "öffentlich" gestellt ... Dann wollen wir das mal wieder ändern.</satz>
   </dialog>
-  <dialog id="szene1.10.1" increase_quiz_step="false">
+  <dialog id="szene1.9.1" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre mir noch nicht sicher genug.</satz>
   </dialog>
-  <dialog id="szene1.10.2" increase_quiz_step="true">
+  <dialog id="szene1.9.2" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Ah diese herrliche Stille ...</satz>
   </dialog>
-  <dialog id="szene1.11" increase_quiz_step="true">
+  <dialog id="szene1.10" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, weißt du wer meine Einstellungen geändert hat? War das etwa P2_DYN_NAME?</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Hallo P1_DYN_NAME, leider kann ich dir da nicht weiterhelfen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Merkwürdig ... ich werde der Sache auf den Grund gehen, schlafen wär gerade eh nicht drin. Mäck, habe ich noch irgendwelche Einstellungen bezüglich meiner Privatsphäre vergessen?</satz>
