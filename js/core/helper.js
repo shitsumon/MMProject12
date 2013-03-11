@@ -89,6 +89,12 @@ function Size(w, h){
     this.height = typeof( h ) === 'undefined' ? 0 : h;
 }
 
+/**********************
+ *clickEventHandler.js*
+ *********************/
+
+var gClickEventValueArray = new Array();
+
 /**************
  *walkAnimation.js*
  **************/

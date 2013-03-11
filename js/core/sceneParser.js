@@ -307,9 +307,22 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
 			if(sharedIdString !== "canvas_person"){
 				//set targetidentifier to canvas id + moveflags to trigger movement if appropriate
-				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
+//				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
 				//will trigger quiz advancement on click if flag of current quizstep equals to true, do nothing otherwise
-				quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');"
+//                quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');";
+                //triggers dialog step
+//                dialogTrigger   = "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');";
+
+                var stringValueObject = new Object();
+
+                stringValueObject['key']      = canvasID.split(':')[0];
+                stringValueObject['value']    = canvasID + "+" +
+                                                objectsToDraw[index].quiz[1] + "+" +
+                                                objectsToDraw[index].quiz[3] + "+" +
+                                                objectsToDraw[index].imageID;
+
+                gClickEventValueArray.push(stringValueObject);
+
 				//sets visibility by css "display" value through css class attribute
 				//following first flag corresponding to the first quizstep
 				quizClass		= objectsToDraw[index].quiz[0].split("|");
@@ -334,8 +347,8 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 								{
 									id : canvasID,
 									"class": quizClass,
-                                  onclick:"javascript:" + moveTrigger + quizTrigger
-                                            + "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');"
+//                                  onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
+                                  onclick:"javascript:startEventHandling('" + canvasID.split(':')[0] + "');"
 								}
 							);
 			}else{
