@@ -169,7 +169,7 @@
     <satz person_id="p1" bild_id="allg_hero_female">So P2_DYN_NAME, dann zeig mir mal deine heiße Spur.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte, dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
   </dialog>
-  <dialog id="szene4.2" increase_quiz_step="false">
+  <dialog id="szene4.2" increase_quiz_step="true">
     <satz person_id="p2" bild_id="allg_hero_male">Hier war jemand. Die Schuhe haben ungefähr die gleiche Größe wie meine. Was wohl diese schwarze Masse ist?</satz>
   </dialog>
   <dialog id="szene4.3" increase_quiz_step="true">
@@ -188,7 +188,7 @@
   <dialog id="szene4.4.3" increase_quiz_step="false">
     <satz person_id="p2" bild_id="allg_hero_male">Irgendwie hab ich Kopfschmerzen ...</satz>
   </dialog>
-  <dialog id="szene4.4.4" increase_quiz_step="false">
+  <dialog id="szene4.4.4" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Dieser Teddybär ... was macht der hier? Und wieso trägt er ein Dirndl?</satz>
     <satz person_id="tb" bild_id="tädiber">Warum ich ein Dirndl trage? Die Geschichte dahinter macht mich viel zu traurig, um sie zu erzählen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Er spricht! Vielleicht war die Kopfverletzung doch stärker, als ich dachte.</satz>
