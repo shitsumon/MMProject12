@@ -3,12 +3,12 @@ executes quizsteps implications by showing/hiding objects and increments current
 */
 function advanceQuizStep(clicked_canvas_quiz_flags){
 	
-	if(gisWalkingTo !== ""){
-		//store parameter in global variable if movement is active and exit
-		gQuiztriggerAfterMoving = clicked_canvas_quiz_flags;
+//	if(gisWalkingTo !== ""){
+//		//store parameter in global variable if movement is active and exit
+//		gQuiztriggerAfterMoving = clicked_canvas_quiz_flags;
 		
-		return;
-	}
+//		return;
+//	}
 	
 	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
@@ -54,7 +54,7 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 			}
         });
 	}
-	
+
 	//check whether quiz has finished
 	checkQuizfinished();
 }

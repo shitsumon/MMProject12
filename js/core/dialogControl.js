@@ -202,7 +202,7 @@ function swapProxiesWithNames(sentence){
 }
 
 /**
- * justClicked(string imgID)
+ * advanceDialogStep(string imgID)
  *
  * Every object's got an onclick method anyway. So
  * it is utilized, to mark the just clicked image.
@@ -223,7 +223,7 @@ function swapProxiesWithNames(sentence){
  * none
  */
 
-function justClicked(imgID, canvasID){
+function advanceDialogStep(imgID, canvasID){
 
     //check if the clicked object is clickable for the current scene step
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];

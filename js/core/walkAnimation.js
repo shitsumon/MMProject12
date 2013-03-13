@@ -3,22 +3,27 @@ function bewegePerson(){
 	if(!gWegBerechnet){
 		
 		if(gTargetIdentifier.split(":")[1].split("|")[gCurrentQuizstep] !== "t"){
-			//we shouldn't move -> exit
+            //we shouldn't move -> exit
 			return;
 		}
 		
 		//save targetid first to prevent reorientation
 		gisWalkingTo		= gTargetIdentifier;
-	}else{
+    }/*else{
 		
 		if(gisWalkingTo !== gTargetIdentifier){
 			//vector has been computed, user clicked new aim while moving -> reset aim and return
-			gTargetIdentifier	= gisWalkingTo;
-			
+            gTargetIdentifier	= gisWalkingTo;
+
 			return;
 		}
-	}
+    }*/
 	
+    //set busy flag to prevent
+    //other calls from being activated
+    //in clickEventHandler
+    gEventHandlerBusy = true;
+
 	//Get objects of target and hero picture
     var hero	= $("canvas[id*='canvas_person_']");
     var target	= $("canvas[id*='" + gTargetIdentifier.split(":")[0] + "']");
@@ -50,8 +55,10 @@ function bewegePerson(){
 	targetPos[0] = target.offset().left + (target.width() / 2.0);
 	targetPos[1] = target.offset().top + (target.height());
 	
-	if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
-		//check whether we already are in front of the goal and return
+    //check whether we already are in front of the goal and return
+    if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
+        gEventHandlerBusy = false;
+        finishEventHandling();
 		return;
 	}
 	
@@ -113,7 +120,7 @@ function bewegePerson(){
 		
 		var zoomFaktor = targetPos[2] / heroPos[2];
 		
-		//copmute movement vector on central path considering differing zoom factors
+        //compute movement vector on central path considering differing zoom factors
 		gMoveVec[1][0] = ((lWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
 			- (lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
 
@@ -221,7 +228,11 @@ function bewegePerson(){
 		gMoveVec			= new Array(new Array(3), new Array(4), new Array(3));
 		gWegBerechnet		= false;
 		gisWalkingTo		= "";
-		
+
+        //free eventhandler
+        gEventHandlerBusy   = false;
+        finishEventHandling();
+
 		//restore saved parameter as walking is now over
         //advanceQuizStep(gQuiztriggerAfterMoving);
 	}

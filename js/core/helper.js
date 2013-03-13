@@ -93,7 +93,13 @@ function Size(w, h){
  *clickEventHandler.js*
  *********************/
 
-var gClickEventValueArray = new Array();
+var gClickEventValueArray         = new Array();
+var gEventHandlerBusy             = false;
+var gQuizAndDialogArgumentsLocked = false;
+
+var gQuizFlags      = 'undefined';
+var gDialogValue1   = 'undefined';
+var gDialogValue2   = 'undefined';
 
 /**************
  *walkAnimation.js*

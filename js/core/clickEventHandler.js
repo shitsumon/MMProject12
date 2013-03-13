@@ -39,16 +39,57 @@ function startEventHandling(LUT_Identifier){
         if(gClickEventValueArray[idx]['key'] == LUT_Identifier){
 
             parsedStringObject = parseValueString(gClickEventValueArray[idx]['value']);
+            break;
         }
     }
 
-    gTargetIdentifier = parsedStringObject.targetIdentifier;
+    if(!gTalk.isInitialized){
 
-    bewegePerson();
+        if(!gEventHandlerBusy){
+            gTargetIdentifier = parsedStringObject.targetIdentifier;
+            bewegePerson();
+        }
 
-    advanceQuizStep(parsedStringObject.quizFlags);
+        if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
+            gQuizFlags = parsedStringObject.quizFlags;
+        }else{
+            advanceQuizStep(parsedStringObject.quizFlags);
+        }
+    }
 
-    justClicked(parsedStringObject.dialogValue1, parsedStringObject.dialogValue2);
+    if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
+        gDialogValue1 = parsedStringObject.dialogValue1;
+        gDialogValue2 = parsedStringObject.dialogValue2;
+
+        //Lock arguments to prevent change of target
+        gQuizAndDialogArgumentsLocked = true;
+    }else{
+        advanceDialogStep(parsedStringObject.dialogValue1, parsedStringObject.dialogValue2);
+    }
+}
+
+/**
+ * finishEventHandling()
+ *
+ * Triggers next quiz step and next dialog
+ * when the walk animation is finished.
+ * Is called by bewegePerson().
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * none
+ */
+function finishEventHandling(){
+
+    //activate functions with saved arguments
+    advanceQuizStep(gQuizFlags);
+    advanceDialogStep(gDialogValue1, gDialogValue2);
+
+    //unlock, after functions have been
+    //called with correct arguments
+    gQuizAndDialogArgumentsLocked = false;
 }
 
 /**
