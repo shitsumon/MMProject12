@@ -46,10 +46,12 @@ function dialog_zeichneDialog(textToDraw)
         Text += '   >>';
     }
 	
-    if((gTalk.SatzCounter /*== 0*/>= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep){
-		//call this with forced flag if its the last sentence
-		advanceQuizStep("CalledByDialogue");
-	}
+    //Check whether dialog triggers quizstep
+    if((gTalk.SatzCounter == 0) && gDialogIDs[gDialogCounter].trigger_quizstep && gDialogIDs[gDialogCounter].enable_at_start||
+            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep && !gDialogIDs[gDialogCounter].enable_at_start){
+        //call this with forced flag if its the last sentence
+        advanceQuizStep("CalledByDialogue");
+    }
 
     //screen dimensions
     var screenWidth  = $(window).width();

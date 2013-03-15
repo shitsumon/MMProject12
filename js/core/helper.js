@@ -268,9 +268,10 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 }
 
 //Stores scene id and whether this step trigger a quiz step
-function DialogIDObject(scene_id, tqs){
+function DialogIDObject(scene_id, tqs, eas){
     this.scene_id         = scene_id;
     this.trigger_quizstep = tqs;
+    this.enable_at_start  = eas;
 }
 
 //scene id array for dialog referencing

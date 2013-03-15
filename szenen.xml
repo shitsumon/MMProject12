@@ -170,23 +170,23 @@
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert> <!--Terminal-->
-        <hg_animiert_objekt bild_id="szene2_terminal" dialog_id="Szene2.3" klickbar="f|f|t|f|f|f|f" walkto="f|f|t|f|f|f|f"
+        <hg_animiert_objekt bild_id="szene2_terminal" dialog_id="szene2.3" klickbar="f|f|t|t|f|f|f" walkto="f|f|t|f|f|f|f"
 		raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|t|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
         </hg_animiert_objekt> <!--Chair-->
-        <hg_animiert_objekt bild_id="szene2_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="t|f|f|f|f|f|f"
-                raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene2_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="70" y="63" z="101"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt> <!--Lights Left-->
         <hg_animiert_objekt bild_id="szene2_leuchten_links" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
+                raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="0" y="11" z="100"/>
           <groesse width="35" height="50"/>
         </hg_animiert_objekt> <!--Lights right-->
         <hg_animiert_objekt bild_id="szene2_leuchten_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
+                raetsel_sichtbar="f|f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="79" y="11" z="100"/>
           <groesse width="35" height="50"/>
         </hg_animiert_objekt>
@@ -199,13 +199,13 @@
       </personen>
       <vg_statisch></vg_statisch>
       <vg_animiert> <!--Dialogbox-->
-        <vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene2.1" klickbar="t|t|t|t|t|t|t" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene2.1|szene2.7" klickbar="t|t|t|t|t|t|t" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f|f">
           <position x="34" y="65" z="405"/>
           <groesse width="75" height="35"/>
         </vg_animiert_objekt> <!--Button-->
         <vg_animiert_objekt bild_id="szene2_knopf" dialog_id="szene2.2" klickbar="f|t|f|f|f|f|f" walkto="f|t|f|f|f|f|f"
-                raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f|f">
+                raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="83" y="51" z="401"/>
           <groesse width="4" height="7"/>
         </vg_animiert_objekt> <!--Quiz Window 1-->
@@ -214,13 +214,13 @@
           <position x="0" y="0" z="402"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt> <!--Selection field-->
-        <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="Szene2.4" klickbar="f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="szene2.4" klickbar="f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f"
 		raetsel_sichtbar="f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|t|f|f|f">
           <position x="53" y="47" z="403"/>
           <!--name-->
           <groesse width="20" height="10"/>
         </vg_animiert_objekt> <!--Selection field-->
-        <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="Szene2.4" klickbar="f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene2_auswahlfeld" dialog_id="szene2.4" klickbar="f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="f|f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="53" y="57" z="403"/>
           <!--passwort-->
@@ -232,8 +232,8 @@
           <!--zugriffsberechtigung person/bereich auswahl-->
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_bruecke_auswahl" dialog_id="Szene2.5|Szene2.6" klickbar="f|f|f|f|t|f|f" walkto="f|f|f|f|f|f|f"
-                raetsel_sichtbar="f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|t|f">
+        <vg_animiert_objekt bild_id="szene2_bruecke_auswahl" dialog_id="szene2.5" klickbar="f|f|f|f|t|t|f" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="f|f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|t|t|f">
           <position x="30.5" y="28.5" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
@@ -252,8 +252,8 @@
           <position x="30.5" y="58.9" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_kate_auswahl" dialog_id="Szene2.7" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
-                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|t|f">
+        <vg_animiert_objekt bild_id="szene2_kate_auswahl" dialog_id="szene2.6" klickbar="f|f|f|f|f|t|t" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|t|t">
           <position x="30.5" y="28.5" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
