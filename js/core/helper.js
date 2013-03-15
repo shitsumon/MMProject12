@@ -25,6 +25,12 @@
     </html>-->
 */
 
+/*********
+ *menu.js*
+ *********/
+gMenuPercPosY = 60;
+gMenuPercPosX = 50;
+
 /****************
  *sceneParser.js*
  ****************/

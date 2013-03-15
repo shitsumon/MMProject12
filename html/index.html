@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="netzwerkstar.css"/>
 <script type="text/javascript" src="../js/external/jquery.js"></script>
 <script type="text/javascript" src="../js/core/helper.js"></script>
+<script type="text/javascript" src="../js/core/menu.js"></script>
 <script type="text/javascript" src="../js/core/pictureParser.js"></script>
 <script type="text/javascript" src="../js/core/dialogParser.js"></script>
 <script type="text/javascript" src="../js/core/sceneParser.js"></script>
@@ -17,7 +18,7 @@
 <script type="text/javascript" src="../js/core/clickEventHandler.js"></script>
 <script type="text/javascript" src="../js/core/codeGenerator.js"></script>
 </head>
-<body>
+<body onload="Javascript:positionButtons();">
 
 <form action="">
 	<input id ="codefeld" type="text" value=""><br>
@@ -33,11 +34,12 @@
     <p class="center">Chaos</p>
   </div>
 </div>
-<img src="../bilder/allgemein/ns2_menu.png" id="bg" alt="">
+<img src="../bilder/allgemein/ns2_menu.jpg" id="bg" alt="">
 <div id="menu">
-  <input name="spiel_starten" type="button" onClick="ladeBilder(); ladeDialoge();" value="Spiel starten" />
-  <br />
-  <input name="spiel_fortsetzen" type="button" onClick="spiel_fortsetzen();" value="Spiel fortsetzen" />
+<button class="buttons" id="new_game" onclick="JavaScript:ladeBilder();ladeDialoge();"></button><br></br>
+<button class="buttons" id="continue_game" onclick="JavaScript:spiel_fortsetzen();"></button><br></br>
+<button class="buttons" id="about_game" onclick=""></button><br></br>
+<button class="buttons" id="back_to_HP" onclick=""></button>
 </div>
 </body>
 </html>
