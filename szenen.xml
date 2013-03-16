@@ -252,30 +252,49 @@
           <position x="30.5" y="58.9" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_kate_auswahl" dialog_id="szene2.6" klickbar="f|f|f|f|f|t|t" walkto="f|f|f|f|f|f|f"
-                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|t|t">
+        <vg_animiert_objekt bild_id="szene2_kate_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|f|t" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="30.5" y="28.5" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_spike_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene2_spike_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="30.5" y="38.7" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_maeck_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene2_maeck_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="30.5" y="48.8" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_gast_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+        <vg_animiert_objekt bild_id="szene2_gast_auswahl" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
           <position x="30.5" y="58.9" z="403"/>
           <groesse width="42.5" height="9"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene2_kreuz" dialog_id="#none#" klickbar="f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f"
-                raetsel_sichtbar="f|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|f|f|f">
-          <position x="0" y="0" z="700"/>
-          <groesse width="38" height="44"/>
+
+        <vg_animiert_objekt bild_id="szene2_kreuz_kate" dialog_id="szene2.6" klickbar="f|f|f|f|f|t|t" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|t|t">
+          <position x="67.4" y="30.5" z="404"/>
+          <groesse width="3" height="5"/>
+        </vg_animiert_objekt>
+
+        <vg_animiert_objekt bild_id="szene2_kreuz_spike" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+                raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
+          <position x="67.4" y="40.7" z="404"/>
+          <groesse width="3" height="5"/>
+        </vg_animiert_objekt>
+
+          <vg_animiert_objekt bild_id="szene2_kreuz_maeck" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+                  raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
+            <position x="67.4" y="50.9" z="404"/>
+            <groesse width="3" height="5"/>
+          </vg_animiert_objekt>
+
+          <vg_animiert_objekt bild_id="szene2_kreuz_gast" dialog_id="#none#" klickbar="f|f|f|f|f|t|f" walkto="f|f|f|f|f|f|f"
+                  raetsel_sichtbar="f|f|f|f|f|t|f" raetsel_ausloeser="f|f|f|f|f|f|f">
+            <position x="67.4" y="61.0" z="404"/>
+            <groesse width="3" height="5"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>

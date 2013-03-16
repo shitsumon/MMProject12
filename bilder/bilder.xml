@@ -134,7 +134,16 @@
   <bild id="szene2_kommunikation_auswahl" pfad="../bilder/szene2/kommunikation_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_kreuz" pfad="../bilder/szene2/kreuz.png" animiert="false">
+  <bild id="szene2_kreuz_kate" pfad="../bilder/szene2/kreuz.png" animiert="false">
+    <abmessungen height="44" width="38"/>
+  </bild>
+  <bild id="szene2_kreuz_spike" pfad="../bilder/szene2/kreuz.png" animiert="false">
+    <abmessungen height="44" width="38"/>
+  </bild>
+  <bild id="szene2_kreuz_maeck" pfad="../bilder/szene2/kreuz.png" animiert="false">
+    <abmessungen height="44" width="38"/>
+  </bild>
+  <bild id="szene2_kreuz_gast" pfad="../bilder/szene2/kreuz.png" animiert="false">
     <abmessungen height="44" width="38"/>
   </bild>
   <bild id="szene2_maeck_auswahl" pfad="../bilder/szene2/maeck_auswahl.png" animiert="false">

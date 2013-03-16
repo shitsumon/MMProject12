@@ -118,6 +118,7 @@ canvas[id*="uebergang"] {
 
 .clickable:hover{
         box-shadow:inset 0px 0px 1cm 2cm rgba(255,255,0,0.5), 0px 0px 0.5cm 0.5cm rgba(255,255,0,0.5);
+        transition: box-shadow 0.25s linear;
 }
 
 /* Intro */
@@ -334,4 +335,27 @@ h1 sub
 @keyframes scroll {
         0% { top: 100%; }
         100% { top: -170%; }
+}
+
+/*Szene 2*/
+
+canvas[id*="szene2_kreuz_"] {
+        opacity:0;
+        transition:opacity 0.5s linear;
+}
+
+canvas[id*="szene2_kreuz_kate"]:hover {
+        opacity:1;
+}
+
+canvas[id*="szene2_kreuz_spike"]:hover {
+        opacity:1;
+}
+
+canvas[id*="szene2_kreuz_maeck"]:hover {
+        opacity:1;
+}
+
+canvas[id*="szene2_kreuz_gast"]:hover {
+        opacity:1;
 }

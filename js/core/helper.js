@@ -301,8 +301,8 @@ var gP1Proxy = "P1_DYN_NAME";
 var gP2Proxy = "P2_DYN_NAME";
 
 //Fallback name if name values are not present
-var gFallbackNameP1 = "Jane Doe";
-var gFallbackNameP2 = "John Doe";
+var gFallbackNameP1 = "Captain Kate";
+var gFallbackNameP2 = "Lt. Commander Spike";
 
 //Variables which hold the characters and the sidekicks names
 var gP1Name = "undefined";
