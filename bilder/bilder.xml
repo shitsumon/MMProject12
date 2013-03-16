@@ -25,8 +25,8 @@
     <abmessungen height="80" width="1536"/>
     <animation fps="5" tile_anzahl="12" tile_width="128" tile_height="80"/>
   </bild>
-  <bild id="allg_bordcomputer" pfad="../bilder/allgemein/hal.jpg" animiert="false">
-    <abmessungen height="108" width="104"/>
+  <bild id="allg_bordcomputer" pfad="../bilder/allgemein/bordcomputer.png" animiert="false">
+    <abmessungen height="133" width="122"/>
   </bild>
   <bild id="allg_anonym" pfad="../bilder/allgemein/anonymous.png" animiert="false">
     <abmessungen height="150" width="150"/>

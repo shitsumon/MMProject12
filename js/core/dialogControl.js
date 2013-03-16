@@ -46,9 +46,11 @@ function dialog_zeichneDialog(textToDraw)
         Text += '   >>';
     }
 	
+    var dialogIDs = fetchDialogIDs();
+
     //Check whether dialog triggers quizstep
-    if((gTalk.SatzCounter == 0) && gDialogIDs[gDialogCounter].trigger_quizstep && gDialogIDs[gDialogCounter].enable_at_start||
-            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && gDialogIDs[gDialogCounter].trigger_quizstep && !gDialogIDs[gDialogCounter].enable_at_start){
+    if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter].trigger_quizstep && dialogIDs[gDialogCounter].enable_at_start||
+            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter].trigger_quizstep && !dialogIDs[gDialogCounter].enable_at_start){
         //call this with forced flag if its the last sentence
         advanceQuizStep("CalledByDialogue");
     }
@@ -230,19 +232,18 @@ function advanceDialogStep(imgID, canvasID){
     //check if the clicked object is clickable for the current scene step
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
 
-    var clickable = rawID.split('|');
-
-//    if(clickable[gDialogCounter] === 'f'){
-    if(clickable[gCurrentQuizstep] === 'f'){
+    if(rawID.split('|')[gCurrentQuizstep] === 'f'){
         return;
     }
 
-    if(gDialogIDs.length == gDialogCounter){
+   /* if(gDialogIDs.length == gDialogCounter){
 
         dialog_zeichneDialog("Ende der Szene.");
         checkQuizfinished();
         return;
-    }
+    }*/
+
+    var dialogIDs = fetchDialogIDs();
 
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){
 
@@ -253,7 +254,7 @@ function advanceDialogStep(imgID, canvasID){
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(typeof(gDialoge[gDialogIDs[gDialogCounter].scene_id]) === 'undefined'){
+                if(typeof(gDialoge[dialogIDs[gDialogCounter].scene_id]) === 'undefined'){
                     alert('undefined dialog in gDialoge[]!');
                     return;
                 }
@@ -262,11 +263,11 @@ function advanceDialogStep(imgID, canvasID){
                 //but only if we are not in the middle
                 //of a text chunk, otherwise the click
                 //onto the dialogbox would be blocked
-                if((sceneDialogues[idx2].toLowerCase() != gDialogIDs[gDialogCounter].scene_id.toLowerCase()) && !gTalk.isInitialized){
+                if((sceneDialogues[idx2].toLowerCase() != dialogIDs[gDialogCounter].scene_id.toLowerCase()) && !gTalk.isInitialized){
                     continue;
                 }
 
-                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : gDialogIDs[gDialogCounter].scene_id;
+                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
 
                 dialog_zeichneDialog();
 
@@ -281,5 +282,25 @@ function advanceDialogStep(imgID, canvasID){
 
             break; //When current dialog was displayed stop looping
         }
+    }
+}
+
+/**
+ * fetchDialogIDs()
+ *
+ * Load correct dialog IDs
+ * depending on the current game state
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * dialog IDs
+ */
+function fetchDialogIDs(){
+    if(gDialogCounter == (gUseDeprecated ? gDeprecatedNumberOfDialogues : gNumberOfDialogues) - 1){
+        return gDeprecatedDialogIDs;
+    }else{
+        return gDialogIDs;
     }
 }

@@ -12,7 +12,14 @@ function ladeDialoge(){
 
 function verarbeiteDialogXML(daten){
 	
-    gDialogIDs = new Array();
+    //Exceptions for initial load
+    if(gInitialLoad){
+        gDialogIDs = new Array();
+    }else{
+        gDeprecatedDialogIDs = gDialogIDs;
+        gDialogIDs = new Array();
+    }
+
     var jquery_saetze;
 	//get dialogue elements from xml corresponding to current scene
     var jquery_dialoge = $(daten).find("dialog[id*=szene"+ gcurrent_scene_counter +"]");
@@ -55,12 +62,19 @@ function verarbeiteDialogXML(daten){
 			);
 		});
     });
-	
-    //save number of dialogues in current scene
-    gNumberOfDialogues = gDialogIDs.length;
+	       
+    //Exceptions for initial load
+    if(gInitialLoad){
+        //save number of dialogues in current scene
+        gNumberOfDialogues = gDialogIDs.length;
+        gInitialLoad = false;
+    }else{
+        gDeprecatedNumberOfDialogues = gNumberOfDialogues;
+        gNumberOfDialogues = gDialogIDs.length;
+    }
 
-    //Set dialog referencing counter back to zero for current scene
-    gDialogCounter = 0;
+//    //Set dialog referencing counter back to zero for current scene
+//    gDialogCounter = 0;
 }
 
 //loading progressbar hook called in new Dialog()

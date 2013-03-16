@@ -117,7 +117,7 @@ canvas[id*="uebergang"] {
 }
 
 .clickable:hover{
-	box-shadow:inset 0px 0px 1cm 2cm rgba(0,255,204,0.5), 0px 0px 0.5cm 0.5cm rgba(0,255,204,0.5);
+        box-shadow:inset 0px 0px 1cm 2cm rgba(255,255,0,0.5), 0px 0px 0.5cm 0.5cm rgba(255,255,0,0.5);
 }
 
 /* Intro */

@@ -212,6 +212,8 @@ var gDialoge			= new Object();
 gDialoge.anzahl		= 0;
 //counter for succesfully loaded dialogues
 gDialoge.geladen		= 0;
+//flag for initial loading sequence
+gInitialLoad = true;
 //signals succesfull loading of xml-file
 gdialogparser_xml_geladen = false;
 //prototype of dialogue object with at least one single sentence
@@ -242,7 +244,7 @@ var gTalk			= new Object();
 gTalk.bild_id 		= "allg_dialogbox";			 //has to be initialised by dialogSettings()
 gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
 gTalk.font_color	= "yellow";			 //can be customized by dialogSettings()
-gTalk.font_style	= "bold 20px Arial"; //can be customized by dialogSettings()
+gTalk.font_style	= "bold 20px Avantgarde"; //can be customized by dialogSettings()
 gTalk.line_distance = 18;				 //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzCounter	= 0;
@@ -256,8 +258,8 @@ gTalk.TBPercWidth       = 100;   //Textbox width in %
 gTalk.TBPercHeight      = 100;   //Textbox height in %
 gTalk.TBPercTextPosX    = 30;    //Textbox text X position in %
 gTalk.TBPercTextPosY    = 40;    //Textbox text Y position in %
-gTalk.TBPercImagePosX   = 8.25;  //Textbox image X position in %
-gTalk.TBPercImagePosY   = 27;    //Textbox image Y position in %
+gTalk.TBPercImagePosX   = 8.10;  //Textbox image X position in %
+gTalk.TBPercImagePosY   = 27.20; //Textbox image Y position in %
 gTalk.TBPercImageWidth  = 100;   //Textbox image width in %
 gTalk.TBPercImageHeight = 100;   //Textbox image height in %
 
@@ -281,7 +283,10 @@ function DialogIDObject(scene_id, tqs, eas){
 }
 
 //scene id array for dialog referencing
-var gDialogIDs                  = new Array();
+var gDialogIDs                   = new Array();
+var gDeprecatedDialogIDs         = new Array();
+var gDeprecatedNumberOfDialogues = 0;
+var gUseDeprecated = false;
 //Lookup table for imageID dialogID mapping
 var gImageToObjectSceneReferrer = new Array();
 //Overall number of dialogs per scene
@@ -326,6 +331,8 @@ if ((name1!=null)&&(name2!=null))
 /***************
  *quizControl*
  ***************/
+//Flag prevents loading of next scene more than once
+var gSceneHasBeenLoad = false;
 //number of quizsteps per scene
 var gQuizsteps				= 0;
 //current quizstep

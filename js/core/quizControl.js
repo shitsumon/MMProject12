@@ -63,41 +63,58 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 checks whether the quiz has finished and initiates loading of next scenes pictures and dialogues as well as resetting all needed variables
 */
 function checkQuizfinished(){
-	//start next scene if quiz finished
-    //if(gCurrentQuizstep == gQuizTrueQuizSteps){
-	if(gCurrentQuizstep == gQuizsteps){
-		
-		$('body').append($('<canvas/>', {
-			id: 'uebergang'
-		}));
-		
-		starteAnimation("uebergang", "allg_uebergang", $(window).width(), $(window).height(), false, "");
-		
-		var frametime	= 1000 / gBilder["allg_uebergang"].animationsmerkmale.fps;
-		var framecount	= gBilder["allg_uebergang"].animationsmerkmale.tile_anzahl;
-		
-		window.setTimeout("advanceNextScene();", frametime * (framecount / 2));
-		window.setTimeout(function(){
-				
-				stoppeAnimation("allg_uebergang");
-				$("canvas[id*='uebergang']").remove();
-			}, frametime * framecount);
-	}
 	
 	//last step before quiz finishes
-    //if(gCurrentQuizstep == (gQuizTrueQuizSteps - 1)){
-	if(gCurrentQuizstep == (gQuizsteps - 1)){
+    if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
 		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
 		ladeDialoge();
+
+        //set flags
+        gSceneHasBeenLoad = true;
+        gUseDeprecated = true;
+
+        //exit here, to prevent change of scenes
+        return;
 	}
+
+    //start next scene if quiz finished
+    //if(gCurrentQuizstep == gQuizTrueQuizSteps){
+    if(gCurrentQuizstep == gQuizsteps){
+
+        $('body').append($('<canvas/>', {
+            id: 'uebergang'
+        }));
+
+        starteAnimation("uebergang", "allg_uebergang", $(window).width(), $(window).height(), false, "");
+
+        var frametime	= 1000 / gBilder["allg_uebergang"].animationsmerkmale.fps;
+        var framecount	= gBilder["allg_uebergang"].animationsmerkmale.tile_anzahl;
+
+        window.setTimeout("advanceNextScene();", frametime * (framecount / 2));
+        window.setTimeout(function(){
+
+                stoppeAnimation("allg_uebergang");
+                $("canvas[id*='uebergang']").remove();
+            }, frametime * framecount);
+    }
 }
 
 function advanceNextScene(){
-	//create scene id
+
+    //Reset flags
+    gSceneHasBeenLoad = false;
+    gUseDeprecated = false;
+
+    //create scene id
 	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 	
+    //save number of dialogues in current scene
+    gNumberOfDialogues = gDialogIDs.length;
+    //Set dialog referencing counter back to zero for current scene
+    gDialogCounter = 0;
+
 	//reset quiz
 	gQuizsteps					= 0;
 	gCurrentQuizstep			= 0;
