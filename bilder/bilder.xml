@@ -6,7 +6,7 @@
     <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
   <bild id="allg_dialogbox" pfad="../bilder/allgemein/dialogbox.png" animiert="false">
-    <abmessungen height="257" width="854"/>
+    <abmessungen height="223" width="811"/>
   </bild>
   <bild id="allg_hero_male" pfad="../bilder/allgemein/hero_male.png" animiert="false">
     <abmessungen height="133" width="122"/>
