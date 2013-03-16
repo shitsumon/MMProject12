@@ -26,7 +26,7 @@
 function getSceneElementData(sceneElement){
 
     var tmpObject		= new objectStruct(sceneElement.attr('bild_id'),
-							sceneElement.attr('dialog_id'));
+                                           sceneElement.attr('dialog_id'));
 
     //Create a lookup table which maps the imageID to it's
     //dialogIDs
@@ -38,14 +38,14 @@ function getSceneElementData(sceneElement){
         gImageToObjectSceneReferrer.push(img2SceneObj);
     }
 
-	//get quiz attributes					-> string like "t|f|t|f"
-	tmpObject.quiz[0] = sceneElement.attr('raetsel_sichtbar');	//visibility
-	tmpObject.quiz[1] = sceneElement.attr('raetsel_ausloeser');	//quiztrigger
-	//get clickable and walkto attributes	-> string like "t|f|t|f"
-	tmpObject.quiz[2] = sceneElement.attr('klickbar');			//clickable
-	tmpObject.quiz[3] = sceneElement.attr('walkto');			//walkto
-	
-	return getElementData(tmpObject, sceneElement);
+    //get quiz attributes					-> string like "t|f|t|f"
+    tmpObject.quiz[0] = sceneElement.attr('raetsel_sichtbar');	//visibility
+    tmpObject.quiz[1] = sceneElement.attr('raetsel_ausloeser');	//quiztrigger
+    //get clickable and walkto attributes	-> string like "t|f|t|f"
+    tmpObject.quiz[2] = sceneElement.attr('klickbar');			//clickable
+    tmpObject.quiz[3] = sceneElement.attr('walkto');			//walkto
+
+    return getElementData(tmpObject, sceneElement);
 }
 
 /*
@@ -67,16 +67,16 @@ function getSceneElementData(sceneElement){
 function getPersonElementData(sceneElement){
 
     var tmpObject = new personStruct(sceneElement.attr('person_id'),
-                                 sceneElement.attr('bild_id'));
-	
-	return getElementData(tmpObject, sceneElement);
+                                     sceneElement.attr('bild_id'));
+
+    return getElementData(tmpObject, sceneElement);
 }
 
 function getElementData(tmpObject, sceneElement){
-	
-	tmpObject.position.xPos = parseFloat(sceneElement.find('position').attr('x'));
+
+    tmpObject.position.xPos = parseFloat(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseFloat(sceneElement.find('position').attr('y'));
-	tmpObject.position.zPos = parseFloat(sceneElement.find('position').attr('z'));
+    tmpObject.position.zPos = parseFloat(sceneElement.find('position').attr('z'));
     tmpObject.size.width    = parseFloat(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseFloat(sceneElement.find('groesse').attr('height'));
 
@@ -108,63 +108,69 @@ function getSceneInformation(sceneID, sceneFilename){
 
     /*Extract scene information from xml file*/
     $.get(sceneFilename, function(data){
-              $(data).find('szene').each(function(){
+        $(data).find('szene').each(function(){
 
-                var currentScene = $(this);
+            var currentScene = $(this);
 
-				if(sceneID === currentScene.attr('id')){
-					//get quiz step count
-					gQuizsteps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
-									parseInt($(currentScene).attr('reatselschritte'));
-					//get waypoints of central path
-					var wegpunkte	= $(currentScene).find('wegpunkt');
-					//create corresponding arrays
-					gWegPos			= new Array(wegpunkte.length);
-					gZoomsteps		= new Array(wegpunkte.length);
+            if(sceneID === currentScene.attr('id')){
+                //get quiz step count
+                gQuizsteps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
+                                                                                    parseInt($(currentScene).attr('reatselschritte'));
+                //get waypoints of central path
+                var wegpunkte	= $(currentScene).find('wegpunkt');
+                //create corresponding arrays
+                gWegPos			= new Array(wegpunkte.length);
+                gZoomsteps		= new Array(wegpunkte.length);
 
-					wegpunkte.each(function(index){
-						//get waypoint coordinates an store as array
-						gWegPos[index] = new Array(
-								parseFloat($(this).attr("x")),
-								parseFloat($(this).attr("y"))
-							);
-						//get corresponding zoomstep multiplicator
-						gZoomsteps[index] = parseFloat($(this).attr("zoom"));
-					})
-					
-					//get all scene objects by level
-					$(currentScene).find('hg_statisch_objekt').each(function(){
-						sceneObject.staticBackgroundObjects.push(getSceneElementData($(this)));
-					})
+                wegpunkte.each(function(index){
+                    //get waypoint coordinates an store as array
+                    gWegPos[index] = new Array(
+                                parseFloat($(this).attr("x")),
+                                parseFloat($(this).attr("y"))
+                                );
+                    //get corresponding zoomstep multiplicator
+                    gZoomsteps[index] = parseFloat($(this).attr("zoom"));
+                })
 
-					$(currentScene).find('hg_animiert_objekt').each(function(){
-						sceneObject.dynamicBackgroundObjects.push(getSceneElementData($(this)));
-					})
+                //get all scene objects by level
+                $(currentScene).find('hg_statisch_objekt').each(function(){
+                    sceneObject.staticBackgroundObjects.push(getSceneElementData($(this)));
+                })
 
-					$(currentScene).find('vg_statisch_objekt').each(function(){
-						sceneObject.staticForegroundObjects.push(getSceneElementData($(this)));
-					})
+                $(currentScene).find('hg_animiert_objekt').each(function(){
+                    sceneObject.dynamicBackgroundObjects.push(getSceneElementData($(this)));
+                })
 
-					$(currentScene).find('vg_animiert_objekt').each(function(){
-						sceneObject.dynamicForegroundObjects.push(getSceneElementData($(this)));
-					})
+                $(currentScene).find('vg_statisch_objekt').each(function(){
+                    sceneObject.staticForegroundObjects.push(getSceneElementData($(this)));
+                })
 
-					$(currentScene).find('person').each(function(){
-						sceneObject.persons.push(getPersonElementData($(this)));
-					})
-				}
-              })
-			  
-			  drawScene(sceneObject);
-			  //scene computation finished, prevent next scene from loading before pictures and dialogues have
-			  gdisplay_next_scene = false;
-			  
-			  //hide menu
-			  HideElementsMenu();
+                $(currentScene).find('vg_animiert_objekt').each(function(){
+                    sceneObject.dynamicForegroundObjects.push(getSceneElementData($(this)));
+                })
+
+                $(currentScene).find('person').each(function(){
+                    sceneObject.persons.push(getPersonElementData($(this)));
+                })
+            }
+        })
+
+        drawScene(sceneObject);
+        //scene computation finished, prevent next scene from loading before pictures and dialogues have
+        gdisplay_next_scene = false;
+
+        //hide menu
+        HideElementsMenu();
+
+        //force initial dialog if need be
+        if(sceneNeedsForcedDialog()){
+            forceDialog();
+        }
 
     }).error(function(xhr, status, error){
-		alert("Es ist ein Fehler aufgetreten: " + error);
-	});
+        alert("Es ist ein Fehler aufgetreten: " + error);
+    });
+
 }
 
 /*
@@ -194,10 +200,8 @@ function drawScene(sceneObject){
     drawObjectsOfSameType('canvas_fg_dynamic', sceneObject.dynamicForegroundObjects);
     //draw persons
     drawObjectsOfSameType('canvas_person', sceneObject.persons);
-	//create dialogues textbox
+    //create dialogues textbox
     $('body').append($('<canvas/>', {id: 'textbox'}));
-
-//    forceDialog();
 }
 
 /*
@@ -236,25 +240,25 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
         alert("Object array uninitialized!");
         return;
     }
-	
-	//determines whether all pictures are drawn to one single canvas like in bg_static
+
+    //determines whether all pictures are drawn to one single canvas like in bg_static
     hasSingleCanvas = typeof( hasSingleCanvas ) === 'undefined' ? false : hasSingleCanvas;
 
     //initialization
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
     var newCanvas;
-	//css-class of quiz elements
-	var quizClass;
-	//contains javascript commands for single actions
-	var quizTrigger, moveTrigger, dialogTrigger;
+    //css-class of quiz elements
+    var quizClass;
+    //contains javascript commands for single actions
+    var quizTrigger, moveTrigger, dialogTrigger;
 
     //draw to single canvas -> bg_static
     if(hasSingleCanvas){
-		
+
         newCanvas = $('<canvas/>', {
-			id: sharedIdString
-			});
+                          id: sharedIdString
+                      });
 
         //append to html body
         $('body').append(newCanvas);
@@ -265,101 +269,101 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
         var canvasContext = newCanvas[0].getContext("2d");
 
-		//sort objects following .position.zPos -> z order
-		objectsToDraw.sort(function(a, b){
-				return a.position.zPos - b.position.zPos;
-			});
+        //sort objects following .position.zPos -> z order
+        objectsToDraw.sort(function(a, b){
+            return a.position.zPos - b.position.zPos;
+        });
 
         //draw objects onto canvas
         for(var index = 0; index < objectsToDraw.length; ++index){
-			try{
-            canvasContext.drawImage(
-                                    gBilder[objectsToDraw[index].imageID].bild,
-                                    perc2pix(screenWidth,  objectsToDraw[index].position.xPos),
-                                    perc2pix(screenHeight, objectsToDraw[index].position.yPos),
-                                    perc2pix(screenWidth,  objectsToDraw[index].size.width),
-                                    perc2pix(screenHeight, objectsToDraw[index].size.height)
-                                   );
-			}catch (error){
-				alert(error + " " + objectsToDraw[index].imageID);
-			}
+            try{
+                canvasContext.drawImage(
+                            gBilder[objectsToDraw[index].imageID].bild,
+                            perc2pix(screenWidth,  objectsToDraw[index].position.xPos),
+                            perc2pix(screenHeight, objectsToDraw[index].position.yPos),
+                            perc2pix(screenWidth,  objectsToDraw[index].size.width),
+                            perc2pix(screenHeight, objectsToDraw[index].size.height)
+                            );
+            }catch (error){
+                alert(error + " " + objectsToDraw[index].imageID);
+            }
         }
-		
-		//set z-index to lowest value of all contained elements
-		newCanvas.css("z-index", objectsToDraw[0].position.zPos);
-		
+
+        //set z-index to lowest value of all contained elements
+        newCanvas.css("z-index", objectsToDraw[0].position.zPos);
+
     }else{//draw to multiple canvasses
 
         for(var index = 0; index < objectsToDraw.length; ++index){
             //create id with a unique combination
             //of common string and picture id
             var canvasID =
-				sharedIdString + "_" +
-				objectsToDraw[index].imageID;/*.slice(
-						(objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
-					);*/
-			
+                    sharedIdString + "_" +
+                    objectsToDraw[index].imageID;/*.slice(
+                        (objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
+                    );*/
+
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
                 //alert(canvasID);
                 gTalk.canvas_id = canvasID;
             }
 
-			if(sharedIdString !== "canvas_person"){
-				//set targetidentifier to canvas id + moveflags to trigger movement if appropriate
-//				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
-				//will trigger quiz advancement on click if flag of current quizstep equals to true, do nothing otherwise
-//                quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');";
+            if(sharedIdString !== "canvas_person"){
+                //set targetidentifier to canvas id + moveflags to trigger movement if appropriate
+                //				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
+                //will trigger quiz advancement on click if flag of current quizstep equals to true, do nothing otherwise
+                //                quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');";
                 //triggers dialog step
-//                dialogTrigger   = "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');";
+                //                dialogTrigger   = "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');";
 
                 var stringValueObject = new Object();
 
                 stringValueObject['key']      = canvasID.split(':')[0];
                 stringValueObject['value']    = canvasID + "+" +
-                                                objectsToDraw[index].quiz[1] + "+" +
-                                                objectsToDraw[index].quiz[3] + "+" +
-                                                objectsToDraw[index].imageID;
+                        objectsToDraw[index].quiz[1] + "+" +
+                        objectsToDraw[index].quiz[3] + "+" +
+                        objectsToDraw[index].imageID;
 
                 gClickEventValueArray.push(stringValueObject);
 
-				//sets visibility by css "display" value through css class attribute
-				//following first flag corresponding to the first quizstep
-				quizClass		= objectsToDraw[index].quiz[0].split("|");
-				quizClass		= quizClass[0] !== "t" ? "quiz_hidden" : "quiz_shown";
-				
-				//add visibility flags
-				canvasID += ":"+objectsToDraw[index].quiz[0];
-				//add clickable flags
-				canvasID += ":"+objectsToDraw[index].quiz[2];
-				
-				if(objectsToDraw[index].quiz[2].split("|")[0] === "t"){
-					//if first step defines clickable == true display this canvas
-					quizClass += " " + "clickable";
-				}
-				
-				//will trigger dialogue if present
+                //sets visibility by css "display" value through css class attribute
+                //following first flag corresponding to the first quizstep
+                quizClass		= objectsToDraw[index].quiz[0].split("|");
+                quizClass		= quizClass[0] !== "t" ? "quiz_hidden" : "quiz_shown";
+
+                //add visibility flags
+                canvasID += ":"+objectsToDraw[index].quiz[0];
+                //add clickable flags
+                canvasID += ":"+objectsToDraw[index].quiz[2];
+
+                if(objectsToDraw[index].quiz[2].split("|")[0] === "t"){
+                    //if first step defines clickable == true display this canvas
+                    quizClass += " " + "clickable";
+                }
+
+                //will trigger dialogue if present
                 /*dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
-									typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
+                                    typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
                                     "dialogStart('"+ objectsToDraw[index].dialogueID +"');";*/
 
-				newCanvas = $('<canvas/>',
-								{
-									id : canvasID,
-									"class": quizClass,
-//                                  onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
+                newCanvas = $('<canvas/>',
+                              {
+                                  id : canvasID,
+                                  "class": quizClass,
+                                  //                                  onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
                                   onclick:"javascript:startEventHandling('" + canvasID.split(':')[0] + "');"
-								}
-							);
-			}else{
-				//if sharedid == canvas_person don't call any javascript
-				newCanvas = $('<canvas/>',
-								{
-									id : canvasID,
-									"class": "quiz_shown"
-								}
-							);
-			}
+                              }
+                              );
+            }else{
+                //if sharedid == canvas_person don't call any javascript
+                newCanvas = $('<canvas/>',
+                              {
+                                  id : canvasID,
+                                  "class": "quiz_shown"
+                              }
+                              );
+            }
 
             //append to html body
             $('body').append(newCanvas);
@@ -367,20 +371,20 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //object positioning
             newCanvas.css('left', objectsToDraw[index].position.xPos + '%');
             newCanvas.css('top', objectsToDraw[index].position.yPos + '%');
-			newCanvas.css('z-index', objectsToDraw[index].position.zPos);
+            newCanvas.css('z-index', objectsToDraw[index].position.zPos);
 
             //calculate pixel dimensions from percentage values
-			var pxWidth, pxHeight;
-			
-			pxWidth		= perc2pix(screenWidth, objectsToDraw[index].size.width);
-			pxHeight	= perc2pix(screenHeight, objectsToDraw[index].size.height);
+            var pxWidth, pxHeight;
 
-			//read scaling from object and apply to canvas
-			var skalierung = z2mult(objectsToDraw[index].position.zPos);
-			
-			pxWidth		*= skalierung;
+            pxWidth		= perc2pix(screenWidth, objectsToDraw[index].size.width);
+            pxHeight	= perc2pix(screenHeight, objectsToDraw[index].size.height);
+
+            //read scaling from object and apply to canvas
+            var skalierung = z2mult(objectsToDraw[index].position.zPos);
+
+            pxWidth		*= skalierung;
             pxHeight	*= skalierung;
-			
+
             //set canvas dimensions
             newCanvas[0].width  = pxWidth;
             newCanvas[0].height = pxHeight;
@@ -400,7 +404,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             }
             //debug end
 
-			if(gBilder[objectsToDraw[index].imageID].animiert){
+            if(gBilder[objectsToDraw[index].imageID].animiert){
                 //Check if we deal with person objects
                 if(!strContains(sharedIdString, 'person')){
                     /*
@@ -423,16 +427,42 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                     */
                     //gOnClickMovablePersons.push(objectsToDraw[index].imageID);
                 }
-			}else{
-				//draw image to its canvas
-				canvasContext.drawImage(
-										gBilder[objectsToDraw[index].imageID].bild,
-										0,
-										0,
-										pxWidth,
-										pxHeight
-									   );
-			}
+            }else{
+                //draw image to its canvas
+                canvasContext.drawImage(
+                            gBilder[objectsToDraw[index].imageID].bild,
+                            0,
+                            0,
+                            pxWidth,
+                            pxHeight
+                            );
+            }
         }
     }
+}
+
+/*
+    sceneNeedsForcedDialog()
+
+    Checks whether current scene needs a forced dialog
+    at start. This will trigger a dialog at startup if
+    necessary.
+
+    Input arguments:
+
+    none
+
+    Return value:
+
+    (Boolean) - true/false
+*/
+function sceneNeedsForcedDialog(){
+
+    for(var idx = 0; idx < gForceDialogScenes.length; ++idx){
+        if(gForceDialogScenes[idx] == gcurrent_scene_id){
+            return true;
+        }
+    }
+
+    return false;
 }

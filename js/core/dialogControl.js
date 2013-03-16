@@ -17,6 +17,15 @@
  */
 function forceDialog(){
 
+    //get right dialog IDs
+    var dialogIDs = fetchDialogIDs();
+
+    //set dialog id
+    gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
+
+    //set canvas id
+    gTalk.canvas_id = 'allg_dialogbox';
+
     //display next dialog
     dialog_zeichneDialog();
 
@@ -27,6 +36,23 @@ function forceDialog(){
     }
 }
 
+/**
+ * dialog_zeichneDialog(textToDraw)
+ *
+ * Actual drawing routine. Based on the state of the
+ * gDialogCounter, this functions grabs the appropriate
+ * dialogblock object, and displays it in the dialogbox
+ * sentencewise. If a dialog has it's trigger_quizstep flag
+ * enabled, this function invokes quiz proceeding based on
+ * the enable_at_start flag at the end or at start of a dialog
+ * block.
+ *
+ * Input values:
+ * textToDraw (String) - default is 'undefined', string is then taken from 'Satz' object
+ *
+ * Return values:
+ * none
+ */
 function dialog_zeichneDialog(textToDraw)
 {
     //access dialogdata
@@ -133,9 +159,21 @@ function dialog_zeichneDialog(textToDraw)
     }
 }
 
-/*Diese Funktion bricht längere Text in Zeilen auf
-  Die Maximiale Zeilenlänge wird in gTalk.lineletters
-  definiert*/
+/**
+ * dialog_SatzZeilenBruch(text, pixelSize)
+ *
+ * This function is responsible for the formatting
+ * of the single sentences. If a sentence is too long
+ * to be displayed in one line, it is splitted into
+ * multiple lines, for a correct text depiction.
+ *
+ * Input values:
+ * text (String) - The text to be displayed
+ * pixelSize (Number) - Actual size one character needs
+ *
+ * Return values:
+ * result (String) - The formatted text
+ */
 function dialog_SatzZeilenBruch(text, pixelSize)
 {
     var subtext = "";
@@ -226,7 +264,6 @@ function swapProxiesWithNames(sentence){
  * Return values:
  * none
  */
-
 function advanceDialogStep(imgID, canvasID){
 
     //check if the clicked object is clickable for the current scene step
