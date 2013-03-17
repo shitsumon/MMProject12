@@ -9,15 +9,7 @@ function bewegePerson(){
 		
 		//save targetid first to prevent reorientation
 		gisWalkingTo		= gTargetIdentifier;
-    }/*else{
-		
-		if(gisWalkingTo !== gTargetIdentifier){
-			//vector has been computed, user clicked new aim while moving -> reset aim and return
-            gTargetIdentifier	= gisWalkingTo;
-
-			return;
-		}
-    }*/
+    }
 	
     //set busy flag to prevent
     //other calls from being activated
@@ -62,6 +54,9 @@ function bewegePerson(){
 		return;
 	}
 	
+    //get dialogbox and make it invisible
+    $("canvas[id*='allg_dialogbox']").addClass("invisible");
+
 	//compute movement vectors
 	if(!gWegBerechnet){
 		
@@ -231,7 +226,12 @@ function bewegePerson(){
 
         //free eventhandler
         gEventHandlerBusy   = false;
+
+        //make dialogbox visible again
+        $("canvas[id*='allg_dialogbox']").removeClass("invisible");
+
         finishEventHandling();
+
 
 		//restore saved parameter as walking is now over
         //advanceQuizStep(gQuiztriggerAfterMoving);

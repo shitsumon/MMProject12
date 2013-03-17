@@ -121,6 +121,10 @@ canvas[id*="uebergang"] {
         transition: box-shadow 0.25s linear;
 }
 
+.invisible{
+        visibility: hidden;
+}
+
 /* Intro */
 
 p#start

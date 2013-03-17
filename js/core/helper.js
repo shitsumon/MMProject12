@@ -243,11 +243,11 @@ function Satz(_person_id, _bild_id, _inhalt){
 //global variable to store dialogues properties
 //prototype of dialogue object
 var gTalk			= new Object();
-gTalk.bild_id 		= "allg_dialogbox";			 //has to be initialised by dialogSettings()
-gTalk.canvas_id		= "null";			 //has to be initialised by dialogSettings()
-gTalk.font_color	= "yellow";			 //can be customized by dialogSettings()
+gTalk.bild_id 		= "allg_dialogbox";		  //has to be initialised by dialogSettings()
+gTalk.canvas_id		= "null";                 //has to be initialised by dialogSettings()
+gTalk.font_color	= "yellow";               //can be customized by dialogSettings()
 gTalk.font_style	= "bold 22px Avantgarde"; //can be customized by dialogSettings()
-gTalk.line_distance = 18;				 //can be customized by dialogSettings()
+gTalk.line_distance = 18;                     //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzCounter	= 0;
 gTalk.SatzMax		= 0;

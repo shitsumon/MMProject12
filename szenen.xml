@@ -193,7 +193,7 @@
       </hg_animiert>
       <personen> <!--Hero-->
         <person person_id="" bild_id="allg_herotileset">
-            <position x="33" y="16" z="200"/>
+            <position x="10" y="65" z="200"/>
             <groesse width="18" height="25"/>
         </person>
       </personen>
@@ -201,8 +201,8 @@
       <vg_animiert> <!--Dialogbox-->
         <vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene2.1|szene2.7" klickbar="t|t|t|t|t|t|t" walkto="f|f|f|f|f|f|f"
                 raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f|f">
-          <position x="34" y="65" z="405"/>
-          <groesse width="75" height="35"/>
+          <position x="31" y="7" z="405"/>
+          <groesse width="42.5" height="23"/>
         </vg_animiert_objekt> <!--Button-->
         <vg_animiert_objekt bild_id="szene2_knopf" dialog_id="szene2.2" klickbar="f|t|f|f|f|f|f" walkto="f|t|f|f|f|f|f"
                 raetsel_sichtbar="t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f">
