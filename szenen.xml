@@ -502,7 +502,7 @@
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="44" y="75" z="402"/>
-          <groesse width="75" height="35"/>
+          <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
