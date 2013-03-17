@@ -31,6 +31,9 @@
   <bild id="allg_anonym" pfad="../bilder/allgemein/anonymous.png" animiert="false">
     <abmessungen height="150" width="150"/>
   </bild>
+  <bild id="allg_dr_chaos" pfad="../bilder/allgemein/drChaos.png" animiert="false">
+    <abmessungen height="133" width="122"/>
+  </bild>
   <!--szene1-->
   <bild id="szene1_hg" pfad="../bilder/szene1/hintergrund_kabine.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
@@ -279,13 +282,16 @@
     <abmessungen height="113" width="232"/>
   </bild>
   <bild id="szene5_dr_chaos" pfad="../bilder/szene5/dr_chaos.png" animiert="false">
-    <abmessungen height="111" width="89"/>
+    <abmessungen height="251" width="83"/>
   </bild>
   <bild id="szene5_dr_chaos_umgedreht" pfad="../bilder/szene5/dr_chaos_umgedreht.png" animiert="false">
-    <abmessungen height="111" width="89"/>
+    <abmessungen height="336" width="149"/>
+  </bild>
+  <bild id="szene5_spike_standing" pfad="../bilder/szene5/spike_standing.png" animiert="false">
+    <abmessungen height="415" width="125"/>
   </bild>
   <bild id="szene5_teddy" pfad="../bilder/szene5/teddy.png" animiert="false">
-    <abmessungen height="63" width="102"/>
+    <abmessungen height="177" width="152"/>
   </bild>
   <bild id="szene5_buch1" pfad="../bilder/szene5/buch1.png" animiert="false">
     <abmessungen height="86" width="86"/>
