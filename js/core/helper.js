@@ -37,11 +37,11 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 4;
+var gcurrent_scene_counter	= 5;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
-var gForceDialogScenes = new Array('Szene_2','Szene_4');
+var gForceDialogScenes = new Array('Szene_2','Szene_4','Szene_5');
 //z-index multiplicators
 var gZoomsteps				= new Array(4);
 //controls display of curent and next scene
@@ -342,6 +342,55 @@ var gCurrentQuizstep		= 0;
 //stores quiztrigger flag of aimed canvas while moving
 var gQuiztriggerAfterMoving	= "";
 var gQuizTrueQuizSteps      = 0;
+
+/*******************
+ *Scene 5 quiz data*
+ *******************/
+function QuizObject(q, a1, a2, a3, a4){
+    this.question = q;
+    this.answer1  = a1;
+    this.answer2  = a2;
+    this.answer3  = a3;
+    this.answer4  = a4;
+}
+
+var gQuizDataArray = new Array();
+
+//question 1
+gQuizDataArray.push(new QuizObject(
+                        "Wie lautet das Wort, was ihr als Grundlage nehmen wollt?",
+                        "A. Einfach",
+                        "B. Sternen",
+                        "C. Quantenbeschleuniger",
+                        "D. Schnecke"
+                        ));
+
+//question 2
+gQuizDataArray.push(new QuizObject(
+                        "Mit welchen Zahlen wollt ihr das Wort Quantenphysik ergänzen?",
+                        "A. 5854256 Sekunden",
+                        "B. Von 1999",
+                        "C. 21. Jahrhundert",
+                        "D. Version 1.0"
+                        ));
+
+//question 3
+gQuizDataArray.push(new QuizObject(
+                        "Es fehlen noch Sonderzeichen, welche kommen in Frage?",
+                        "A. 1.0",
+                        "B. Einfach – der einfache Leitfaden",
+                        "C. Krumm, krummer, am krummsten",
+                        "D. Alles von :) über -.- bis zu =("
+                        ));
+
+//question 4
+gQuizDataArray.push(new QuizObject(
+                        "Euch fehlt noch etwas, was könnte das sein?",
+                        "A. Tobias die Schnecke – Kindergeschichten",
+                        "B. Kochen für Dummies – Keine Angst wir kochen für alle",
+                        "C. Buch ohne Titel – Der Klassiker von 1999",
+                        "D. SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS"
+                        ));
 /***********
  *Utilities*
  ***********/

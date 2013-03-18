@@ -248,6 +248,9 @@
     <abmessungen height="63" width="102"/>
   </bild>
   <!--szene5-->
+  <bild id="szene5_fragen_hg" pfad="../bilder/allgemein/quizhintergrund.jpg" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
   <bild id="szene5_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
@@ -265,6 +268,12 @@
   </bild>
   <bild id="szene5_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
+  </bild>
+  <bild id="szene5_frage_underlay" pfad="../bilder/szene5/frage_hintergrund.png" animiert="false">
+    <abmessungen height="300" width="500"/>
+  </bild>
+  <bild id="szene5_antwort_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
   </bild>
   <bild id="szene5_batterie" pfad="../bilder/szene5/batterie.png" animiert="false">
     <abmessungen height="86" width="86"/>
