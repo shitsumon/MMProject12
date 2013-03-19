@@ -133,7 +133,7 @@
     <satz person_id="p2" bild_id="allg_hero_male">Ich bin doch kein Sicherheitsproblem! Obwohl es logisch ist, was du sagst ... was tun wir jetzt?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ganz einfach, erst mal versuchen wir, das Antiviren-Programm wieder zu aktivieren.</satz>
   </dialog>
-  <dialog id="szene3.3.1" trigger_at_start="true" increase_quiz_step="true">
+  <dialog id="szene3.3.1" trigger_at_start="true" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Die unendlichen Weiten des SpaceNets.</satz>
   </dialog>
   <dialog id="szene3.3.2" trigger_at_start="true" increase_quiz_step="true">
@@ -145,7 +145,7 @@
   <dialog id="szene3.4.1" trigger_at_start="true" increase_quiz_step="false">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre ein riesiger Fehler. Wir sollten unsere Wahl nochmal überdenken.</satz>
   </dialog>
-  <dialog id="szene3.4.2" trigger_at_start="true" increase_quiz_step="false">
+  <dialog id="szene3.4.2" trigger_at_start="true" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Weg damit!</satz>
   </dialog>
   <dialog id="szene3.5" trigger_at_start="true" increase_quiz_step="true">
