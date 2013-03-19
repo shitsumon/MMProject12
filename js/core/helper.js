@@ -37,7 +37,7 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 5;
+var gcurrent_scene_counter	= 2;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -136,7 +136,7 @@ var gIntervall			= 1000 / gAufrufeProSekunde;
 //index of current aim
 var gAktuellesZiel		= 0;
 //Stores last known direction
-var gLastDirection      = 'standing';
+var gLastDirection      = 'standing_l';
 
 /******************
  *pictureParser.js*
@@ -198,10 +198,9 @@ function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
 	this.anzeige_height	= _anzeige_height;	//determines dimensions inside canvas
     this.subtileset	= gInitialDirection;	//defines current subtileset
 }
-//Possible directions for a person object
-var gDirections       = new Array('front', 'back', 'right', 'left', 'standing');
+
 //Sets initial direction of a person object to 'standing'
-var gInitialDirection = 4;
+var gInitialDirection = 6;
 
 /*****************
  *dialogParser.js*

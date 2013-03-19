@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bilder>
   <!--allgemein-->
-  <bild id="bild_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
-    <abmessungen height="160" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
+  <bild id="allg_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
+    <abmessungen height="3120" width="1152"/>
+    <animation fps="6" tile_anzahl="8" tile_width="144" tile_height="390"/>
   </bild>
   <bild id="allg_dialogbox" pfad="../bilder/allgemein/dialogbox.png" animiert="false">
     <abmessungen height="223" width="811"/>
@@ -16,10 +16,6 @@
   </bild>
   <bild id="allg_teddy" pfad="../bilder/allgemein/teddy.png" animiert="false">
     <abmessungen height="133" width="122"/>
-  </bild>
-  <bild id="allg_herotileset" pfad="../bilder/allgemein/heroFullTileset.png" animiert="true">
-    <abmessungen height="160" width="128"/>
-    <animation fps="5" tile_anzahl="4" tile_width="32" tile_height="32"/>
   </bild>
   <bild id="allg_uebergang" pfad="../bilder/allgemein/uebergang.png" animiert="true">
     <abmessungen height="80" width="1536"/>

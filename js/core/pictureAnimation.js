@@ -133,23 +133,32 @@ function switchWalkingAnimation(direction, bild_id){
 		bild_id = bild_id[1];
 		
 		switch(direction){
-			case 'front':
+            case 'right':
 				gAnimationTimer[bild_id].subtileset = 0;
 				break;
-			case 'back':
+            case 'left':
 				gAnimationTimer[bild_id].subtileset = 1;
 				break;
-			case 'right':
+            case 'front':
 				gAnimationTimer[bild_id].subtileset = 2;
 				break;
-			case 'left':
+            case 'back':
 				gAnimationTimer[bild_id].subtileset = 3;
 				break;
-			case 'standing':
-				gAnimationTimer[bild_id].subtileset = 4;
+            case 'jetpack_l':
+                gAnimationTimer[bild_id].subtileset = 4;
 				break;
+            case 'jetpack_r':
+                gAnimationTimer[bild_id].subtileset = 5;
+                break;
+            case 'standing_r':
+                gAnimationTimer[bild_id].subtileset = 6;
+                break;
+            case 'standing_l':
+                gAnimationTimer[bild_id].subtileset = 7;
+                break;
 			default:
-				gAnimationTimer[bild_id].subtileset = 4;
+                gAnimationTimer[bild_id].subtileset = 7;
 		}
 	}
 }

@@ -194,8 +194,14 @@ function bewegePerson(){
 		//there are only 3 targets: hero -> waypoint 1 -> waypoint 2 -> goal
 		setTimeout(function(){ bewegePerson() }, gIntervall);
 	}else{
-        //When goal is reached, standing animation is invoked
-        switchWalkingAnimation('standing', hero[0].id);
+
+        //When goal is reached, standing animation is invoked,
+        //depending on position of hero
+        if(hero.offset().left <= ($(window).width() / 2)){
+            switchWalkingAnimation('standing_r', hero[0].id);
+        }else{
+            switchWalkingAnimation('standing_l', hero[0].id);
+        }
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
 			//scale down
