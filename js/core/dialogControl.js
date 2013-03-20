@@ -295,9 +295,12 @@ function advanceDialogStep(imgID, canvasID){
 
                     var subDialogues = new Array();
 
+                    var splittedID = sceneDialogues[idx2].toLowerCase().split('.');
+
                     //extract sub dialogs
                     for(var idx3 = 0; idx3 < dialogIDs.length; ++ idx3){
-                        if(patternTest(dialogIDs[idx3].scene_id.toLowerCase()) != null){
+                        if(patternTest(dialogIDs[idx3].scene_id.toLowerCase(),
+                                       new RegExp('^' + splittedID[0] + '.' + splittedID[1] + '.\\d$')) != null){
                             subDialogues.push(dialogIDs[idx3]);
                         }
                     }
@@ -399,12 +402,15 @@ function fetchDialogIDs(){
  * string (String) - The strings to test,
  *                   if the stated pattern matches
  *
+ * pattern (RegExp) - user defined pattern to
+ *                    check for in given string
+ *
  * Return values:
  * string - Returns the content of the string
  *          if it's a match else null is returned
  */
-function patternTest(string){
-    return string.match(/^szene\d.\d.\d$/);
+function patternTest(string, pattern){
+    return string.match(typeof(pattern) == 'undefined' ? /^szene\d.\d.\d$/ : pattern);
 }
 
 /**

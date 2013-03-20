@@ -122,6 +122,9 @@ function advanceNextScene(){
 	//prepare new zoomsteps
 	gZoomsteps					= new Array(4);
 
+    //Clear Blacklist to avoid unnecessary search overhead
+    gSubDialogBlacklist         = new Array();
+
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {
 		
