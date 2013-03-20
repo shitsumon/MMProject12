@@ -1,0 +1,126 @@
+Primaer
+-------
+
+- Dialogcode überarbeiten, an Entwurf anpassen -- Done, so far...
+
+- Dialoge müssen in szene.xml als "array" eingetragen und entsprechend ausgelesen werden -- macht jeder für seine Szenen
+	- String der Form: "id1|id2|..."
+
+- Szenenbeschreibung vervollständigen
+	- Dialoge verknüpfen
+	- Rätsel einfügen
+	- Bilder durch schattenfreie Versionen ersetzen, wenn sie zu groß sind
+	- alle Rätselauslöser in Ebene FG/BG dynamic, alles andere in static
+
+	Stand
+	-----
+	Szene 1 - Wird bearbeitet von Hannes
+	Szene 2 - Vorläufig fertig -> Testen
+	Szene 3 - Wird bearbeitet von Oli
+	Szene 4 - Braucht noch kleine Änderungen -> Jevgenij
+	Szene 5 - Wird bearbeitet von Micha
+	Szene 6 - Wird von Jevgenij bearbeitet, sobald Szene 4 fertig
+	Szene 7 - Ausstehend
+
+- Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
+	- Skalierung beeinflusst Positionierung der Bilder!
+
+- Codegenerator Code anzeigen
+
+- in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
+    -> Meldungen am besten per Flag an/abschalten
+
+- rätsel-bilder fehlen -- Soweit alles vorhanden
+
+- dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
+
+- scripted dialoge -> wie machen wir das?
+	-> startdialog in szenen.xml angeben -- Done
+	-> letzter oder erster dialog als trigger für nächste szene -- Done
+
+- Startausrichtung des Helden soll für jede Szene einzeln wählbar sein
+
+- Bewegungsanimation überarbeiten:
+	- Skalierungsbug bei z-level wechsel beheben
+	- Auswahl des richtigen Tilesets überarbeiten
+
+- Gesonderte Animationen für einzelne Szenen:
+	
+	- Szene 1, Held schläft zuerst (Einzelbild), 
+		   steht bei klick dann neben dem bett (Tileset).
+
+	- Szene 7, Dr. Chaos wird raus ins Weltall gezogen
+		- Bild dafür ist vorhanden, fehlt nur die Animation 
+			--> Lsg. Vorschlag: Rotieren und dabei immer kleiner 
+					    Skalieren des Bildes im Canvas,
+					    bis nichts mehr zu sehen ist vom Bild.
+
+Sekundär
+--------
+
+- Kommentare ausführlich für jede Funktion
+    Ausfuerhlich bedeutet:
+        -> Beschreibung was die Funktion macht
+        -> Beschreibung der übergabe Parameter
+        -> Beschreibung der möglichen Rückgabewerte
+
+- Intro
+	- Text der Designer einfügen
+	- Ordentliches Hintergrundbild (Aussenansicht von Szene 6)
+	- Ordentlicher Textfont
+
+- Hauptmenü	-- Done
+
+- Testen, testen, testen
+        -> Fehlerverhalten
+        -> verschiedene Auflösungen
+        -> Veränderung des Anzeigefensters
+        -> ...
+
+- Dokumentation		-- Done
+
+- Präsentation 		-- Done
+
+
+Wem fällt noch was ein?
+
+
+ANMERKUNG
+---------
+
+Bevor ihr mit hacken anfangt und das Rad neu erfindet, lest euch bitte die bestehenden Sourcen
+durch, und versucht euren Code in das bestehende System zu integrieren und vorhandenen Sachen zu nutzen.
+Das hat sonst nur mehr Nachbereitung des Codes zur Folge, was hinsichtlich der verbleibenden Zeit nicht
+wuenschenswert ist!
+
+Probleme in den Szenen
+----------------------
+
+szene 1
+
+raum wird hell -> dunkles bild benötigt
+einzelne schubladen des schreibtisches -> einzelbilder?
+
+szene 2
+
+wieder dunkel
+
+szene 4
+
+die rätselsätze sollen sichtbar bleiben
+	-> vllt wie eine missionsübersicht, transparanter text am rand
+
+szene 5
+
+ein abstellraum soll dargestellt werden
+auslöser für das umsehen der figuren
+	-> links, rechts, fertig
+
+szene 6
+
+eine person muss klickbar sein
+
+szene 7
+
+dr chaos soll sich drehen und kleiner werden
+	-> nicht wiederholende animation
