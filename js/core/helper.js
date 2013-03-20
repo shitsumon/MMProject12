@@ -37,7 +37,7 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 2;
+var gcurrent_scene_counter	= 4;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -283,6 +283,12 @@ function DialogIDObject(scene_id, tqs, eas){
     this.enable_at_start  = eas;
 }
 
+//Blacklist object
+function BlacklistIDObject(scene_id, counter_step){
+    this.scene_id         = scene_id;
+    this.counter_step     = counter_step;
+}
+
 //scene id array for dialog referencing
 var gDialogIDs                   = new Array();
 var gDeprecatedDialogIDs         = new Array();
@@ -290,11 +296,16 @@ var gDeprecatedNumberOfDialogues = 0;
 var gUseDeprecated = false;
 //Lookup table for imageID dialogID mapping
 var gImageToObjectSceneReferrer = new Array();
+//Sub-dialogues which have been already displayed
+var gSubDialogBlacklist = new Array();
 //Overall number of dialogs per scene
 var gNumberOfDialogues          = 0;
 //Point always to the current dialog in gDialogIDs
 var gDialogCounter              = 0;
-
+//Sub dialog offset
+var gSubDialogOffset            = 0;
+//Number of sub dialogues
+var gSubDialogCount             = 0;
 //Proxy names to filter for in dialog sentences
 var gP1Proxy = "P1_DYN_NAME";
 var gP2Proxy = "P2_DYN_NAME";

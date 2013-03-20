@@ -75,8 +75,8 @@ function dialog_zeichneDialog(textToDraw)
     var dialogIDs = fetchDialogIDs();
 
     //Check whether dialog triggers quizstep
-    if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter].trigger_quizstep && dialogIDs[gDialogCounter].enable_at_start||
-            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter].trigger_quizstep && !dialogIDs[gDialogCounter].enable_at_start){
+    if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start||
+            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start){
         //call this with forced flag if its the last sentence
         advanceQuizStep("CalledByDialogue");
     }
@@ -273,14 +273,9 @@ function advanceDialogStep(imgID, canvasID){
         return;
     }
 
-   /* if(gDialogIDs.length == gDialogCounter){
-
-        dialog_zeichneDialog("Ende der Szene.");
-        checkQuizfinished();
-        return;
-    }*/
-
-    var dialogIDs = fetchDialogIDs();
+    var dialogIDs           = fetchDialogIDs();
+    var increaseDialogStep  = true;
+    var dialogCounterOffset = 0;
 
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){
 
@@ -289,9 +284,50 @@ function advanceDialogStep(imgID, canvasID){
 
             for(var idx2 = 0; idx2 < sceneDialogues.length; ++idx2){
 
+
+                //Check if clicked object is linked to a sub-dialog
+                //If yes, this requires special care, to handle sub-dialogues
+                //correctly
+                if(patternTest(sceneDialogues[idx2].toLowerCase()) != null &&
+                        !idIsBlacklisted(sceneDialogues[idx2].toLowerCase()) && !gTalk.isInitialized){
+
+                    gSubDialogBlacklist.push(new BlacklistIDObject(sceneDialogues[idx2].toLowerCase(), gDialogCounter));
+
+                    var subDialogues = new Array();
+
+                    //extract sub dialogs
+                    for(var idx3 = 0; idx3 < dialogIDs.length; ++ idx3){
+                        if(patternTest(dialogIDs[idx3].scene_id.toLowerCase()) != null){
+                            subDialogues.push(dialogIDs[idx3]);
+                        }
+                    }
+
+                    gSubDialogCount = subDialogues.length;
+
+                    //get offset for correct sub-dialog
+                    for(var idx3 = 0; idx3 < gSubDialogCount; ++idx3){
+                        if(subDialogues[idx3].scene_id.toLowerCase() == sceneDialogues[idx2].toLowerCase()){
+
+                            //save offset
+                            gSubDialogOffset = idx3;
+
+                            //enable flag to increase dialog counter (only it's the last sub-dialog)
+                            //this is based on the fact, that always the last sub-dialog triggers next quizstep
+                            increaseDialogStep = (idx3 == (gSubDialogCount - 1)) ? true : false;
+                            break;
+                        }
+                    }
+                }
+
+                //mind if there are sub-dialogues to consider
+                if(gSubDialogCount > 0){
+                    //get dialogcounter offset
+                    dialogCounterOffset  += increaseDialogStep ? gSubDialogCount - 1 : 0;
+                }
+
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(typeof(gDialoge[dialogIDs[gDialogCounter].scene_id]) === 'undefined'){
+                if(typeof(gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'){
                     alert('undefined dialog in gDialoge[]!');
                     return;
                 }
@@ -300,18 +336,28 @@ function advanceDialogStep(imgID, canvasID){
                 //but only if we are not in the middle
                 //of a text chunk, otherwise the click
                 //onto the dialogbox would be blocked
-                if((sceneDialogues[idx2].toLowerCase() != dialogIDs[gDialogCounter].scene_id.toLowerCase()) && !gTalk.isInitialized){
+                if((sceneDialogues[idx2].toLowerCase() != dialogIDs[gDialogCounter + gSubDialogOffset].scene_id.toLowerCase()) && !gTalk.isInitialized){
                     continue;
                 }
 
-                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
+                gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter + gSubDialogOffset].scene_id;
 
                 dialog_zeichneDialog();
 
                 //Only increment if current dialog chunk is
                 //at it's end
                 if(!gTalk.isInitialized){
-                    ++gDialogCounter;
+
+                    if(increaseDialogStep){
+                        ++gDialogCounter;
+                        gDialogCounter += dialogCounterOffset;
+
+                        //reset values
+                        dialogCounterOffset = 0;
+                        gSubDialogCount     = 0;
+                    }
+
+                    gSubDialogOffset = 0;
                 }
 
                 break; //When current dialog was displayed stop looping
@@ -340,4 +386,47 @@ function fetchDialogIDs(){
     }else{
         return gDialogIDs;
     }
+}
+
+/**
+ * patternTest(string)
+ *
+ * Tests a string for
+ * the /^szene\d.\d.\d$/
+ * RegEx pattern.
+ *
+ * Input values:
+ * string (String) - The strings to test,
+ *                   if the stated pattern matches
+ *
+ * Return values:
+ * string - Returns the content of the string
+ *          if it's a match else null is returned
+ */
+function patternTest(string){
+    return string.match(/^szene\d.\d.\d$/);
+}
+
+/**
+ * idIsBlacklisted(string)
+ *
+ * Checks if given
+ * id string is on a blacklist.
+ *
+ * Input values:
+ * string (String) - ID to check for
+ *
+ * Return values:
+ * (Boolean) - True if it's on the list, flase if not.
+ */
+function idIsBlacklisted(string){
+
+    for(var idx = 0; idx < gSubDialogBlacklist.length; ++idx){
+        if(gSubDialogBlacklist[idx].scene_id == string &&
+                gSubDialogBlacklist[idx].counter_step != gDialogCounter){
+            return true;
+        }
+    }
+
+    return false;
 }

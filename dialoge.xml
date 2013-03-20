@@ -175,7 +175,7 @@
   <dialog id="szene4.3" trigger_at_start="true" increase_quiz_step="true">
     <satz person_id="p1" bild_id="allg_hero_female">Das könnte daran liegen, dass es deine Schuhabdrücke sind.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Meine? Wie kommst du darauf?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim Sauber machengestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du das jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim Sauber machen gestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du das jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ach stimmt, da war ja was. Die Stelle schmerzt immer noch, wenn ich sie anfasse.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aber unser Weg war, glaub ich, nicht ganz umsonst. Irgendetwas passt hier nicht.</satz>
   </dialog>
@@ -266,7 +266,7 @@
     <satz person_id="p2" bild_id="allg_hero_male">Wieso redet er so komisch?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich weiß es wirklich nicht ,P2_DYN_NAME. Wer sind Sie?</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Man möge sich den Namen merken, ich heiße Dr. Chaos. Vielleicht habt ihr schon von mir gehört.</satz>
-    <satz person_id="p12" bild_id="allg_hero_female2">Nein.</satz>
+    <satz person_id="p12" bild_id="allg_hero_female">Nein.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Man möge verschwinden, verschwindet!</satz>
   </dialog>
   <dialog id="szene5.4.1" trigger_at_start="true" increase_quiz_step="false">
