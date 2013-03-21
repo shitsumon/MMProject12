@@ -49,7 +49,6 @@ function bewegePerson(){
 	
     //check whether we already are in front of the goal and return
     if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
-        gEventHandlerBusy = false;
         finishEventHandling();
 		return;
 	}
