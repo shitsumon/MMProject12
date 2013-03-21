@@ -1,7 +1,9 @@
 Primaer
 -------
 
-- Dialogcode überarbeiten, an Entwurf anpassen -- Done, so far...
+- Dialogcode überarbeiten, an Entwurf anpassen
+    -- Dynamische Namensersetzung wieder entfernen, Namen sind statisch
+    -- dialog.xml entsprechend anpassen
 
 - Dialoge müssen in szene.xml als "array" eingetragen und entsprechend ausgelesen werden -- macht jeder für seine Szenen
 	- String der Form: "id1|id2|..."
