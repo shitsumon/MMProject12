@@ -74,12 +74,21 @@ function dialog_zeichneDialog(textToDraw)
 	
     var dialogIDs = fetchDialogIDs();
 
+    //Check whether sentence triggers event exception
+    if(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception != '#none#' &&
+            parseInt(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception.split(':')[1]) == gTalk.SatzCounter){
+
+        triggerException(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception.split(':')[0],
+                dialogIDs[gDialogCounter + gSubDialogOffset].argument_list);
+    }
+
     //Check whether dialog triggers quizstep
     if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start||
             (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start){
         //call this with forced flag if its the last sentence
         advanceQuizStep("CalledByDialogue");
     }
+
 
     //screen dimensions
     var screenWidth  = $(window).width();
@@ -300,7 +309,7 @@ function advanceDialogStep(imgID, canvasID){
                     //extract sub dialogs
                     for(var idx3 = 0; idx3 < dialogIDs.length; ++ idx3){
                         if(patternTest(dialogIDs[idx3].scene_id.toLowerCase(),
-                                       new RegExp('^' + splittedID[0] + '.' + splittedID[1] + '.\\d$')) != null){
+                                       new RegExp('^' + splittedID[0] + '\.' + splittedID[1] + '\.\\d{1,2}$')) != null){
                             subDialogues.push(dialogIDs[idx3]);
                         }
                     }
@@ -410,7 +419,7 @@ function fetchDialogIDs(){
  *          if it's a match else null is returned
  */
 function patternTest(string, pattern){
-    return string.match(typeof(pattern) == 'undefined' ? /^szene\d.\d.\d$/ : pattern);
+    return string.match(typeof(pattern) == 'undefined' ? /^szene\d\.\d{1,2}\.\d{1,2}$/ : pattern);
 }
 
 /**

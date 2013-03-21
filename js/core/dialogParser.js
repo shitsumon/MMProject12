@@ -43,7 +43,9 @@ function verarbeiteDialogXML(daten){
         //quizstep activation
         gDialogIDs.push(new DialogIDObject($(dialog_element).attr("id"),
                                            $(dialog_element).attr("increase_quiz_step") === "true" ? true : false,
-                                           $(dialog_element).attr("trigger_at_start") === "true" ? true : false));
+                                           $(dialog_element).attr("trigger_at_start") === "true" ? true : false,
+                                           $(dialog_element).attr("invoke_scene_exception"),
+                                           $(dialog_element).attr("argument_list")));
 
         if($(dialog_element).attr("increase_quiz_step") === "true"){
             ++gQuizTrueQuizSteps;

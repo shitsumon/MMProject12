@@ -277,10 +277,12 @@ function dialogSettings(_bild_id, _canvas_id, _font_color, _font_style, _line_di
 }
 
 //Stores scene id and whether this step trigger a quiz step
-function DialogIDObject(scene_id, tqs, eas){
-    this.scene_id         = scene_id;
-    this.trigger_quizstep = tqs;
-    this.enable_at_start  = eas;
+function DialogIDObject(scene_id, tqs, eas, ise, argl){
+    this.scene_id               = scene_id;
+    this.trigger_quizstep       = tqs;
+    this.enable_at_start        = eas;
+    this.invoke_scene_exception = ise;
+    this.argument_list          = argl;
 }
 
 //Blacklist object
@@ -311,8 +313,8 @@ var gP1Proxy = "P1_DYN_NAME";
 var gP2Proxy = "P2_DYN_NAME";
 
 //Fallback name if name values are not present
-var gFallbackNameP1 = "Captain Kate";
-var gFallbackNameP2 = "Lt. Commander Spike";
+var gFallbackNameP1 = "Commander Kate";
+var gFallbackNameP2 = "Techniker Spike";
 
 //Variables which hold the characters and the sidekicks names
 var gP1Name = "undefined";
@@ -353,54 +355,6 @@ var gCurrentQuizstep		= 0;
 var gQuiztriggerAfterMoving	= "";
 var gQuizTrueQuizSteps      = 0;
 
-/*******************
- *Scene 5 quiz data*
- *******************/
-function QuizObject(q, a1, a2, a3, a4){
-    this.question = q;
-    this.answer1  = a1;
-    this.answer2  = a2;
-    this.answer3  = a3;
-    this.answer4  = a4;
-}
-
-var gQuizDataArray = new Array();
-
-//question 1
-gQuizDataArray.push(new QuizObject(
-                        "Wie lautet das Wort, was ihr als Grundlage nehmen wollt?",
-                        "A. Einfach",
-                        "B. Sternen",
-                        "C. Quantenbeschleuniger",
-                        "D. Schnecke"
-                        ));
-
-//question 2
-gQuizDataArray.push(new QuizObject(
-                        "Mit welchen Zahlen wollt ihr das Wort Quantenphysik ergänzen?",
-                        "A. 5854256 Sekunden",
-                        "B. Von 1999",
-                        "C. 21. Jahrhundert",
-                        "D. Version 1.0"
-                        ));
-
-//question 3
-gQuizDataArray.push(new QuizObject(
-                        "Es fehlen noch Sonderzeichen, welche kommen in Frage?",
-                        "A. 1.0",
-                        "B. Einfach – der einfache Leitfaden",
-                        "C. Krumm, krummer, am krummsten",
-                        "D. Alles von :) über -.- bis zu =("
-                        ));
-
-//question 4
-gQuizDataArray.push(new QuizObject(
-                        "Euch fehlt noch etwas, was könnte das sein?",
-                        "A. Tobias die Schnecke – Kindergeschichten",
-                        "B. Kochen für Dummies – Keine Angst wir kochen für alle",
-                        "C. Buch ohne Titel – Der Klassiker von 1999",
-                        "D. SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS"
-                        ));
 /***********
  *Utilities*
  ***********/
@@ -465,3 +419,73 @@ function HideElementsMenu(){
 	$('#bg').remove();
 	$('#menu').remove();
 }
+
+/************
+ *Exceptions*
+ ************/
+
+/*******************
+ *Scene 5 quiz data*
+ *******************/
+function bookStep(name){
+    this.name = name;
+    this.wasClicked = false;
+}
+
+var gBooksClicked = new Array(new bookStep('book1'),
+                              new bookStep('book2'),
+                              new bookStep('book3'),
+                              new bookStep('book4'),
+                              new bookStep('book5'),
+                              new bookStep('book6'),
+                              new bookStep('book7'),
+                              new bookStep('book8'),
+                              new bookStep('book9'),
+                              new bookStep('book10'));
+
+
+function QuizObject(q, a1, a2, a3, a4){
+    this.question = q;
+    this.answer1  = a1;
+    this.answer2  = a2;
+    this.answer3  = a3;
+    this.answer4  = a4;
+}
+
+var gQuizDataArray = new Array();
+
+//question 1
+gQuizDataArray.push(new QuizObject(
+                        "Wie lautet das Wort, was ihr als Grundlage nehmen wollt?",
+                        "A. Einfach",
+                        "B. Sternen",
+                        "C. Quantenbeschleuniger",
+                        "D. Schnecke"
+                        ));
+
+//question 2
+gQuizDataArray.push(new QuizObject(
+                        "Mit welchen Zahlen wollt ihr das Wort Quantenphysik ergänzen?",
+                        "A. 5854256 Sekunden",
+                        "B. Von 1999",
+                        "C. 21. Jahrhundert",
+                        "D. Version 1.0"
+                        ));
+
+//question 3
+gQuizDataArray.push(new QuizObject(
+                        "Es fehlen noch Sonderzeichen, welche kommen in Frage?",
+                        "A. 1.0",
+                        "B. Einfach – der einfache Leitfaden",
+                        "C. Krumm, krummer, am krummsten",
+                        "D. Alles von :) über -.- bis zu =("
+                        ));
+
+//question 4
+gQuizDataArray.push(new QuizObject(
+                        "Euch fehlt noch etwas, was könnte das sein?",
+                        "A. Tobias die Schnecke – Kindergeschichten",
+                        "B. Kochen für Dummies – Keine Angst wir kochen für alle",
+                        "C. Buch ohne Titel – Der Klassiker von 1999",
+                        "D. SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS"
+                        ));
