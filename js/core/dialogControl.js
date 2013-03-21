@@ -15,13 +15,17 @@
  * Return values:
  * none
  */
-function forceDialog(){
+function forceDialog(scene_id){
 
     //get right dialog IDs
     var dialogIDs = fetchDialogIDs();
 
     //set dialog id
-    gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
+    if(typeof(scene_id) == 'undefined'){
+        gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
+    }else{
+        gTalk.dialog_id = scene_id;
+    }
 
     //set canvas id
     gTalk.canvas_id = 'allg_dialogbox';

@@ -6,6 +6,20 @@
  * which are only used once or more often in a single scene.
  */
 
+/**
+ * triggerException()
+ *
+ * Interface function which starts a specific exception function specified
+ * by passed identifier.
+ *
+ * Input values:
+ * exceptionName (String) - Identifier which refers to a specific function
+ *
+ * arguments (String) - String of arguments concatenated by specific delimiter
+ *
+ * Return values:
+ * none
+ */
 function triggerException(exceptionName, arguments) {
     
 
@@ -25,15 +39,28 @@ function triggerException(exceptionName, arguments) {
     }
 }
 
+/**
+ * scene5_bookcode()
+ *
+ * Exception for the book riddle in scene 5. Checks clicked book
+ * against an Array which contains the preset click order. When
+ * all Array elements are set true, the finalizing action is triggered.
+ *
+ * Input values:
+ * arg (String) - Name of the clicked book
+ *
+ * Return values:
+ * none
+ */
 function scene5_bookcode(arg){
 
     var bookIndex        = 0;
-    var rightfullClicked = 0;
+    var rightfulClicked = 0;
 
     for(var idx = 0; idx < gBooksClicked.length; ++idx){
 
         if(gBooksClicked[idx].wasClicked){
-            ++rightfullClicked;
+            ++rightfulClicked;
         }
 
         if(gBooksClicked[idx].name == arg){
@@ -53,16 +80,17 @@ function scene5_bookcode(arg){
 
     if(setEntryTrue){
         gBooksClicked[bookIndex].wasClicked = true;
-        ++rightfullClicked;
+        ++rightfulClicked;
     }
 
 
-    if(rightfullClicked == gBooksClicked.length){
+    if(rightfulClicked == gBooksClicked.length){
+
         //reset global array
         for(var idx = 0; idx < gBooksClicked.length; ++idx){
             gBooksClicked[idx].wasClicked = false;
         }
 
-        alert('Riddle solved!');
+        forceDialog("szene5.7.12");
     }
 }

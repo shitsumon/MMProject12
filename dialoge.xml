@@ -401,7 +401,7 @@ argument_list
   <dialog id="szene5.7.11" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_bookcode:0" argument_list="book10">
     <satz person_id="p1" bild_id="allg_hero_female">Buch ohne Titel – Der Klassiker von 1999</satz>
   </dialog>
-  <dialog id="szene5.7.12" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene5_bookcode:0" argument_list="book11">
+  <dialog id="szene5.7.12" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So jetzt haben wir genug Ideen, wir sollten jetzt ein Passwort erstellen.</satz>
   </dialog>
   <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
