@@ -162,15 +162,13 @@ function dialog_zeichneDialog()
                   textBoxImageWidth,
                   textBoxImageHeight);
 
-    if(typeof(textToDraw) === 'undefined'){
-        //draw character image
-        ctx.drawImage( gBilder[Satz.bild_id].bild,
-                      ProtImgXPos,
-                      ProtImgYPos,
-                      ProtImgWidth,
-                      ProtImgHeight
-                      );
-    }
+    //draw character image
+    ctx.drawImage( gBilder[Satz.bild_id].bild,
+                  ProtImgXPos,
+                  ProtImgYPos,
+                  ProtImgWidth,
+                  ProtImgHeight
+                  );
 
     //set layout settings
     ctx.fillStyle = gTalk.font_color;

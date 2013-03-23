@@ -268,7 +268,16 @@
   <bild id="szene5_frage_underlay" pfad="../bilder/szene5/frage_hintergrund.png" animiert="false">
     <abmessungen height="300" width="500"/>
   </bild>
-  <bild id="szene5_antwort_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+  <bild id="szene5_antwort_a_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene5_antwort_b_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene5_antwort_c_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene5_antwort_d_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
     <abmessungen height="125" width="500"/>
   </bild>
   <bild id="szene5_batterie" pfad="../bilder/szene5/batterie.png" animiert="false">

@@ -323,7 +323,7 @@ argument_list
   </dialog>
   <dialog id="szene5.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Täd! Da bist du ja, du elender Schwindler. Gib uns unsere Sachen wieder!</satz>
-    <satz person_id="tb" bild_id="allg_teddy">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
+    <!-- <satz person_id="tb" bild_id="allg_teddy">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wieso geht das nicht?</satz>
     <satz person_id="tb" bild_id="allg_teddy">ER hat sie jetzt.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Dr. Chaos?</satz>
@@ -340,7 +340,7 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">OK P2_DYN_NAME, dieses eine Mal vertrau ich dir. Etwas anderes fällt mir gerade auch nicht ein. Gut Täd, wir helfen dir. Was möchtest du?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Das erste Rätsel:...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Schon wieder Rätsel? Kannst du uns nicht einfach so fragen?</satz>
-    <satz person_id="tb" bild_id="allg_teddy">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz>
+    <satz person_id="tb" bild_id="allg_teddy">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz> -->
   </dialog>
   <dialog id="szene5.5" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Fehlen nur die Arbeitsstiefel.</satz>
@@ -348,7 +348,7 @@ argument_list
   </dialog>
   <dialog id="szene5.6" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p2" bild_id="allg_hero_male">Er ist ... weg.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Nein P2_DYN_NAME, BEIDE sind weg. Das war ein ganz billiger Trick und wir sind darauf reingefallen. Soviel zu "Vertrau mir".</satz>
+    <!-- <satz person_id="p1" bild_id="allg_hero_female">Nein P2_DYN_NAME, BEIDE sind weg. Das war ein ganz billiger Trick und wir sind darauf reingefallen. Soviel zu "Vertrau mir".</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aber warum sollte er ohne die Sachen gehen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Täd war nie an den Sachen interessiert. Mich würde eher interessieren, was Dr. Chaos am Computerterminal gemacht hat. Mäck, würdest du das mal bitte überprüfen?</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Dr. Chaos hat eure Benutzerkonten komplett gelöscht und das Gast-Benutzerkonto mit dem Admin-Konto zusammengelegt. Das neue Benutzerkonto heißt "Chaos" und er hat dafür ein eigenes Passwort gewählt.</satz>
@@ -366,7 +366,7 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">Schade, deine geniale Idee von eben war wohl eine einmalige Sache. Wir müssen uns das Passwort natürlich merken, damit Dr. Chaos es nicht einfach ablesen kann. Um es uns zu merken, brauchen wir Eselsbrücken. Sag mal, stand in der Abstellkammer nicht ein Bücherregal? Vielleicht finden wir dort etwas Sinnvolles.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aber dort kann Dr. Chaos doch auch das Passwort nachlesen, oder nicht?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich bezweifle, dass er auf die Idee kommt, sich durch den ganzen Müll durchzuwühlen, um ein paar veraltete Bücher durchzuwälzen. Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
-    <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz> -->
   </dialog>
   <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Bisher habt ihr keine Ideen gesammelt, sucht erst mal weiter.</satz>
@@ -404,19 +404,19 @@ argument_list
   <dialog id="szene5.7.12" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So jetzt haben wir genug Ideen, wir sollten jetzt ein Passwort erstellen.</satz>
   </dialog>
-  <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene5_generateCode:0" argument_list="question0">
     <satz person_id="bc" bild_id="allg_bordcomputer">So, dann wollen wir mal sehen ...</satz>
   </dialog>
   <dialog id="szene5.9.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Das ist keine sichere Grundlage. Vielleicht müsst ihr doch noch ein paar Ideen sammeln.</satz>
   </dialog>
-  <dialog id="szene5.9.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.9.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question1">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, das ist eine sichere Grundlage. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.9.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question2">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, diese Zahlenkette sollte gut mit dem Wort kombinierbar sein. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.9.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question3">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sache fehlt noch.</satz>
   </dialog>
   <dialog id="szene5.9.5" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
@@ -424,7 +424,7 @@ argument_list
   </dialog>
   <dialog id="szene5.10" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">So, das Passwort wurde erfolgreich geändert und ist sicher genug.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Wunderbar. Jetzt kann Dr. Chaos auf nichts mehr in unserem Computersystem zugreifen.</satz>
+   <satz person_id="p1" bild_id="allg_hero_female">Wunderbar. Jetzt kann Dr. Chaos auf nichts mehr in unserem Computersystem zugreifen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ich find das Passwort jetzt schon arg kompliziert ...</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Sieh es so, es ist ein Passwort, was du nicht jeden Tag brauchst. Für alltägliche Passwörter würde ein kürzeres Wort mit nur einem Großbuchstaben und einem Sonderzeichen reichen.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich glaub, zum Thema Passwörter war das heute eindeutig genug. Wir sollten jetzt versuchen, Dr. Chaos aus unserem Schiff ... zu entfernen.</satz>

@@ -34,6 +34,14 @@ function triggerException(exceptionName, arguments) {
         scene5_bookcode(arguments);
     }
     break;
+    case 'scene5_generateCode':
+        if(!/question\d/.test(arguments)){
+            alert('This function requires one argument, like "question1"!')
+            return;
+        }
+
+        scene5_generateSecureCode(arguments);
+        break;
     default:
         break;
     }
@@ -94,5 +102,56 @@ function scene5_bookcode(arg){
         gForceOtherDialog   = true;
         gDialogToForce      = "szene5.7.12";
         gIncreaseDialogStep = testIfSubDialog(gDialogToForce);
+    }
+}
+
+/**
+ * scene5_generateSecureCode()
+ *
+ * Exception for the secure password generation riddle.
+ * Depending on the passed argument, this function will
+ * generate new quiz text in the quiz boxes.
+ *
+ *
+ * Input values:
+ * arg (String) - Name of the clicked answer
+ *
+ * Return values:
+ * none
+ */
+function scene5_generateSecureCode(arg){
+
+
+    var q_canvas = $("canvas[id*='frage_underlay']");
+    var ctx_q    = q_canvas[0].getContext("2d");
+    ctx_q.clearRect(0,0,q_canvas.width, q_canvas.height);
+
+    var a1_canvas = $("canvas[id*='antwort_a_underlay']");
+    var ctx_a1    = a1_canvas[0].getContext("2d");
+    ctx_a1.clearRect(0,0,a1_canvas.width,a1_canvas.height);
+
+    var a2_canvas = $("canvas[id*='antwort_b_underlay']");
+    var ctx_a2    = a2_canvas[0].getContext("2d");
+    ctx_a2.clearRect(0,0,a2_canvas.width,a2_canvas.height);
+
+    var a3_canvas = $("canvas[id*='antwort_c_underlay']");
+    var ctx_a3    = a3_canvas[0].getContext("2d");
+    ctx_a3.clearRect(0,0,a3_canvas.width,a3_canvas.height);
+
+    var a4_canvas = $("canvas[id*='antwort_d_underlay']");
+    var ctx_a4    = a4_canvas[0].getContext("2d");
+    ctx_a4.clearRect(0,0,a4_canvas.width,a4_canvas.height);
+
+    var ctx_Array = new Array(ctx_a1, ctx_a2, ctx_a3, ctx_a4);
+
+    switch(arg){
+    case 'question0':
+        break;
+    case 'question1':
+        break;
+    case 'question2':
+        break;
+    case 'question3':
+        break;
     }
 }
