@@ -91,6 +91,8 @@ function scene5_bookcode(arg){
             gBooksClicked[idx].wasClicked = false;
         }
 
-        forceDialog("szene5.7.12");
+        gForceOtherDialog   = true;
+        gDialogToForce      = "szene5.7.12";
+        gIncreaseDialogStep = testIfSubDialog(gDialogToForce);
     }
 }

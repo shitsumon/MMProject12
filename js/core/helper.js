@@ -291,6 +291,9 @@ function BlacklistIDObject(scene_id, counter_step){
     this.counter_step     = counter_step;
 }
 
+//force dialog variables
+var gForceOtherDialog = false;
+var gDialogToForce    = '';
 //scene id array for dialog referencing
 var gDialogIDs                   = new Array();
 var gDeprecatedDialogIDs         = new Array();
@@ -308,6 +311,8 @@ var gDialogCounter              = 0;
 var gSubDialogOffset            = 0;
 //Number of sub dialogues
 var gSubDialogCount             = 0;
+//Enables addition of subdialog steps to dialog counter if true
+var gIncreaseDialogStep = true;
 //Proxy names to filter for in dialog sentences
 var gP1Proxy = "P1_DYN_NAME";
 var gP2Proxy = "P2_DYN_NAME";

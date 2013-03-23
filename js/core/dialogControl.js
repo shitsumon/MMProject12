@@ -57,25 +57,9 @@ function forceDialog(scene_id){
  * Return values:
  * none
  */
-function dialog_zeichneDialog(textToDraw)
+function dialog_zeichneDialog()
 {
-    //access dialogdata
-    if(!gTalk.isInitialized){
-        gTalk.currentDialog = gDialoge[gTalk.dialog_id];
-        gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
-        gTalk.isInitialized = true;
-    }
-
-    var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
-    var Text   = typeof(textToDraw) === 'undefined' ? Satz.inhalt : textToDraw;
-
-    Text = swapProxiesWithNames(Text);
-
-    //marks an unfinished text chunk
-    if(gTalk.SatzCounter < gTalk.SatzMax - 1){
-        Text += '   >>';
-    }
-	
+    //fetch dialog IDs
     var dialogIDs = fetchDialogIDs();
 
     //Check whether sentence triggers event exception
@@ -83,16 +67,56 @@ function dialog_zeichneDialog(textToDraw)
             parseInt(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception.split(':')[1]) == gTalk.SatzCounter){
 
         triggerException(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception.split(':')[0],
-                dialogIDs[gDialogCounter + gSubDialogOffset].argument_list);
+                         dialogIDs[gDialogCounter + gSubDialogOffset].argument_list);
     }
 
-    //Check whether dialog triggers quizstep
-    if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start||
-            (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start){
-        //call this with forced flag if its the last sentence
-        advanceQuizStep("CalledByDialogue");
+    if(gForceOtherDialog && /^szene\d\.\d{1,2}(\.\d{1,2}|)$/.test(gDialogToForce)){
+        gTalk.dialog_id     = gDialogToForce;
+        gTalk.isInitialized = false;
+        gTalk.SatzCounter   = 0;
     }
 
+    //access dialogdata
+    if(!gTalk.isInitialized){
+        gTalk.currentDialog = gDialoge[gTalk.dialog_id];
+        gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
+        gTalk.isInitialized = true;
+    }
+
+    //check if a scene exception triggered another dialog instead planned one
+    if(gForceOtherDialog){
+
+        for(var idx = 0; idx < dialogIDs.length; ++idx){
+
+            if(dialogIDs[idx].scene_id == gDialogToForce){
+
+                //Check whether dialog triggers quizstep
+                if((gTalk.SatzCounter == 0) && dialogIDs[idx].trigger_quizstep && dialogIDs[idx].enable_at_start ||
+                        (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[idx].trigger_quizstep && !dialogIDs[idx].enable_at_start){
+                    //call this with forced flag if its the last sentence
+                    advanceQuizStep("CalledByDialogue");
+                }
+            }
+        }
+    }else{
+
+        //Check whether dialog triggers quizstep
+        if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start||
+                (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start){
+            //call this with forced flag if its the last sentence
+            advanceQuizStep("CalledByDialogue");
+        }
+    }
+
+    var Satz   = gTalk.currentDialog.saetze[gTalk.SatzCounter];
+    var Text   = Satz.inhalt;
+
+    Text = swapProxiesWithNames(Text);
+
+    //marks an unfinished text chunk
+    if(gTalk.SatzCounter < gTalk.SatzMax - 1){
+        Text += '   >>';
+    }
 
     //screen dimensions
     var screenWidth  = $(window).width();
@@ -169,6 +193,8 @@ function dialog_zeichneDialog(textToDraw)
         gTalk.currentDialog = 'undefined';
         gTalk.isInitialized = false;
         gTalk.SatzCounter   = 0;
+        gForceOtherDialog   = false;
+        gDialogToForce      = '';
     }
 }
 
@@ -287,8 +313,7 @@ function advanceDialogStep(imgID, canvasID){
     }
 
     var dialogIDs           = fetchDialogIDs();
-    var increaseDialogStep  = true;
-    var dialogCounterOffset = 0;
+    gIncreaseDialogStep     = true;
 
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){
 
@@ -301,45 +326,7 @@ function advanceDialogStep(imgID, canvasID){
                 //Check if clicked object is linked to a sub-dialog
                 //If yes, this requires special care, to handle sub-dialogues
                 //correctly
-                if(patternTest(sceneDialogues[idx2].toLowerCase()) != null &&
-                        !idIsBlacklisted(sceneDialogues[idx2].toLowerCase()) && !gTalk.isInitialized){
-
-                    gSubDialogBlacklist.push(new BlacklistIDObject(sceneDialogues[idx2].toLowerCase(), gDialogCounter));
-
-                    var subDialogues = new Array();
-
-                    var splittedID = sceneDialogues[idx2].toLowerCase().split('.');
-
-                    //extract sub dialogs
-                    for(var idx3 = 0; idx3 < dialogIDs.length; ++ idx3){
-                        if(patternTest(dialogIDs[idx3].scene_id.toLowerCase(),
-                                       new RegExp('^' + splittedID[0] + '\.' + splittedID[1] + '\.\\d{1,2}$')) != null){
-                            subDialogues.push(dialogIDs[idx3]);
-                        }
-                    }
-
-                    gSubDialogCount = subDialogues.length;
-
-                    //get offset for correct sub-dialog
-                    for(var idx3 = 0; idx3 < gSubDialogCount; ++idx3){
-                        if(subDialogues[idx3].scene_id.toLowerCase() == sceneDialogues[idx2].toLowerCase()){
-
-                            //save offset
-                            gSubDialogOffset = idx3;
-
-                            //enable flag to increase dialog counter (only it's the last sub-dialog)
-                            //this is based on the fact, that always the last sub-dialog triggers next quizstep
-                            increaseDialogStep = (idx3 == (gSubDialogCount - 1)) ? true : false;
-                            break;
-                        }
-                    }
-                }
-
-                //mind if there are sub-dialogues to consider
-                if(gSubDialogCount > 0){
-                    //get dialogcounter offset
-                    dialogCounterOffset  += increaseDialogStep ? gSubDialogCount - 1 : 0;
-                }
+                gIncreaseDialogStep = testIfSubDialog(sceneDialogues[idx2].toLowerCase());
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
@@ -364,12 +351,10 @@ function advanceDialogStep(imgID, canvasID){
                 //at it's end
                 if(!gTalk.isInitialized){
 
-                    if(increaseDialogStep){
+                    if(gIncreaseDialogStep){
                         ++gDialogCounter;
-                        gDialogCounter += dialogCounterOffset;
+                        gDialogCounter += gIncreaseDialogStep ? gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount : 0;
 
-                        //reset values
-                        dialogCounterOffset = 0;
                         gSubDialogCount     = 0;
                     }
 
@@ -380,6 +365,56 @@ function advanceDialogStep(imgID, canvasID){
             }
 
             break; //When current dialog was displayed stop looping
+        }
+    }
+}
+
+/**
+ * testIfSubDialog()
+ *
+ * Check if passed dialog id belongs to a sub-dialog.
+ * If that's the case, the dialog will be treated differently.
+ *
+ * Input values:
+ * sceneDialog (String) - id of dialog block which is inspected
+ *
+ * Return values:
+ * Boolean - True if the last dialog of a sub-dialog chain was clicked,
+ *           else this will be false, to prevent dialog counter from
+ *           being increased.
+ */
+function testIfSubDialog(sceneDialog){
+
+    if(patternTest(sceneDialog) == null || idIsBlacklisted(sceneDialog) || gTalk.isInitialized){
+        return true;
+    }
+
+    gSubDialogBlacklist.push(new BlacklistIDObject(sceneDialog, gDialogCounter));
+
+    var subDialogues = new Array();
+    var splittedID   = sceneDialog.split('.');
+    var dialogIDs    = fetchDialogIDs();
+
+    //extract sub dialogs
+    for(var idx = 0; idx < dialogIDs.length; ++idx){
+        if(patternTest(dialogIDs[idx].scene_id.toLowerCase(),
+                       new RegExp('^' + splittedID[0] + '\.' + splittedID[1] + '\.\\d{1,2}$')) != null){
+            subDialogues.push(dialogIDs[idx]);
+        }
+    }
+
+    gSubDialogCount = subDialogues.length;
+
+    //get offset for correct sub-dialog
+    for(var idx = 0; idx < gSubDialogCount; ++idx){
+        if(subDialogues[idx].scene_id.toLowerCase() == sceneDialog){
+
+            //save offset
+            gSubDialogOffset = idx;
+
+            //enable flag to increase dialog counter (only it's the last sub-dialog)
+            //this is based on the fact, that always the last sub-dialog triggers next quizstep
+            return (idx == (gSubDialogCount - 1)) ? true : false;
         }
     }
 }
