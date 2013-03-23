@@ -2,14 +2,7 @@
 executes quizsteps implications by showing/hiding objects and increments current quizstep while checking whether the quiz was finished
 */
 function advanceQuizStep(clicked_canvas_quiz_flags){
-	
-//	if(gisWalkingTo !== ""){
-//		//store parameter in global variable if movement is active and exit
-//		gQuiztriggerAfterMoving = clicked_canvas_quiz_flags;
-		
-//		return;
-//	}
-	
+
 	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
 	if((clicked_canvas_quiz_flags[0] === "CalledByDialogue") ||
