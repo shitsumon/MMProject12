@@ -1,6 +1,8 @@
 Primaer
 -------
 
+- Spiel funktioniert nicht wenn man mit level code mittendrin einsteigt
+
 - Dialogcode überarbeiten, an Entwurf anpassen
     -- Dynamische Namensersetzung wieder entfernen, Namen sind statisch
     -- dialog.xml entsprechend anpassen
