@@ -407,19 +407,19 @@ argument_list
   <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene5_generateCode:0" argument_list="question0">
     <satz person_id="bc" bild_id="allg_bordcomputer">So, dann wollen wir mal sehen ...</satz>
   </dialog>
-  <dialog id="szene5.9.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.9.1" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Das ist keine sichere Grundlage. Vielleicht müsst ihr doch noch ein paar Ideen sammeln.</satz>
   </dialog>
-  <dialog id="szene5.9.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question1">
+  <dialog id="szene5.9.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question1">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, das ist eine sichere Grundlage. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question2">
+  <dialog id="szene5.9.3" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question2">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, diese Zahlenkette sollte gut mit dem Wort kombinierbar sein. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question3">
+  <dialog id="szene5.9.4" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question3">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sache fehlt noch.</satz>
   </dialog>
-  <dialog id="szene5.9.5" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.9.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Stimmt, Großbuchstaben runden das Ganze ab.</satz>
   </dialog>
   <dialog id="szene5.10" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
