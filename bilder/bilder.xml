@@ -337,6 +337,18 @@
   <bild id="szene5_buch10" pfad="../bilder/szene5/buch10.png" animiert="false">
     <abmessungen height="44" width="83"/>
   </bild>
+  <bild id="szene5_generate1" pfad="../bilder/szene5/generate1.jpg" animiert="false">
+    <abmessungen height="506" width="1151"/>
+  </bild>
+  <bild id="szene5_generate2" pfad="../bilder/szene5/generate2.jpg" animiert="false">
+    <abmessungen height="506" width="1151"/>
+  </bild>
+  <bild id="szene5_generate3" pfad="../bilder/szene5/generate3.jpg" animiert="false">
+    <abmessungen height="506" width="1151"/>
+  </bild>
+  <bild id="szene5_generate4" pfad="../bilder/szene5/generate4.jpg" animiert="false">
+    <abmessungen height="506" width="1151"/>
+  </bild>
   <!--szene6-->
   <bild id="szene6_hg" pfad="../bilder/szene6/hintergrund_aussen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>

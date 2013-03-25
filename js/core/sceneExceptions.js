@@ -27,7 +27,7 @@ function triggerException(exceptionName, arguments) {
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
-            alert('This function requires one argument, like "book#number#"!')
+            alert('This function requires one argument, like "book#number#"!');
             return;
         }
 
@@ -36,11 +36,19 @@ function triggerException(exceptionName, arguments) {
     break;
     case 'scene5_generateCode':
         if(!/question\d/.test(arguments)){
-            alert('This function requires one argument, like "question1"!')
+            alert('This function requires one argument, like "question1"!');
             return;
         }
 
         scene5_generateSecureCode(arguments);
+        break;
+    case 'scene5_hideDialogbox':
+//        if(!/hide/.test(arguments) || !/reveal/.test(arguments)){
+//            alert('This function requires one argument, like "hide" or "reveal"!');
+//            return;
+//        }
+
+        scene5_hideDialogbox(arguments);
         break;
     default:
         break;
@@ -279,4 +287,16 @@ function foo(text, pixelSize)
     }
 
     return result;
+}
+
+function scene5_hideDialogbox(arg){
+
+    switch(arg){
+    case 'hide':
+        $("canvas[id*='allg_dialogbox']").addClass("invisible");
+        break;
+    case 'reveal':
+        $("canvas[id*='allg_dialogbox']").removeClass("invisible");
+        break;
+    }
 }

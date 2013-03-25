@@ -467,7 +467,7 @@ var gQuizDataArray = new Array();
 
 //question 1
 gQuizDataArray.push(new QuizObject(
-                        "Wie lautet das Wort, was ihr als Grundlage nehmen wollt?",
+                        "Wie lautet das Wort, welches ihr als Grundlage nehmen wollt?",
                         "A. Einfach",
                         "B. Sternen",
                         "C. Quantenbeschleuniger",
@@ -476,7 +476,7 @@ gQuizDataArray.push(new QuizObject(
 
 //question 2
 gQuizDataArray.push(new QuizObject(
-                        "Mit welchen Zahlen wollt ihr das Wort Quantenphysik ergänzen?",
+                        'Mit welchen Zahlen wollt ihr das Wort "Quantenphysik" ergänzen?',
                         "A. 5854256 Sekunden",
                         "B. Von 1999",
                         "C. 21. Jahrhundert",

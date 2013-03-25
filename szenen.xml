@@ -535,7 +535,7 @@
                             dialog_id="#none#"
                             klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|t|t|t|f|f|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|f"
+                            raetsel_sichtbar=   "t|t|t|t|t|t|f|f|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
@@ -545,9 +545,9 @@
         <hg_animiert_objekt
                             bild_id="szene5_terminal"
                             dialog_id="szene5.7.1|szene5.8"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|t|t|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|t|f|t|t|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|t|t|t|f|f|t|t|t|t|t|t|f|f|f|f|f|t|f|f|f|f"
+                            raetsel_sichtbar=   "t|t|t|t|t|t|f|t|t|t|t|t|t|t|f|f|f|f|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
@@ -557,7 +557,7 @@
                             dialog_id="#none#"
                             klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|t|t|t|f|f|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|f"
+                            raetsel_sichtbar=   "t|t|t|t|t|t|f|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="70" y="63" z="101"/>
           <groesse width="20" height="35"/>
@@ -574,22 +574,53 @@
         <vg_animiert_objekt
                             bild_id="allg_dialogbox"
                             dialog_id="szene5.1|szene5.6"
-                            klickbar=           "t|t|t|t|t|t|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "t|t|t|t|t|t|f|t|t|t|f|f|f|f|t|t|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="31" y="7" z="405"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
+
         <vg_animiert_objekt
-                            bild_id="szene5_fragen_hg"
+                            bild_id="szene5_generate1"
                             dialog_id="#none#"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|t|f|f|f|t|t|t|t"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="0" y="0" z="403"/>
-          <groesse width="100" height="100"/>
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f">
+          <position x="4.95" y="14" z="404"/>
+          <groesse width="89.922" height="70.277"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt
+                            bild_id="szene5_generate2"
+                            dialog_id="#none#"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f"
+                            walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+           <position x="4.95" y="14" z="404"/>
+           <groesse width="89.922" height="70.277"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt
+                            bild_id="szene5_generate3"
+                            dialog_id="#none#"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f"
+                            walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f">
+           <position x="4.95" y="14" z="404"/>
+           <groesse width="89.922" height="70.277"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt
+                            bild_id="szene5_generate4"
+                            dialog_id="szene5.10"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|f|f|f|f|f"
+                            walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f">
+           <position x="4.95" y="14" z="404"/>
+           <groesse width="89.922" height="70.277"/>
         </vg_animiert_objekt>
 
         <vg_animiert_objekt
@@ -599,15 +630,15 @@
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-            <position x="85" y="42" z="402"/>
+            <position x="75" y="42" z="402"/>
             <groesse width="10" height="50"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_dr_chaos"
                             dialog_id="szene5.2|szene5.3|szene5.4.1"
-                            klickbar=           "t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "t|t|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="30" y="50" z="400"/>
           <groesse width="7" height="33"/>
@@ -615,30 +646,30 @@
         <vg_animiert_objekt
                             bild_id="szene5_dr_chaos_umgedreht"
                             dialog_id="szene5.3"
-                            klickbar=           "f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="26" y="42" z="400"/>
           <groesse width="13" height="50"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_teddy"
                             dialog_id="szene5.4.2"
-                            klickbar=           "f|f|f|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+                            raetsel_ausloeser=  "f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="40.25" z="400"/>
           <groesse width="6.5" height="12.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_tuer"
                             dialog_id="szene5.7.1"
-                            klickbar=           "f|f|f|f|f|t|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            walkto=             "t|t|f|t|t|t|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|t|t|t|f|f|f|t|t|f|f|t|f|f|f|f|f|t|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|t|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f">
+                            klickbar=           "f|f|f|f|t|f|f|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=             "f|f|f|f|t|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|f|f|t|f|f|f|f|f|t|t|t|t|t"
+                            raetsel_ausloeser=  "f|f|f|f|t|f|f|t|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="87" y="26" z="400"/>
           <groesse width="12" height="66"/>
         </vg_animiert_objekt>
@@ -649,17 +680,17 @@
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="83" y="51" z="401"/>
+          <position x="83" y="51" z="101"/>
           <groesse width="4" height="7"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
-                            bild_id="szene5_raetsel_fenster"
+                            bild_id="szene5_fragen_hg"
                             dialog_id="#none#"
                             klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|t|t|t|t|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="0" y="0" z="402"/>
+          <position x="0" y="0" z="403"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
@@ -667,7 +698,7 @@
                             dialog_id="#none#"
                             klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="30" z="404"/>
           <groesse width="30" height="40"/>
@@ -675,49 +706,59 @@
         <vg_animiert_objekt
                             bild_id="szene5_antwort_a_underlay"
                             dialog_id="szene5.9.3"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="7.5" y="30" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_antwort_b_underlay"
                             dialog_id="szene5.9.5"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|t|t|t|t|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f">
           <position x="7.5" y="50" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_antwort_c_underlay"
                             dialog_id="szene5.9.2"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="67.5" y="30" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_antwort_d_underlay"
                             dialog_id="szene5.9.4"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|f|f|f|f|f|t|t|t|t|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f">
           <position x="67.5" y="50" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
+                            bild_id="szene5_raetsel_fenster"
+                            dialog_id="#none#"
+                            klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+          <position x="0" y="0" z="402"/>
+          <groesse width="100" height="100"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt
                             bild_id="szene5_buch1"
                             dialog_id="szene5.7.2"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="39" y="50" z="403"/>
           <groesse width="3" height="12"/>
@@ -725,9 +766,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch2"
                             dialog_id="szene5.7.3"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="42" y="57" z="404"/>
           <groesse width="5" height="8"/>
@@ -735,9 +776,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch3"
                             dialog_id="szene5.7.4"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="42" y="51" z="403"/>
           <groesse width="5" height="8"/>
@@ -745,9 +786,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch4"
                             dialog_id="szene5.7.5"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="47" y="55" z="403"/>
           <groesse width="3" height="8"/>
@@ -755,9 +796,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch5"
                             dialog_id="szene5.7.6"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="49.6" y="51" z="404"/>
           <groesse width="3" height="13"/>
@@ -765,9 +806,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch6"
                             dialog_id="szene5.7.7"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="51.5" y="52.6" z="405"/>
           <groesse width="2" height="11"/>
@@ -775,9 +816,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch7"
                             dialog_id="szene5.7.8"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="53.3" y="51" z="406"/>
           <groesse width="3" height="13"/>
@@ -785,9 +826,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch8"
                             dialog_id="szene5.7.9"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="55" y="53.7" z="407"/>
           <groesse width="3" height="10"/>
@@ -795,9 +836,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch9"
                             dialog_id="szene5.7.10"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="53" z="404"/>
           <groesse width="7" height="7"/>
@@ -805,9 +846,9 @@
         <vg_animiert_objekt
                             bild_id="szene5_buch10"
                             dialog_id="szene5.7.11"
-                            klickbar=           "f|f|f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="59.9" y="56.5" z="403"/>
           <groesse width="7" height="7"/>
@@ -815,20 +856,20 @@
         <vg_animiert_objekt
                             bild_id="szene5_batterie"
                             dialog_id="#none#"
-                            klickbar=           "f|f|f|f|f|f|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="60" y="36" z="403"/>
           <groesse width="7" height="10"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_sicherung"
                             dialog_id="szene5.5"
-                            klickbar=           "f|f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            klickbar=           "f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=  "f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=  "f|f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="40" z="403"/>
           <groesse width="4" height="6"/>
         </vg_animiert_objekt>
@@ -837,7 +878,7 @@
                             dialog_id="#none#"
                             klickbar=           "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "f|f|f|f|f|f|t|t|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=   "f|f|f|f|f|t|t|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="39" y="29" z="403"/>
           <groesse width="24" height="17"/>
