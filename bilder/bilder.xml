@@ -243,6 +243,12 @@
   <bild id="szene4_teddy" pfad="../bilder/szene4/teddy.png" animiert="false">
     <abmessungen height="63" width="102"/>
   </bild>
+    <bild id="szene4_teddy" pfad="../bilder/szene4/teddy4.png" animiert="false">
+    <abmessungen height="118" width="106"/>
+  </bild>
+  <bild id="szene4_spike" pfad="../bilder/szene4/spike_standing.png" animiert="false">
+  <abmessungen height="415" width="125"/>
+  </bild>
   <!--szene5-->
   <bild id="szene5_fragen_hg" pfad="../bilder/allgemein/quizhintergrund.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
