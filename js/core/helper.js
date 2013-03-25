@@ -245,7 +245,7 @@ var gTalk			= new Object();
 gTalk.bild_id 		= "allg_dialogbox";		  //has to be initialised by dialogSettings()
 gTalk.canvas_id		= "null";                 //has to be initialised by dialogSettings()
 gTalk.font_color	= "yellow";               //can be customized by dialogSettings()
-gTalk.font_style	= "bold 22px Avantgarde"; //can be customized by dialogSettings()
+gTalk.font_style	= "bold 22px Arial"; //can be customized by dialogSettings()
 gTalk.line_distance = 18;                     //can be customized by dialogSettings()
 gTalk.dialog_id		= "null";
 gTalk.SatzCounter	= 0;
@@ -449,12 +449,18 @@ var gBooksClicked = new Array(new bookStep('book1'),
                               new bookStep('book10'));
 
 
+//Scene 5 2nd riddle font settings
+var gScene5_LayoutSettings              = new Object();
+gScene5_LayoutSettings.font             = ' Arial';
+gScene5_LayoutSettings.bold             = 'bold ';
+gScene5_LayoutSettings.font_color       = 'white';
+gScene5_LayoutSettings.line_distance    = 30;
+gScene5_LayoutSettings.fixedFont        = 30;
+gScene5_LayoutSettings.font_size_boost  = 1.4;
+
 function QuizObject(q, a1, a2, a3, a4){
     this.question = q;
-    this.answer1  = a1;
-    this.answer2  = a2;
-    this.answer3  = a3;
-    this.answer4  = a4;
+    this.answers  = new Array(a1, a2, a3, a4);
 }
 
 var gQuizDataArray = new Array();
@@ -490,7 +496,7 @@ gQuizDataArray.push(new QuizObject(
 gQuizDataArray.push(new QuizObject(
                         "Euch fehlt noch etwas, was könnte das sein?",
                         "A. Tobias die Schnecke – Kindergeschichten",
-                        "B. Kochen für Dummies – Keine Angst wir kochen für alle",
-                        "C. Buch ohne Titel – Der Klassiker von 1999",
-                        "D. SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS"
+                        "B. SCHREIEN SOLL GELERNT SEIN – DER 10 TAGE AUFBAUKURS",
+                        "C. Kochen für Dummies – Keine Angst wir kochen für alle",
+                        "D. Buch ohne Titel – Der Klassiker von 1999"
                         ));
