@@ -21,15 +21,15 @@ Primaer
 	Szene 1 - Wird bearbeitet von Hannes
 	Szene 2 - Vorläufig fertig -> Testen
 	Szene 3 - Wird bearbeitet von Oli
-	Szene 4 - Braucht noch kleine Änderungen -> Jevgenij
+        Szene 4 - Vorläufig fertig -> Testen
 	Szene 5 - Wird bearbeitet von Micha
-	Szene 6 - Wird von Jevgenij bearbeitet, sobald Szene 4 fertig
+        Szene 6 - Wird bearbeitet von Jevgenij
 	Szene 7 - Ausstehend
 
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
 
-- Codegenerator Code anzeigen
+- Szene 5: Codegenerator Code anzeigen - Done
 
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
@@ -44,9 +44,20 @@ Primaer
 
 - Startausrichtung des Helden soll für jede Szene einzeln wählbar sein
 
+- Wenn die naechste Szene geladen wird, wird fuer die Heldin die
+  letzte bekannte position anstatt der im skript vorgegebenen
+  verwendet
+
 - Bewegungsanimation überarbeiten:
 	- Skalierungsbug bei z-level wechsel beheben
 	- Auswahl des richtigen Tilesets überarbeiten
+        - Held geht teilweise in der Luft herum. Dies geschieht durch die Position des
+          angeklickten Objektes.
+
+          Loesungsansaetze:
+            a) Gegenstaende so positionieren, das Laufanimation realistisch wirkt
+            b) Geskriptete Endpunkte in der Naehe der Objekte verwenden. Event loest aus wenn
+               sich Held in der Naehe des Objektes befindet.
 
 - Gesonderte Animationen für einzelne Szenen:
 	
