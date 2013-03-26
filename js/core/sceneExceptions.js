@@ -193,16 +193,83 @@ function scene5_generateSecureCode(arg){
 
     switch(arg){
     case 'question0':
-        tmpQuizObject = gQuizDataArray[0];
+            tmpQuizObject = gQuizDataArray[0];
         break;
     case 'question1':
-        tmpQuizObject = gQuizDataArray[1];
+        if(gCurrentQuizstep != 11){
+            gForceOtherDialog      = true;
+            gDialogToForce         = "szene5.9.1";
+            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
+//            --gCurrentQuizstep;
+
+            switch(gCurrentQuizstep){
+            case 10:
+                tmpQuizObject = gQuizDataArray[0];
+                break;
+            case 11:
+                tmpQuizObject = gQuizDataArray[1];
+                break;
+            case 12:
+                tmpQuizObject = gQuizDataArray[2];
+                break;
+            case 13:
+                tmpQuizObject = gQuizDataArray[3];
+                break;
+            }
+
+        }else{
+            tmpQuizObject = gQuizDataArray[1];
+        }
         break;
     case 'question2':
-        tmpQuizObject = gQuizDataArray[2];
+        if(gCurrentQuizstep != 12){
+            gForceOtherDialog      = true;
+            gDialogToForce         = "szene5.9.1";
+            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
+//            --gCurrentQuizstep;
+
+            switch(gCurrentQuizstep){
+            case 10:
+                tmpQuizObject = gQuizDataArray[0];
+                break;
+            case 11:
+                tmpQuizObject = gQuizDataArray[1];
+                break;
+            case 12:
+                tmpQuizObject = gQuizDataArray[2];
+                break;
+            case 13:
+                tmpQuizObject = gQuizDataArray[3];
+                break;
+            }
+        }else{
+            tmpQuizObject = gQuizDataArray[2];
+        }
         break;
     case 'question3':
-        tmpQuizObject = gQuizDataArray[3];
+        if(gCurrentQuizstep != 13){
+            gForceOtherDialog      = true;
+            gDialogToForce         = "szene5.9.1";
+            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
+//            --gCurrentQuizstep;
+
+            switch(gCurrentQuizstep){
+            case 10:
+                tmpQuizObject = gQuizDataArray[0];
+                break;
+            case 11:
+                tmpQuizObject = gQuizDataArray[1];
+                break;
+            case 12:
+                tmpQuizObject = gQuizDataArray[2];
+                break;
+            case 13:
+                tmpQuizObject = gQuizDataArray[3];
+                break;
+            }
+        }else{
+            tmpQuizObject = gQuizDataArray[3];
+        }
         break;
     }
 

@@ -169,7 +169,6 @@ function getSceneInformation(sceneID, sceneFilename){
 
         //Make sure that gImageToObjectSceneReferrer only
         //contains scene relevant objects
-        //var substring = 'szene' + gcurrent_scene_counter;
         var tmpArray  = new Array();
         var regex1    = new RegExp("^szene" + gcurrent_scene_counter + ".*$");
 
