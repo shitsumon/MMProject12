@@ -97,8 +97,10 @@ function checkQuizfinished(){
 function advanceNextScene(){
 
     //Reset flags
-    gSceneHasBeenLoad = false;
-    gUseDeprecated = false;
+    gSceneHasBeenLoad       = false;
+    gUseDeprecated          = false;
+    gUseDeprecatedDialogues = false;
+    gDeprecatedDialogues    = new Object();
 
     //create scene id
 	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();

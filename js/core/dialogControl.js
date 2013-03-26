@@ -78,7 +78,7 @@ function dialog_zeichneDialog()
 
     //access dialogdata
     if(!gTalk.isInitialized){
-        gTalk.currentDialog = gDialoge[gTalk.dialog_id];
+        gTalk.currentDialog = gUseDeprecatedDialogues ? gDeprecatedDialogues[gTalk.dialog_id] : gDialoge[gTalk.dialog_id];
         gTalk.SatzMax       = gTalk.currentDialog.saetze.length;
         gTalk.isInitialized = true;
     }
@@ -328,7 +328,9 @@ function advanceDialogStep(imgID, canvasID){
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(typeof(gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'){
+                if(typeof(gUseDeprecatedDialogues ?
+                          gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
+                          gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'){
                     alert('undefined dialog in gDialoge[]!');
                     return;
                 }

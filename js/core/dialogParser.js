@@ -17,7 +17,14 @@ function verarbeiteDialogXML(daten){
         gDialogIDs = new Array();
     }else{
         gDeprecatedDialogIDs = gDialogIDs;
-        gDialogIDs = new Array();
+        gDialogIDs           = new Array();
+
+        gUseDeprecatedDialogues = true;
+        gDeprecatedDialogues = gDialoge;
+
+        gDialoge             = new Object();
+        gDialoge.anzahl      = 0;
+        gDialoge.geladen     = 0;
     }
 
     var jquery_saetze;

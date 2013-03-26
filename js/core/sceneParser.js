@@ -167,9 +167,39 @@ function getSceneInformation(sceneID, sceneFilename){
             forceDialog();
         }
 
+        //Make sure that gImageToObjectSceneReferrer only
+        //contains scene relevant objects
+        //var substring = 'szene' + gcurrent_scene_counter;
+        var tmpArray  = new Array();
+        var regex1    = new RegExp("^szene" + gcurrent_scene_counter + ".*$");
+
+        for(var idx = 0 ; idx < gImageToObjectSceneReferrer.length; ++idx){
+
+            //filter all objects with bildIDs of the current scene
+            if(regex1.test(gImageToObjectSceneReferrer[idx].bildID)){
+                tmpArray.push(gImageToObjectSceneReferrer[idx]);
+            }
+
+            //filter all objects which have 'allg_' as substring in their bildID
+            //and contain dialog IDs of current scene
+            if(/^allg_.*$/.test(gImageToObjectSceneReferrer[idx].bildID)){
+
+                for(var idx2 = 0; idx2 < gImageToObjectSceneReferrer[idx].scenes.length; ++idx2){
+                    if(regex1.test(gImageToObjectSceneReferrer[idx].scenes[idx2])){
+                        tmpArray.push(gImageToObjectSceneReferrer[idx]);
+                        break;
+                    }
+                }
+            }
+        }
+
+        gImageToObjectSceneReferrer = new Array();
+        gImageToObjectSceneReferrer = tmpArray;
+
     }).error(function(xhr, status, error){
         alert("Es ist ein Fehler aufgetreten: " + error);
     });
+
 
 }
 

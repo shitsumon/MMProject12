@@ -37,7 +37,7 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 5;
+var gcurrent_scene_counter	= 4;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -213,6 +213,10 @@ var gDialoge			= new Object();
 gDialoge.anzahl		= 0;
 //counter for succesfully loaded dialogues
 gDialoge.geladen		= 0;
+//Flag which enables use of gDeprecatedDialogues
+var gUseDeprecatedDialogues = false;
+//Stores dialogues of current scene when gDialoge is resetted
+var gDeprecatedDialogues = new Object();
 //flag for initial loading sequence
 gInitialLoad = true;
 //signals succesfull loading of xml-file
