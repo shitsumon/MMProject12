@@ -490,7 +490,7 @@
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="77" y="58" z="400"/>
-          <groesse width="10" height="15"/>
+          <groesse width="8" height="15"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene4_fussabdruecke_fenster" dialog_id="#none#" 
 		klickbar=			"f|f|f|f|f|f|f|f" 
