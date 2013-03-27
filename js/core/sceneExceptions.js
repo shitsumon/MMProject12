@@ -43,10 +43,10 @@ function triggerException(exceptionName, arguments) {
         scene5_generateSecureCode(arguments);
         break;
     case 'scene5_hideDialogbox':
-//        if(!/hide/.test(arguments) || !/reveal/.test(arguments)){
-//            alert('This function requires one argument, like "hide" or "reveal"!');
-//            return;
-//        }
+        //        if(!/hide/.test(arguments) || !/reveal/.test(arguments)){
+        //            alert('This function requires one argument, like "hide" or "reveal"!');
+        //            return;
+        //        }
 
         scene5_hideDialogbox(arguments);
         break;
@@ -181,7 +181,7 @@ function scene5_generateSecureCode(arg){
                     perc2pix(screenHeight,40));
 
     for(var idx = 0; idx < ctx_Array.length; ++idx){
-        ctx_Array[idx].drawImage(gBilder['szene5_antwort_'+letter[idx]+'_underlay'].bild,
+        ctx_Array[idx].drawImage(gBilder[gClickableSlots[idx].substring(18)].bild,
                                  0,
                                  0,
                                  perc2pix(screenWidth,25),
@@ -189,88 +189,72 @@ function scene5_generateSecureCode(arg){
     }
 
     //get next question
-    var tmpQuizObject;
+    var tmpQuizObject            = new Object();
+    var redirectToSameRiddlestep = false;
+    var clickedAnswerSlot        = 0;
+
+    //get number of clicked slot
+    for(var idx = 0; idx < gClickableSlots.length; ++idx){
+        if(gClickableSlots[idx] == gMostRecentlyClickedIdentifier){
+            clickedAnswerSlot = idx;
+            break;
+        }
+    }
 
     switch(arg){
     case 'question0':
-            tmpQuizObject = gQuizDataArray[0];
+        tmpQuizObject = gQuizDataArray[0];
         break;
     case 'question1':
-        if(gCurrentQuizstep != 11){
-            gForceOtherDialog      = true;
-            gDialogToForce         = "szene5.9.1";
-            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
-//            --gCurrentQuizstep;
-
-            switch(gCurrentQuizstep){
-            case 10:
-                tmpQuizObject = gQuizDataArray[0];
-                break;
-            case 11:
-                tmpQuizObject = gQuizDataArray[1];
-                break;
-            case 12:
-                tmpQuizObject = gQuizDataArray[2];
-                break;
-            case 13:
-                tmpQuizObject = gQuizDataArray[3];
-                break;
-            }
-
+        if(gCurrentQuizstep != 11 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+            redirectToSameRiddlestep = displayErrorDialog();
         }else{
             tmpQuizObject = gQuizDataArray[1];
+            ++gRiddleStepCounter;
         }
         break;
     case 'question2':
-        if(gCurrentQuizstep != 12){
-            gForceOtherDialog      = true;
-            gDialogToForce         = "szene5.9.1";
-            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
-//            --gCurrentQuizstep;
-
-            switch(gCurrentQuizstep){
-            case 10:
-                tmpQuizObject = gQuizDataArray[0];
-                break;
-            case 11:
-                tmpQuizObject = gQuizDataArray[1];
-                break;
-            case 12:
-                tmpQuizObject = gQuizDataArray[2];
-                break;
-            case 13:
-                tmpQuizObject = gQuizDataArray[3];
-                break;
-            }
+        if(gCurrentQuizstep != 12 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+            redirectToSameRiddlestep = displayErrorDialog();
         }else{
             tmpQuizObject = gQuizDataArray[2];
+            ++gRiddleStepCounter;
         }
         break;
     case 'question3':
-        if(gCurrentQuizstep != 13){
-            gForceOtherDialog      = true;
-            gDialogToForce         = "szene5.9.1";
-            gIncreaseDialogStep    = testIfSubDialog(gDialogToForce);
-//            --gCurrentQuizstep;
-
-            switch(gCurrentQuizstep){
-            case 10:
-                tmpQuizObject = gQuizDataArray[0];
-                break;
-            case 11:
-                tmpQuizObject = gQuizDataArray[1];
-                break;
-            case 12:
-                tmpQuizObject = gQuizDataArray[2];
-                break;
-            case 13:
-                tmpQuizObject = gQuizDataArray[3];
-                break;
-            }
+        if(gCurrentQuizstep != 13 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+            redirectToSameRiddlestep = displayErrorDialog();
         }else{
             tmpQuizObject = gQuizDataArray[3];
+            ++gRiddleStepCounter;
         }
         break;
+    case 'question4':
+        if(gCurrentQuizstep != 14 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+            redirectToSameRiddlestep = displayErrorDialog();
+        }else{
+            tmpQuizObject = gQuizDataArray[3];
+            ++gRiddleStepCounter;
+        }
+        break;
+    }
+
+    //Choose correct riddle step to display
+    if(redirectToSameRiddlestep){
+        switch(gCurrentQuizstep){
+        case 10:
+            tmpQuizObject = gQuizDataArray[0];
+            break;
+        case 11:
+            tmpQuizObject = gQuizDataArray[1];
+            break;
+        case 12:
+            tmpQuizObject = gQuizDataArray[2];
+            break;
+        case 13:
+            tmpQuizObject = gQuizDataArray[3];
+            break;
+        }
     }
 
     var dyn_font_answer = Math.abs((screenWidth / 100) * gScene5_LayoutSettings.font_size_boost);
@@ -294,8 +278,8 @@ function scene5_generateSecureCode(arg){
 
             for(var idx2 = 0; idx2 < text.length; ++idx2){
                 ctx_Array[idx].fillText(text[idx2].replace(/#KOMMA#/g, ","),
-                               10,
-                               perc2pix(aBoxHeight, 25) + (gScene5_LayoutSettings.line_distance * idx2));
+                                        10,
+                                        perc2pix(aBoxHeight, 25) + (gScene5_LayoutSettings.line_distance * idx2));
             }
         }
     }
@@ -303,8 +287,8 @@ function scene5_generateSecureCode(arg){
     //Fill question box
     ctx_q.fillStyle = gScene5_LayoutSettings.font_color;
     ctx_q.font      = gScene5_LayoutSettings.bold
-                      + gScene5_LayoutSettings.fixedFont
-                      + 'px' + gScene5_LayoutSettings.font;
+            + gScene5_LayoutSettings.fixedFont
+            + 'px' + gScene5_LayoutSettings.font;
 
     var text = foo(tmpQuizObject.question,
                    (qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.fixedFont + gScene5_LayoutSettings.line_distance);
@@ -316,6 +300,17 @@ function scene5_generateSecureCode(arg){
     }
 }
 
+
+/**
+ * Helper function
+ *
+ */
+function displayErrorDialog(){
+    gForceOtherDialog        = true;
+    gDialogToForce           = "szene5.9.1";
+    gIncreaseDialogStep      = testIfSubDialog(gDialogToForce);
+    return true;
+}
 
 function foo(text, pixelSize)
 {

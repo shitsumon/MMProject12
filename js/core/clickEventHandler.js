@@ -32,6 +32,8 @@
  */
 function startEventHandling(LUT_Identifier){
     
+    gMostRecentlyClickedIdentifier = LUT_Identifier;
+
     var parsedStringObject = new Object();
 
     for(var idx = 0; idx < gClickEventValueArray.length; ++idx){

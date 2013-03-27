@@ -419,7 +419,7 @@ argument_list
   <dialog id="szene5.9.4" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question3">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sache fehlt noch.</satz>
   </dialog>
-  <dialog id="szene5.9.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_hideDialogbox:1" argument_list="hide">
+  <dialog id="szene5.9.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question4">
     <satz person_id="bc" bild_id="allg_bordcomputer">Stimmt, Großbuchstaben runden das Ganze ab.</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut! Ich generiere nun das sichere Passwort.</satz>
   </dialog>

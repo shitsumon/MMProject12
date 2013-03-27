@@ -109,6 +109,8 @@ var gQuizFlags      = 'undefined';
 var gDialogValue1   = 'undefined';
 var gDialogValue2   = 'undefined';
 
+var gMostRecentlyClickedIdentifier = '';
+
 /**************
  *walkAnimation.js*
  **************/
@@ -433,9 +435,9 @@ function HideElementsMenu(){
  *Exceptions*
  ************/
 
-/*******************
- *Scene 5 quiz data*
- *******************/
+/*************************
+ *Scene 5 exceptions data*
+ *************************/
 function bookStep(name){
     this.name = name;
     this.wasClicked = false;
@@ -504,3 +506,15 @@ gQuizDataArray.push(new QuizObject(
                         "C. Kochen für Dummies – Keine Angst wir kochen für alle",
                         "D. Buch ohne Titel – Der Klassiker von 1999"
                         ));
+
+var gRiddleStepStates = new Array(new Array(false,false,true,false),
+                                  new Array(true,false,false,false),
+                                  new Array(false,false,false,true),
+                                  new Array(false,true,false,false));
+
+var gRiddleStepCounter = 0;
+
+var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
+                                'canvas_fg_dynamic_szene5_antwort_b_underlay',
+                                'canvas_fg_dynamic_szene5_antwort_c_underlay',
+                                'canvas_fg_dynamic_szene5_antwort_d_underlay')

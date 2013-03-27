@@ -70,6 +70,8 @@ function dialog_zeichneDialog()
                          dialogIDs[gDialogCounter + gSubDialogOffset].argument_list);
     }
 
+    //check if a triggered scene exception forces
+    //another dialog to be displayed
     if(gForceOtherDialog && /^szene\d\.\d{1,2}(\.\d{1,2}|)$/.test(gDialogToForce)){
         gTalk.dialog_id     = gDialogToForce;
         gTalk.isInitialized = false;
