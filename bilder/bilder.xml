@@ -271,19 +271,19 @@
   <bild id="szene5_tuer" pfad="../bilder/allgemein/tuer.png" animiert="false">
     <abmessungen height="481" width="150"/>
   </bild>
-  <bild id="szene5_frage_underlay" pfad="../bilder/szene5/frage_hintergrund.png" animiert="false">
+  <bild id="szene5_frage_underlay" pfad="../bilder/allgemein/frage_hintergrund.png" animiert="false">
     <abmessungen height="300" width="500"/>
   </bild>
-  <bild id="szene5_antwort_a_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+  <bild id="szene5_antwort_a_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
     <abmessungen height="125" width="500"/>
   </bild>
-  <bild id="szene5_antwort_b_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+  <bild id="szene5_antwort_b_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
     <abmessungen height="125" width="500"/>
   </bild>
-  <bild id="szene5_antwort_c_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+  <bild id="szene5_antwort_c_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
     <abmessungen height="125" width="500"/>
   </bild>
-  <bild id="szene5_antwort_d_underlay" pfad="../bilder/szene5/antwort_hintergrund.png" animiert="false">
+  <bild id="szene5_antwort_d_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
     <abmessungen height="125" width="500"/>
   </bild>
   <bild id="szene5_batterie" pfad="../bilder/szene5/batterie.png" animiert="false">
@@ -384,6 +384,21 @@
     <abmessungen height="272" width="288"/>
   </bild>
   <!--szene7-->
+  <bild id="szene7_spike_standing" pfad="../bilder/szene7/spike_standing.png" animiert="false">
+    <abmessungen height="415" width="125"/>
+  </bild>
+  <bild id="szene7_teddy" pfad="../bilder/szene7/teddy_normal.png" animiert="false">
+    <abmessungen height="191" width="104"/>
+  </bild>
+  <bild id="szene7_dr_chaos" pfad="../bilder/szene7/dr_chaos.png" animiert="false">
+    <abmessungen height="336" width="149"/>
+  </bild>
+  <bild id="szene7_dr_chaos_falling" pfad="../bilder/szene7/dr_chaos_falling.png" animiert="false">
+    <abmessungen height="392" width="584"/>
+  </bild>
+  <bild id="szene7_fragen_hg" pfad="../bilder/allgemein/quizhintergrund.jpg" animiert="false">
+    <abmessungen height="720" width="1280"/>
+  </bild>
   <bild id="szene7_hg_offen" pfad="../bilder/szene7/hintergrund_frachtraum_offen.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
@@ -405,7 +420,22 @@
   <bild id="szene7_roter_knopf" pfad="../bilder/szene7/roter_knopf.png" animiert="false">
     <abmessungen height="73" width="63"/>
   </bild>
-  <bild id="szene7_dr_chaos" pfad="../bilder/szene7/dr_chaos.png" animiert="false">
-    <abmessungen height="111" width="89"/>
+  <bild id="szene7_roter_knopf_kraftfeld" pfad="../bilder/szene7/roter_knopf_kraftfeld.png" animiert="false">
+    <abmessungen height="73" width="63"/>
+  </bild>
+  <bild id="szene7_frage_underlay" pfad="../bilder/allgemein/frage_hintergrund.png" animiert="false">
+    <abmessungen height="300" width="500"/>
+  </bild>
+  <bild id="szene7_antwort_a_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene7_antwort_b_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene7_antwort_c_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
+  </bild>
+  <bild id="szene7_antwort_d_underlay" pfad="../bilder/allgemein/antwort_hintergrund.png" animiert="false">
+    <abmessungen height="125" width="500"/>
   </bild>
 </bilder>
