@@ -22,9 +22,9 @@ Primaer
 	Szene 2 - Vorläufig fertig -> Testen
 	Szene 3 - Wird bearbeitet von Oli
         Szene 4 - Vorläufig fertig -> Testen
-	Szene 5 - Wird bearbeitet von Micha
+        Szene 5 - Vorläufig fertig -> Testen
         Szene 6 - Wird bearbeitet von Jevgenij
-	Szene 7 - Ausstehend
+        Szene 7 - Wird bearbeitet von Micha
 
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
