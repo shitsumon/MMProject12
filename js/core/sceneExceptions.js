@@ -50,6 +50,9 @@ function triggerException(exceptionName, arguments) {
 
         scene5_hideDialogbox(arguments);
         break;
+    case 'scene7_blowDrChaosAway':
+        scene7_blowDrChaosAway();
+        break;
     default:
         break;
     }
@@ -360,5 +363,68 @@ function scene5_hideDialogbox(arg){
     case 'reveal':
         $("canvas[id*='allg_dialogbox']").removeClass("invisible");
         break;
+    }
+}
+
+/**
+ * scene7_blowDrChaosAway()
+ */
+function scene7_blowDrChaosAway(){
+
+     gTimerHandle = window.setInterval(applyNextTransformation, 50);
+}
+
+/**
+ * applyNextTransformation()
+ */
+function applyNextTransformation(){
+
+    var factor      = 0.2;
+    var canvas      = $("canvas[id*='szene7_dr_chaos_falling']");
+    var ctx         = canvas[0].getContext("2d");
+    var centerDist  = 1;
+    var spiralDist  = 2;
+
+    canvas.width  = gBilder['szene7_dr_chaos_falling'].abmessungen.width;
+    canvas.height = gBilder['szene7_dr_chaos_falling'].abmessungen.height;
+
+    var center_x = canvas.width  / 2;
+    var center_y = canvas.height / 2;
+
+    var img = gBilder['szene7_dr_chaos_falling'].bild;
+
+    //save image state
+    ctx.save();
+
+    //clear image
+    ctx.clearRect ( 0, 0, canvas.width, canvas.height);
+
+    //Use archimedean spiral to make it look good
+    x = center_x + ( centerDist + spiralDist * (gRotationCounter * factor)) * Math.cos(gRotationCounter * factor);
+    y = center_y + ( centerDist + spiralDist * (gRotationCounter * factor)) * Math.sin(gRotationCounter * factor);
+
+    //move image to next point on spiral
+    ctx.translate(x, y);
+
+    //rotate around new degree value
+    ctx.rotate(gRotationCounter * Math.PI/180);
+
+    //calculate new scaling factor
+    gDrChaosScalingFactor -= 0.005;
+
+    //scale with new factor
+    ctx.scale(gDrChaosScalingFactor, gDrChaosScalingFactor)
+
+    //draw image
+    ctx.drawImage(img,-center_x,-center_y);
+
+    //restore old state
+    ctx.restore();
+
+    gRotationCounter += 2;
+
+    //Stop if image is small enough
+    if(gDrChaosScalingFactor <= 0){
+        window.clearInterval(gTimerHandle);
     }
 }

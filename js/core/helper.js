@@ -41,7 +41,7 @@ var gcurrent_scene_counter	= 7;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
-var gForceDialogScenes = new Array('Szene_2','Szene_4','Szene_5');
+var gForceDialogScenes = new Array('Szene_2','Szene_4','Szene_5','Szene_7');
 //z-index multiplicators
 var gZoomsteps				= new Array(4);
 //controls display of curent and next scene
@@ -518,3 +518,11 @@ var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
                                 'canvas_fg_dynamic_szene5_antwort_b_underlay',
                                 'canvas_fg_dynamic_szene5_antwort_c_underlay',
                                 'canvas_fg_dynamic_szene5_antwort_d_underlay')
+
+/*************************
+ *Scene 7 exceptions data*
+ *************************/
+
+var gRotationCounter      = 1;
+var gDrChaosScalingFactor = 1;
+var gTimerHandle;

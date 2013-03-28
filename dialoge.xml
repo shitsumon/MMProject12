@@ -506,9 +506,9 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 7 -->
-  <dialog id="szene7.1" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_blowDrChaosAway:1" argument_list="#none#">
     <satz person_id="dr" bild_id="allg_dr_chaos">Man hat Sie schon erwartet, ich wusste, dass ihr kommen würdet. Deshalb heiße ich euch herzlich willkommen in meiner Falle.</satz>
-    <satz person_id="p12" bild_id="allg_hero_female2">Falle?</satz>
+    <satz person_id="p12" bild_id="allg_hero_female">Falle?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Ach ja die Falle, jetzt haben wir aber Angst.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Man möge sich erklären, Täd, was machst du hier? Und wo ist deine Kleidung?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Die habe ich abgelegt und werde mir auch nie wieder welche anziehen lassen. Du bist diesmal zu weit gegangen, Dr. Chaos!</satz>
