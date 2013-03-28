@@ -506,7 +506,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 7 -->
-  <dialog id="szene7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_blowDrChaosAway:1" argument_list="#none#">
+  <dialog id="szene7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_flipSpike:2" argument_list="szene7_spike_standing">
     <satz person_id="dr" bild_id="allg_dr_chaos">Man hat Sie schon erwartet, ich wusste, dass ihr kommen würdet. Deshalb heiße ich euch herzlich willkommen in meiner Falle.</satz>
     <satz person_id="p12" bild_id="allg_hero_female">Falle?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Ach ja die Falle, jetzt haben wir aber Angst.</satz>

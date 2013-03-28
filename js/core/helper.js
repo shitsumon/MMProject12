@@ -522,7 +522,6 @@ var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
 /*************************
  *Scene 7 exceptions data*
  *************************/
-
 var gRotationCounter      = 1;
 var gDrChaosScalingFactor = 1;
 var gTimerHandle;

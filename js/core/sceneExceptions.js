@@ -50,6 +50,9 @@ function triggerException(exceptionName, arguments) {
 
         scene5_hideDialogbox(arguments);
         break;
+    case 'scene7_flipSpike':
+        scene7_flipSpikeBackAndForth(arguments);
+        break;
     case 'scene7_blowDrChaosAway':
         scene7_blowDrChaosAway();
         break;
@@ -363,6 +366,35 @@ function scene5_hideDialogbox(arg){
     case 'reveal':
         $("canvas[id*='allg_dialogbox']").removeClass("invisible");
         break;
+    }
+}
+
+function scene7_flipSpikeBackAndForth(arg){
+
+    flipCharacterHorizontally(arg);
+
+    setTimeout(function(){flipCharacterHorizontally(arg);}, 2000);
+}
+
+/**
+ * scene7_flipCharacter()
+ */
+function flipCharacterHorizontally(arg){
+
+    var id_array = arg.split('|');
+
+    for(var idx = 0; idx < id_array.length; ++idx){
+
+        var canvas    = $("canvas[id*='" + id_array[idx] + "']");
+        var ctx       = canvas[0].getContext("2d");
+        canvas.width  = gBilder[id_array[idx]].abmessungen.width;
+        canvas.height = gBilder[id_array[idx]].abmessungen.height;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+        ctx.drawImage(gBilder[id_array[idx]].bild, 0, 0);
     }
 }
 
