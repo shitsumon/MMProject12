@@ -159,7 +159,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 3 -->
-  <dialog id="szene3.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.1" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Wieso hat das so lange gedauert?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja, ich hab mich ja beeilt. Ich wollte halt noch einen Download starten ... und ... nun ja ... das hat halt länger gedauert als ich dachte. Aber jetzt bin ich ja da.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das nächste Mal komm bitte sof... warum versuch ich es eigentlich noch? Wir haben jetzt wichtigere Probleme: Jemand hat sich in unserer Schiffsdatenbank einen Account angelegt, der volle Zugriffe auf so ziemlich alles hat ...</satz>
@@ -169,7 +169,7 @@ argument_list
     <satz person_id="p2" bild_id="allg_hero_male">Na, siehst du P1_DYN_NAME? Selbst du irrst dich mal. Wenn Mäck sagt, das alles ok ist, hätte ich mich nicht so hetzen müssen ...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das du auf diesen plumpen Trick reinfallen würdest, war ja klar. Unser Mister Gast-Account hat auch auf Mäck vollen Zugriff. Was passiert als nächstes?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Vielleicht werden wir aus unserem Raumschiff rausgeschmissen.</satz>
-    <satz person_id="bc" bild_id="allg_bordcomputer">Er sagt gerade, er findet die Idee von P2 genial und wundert sich, warum er nicht selbst darauf gekommen ist. Er wird sofort anfangen, an einem entsprechendem Plan zu arbeiten.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Er sagt gerade, er findet die Idee von P2_DYN_NAME genial und wundert sich, warum er nicht selbst darauf gekommen ist. Er wird sofort anfangen, an einem entsprechendem Plan zu arbeiten.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Tja, wurde ja auch mal Zeit, dass jemand meine Genialität anerkennt.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das einzige, wofür es Zeit wird, wäre, dich in eine Rakete zu stecken und auf den nächsten Planeten in Reichweite zu feuern ... Ich werde dieses Schiff niemals aufgeben. Wie konnte er nur in unseren Computer kommen?</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Keine Ahnung. Vielleicht finden wir ja im Spacenet eine Lösung ...</satz>
@@ -185,19 +185,19 @@ argument_list
   <dialog id="szene3.3.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Die unendlichen Weiten des SpaceNets.</satz>
   </dialog>
-  <dialog id="szene3.3.2" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.3.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Als ob einem bei dem Programm keine Zweifel kommen können ...</satz>
   </dialog>
-  <dialog id="szene3.3.3" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.3.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Den Schlaf muss ich nachholen!</satz>
   </dialog>
   <dialog id="szene3.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre ein riesiger Fehler. Wir sollten unsere Wahl nochmal überdenken.</satz>
   </dialog>
-  <dialog id="szene3.4.2" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Weg damit!</satz>
   </dialog>
-  <dialog id="szene3.5" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.5" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So diese Sicherheitslücke wäre gestopft, wir hatten aber auch Glück, dass sich dieser VirenLoader so einfach löschen lies.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Na toll und was hat uns das gebracht? Jetzt kann ich meine Lieblingsserie nicht mehr runterladen ...</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Ihr habt es geschafft, er hat keinen Einfluss mehr auf mich. Ich wär sicher überglücklich, wenn ich Gefühle empfinden könnte. Umarmen kann ich euch leider auch nicht, dazu fehlen mir ... nun ja ... Arme. Danke.</satz>

@@ -185,6 +185,9 @@
   <bild id="szene3_antivirus_symbol" pfad="../bilder/szene3/antivirus_symbol.png" animiert="false">
     <abmessungen height="102" width="81"/>
   </bild>
+  <bild id="szene3_spacenet_symbol" pfad="../bilder/szene3/spacenet_symbol.png" animiert="false">
+    <abmessungen height="118" width="91"/>
+  </bild>
   <bild id="szene3_ja_reiter" pfad="../bilder/szene3/ja_reiter.png" animiert="false">
     <abmessungen height="18" width="67"/>
   </bild>
@@ -211,6 +214,9 @@
   </bild>
   <bild id="szene3_virenloader_symbol" pfad="../bilder/szene3/virenloader_symbol.png" animiert="false">
     <abmessungen height="117" width="112"/>
+  </bild>
+  <bild id="szene3_spike" pfad="../bilder/szene3/spike_standing.png" animiert="false">
+  <abmessungen height="415" width="125"/>
   </bild>
   <!--szene4-->
   <bild id="szene4_hg" pfad="../bilder/szene4/hintergrund_maschinenraum.jpg" animiert="false">
