@@ -113,6 +113,9 @@ function advanceNextScene(){
 	//reset quiz
 	gQuizsteps					= 0;
 	gCurrentQuizstep			= 0;
+
+    //reset quiz counter for quizzes in scene 5 and 7
+    gRiddleStepCounter          = 0;
 	
 	//prepare new zoomsteps
 	gZoomsteps					= new Array(4);

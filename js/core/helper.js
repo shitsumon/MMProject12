@@ -514,10 +514,18 @@ var gRiddleStepStates = new Array(new Array(false,false,true,false),
 
 var gRiddleStepCounter = 0;
 
-var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
-                                'canvas_fg_dynamic_szene5_antwort_b_underlay',
-                                'canvas_fg_dynamic_szene5_antwort_c_underlay',
-                                'canvas_fg_dynamic_szene5_antwort_d_underlay')
+//var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
+//                                'canvas_fg_dynamic_szene5_antwort_b_underlay',
+//                                'canvas_fg_dynamic_szene5_antwort_c_underlay',
+//                                'canvas_fg_dynamic_szene5_antwort_d_underlay')
+
+function getClickableSlots(){
+    return new Array('canvas_fg_dynamic_szene' + gcurrent_scene_counter + '_antwort_a_underlay',
+                     'canvas_fg_dynamic_szene' + gcurrent_scene_counter + '_antwort_b_underlay',
+                     'canvas_fg_dynamic_szene' + gcurrent_scene_counter + '_antwort_c_underlay',
+                     'canvas_fg_dynamic_szene' + gcurrent_scene_counter + '_antwort_d_underlay')
+
+}
 
 /*************************
  *Scene 7 exceptions data*
@@ -525,3 +533,50 @@ var gClickableSlots = new Array('canvas_fg_dynamic_szene5_antwort_a_underlay',
 var gRotationCounter      = 1;
 var gDrChaosScalingFactor = 1;
 var gTimerHandle;
+
+var gScene7DataArray = new Array();
+gScene7DataArray.push(new QuizObject(
+                          "Wie sollten in sozialen Netzwerken meine Privatsphäre-Einstellungen sein?",
+                          "A. Die wichtigsten Daten sind auf privat gestellt, den Rest (z.B. meine Bilder) können nur meine Freunde sehen.",
+                          "B. Nur meine Freunde & Freunde von Freunden können alle Informationen von mir einsehen.",
+                          "C. Die wichtigsten Daten sind auf privat gestellt, den Rest (z.B. meine Bilder) kann aber jeder anschauen.",
+                          "D. Jeder kann auf alle Informationen zu greifen, die ich veröffentliche."
+                        ));
+
+gScene7DataArray.push(new QuizObject(
+                          "Was sollte ich bei Zugriffsberechtigungen bedenken?",
+                          "A. Nichts weiter, wenn jemand fragt bekommt er natürlich welche.",
+                          "B. Zugriff sollten immer nur vertrauenswürdige Leute bekommen, und dann nur eingeschränkten, niemals vollen.",
+                          "D. Freunde bekommen vollen Zugriff, unbekannte gar keinen.",
+                          "D. Jeder der fragt bekommt nur eingeschränkte Rechte."
+                        ));
+
+gScene7DataArray.push(new QuizObject(
+                          "Was sollte ich beim Hoch – und Runterladen beachten?",
+                          "A. Filme sind urheberrechtlich geschützt und dürfen nicht runtergeladen werden, Musik ist aber bedenkenlos runterzuladen.",
+                          "B. Das Hochladen von Filmen, Musik, Ebooks & Hörbüchern ist verboten, das Runterladen aber legal.",
+                          "C. Sowohl das Hochladen, als auch das illegale Runterladen kostenpflichtiger Inhalte wie Filme, Musik, Ebooks & Hörbüchern ist verboten.",
+                          "D. Alles was ich runterladen kann ist erlaubt, sonst könnt ich es ja nicht runterladen."
+                        ));
+
+gScene7DataArray.push(new QuizObject(
+                          "Mich schreibt jemand fremdes im Netz an, worauf sollte ich achten?",
+                          "A. Unbekannte Leute im Internet sind eine Gefahr. Generell sollte ich Unbekannten nie zurückschreiben und auch nicht auf Internetseiten gehen, die diese mir schicken.",
+                          "B. Cool, ich bin beliebt! Ich schreibe natürlich zurück.",
+                          "C. Ich schreibe Fremden nicht zurück, aber die Interseite, die er mir schickt schaue ich mir natürlich an.",
+                          "D. Wenn jemand fremdes mit mir in einem sozialen Netzwerk befreundet ein möchte, nehme ich die Freundschaft natürlich sofort an."
+                        ));
+
+gScene7DataArray.push(new QuizObject(
+                          "Viele Dinge werden am Computer mit Passwörtern gesichert, wie wähle ich ein sicheres Passwort?",
+                          "A. Ich nehme meinen Vornamen mit meinem Geburtsdatum dahinter, das sieht sicher aus.",
+                          "B. 'abcde' oder '12345' sieht leicht aus, ich nehme eins der beiden.",
+                          "C. Es gibt nur ein sicheres Passwort, eines was ich mir ausdenke. Ich nehme also Hundeknochen, das hat keinen Bezug zu mir.",
+                          "D. Mein sicheres Passwort besteht aus Zahlen, Klein- und Großbuchstaben und Zeichen."
+                        ));
+
+var gScene7RiddleStepStates = new Array(new Array(true,false,false,false),
+                                        new Array(false,true,false,false),
+                                        new Array(false,false,true,false),
+                                        new Array(true,false,false,false),
+                                        new Array(false,false,false,true));

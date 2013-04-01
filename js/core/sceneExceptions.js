@@ -35,12 +35,12 @@ function triggerException(exceptionName, arguments) {
     }
     break;
     case 'scene5_generateCode':
-        if(!/question\d/.test(arguments)){
-            alert('This function requires one argument, like "question1"!');
+        if(!/scene5\|question\d/.test(arguments)){
+            alert('This function requires one argument, like "scene5|question1"!');
             return;
         }
 
-        scene5_generateSecureCode(arguments);
+        generateSecureCode(arguments);
         break;
     case 'scene5_hideDialogbox':
         //        if(!/hide/.test(arguments) || !/reveal/.test(arguments)){
@@ -52,6 +52,14 @@ function triggerException(exceptionName, arguments) {
         break;
     case 'scene7_flipSpike':
         scene7_flipSpikeBackAndForth(arguments);
+        break;
+    case 'scene7_quizInput':
+        if(!/scene7\|question\d/.test(arguments)){
+            alert('This function requires one argument, like "scene7|question1"!');
+            return;
+        }
+
+        generateSecureCode(arguments);
         break;
     case 'scene7_blowDrChaosAway':
         scene7_blowDrChaosAway();
@@ -120,9 +128,9 @@ function scene5_bookcode(arg){
 }
 
 /**
- * scene5_generateSecureCode()
+ * generateSecureCode()
  *
- * Exception for the secure password generation riddle.
+ * Exception for the riddles in scene 5 and 7.
  * Depending on the passed argument, this function will
  * generate new quiz text in the quiz boxes.
  *
@@ -133,14 +141,14 @@ function scene5_bookcode(arg){
  * Return values:
  * none
  */
-function scene5_generateSecureCode(arg){
+function generateSecureCode(arg){
 
     //get dimensions
-    var qBoxWidth  = gBilder['szene5_frage_underlay'].abmessungen.width;
-    var qBoxHeight = gBilder['szene5_frage_underlay'].abmessungen.height;
+    var qBoxWidth  = gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.width;
+    var qBoxHeight = gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.height;
 
-    var aBoxWidth  = gBilder['szene5_antwort_a_underlay'].abmessungen.width;
-    var aBoxHeight = gBilder['szene5_antwort_a_underlay'].abmessungen.height;
+    var aBoxWidth  = gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.width;
+    var aBoxHeight = gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.height;
 
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
@@ -180,14 +188,14 @@ function scene5_generateSecureCode(arg){
     var letter = new Array('a', 'b', 'c', 'd');
 
     //redraw background images
-    ctx_q.drawImage(gBilder['szene5_frage_underlay'].bild,
+    ctx_q.drawImage(gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].bild,
                     0,
                     0,
                     perc2pix(screenWidth,30),
                     perc2pix(screenHeight,40));
 
     for(var idx = 0; idx < ctx_Array.length; ++idx){
-        ctx_Array[idx].drawImage(gBilder[gClickableSlots[idx].substring(18)].bild,
+        ctx_Array[idx].drawImage(gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].bild,
                                  0,
                                  0,
                                  perc2pix(screenWidth,25),
@@ -197,69 +205,140 @@ function scene5_generateSecureCode(arg){
     //get next question
     var tmpQuizObject            = new Object();
     var redirectToSameRiddlestep = false;
+    var clickableSlots           = getClickableSlots();
     var clickedAnswerSlot        = 0;
 
     //get number of clicked slot
-    for(var idx = 0; idx < gClickableSlots.length; ++idx){
-        if(gClickableSlots[idx] == gMostRecentlyClickedIdentifier){
+    for(var idx = 0; idx < clickableSlots.length; ++idx){
+        if(clickableSlots[idx] == gMostRecentlyClickedIdentifier){
             clickedAnswerSlot = idx;
             break;
         }
     }
 
-    switch(arg){
-    case 'question0':
-        tmpQuizObject = gQuizDataArray[0];
-        break;
-    case 'question1':
-        if(gCurrentQuizstep != 11 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
-            redirectToSameRiddlestep = displayErrorDialog();
-        }else{
-            tmpQuizObject = gQuizDataArray[1];
-            ++gRiddleStepCounter;
-        }
-        break;
-    case 'question2':
-        if(gCurrentQuizstep != 12 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
-            redirectToSameRiddlestep = displayErrorDialog();
-        }else{
-            tmpQuizObject = gQuizDataArray[2];
-            ++gRiddleStepCounter;
-        }
-        break;
-    case 'question3':
-        if(gCurrentQuizstep != 13 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
-            redirectToSameRiddlestep = displayErrorDialog();
-        }else{
-            tmpQuizObject = gQuizDataArray[3];
-            ++gRiddleStepCounter;
-        }
-        break;
-    case 'question4':
-        if(gCurrentQuizstep != 14 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
-            redirectToSameRiddlestep = displayErrorDialog();
-        }else{
-            tmpQuizObject = gQuizDataArray[3];
-            ++gRiddleStepCounter;
-        }
-        break;
-    }
+    if(arg.split('|')[0] == 'scene5'){
 
-    //Choose correct riddle step to display
-    if(redirectToSameRiddlestep){
-        switch(gCurrentQuizstep){
-        case 10:
+        switch(arg.split('|')[1]){
+        case 'question0':
             tmpQuizObject = gQuizDataArray[0];
             break;
-        case 11:
-            tmpQuizObject = gQuizDataArray[1];
+        case 'question1':
+            if(gCurrentQuizstep != 11 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gQuizDataArray[1];
+                ++gRiddleStepCounter;
+            }
             break;
-        case 12:
-            tmpQuizObject = gQuizDataArray[2];
+        case 'question2':
+            if(gCurrentQuizstep != 12 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gQuizDataArray[2];
+                ++gRiddleStepCounter;
+            }
             break;
-        case 13:
-            tmpQuizObject = gQuizDataArray[3];
+        case 'question3':
+            if(gCurrentQuizstep != 13 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gQuizDataArray[3];
+                ++gRiddleStepCounter;
+            }
             break;
+        case 'question4':
+            if(gCurrentQuizstep != 14 || !gRiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gQuizDataArray[3];
+                ++gRiddleStepCounter;
+            }
+            break;
+        }
+
+        //Choose correct riddle step to display
+        if(redirectToSameRiddlestep){
+            switch(gCurrentQuizstep){
+            case 10:
+                tmpQuizObject = gQuizDataArray[0];
+                break;
+            case 11:
+                tmpQuizObject = gQuizDataArray[1];
+                break;
+            case 12:
+                tmpQuizObject = gQuizDataArray[2];
+                break;
+            case 13:
+                tmpQuizObject = gQuizDataArray[3];
+                break;
+            }
+        }
+    }else if (arg.split('|')[0] == 'scene7'){
+        switch(arg.split('|')[1]){
+        case 'question0':
+            tmpQuizObject = gScene7DataArray[0];
+            break;
+        case 'question1':
+            if(gCurrentQuizstep != 5 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gScene7DataArray[1];
+                ++gRiddleStepCounter;
+            }
+            break;
+        case 'question2':
+            if(gCurrentQuizstep != 6 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gScene7DataArray[2];
+                ++gRiddleStepCounter;
+            }
+            break;
+        case 'question3':
+            if(gCurrentQuizstep != 7 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gScene7DataArray[3];
+                ++gRiddleStepCounter;
+            }
+            break;
+        case 'question4':
+            if(gCurrentQuizstep != 8 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gScene7DataArray[4];
+                ++gRiddleStepCounter;
+            }
+            break;
+        case 'question5':
+            if(gCurrentQuizstep != 8 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+                redirectToSameRiddlestep = displayErrorDialog();
+            }else{
+                tmpQuizObject = gScene7DataArray[4];
+                ++gRiddleStepCounter;
+            }
+            break;
+        }
+
+        //Choose correct riddle step to display
+        if(redirectToSameRiddlestep){
+            switch(gCurrentQuizstep){
+            case 4:
+                tmpQuizObject = gScene7DataArray[0];
+                break;
+            case 5:
+                tmpQuizObject = gScene7DataArray[1];
+                break;
+            case 6:
+                tmpQuizObject = gScene7DataArray[2];
+                break;
+            case 7:
+                tmpQuizObject = gScene7DataArray[3];
+                break;
+            case 8:
+                tmpQuizObject = gScene7DataArray[4];
+                break;
+            }
         }
     }
 
@@ -313,7 +392,7 @@ function scene5_generateSecureCode(arg){
  */
 function displayErrorDialog(){
     gForceOtherDialog        = true;
-    gDialogToForce           = "szene5.9.1";
+    gDialogToForce           = gcurrent_scene_counter == 5 ? "szene5.9.1" : "szene7.5.1";
     gIncreaseDialogStep      = testIfSubDialog(gDialogToForce);
     return true;
 }
@@ -369,6 +448,9 @@ function scene5_hideDialogbox(arg){
     }
 }
 
+/**
+ * scene7_flipSpikeBackAndForth
+ */
 function scene7_flipSpikeBackAndForth(arg){
 
     flipCharacterHorizontally(arg);
@@ -377,7 +459,16 @@ function scene7_flipSpikeBackAndForth(arg){
 }
 
 /**
- * scene7_flipCharacter()
+ * flipCharacterHorizontally()
+ *
+ * flips all objects which objects id
+ * have been passed to as arguments horizontally.
+ *
+ * Input values:
+ * arg (String) - concatenated object IDs. Delimiter is '|'.
+ *
+ * Return values:
+ * none
  */
 function flipCharacterHorizontally(arg){
 
@@ -400,6 +491,15 @@ function flipCharacterHorizontally(arg){
 
 /**
  * scene7_blowDrChaosAway()
+ *
+ * Wrapper for applyNextTransformation(),
+ * which starts the function as interval.
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * none
  */
 function scene7_blowDrChaosAway(){
 
@@ -408,6 +508,18 @@ function scene7_blowDrChaosAway(){
 
 /**
  * applyNextTransformation()
+ *
+ * Special exception written for
+ * scene7, where dr chaos is blown
+ * into space when the player clicks
+ * the wall button to open the
+ * freight hangar
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * none
  */
 function applyNextTransformation(){
 

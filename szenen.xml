@@ -964,7 +964,7 @@
       </vg_animiert>
     </ebenen>
   </szene>
-  <szene id="Szene_7" reatselschritte="10">
+  <szene id="Szene_7" reatselschritte="11">
     <zentralpfad>
       <wegpunkt x="41" y="77" zoom="0.6"/>
       <wegpunkt x="40" y="82" zoom="0.7"/>
@@ -975,10 +975,10 @@
       <hg_statisch>
         <hg_statisch_objekt bild_id="szene7_hg_zu"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
@@ -986,28 +986,28 @@
       <hg_animiert>
         <hg_animiert_objekt bild_id="szene7_hg_offen"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="100"/>
           <groesse width="166.65" height="166.65"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene7_generator_schalter"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|f|f|t|t|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.4.4"
+                            klickbar=               "f|f|f|t|t|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|t|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|f|f|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|t|f|f|f|f|f|f|f">
           <position x="18" y="60" z="102"/>
           <groesse width="10" height="12"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene7_generator"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|t|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|t|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|t|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|t|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|t|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|t|f|f|f|f|f">
           <position x="14" y="54" z="101"/>
           <groesse width="28" height="45"/>
         </hg_animiert_objekt>
@@ -1020,146 +1020,164 @@
       </personen>
       <vg_statisch>
         <vg_statisch_objekt bild_id="szene7_roter_knopf"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|t|f|f|f|t|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|t|f|f|f|t|f">
+                            dialog_id="szene7.4.2"
+                            klickbar=               "f|f|f|t|t|f|f|f|t|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|f|f|f|f|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|t|f|f">
           <position x="10" y="48" z="300"/>
           <groesse width="7" height="12"/>
         </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="szene7_roter_knopf_kraftfeld"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|t|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|t|f">
-          <position x="10" y="48" z="405"/>
+                            dialog_id="szene7.7"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|t|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|t|f">
+          <position x="10" y="48" z="406"/>
           <groesse width="7" height="12"/>
         </vg_statisch_objekt>
       </vg_statisch>
       <vg_animiert>
         <vg_animiert_objekt
                             bild_id="allg_dialogbox"
-                            dialog_id="szene7.1"
-                            klickbar=               "t|t|t|t|t|t|t|t|t|t"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.1|szene7.2|szene7.3"
+                            klickbar=               "t|t|t|t|t|t|t|t|t|t|t"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="31" y="7" z="405"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_laserwand_links"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="405"/>
           <groesse width="50" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_laserwand_rechts"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
+          <position x="50" y="0" z="401"/>
+          <groesse width="50" height="100"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt bild_id="szene7_laserwand_rechts_cut_out"
+                            dialog_id="#none#"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|t|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="50" y="0" z="401"/>
           <groesse width="50" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_dr_chaos"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|t|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|t|t|t|t|t|t|f|f"
-                            raetsel_ausloeser=      "f|f|f|t|f|f|f|f|f|f">
-          <position x="57.5" y="42" z="400"/>
+                            dialog_id="7.6"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|t|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|f|t|t|t|t|f|t|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
+          <position x="66.25" y="41.6" z="400"/>
           <groesse width="18" height="60"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt bild_id="szene7_dr_chaos_force_field"
+                            dialog_id="szene7.4.1"
+                            klickbar=               "f|f|f|t|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|t|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
+          <position x="66.25" y="41.6" z="402"/>
+          <groesse width="15.54" height="61"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_dr_chaos_falling"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="40" y="50" z="400"/>
           <groesse width="30" height="35"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_teddy"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.4.3"
+                            klickbar=               "f|f|f|t|t|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="17.5" y="40.5" z="400"/>
           <groesse width="5" height="14.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_spike_standing"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="4" y="45" z="400"/>
           <groesse width="10" height="50"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_fragen_hg"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="403"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_frage_underlay"
                             dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="30" z="404"/>
           <groesse width="30" height="40"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_antwort_a_underlay"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.5.2|szene7.5.5"
+                            klickbar=               "f|f|f|f|t|t|t|t|t|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|t|f|f|t|f|f|f">
           <position x="7.5" y="30" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_antwort_b_underlay"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.5.3"
+                            klickbar=               "f|f|f|f|t|t|t|t|t|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|t|f|f|f|f|f">
           <position x="7.5" y="50" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_antwort_c_underlay"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.5.4"
+                            klickbar=               "f|f|f|f|t|t|t|t|t|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|t|f|f|f|f">
           <position x="67.5" y="30" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene7_antwort_d_underlay"
-                            dialog_id="#none#"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f"
-                            walkto=                 "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f">
+                            dialog_id="szene7.5.6"
+                            klickbar=               "f|f|f|f|t|t|t|t|t|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|t|f|f">
           <position x="67.5" y="50" z="404"/>
           <groesse width="25" height="17.5"/>
         </vg_animiert_objekt>

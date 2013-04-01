@@ -323,7 +323,7 @@ argument_list
   </dialog>
   <dialog id="szene5.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Täd! Da bist du ja, du elender Schwindler. Gib uns unsere Sachen wieder!</satz>
-    <!-- <satz person_id="tb" bild_id="allg_teddy">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
+    <satz person_id="tb" bild_id="allg_teddy">Das geht nicht ... schaut euch das All an. Wenn ich daran denke, was für ein unwichtiger, kleiner Teddy ich in diesem riesigem Weltall bin, macht mich das traurig.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Wieso geht das nicht?</satz>
     <satz person_id="tb" bild_id="allg_teddy">ER hat sie jetzt.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Dr. Chaos?</satz>
@@ -340,7 +340,7 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">OK P2_DYN_NAME, dieses eine Mal vertrau ich dir. Etwas anderes fällt mir gerade auch nicht ein. Gut Täd, wir helfen dir. Was möchtest du?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Das erste Rätsel:...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Schon wieder Rätsel? Kannst du uns nicht einfach so fragen?</satz>
-    <satz person_id="tb" bild_id="allg_teddy">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz> -->
+    <satz person_id="tb" bild_id="allg_teddy">Ja, könnte ich, aber so ist es doch viel spannender. Also das erste Rätsel: Manchen fehlt es, andere haben aber eine Sicherung ... Oh ... Ach wisst ihr was, bringt mir einfach eine Sicherung, eine Batterie und ein paar Arbeitsstiefel.</satz>
   </dialog>
   <dialog id="szene5.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Fehlen nur die Arbeitsstiefel.</satz>
@@ -404,22 +404,22 @@ argument_list
   <dialog id="szene5.7.12" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So jetzt haben wir genug Ideen, wir sollten jetzt ein Passwort erstellen.</satz>
   </dialog>
-  <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene5_generateCode:0" argument_list="question0">
+  <dialog id="szene5.8" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene5_generateCode:0" argument_list="scene5|question0">
     <satz person_id="bc" bild_id="allg_bordcomputer">So, dann wollen wir mal sehen ...</satz>
   </dialog>
   <dialog id="szene5.9.1" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Das ist keine sichere Grundlage. Probier etwas anderes!</satz>
   </dialog>
-  <dialog id="szene5.9.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question1">
+  <dialog id="szene5.9.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="scene5|question1">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, das ist eine sichere Grundlage. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.3" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question2">
+  <dialog id="szene5.9.3" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="scene5|question2">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, diese Zahlenkette sollte gut mit dem Wort kombinierbar sein. Weiter geht's.</satz>
   </dialog>
-  <dialog id="szene5.9.4" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question3">
+  <dialog id="szene5.9.4" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="scene5|question3">
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut, Sonderzeichen erhöhen die Sicherheit. Eine Sache fehlt noch.</satz>
   </dialog>
-  <dialog id="szene5.9.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="question4">
+  <dialog id="szene5.9.5" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene5_generateCode:0" argument_list="scene5|question4">
     <satz person_id="bc" bild_id="allg_bordcomputer">Stimmt, Großbuchstaben runden das Ganze ab.</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Sehr gut! Ich generiere nun das sichere Passwort.</satz>
   </dialog>
@@ -506,7 +506,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 7 -->
-  <dialog id="szene7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_flipSpike:2" argument_list="szene7_spike_standing">
+  <dialog id="szene7.1" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="dr" bild_id="allg_dr_chaos">Man hat Sie schon erwartet, ich wusste, dass ihr kommen würdet. Deshalb heiße ich euch herzlich willkommen in meiner Falle.</satz>
     <satz person_id="p12" bild_id="allg_hero_female">Falle?</satz>
     <satz person_id="tb" bild_id="allg_teddy">Ach ja die Falle, jetzt haben wir aber Angst.</satz>
@@ -516,10 +516,11 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">Wer wird hier aus dem Raumschiff entfernt, wir? Und wie soll das gehen?</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Man wird jetzt eingeweiht in den genialen Plan, ich sag es euch. Die Tür hinter euch hat sich verriegelt, nachdem ihr den Raum betreten habt. Man möge es überprüfen.</satz>
   </dialog>
-  <dialog id="szene7.2" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
-    <satz person_id="p2" bild_id="allg_hero_male">Die Tür ist wirklich verriegelt.</satz>
+  <dialog id="szene7.2" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene7_flipSpike:0" argument_list="szene7_spike_standing">
+    <satz person_id="p2" bild_id="allg_hero_male">Warte, ich werde das überprüfen.</satz>
+    <satz person_id="p2" bild_id="allg_hero_male">Oh nein! Die Tür ist wirklich verriegelt!</satz>
   </dialog>
-  <dialog id="szene7.3" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.3" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="dr" bild_id="allg_dr_chaos">Man merkt, ich sage die Wahrheit, sag ich doch. Täd hat vorhin außerdem programmiert, dass die Frachtraumklappe 1 Minute und 30 Sekunden nach dem Öffnen der Tür, aufgeht. Ich bin natürlich hinter dem Schutzschild sicher, ihr hingegen müsst das Raumschiff gezwungenermaßen  verlassen. Das passiert in 10 ... 9 ... 8 ... 7 ... 6 ... 5 ... 4 ... 3 ... 2 ... 1 ... JETZT!</satz>
     <satz person_id="tb" bild_id="allg_teddy">Es könnte sein, dass ich statt 1 Minute und 30 Sekunden, 1 Tag und 30 Minuten eingestellt habe.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen…Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm. Dann warten wir eben hier, bis morgen die Frachtraumklappe aufgeht. Ihr könnt natürlich auch einfach den Knopf dort vorne drücken, um euch selbst hinauszubefördern.</satz>
@@ -528,24 +529,46 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">Ja, wir benutzen den Schutzschildgenerator hier links, um das Feld umzudrehen. Dann sind wir geschützt und Dr. Chaos verschwindet beim Öffnen der Frachtraumklappe im dunklen Weltall. Allerdings weiß ich nicht, wie wir das Passwort knacken sollen ...</satz>
     <satz person_id="tb" bild_id="allg_teddy">Ich werde euch helfen, wir können zwar das Passwort nicht herausfinden, aber ich weiß, wie man das System umgehen kann.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Man sollte nicht voreilig handeln, lasst das! Wollen wir nicht nochmal darüber reden?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Aha, daran hat der ach so schlaue Doktor also nicht gedacht. Na dann wollen wir mal.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Aha, daran hat der ach so schlaue Doktor also nicht gedacht.</satz>
   </dialog>
   <dialog id="szene7.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
-    <satz person_id="dr" bild_id="allg_dr_chaos">Bitte, bitte!</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Keine Chance!</satz>
+    <satz person_id="dr" bild_id="allg_dr_chaos">Bitte, bitte! Überlegt es euch nochmal!</satz>
   </dialog>
   <dialog id="szene7.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
-    <satz person_id="p1" bild_id="allg_hero_female">Das wäre jetzt	keine so gute Idee!</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Das wäre jetzt keine so gute Idee!</satz>
   </dialog>
   <dialog id="szene7.4.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="tb" bild_id="allg_teddy">Um das Passwort zu umgehen, müsst ihr ein paar Fragen beantworten. Die dürften aber nach euren Erlebnissen heute kein Problem sein.</satz>
   </dialog>
-  <dialog id="szene7.5" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.4.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question0">
+    <satz person_id="tb" bild_id="allg_hero_female">Na dann wollen wir mal.</satz>
+  </dialog>
+
+  <dialog id="szene7.5.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+    <satz person_id="tb" bild_id="allg_teddy">Das ist leider falsch. Probier es noch einmal!</satz>
+  </dialog>
+  <dialog id="szene7.5.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question1">
+    <satz person_id="tb" bild_id="allg_teddy">Das hätte ich auch genommen!</satz>
+  </dialog>
+  <dialog id="szene7.5.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question2">
+    <satz person_id="tb" bild_id="allg_teddy">Ja! Richtig!</satz>
+  </dialog>
+  <dialog id="szene7.5.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question3">
+    <satz person_id="tb" bild_id="allg_teddy">Das werde ich mir merken!</satz>
+  </dialog>
+  <dialog id="szene7.5.5" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question4">
+    <satz person_id="tb" bild_id="allg_teddy">Ok, das ist gut zu wissen!</satz>
+  </dialog>
+  <dialog id="szene7.5.6" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question5">
+    <satz person_id="tb" bild_id="allg_teddy">Danke für den Tip!</satz>
+  </dialog>
+
+  <dialog id="szene7.6" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="dr" bild_id="allg_dr_chaos">NEIN! Das darf nicht wahr sein! Täd bitte, denk an die schöne Zeit, die wir zusammen hatten!</satz>
     <satz person_id="tb" bild_id="allg_teddy">Wenn ich an die Zeit denke, will ich dich nur noch schneller loswerden .</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das war es Dr. Chaos, auf nimmer Wiedersehen!</satz>
   </dialog>
-  <dialog id="szene7.6" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.7" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene7_blowDrChaosAway:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das war's!</satz>
     <satz person_id="p2" bild_id="allg_hero_female">Endlich, das wäre geschafft.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Da haben wir ja heute einiges gelernt.</satz>

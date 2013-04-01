@@ -393,6 +393,9 @@
   <bild id="szene7_dr_chaos" pfad="../bilder/szene7/dr_chaos.png" animiert="false">
     <abmessungen height="336" width="149"/>
   </bild>
+  <bild id="szene7_dr_chaos_force_field" pfad="../bilder/szene7/dr_chaos_force_field.png" animiert="false">
+    <abmessungen height="336" width="149"/>
+  </bild>
   <bild id="szene7_dr_chaos_falling" pfad="../bilder/szene7/dr_chaos_falling.png" animiert="false">
     <abmessungen height="392" width="584"/>
   </bild>
@@ -415,6 +418,9 @@
     <abmessungen height="720" width="637"/>
   </bild>
   <bild id="szene7_laserwand_rechts" pfad="../bilder/szene7/laserwand_rechts.png" animiert="false">
+    <abmessungen height="720" width="627"/>
+  </bild>
+  <bild id="szene7_laserwand_rechts_cut_out" pfad="../bilder/szene7/laserwand_rechts_cut_out.png" animiert="false">
     <abmessungen height="720" width="627"/>
   </bild>
   <bild id="szene7_roter_knopf" pfad="../bilder/szene7/roter_knopf.png" animiert="false">
