@@ -299,109 +299,179 @@
       </vg_animiert>
     </ebenen>
   </szene>
-    <szene id="Szene_3" reatselschritte="6">
+    <szene id="Szene_3" reatselschritte="7">
     <zentralpfad>
-      <wegpunkt x="51" y="77" zoom="0.6"/>
-      <wegpunkt x="50" y="82" zoom="0.7"/>
-      <wegpunkt x="49" y="87" zoom="0.9"/>
-      <wegpunkt x="48" y="92" zoom="1.0"/>
+	  <wegpunkt x="55" y="70" zoom="0.6"/>
+      <wegpunkt x="55" y="72" zoom="0.7"/>
+      <wegpunkt x="55" y="74" zoom="0.9"/>
+      <wegpunkt x="55" y="76" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
       <hg_statisch><!--Background -->
-        <hg_statisch_objekt bild_id="szene3_hg" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene3_hg" dialog_id="#none#" 
+		klickbar=			"f|f|f|f|f|f|f"
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_fischglas" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene3_fischglas" dialog_id="#none#"
+		 klickbar=			"f|f|f|f|f|f|f"
+		 walkto=			"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="17" y="48" z="0"/>
           <groesse width="10" height="33"/>
         </hg_statisch_objekt>
-        <hg_statisch_objekt bild_id="szene3_tuer" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene3_tuer" dialog_id="#none#" 
+		klickbar=			"f|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="87" y="26" z="0"/>
           <groesse width="12" height="66"/>
         </hg_statisch_objekt>
       </hg_statisch>
       <hg_animiert><!-- Computer-Terminal -->
-        <hg_animiert_objekt bild_id="szene3_terminal" dialog_id="#none#" klickbar="t|f|f|f|f|f" walkto="t|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="t|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene3_terminal" dialog_id="szene3.2" 
+		klickbar=			"f|t|f|f|f|f|f" 
+		walkto=				"f|t|f|f|f|f|f"
+		raetsel_sichtbar=	"f|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|t|f|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
         </hg_animiert_objekt><!-- Sitz vor dem Computer-Terminal -->
-        <hg_animiert_objekt bild_id="szene3_sitz" dialog_id="#none#" klickbar="f|f|f|f|f|ff" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene3_sitz" dialog_id="#none#" 
+		klickbar=			"f|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="70" y="63" z="101"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
       </hg_animiert>
       <personen><!-- Hauptcharakter -->
         <person person_id="" bild_id="allg_herotileset">
-          <position x="45" y="60" z="200"/>
-          <groesse width="10" height="10"/>
+          <position x="35" y="60" z="200"/>
+          <groesse width="11" height="57"/>
         </person>
       </personen>
       <vg_statisch></vg_statisch>
       <vg_animiert> <!-- Knopf an der Tür -->
-        <vg_animiert_objekt bild_id="szene3_knopf" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene3_knopf" dialog_id="szene3.3.3" 
+		klickbar=			"t|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="83" y="51" z="400"/>
           <groesse width="4" height="7"/>
         </vg_animiert_objekt> <!-- Hintergrundfenster für Rätsel -->
-        <vg_animiert_objekt bild_id="szene3_raetsel_fenster" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|f" raetsel_ausloeser="f|f|f|f|t|f">
-          <position x="0" y="0" z="401"/>
+        <vg_animiert_objekt bild_id="szene3_raetsel_fenster" dialog_id="szene3.5" 
+		klickbar=			"f|f|f|f|f|t|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|t|t|t|t|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|t|f">
+          <position x="0" y="0" z="402"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_antivirus_symbol" dialog_id="#none#" klickbar="f|t|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|t|f" raetsel_ausloeser="f|t|f|f|f|f">
-          <position x="29" y="46" z="402"/>
-          <groesse width="6" height="13"/>
-        </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_kreuz" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|f|f" raetsel_ausloeser="f|t|f|f|f|f">
+        <vg_animiert_objekt bild_id="szene3_antivirus_symbol" dialog_id="#none#" 
+		klickbar=			"f|f|t|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|t|t|t|t|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
           <position x="29" y="46" z="403"/>
           <groesse width="6" height="13"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_virenloader_symbol" dialog_id="szene3.3.2" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|t|t|t|f|f" raetsel_ausloeser="f|f|f|f|f|f">
-          <position x="65" y="27" z="402"/>
+        <vg_animiert_objekt bild_id="szene3_kreuz" dialog_id="#none#" 
+		klickbar=			"f|f|t|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|t|t|f|f|f" 
+		raetsel_ausloeser=	"f|f|t|f|f|f|f">
+          <position x="29" y="46" z="404"/>
+          <groesse width="6" height="13"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt bild_id="szene3_virenloader_symbol" dialog_id="szene3.3.2" 
+		klickbar=			"f|t|t|t|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|t|t|t|f|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="65" y="27" z="403"/>
           <groesse width="8" height="15"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_reiter" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f">
-          <position x="36" y="47" z="402"/>
+		<vg_animiert_objekt bild_id="szene3_spacenet_symbol" dialog_id="szene3.3.1" 
+		klickbar=			"f|t|t|t|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|t|t|t|t|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="28" y="27" z="403"/>
+          <groesse width="8" height="15"/>
+        </vg_animiert_objekt>
+        <vg_animiert_objekt bild_id="szene3_reiter" dialog_id="#none#" 
+		klickbar=			"f|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|f|t|f|f|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="36" y="47" z="403"/>
           <groesse width="16" height="4"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_ja_reiter" dialog_id="szene3.4.2" klickbar="f|f|t|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|t|f|f|f" raetsel_ausloeser="f|f|t|f|f|f">
-          <position x="38" y="51" z="403"/>
+        <vg_animiert_objekt bild_id="szene3_ja_reiter" dialog_id="szene3.4.2" 
+		klickbar=			"f|f|f|t|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|f|t|f|f|f" 
+		raetsel_ausloeser=	"f|f|f|t|f|f|f">
+          <position x="38" y="51" z="404"/>
           <groesse width="6" height="3"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_nein_reiter" dialog_id="szene3.4.1" klickbar="f|f|t|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|t|f|f|f" raetsel_ausloeser="f|f|f|f|f|f">
-          <position x="46" y="51" z="403"/>
+        <vg_animiert_objekt bild_id="szene3_nein_reiter" dialog_id="szene3.4.1" 
+		klickbar=			"f|f|f|t|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|f|t|f|f|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="46" y="51" z="404"/>
           <groesse width="6" height="3"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_popup" dialog_id="#none#" klickbar="f|f|f|f|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f">
-          <position x="62" y="43" z="402"/>
+        <vg_animiert_objekt bild_id="szene3_popup" dialog_id="#none#" 
+		klickbar=			"f|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|f|f|t|f|f" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="62" y="43" z="403"/>
           <groesse width="12" height="24"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_ja_popup" dialog_id="#none#" klickbar="f|f|f|t|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|t|f|f" raetsel_ausloeser="f|f|f|t|f|f">
-          <position x="63" y="60.9" z="403"/>
+        <vg_animiert_objekt bild_id="szene3_ja_popup" dialog_id="szene3.4.2" 
+		klickbar=			"f|f|f|f|t|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"f|f|f|f|t|f|f" 
+		raetsel_ausloeser=	"f|f|f|f|t|f|f">
+          <position x="63" y="60.9" z="404"/>
           <groesse width="3.5" height="6"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene3_nein_popup" dialog_id="#none#" klickbar="f|f|f|t|f|f" walkto="f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|t|f|f" raetsel_ausloeser="f|f|f|f|f|f">
-          <position x="69.2" y="60.9" z="403"/>
+        <vg_animiert_objekt bild_id="szene3_nein_popup" dialog_id="szene3.4.1"
+		 klickbar=			"f|f|f|f|t|f|f" 
+		 walkto=			"f|f|f|f|f|f|f"
+		 raetsel_sichtbar=	"f|f|f|f|t|f|f"
+		 raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="69.2" y="60.9" z="404"/>
           <groesse width="3.5" height="6"/>
         </vg_animiert_objekt>
-		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene3.1" klickbar="t|f|f|f|f|f" walkto="f|f|f|f|f|f" raetsel_sichtbar="t|t|t|f|f|t" raetsel_ausloeser="f|f|f|f|f|t">
-          <position x="34" y="65" z="405"/>
-          <groesse width="75" height="35"/>
+		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene3.1|szene3.5"
+		 klickbar=			"t|t|t|t|t|t|t" 
+		 walkto=			"f|f|f|f|f|f|f" 
+		 raetsel_sichtbar=	"t|t|f|f|f|f|t" 
+		 raetsel_ausloeser=	"f|f|f|f|f|f|f">
+          <position x="5" y="3" z="406"/>
+          <groesse width="42.5" height="23"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt
+        bild_id="szene3_spike"
+        dialog_id="#none#"
+		klickbar=			"f|f|f|f|f|f|f" 
+		walkto=				"f|f|f|f|f|f|f"
+		raetsel_sichtbar=	"t|t|t|t|t|t|t" 
+		raetsel_ausloeser=	"f|f|f|f|f|f|f">
+            <position x="85" y="54" z="401"/>
+            <groesse width="8" height="41"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>
@@ -904,62 +974,128 @@
     </zentralpfad>
     <ebenen>
       <hg_statisch>
-        <hg_statisch_objekt bild_id="szene6_hg" dialog_id="#none#" klickbar="f|t|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|t|f|f|f|f|f|f|f|f|f">
+        <hg_statisch_objekt bild_id="szene6_hg"
+		dialog_id=						"#none#" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t" 
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
       </hg_statisch>
+	  
       <hg_animiert>
-        <hg_animiert_objekt bild_id="szene6_kasten_offen" dialog_id="#none#" klickbar="f|f|f|f|f|t|f|f|f|f|f" walkto="f|f|f|f|f|t|t|t|t|t|f"
-		raetsel_sichtbar="f|f|f|f|f|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|t|f|f|f|f|f">
-          <position x="48" y="66" z="100"/>
+        <hg_animiert_objekt bild_id="szene6_kasten_offen" 
+		dialog_id=						"szene6.5" 
+		klickbar=						"f|f|f|f|t|f|f|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"f|f|f|f|t|t|t|t|t|t|t" 
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+          <position x="20" y="66" z="100"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene6_kasten_zu" dialog_id="#none#" klickbar="f|f|f|f|t|f|f|f|f|f|f" walkto="t|t|t|t|t|f|f|f|f|f|f"
-		raetsel_sichtbar="t|t|t|t|t|f|f|f|f|f|f" raetsel_ausloeser="f|f|f|f|t|f|f|f|f|f|f">
-          <position x="48" y="66" z="100"/>
+		
+        <hg_animiert_objekt bild_id="szene6_kasten_zu" 
+		dialog_id=						"szene6.4" 
+		klickbar=						"f|f|f|t|f|f|f|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|f|f|f|f|f|f|f"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+          <position x="20" y="66" z="100"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene6_krebs_schein" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene6_krebs_schein" 
+		dialog_id=						"szene6.8.4" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|t|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="70" y="5" z="100"/>
           <groesse width="50" height="50"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene6_stier_schein" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene6_stier_schein" 
+		dialog_id=						"szene6.8.2" 
+		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="22" z="100"/>
           <groesse width="50" height="55"/>
         </hg_animiert_objekt>
-        <hg_animiert_objekt bild_id="szene6_waage_schein" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|t|t|f" walkto="f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f">
+        <hg_animiert_objekt bild_id="szene6_waage_schein" 
+		dialog_id=						"szene6.8.3" 
+		klickbar=						"f|f|f|f|f|f|f|f|t|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="1" y="0" z="100"/>
           <groesse width="50" height="70"/>
         </hg_animiert_objekt>
       </hg_animiert>
       <personen>
-        <person person_id="" bild_id="allg_herotileset">
-          <position x="50" y="50" z="200"/>
-          <groesse width="700" height="700"/>
-        </person>
+	  
+     <person person_id="" bild_id="allg_herotileset">
+        <position x="10" y="55" z="401"/>
+        <groesse width="8" height="41"/>
+      </person>
+		
       </personen>
       <vg_statisch>
-        <vg_statisch_objekt bild_id="szene6_luke_rechts" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f" walkto="t|t|t|t|t|t|t|t|t|t|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f">
+	  
+        <vg_statisch_objekt bild_id="szene6_luke_rechts" 
+		dialog_id=						"#none#" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="75" y="73" z="300"/>
           <groesse width="20" height="30"/>
         </vg_statisch_objekt>
       </vg_statisch>
+	  
       <vg_animiert>
-        <vg_animiert_objekt bild_id="szene6_luke_links_zu" dialog_id="#none#" klickbar="f|f|t|f|f|f|f|f|f|f|f" walkto="f|t|t|t|t|t|t|t|t|t|f"
-		raetsel_sichtbar="t|t|t|t|t|t|t|t|t|t|f" raetsel_ausloeser="f|f|t|f|f|f|f|f|f|f|f">
+	  
+        <vg_animiert_objekt bild_id="szene6_luke_links_zu" 
+		dialog_id=						"szene6.2" 
+		klickbar=						"f|t|f|f|f|f|f|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|f"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+		
           <position x="5.5" y="80.5" z="400"/>
           <groesse width="23" height="23"/>
         </vg_animiert_objekt>
-        <vg_animiert_objekt bild_id="szene6_luke_links_offen" dialog_id="#none#" klickbar="f|f|f|f|f|f|f|f|f|f|f" walkto="f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar="f|f|f|f|f|f|f|f|f|f|t" raetsel_ausloeser="f|f|f|f|f|f|f|f|f|f|f">
+		
+        <vg_animiert_objekt bild_id="szene6_luke_links_offen" 
+		dialog_id=						"szene6.9" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|f|t" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|f|f|f|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="8" y="72.5" z="400"/>
           <groesse width="18.5" height="27.5"/>
+        </vg_animiert_objekt>
+		
+
+		<vg_animiert_objekt
+        bild_id="szene6_spike"
+        dialog_id="szene6.7"
+		klickbar=						"f|f|f|f|f|f|t|f|f|f|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+            <position x="30" y="55" z="401"/>
+            <groesse width="8" height="41"/>
+        </vg_animiert_objekt>
+		<vg_animiert_objekt bild_id="allg_dialogbox"
+		dialog_id=						"szene6.1|szene6.3|szene6.6" 
+		klickbar=						"t|t|t|t|t|t|t|t|t|t|t" 
+		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+          <position x="40" y="65" z="500"/>
+          <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
       </vg_animiert>
     </ebenen>

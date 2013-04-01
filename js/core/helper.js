@@ -37,11 +37,11 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 6;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
-var gForceDialogScenes = new Array('Szene_2','Szene_4','Szene_5','Szene_7');
+var gForceDialogScenes = new Array('Szene_2','Szene_3','Szene_4','Szene_5','Szene_7');
 //z-index multiplicators
 var gZoomsteps				= new Array(4);
 //controls display of curent and next scene
