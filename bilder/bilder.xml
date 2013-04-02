@@ -37,6 +37,9 @@
   <bild id="szene1_bett" pfad="../bilder/szene1/bett.png" animiert="false">
     <abmessungen height="355" width="405"/>
   </bild>
+<bild id="szene1_bett_schlafend" pfad="../bilder/szene1/bett_schlafend.png" animiert="false">
+    <abmessungen height="347" width="386"/>
+  </bild>
   <bild id="szene1_kamera" pfad="../bilder/szene1/kamera.png" animiert="false">
     <abmessungen height="75" width="82"/>
   </bild>
