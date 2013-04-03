@@ -1166,7 +1166,7 @@
         </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="szene7_roter_knopf_kraftfeld"
                             dialog_id="szene7.7"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|t|f"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|t|t"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|t|f">
@@ -1182,7 +1182,7 @@
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
-          <position x="31" y="7" z="405"/>
+          <position x="31" y="7" z="406"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_laserwand_links"
@@ -1213,7 +1213,7 @@
           <groesse width="50" height="100"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_dr_chaos"
-                            dialog_id="7.6"
+                            dialog_id="szene7.6"
                             klickbar=               "f|f|f|f|f|f|f|f|f|t|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|f|t|t|t|t|f|t|f"
@@ -1236,8 +1236,8 @@
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
-          <position x="40" y="50" z="400"/>
-          <groesse width="30" height="35"/>
+          <position x="45" y="25" z="406"/>
+          <groesse width="30" height="60"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_teddy"
                             dialog_id="szene7.4.3"
@@ -1310,7 +1310,7 @@
         <vg_animiert_objekt
                             bild_id="szene7_antwort_d_underlay"
                             dialog_id="szene7.5.6"
-                            klickbar=               "f|f|f|f|t|t|t|t|t|f|f"
+                            klickbar=               "f|f|f|f|t|t|t|t|t|t|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|t|t|t|t|t|f|f"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|t|f|f">

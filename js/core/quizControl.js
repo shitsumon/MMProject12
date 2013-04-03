@@ -123,6 +123,9 @@ function advanceNextScene(){
     //Clear Blacklist to avoid unnecessary search overhead
     gSubDialogBlacklist         = new Array();
 
+    //Clear quiz dialog blacklist
+    gQuizDialogBlacklist        = new Array();
+
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {
 		

@@ -37,7 +37,7 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 7;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -435,6 +435,8 @@ function HideElementsMenu(){
 /************
  *Exceptions*
  ************/
+
+var gQuizDialogBlacklist = new Array();
 
 /*************************
  *Scene 5 exceptions data*

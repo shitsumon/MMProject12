@@ -274,7 +274,48 @@ function generateSecureCode(arg){
             }
         }
     }else if (arg.split('|')[0] == 'scene7'){
-        switch(arg.split('|')[1]){
+
+        var parts    = arg.split('|');
+        var getNext  = false;
+        var takeAsIs = false;
+        var dialog   = '';
+
+        if(parts.length > 2){
+            for(var idx = 1; idx < parts.length; ++idx){
+
+                for(var idx2 = 0; idx2 < gQuizDialogBlacklist.length; ++idx2){
+
+                    if(parts[idx] == gQuizDialogBlacklist[idx2].scene_id &&
+                            gRiddleStepCounter == gQuizDialogBlacklist[idx2].counter_step){
+                        takeAsIs = true;
+                        break;
+                    }else if(parts[idx] == gQuizDialogBlacklist[idx2].scene_id &&
+                             gRiddleStepCounter != gQuizDialogBlacklist[idx2].counter_step){
+                        getNext = true;
+                        break;
+                    }
+
+                }
+
+                if(takeAsIs){
+                    dialog = parts[idx];
+                    //gQuizDialogBlacklist.push(new BlacklistIDObject(dialog, gRiddleStepCounter));
+                    break;
+                }
+
+                if(!getNext){
+                    dialog = parts[idx];
+                    gQuizDialogBlacklist.push(new BlacklistIDObject(dialog, gRiddleStepCounter));
+                    break;
+                }
+
+                getNext = false;
+            }
+        }else{
+            dialog = parts[1];
+        }
+
+        switch(dialog){
         case 'question0':
             tmpQuizObject = gScene7DataArray[0];
             break;
@@ -311,12 +352,15 @@ function generateSecureCode(arg){
             }
             break;
         case 'question5':
-            if(gCurrentQuizstep != 8 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
+            if(gCurrentQuizstep != 9 || !gScene7RiddleStepStates[gRiddleStepCounter][clickedAnswerSlot]){
                 redirectToSameRiddlestep = displayErrorDialog();
             }else{
                 tmpQuizObject = gScene7DataArray[4];
                 ++gRiddleStepCounter;
             }
+            break;
+        default:
+            redirectToSameRiddlestep = displayErrorDialog();
             break;
         }
 
@@ -375,8 +419,8 @@ function generateSecureCode(arg){
             + gScene5_LayoutSettings.fixedFont
             + 'px' + gScene5_LayoutSettings.font;
 
-    var text = foo(tmpQuizObject.question,
-                   (qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.fixedFont + gScene5_LayoutSettings.line_distance);
+    var text = tmpQuizObject.question;/*foo(tmpQuizObject.question,
+                   (qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.fixedFont + gScene5_LayoutSettings.line_distance);*/
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
         ctx_q.fillText(text[idx2].replace(/#KOMMA#/g, ","),
@@ -541,7 +585,7 @@ function applyNextTransformation(){
     ctx.save();
 
     //clear image
-    ctx.clearRect ( 0, 0, canvas.width, canvas.height);
+    ctx.clearRect ( 0, 0, canvas.width, canvas.height*2);
 
     //Use archimedean spiral to make it look good
     x = center_x + ( centerDist + spiralDist * (gRotationCounter * factor)) * Math.cos(gRotationCounter * factor);

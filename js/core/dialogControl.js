@@ -322,7 +322,6 @@ function advanceDialogStep(imgID, canvasID){
 
             for(var idx2 = 0; idx2 < sceneDialogues.length; ++idx2){
 
-
                 //Check if clicked object is linked to a sub-dialog
                 //If yes, this requires special care, to handle sub-dialogues
                 //correctly
