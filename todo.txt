@@ -24,7 +24,7 @@ Primaer
         Szene 4 - Vorläufig fertig -> Testen
         Szene 5 - Vorläufig fertig -> Testen
         Szene 6 - Wird bearbeitet von Jevgenij
-        Szene 7 - Wird bearbeitet von Micha
+        Szene 7 - Vorläufig fertig -> Testen
 
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
@@ -33,8 +33,6 @@ Primaer
 
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
-
-- rätsel-bilder fehlen -- Soweit alles vorhanden
 
 - dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
 
@@ -64,11 +62,7 @@ Primaer
 	- Szene 1, Held schläft zuerst (Einzelbild), 
 		   steht bei klick dann neben dem bett (Tileset).
 
-	- Szene 7, Dr. Chaos wird raus ins Weltall gezogen
-		- Bild dafür ist vorhanden, fehlt nur die Animation 
-			--> Lsg. Vorschlag: Rotieren und dabei immer kleiner 
-					    Skalieren des Bildes im Canvas,
-					    bis nichts mehr zu sehen ist vom Bild.
+        - Szene 7, Dr. Chaos wird raus ins Weltall gezogen  -- Done
 
 Sekundär
 --------
@@ -137,5 +131,4 @@ eine person muss klickbar sein
 
 szene 7
 
-dr chaos soll sich drehen und kleiner werden
-	-> nicht wiederholende animation
+dr chaos soll sich drehen und kleiner werden -- Done
