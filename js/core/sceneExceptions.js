@@ -305,7 +305,11 @@ function generateSecureCode(arg){
 
                 if(!getNext){
                     dialog = parts[idx];
-                    gQuizDialogBlacklist.push(new BlacklistIDObject(dialog, gRiddleStepCounter));
+
+                    if(parseInt(dialog.substring(8)) <= gRiddleStepCounter){
+                        gQuizDialogBlacklist.push(new BlacklistIDObject(dialog, gRiddleStepCounter));
+                    }
+
                     break;
                 }
 
