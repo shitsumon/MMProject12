@@ -551,7 +551,7 @@ argument_list
   <dialog id="szene7.5.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="tb" bild_id="allg_teddy">Das ist leider falsch. Probier es noch einmal!</satz>
   </dialog>
-  <dialog id="szene7.5.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question1">
+  <dialog id="szene7.5.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question1|question4">
     <satz person_id="tb" bild_id="allg_teddy">Das hätte ich auch genommen!</satz>
   </dialog>
   <dialog id="szene7.5.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question2">

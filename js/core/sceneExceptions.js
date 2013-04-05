@@ -349,7 +349,7 @@ function generateSecureCode(arg){
                 if(!getNext){
                     dialog = parts[idx];
 
-                    if(parseInt(dialog.substring(8)) <= gRiddleStepCounter){
+                    if(parseInt(dialog.substring(8)) <= gRiddleStepCounter + 1){
                         gQuizDialogBlacklist.push(new BlacklistIDObject(dialog, gRiddleStepCounter));
                     }
 
