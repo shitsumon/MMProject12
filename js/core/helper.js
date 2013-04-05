@@ -37,7 +37,7 @@ var gMenuPercPosX = 50;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 1;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -191,6 +191,7 @@ var gAnimationTimer		= new Object();
 gAnimationTimer.anzahl	= 0;
 //prototype of an animated picture, stores corresponding timer
 function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
+
 
 	this.bild_nr	= 0;			//index of currently displayed frame	-> int
 	this.canvas_id	= _canvas_id;	//id of targeted canvas					-> string

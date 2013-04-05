@@ -24,6 +24,12 @@ function triggerException(exceptionName, arguments) {
     
 
     switch(exceptionName){
+	case 'scene1_hideDrawer':
+		scene1_hideDrawer();
+	break;
+	case 'scene1_stopSound':
+		scene1_stopSound();
+	break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -68,6 +74,43 @@ function triggerException(exceptionName, arguments) {
         break;
     }
 }
+
+/**
+*scene1_hideDrawer()
+*
+* sets z-index of drawer in scene 1 to background value while walking over it
+*
+*Input values:
+*none
+*
+*return values:
+*
+*none
+**/
+function scene1_hideDrawer(){
+
+	$("canvas[id*='canvas_bg_dynamic_szene1_schublade_zu']").css("z-index", 101);
+	$("canvas[id*='canvas_bg_dynamic_szene1_schublade_offen']").css("z-index", 101);
+}
+
+/**
+*scene1_stopSound()
+*
+* stops sound animation after quiz triggered it
+*
+*Input values:
+*none
+*
+*return values:
+*
+*none
+**/
+function scene1_stopSound(){
+
+	stoppeAnimation("szene1_sound_rechts");
+	stoppeAnimation("szene1_sound_links");
+}
+
 
 /**
  * scene5_bookcode()
