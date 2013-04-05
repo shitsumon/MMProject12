@@ -62,7 +62,11 @@ Primaer
 	- Szene 1, Held schläft zuerst (Einzelbild), 
 		   steht bei klick dann neben dem bett (Tileset).
 
-        - Szene 7, Dr. Chaos wird raus ins Weltall gezogen  -- Done
+-Skalierung der Dialogbox fehlerhaft
+    -- momentan wird zwar das canvas skaliert, aber das zu zeichnende Bild der
+       Dialogbox bleibt gleich gross und wird daher bei kleineren Aufloesungen
+       abgeschnitten
+
 
 Sekundär
 --------
