@@ -305,6 +305,11 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
         //draw objects onto canvas
         for(var index = 0; index < objectsToDraw.length; ++index){
+
+            gImageStats.push(new imageStatObject(objectsToDraw[index]['imageID'],
+                                                 objectsToDraw[index]['position'],
+                                                 objectsToDraw[index]['size']));
+
             try{
                 canvasContext.drawImage(
                             gBilder[objectsToDraw[index].imageID].bild,
@@ -324,6 +329,11 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     }else{//draw to multiple canvasses
 
         for(var index = 0; index < objectsToDraw.length; ++index){
+
+            gImageStats.push(new imageStatObject(objectsToDraw[index]['imageID'],
+                                                 objectsToDraw[index]['position'],
+                                                 objectsToDraw[index]['size']));
+
             //create id with a unique combination
             //of common string and picture id
             var canvasID =

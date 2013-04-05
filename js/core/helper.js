@@ -97,6 +97,16 @@ function Size(w, h){
     this.height = typeof( h ) === 'undefined' ? 0 : h;
 }
 
+//permanent storage for later usage of image information
+var gImageStats = new Array();
+
+//image stat object
+function imageStatObject(id, position, size){
+    this.id       = id;
+    this.position = position;
+    this.size     = size;
+}
+
 /**********************
  *clickEventHandler.js*
  *********************/
