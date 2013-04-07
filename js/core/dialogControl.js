@@ -124,15 +124,17 @@ function dialog_zeichneDialog()
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
 
+    var dimensions = getScaledDimensions(gTalk.bild_id);
+
     //background textbox dimensions
-    var textBoxImageWidth  = gBilder[gTalk.bild_id].abmessungen.width;
-    var textBoxImageHeight = gBilder[gTalk.bild_id].abmessungen.height;
+    var textBoxImageWidth  = dimensions.width;//gBilder[gTalk.bild_id].abmessungen.width;
+    var textBoxImageHeight = dimensions.height;//gBilder[gTalk.bild_id].abmessungen.height;
 
     //Textbox protagonist bild dimensionen
     var ProtImgXPos        = perc2pix(textBoxImageWidth,  gTalk.TBPercImagePosX);   //xPos text Bild
     var ProtImgYPos        = perc2pix(textBoxImageHeight, gTalk.TBPercImagePosY);   //yPos text Bild
-    var ProtImgWidth       = perc2pix(gBilder[Satz.bild_id].abmessungen.width,  gTalk.TBPercImageWidth);  //width text Bild
-    var ProtImgHeight      = perc2pix(gBilder[Satz.bild_id].abmessungen.height, gTalk.TBPercImageHeight); //height text Bild
+    var ProtImgWidth       = perc2pix(textBoxImageWidth/*gBilder[Satz.bild_id].abmessungen.width*/,  gTalk.TBPercImageWidth);  //width text Bild
+    var ProtImgHeight      = perc2pix(textBoxImageWidth/*gBilder[Satz.bild_id].abmessungen.height*/, gTalk.TBPercImageHeight); //height text Bild
 
     //Text positioning values
     var textXPos    = perc2pix(textBoxImageWidth,  gTalk.TBPercTextPosX);
@@ -143,8 +145,8 @@ function dialog_zeichneDialog()
     //get dialogbox canvas
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
 
-    canvas.width  = perc2pix(screenWidth,  gTalk.TBPercWidth);
-    canvas.height = perc2pix(screenHeight, gTalk.TBPercHeight);
+    canvas.width  = dimensions.width;//perc2pix(screenWidth,  gTalk.TBPercWidth);
+    canvas.height = dimensions.height;//perc2pix(screenHeight, gTalk.TBPercHeight);
 
     var realXPos = perc2pix(screenWidth,  gTalk.TBPercPosX) - (canvas.width * 0.5);
 
@@ -224,7 +226,7 @@ function dialog_SatzZeilenBruch(text, pixelSize)
 	
     if ( text.length > pixelSize )
 	{
-        /*falls text zu lange, nimm maximale-länge string
+        /*falls text zu lange, nimm maximale-laenge string
           suche nach letztem Space speichere String als Zeile
           mach das so lange weiter bis alles rein passt*/
         while(text.length > pixelSize){
@@ -240,7 +242,7 @@ function dialog_SatzZeilenBruch(text, pixelSize)
         if( text.length > 0 ){
 
             result.push(text);
-		}//füge rest ran
+        }//fuege rest ran
 		
 		return result;
 	}

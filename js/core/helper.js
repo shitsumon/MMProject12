@@ -279,8 +279,8 @@ gTalk.TBPercTextPosX    = 25;    //Textbox text X position in %
 gTalk.TBPercTextPosY    = 40;    //Textbox text Y position in %
 gTalk.TBPercImagePosX   = 5.65;  //Textbox image X position in %
 gTalk.TBPercImagePosY   = 24.20; //Textbox image Y position in %
-gTalk.TBPercImageWidth  = 100;   //Textbox image width in %
-gTalk.TBPercImageHeight = 100;   //Textbox image height in %
+gTalk.TBPercImageWidth  = 15;   //Textbox image width in %
+gTalk.TBPercImageHeight = 22.5;   //Textbox image height in %
 
 var gTBDrawn = false;
 
