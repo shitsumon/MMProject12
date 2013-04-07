@@ -29,16 +29,10 @@ Primaer
 - Skalierungsfaktoren und Zentralpfadkoordinaten anpassen
 	- Skalierung beeinflusst Positionierung der Bilder!
 
-- Szene 5: Codegenerator Code anzeigen - Done
-
 - in allen JS-Dateien die Eingaben/Übergabeparameter prüfen und Fehlermeldungen ausgeben
     -> Meldungen am besten per Flag an/abschalten
 
 - dialoge brauchen erläuternde kommentare für nicht sichtbare ereignisse
-
-- scripted dialoge -> wie machen wir das?
-	-> startdialog in szenen.xml angeben -- Done
-	-> letzter oder erster dialog als trigger für nächste szene -- Done
 
 - Startausrichtung des Helden soll für jede Szene einzeln wählbar sein
 
@@ -62,11 +56,12 @@ Primaer
 	- Szene 1, Held schläft zuerst (Einzelbild), 
 		   steht bei klick dann neben dem bett (Tileset).
 
--Skalierung der Dialogbox fehlerhaft
+- Skalierung der Dialogbox fehlerhaft
     -- momentan wird zwar das canvas skaliert, aber das zu zeichnende Bild der
        Dialogbox bleibt gleich gross und wird daher bei kleineren Aufloesungen
        abgeschnitten
 
+- Formatierung der Texte in den Rätseln für Szene 5 und 7 ist fehlerhaft
 
 Sekundär
 --------
@@ -82,29 +77,11 @@ Sekundär
 	- Ordentliches Hintergrundbild (Aussenansicht von Szene 6)
 	- Ordentlicher Textfont
 
-- Hauptmenü	-- Done
-
 - Testen, testen, testen
         -> Fehlerverhalten
         -> verschiedene Auflösungen
         -> Veränderung des Anzeigefensters
         -> ...
-
-- Dokumentation		-- Done
-
-- Präsentation 		-- Done
-
-
-Wem fällt noch was ein?
-
-
-ANMERKUNG
----------
-
-Bevor ihr mit hacken anfangt und das Rad neu erfindet, lest euch bitte die bestehenden Sourcen
-durch, und versucht euren Code in das bestehende System zu integrieren und vorhandenen Sachen zu nutzen.
-Das hat sonst nur mehr Nachbereitung des Codes zur Folge, was hinsichtlich der verbleibenden Zeit nicht
-wuenschenswert ist!
 
 Probleme in den Szenen
 ----------------------
@@ -132,7 +109,3 @@ auslöser für das umsehen der figuren
 szene 6
 
 eine person muss klickbar sein
-
-szene 7
-
-dr chaos soll sich drehen und kleiner werden -- Done
