@@ -563,20 +563,26 @@ function scene7_flipSpikeBackAndForth(arg){
  */
 function flipCharacterHorizontally(arg){
 
-    var id_array = arg.split('|');
+    var id_array   = arg.split('|');
 
     for(var idx = 0; idx < id_array.length; ++idx){
 
+        var imagePercs  = getScaledDimensions(id_array[idx]);
+
+        if(imagePercs.width == 'undefined' && imagePercs.height == 'undefined'){
+            return;
+        }
+
         var canvas    = $("canvas[id*='" + id_array[idx] + "']");
         var ctx       = canvas[0].getContext("2d");
-        canvas.width  = gBilder[id_array[idx]].abmessungen.width;
-        canvas.height = gBilder[id_array[idx]].abmessungen.height;
+        canvas.width  = imagePercs.width;
+        canvas.height = imagePercs.height;
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.translate(canvas.width, 0);
         ctx.scale(-1, 1);
-        ctx.drawImage(gBilder[id_array[idx]].bild, 0, 0);
+        ctx.drawImage(gBilder[id_array[idx]].bild, 0, 0, imagePercs.width, imagePercs.height);
     }
 }
 
@@ -614,14 +620,25 @@ function scene7_blowDrChaosAway(){
  */
 function applyNextTransformation(){
 
+    if(gcurrent_scene_id != 'Szene_7'){
+        alert("Don't use this exception apart from scene 7!");
+        return;
+    }
+
+    var imagePercs  = getScaledDimensions('szene7_dr_chaos_falling');
+
+    if(imagePercs.width == 'undefined' && imagePercs.height == 'undefined'){
+        return;
+    }
+
     var factor      = 0.2;
     var canvas      = $("canvas[id*='szene7_dr_chaos_falling']");
     var ctx         = canvas[0].getContext("2d");
     var centerDist  = 1;
     var spiralDist  = 2;
 
-    canvas.width  = gBilder['szene7_dr_chaos_falling'].abmessungen.width;
-    canvas.height = gBilder['szene7_dr_chaos_falling'].abmessungen.height;
+    canvas.width  = imagePercs.width;
+    canvas.height = imagePercs.height;
 
     var center_x = canvas.width  / 2;
     var center_y = canvas.height / 2;
@@ -632,7 +649,7 @@ function applyNextTransformation(){
     ctx.save();
 
     //clear image
-    ctx.clearRect ( 0, 0, canvas.width, canvas.height*2);
+    ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     //Use archimedean spiral to make it look good
     x = center_x + ( centerDist + spiralDist * (gRotationCounter * factor)) * Math.cos(gRotationCounter * factor);
@@ -651,7 +668,7 @@ function applyNextTransformation(){
     ctx.scale(gDrChaosScalingFactor, gDrChaosScalingFactor)
 
     //draw image
-    ctx.drawImage(img,-center_x,-center_y);
+    ctx.drawImage(img, -center_x, -center_y, imagePercs.width, imagePercs.height);
 
     //restore old state
     ctx.restore();
@@ -662,4 +679,42 @@ function applyNextTransformation(){
     if(gDrChaosScalingFactor <= 0){
         window.clearInterval(gTimerHandle);
     }
+}
+
+/**
+ * getScaledDimensions()
+ *
+ * extracts correctly scaled width and height
+ * dimensions of the canvas which is treated
+ * with at the moment.
+ *
+ * Input values:
+ * arg (String) - Image id
+ *
+ * Return values:
+ * Struct(width (Int), height(Int))
+ */
+function getScaledDimensions(arg){
+
+    var feats = null;
+
+    for(var idx = 0; idx < gImageStats.length; ++idx){
+        if(gImageStats[idx].id == arg){
+            feats = gImageStats[idx];
+            break;
+        }
+    }
+
+    if(feats == null){
+        alert("No image with this id found!");
+        return { 'width': 'undefined', 'height': 'undefined'};
+    }
+
+    var width  = perc2pix($(window).width(),  feats.size.width);
+    var height = perc2pix($(window).height(), feats.size.height);
+
+    width  *= z2mult(feats.position.zPos);
+    height *= z2mult(feats.position.zPos);
+
+    return { 'width': width, 'height': height};
 }
