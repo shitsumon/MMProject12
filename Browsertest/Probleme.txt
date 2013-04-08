@@ -1,0 +1,18 @@
+Allgemein:
+
+- IE zeichnet das Intro fehlerhaft
+- Skalierung der Helden beim Laufen -> hängt von deren eingestellter Größe ab
+- Größe des Dialogfensters, der Portraits darin
+
+Szene 1:
+
+- der letzte Dialog wird nicht angezeigt, Fehler im dialogIDs-Array
+- Held muss zu Beginn versteckt werden
+- Dialogfeld muss an eine andere Position wenn Schublade aktiv ist
+- IE leitet am ende nicht zu Szene 2 weiter
+
+Szene 2:
+
+- Laufziel am Lichtschalter ist zu hoch
+- kein Hover-Effekt beim Anmelden am Computer
+- Überleitung von Szene 1 setzt die Zähler für Dialog und Co. nicht zurück -> falscher Dialog/Stand zu Beginn
