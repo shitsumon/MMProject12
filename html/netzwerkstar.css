@@ -20,7 +20,7 @@ background-repeat: no-repeat;
 background-color: transparent;
 border: 0px;
 height: 72px;
-width: 404px;
+width: 448px;
 }
 
 #new_game{
@@ -53,6 +53,14 @@ background: url("../bilder/allgemein/backToHP1.png");
 
 #back_to_HP:hover{
 background: url("../bilder/allgemein/backToHP2.png");
+}
+
+#credits:{
+background: url("../bilder/allgemein/credits1.png");
+}
+
+#credits:hover{
+background: url("../bilder/allgemein/credits2.png");
 }
 
 #bg {
