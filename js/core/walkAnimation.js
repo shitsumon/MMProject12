@@ -74,14 +74,14 @@ function bewegePerson(){
 		});
 		
 		/*draws central path points*/
-		/*
+		
         var hg = $("canvas[id*=canvas_bg_static]")[0].getContext("2d");
 		hg.fillStyle = "rgb(255, 0, 0)";
 
 		$.each(lWegPos,function(index, value){
 			hg.fillRect( value[0], value[1], 10, 10 );
 		});
-		*/
+		
 		
 		
 		$.each(gZoomsteps, function(index, value){
@@ -147,17 +147,15 @@ function bewegePerson(){
 			});
 
 		//scale if we are on central path
-        if(gAktuellesZiel == 1){
-            //gMoveVec[1][2] >= 0 -> enlarge, scale down otherwise
-            skaliereHeld(
-                (gStartAbmessungen[0] + gMoveVec[1][2]),
-                (gStartAbmessungen[1] + gMoveVec[1][3]),
-                hero);
+		if(gAktuellesZiel == 1)
+		{
+			//gMoveVec[1][2] >= 0 -> enlarge, scale down otherwise
+			skaliereHeld( (gStartAbmessungen[0] + gMoveVec[1][2]), (gStartAbmessungen[1] + gMoveVec[1][3]), hero);
 
 			//stores new dimensions as reference for next round
-            gStartAbmessungen[0] += gMoveVec[1][2];
-            gStartAbmessungen[1] += gMoveVec[1][3];
-        }
+			gStartAbmessungen[0] += gMoveVec[1][2];
+			gStartAbmessungen[1] += gMoveVec[1][3];
+		}
 	}else{
 
 		//put hero on targets coordinates if we are in range
@@ -183,6 +181,10 @@ function bewegePerson(){
 		
         //Determine current walking direction
         var direction = determineWalkingDirection(hero, gTargets[gAktuellesZiel], gMoveVec[gAktuellesZiel]);
+
+//---
+stoppeAnimation("allg_herotileset");
+//---
 
         if(direction !== gLastDirection){
 	        //Check against last walking direction, if different, change animation
@@ -251,8 +253,19 @@ function zielErreicht(heroPos, targetPos, justDistance){
 	
 	if(!justDistance){
 		//no need for square root while computing vector length -> sqrt(x^2 + y^2)
+
+var testx=heroPos[0] - targetPos[0];
+var testy=heroPos[1] - targetPos[1];
+
 		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
 		//compute distance to target and previous steps distance as well as movement vector length
+
+var testxprev=heroPos[0] - gMoveVec[gAktuellesZiel][0];
+var testyprev=heroPos[1] - gMoveVec[gAktuellesZiel][1];
+
+testxprev-= targetPos[0];
+testyprev-= targetPos[1];
+
 		distance_previous	= (
 								Math.pow(((heroPos[0] - gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
 								+ Math.pow(((heroPos[1] - gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)

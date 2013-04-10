@@ -458,6 +458,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                         to deal with. Special switches are invoked to handle these tilesets, which
                         have a vertical expansion greater than one.
                     */
+
                     starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection);
 
                     /*
