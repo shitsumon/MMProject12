@@ -247,33 +247,34 @@ stoppeAnimation("allg_herotileset");
 
 function zielErreicht(heroPos, targetPos, justDistance){
 	//computes heros distance to the target and compares it to the previous step
-	var distance_target, distance_previous, vector_length;
+	var distance_target, distance_next, vector_length;
 	
 	justDistance = typeof(justDistance) === "undefined" ? false : justDistance;
 	
 	if(!justDistance){
 		//no need for square root while computing vector length -> sqrt(x^2 + y^2)
-
-var testx=heroPos[0] - targetPos[0];
-var testy=heroPos[1] - targetPos[1];
-
 		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
+		
 		//compute distance to target and previous steps distance as well as movement vector length
+		distance_next	= (
+							Math.pow(((heroPos[0] + gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
+							+ Math.pow(((heroPos[1] + gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
+							);
+var test=(
+			Math.pow(((heroPos[0] + (gMoveVec[gAktuellesZiel][0] / 1000)) - targetPos[0]), 2)
+			+ Math.pow(((heroPos[1] + (gMoveVec[gAktuellesZiel][1] / 1000)) - targetPos[1]), 2)
+			);
 
-var testxprev=heroPos[0] - gMoveVec[gAktuellesZiel][0];
-var testyprev=heroPos[1] - gMoveVec[gAktuellesZiel][1];
-
-testxprev-= targetPos[0];
-testyprev-= targetPos[1];
-
-		distance_previous	= (
-								Math.pow(((heroPos[0] - gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
-								+ Math.pow(((heroPos[1] - gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
-								);
+if(distance_next > test){
+	console.log("+ "+gAktuellesZiel);
+}else{
+	console.log("- "+gAktuellesZiel);
+}
+			
 		vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
 	
 		//goal is reached if the computation evaluates to the set amount or if movement vector is 0
-		if((distance_previous <= distance_target) || (vector_length == 0)){
+		if((distance_next >= distance_target) || (vector_length == 0)){
 			
 			return true;
 		}else{
