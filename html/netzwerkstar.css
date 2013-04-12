@@ -55,12 +55,30 @@ background: url("../bilder/allgemein/backToHP1.png");
 background: url("../bilder/allgemein/backToHP2.png");
 }
 
-#credits:{
+#credits{
 background: url("../bilder/allgemein/credits1.png");
 }
 
 #credits:hover{
 background: url("../bilder/allgemein/credits2.png");
+}
+
+#impressum {
+ visibility: hidden;
+ color:#FFFFFF;
+ font-family: arial;
+ font-size: 20;
+ font-weight: bold;
+ line-height: 60%;
+}
+
+#credits_page {
+ visibility: hidden;
+ color:#FFFFFF;
+ font-family: arial;
+ font-size: 20;
+ font-weight: bold;
+ line-height: 60%;
 }
 
 #bg {

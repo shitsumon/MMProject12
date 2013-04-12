@@ -19,7 +19,7 @@
 <script type="text/javascript" src="../js/core/codeGenerator.js"></script>
 <script type="text/javascript" src="../js/core/sceneExceptions.js"></script>
 </head>
-<body onload="Javascript:positionButtons();">
+<body onload="Javascript:positionMenuElement('menu');">
 
 <form action="">
 	<input id ="codefeld" type="text" value=""><br>
@@ -35,13 +35,54 @@
     <p class="center">Chaos</p>
   </div>
 </div>
+
+<div id="impressum">
+<center>
+<p><u><h2>Impressum</h2></u></p></br></br>
+<p>Angaben gemäß § 5 TMG und § 55 Abs. 1 Rundfunkstaatsvertrag</p>
+<p>Verantwortlich:</p></br>
+<p>Reinhard Dankert</p>
+<p>Landesbeauftragter für Datenschutz und Informationsfreiheit</p>
+<p>Mecklenburg-Vorpommern</p></br>
+<p>Lennéstraße 1,</p>
+<p>Schloss Schwerin</p>
+<p>19053 Schwerin</p></br>
+<p>Telefon: +49-3 85-59 49 4-0</p>
+<p>Telefax: +49-3 85-59 49 4-58</p>
+<p>E-Mail: info@datenschutz-mv.de</p></center></br>
+<button id="back_to_menu" onclick="JavaScript:hideImpressum();">Zurück</button>
+</div>
+
+<div id="credits_page">
+
+<center>
+<p><u><h2>Credits</h2></u></p></br></br>
+
+<p><u><h3>Game Design - Designschule Schwerin</h3></u></p></br>
+<p>Marcel Bartsch</p>
+<p>Frederik Drabert</p>
+<p>Thomas Garling</p>
+<p>Jan Jecker</p></br></br>
+
+<p><u><h3>Programmierung - Hochschule Wismar</h3></u></p></br>
+<p>Oliver Böhm</p>
+<p>Michael Flau</p>
+<p>Jevgenij Jakunschin</p>
+<p>Hannes Neumann</p></br></br>
+
+<p><u><h3>Projektmanagement/Vermittlung - Datenschutz MV</h3></u></p></br>
+<p>Antje Kaiser<p></center></br>
+<button id="back_to_menu" onclick="JavaScript:hideCredits();">Zurück</button>
+
+</div>
+
 <img src="../bilder/allgemein/ns2_menu.jpg" id="bg" alt="">
 <div id="menu">
 <button class="buttons" id="new_game" onclick="JavaScript:ladeBilder();ladeDialoge();"></button><br></br>
 <button class="buttons" id="continue_game" onclick="JavaScript:spiel_fortsetzen();"></button><br></br>
-<button class="buttons" id="about_game" onclick=""></button><br></br>
-<button class="buttons" id="credits" onclick=""></button><br></br>
-<button class="buttons" id="back_to_HP" onclick=""></button>
+<button class="buttons" id="about_game" onclick="JavaScript:showImpressum();"></button><br></br>
+<button class="buttons" id="credits" onclick="JavaScript:showCredits();"></button><br></br>
+<button class="buttons" id="back_to_HP" onclick=""></button><br></br>
 </div>
 </body>
 </html>

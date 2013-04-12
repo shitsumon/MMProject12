@@ -28,8 +28,12 @@
 /*********
  *menu.js*
  *********/
-var gMenuPercPosY = 60;
-var gMenuPercPosX = 50;
+var gMenuPercPosY       = 65;
+var gMenuPercPosX       = 50;
+var gImpressumPercPosY  = 65;
+var gImpressumPercPosX  = 50;
+var gCreditsPercPosY    = 60;
+var gCreditsPercPosX    = 55;
 
 /****************
  *sceneParser.js*
