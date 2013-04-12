@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <szenen>
   <szene id="Szene_1" reatselschritte="16">
+  <weltall spc="0" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -216,6 +217,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_2" reatselschritte="7">
+  <weltall spc="0" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -371,6 +373,7 @@
     </ebenen>
   </szene>
     <szene id="Szene_3" reatselschritte="7">
+	<weltall spc="0" />
     <zentralpfad>
 	  <wegpunkt x="55" y="70" zoom="0.6"/>
       <wegpunkt x="55" y="72" zoom="0.7"/>
@@ -548,6 +551,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_4" reatselschritte="8">
+  <weltall spc="0" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -663,7 +667,8 @@
     </ebenen>
   </szene>
 <szene id="Szene_5" reatselschritte="19">
-    <zentralpfad>
+	<weltall spc="0" />
+	<zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
       <wegpunkt x="49" y="87" zoom="0.9"/>
@@ -1037,6 +1042,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_6" reatselschritte="11">
+	<weltall spc="1" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -1070,7 +1076,7 @@
         <hg_animiert_objekt bild_id="szene6_kasten_zu" 
 		dialog_id=						"szene6.4" 
 		klickbar=						"f|f|f|t|f|f|f|f|f|f|f" 
-		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		walkto=							"f|f|f|t|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|f|f|f|f|f|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="20" y="66" z="100"/>
@@ -1106,11 +1112,12 @@
       </hg_animiert>
       <personen>
 	  
-     <person person_id="" bild_id="allg_herotileset">
-        <position x="10" y="55" z="401"/>
-        <groesse width="8" height="41"/>
-      </person>
-		
+
+        <person person_id="" bild_id="allg_herotileset">
+          <position x="50" y="45" z="404"/>
+          <groesse width="10" height="52"/>
+        </person>
+
       </personen>
       <vg_statisch>
 	  
@@ -1130,7 +1137,7 @@
         <vg_animiert_objekt bild_id="szene6_luke_links_zu" 
 		dialog_id=						"szene6.2" 
 		klickbar=						"f|t|f|f|f|f|f|f|f|f|f" 
-		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
+		walkto=							"f|t|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
 		
@@ -1172,6 +1179,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_7" reatselschritte="11">
+  	<weltall spc="0" />
     <zentralpfad>
       <wegpunkt x="41" y="77" zoom="0.6"/>
       <wegpunkt x="40" y="82" zoom="0.7"/>

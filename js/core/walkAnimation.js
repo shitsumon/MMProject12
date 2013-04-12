@@ -199,9 +199,11 @@ stoppeAnimation("allg_herotileset");
         //When goal is reached, standing animation is invoked,
         //depending on position of hero
         if(hero.offset().left <= ($(window).width() / 2)){
-            switchWalkingAnimation('standing_r', hero[0].id);
+			if (gSpace==0){switchWalkingAnimation('standing_r', hero[0].id);}
+			else switchWalkingAnimation('jetpack_r', hero[0].id);
         }else{
-            switchWalkingAnimation('standing_l', hero[0].id);
+            if (gSpace==0){switchWalkingAnimation('standing_l', hero[0].id);}
+			else switchWalkingAnimation('jetpack_l', hero[0].id);
         }
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
@@ -328,16 +330,20 @@ function determineWalkingDirection(hero, currentTarget, movVec){
     var diffY = Math.abs(hero.offset().top  - currentTarget[1]);
 
     if(movVec[0] < 0.0 && movVec[1] < 0.0){
-
-        return (diffX >= diffY ? 'left' : 'back');
+		if (gSpace==0){
+        return (diffX >= diffY ? 'left' : 'back');}
+		else return 'jetpack_l';
     }else if(movVec[0] < 0.0 && movVec[1] > 0.0){
-
-        return (diffX >= diffY ? 'left' : 'front');
+		if (gSpace==0){
+        return (diffX >= diffY ? 'left' : 'front');}
+		else return 'jetpack_l';
     }else if(movVec[0] > 0.0 && movVec[1] > 0.0){
-
-        return (diffX > diffY ? 'right' : 'front');
+		if (gSpace==0){
+        return (diffX > diffY ? 'right' : 'front');}
+		else return 'jetpack_r';		
     }else{
-
-        return (diffX > diffY ? 'right' : 'back');
+		if (gSpace==0){
+        return (diffX > diffY ? 'right' : 'back');}
+		else return 'jetpack_r';	
     }
 }

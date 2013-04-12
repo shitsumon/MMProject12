@@ -116,8 +116,12 @@ function getSceneInformation(sceneID, sceneFilename){
                 //get quiz step count
                 gQuizsteps	= $(currentScene).attr('reatselschritte').length == 0 ? 0 :
                                                                                     parseInt($(currentScene).attr('reatselschritte'));
-                //get waypoints of central path
+                //get space animation variable
+				gSpace  = $(currentScene).find('weltall').attr("spc");
+				
+				//get waypoints of central path
                 var wegpunkte	= $(currentScene).find('wegpunkt');
+
                 //create corresponding arrays
                 gWegPos			= new Array(wegpunkte.length);
                 gZoomsteps		= new Array(wegpunkte.length);
