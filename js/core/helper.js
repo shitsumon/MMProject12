@@ -38,6 +38,8 @@ var gMenuPercPosX = 50;
 var sceneXML				= "../szenen.xml";
 //index of current scene
 var gcurrent_scene_counter	= 1;
+//enables space movement animations. 0=off, 1=true
+var gSpace = 0;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
