@@ -126,27 +126,23 @@ function dialog_zeichneDialog()
 
     var dimensions = getScaledDimensions(gTalk.bild_id);
 
-    //background textbox dimensions
-    var textBoxImageWidth  = dimensions.width;//gBilder[gTalk.bild_id].abmessungen.width;
-    var textBoxImageHeight = dimensions.height;//gBilder[gTalk.bild_id].abmessungen.height;
-
     //Textbox protagonist bild dimensionen
-    var ProtImgXPos        = perc2pix(textBoxImageWidth,  gTalk.TBPercImagePosX);   //xPos text Bild
-    var ProtImgYPos        = perc2pix(textBoxImageHeight, gTalk.TBPercImagePosY);   //yPos text Bild
-    var ProtImgWidth       = perc2pix(textBoxImageWidth/*gBilder[Satz.bild_id].abmessungen.width*/,  gTalk.TBPercImageWidth);  //width text Bild
-    var ProtImgHeight      = perc2pix(textBoxImageWidth/*gBilder[Satz.bild_id].abmessungen.height*/, gTalk.TBPercImageHeight); //height text Bild
+    var ProtImgXPos        = perc2pix(dimensions.width,  gTalk.TBPercImagePosX);   //xPos text Bild
+    var ProtImgYPos        = perc2pix(dimensions.height, gTalk.TBPercImagePosY);   //yPos text Bild
+    var ProtImgWidth       = perc2pix(dimensions.width,  gTalk.TBPercImageWidth);  //width text Bild
+    var ProtImgHeight      = perc2pix(dimensions.height, gTalk.TBPercImageHeight); //height text Bild
 
     //Text positioning values
-    var textXPos    = perc2pix(textBoxImageWidth,  gTalk.TBPercTextPosX);
-    var textYOffset = perc2pix(textBoxImageHeight, gTalk.TBPercTextPosY);
+    var textXPos    = perc2pix(dimensions.width,  gTalk.TBPercTextPosX);
+    var textYOffset = perc2pix(dimensions.height, gTalk.TBPercTextPosY);
 
-    var pixSize = Math.round((textBoxImageWidth - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
+    var pixSize = Math.round((dimensions.width - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
 
     //get dialogbox canvas
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
 
-    canvas.width  = dimensions.width;//perc2pix(screenWidth,  gTalk.TBPercWidth);
-    canvas.height = dimensions.height;//perc2pix(screenHeight, gTalk.TBPercHeight);
+    canvas.width  = dimensions.width;
+    canvas.height = dimensions.height;
 
     var realXPos = perc2pix(screenWidth,  gTalk.TBPercPosX) - (canvas.width * 0.5);
 
@@ -163,8 +159,8 @@ function dialog_zeichneDialog()
     ctx.drawImage(gBilder[gTalk.bild_id].bild,
                   0,
                   0,
-                  textBoxImageWidth,
-                  textBoxImageHeight);
+                  dimensions.width,
+                  dimensions.height);
 
     //draw character image
     ctx.drawImage( gBilder[Satz.bild_id].bild,
