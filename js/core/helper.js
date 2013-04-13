@@ -25,6 +25,12 @@
     </html>-->
 */
 
+/***********
+ *Demo Mode*
+ ***********/
+var gDemoMode = true;
+var gStopAtScene = 'Szene_2';
+
 /*********
  *menu.js*
  *********/
