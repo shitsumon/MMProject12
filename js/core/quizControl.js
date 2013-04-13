@@ -126,6 +126,9 @@ function advanceNextScene(){
     //Clear quiz dialog blacklist
     gQuizDialogBlacklist        = new Array();
 
+    //clear click event array
+    gClickEventValueArray       = new Array();
+
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {
 		

@@ -142,14 +142,12 @@ argument_list
     <satz person_id="bc" bild_id="allg_bordcomputer">Du musst nun "Zugriffsberechtigungen für Brücke" auswählen.</satz>
   </dialog>
   <dialog id="szene2.5" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
-    <satz person_id="bc" bild_id="allg_bordcomputer">Als nächstes musst du dir Rechte geben.</satz>
-  </dialog>
-  <dialog id="szene2.6" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+    <satz person_id="bc" bild_id="allg_bordcomputer">Als nächstes musst du dir Rechte geben...</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Hey, wer ist dieser Gast? Der hat ja volle Zugriffsberechtigung!</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Dieser Account scheint neu zu sein. Eine Schnellsuche hat ergeben, dass der Account nicht nur Zugriffsberechtigungen für die Brücke hat.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Seltsam. Aber jetzt muss ich erst mal meine Zugriffsberechtigung wiederherstellen.</satz>
   </dialog>
-  <dialog id="szene2.7" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene2.6" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Gut, so viel dazu. Ich muss schnellstens mit P2_DYN_NAME sprechen wegen der seltsamen Ereignissen. Mäck, wo treibt er sich rum?</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Im Maschinenraum. Soll ich eine Sprachverbindung herstellen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Du hast es erraten ... P2_DYN_NAME, kannst du mich hören?</satz>
