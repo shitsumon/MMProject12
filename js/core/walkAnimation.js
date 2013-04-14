@@ -74,15 +74,14 @@ function bewegePerson(){
 		});
 		
 		/*draws central path points*/
-		
+		/*
         var hg = $("canvas[id*=canvas_bg_static]")[0].getContext("2d");
 		hg.fillStyle = "rgb(255, 0, 0)";
 
 		$.each(lWegPos,function(index, value){
 			hg.fillRect( value[0], value[1], 10, 10 );
 		});
-		
-		
+		*/
 		
 		$.each(gZoomsteps, function(index, value){
             if(heroPos[2] === value){
@@ -115,11 +114,18 @@ function bewegePerson(){
 		var zoomFaktor = targetPos[2] / heroPos[2];
 		
         //compute movement vector on central path considering differing zoom factors
-		gMoveVec[1][0] = ((lWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
-			- (lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))) / gPixelProAufruf;
-
+		gMoveVec[1][0] =
+		(
+			(lWegPos[wegindex[1]][0] - (gStartAbmessungen[0] * zoomFaktor / 2.0))
+			-
+			(lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))
+		) / gPixelProAufruf;
+/*
 		gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
 			- (lWegPos[wegindex[0]][1] - gStartAbmessungen[1])) / gPixelProAufruf;
+*/
+gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
+			- (lWegPos[wegindex[0]][1] - gStartAbmessungen[1])) / -gPixelProAufruf;
 
 		//computes stepwidth between start and target dimension in relation to z-index
 		//current dimensions / start multiplicator = real dimensions * target multiplicator = target dimensions
@@ -181,10 +187,6 @@ function bewegePerson(){
 		
         //Determine current walking direction
         var direction = determineWalkingDirection(hero, gTargets[gAktuellesZiel], gMoveVec[gAktuellesZiel]);
-
-//---
-stoppeAnimation("allg_herotileset");
-//---
 
         if(direction !== gLastDirection){
 	        //Check against last walking direction, if different, change animation
@@ -262,21 +264,11 @@ function zielErreicht(heroPos, targetPos, justDistance){
 							Math.pow(((heroPos[0] + gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
 							+ Math.pow(((heroPos[1] + gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
 							);
-var test=(
-			Math.pow(((heroPos[0] + (gMoveVec[gAktuellesZiel][0] / 1000)) - targetPos[0]), 2)
-			+ Math.pow(((heroPos[1] + (gMoveVec[gAktuellesZiel][1] / 1000)) - targetPos[1]), 2)
-			);
 
-if(distance_next > test){
-	console.log("+ "+gAktuellesZiel);
-}else{
-	console.log("- "+gAktuellesZiel);
-}
-			
 		vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
-	
+
 		//goal is reached if the computation evaluates to the set amount or if movement vector is 0
-		if((distance_next >= distance_target) || (vector_length == 0)){
+		if(((distance_next >= distance_target) || (vector_length == 0))){
 			
 			return true;
 		}else{
