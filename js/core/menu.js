@@ -52,6 +52,17 @@ function positionMenuElement(id) {
                               top:  perc2pix(($(window).height() - $('#menu').height()), gCreditsPercPosY)
                           });
         break;
+    case 'demo_page':
+        $('#'+ id).css({
+                           position:'absolute',
+                           left: perc2pix(($(window).width()  - $('#menu').width()), gDemoPercPosX),
+                           top:  perc2pix(($(window).height() - $('#menu').height()), gDemoPercPosY)
+                       });
+        $('#'+ id).offset({
+                              left: perc2pix(($(window).width()  - $('#menu').width()), gDemoPercPosX),
+                              top:  perc2pix(($(window).height() - $('#menu').height()), gDemoPercPosY)
+                          });
+        break;
     }
 }
 
@@ -69,6 +80,13 @@ function showCredits(){
 //    $("div[id*='impressum']").css('visibility','hidden');
 }
 
+function showDemo(){
+    $(this).css('background-color', 'black');
+    positionMenuElement('demo_page');
+    $("div[id*='demo_page']").css('visibility','visible');
+}
+
+
 function hideImpressum(){
     $("div[id*='impressum']").css('visibility','hidden');
     $("div[id*='menu']").css('visibility','visible');
@@ -77,6 +95,11 @@ function hideImpressum(){
 function hideCredits(){
     $("div[id*='credits_page']").css('visibility','hidden');
     $("div[id*='menu']").css('visibility','visible');
+}
+
+function hideDemo(){
+    $("div[id*='demo_page']").css('visibility','hidden');
+    this.document.location.href = 'http://hermes.et.hs-wismar.de/~bmt08055/netzwerkstar/html/index.html';
 }
 
 $(window).resize(function(){positionMenuElement('menu');});

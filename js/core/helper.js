@@ -29,7 +29,7 @@
  *Demo Mode*
  ***********/
 var gDemoMode = true;
-var gStopAtScene = 'Szene_2';
+var gStopAtScene = 'Szene_3';
 
 /*********
  *menu.js*
@@ -39,7 +39,9 @@ var gMenuPercPosX       = 50;
 var gImpressumPercPosY  = 65;
 var gImpressumPercPosX  = 50;
 var gCreditsPercPosY    = 60;
-var gCreditsPercPosX    = 55;
+var gCreditsPercPosX    = 50;
+var gDemoPercPosY       = 50;
+var gDemoPercPosX       = 45;
 
 /****************
  *sceneParser.js*

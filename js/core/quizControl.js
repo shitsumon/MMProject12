@@ -146,6 +146,11 @@ function advanceNextScene(){
 //	gpictureparser_xml_geladen	= false;
 //	gdialogparser_xml_geladen	= false;
 	
-	//check whether scene elements finished loading and display scene
-	waitforparser();
+    //Exit game mode when demo flag is enabled
+    if(gDemoMode && gcurrent_scene_id == gStopAtScene){
+        showDemo();
+    }else{
+        //check whether scene elements finished loading and display scene
+        waitforparser();
+    }
 }
