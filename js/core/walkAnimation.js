@@ -38,6 +38,9 @@ function bewegePerson(){
 			//here the canvas has to be enlarged at the beginning to avoid clipping
 			skaliereCanvas( targetPos[2] / heroPos[2], hero);
 		}
+		
+		//get dialogbox and make it invisible
+		$("canvas[id*='allg_dialogbox']").addClass("invisible");
     }
 	
 	//considers zoomfactor while computing the position to ensure canvas bottom center is hit
@@ -52,9 +55,6 @@ function bewegePerson(){
         finishEventHandling();
 		return;
 	}
-	
-    //get dialogbox and make it invisible
-    $("canvas[id*='allg_dialogbox']").addClass("invisible");
 
 	//compute movement vectors
 	if(!gWegBerechnet){
@@ -120,12 +120,13 @@ function bewegePerson(){
 			-
 			(lWegPos[wegindex[0]][0] - (gStartAbmessungen[0] / 2.0))
 		) / gPixelProAufruf;
-/*
-		gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
-			- (lWegPos[wegindex[0]][1] - gStartAbmessungen[1])) / gPixelProAufruf;
-*/
-gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
-			- (lWegPos[wegindex[0]][1] - gStartAbmessungen[1])) / -gPixelProAufruf;
+
+		gMoveVec[1][1] =
+		(
+			(lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor))
+			-
+			(lWegPos[wegindex[0]][1] - gStartAbmessungen[1])
+		) / -gPixelProAufruf;
 
 		//computes stepwidth between start and target dimension in relation to z-index
 		//current dimensions / start multiplicator = real dimensions * target multiplicator = target dimensions
@@ -198,14 +199,31 @@ gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor)
 		setTimeout(function(){ bewegePerson() }, gIntervall);
 	}else{
 
+//------
+
+gStartAbmessungen[0] = gTargets[1][2];
+gStartAbmessungen[1] = gTargets[1][3];
+
+//------
+
         //When goal is reached, standing animation is invoked,
         //depending on position of hero
-        if(hero.offset().left <= ($(window).width() / 2)){
-			if (gSpace==0){switchWalkingAnimation('standing_r', hero[0].id);}
-			else switchWalkingAnimation('jetpack_r', hero[0].id);
+        if(hero.offset().left <= ( $(window).width() / 2 )){
+		
+			if ( gSpace == 0 ){
+					switchWalkingAnimation('standing_r', hero[0].id);
+				}
+			else{
+					switchWalkingAnimation('jetpack_r', hero[0].id);
+				}
         }else{
-            if (gSpace==0){switchWalkingAnimation('standing_l', hero[0].id);}
-			else switchWalkingAnimation('jetpack_l', hero[0].id);
+		
+            if ( gSpace == 0 ){
+					switchWalkingAnimation('standing_l', hero[0].id);
+				}
+			else{
+					switchWalkingAnimation('jetpack_l', hero[0].id);
+				}
         }
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
@@ -215,14 +233,17 @@ gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor)
 		}
 
 		//to maintain scaling at target the animation data has to be adjusted
-		$.each(gAnimationTimer,function(index, bild){
+		$.each( gAnimationTimer, function( index, bild ){
 			//find given canvas by id
-			if((typeof(bild.canvas_id) !== "undefined") && bild.canvas_id === hero[0].id){
+			if( ( typeof(bild.canvas_id) !== "undefined" ) && ( bild.canvas_id === hero[0].id ) ){
 				//reset transformation matrix
 				hero[0].getContext("2d").setTransform(1, 0, 0, 1, 0, 0);
 				//set animations target dimensions to last computed dimensions
 				bild.anzeige_width	= gStartAbmessungen[0];
 				bild.anzeige_height	= gStartAbmessungen[1];
+				
+console.log("hero dim before: " + hero[0].width + " " + hero[0].height);
+console.log("gStartAbmessungen: " + gStartAbmessungen);
 			}
 		});
 		
@@ -240,12 +261,8 @@ gMoveVec[1][1] = ((lWegPos[wegindex[1]][1] - (gStartAbmessungen[1] * zoomFaktor)
 
         //make dialogbox visible again
         $("canvas[id*='allg_dialogbox']").removeClass("invisible");
-
+		
         finishEventHandling();
-
-
-		//restore saved parameter as walking is now over
-        //advanceQuizStep(gQuiztriggerAfterMoving);
 	}
 }
 
@@ -257,15 +274,20 @@ function zielErreicht(heroPos, targetPos, justDistance){
 	
 	if(!justDistance){
 		//no need for square root while computing vector length -> sqrt(x^2 + y^2)
-		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) + Math.pow((heroPos[1] - targetPos[1]), 2));
+		distance_target		= (
+								Math.pow( ( heroPos[0] - targetPos[0] ), 2)
+								+
+								Math.pow( ( heroPos[1] - targetPos[1] ), 2)
+							);
 		
 		//compute distance to target and previous steps distance as well as movement vector length
 		distance_next	= (
-							Math.pow(((heroPos[0] + gMoveVec[gAktuellesZiel][0]) - targetPos[0]), 2)
-							+ Math.pow(((heroPos[1] + gMoveVec[gAktuellesZiel][1]) - targetPos[1]), 2)
-							);
+							Math.pow( ( ( heroPos[0] + gMoveVec[gAktuellesZiel][0] ) - targetPos[0] ), 2 )
+							+
+							Math.pow( ( ( heroPos[1] + gMoveVec[gAktuellesZiel][1] ) - targetPos[1] ), 2 )
+						);
 
-		vector_length		= (Math.pow(gMoveVec[gAktuellesZiel][0], 2) + Math.pow(gMoveVec[gAktuellesZiel][1], 2));
+		vector_length		= ( Math.pow( gMoveVec[gAktuellesZiel][0], 2 ) + Math.pow( gMoveVec[gAktuellesZiel][1], 2 ) );
 
 		//goal is reached if the computation evaluates to the set amount or if movement vector is 0
 		if(((distance_next >= distance_target) || (vector_length == 0))){
@@ -277,10 +299,13 @@ function zielErreicht(heroPos, targetPos, justDistance){
 		}
 	}else{
 		//consider z-index while checking if hero pos and goal pos is the same
-		distance_target		= (Math.pow((heroPos[0] - targetPos[0]), 2) +
-								Math.pow((heroPos[1] - targetPos[1]), 2) +
-								Math.pow((heroPos[2] - targetPos[2]), 2)
-								);
+		distance_target		= (
+								Math.pow(( heroPos[0] - targetPos[0] ), 2)
+								+
+								Math.pow(( heroPos[1] - targetPos[1] ), 2)
+								+
+								Math.pow(( heroPos[2] - targetPos[2] ), 2)
+							);
 		//just check distance to target otherwise
 		if(distance_target <= 0.1){
 			
@@ -300,7 +325,7 @@ function skaliereCanvas(faktor, canvas){
 	
     canvas[0].width	 *= faktor;
     canvas[0].height *= faktor;
-
+	
     context.putImageData(inhalt, 0, 0);
 }
 
