@@ -187,7 +187,7 @@ function bewegePerson(){
 		//if we havn't reached the goal yet
 		
         //Determine current walking direction
-        var direction = determineWalkingDirection(hero, gTargets[gAktuellesZiel], gMoveVec[gAktuellesZiel]);
+        var direction = determineWalkingDirection(hero, gTargets[2], gMoveVec[2]);
 
         if(direction !== gLastDirection){
 	        //Check against last walking direction, if different, change animation
@@ -346,21 +346,112 @@ function determineWalkingDirection(hero, currentTarget, movVec){
     var diffX = Math.abs(hero.offset().left - currentTarget[0]);
     var diffY = Math.abs(hero.offset().top  - currentTarget[1]);
 
+    /*
     if(movVec[0] < 0.0 && movVec[1] < 0.0){
-		if (gSpace==0){
-        return (diffX >= diffY ? 'left' : 'back');}
-		else return 'jetpack_l';
+
+        if(gSpace == 0){
+            return (diffX >= diffY ? 'left' : 'back');
+        }else{
+            return 'jetpack_l';
+        }
+
     }else if(movVec[0] < 0.0 && movVec[1] > 0.0){
-		if (gSpace==0){
-        return (diffX >= diffY ? 'left' : 'front');}
-		else return 'jetpack_l';
+
+        if(gSpace == 0){
+            return (diffX >= diffY ? 'left' : 'front');
+        }else{
+            return 'jetpack_l';
+        }
+
     }else if(movVec[0] > 0.0 && movVec[1] > 0.0){
-		if (gSpace==0){
-        return (diffX > diffY ? 'right' : 'front');}
-		else return 'jetpack_r';		
+
+        if(gSpace == 0){
+            return (diffX > diffY ? 'right' : 'front');
+        }else{
+            return 'jetpack_r';
+        }
+
     }else{
-		if (gSpace==0){
-        return (diffX > diffY ? 'right' : 'back');}
-		else return 'jetpack_r';	
+
+        if(gSpace == 0){
+            return (diffX > diffY ? 'right' : 'back');
+        }else{
+            return 'jetpack_r';
+        }
+
     }
+    */
+
+    //////Experimental//////
+
+    var ratio = $(window).width() / $(window).height();
+
+    if(gAktuellesZiel != 1){
+        if(diffX > diffY*ratio /*|| diffY < 20*/){
+            if((hero.offset().left > currentTarget[0])){
+
+                if(gDebugWalk){
+                    gDirDebug.push(new debugStruct(hero.offset().left,
+                                                hero.offset().top,
+                                                currentTarget[0],
+                                                currentTarget[1],
+                                                'left'));
+                }
+
+                return 'left';
+
+            }else{
+                if(gDebugWalk){
+                    gDirDebug.push(new debugStruct(hero.offset().left,
+                                                hero.offset().top,
+                                                currentTarget[0],
+                                                currentTarget[1],
+                                                'right'));
+                }
+
+                return 'right';
+            }
+        }else{
+            if((hero.offset().top > currentTarget[1])){
+                if(gDebugWalk){
+                    gDirDebug.push(new debugStruct(hero.offset().left,
+                                                hero.offset().top,
+                                                currentTarget[0],
+                                                currentTarget[1],
+                                                'back'));
+                }
+                return 'back';
+            }else{
+                if(gDebugWalk){
+                    gDirDebug.push(new debugStruct(hero.offset().left,
+                                                hero.offset().top,
+                                                currentTarget[0],
+                                                currentTarget[1],
+                                                'front'));
+                }
+                return 'front';
+            }
+        }
+    }else{
+        if(hero.offset().top > currentTarget[1]){
+            if(gDebugWalk){
+                gDirDebug.push(new debugStruct(hero.offset().left,
+                                            hero.offset().top,
+                                            currentTarget[0],
+                                            currentTarget[1],
+                                            'back'));
+            }
+            return 'back';
+        }else{
+            if(gDebugWalk){
+                gDirDebug.push(new debugStruct(hero.offset().left,
+                                            hero.offset().top,
+                                            currentTarget[0],
+                                            currentTarget[1],
+                                            'front'));
+            }
+            return 'front';
+        }
+    }
+    ////////////////////////
 }

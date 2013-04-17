@@ -138,6 +138,20 @@ var gMostRecentlyClickedIdentifier = '';
 /**************
  *walkAnimation.js*
  **************/
+var gDebugWalk = true;
+
+function debugStruct(xh, yh, xt, yt, dir){
+    this.xHero   = xh;
+    this.yHero   = yh;
+    this.xTarget = xt;
+    this.yTarget = yt;
+    this.diffX = xh - xt;
+    this.diffY = yh - yt;
+    this.direction = dir;
+}
+
+gDirDebug = new Array();
+
  //used to set an overlay from HTML code as movement target
 var gTargetIdentifier  	= "";
 //flag to compare current and newly clicked aim and to signal active movement
