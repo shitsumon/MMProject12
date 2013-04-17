@@ -129,6 +129,10 @@ function advanceNextScene(){
     //clear click event array
     gClickEventValueArray       = new Array();
 
+    //Reset to avoid messing up the array
+    //with to many log values
+    gDirDebug = new Array();
+
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {
 		
