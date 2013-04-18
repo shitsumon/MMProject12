@@ -79,6 +79,18 @@ function getElementData(tmpObject, sceneElement){
     tmpObject.position.zPos = parseFloat(sceneElement.find('position').attr('z'));
     tmpObject.size.width    = parseFloat(sceneElement.find('groesse').attr('width'));
     tmpObject.size.height   = parseFloat(sceneElement.find('groesse').attr('height'));
+	
+	var laufziel = sceneElement.find('laufziel');
+	
+	if( (typeof(laufziel.attr('x')) !== "undefined") && (typeof(laufziel.attr('y')) !== "undefined") )
+	{
+		tmpObject.laufziel = new Position
+			(
+				parseFloat(laufziel.attr('x')), 
+				parseFloat(laufziel.attr('y')), 
+				-1
+			);
+	}
 
     return tmpObject;
 }
@@ -307,12 +319,22 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             return a.position.zPos - b.position.zPos;
         });
 
+		var imageStat;
+		
         //draw objects onto canvas
         for(var index = 0; index < objectsToDraw.length; ++index){
 
-            gImageStats.push(new imageStatObject(objectsToDraw[index]['imageID'],
+			imageStat = new imageStatObject(objectsToDraw[index]['imageID'],
                                                  objectsToDraw[index]['position'],
-                                                 objectsToDraw[index]['size']));
+                                                 objectsToDraw[index]['size']
+												);
+												
+			if(objectsToDraw[index]['laufziel'] != null)
+			{
+				imageStat.laufziel = objectsToDraw[index]['laufziel'];
+			}
+			
+            gImageStats.push(imageStat);
 
             try{
                 canvasContext.drawImage(
@@ -332,11 +354,21 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 
     }else{//draw to multiple canvasses
 
+		var imageStat;
+		
         for(var index = 0; index < objectsToDraw.length; ++index){
 
-            gImageStats.push(new imageStatObject(objectsToDraw[index]['imageID'],
+            imageStat = new imageStatObject(objectsToDraw[index]['imageID'],
                                                  objectsToDraw[index]['position'],
-                                                 objectsToDraw[index]['size']));
+                                                 objectsToDraw[index]['size']
+												);
+												
+			if(objectsToDraw[index]['laufziel'] != null)
+			{
+				imageStat.laufziel = objectsToDraw[index]['laufziel'];
+			}
+			
+            gImageStats.push(imageStat);
 
             //create id with a unique combination
             //of common string and picture id

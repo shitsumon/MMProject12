@@ -49,7 +49,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 2;
 //enables space movement animations. 0=off, 1=true
 var gSpace = 0;
 //id of current scene
@@ -98,6 +98,8 @@ function objectStruct(imgID, diagID, xPos, yPos, zPos, width, height){
 	//clickable		[2] = "t|f|t|f" -> whether the canvas is clickable in this quizstep
 	//walkto		[3] = "t|t|t|f" -> whether the player can walk there
 	this.quiz		= new Array(4);
+	
+	this.laufziel	= null;
 }
 //Struct for object position on the browsers viewport
 function Position(x, y, z){
@@ -115,10 +117,11 @@ function Size(w, h){
 var gImageStats = new Array();
 
 //image stat object
-function imageStatObject(id, position, size){
+function imageStatObject(id, position, size, laufziel){
     this.id       = id;
     this.position = position;
     this.size     = size;
+	this.laufziel = laufziel;
 }
 
 /**********************

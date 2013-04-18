@@ -308,6 +308,7 @@
                             raetsel_ausloeser   ="f|f|f|f|f|f|f">
           <position x="83" y="51" z="401"/>
           <groesse width="4" height="7"/>
+		  <laufziel x="10" y="10"/>
         </vg_animiert_objekt> <!--Quiz Window 1-->
         <vg_animiert_objekt bild_id="szene2_raetsel_fenster_i" dialog_id="#none#"
                             klickbar            ="f|f|f|f|f|f|f"

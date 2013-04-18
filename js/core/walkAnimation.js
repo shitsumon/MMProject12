@@ -47,6 +47,18 @@ function bewegePerson(){
 	heroPos[0] = hero.offset().left + (gStartAbmessungen[0] / 2.0);
 	heroPos[1] = hero.offset().top + (gStartAbmessungen[1]);
 	
+	$.each(gImageStats, function(index, imageStat)
+	{
+		if(strContains(gTargetIdentifier, imageStat.id) && (imageStat.laufziel != null) )
+		{
+			alert("x: " + imageStat.laufziel.xPos + " y: " + imageStat.laufziel.yPos);
+			/*
+			hier kommen die beiden angaben aus der szenen.xml unter laufziel wieder an.
+			sie müssen in bildschirmkoordinaten umgerechnet werden und ersetzen dann die nachfolgenden werte für targetPos
+			*/
+		}
+	});
+	
 	targetPos[0] = target.offset().left + (target.width() / 2.0);
 	targetPos[1] = target.offset().top + (target.height());
 	
