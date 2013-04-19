@@ -327,10 +327,13 @@ function advanceDialogStep(imgID, canvasID){
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-                if(typeof(gUseDeprecatedDialogues ?
+                if( typeof( gUseDeprecatedDialogues ?
                           gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
-                          gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'){
+                          gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
+				  )
+				{
                     alert('undefined dialog in gDialoge[]!');
+					
                     return;
                 }
 

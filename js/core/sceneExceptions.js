@@ -30,6 +30,9 @@ function triggerException(exceptionName, arguments) {
 	case 'scene1_stopSound':
 		scene1_stopSound();
 	break;
+	case 'scene1_showHeroine':
+		scene1_showHeroine();
+		break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -111,6 +114,39 @@ function scene1_stopSound(){
 	stoppeAnimation("szene1_sound_links");
 }
 
+/**
+*scene1_hideHeroine()
+*
+* hides our heroine before getting out of bed
+*
+*Input values:
+*none
+*
+*return values:
+*
+*none
+**/
+function scene1_hideHeroine(){
+
+	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "none");
+}
+
+/**
+*scene1_showHeroine()
+*
+* shows our heroine after getting out of bed
+*
+*Input values:
+*none
+*
+*return values:
+*
+*none
+**/
+function scene1_showHeroine(){
+
+	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
+}
 
 /**
  * scene5_bookcode()

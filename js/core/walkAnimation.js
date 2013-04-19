@@ -43,7 +43,7 @@ function bewegePerson(){
 		$("canvas[id*='allg_dialogbox']").addClass("invisible");
     }
 	
-	//considers zoomfactor while computing the position to ensure canvas bottom center is hit
+	//computing the position to ensure canvas bottom center is hit
 	heroPos[0] = hero.offset().left + (gStartAbmessungen[0] / 2.0);
 	heroPos[1] = hero.offset().top + (gStartAbmessungen[1]);
 	
@@ -51,16 +51,16 @@ function bewegePerson(){
 	{
 		if(strContains(gTargetIdentifier, imageStat.id) && (imageStat.laufziel != null) )
 		{
-			alert("x: " + imageStat.laufziel.xPos + " y: " + imageStat.laufziel.yPos);
-			/*
-			hier kommen die beiden angaben aus der szenen.xml unter laufziel wieder an.
-			sie müssen in bildschirmkoordinaten umgerechnet werden und ersetzen dann die nachfolgenden werte für targetPos
-			*/
+			targetPos[0] = perc2pix( $(window).width(), imageStat.laufziel.xPos );
+			targetPos[1] = perc2pix( $(window).height(), imageStat.laufziel.yPos );
 		}
 	});
 	
-	targetPos[0] = target.offset().left + (target.width() / 2.0);
-	targetPos[1] = target.offset().top + (target.height());
+	if( ( typeof(targetPos[0]) === "undefined" ) || ( typeof(targetPos[1]) === "undefined" ) )
+	{
+		targetPos[0] = target.offset().left + (target.width() / 2.0);
+		targetPos[1] = target.offset().top + (target.height());
+	}
 	
     //check whether we already are in front of the goal and return
     if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
@@ -74,15 +74,10 @@ function bewegePerson(){
 		var wegindex	= new Array(2);
 		var lWegPos		= new Array(new Array(2), new Array(2), new Array(2), new Array(2));
 		
-		var fensterabmessungen = new Array(
-										$(window).width(),
-										$(window).height()
-									);
-		
 		$.each(gWegPos, function(index, value){
 			//compute real position of central path points
-			lWegPos[index][0] = perc2pix(fensterabmessungen[0], value[0]);
-			lWegPos[index][1] = perc2pix(fensterabmessungen[1], value[1]);
+			lWegPos[index][0] = perc2pix($(window).width(), value[0]);
+			lWegPos[index][1] = perc2pix($(window).height(), value[1]);
 		});
 		
 		/*draws central path points*/
@@ -253,9 +248,6 @@ gStartAbmessungen[1] = gTargets[1][3];
 				//set animations target dimensions to last computed dimensions
 				bild.anzeige_width	= gStartAbmessungen[0];
 				bild.anzeige_height	= gStartAbmessungen[1];
-				
-console.log("hero dim before: " + hero[0].width + " " + hero[0].height);
-console.log("gStartAbmessungen: " + gStartAbmessungen);
 			}
 		});
 		

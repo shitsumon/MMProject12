@@ -47,7 +47,7 @@
         <hg_animiert_objekt bild_id="szene1_bett" dialog_id="#none#"
                             klickbar            ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto              ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar    ="f|f|f|f|f|t|t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_sichtbar    ="f|f|f|f|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser   ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="25" y="26" z="101"/>
           <groesse width="50" height="77"/>
@@ -55,7 +55,7 @@
         <hg_animiert_objekt bild_id="szene1_bett_schlafend" dialog_id="szene1.1"
                             klickbar            ="t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto              ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar    ="t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar    ="t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser   ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="25.5" y="26" z="101"/>
           <groesse width="48" height="75.5"/>
@@ -111,7 +111,7 @@
       </hg_animiert>
       <personen>
         <person person_id="" bild_id="allg_herotileset">
-          <position x="40" y="65" z="200"/>
+          <position x="40" y="45" z="200"/>
 		<groesse width="10" height="52"/>
         </person>
       </personen>
@@ -308,7 +308,7 @@
                             raetsel_ausloeser   ="f|f|f|f|f|f|f">
           <position x="83" y="51" z="401"/>
           <groesse width="4" height="7"/>
-		  <laufziel x="10" y="10"/>
+		  <laufziel x="87" y="90"/>
         </vg_animiert_objekt> <!--Quiz Window 1-->
         <vg_animiert_objekt bild_id="szene2_raetsel_fenster_i" dialog_id="#none#"
                             klickbar            ="f|f|f|f|f|f|f"

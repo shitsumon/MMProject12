@@ -139,7 +139,7 @@ function getSceneInformation(sceneID, sceneFilename){
                 gZoomsteps		= new Array(wegpunkte.length);
 
                 wegpunkte.each(function(index){
-                    //get waypoint coordinates an store as array
+                    //get waypoint coordinates and store as array
                     gWegPos[index] = new Array(
                                 parseFloat($(this).attr("x")),
                                 parseFloat($(this).attr("y"))
@@ -177,8 +177,11 @@ function getSceneInformation(sceneID, sceneFilename){
 
         //hide menu
         HideElementsMenu();
+		
+		//hides her in scene 1 while she's asleep
+		scene1_hideHeroine();
 
-        //force initial dialog if need be
+        //force initial dialog if needed
         if(sceneNeedsForcedDialog()){
             forceDialog();
         }
