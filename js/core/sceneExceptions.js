@@ -128,7 +128,9 @@ function scene1_stopSound(){
 **/
 function scene1_hideHeroine(){
 
-	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "none");
+    if(gcurrent_scene_id == "Szene_1"){
+        $("canvas[id*='canvas_person_allg_herotileset']").css("display", "none");
+    }
 }
 
 /**
