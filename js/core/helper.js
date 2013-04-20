@@ -50,8 +50,8 @@ var gDemoPercPosX       = 45;
 var sceneXML				= "../szenen.xml";
 //index of current scene
 var gcurrent_scene_counter	= 1;
-//enables space movement animations. 0=off, 1=true
-var gSpace = 0;
+//enables space movement animations. false=off, true=on
+var gSpace = false;
 //id of current scene
 var gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 //scenes which require a forced dialog start at scene start
@@ -141,19 +141,12 @@ var gMostRecentlyClickedIdentifier = '';
 /**************
  *walkAnimation.js*
  **************/
-var gDebugWalk = true;
-
-function debugStruct(xh, yh, xt, yt, dir){
-    this.xHero   = xh;
-    this.yHero   = yh;
-    this.xTarget = xt;
-    this.yTarget = yt;
-    this.diffX = xh - xt;
-    this.diffY = yh - yt;
-    this.direction = dir;
+function lastValidInformation(x,y,w,h){
+    this.x      = typeof(x) == 'undefined' ? 0 : x;
+    this.y      = typeof(y) == 'undefined' ? 0 : y;
 }
 
-gDirDebug = new Array();
+var gLastValidPositionData = new lastValidInformation();
 
  //used to set an overlay from HTML code as movement target
 var gTargetIdentifier  	= "";

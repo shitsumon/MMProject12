@@ -332,7 +332,7 @@ function advanceDialogStep(imgID, canvasID){
                           gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
 				  )
 				{
-                    alert('undefined dialog in gDialoge[]!');
+                    //alert('undefined dialog in gDialoge[]!');
 					
                     return;
                 }

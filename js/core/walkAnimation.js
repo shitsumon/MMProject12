@@ -217,20 +217,14 @@ gStartAbmessungen[1] = gTargets[1][3];
         //depending on position of hero
         if(hero.offset().left <= ( $(window).width() / 2 )){
 		
-			if ( gSpace == 0 ){
-					switchWalkingAnimation('standing_r', hero[0].id);
-				}
-			else{
-					switchWalkingAnimation('jetpack_r', hero[0].id);
-				}
+            !gSpace ? switchWalkingAnimation('standing_r', hero[0].id) : switchWalkingAnimation('jetpack_r', hero[0].id);
         }else{
-		
-            if ( gSpace == 0 ){
-					switchWalkingAnimation('standing_l', hero[0].id);
-				}
-			else{
-					switchWalkingAnimation('jetpack_l', hero[0].id);
-				}
+            !gSpace ? switchWalkingAnimation('standing_l', hero[0].id) : switchWalkingAnimation('jetpack_l', hero[0].id);
+//            if ( !gSpace ){
+//					switchWalkingAnimation('standing_l', hero[0].id);
+//            }else{
+//					switchWalkingAnimation('jetpack_l', hero[0].id);
+//            }
         }
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
@@ -342,120 +336,73 @@ function skaliereHeld(faktor1, faktor2, held){
 }
 
 /*
-  Determine walking direction from hero <> target ratio and
+  Determine walking direction from hero <> target screenRatio and
   movement vector values
 */
 function determineWalkingDirection(hero, currentTarget, movVec){
 
-    var diffX = Math.abs(hero.offset().left - currentTarget[0]);
-    var diffY = Math.abs(hero.offset().top  - currentTarget[1]);
+    //calculate screen ratio
+    var screenRatio = $(window).width() / $(window).height();
 
-    /*
-    if(movVec[0] < 0.0 && movVec[1] < 0.0){
+    //get current position
+    var currentPos = new lastValidInformation(
+                hero.offset().left,
+                hero.offset().top);
 
-        if(gSpace == 0){
-            return (diffX >= diffY ? 'left' : 'back');
-        }else{
-            return 'jetpack_l';
-        }
+    //use positional differences of character canvas
+    //under consideration of screen ratio
+    var diffX = currentPos.x  - gLastValidPositionData.x;
+    var diffY = (currentPos.y - gLastValidPositionData.y) * screenRatio;
 
-    }else if(movVec[0] < 0.0 && movVec[1] > 0.0){
+    var direction = '';
 
-        if(gSpace == 0){
-            return (diffX >= diffY ? 'left' : 'front');
-        }else{
-            return 'jetpack_l';
-        }
-
-    }else if(movVec[0] > 0.0 && movVec[1] > 0.0){
-
-        if(gSpace == 0){
-            return (diffX > diffY ? 'right' : 'front');
-        }else{
-            return 'jetpack_r';
-        }
-
-    }else{
-
-        if(gSpace == 0){
-            return (diffX > diffY ? 'right' : 'back');
-        }else{
-            return 'jetpack_r';
-        }
-
+    //check for left <> right movement
+    if(diffX > 0.0){
+        direction = 'right';
+    }else if(diffX < 0.0){
+        direction = 'left';
     }
-    */
 
-    //////Experimental//////
-
-    var ratio = $(window).width() / $(window).height();
-
-    if(gAktuellesZiel != 1){
-        if(diffX > diffY*ratio /*|| diffY < 20*/){
-            if((hero.offset().left > currentTarget[0])){
-
-                if(gDebugWalk){
-                    gDirDebug.push(new debugStruct(hero.offset().left,
-                                                hero.offset().top,
-                                                currentTarget[0],
-                                                currentTarget[1],
-                                                'left'));
-                }
-
-                return 'left';
-
-            }else{
-                if(gDebugWalk){
-                    gDirDebug.push(new debugStruct(hero.offset().left,
-                                                hero.offset().top,
-                                                currentTarget[0],
-                                                currentTarget[1],
-                                                'right'));
-                }
-
-                return 'right';
+    //compare to up <> down movement
+    if(diffX > 0 && diffY > 0){
+        if(diffY > diffX){
+            if(diffY > 0.0){
+                direction = 'front';
+            }else if(diffY < 0.0){
+                direction = 'back';
             }
-        }else{
-            if((hero.offset().top > currentTarget[1])){
-                if(gDebugWalk){
-                    gDirDebug.push(new debugStruct(hero.offset().left,
-                                                hero.offset().top,
-                                                currentTarget[0],
-                                                currentTarget[1],
-                                                'back'));
-                }
-                return 'back';
-            }else{
-                if(gDebugWalk){
-                    gDirDebug.push(new debugStruct(hero.offset().left,
-                                                hero.offset().top,
-                                                currentTarget[0],
-                                                currentTarget[1],
-                                                'front'));
-                }
-                return 'front';
+        }
+    }else if(diffX > 0 && diffY > 0){
+        if(diffY < diffX){
+            if(diffY > 0.0){
+                direction = 'front';
+            }else if(diffY < 0.0){
+                direction = 'back';
             }
         }
     }else{
-        if(hero.offset().top > currentTarget[1]){
-            if(gDebugWalk){
-                gDirDebug.push(new debugStruct(hero.offset().left,
-                                            hero.offset().top,
-                                            currentTarget[0],
-                                            currentTarget[1],
-                                            'back'));
+        if(Math.abs(diffY) > Math.abs(diffX)){
+            if(diffY > 0.0){
+                direction = 'front';
+            }else if(diffY < 0.0){
+                direction = 'back';
             }
-            return 'back';
-        }else{
-            if(gDebugWalk){
-                gDirDebug.push(new debugStruct(hero.offset().left,
-                                            hero.offset().top,
-                                            currentTarget[0],
-                                            currentTarget[1],
-                                            'front'));
-            }
-            return 'front';
         }
     }
-    ////////////////////////
+
+    //Fallback, happens every once in a while
+    if(direction == ''){
+        direction = gLastDirection;
+    }
+
+    //store current
+    gLastValidPositionData = currentPos;
+
+    if(gSpace && (direction == 'left' || direction == 'front')){
+        return 'jetpack_l';
+    }else if(gSpace  && (direction == 'right' || direction == 'back')){
+        return 'jetpack_r';
+    }else{
+        return direction;
+    }
 }

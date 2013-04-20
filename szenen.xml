@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <szenen>
   <szene id="Szene_1" reatselschritte="16">
-  <weltall spc="0" />
+  <weltall spc="false" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -217,7 +217,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_2" reatselschritte="7">
-  <weltall spc="0" />
+  <weltall spc="false" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -449,7 +449,7 @@
     </ebenen>
   </szene>
     <szene id="Szene_3" reatselschritte="7">
-	<weltall spc="0" />
+        <weltall spc="false" />
     <zentralpfad>
 	  <wegpunkt x="55" y="70" zoom="0.6"/>
       <wegpunkt x="55" y="72" zoom="0.7"/>
@@ -627,7 +627,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_4" reatselschritte="8">
-  <weltall spc="0" />
+  <weltall spc="false" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -743,7 +743,7 @@
     </ebenen>
   </szene>
 <szene id="Szene_5" reatselschritte="19">
-	<weltall spc="0" />
+        <weltall spc="false" />
 	<zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -1118,7 +1118,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_6" reatselschritte="11">
-	<weltall spc="1" />
+        <weltall spc="true" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
       <wegpunkt x="50" y="82" zoom="0.7"/>
@@ -1255,7 +1255,7 @@
     </ebenen>
   </szene>
   <szene id="Szene_7" reatselschritte="11">
-  	<weltall spc="0" />
+        <weltall spc="false" />
     <zentralpfad>
       <wegpunkt x="41" y="77" zoom="0.6"/>
       <wegpunkt x="40" y="82" zoom="0.7"/>
