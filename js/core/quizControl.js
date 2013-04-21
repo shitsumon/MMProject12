@@ -59,6 +59,7 @@ function checkQuizfinished(){
 	
 	//last step before quiz finishes
     if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
+
 		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
@@ -128,10 +129,6 @@ function advanceNextScene(){
 
     //clear click event array
     gClickEventValueArray       = new Array();
-
-    //Reset to avoid messing up the array
-    //with to many log values
-    gDirDebug = new Array();
 
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {

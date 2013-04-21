@@ -13,7 +13,7 @@ function animiereCanvas(canvas_id, bild_id){
 	canvas_id = canvas_id.split(":")[0];
 	//get canvas and its drawing context
 	var canvas  = $("canvas[id*=" + canvas_id + "]")[0];
-	
+
 	//exit is this canvas doesn't exist
 	if(typeof(canvas) === "undefined"){
 		

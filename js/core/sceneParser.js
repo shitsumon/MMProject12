@@ -217,8 +217,6 @@ function getSceneInformation(sceneID, sceneFilename){
     }).error(function(xhr, status, error){
         alert("Es ist ein Fehler aufgetreten: " + error);
     });
-
-
 }
 
 /*
@@ -298,8 +296,6 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     var newCanvas;
     //css-class of quiz elements
     var quizClass;
-    //contains javascript commands for single actions
-    var quizTrigger, moveTrigger, dialogTrigger;
 
     //draw to single canvas -> bg_static
     if(hasSingleCanvas){
@@ -377,9 +373,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             //of common string and picture id
             var canvasID =
                     sharedIdString + "_" +
-                    objectsToDraw[index].imageID;/*.slice(
-                        (objectsToDraw[index].imageID.indexOf("_")+1), objectsToDraw[index].imageID.length
-                    );*/
+                    objectsToDraw[index].imageID;
 
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
@@ -388,12 +382,6 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
             }
 
             if(sharedIdString !== "canvas_person"){
-                //set targetidentifier to canvas id + moveflags to trigger movement if appropriate
-                //				moveTrigger		= "gTargetIdentifier='" + canvasID + ":"+ objectsToDraw[index].quiz[3] +"';bewegePerson();";
-                //will trigger quiz advancement on click if flag of current quizstep equals to true, do nothing otherwise
-                //                quizTrigger		= "advanceQuizStep('"+ objectsToDraw[index].quiz[1] +"');";
-                //triggers dialog step
-                //                dialogTrigger   = "justClicked('"+ objectsToDraw[index].imageID + "','" + canvasID.split(':')[0] + "');";
 
                 var stringValueObject = new Object();
 
@@ -420,16 +408,10 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
                     quizClass += " " + "clickable";
                 }
 
-                //will trigger dialogue if present
-                /*dialogTrigger	= objectsToDraw[index].dialogueID === "#none#" ||
-                                    typeof(objectsToDraw[index].dialogueID) === "undefined" ? "" :
-                                    "dialogStart('"+ objectsToDraw[index].dialogueID +"');";*/
-
                 newCanvas = $('<canvas/>',
                               {
                                   id : canvasID,
                                   "class": quizClass,
-                                  //                                  onclick:"javascript:" + moveTrigger + quizTrigger + dialogTrigger
                                   onclick:"javascript:startEventHandling('" + canvasID.split(':')[0] + "');"
                               }
                               );

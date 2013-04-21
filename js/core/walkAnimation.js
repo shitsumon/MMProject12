@@ -194,7 +194,7 @@ function bewegePerson(){
 		//if we havn't reached the goal yet
 		
         //Determine current walking direction
-        var direction = determineWalkingDirection(hero, gTargets[2], gMoveVec[2]);
+        var direction = determineWalkingDirection(hero);
 
         if(direction !== gLastDirection){
 	        //Check against last walking direction, if different, change animation
@@ -215,16 +215,10 @@ gStartAbmessungen[1] = gTargets[1][3];
 
         //When goal is reached, standing animation is invoked,
         //depending on position of hero
-        if(hero.offset().left <= ( $(window).width() / 2 )){
-		
+        if(hero.offset().left <= ( $(window).width() / 2 )){	
             !gSpace ? switchWalkingAnimation('standing_r', hero[0].id) : switchWalkingAnimation('jetpack_r', hero[0].id);
         }else{
             !gSpace ? switchWalkingAnimation('standing_l', hero[0].id) : switchWalkingAnimation('jetpack_l', hero[0].id);
-//            if ( !gSpace ){
-//					switchWalkingAnimation('standing_l', hero[0].id);
-//            }else{
-//					switchWalkingAnimation('jetpack_l', hero[0].id);
-//            }
         }
 		
 		if(gMoveVec[0][2] > gMoveVec[2][2]){
@@ -336,10 +330,23 @@ function skaliereHeld(faktor1, faktor2, held){
 }
 
 /*
-  Determine walking direction from hero <> target screenRatio and
-  movement vector values
+  determineWalkingDirection()
+
+  Calculates which subtileset to select, for a correct
+  depiction of the walking direction. This done based on
+  the positional difference between two walking steps with
+  respect to the screen ratio of height and width.
+
+  Input arguments:
+
+    hero - (Canvas) Canvas context of the hero image
+
+  Return values:
+
+    (String) - can be 'left', 'right', 'front', 'back' or
+               'jetpack_l', 'jetpack_r' in space
 */
-function determineWalkingDirection(hero, currentTarget, movVec){
+function determineWalkingDirection(hero){
 
     //calculate screen ratio
     var screenRatio = $(window).width() / $(window).height();
@@ -398,6 +405,8 @@ function determineWalkingDirection(hero, currentTarget, movVec){
     //store current
     gLastValidPositionData = currentPos;
 
+    //Check if it's the space scene
+    //we're currently playing
     if(gSpace && (direction == 'left' || direction == 'front')){
         return 'jetpack_l';
     }else if(gSpace  && (direction == 'right' || direction == 'back')){
