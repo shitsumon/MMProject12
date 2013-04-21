@@ -33,6 +33,10 @@ function triggerException(exceptionName, arguments) {
 	case 'scene1_showHeroine':
 		scene1_showHeroine();
 		break;
+
+    case 'scene2_scaleHero':
+        scene2_scaleHero();
+    break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -150,6 +154,11 @@ function scene1_showHeroine(){
 	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
 }
 
+function scene2_scaleHero(){
+//    var hero = $("canvas[id*='canvas_person_allg_herotileset']");
+//    hero[0].getContext("2d").scale(2.0,2.0);
+}
+
 /**
  * scene5_bookcode()
  *
@@ -224,12 +233,14 @@ function scene5_bookcode(arg){
  */
 function generateSecureCode(arg){
 
-    //get dimensions
-    var qBoxWidth  = gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.width;
-    var qBoxHeight = gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.height;
+    var imageObject = gUseDeprecatedImages ? gDeprecatedImages : gBilder;
 
-    var aBoxWidth  = gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.width;
-    var aBoxHeight = gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.height;
+    //get dimensions
+    var qBoxWidth  = imageObject['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.width;
+    var qBoxHeight = imageObject['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].abmessungen.height;
+
+    var aBoxWidth  = imageObject['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.width;
+    var aBoxHeight = imageObject['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].abmessungen.height;
 
     var screenWidth  = $(window).width();
     var screenHeight = $(window).height();
@@ -269,14 +280,14 @@ function generateSecureCode(arg){
     var letter = new Array('a', 'b', 'c', 'd');
 
     //redraw background images
-    ctx_q.drawImage(gBilder['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].bild,
+    ctx_q.drawImage(imageObject['szene' + arg.split('|')[0].substring(5) + '_frage_underlay'].bild,
                     0,
                     0,
                     perc2pix(screenWidth,30),
                     perc2pix(screenHeight,40));
 
     for(var idx = 0; idx < ctx_Array.length; ++idx){
-        ctx_Array[idx].drawImage(gBilder['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].bild,
+        ctx_Array[idx].drawImage(imageObject['szene' + arg.split('|')[0].substring(5) + '_antwort_a_underlay'].bild,
                                  0,
                                  0,
                                  perc2pix(screenWidth,25),
@@ -620,7 +631,11 @@ function flipCharacterHorizontally(arg){
 
         ctx.translate(canvas.width, 0);
         ctx.scale(-1, 1);
-        ctx.drawImage(gBilder[id_array[idx]].bild, 0, 0, imagePercs.width, imagePercs.height);
+        ctx.drawImage(gUseDeprecatedImages ? gDeprecatedImages[id_array[idx]].bild : gBilder[id_array[idx]].bild,
+                                             0,
+                                             0,
+                                             imagePercs.width,
+                                             imagePercs.height);
     }
 }
 
@@ -681,7 +696,7 @@ function applyNextTransformation(){
     var center_x = canvas.width  / 2;
     var center_y = canvas.height / 2;
 
-    var img = gBilder['szene7_dr_chaos_falling'].bild;
+    var img = gUseDeprecatedImages ? gDeprecatedImages['szene7_dr_chaos_falling'].bild : gBilder['szene7_dr_chaos_falling'].bild;
 
     //save image state
     ctx.save();

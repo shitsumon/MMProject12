@@ -236,6 +236,10 @@ function getSceneInformation(sceneID, sceneFilename){
 */
 function drawScene(sceneObject){
 
+    if(gDemoMode && gcurrent_scene_id == gStopAtScene){
+        return;
+    }
+
     //draw static background
     drawObjectsOfSameType('canvas_bg_static', sceneObject.staticBackgroundObjects, true);
     //draw dynamic background

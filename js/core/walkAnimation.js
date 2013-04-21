@@ -81,14 +81,14 @@ function bewegePerson(){
 		});
 		
 		/*draws central path points*/
-		/*
+        /*
         var hg = $("canvas[id*=canvas_bg_static]")[0].getContext("2d");
 		hg.fillStyle = "rgb(255, 0, 0)";
 
 		$.each(lWegPos,function(index, value){
 			hg.fillRect( value[0], value[1], 10, 10 );
 		});
-		*/
+        */
 		
 		$.each(gZoomsteps, function(index, value){
             if(heroPos[2] === value){
@@ -205,6 +205,10 @@ function bewegePerson(){
 		//there are only 3 targets: hero -> waypoint 1 -> waypoint 2 -> goal
 		setTimeout(function(){ bewegePerson() }, gIntervall);
 	}else{
+        //WORKAROUND for scene2. this must
+        //not remain here, but needs a proper fix
+        gIsSceneBeginning = false;
+        ///////
 
 //------
 

@@ -7,6 +7,8 @@ function ladeBilder(force_load_common){
 	
 	force_load_common = force_load_common == null ? false : force_load_common;
 
+    //gBilder = new Array();
+
 	jQuery.get(gbilderXMLPfad,function(daten){
 			verarbeiteBilderXML(daten, force_load_common);
     },"xml").fail(function(data){

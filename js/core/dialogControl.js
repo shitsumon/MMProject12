@@ -156,14 +156,14 @@ function dialog_zeichneDialog()
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
     //draw background box
-    ctx.drawImage(gBilder[gTalk.bild_id].bild,
+    ctx.drawImage(gUseDeprecatedImages ? gDeprecatedImages[gTalk.bild_id].bild : gBilder[gTalk.bild_id].bild,
                   0,
                   0,
                   dimensions.width,
                   dimensions.height);
 
     //draw character image
-    ctx.drawImage( gBilder[Satz.bild_id].bild,
+    ctx.drawImage(gUseDeprecatedImages ? gDeprecatedImages[Satz.bild_id].bild : gBilder[Satz.bild_id].bild,
                   ProtImgXPos,
                   ProtImgYPos,
                   ProtImgWidth,

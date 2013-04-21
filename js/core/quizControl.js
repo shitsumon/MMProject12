@@ -60,6 +60,13 @@ function checkQuizfinished(){
 	//last step before quiz finishes
     if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
 
+        //image handling
+        gDeprecatedImages       = gBilder;
+        gUseDeprecatedImages    = true;
+        gBilder                 = new Object();
+        gBilder.anzahl          = 0;
+        gBilder.geladen         = 0;
+
 		//load all elements of next scene
 		gcurrent_scene_counter++;
 		ladeBilder();
@@ -97,10 +104,14 @@ function checkQuizfinished(){
 
 function advanceNextScene(){
 
+    gIsSceneBeginning = true;
+
     //Reset flags
     gSceneHasBeenLoad       = false;
     gUseDeprecated          = false;
     gUseDeprecatedDialogues = false;
+    gUseDeprecatedImages    = false;
+    gDeprecatedImages       = new Object();
     gDeprecatedDialogues    = new Object();
 
     //create scene id
@@ -140,8 +151,8 @@ function advanceNextScene(){
 	});
 	
 	//remove old scene
-	$("canvas[id!='uebergang']").remove();
-	
+    $("canvas[id!='uebergang']").remove();
+
 	//reset flags
 	gdisplay_next_scene			= true;
 //	gpictureparser_xml_geladen	= false;

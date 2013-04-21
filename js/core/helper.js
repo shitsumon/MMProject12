@@ -177,6 +177,13 @@ var gLastDirection      = 'standing_l';
 /******************
  *pictureParser.js*
  ******************/
+//Array for last step in scene when new images are
+//loaded, the old ones will be moved into this structure
+var gDeprecatedImages       = new Object();
+gDeprecatedImages.anzahl    = 0;
+gDeprecatedImages.geladen   = 0;
+//Flag which determines whether to use gBilder or gDeprecatedImages
+var gUseDeprecatedImages = false;
 //path to bilder.xml
 var gbilderXMLPfad	= "../bilder/bilder.xml";
 //global picture objekt, contains all pictures as attribute accesible by id
@@ -219,6 +226,9 @@ function Bild(_id, _pfad, _abmessungen, _animiert){
 /*********************
  *pictureAnimation.js*
  *********************/
+
+gIsSceneBeginning = false;
+
 //manages animation and contains all attributes accessible by picture id
 var gAnimationTimer		= new Object();
 //active timer counter	-> int
