@@ -7,9 +7,6 @@ Primaer
     -- Dynamische Namensersetzung wieder entfernen, Namen sind statisch
     -- dialog.xml entsprechend anpassen
 
-- Dialoge müssen in szene.xml als "array" eingetragen und entsprechend ausgelesen werden -- macht jeder für seine Szenen
-	- String der Form: "id1|id2|..."
-
 - Szenenbeschreibung vervollständigen
 	- Dialoge verknüpfen
 	- Rätsel einfügen
@@ -18,7 +15,7 @@ Primaer
 
 	Stand
 	-----
-	Szene 1 - Wird bearbeitet von Hannes
+        Szene 1 - Vorläufig fertig -> Testen
 	Szene 2 - Vorläufig fertig -> Testen
 	Szene 3 - Wird bearbeitet von Oli
         Szene 4 - Vorläufig fertig -> Testen
@@ -43,23 +40,8 @@ Primaer
 - Bewegungsanimation überarbeiten:
 	- Skalierungsbug bei z-level wechsel beheben
 	- Auswahl des richtigen Tilesets überarbeiten
-        - Held geht teilweise in der Luft herum. Dies geschieht durch die Position des
-          angeklickten Objektes.
-
-          Loesungsansaetze:
-            a) Gegenstaende so positionieren, das Laufanimation realistisch wirkt
-            b) Geskriptete Endpunkte in der Naehe der Objekte verwenden. Event loest aus wenn
-               sich Held in der Naehe des Objektes befindet.
 
 - Gesonderte Animationen für einzelne Szenen:
-	
-	- Szene 1, Held schläft zuerst (Einzelbild), 
-		   steht bei klick dann neben dem bett (Tileset).
-
-- Skalierung der Dialogbox fehlerhaft
-    -- momentan wird zwar das canvas skaliert, aber das zu zeichnende Bild der
-       Dialogbox bleibt gleich gross und wird daher bei kleineren Aufloesungen
-       abgeschnitten
 
 - Formatierung der Texte in den Rätseln für Szene 5 und 7 ist fehlerhaft
 
@@ -72,40 +54,8 @@ Sekundär
         -> Beschreibung der übergabe Parameter
         -> Beschreibung der möglichen Rückgabewerte
 
-- Intro
-	- Text der Designer einfügen
-	- Ordentliches Hintergrundbild (Aussenansicht von Szene 6)
-	- Ordentlicher Textfont
-
 - Testen, testen, testen
         -> Fehlerverhalten
         -> verschiedene Auflösungen
         -> Veränderung des Anzeigefensters
         -> ...
-
-Probleme in den Szenen
-----------------------
-
-szene 1
-
-raum wird hell -> dunkles bild benötigt
-einzelne schubladen des schreibtisches -> einzelbilder?
-
-szene 2
-
-wieder dunkel
-
-szene 4
-
-die rätselsätze sollen sichtbar bleiben
-	-> vllt wie eine missionsübersicht, transparanter text am rand
-
-szene 5
-
-ein abstellraum soll dargestellt werden
-auslöser für das umsehen der figuren
-	-> links, rechts, fertig
-
-szene 6
-
-eine person muss klickbar sein
