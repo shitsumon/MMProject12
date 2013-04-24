@@ -104,7 +104,10 @@ function checkQuizfinished(){
 
 function advanceNextScene(){
 
-    gIsSceneBeginning = true;
+    //WORKAROUND for scene2, this must not remain here,
+    //but needs a proper fix
+//    gIsSceneBeginning = true;
+    /////
 
     //Reset flags
     gSceneHasBeenLoad       = false;

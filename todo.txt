@@ -34,8 +34,11 @@ Primaer
 - Startausrichtung des Helden soll für jede Szene einzeln wählbar sein
 
 - Wenn die naechste Szene geladen wird, wird fuer die Heldin die
-  letzte bekannte position anstatt der im skript vorgegebenen
-  verwendet
+  letzte bekannte größe verwendet, anstatt sie auf die richtige
+  Größe zu skalieren. In Szene 2 wird das momentan behoben in dem
+  für die erste Bewegung immer gegen skaliert wird. Dies ist
+  allerdings nur ein Workaround und muss nochmal richtig behoben
+  werden.
 
 - Bewegungsanimation überarbeiten:
 	- Skalierungsbug bei z-level wechsel beheben

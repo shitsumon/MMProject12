@@ -207,7 +207,7 @@ function bewegePerson(){
 	}else{
         //WORKAROUND for scene2. this must
         //not remain here, but needs a proper fix
-        gIsSceneBeginning = false;
+        //gIsSceneBeginning = false;
         ///////
 
 //------

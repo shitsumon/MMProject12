@@ -27,12 +27,12 @@ function animiereCanvas(canvas_id, bild_id){
 
     //WORKAROUND for scene2, this must not remain here,
     //but needs a proper fix
-    if(gIsSceneBeginning && strContains(canvas_id, "allg_herotileset")){
+//    if(gIsSceneBeginning && strContains(canvas_id, "allg_herotileset")){
 
-        //remove all scalings etc from canvas
-        canvas.width = canvas.width;
-        ctx.scale(1.7,1.7);
-    }
+//        //remove all scalings etc from canvas
+//        canvas.width = canvas.width;
+//        ctx.scale(1.7,1.7);
+//    }
     ///////
 
     /*draws frame following this scheme

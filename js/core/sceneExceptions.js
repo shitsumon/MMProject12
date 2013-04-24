@@ -33,10 +33,6 @@ function triggerException(exceptionName, arguments) {
 	case 'scene1_showHeroine':
 		scene1_showHeroine();
 		break;
-
-    case 'scene2_scaleHero':
-        scene2_scaleHero();
-    break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -152,11 +148,6 @@ function scene1_hideHeroine(){
 function scene1_showHeroine(){
 
 	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
-}
-
-function scene2_scaleHero(){
-//    var hero = $("canvas[id*='canvas_person_allg_herotileset']");
-//    hero[0].getContext("2d").scale(2.0,2.0);
 }
 
 /**
