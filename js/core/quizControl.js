@@ -61,7 +61,8 @@ function checkQuizfinished(){
     if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
 
         //image handling
-        gDeprecatedImages       = gBilder;
+        //gDeprecatedImages       = gBilder;
+		$.extend(gDeprecatedImages, gBilder);
         gUseDeprecatedImages    = true;
         gBilder                 = new Object();
         gBilder.anzahl          = 0;
@@ -69,6 +70,11 @@ function checkQuizfinished(){
 
 		//load all elements of next scene
 		gcurrent_scene_counter++;
+		
+		//--------------------------
+		//this should be true at the moment because picture allg_uebergang isn't available at the end of scene 1 otherwise
+		//ladeBilder(true);
+		//--------------------------
 		ladeBilder();
 		ladeDialoge();
 
