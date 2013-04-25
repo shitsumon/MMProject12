@@ -22,6 +22,8 @@ function verschluesseln(){
     }
 
 	$("#codefeld").val(code);
+	
+console.log("Code: " + code);
 
     return code;
 }

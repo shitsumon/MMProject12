@@ -22,18 +22,21 @@ function verarbeiteBilderXML(daten, force_load_common){
 	var jquery_bilder = $(daten).find("bild[id*=szene"+ gcurrent_scene_counter +"]");
 	//store element count
     gBilder.anzahl += jquery_bilder.length;
+
+	if ( force_load_common )
+	{//loads all pictures from folder common as well	
+		var jquery_bilder_allg = $(daten).find("bild[id*=allg_]");
+		
+		jquery_bilder = jquery_bilder.add(jquery_bilder_allg);
+
+		gBilder.anzahl += jquery_bilder_allg.length;
+	}
 	
 	//signal xml file has been loaded
 	gpictureparser_xml_geladen = true;
 	
 	//compute pictures
 	verarbeiteBilder(jquery_bilder);
-
-    jquery_bilder = $(daten).find("bild[id*=allg_]");
-
-    gBilder.anzahl += jquery_bilder.length;
-
-    verarbeiteBilder(jquery_bilder);
 }
 
 function verarbeiteBilder(bilder){
