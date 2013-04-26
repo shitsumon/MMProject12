@@ -23,7 +23,7 @@ function verschluesseln(){
 
 	$("#codefeld").val(code);
 	
-console.log("Code: " + code);
+console.log("Code: " + code + " = " + entschluesseln(code));
 
     return code;
 }

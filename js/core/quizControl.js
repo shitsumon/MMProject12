@@ -12,9 +12,9 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 		//increment current quizstep
 		gCurrentQuizstep++;
 		
-		//encode current savestate
-		verschluesseln();
+		applyCSSClass();
 	
+		/*
 		var canvas_id_flags;
 		
 		//get all canvas with visbility flags -> quiz relevant
@@ -46,10 +46,55 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 				canvas.addClass("clickable");
 			}
         });
+		*/
+		
+		//check whether quiz has finished
+		if( typeof (checkQuizfinished()) === "undefined" )
+		{
+			//encode current savestate now as the scene isn't finished nor near finishing
+			verschluesseln();
+			
+			//else do it in advance next scene
+		}
 	}
+}
 
-	//check whether quiz has finished
-	checkQuizfinished();
+/*
+called by advanceQuizStep to apply corresponding CSS classes to every canvas out there
+*/
+function applyCSSClass(){
+
+	var canvas_id_flags;
+	
+	//get all canvas with visbility flags -> quiz relevant
+	$("canvas[id*='|']").each(function(index, canvas) {
+		//split id and flags, take flags
+		//[0] = id, [1] = visibility flags, [2] = clickable flags
+		canvas_id_flags = $(canvas).attr("id").split(":");
+		//split flags
+		canvas_id_flags[1] = canvas_id_flags[1].split("|");
+		canvas_id_flags[2] = canvas_id_flags[2].split("|");
+		
+		canvas = $(canvas);
+		
+		//remove all class attributes
+		canvas.removeClass();
+		
+		//consult visibility flag
+		if (canvas_id_flags[1][gCurrentQuizstep] === "t"){
+			//this should now be visible
+			canvas.addClass("quiz_shown");
+		}else{
+			//this should now be hidden
+			canvas.addClass("quiz_hidden");
+		}
+		
+		//consult clickable flag
+		if (canvas_id_flags[2][gCurrentQuizstep] === "t"){
+			//this should now be clickable
+			canvas.addClass("clickable");
+		}
+	});
 }
 
 /*
@@ -61,8 +106,8 @@ function checkQuizfinished(){
     if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
 
         //image handling
-        //gDeprecatedImages       = gBilder;
-		$.extend(gDeprecatedImages, gBilder);
+        gDeprecatedImages       = gBilder;
+		//$.extend(gDeprecatedImages, gBilder);
         gUseDeprecatedImages    = true;
         gBilder                 = new Object();
         gBilder.anzahl          = 0;
@@ -72,18 +117,16 @@ function checkQuizfinished(){
 		gcurrent_scene_counter++;
 		
 		//--------------------------
-		//this should be true at the moment because picture allg_uebergang isn't available at the end of scene 1 otherwise
-		//ladeBilder(true);
+		//loading common pictures should be enforced at the moment because picture allg_uebergang isn't available at the end of scene 1 otherwise
 		//--------------------------
-		ladeBilder();
+		ladeBilder(true);
 		ladeDialoge();
 
         //set flags
         gSceneHasBeenLoad = true;
         gUseDeprecated = true;
-
-        //exit here, to prevent change of scenes
-        return;
+		
+		return false;
 	}
 
     //start next scene if quiz finished
@@ -105,7 +148,11 @@ function checkQuizfinished(){
                 stoppeAnimation("allg_uebergang");
                 $("canvas[id*='uebergang']").remove();
             }, frametime * framecount);
+		
+		return true;
     }
+	
+	return;
 }
 
 function advanceNextScene(){
@@ -158,6 +205,9 @@ function advanceNextScene(){
 			stoppeAnimation(animation.bild_id);
 		}
 	});
+	
+	//encode current savestate
+	verschluesseln();
 	
 	//remove old scene
     $("canvas[id!='uebergang']").remove();

@@ -167,7 +167,7 @@ var gMoveVec			= new Array(new Array(3), new Array(3), new Array(3));
 var gWegBerechnet		= false;	
 var gAufrufeProSekunde	= 25;
 //controls movement speed
-var gPixelProAufruf		= 100;
+var gPixelProAufruf		= 90;
 var gIntervall			= 1000 / gAufrufeProSekunde;
 //index of current aim
 var gAktuellesZiel		= 0;
