@@ -483,19 +483,22 @@ function generateSecureCode(arg){
 
         ctx_Array[idx].font = gScene5_LayoutSettings.bold + dyn_font_answer + 'px' + gScene5_LayoutSettings.font;
 
+        //if answer is short enough, print it to the
+        //first line else, add "linebreaks" to the
+        //text
         if(tmpQuizObject.answers[idx].length <= answer_pixsize){
 
             ctx_Array[idx].fillText(tmpQuizObject.answers[idx],
-                                    10,
-                                    50);
+                                    15,
+                                    perc2pix(aBoxHeight, 30) + (gScene5_LayoutSettings.line_distance * idx2));
         }else{
 
             var text = foo(tmpQuizObject.answers[idx], answer_pixsize);
 
             for(var idx2 = 0; idx2 < text.length; ++idx2){
                 ctx_Array[idx].fillText(text[idx2].replace(/#KOMMA#/g, ","),
-                                        10,
-                                        perc2pix(aBoxHeight, 25) + (gScene5_LayoutSettings.line_distance * idx2));
+                                        15,
+                                        perc2pix(aBoxHeight, 30) + (gScene5_LayoutSettings.line_distance * idx2));
             }
         }
     }
@@ -506,13 +509,17 @@ function generateSecureCode(arg){
             + gScene5_LayoutSettings.fixedFont
             + 'px' + gScene5_LayoutSettings.font;
 
-    var text = tmpQuizObject.question;/*foo(tmpQuizObject.question,
-                   (qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.fixedFont + gScene5_LayoutSettings.line_distance);*/
+    var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.qCharDivider;
+
+    var text = foo(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
+
+        var xStart = (qBoxWidth - (gScene5_LayoutSettings.qLeftMargin * text[idx2].length)) * 0.5;
+
         ctx_q.fillText(text[idx2].replace(/#KOMMA#/g, ","),
-                       perc2pix(qBoxWidth, 10),
-                       perc2pix(qBoxHeight, 10) + (gScene5_LayoutSettings.line_distance * idx2));
+                       xStart,
+                       perc2pix(qBoxHeight, 15) + (gScene5_LayoutSettings.line_distance * idx2));
     }
 }
 

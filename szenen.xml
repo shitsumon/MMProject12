@@ -1291,8 +1291,9 @@
                             walkto=                 "f|f|f|t|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|t|t|f|f|t|t|t|t"
                             raetsel_ausloeser=      "f|f|f|t|f|f|f|f|f|f|f">
-          <position x="18" y="60" z="102"/>
+          <position x="18" y="60" z="302"/>
           <groesse width="10" height="12"/>
+          <laufziel x="20" y="92"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene7_generator"
                             dialog_id="#none#"
@@ -1401,7 +1402,7 @@
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
-          <position x="17.5" y="40.5" z="400"/>
+          <position x="17.5" y="41" z="300"/>
           <groesse width="5" height="14.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_spike_standing"

@@ -28,7 +28,7 @@
 /***********
  *Demo Mode*
  ***********/
-var gDemoMode = true;
+var gDemoMode = false;
 var gStopAtScene = 'Szene_3';
 
 /*********
@@ -49,7 +49,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 7;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -508,9 +508,11 @@ var gScene5_LayoutSettings              = new Object();
 gScene5_LayoutSettings.font             = ' Arial';
 gScene5_LayoutSettings.bold             = 'bold ';
 gScene5_LayoutSettings.font_color       = 'white';
-gScene5_LayoutSettings.line_distance    = 30;
-gScene5_LayoutSettings.fixedFont        = 30;
-gScene5_LayoutSettings.font_size_boost  = 1.4;
+gScene5_LayoutSettings.line_distance    = 25;
+gScene5_LayoutSettings.fixedFont        = 20;
+gScene5_LayoutSettings.qCharDivider     = 2;
+gScene5_LayoutSettings.qLeftMargin      = 9.5;
+gScene5_LayoutSettings.font_size_boost  = 1.2;
 
 function QuizObject(q, a1, a2, a3, a4){
     this.question = q;
@@ -609,7 +611,7 @@ gScene7DataArray.push(new QuizObject(
 
 gScene7DataArray.push(new QuizObject(
                           "Mich schreibt jemand fremdes im Netz an, worauf sollte ich achten?",
-                          "A. Unbekannte Leute im Internet sind eine Gefahr. Generell sollte ich Unbekannten nie zurückschreiben und auch nicht auf Internetseiten gehen, die diese mir schicken.",
+                          "A. Unbekannte im Internet sind eine Gefahr. Ich sollte nie Unbekannten zurückschreiben und auch nicht auf Internetseiten gehen, die diese mir schicken.",
                           "B. Cool, ich bin beliebt! Ich schreibe natürlich zurück.",
                           "C. Ich schreibe Fremden nicht zurück, aber die Interseite, die er mir schickt schaue ich mir natürlich an.",
                           "D. Wenn jemand fremdes mit mir in einem sozialen Netzwerk befreundet ein möchte, nehme ich die Freundschaft natürlich sofort an."
