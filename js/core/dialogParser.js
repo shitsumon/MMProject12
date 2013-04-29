@@ -4,6 +4,7 @@ one dialogue consists of one or more sentences between different person
 all dialogues will be stored in gDialoge and contain persons id and his/her picture id
 */
 function ladeDialoge(){
+outputDebugInfo();
 
 	jQuery.get(gDialogeXMLPfad,function(daten){
 		verarbeiteDialogXML(daten);
@@ -11,6 +12,7 @@ function ladeDialoge(){
 }
 
 function verarbeiteDialogXML(daten){
+outputDebugInfo();
 	
     //Exceptions for initial load
     if(gInitialLoad){

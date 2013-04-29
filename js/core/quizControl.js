@@ -2,6 +2,7 @@
 executes quizsteps implications by showing/hiding objects and increments current quizstep while checking whether the quiz was finished
 */
 function advanceQuizStep(clicked_canvas_quiz_flags){
+outputDebugInfo();
 
 	clicked_canvas_quiz_flags = clicked_canvas_quiz_flags.split("|");
 	
@@ -63,6 +64,7 @@ function advanceQuizStep(clicked_canvas_quiz_flags){
 called by advanceQuizStep to apply corresponding CSS classes to every canvas out there
 */
 function applyCSSClass(){
+outputDebugInfo();
 
 	var canvas_id_flags;
 	
@@ -101,6 +103,7 @@ function applyCSSClass(){
 checks whether the quiz has finished and initiates loading of next scenes pictures and dialogues as well as resetting all needed variables
 */
 function checkQuizfinished(){
+outputDebugInfo();
 	
 	//last step before quiz finishes
     if(gCurrentQuizstep == (gQuizsteps - 1) && !gSceneHasBeenLoad){
@@ -156,6 +159,7 @@ function checkQuizfinished(){
 }
 
 function advanceNextScene(){
+outputDebugInfo();
 
     //WORKAROUND for scene2, this must not remain here,
     //but needs a proper fix

@@ -16,6 +16,7 @@
  * none
  */
 function positionMenuElement(id) {
+outputDebugInfo();
 
     switch(id){
     case 'menu':
@@ -67,6 +68,8 @@ function positionMenuElement(id) {
 }
 
 function showImpressum(){
+outputDebugInfo();
+
     positionMenuElement('impressum');
     $("div[id*='impressum']").css('visibility','visible');
     $("div[id*='menu']").css('visibility','hidden');
@@ -74,6 +77,8 @@ function showImpressum(){
 }
 
 function showCredits(){
+outputDebugInfo();
+
     positionMenuElement('credits_page');
     $("div[id*='credits']").css('visibility','visible');
     $("div[id*='menu']").css('visibility','hidden');
@@ -81,6 +86,8 @@ function showCredits(){
 }
 
 function showDemo(){
+outputDebugInfo();
+
     $(this).css('background-color', 'black');
     positionMenuElement('demo_page');
     $("div[id*='demo_page']").css('visibility','visible');
@@ -88,16 +95,22 @@ function showDemo(){
 
 
 function hideImpressum(){
+outputDebugInfo();
+
     $("div[id*='impressum']").css('visibility','hidden');
     $("div[id*='menu']").css('visibility','visible');
 }
 
 function hideCredits(){
+outputDebugInfo();
+
     $("div[id*='credits_page']").css('visibility','hidden');
     $("div[id*='menu']").css('visibility','visible');
 }
 
 function hideDemo(){
+outputDebugInfo();
+
     $("div[id*='demo_page']").css('visibility','hidden');
     this.document.location.href = 'http://hermes.et.hs-wismar.de/~bmt08055/netzwerkstar/html/index.html';
 }

@@ -16,6 +16,7 @@
  * none
  */
 function forceDialog(scene_id){
+outputDebugInfo();
 
     //get right dialog IDs
     var dialogIDs = fetchDialogIDs();
@@ -59,6 +60,8 @@ function forceDialog(scene_id){
  */
 function dialog_zeichneDialog()
 {
+outputDebugInfo();
+
     //fetch dialog IDs
     var dialogIDs = fetchDialogIDs();
 
@@ -213,6 +216,8 @@ function dialog_zeichneDialog()
  */
 function dialog_SatzZeilenBruch(text, pixelSize)
 {
+outputDebugInfo();
+
     var subtext = "";
     var result  = new Array();
     var search  = 0;
@@ -266,6 +271,7 @@ function dialog_SatzZeilenBruch(text, pixelSize)
  * sentence (string) - The sentence with the filled in player names, if present
  */
 function swapProxiesWithNames(sentence){
+outputDebugInfo();
 
     //Put in name of player 1
     if(strContains(sentence, gP1Proxy)){
@@ -302,6 +308,7 @@ function swapProxiesWithNames(sentence){
  * none
  */
 function advanceDialogStep(imgID, canvasID){
+outputDebugInfo();
 
     //check if the clicked object is clickable for the current scene step
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
@@ -386,6 +393,7 @@ function advanceDialogStep(imgID, canvasID){
  *           being increased.
  */
 function testIfSubDialog(sceneDialog){
+outputDebugInfo();
 
     if(patternTest(sceneDialog) == null || idIsBlacklisted(sceneDialog) || gTalk.isInitialized){
         return true;
@@ -434,6 +442,8 @@ function testIfSubDialog(sceneDialog){
  * dialog IDs
  */
 function fetchDialogIDs(){
+outputDebugInfo();
+
     if(gDialogCounter == (gUseDeprecated ? gDeprecatedNumberOfDialogues : gNumberOfDialogues) - 1){
         return gDeprecatedDialogIDs;
     }else{
@@ -476,6 +486,7 @@ function patternTest(string, pattern){
  * (Boolean) - True if it's on the list, flase if not.
  */
 function idIsBlacklisted(string){
+outputDebugInfo();
 
     for(var idx = 0; idx < gSubDialogBlacklist.length; ++idx){
         if(gSubDialogBlacklist[idx].scene_id == string &&

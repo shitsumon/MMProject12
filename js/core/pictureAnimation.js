@@ -66,6 +66,7 @@ function animiereCanvas(canvas_id, bild_id){
 
 //stops animation by deleting the timer
 function stoppeAnimation(bild_id){
+outputDebugInfo();
 	
     window.clearInterval(gAnimationTimer[bild_id].timer);
     gAnimationTimer[bild_id].running = false;
@@ -77,6 +78,7 @@ function stoppeAnimation(bild_id){
 
 //starts animation and creates new timer
 function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight){
+outputDebugInfo();
 
 	var delimiter = '#';
 	var gBilderIDString = '';
@@ -126,6 +128,7 @@ function starteAnimation(canvas_id, bild_id, pxWidth, pxHeight){
 
 //toggles running and paused animation
 function toggleAnimation(bild_id){
+outputDebugInfo();
 	
     if(gAnimationTimer[bild_id].running){
 		
@@ -137,6 +140,7 @@ function toggleAnimation(bild_id){
 }
 
 function switchWalkingAnimation(direction, bild_id){
+outputDebugInfo();
 	
 	bild_id = bild_id.split("canvas_person_");
 

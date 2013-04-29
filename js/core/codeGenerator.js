@@ -2,6 +2,7 @@
 
 //takes current scene count and quiz count to compute pass string
 function verschluesseln(){
+outputDebugInfo();
 	
     var dummy, helper, code = "";
 	//convert from number to numeral and concatenate current scene and quiz counter
@@ -30,6 +31,7 @@ console.log("Code: " + code + " = " + entschluesseln(code));
 
 //takes pass string, decodes it and returns stored scene and quiz step
 function entschluesseln(code){
+outputDebugInfo();
 	
 	var dummy, result = "";
 	
@@ -72,6 +74,7 @@ function entschluesseln(code){
 }
 
 function spiel_fortsetzen(){
+outputDebugInfo();
 	
 	var code = prompt("Bitte Code eingeben!");	
 	
@@ -80,7 +83,7 @@ function spiel_fortsetzen(){
 		code = entschluesseln(code);
 		
 		gcurrent_scene_counter	= code[0];
-		gCurrentQuizstep		= code[1];
+		//gCurrentQuizstep		= code[1];
 		
 		gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 		

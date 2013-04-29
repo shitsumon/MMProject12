@@ -21,7 +21,7 @@
  * none
  */
 function triggerException(exceptionName, arguments) {
-    
+outputDebugInfo();    
 
     switch(exceptionName){
 	case 'scene1_hideDrawer':

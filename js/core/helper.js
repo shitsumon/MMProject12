@@ -25,6 +25,19 @@
     </html>-->
 */
 
+/**********
+*Debugging*
+***********/
+
+var gDebugModeOn = false;
+
+function outputDebugInfo(){
+	if(gDebugModeOn){
+		//log called function and arguments
+		console.trace();
+	}
+}
+
 /***********
  *Demo Mode*
  ***********/
@@ -49,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 1;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -425,6 +438,8 @@ function perc2pix(absolute, perc){
 }
 //checks whether dialogues and pictures completed loading before calling sceneParser
 function waitforparser(){
+outputDebugInfo();
+
 	//if everything finished and the next scene should be displayed
     if(gpictureparser_xml_geladen && gdialogparser_xml_geladen &&
 		(gBilder.anzahl == gBilder.geladen) && (gDialoge.anzahl == gDialoge.geladen) &&
@@ -464,6 +479,8 @@ var n2n = new Array(
 setTimeout(function() { HideElementsIntro(); },25000);
 
 function HideElementsIntro(){
+outputDebugInfo();
+
 	//hides intro elements
 	$('h1').remove();
 	$("#titles").remove();
@@ -487,6 +504,8 @@ var gQuizDialogBlacklist = new Array();
  *Scene 5 exceptions data*
  *************************/
 function bookStep(name){
+outputDebugInfo();
+
     this.name = name;
     this.wasClicked = false;
 }

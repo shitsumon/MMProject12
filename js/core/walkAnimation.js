@@ -1,4 +1,6 @@
 function bewegePerson(){
+outputDebugInfo();
+
 	//check whether movement vector has been computed
 	if(!gWegBerechnet){
 		

@@ -4,6 +4,7 @@ loads all pictures from xml file when accessing the site
 determines type of returned object by "xml"
 */
 function ladeBilder(force_load_common){
+outputDebugInfo();
 	
 	force_load_common = force_load_common == null ? false : force_load_common;
 
@@ -16,6 +17,7 @@ function ladeBilder(force_load_common){
 
 //stores xml properties in global object gBilder
 function verarbeiteBilderXML(daten, force_load_common){
+outputDebugInfo();
 	
 	var id, animation;
 	//get all picture elements corresponding to current scene
@@ -40,6 +42,7 @@ function verarbeiteBilderXML(daten, force_load_common){
 }
 
 function verarbeiteBilder(bilder){
+outputDebugInfo();
 
 	var jquery_bilder = $(bilder);
 	//for each picture

@@ -24,6 +24,7 @@
                 in sceneStruct wrapper Object
 */
 function getSceneElementData(sceneElement){
+outputDebugInfo();
 
     var tmpObject		= new objectStruct(sceneElement.attr('bild_id'),
                                            sceneElement.attr('dialog_id'));
@@ -65,6 +66,7 @@ function getSceneElementData(sceneElement){
                 in sceneStruct wrapper Object
 */
 function getPersonElementData(sceneElement){
+outputDebugInfo();
 
     var tmpObject = new personStruct(sceneElement.attr('person_id'),
                                      sceneElement.attr('bild_id'));
@@ -73,6 +75,7 @@ function getPersonElementData(sceneElement){
 }
 
 function getElementData(tmpObject, sceneElement){
+outputDebugInfo();
 
     tmpObject.position.xPos = parseFloat(sceneElement.find('position').attr('x'));
     tmpObject.position.yPos = parseFloat(sceneElement.find('position').attr('y'));
@@ -111,6 +114,7 @@ function getElementData(tmpObject, sceneElement){
     None
 */
 function getSceneInformation(sceneID, sceneFilename){
+outputDebugInfo();
 
     /*check for input filename, else use default*/
     sceneFilename = typeof( sceneFilename ) === 'undefined' ? sceneXML : sceneFilename;
@@ -211,7 +215,6 @@ function getSceneInformation(sceneID, sceneFilename){
             }
         }
 
-        gImageToObjectSceneReferrer = new Array();
         gImageToObjectSceneReferrer = tmpArray;
 
     }).error(function(xhr, status, error){
@@ -235,6 +238,7 @@ function getSceneInformation(sceneID, sceneFilename){
         None
 */
 function drawScene(sceneObject){
+outputDebugInfo();
 
     if(gDemoMode && gcurrent_scene_id == gStopAtScene){
         return;
@@ -279,6 +283,7 @@ function drawScene(sceneObject){
         None
 */
 function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
+outputDebugInfo();
 
     //faulty input error checking
     if(sharedIdString === '' || typeof(sharedIdString) === 'undefined'){
@@ -522,6 +527,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
     (Boolean) - true/false
 */
 function sceneNeedsForcedDialog(){
+outputDebugInfo();
 
     for(var idx = 0; idx < gForceDialogScenes.length; ++idx){
         if(gForceDialogScenes[idx] == gcurrent_scene_id){

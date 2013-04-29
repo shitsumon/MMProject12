@@ -31,6 +31,7 @@
  * none
  */
 function startEventHandling(LUT_Identifier){
+outputDebugInfo();
     
     gMostRecentlyClickedIdentifier = LUT_Identifier;
 
@@ -84,6 +85,7 @@ function startEventHandling(LUT_Identifier){
  * none
  */
 function finishEventHandling(){
+outputDebugInfo();
 
     //activate functions with saved arguments
     advanceQuizStep(gQuizFlags);
@@ -113,6 +115,7 @@ function finishEventHandling(){
  * valueArray (Array) - array with correctly parsed values
  */
 function parseValueString(valueString){
+outputDebugInfo();
 
     var rawStrings = valueString.split('+');
 
