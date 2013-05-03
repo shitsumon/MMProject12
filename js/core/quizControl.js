@@ -49,6 +49,7 @@ outputDebugInfo();
         });
 		*/
 		
+		/*
 		//check whether quiz has finished
 		if( typeof (checkQuizfinished()) === "undefined" )
 		{
@@ -57,7 +58,14 @@ outputDebugInfo();
 			
 			//else do it in advance next scene
 		}
+		*/
+		
+		//a quizstep was made
+		return true;
 	}
+	
+	//no quizstep was made
+	return false;
 }
 
 /*
@@ -210,8 +218,10 @@ outputDebugInfo();
 		}
 	});
 	
+	/*
 	//encode current savestate
 	verschluesseln();
+	*/
 	
 	//remove old scene
     $("canvas[id!='uebergang']").remove();

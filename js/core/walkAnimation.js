@@ -5,8 +5,8 @@ outputDebugInfo();
 	if(!gWegBerechnet){
 		
 		if(gTargetIdentifier.split(":")[1].split("|")[gCurrentQuizstep] !== "t"){
-            //we shouldn't move -> exit
-			return;
+            //we shouldn't move -> exit and signal it
+			return false;
 		}
 		
 		//save targetid first to prevent reorientation
@@ -67,7 +67,7 @@ outputDebugInfo();
     //check whether we already are in front of the goal and return
     if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
         finishEventHandling();
-		return;
+		return true;
 	}
 
 	//compute movement vectors
@@ -262,6 +262,9 @@ gStartAbmessungen[1] = gTargets[1][3];
 		
         finishEventHandling();
 	}
+	
+	//some walking should have happened here
+	return true;
 }
 
 function zielErreicht(heroPos, targetPos, justDistance){

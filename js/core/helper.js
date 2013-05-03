@@ -425,6 +425,28 @@ var gCurrentQuizstep		= 0;
 var gQuiztriggerAfterMoving	= "";
 var gQuizTrueQuizSteps      = 0;
 
+/***************
+ *Codegenerator*
+ ***************/
+ 
+//index of the scene specifique codegenerator array, incremented by clickEventHandler to be able to load the scene again
+var gCodegeneratorIndex = 0;
+
+//array for encoding/decoding numbers to numerals in game save code
+var gNumberToNumeral = new Array(
+	"null", "eins", "zwei",
+	"drei", "vier", "fuenf",
+	"sechs", "sieben", "acht",
+	"neun", "zehn", "elf",
+	"zwoelf", "dreizehn", "vierzehn",
+	"fuenfzehn", "sechzehn", "siebzehn",
+	"achtzehn", "neunzehn", "zwanzig");
+
+//array with sub array for every scene
+var gCodegeneratorArray = new Array(7);
+//sub array for scene 1 containing all index entries of the correctly clicked objects in gClickEventValueArray
+gCodegeneratorArray[0] = new Array(1, 18, 18, 18, 18, 18, 18, 18, 18, 3, 18, 4, 18, 18, 8, 18, 18, 18, 2, 18, 18, 18, 3, 18, 18, 18, 11, 18, 18, 18, 18, 18, 18, 18, 18);
+
 /***********
  *Utilities*
  ***********/
@@ -465,15 +487,6 @@ function z2mult(z_index){
 function strContains(string, substring){
     return string.indexOf(substring) === -1 ? false : true;
 }
-//array for encoding/decoding numbers to numerals in game save code
-var n2n = new Array(
-	"null", "eins", "zwei",
-	"drei", "vier", "fuenf",
-	"sechs", "sieben", "acht",
-	"neun", "zehn", "elf",
-	"zwoelf", "dreizehn", "vierzehn",
-	"fuenfzehn", "sechzehn", "siebzehn",
-	"achtzehn", "neunzehn", "zwanzig");
 
 //timer for hiding intro
 setTimeout(function() { HideElementsIntro(); },25000);

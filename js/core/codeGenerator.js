@@ -6,7 +6,7 @@ outputDebugInfo();
 	
     var dummy, helper, code = "";
 	//convert from number to numeral and concatenate current scene and quiz counter
-	helper = n2n[gcurrent_scene_counter] + "x" + n2n[gCurrentQuizstep]
+	helper = gNumberToNumeral[gcurrent_scene_counter] + "x" + gNumberToNumeral[gCodegeneratorIndex]
 	
     for (var i = 0; i < helper.length; i++){
 		//get charcode corresponding to ascii and shift by 13
@@ -51,7 +51,7 @@ outputDebugInfo();
 	//split scene number and quiz counter
 	result = result.split("x");
 
-	$(n2n).each(function(index, numeral) {
+	$(gNumberToNumeral).each(function(index, numeral) {
 		//convert back to number
 		if(result[0] === numeral){
 			
@@ -83,12 +83,23 @@ outputDebugInfo();
 		code = entschluesseln(code);
 		
 		gcurrent_scene_counter	= code[0];
-		//gCurrentQuizstep		= code[1];
+		gCodegeneratorIndex = code[1];
 		
 		gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 		
 		ladeBilder(true);
 		ladeDialoge();
+		
+		/*
+		after sceneparser is done:
+		
+			set walking speed to infinite
+			maybe hide scene
+			
+			for i=0 to gCodegeneratorIndex
+				get key=gCodegeneratorArray[gcurrent_scene_counter][i] from gClickEventValueArray
+				call clickEventHandler( corresponding value )
+		*/
 	}else{
 		
 		alert("Kein Code eingegeben!");

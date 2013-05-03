@@ -33,6 +33,10 @@
 function startEventHandling(LUT_Identifier){
 outputDebugInfo();
     
+	var quiz_advanced = false;
+	var dialogue_advanced = false;
+	var moving = false;
+	
     gMostRecentlyClickedIdentifier = LUT_Identifier;
 
     var parsedStringObject = new Object();
@@ -50,13 +54,13 @@ outputDebugInfo();
 
         if(!gEventHandlerBusy){
             gTargetIdentifier = parsedStringObject.targetIdentifier;
-            bewegePerson();
+            moving = bewegePerson();
         }
 
         if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
             gQuizFlags = parsedStringObject.quizFlags;
         }else{
-            advanceQuizStep(parsedStringObject.quizFlags);
+			quiz_advanced = advanceQuizStep(parsedStringObject.quizFlags);
         }
     }
 
@@ -67,8 +71,19 @@ outputDebugInfo();
         //Lock arguments to prevent change of target
         gQuizAndDialogArgumentsLocked = true;
     }else{
-        advanceDialogStep(parsedStringObject.dialogValue1, parsedStringObject.dialogValue2);
+		dialogue_advanced = advanceDialogStep(parsedStringObject.dialogValue1, parsedStringObject.dialogValue2);
     }
+	
+	/*
+	this will output the objects that, if clicked, will forward the scene by one step. use it to build the lookup table for loading by code
+	*/
+	if(moving || quiz_advanced || dialogue_advanced)
+	{
+		console.log("key = " + idx + " LUT = " + LUT_Identifier);
+		
+		gCodegeneratorIndex++;
+		verschluesseln();
+	}
 }
 
 /**

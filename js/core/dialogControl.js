@@ -314,7 +314,8 @@ outputDebugInfo();
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
 
     if(rawID.split('|')[gCurrentQuizstep] === 'f'){
-        return;
+		//nothing was displayed
+        return false;
     }
 
     var dialogIDs           = fetchDialogIDs();
@@ -339,9 +340,9 @@ outputDebugInfo();
                           gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
 				  )
 				{
-                    //alert('undefined dialog in gDialoge[]!');
+                    console.log('undefined dialog in gDialoge[]!');
 					
-                    return;
+                    return false;
                 }
 
                 //if it's the wrong dialog skip it,
@@ -369,11 +370,14 @@ outputDebugInfo();
 
                     gSubDialogOffset = 0;
                 }
+				
+				//the dialogue should have been displayed by now
+				return true;
 
-                break; //When current dialog was displayed stop looping
+                //break; //When current dialog was displayed stop looping
             }
 
-            break; //When current dialog was displayed stop looping
+            //break; //When current dialog was displayed stop looping
         }
     }
 }
