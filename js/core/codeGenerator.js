@@ -87,10 +87,36 @@ outputDebugInfo();
 		
 		gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 		
+		gLoadByCode = true;
+		
 		ladeBilder(true);
 		ladeDialoge();
+	}else{
 		
-		/*
+		alert("Kein Code eingegeben!");
+	}
+}
+
+function advanceSceneToLastSavestate(){
+
+	//back this up
+	var pixelProAufruf = gPixelProAufruf;
+	//set walking speed to near infinity
+	gPixelProAufruf = 1;
+	
+	var key;
+	
+	//step through the scene as the player would
+	for(var i = 0; i < gCodegeneratorIndex; i++){
+	
+		key = gCodegeneratorArray[ gcurrent_scene_counter - 1 ][i];
+		startEventHandling( gClickEventValueArray[ key ].key );
+	}
+	
+	//restore this value
+	gPixelProAufruf = pixelProAufruf;
+	
+	/*
 		after sceneparser is done:
 		
 			set walking speed to infinite
@@ -99,9 +125,20 @@ outputDebugInfo();
 			for i=0 to gCodegeneratorIndex
 				get key=gCodegeneratorArray[gcurrent_scene_counter][i] from gClickEventValueArray
 				call clickEventHandler( corresponding value )
-		*/
-	}else{
 		
-		alert("Kein Code eingegeben!");
-	}
+		this works for the steps without walking animation involved. settting gAktuellesZiel == 3 will propably fix it because there will be no walking going on then
+	*/
+	
+	/*
+	scene 1 steps:
+		RVaFkRVAf
+		RVaFkMjRV
+		RVaFkQeRV
+		RVaFkIVRe
+		RVaFkShRaS
+		RVaFkFRPUF
+		RVaFkFVRORa
+		RVaFkNPUg
+		RVaFkARHa
+	*/
 }

@@ -432,6 +432,9 @@ var gQuizTrueQuizSteps      = 0;
 //index of the scene specifique codegenerator array, incremented by clickEventHandler to be able to load the scene again
 var gCodegeneratorIndex = 0;
 
+//flag to signal loading by code is going on
+var gLoadByCode = false;
+
 //array for encoding/decoding numbers to numerals in game save code
 var gNumberToNumeral = new Array(
 	"null", "eins", "zwei",
@@ -444,7 +447,7 @@ var gNumberToNumeral = new Array(
 
 //array with sub array for every scene
 var gCodegeneratorArray = new Array(7);
-//sub array for scene 1 containing all index entries of the correctly clicked objects in gClickEventValueArray
+//sub array for scene 1 containing all index entries of the correctly, in order, clicked objects in gClickEventValueArray
 gCodegeneratorArray[0] = new Array(1, 18, 18, 18, 18, 18, 18, 18, 18, 3, 18, 4, 18, 18, 8, 18, 18, 18, 2, 18, 18, 18, 3, 18, 18, 18, 11, 18, 18, 18, 18, 18, 18, 18, 18);
 
 /***********

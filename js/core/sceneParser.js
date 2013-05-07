@@ -216,6 +216,12 @@ outputDebugInfo();
         }
 
         gImageToObjectSceneReferrer = tmpArray;
+		
+		if( gLoadByCode ){
+		//called if a code was entered to load the scene
+			advanceSceneToLastSavestate();
+			gLoadByCode = false;
+		}
 
     }).error(function(xhr, status, error){
         alert("Es ist ein Fehler aufgetreten: " + error);

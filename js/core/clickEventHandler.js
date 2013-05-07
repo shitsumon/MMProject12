@@ -75,9 +75,10 @@ outputDebugInfo();
     }
 	
 	/*
-	this will output the objects that, if clicked, will forward the scene by one step. use it to build the lookup table for loading by code
+	this will output the objects that, if clicked, will forward the scene by one step. use it to build the lookup table for loading by code.
+	it will not be called if a code was entered though
 	*/
-	if(moving || quiz_advanced || dialogue_advanced)
+	if((moving || quiz_advanced || dialogue_advanced) && !gLoadByCode)
 	{
 		console.log("key = " + idx + " LUT = " + LUT_Identifier);
 		

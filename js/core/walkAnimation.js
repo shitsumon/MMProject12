@@ -212,12 +212,8 @@ outputDebugInfo();
         //gIsSceneBeginning = false;
         ///////
 
-//------
-
-gStartAbmessungen[0] = gTargets[1][2];
-gStartAbmessungen[1] = gTargets[1][3];
-
-//------
+		gStartAbmessungen[0] = gTargets[1][2];
+		gStartAbmessungen[1] = gTargets[1][3];
 
         //When goal is reached, standing animation is invoked,
         //depending on position of hero
