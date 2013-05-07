@@ -99,7 +99,7 @@ outputDebugInfo();
 
 function advanceSceneToLastSavestate(){
 
-	//back this up
+	//backup running speed
 	var pixelProAufruf = gPixelProAufruf;
 	//set walking speed to near infinity
 	gPixelProAufruf = 1;
@@ -108,7 +108,7 @@ function advanceSceneToLastSavestate(){
 	
 	//step through the scene as the player would
 	for(var i = 0; i < gCodegeneratorIndex; i++){
-	
+		
 		key = gCodegeneratorArray[ gcurrent_scene_counter - 1 ][i];
 		startEventHandling( gClickEventValueArray[ key ].key );
 	}
@@ -140,5 +140,11 @@ function advanceSceneToLastSavestate(){
 		RVaFkFVRORa
 		RVaFkNPUg
 		RVaFkARHa
+		
+		RVaFkMRUa
+		
+		RVaFkMjBRYS
+		
+		RVaFkFVROMRUa
 	*/
 }

@@ -64,9 +64,12 @@ outputDebugInfo();
 		targetPos[1] = target.offset().top + (target.height());
 	}
 	
-    //check whether we already are in front of the goal and return
+    //check whether we already are in front of the goal or if loading by code is going on and return
     if(zielErreicht(heroPos, targetPos, true) && (gAktuellesZiel == 0)){
+		
+		gEventHandlerBusy = false;
         finishEventHandling();
+		
 		return true;
 	}
 
@@ -153,6 +156,30 @@ outputDebugInfo();
 		gWegBerechnet = true;
 	}
 	
+	//this will move the hero directly to the goal while the game is beeing progressed after loading by code
+	if( gLoadByCode ){
+		/*
+		this lacks the proper adjustment of the heroins standing animation
+		scaling is incorrect like this
+		theres an error with dialogs because both gDialogValue1/2 are not set correctly
+		*/
+		skaliereHeld(zoomFaktor, zoomFaktor, hero);
+		skaliereCanvas(zoomFaktor, hero);
+		
+		gStartAbmessungen[0] *= zoomFaktor;
+		gStartAbmessungen[1] *= zoomFaktor;
+		
+		hero.offset({
+			left:	targetPos[0] - gStartAbmessungen[0] / 2,
+			top:	targetPos[1] - gStartAbmessungen[1]
+			});
+			
+        finishEventHandling();
+		gEventHandlerBusy = false;
+console.log("walking by code");			
+		return true;
+	}
+	
 	//move hero
 	if(!zielErreicht(heroPos, gTargets[gAktuellesZiel], false)){
 		
@@ -191,7 +218,7 @@ outputDebugInfo();
 		//go to next target
 		gAktuellesZiel++;
 	}
-
+	
 	if(gAktuellesZiel < 3){
 		//if we havn't reached the goal yet
 		
