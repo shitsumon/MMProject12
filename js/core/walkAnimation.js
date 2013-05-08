@@ -158,13 +158,15 @@ outputDebugInfo();
 	
 	//this will move the hero directly to the goal while the game is beeing progressed after loading by code
 	if( gLoadByCode ){
+	
 		/*
 		this lacks the proper adjustment of the heroins standing animation
 		scaling is incorrect like this
 		theres an error with dialogs because both gDialogValue1/2 are not set correctly
 		*/
-		skaliereHeld(zoomFaktor, zoomFaktor, hero);
-		skaliereCanvas(zoomFaktor, hero);
+		
+		//skaliereHeld(zoomFaktor, zoomFaktor, hero);
+		//skaliereCanvas(zoomFaktor, hero);
 		
 		gStartAbmessungen[0] *= zoomFaktor;
 		gStartAbmessungen[1] *= zoomFaktor;
@@ -173,10 +175,14 @@ outputDebugInfo();
 			left:	targetPos[0] - gStartAbmessungen[0] / 2,
 			top:	targetPos[1] - gStartAbmessungen[1]
 			});
-			
-        finishEventHandling();
-		gEventHandlerBusy = false;
-console.log("walking by code");			
+		
+		//set z-index if end of central path is reached
+		hero.css("z-index", target.css("z-index"));
+		
+		finishWalking(hero);
+		
+		console.log("walking by code");			
+
 		return true;
 	}
 	
@@ -242,52 +248,59 @@ console.log("walking by code");
 		gStartAbmessungen[0] = gTargets[1][2];
 		gStartAbmessungen[1] = gTargets[1][3];
 
-        //When goal is reached, standing animation is invoked,
-        //depending on position of hero
-        if(hero.offset().left <= ( $(window).width() / 2 )){	
-            !gSpace ? switchWalkingAnimation('standing_r', hero[0].id) : switchWalkingAnimation('jetpack_r', hero[0].id);
-        }else{
-            !gSpace ? switchWalkingAnimation('standing_l', hero[0].id) : switchWalkingAnimation('jetpack_l', hero[0].id);
-        }
-		
-		if(gMoveVec[0][2] > gMoveVec[2][2]){
-			//scale down
-			//the canvas has to be scaled down to be filled entirely by the heros picture, use initial z-values to compare
-			skaliereCanvas(gMoveVec[2][2] / gMoveVec[0][2], hero);
-		}
-
-		//to maintain scaling at target the animation data has to be adjusted
-		$.each( gAnimationTimer, function( index, bild ){
-			//find given canvas by id
-			if( ( typeof(bild.canvas_id) !== "undefined" ) && ( bild.canvas_id === hero[0].id ) ){
-				//reset transformation matrix
-				hero[0].getContext("2d").setTransform(1, 0, 0, 1, 0, 0);
-				//set animations target dimensions to last computed dimensions
-				bild.anzeige_width	= gStartAbmessungen[0];
-				bild.anzeige_height	= gStartAbmessungen[1];
-			}
-		});
-		
-		//reset everything else because we reached the target
-		gAktuellesZiel		= 0;
-		heroPos				= new Array(3);
-		targetPos			= new Array(3);
-		gStartAbmessungen	= new Array(2);
-		gMoveVec			= new Array(new Array(3), new Array(4), new Array(3));
-		gWegBerechnet		= false;
-		gisWalkingTo		= "";
-
-        //free eventhandler
-        gEventHandlerBusy   = false;
-
-        //make dialogbox visible again
-        $("canvas[id*='allg_dialogbox']").removeClass("invisible");
-		
-        finishEventHandling();
+        finishWalking(hero);
 	}
 	
 	//some walking should have happened here
 	return true;
+}
+
+function finishWalking(hero){
+
+	//When goal is reached, standing animation is invoked,
+	//depending on position of hero
+	if(hero.offset().left <= ( $(window).width() / 2 )){	
+		!gSpace ? switchWalkingAnimation('standing_r', hero[0].id) : switchWalkingAnimation('jetpack_r', hero[0].id);
+	}else{
+		!gSpace ? switchWalkingAnimation('standing_l', hero[0].id) : switchWalkingAnimation('jetpack_l', hero[0].id);
+	}
+	
+	if(gMoveVec[0][2] > gMoveVec[2][2]){
+		//scale down
+		//the canvas has to be scaled down to be filled entirely by the heros picture, use initial z-values to compare
+		skaliereCanvas(gMoveVec[2][2] / gMoveVec[0][2], hero);
+	}
+
+	//to maintain scaling at target the animation data has to be adjusted
+	$.each( gAnimationTimer, function( index, bild ){
+		//find given canvas by id
+		if( ( typeof(bild.canvas_id) !== "undefined" ) && ( bild.canvas_id === hero[0].id ) ){
+			//reset transformation matrix
+			hero[0].getContext("2d").setTransform(1, 0, 0, 1, 0, 0);
+			//set animations target dimensions to last computed dimensions
+			bild.anzeige_width	= gStartAbmessungen[0];
+			bild.anzeige_height	= gStartAbmessungen[1];
+		}
+	});
+	
+	//reset everything else because we reached the target
+	gAktuellesZiel		= 0;
+	/*
+	heroPos				= new Array(3);
+	targetPos			= new Array(3);
+	*/
+	gStartAbmessungen	= new Array(2);
+	gMoveVec			= new Array(new Array(3), new Array(4), new Array(3));
+	gWegBerechnet		= false;
+	gisWalkingTo		= "";
+
+	//free eventhandler
+	gEventHandlerBusy   = false;
+
+	//make dialogbox visible again
+	$("canvas[id*='allg_dialogbox']").removeClass("invisible");
+	
+	finishEventHandling();
 }
 
 function zielErreicht(heroPos, targetPos, justDistance){

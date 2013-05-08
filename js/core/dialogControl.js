@@ -310,13 +310,20 @@ outputDebugInfo();
 function advanceDialogStep(imgID, canvasID){
 outputDebugInfo();
 
+try{
     //check if the clicked object is clickable for the current scene step
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
+
 
     if(rawID.split('|')[gCurrentQuizstep] === 'f'){
 		//nothing was displayed
         return false;
     }
+}catch ( e ){
+console.log(e);
+
+return;
+}
 
     var dialogIDs           = fetchDialogIDs();
     gIncreaseDialogStep     = true;

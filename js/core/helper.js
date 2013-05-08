@@ -436,6 +436,7 @@ var gCodegeneratorIndex = 0;
 var gLoadByCode = false;
 
 //array for encoding/decoding numbers to numerals in game save code
+
 var gNumberToNumeral = new Array(
 	"null", "eins", "zwei",
 	"drei", "vier", "fuenf",
@@ -444,6 +445,20 @@ var gNumberToNumeral = new Array(
 	"zwoelf", "dreizehn", "vierzehn",
 	"fuenfzehn", "sechzehn", "siebzehn",
 	"achtzehn", "neunzehn", "zwanzig");
+/* to prepare new n2n array
+var gNumberToNumeral = new Array(
+	"nn","ne","nz",
+	"nd","nv","nf",
+	"ns","ni","na",
+	"nu","en","ee",
+	"ez","ed","ev",
+	"ef","es","ei",
+	"ea","eu","zn",
+	"ze","zz","zd",
+	"zv","zf","zs",
+	"zi","za","zu"
+);
+*/
 
 //array with sub array for every scene
 var gCodegeneratorArray = new Array(7);

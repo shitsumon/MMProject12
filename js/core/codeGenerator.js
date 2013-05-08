@@ -139,12 +139,13 @@ function advanceSceneToLastSavestate(){
 		RVaFkFRPUF
 		RVaFkFVRORa
 		RVaFkNPUg
-		RVaFkARHa
-		
-		RVaFkMRUa
-		
-		RVaFkMjBRYS
-		
-		RVaFkFVROMRUa
+		RVaFkARHa - she awoke
+		RVaFkMRUa - clicked desk
+		RVaFkMjBRYS - clicked drawer
+		RVaFkFVROMRUa - clicked dialogue after drawer
+		RVaFkShRaSmRUA - clicked cupboard
+		RVaFkARHaMRUa - clicked bin
+		RVaFkHaQRSVARQ - last dialogue before quiz
+		RVaFkHaQRSVARQ - quiz is shown
 	*/
 }
