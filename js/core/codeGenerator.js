@@ -4,9 +4,14 @@
 function verschluesseln(){
 outputDebugInfo();
 	
-    var dummy, helper, code = "";
+    var dummy, helper, code = "", delimiter;
+	
+	//some random [a-z] character
+	delimiter = Math.round( Math.random() * 25 ) + 97;
+	delimiter = String.fromCharCode(delimiter);
+	
 	//convert from number to numeral and concatenate current scene and quiz counter
-	helper = gNumberToNumeral[gcurrent_scene_counter] + "x" + gNumberToNumeral[gCodegeneratorIndex]
+	helper = gNumberToNumeral[gcurrent_scene_counter] + delimiter + gNumberToNumeral[gCodegeneratorIndex]
 	
     for (var i = 0; i < helper.length; i++){
 		//get charcode corresponding to ascii and shift by 13
@@ -22,6 +27,15 @@ outputDebugInfo();
 		code += String.fromCharCode(dummy);
     }
 
+	//make the delimiter upper case randomly
+	if( Math.round( Math.random() ) == 0 ){
+	
+		delimiter = String.toUpperCase(delimiter);
+	}
+	
+	//put the delimiter in front to be able to read it while decoding
+	code = delimiter + code;
+	
 	$("#codefeld").val(code);
 	
 console.log("Code: " + code + " = " + entschluesseln(code));
@@ -33,8 +47,14 @@ console.log("Code: " + code + " = " + entschluesseln(code));
 function entschluesseln(code){
 outputDebugInfo();
 	
-	var dummy, result = "";
+	var dummy, result = "", delimiter;
 	
+	//split the first character which is the delimiter
+	delimiter = String.toLowerCase( code.slice(0, 1) );
+	//split the rest of the code from the delimiter
+	code = code.slice(1);
+	
+	//decoding is beeing done
 	for (var i = 0; i < code.length; i++){
 		
 		dummy = code.charCodeAt(i);
@@ -48,8 +68,22 @@ outputDebugInfo();
 		//shift back
 		result += String.fromCharCode(dummy - 13);
     }
+	
+	//calculate delimiter position in result. this should be the character right in the middle,
+	//so take half the length and round it down (floor) to make a good input for the zero-based slice operation
+	//!! this just works if all values in gNumberToNumeral are of the same length !!
+	var delimiterPos = Math.floor( result.length / 2 );
+	
+	//slice result at the given position and then take the first character which should be the delimiter itself
+	//compare with the correct delimiter and return start of scene one if these are unequal
+	if( result.slice( delimiterPos ).slice(0, 1) !== delimiter ){
+		return new Array(1, 0);
+	}
+	
 	//split scene number and quiz counter
-	result = result.split("x");
+	//result will look something like "nefnz" with "f" beeing he delimiter. result.substring will return the part between the two given positions
+	//so '0 to delimiterPos' will be "ne" and 'delimiterPos + 1 to result.length' will be "nz"
+	result = new Array( result.substring(0, delimiterPos), result.substring(delimiterPos + 1, result.length) );
 
 	$(gNumberToNumeral).each(function(index, numeral) {
 		//convert back to number
@@ -131,21 +165,24 @@ function advanceSceneToLastSavestate(){
 	
 	/*
 	scene 1 steps:
-		RVaFkRVAf
-		RVaFkMjRV
-		RVaFkQeRV
-		RVaFkIVRe
-		RVaFkShRaS
-		RVaFkFRPUF
-		RVaFkFVRORa
-		RVaFkNPUg
-		RVaFkARHa - she awoke
-		RVaFkMRUa - clicked desk
-		RVaFkMjBRYS - clicked drawer
-		RVaFkFVROMRUa - clicked dialogue after drawer
-		RVaFkShRaSmRUA - clicked cupboard
-		RVaFkARHaMRUa - clicked bin
-		RVaFkHaQRSVARQ - last dialogue before quiz
-		RVaFkHaQRSVARQ - quiz is shown
+	eaRRAR
+	zaRmAm
+	qaRdAQ
+	yaRlAi
+	baROAS
+	TaRgAf
+	iaRVAV
+	gaRTAN
+	RaReAh - she awoke
+	uaRhRa - click desk
+	baRORR
+	FaRSRm - click drawer
+	RaReRQ
+	NaRaRi
+	oaRbRS - click cupboard
+	TaRgRf
+	EaRRRV
+	jaRWRN
+	CaRPRh - click bin
 	*/
 }
