@@ -310,7 +310,6 @@ outputDebugInfo();
 function advanceDialogStep(imgID, canvasID){
 outputDebugInfo();
 
-try{
     //check if the clicked object is clickable for the current scene step
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
 
@@ -319,11 +318,6 @@ try{
 		//nothing was displayed
         return false;
     }
-}catch ( e ){
-console.log(e);
-
-return;
-}
 
     var dialogIDs           = fetchDialogIDs();
     gIncreaseDialogStep     = true;
@@ -342,12 +336,17 @@ return;
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
+				try{
                 if( typeof( gUseDeprecatedDialogues ?
                           gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
                           gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
-				  )
-				{
-                    console.log('undefined dialog in gDialoge[]!');
+				  ){
+					  console.log('undefined dialog in gDialoge[]!');
+					  
+					  return false;
+				  }
+				}catch(e){
+                    console.log(e);
 					
                     return false;
                 }

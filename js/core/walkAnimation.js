@@ -158,19 +158,12 @@ outputDebugInfo();
 	
 	//this will move the hero directly to the goal while the game is beeing progressed after loading by code
 	if( gLoadByCode ){
-	
-		/*
-		this lacks the proper adjustment of the heroins standing animation
-		scaling is incorrect like this
-		theres an error with dialogs because both gDialogValue1/2 are not set correctly
-		*/
 		
-		//skaliereHeld(zoomFaktor, zoomFaktor, hero);
-		//skaliereCanvas(zoomFaktor, hero);
-		
+		//determine final dimensions
 		gStartAbmessungen[0] *= zoomFaktor;
 		gStartAbmessungen[1] *= zoomFaktor;
 		
+		//put hero on the goal
 		hero.offset({
 			left:	targetPos[0] - gStartAbmessungen[0] / 2,
 			top:	targetPos[1] - gStartAbmessungen[1]
@@ -181,7 +174,7 @@ outputDebugInfo();
 		
 		finishWalking(hero);
 		
-		console.log("walking by code");			
+		//console.log("walking by code");			
 
 		return true;
 	}
@@ -300,7 +293,10 @@ function finishWalking(hero){
 	//make dialogbox visible again
 	$("canvas[id*='allg_dialogbox']").removeClass("invisible");
 	
-	finishEventHandling();
+	if(!gLoadByCode){
+		//prevent this call because otherwise gDialogValue1/2 will be undefined at the time
+		finishEventHandling();
+	}
 }
 
 function zielErreicht(heroPos, targetPos, justDistance){

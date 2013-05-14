@@ -65,9 +65,9 @@ outputDebugInfo();
     }
 
     if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
-        gDialogValue1 = parsedStringObject.dialogValue1;
+		gDialogValue1 = parsedStringObject.dialogValue1;
         gDialogValue2 = parsedStringObject.dialogValue2;
-
+		
         //Lock arguments to prevent change of target
         gQuizAndDialogArgumentsLocked = true;
     }else{
