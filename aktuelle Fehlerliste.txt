@@ -1,0 +1,69 @@
+Verbesserungen:
+
+Intro:
+ - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)
+ - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint
+ - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#
+
+Menübildschirm:
+ - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
+ - "Homepage" muss noch verlinkt werden
+
+Allgemein:
+ - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursib oder leicht orange anstatt gelb)
+
+Szene 1:
+ - Verbesserung: Laufgeschwindigkeit des Protagonisten zu niedrig
+ - Verbesserung: Pfad vor dem Computerterminal ein kleines Stück weiter nach vorne in den Raum verschieben
+ - Verbesserung: Pfadpunkt an der Leiter zum Bett weiter nach vorne in den Raum, Protagonist an dieser Stellevergrößern
+ - Verbesserung: Protagonist steht "auf dem Papierkorb" = zu weit oben - eventuell Protagonist vergrößern und weiter nach rechts, da so zu stark vom Schrank verdeckt
+ - Fehler: Ab Dialog "Ah diese herrliche Stille...", DEADLOCK, Einstellungsfenster schließt sich, aber Dialog geht nicht weiter
+
+
+Szene 2:
+ - Frage: Sollte am Anfang der Szene(Rätselschritt 1 und 2) nicht gedämpftes Licht herrschen?
+ - Verbesserung: Beim Bewegen von links nach rechts, dreht der Protagonist durch die Wegpunkte kurz den Kopf zum Benutzer, was den Bewegungsfluss stört
+ - Verbesserung: Auf dem Weg zum Terminal geht der Protagonist erst zu weit in den Raum und kommt dann wieder nach vorne
+ - Verbesserung: Protagonist vor dem Terminal ein bisschen zu klein
+ - Fehler: Nach dem Schließen des Terminalbildschirmes friert das Spiel wie in Szene 1 ein. Dialog wird nicht weitergeführt - DEADLOCK
+
+
+Szene 3:
+ - Verbesserung: Protagonistesgröße an Szene 2 angleichen
+ - Verbesserung: Bewegungspfad anpassen, Protagonist geht zu weit in den Raum an der Position des Terminals
+ - Fehler: DEADLOCK nach dem Schließen des Terminalfensters
+
+Szene 4:
+ - Fehler: lädt insgesamt nicht
+
+Szene 5:
+ - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen
+ - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden
+ - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
+ - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox
+ - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
+ - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
+ - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
+ - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms
+
+
+Szene 6:
+ - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate
+ - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen
+ - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar
+ - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts
+ - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherrungskasten"
+ - Verbesserung: Anpassen des Bewegungspfades
+ - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
+ - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar
+ - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar
+ - Fehler: DEADLOCK nach letztem Dialog
+ 
+ 
+Szene 7:
+ - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben
+ - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen
+ - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte)
+ - Verbesserung: Frage im Terminalfenster läuft über die Ränder der mittleren Box (Umruch notwendig)
+ - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas - Rahmen des Hover-Effektes sichtbar
+ - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar
