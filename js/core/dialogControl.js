@@ -460,7 +460,7 @@ outputDebugInfo();
 	the current dialog problem is related to this function. if you don't subtract 1 from gNumberOfDialogues above, scene 1 reaches its last dialogue and stops aferwards, not handing over to scene 2. if 1 is subtracted the last dialogue never fires. the if statement evaluates to true only at the very end of the scene, when the next scene is already loaded and, i suppose, all dialogues of scene 1 should have become deprecated. maybe gUseDeprecatedDialogues was intended here as it doesn't seem to be used anywhere else. manually replacing dialogIDs with gDialogIDs in the calling function after returning gDeprecatedDialogIDs also makes the last dialog appear.
 	*/
 	
-	console.log("!! fetched deprecated !!");
+	console.log("!! fetched deprecated !!\ngUseDeprecatedDialogues = " + gUseDeprecatedDialogues + "\ngUseDeprecated = " + gUseDeprecated );
 	
         return gDeprecatedDialogIDs;
     }else{

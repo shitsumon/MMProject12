@@ -393,23 +393,19 @@ var gP2Name = "undefined";
 //asking user to input the names of the main characters of the game
 function getCharacterNames()
 {
-  gP1Name=prompt("Wie soll der weibliche Hauptcharakter heißen?","Jane");
-  gP2Name=prompt("Wie soll der männliche Nebencharakter heißen?","John");
+	gP1Name = prompt("Wie soll der weibliche Hauptcharakter heißen?", "Jane");
+	gP2Name = prompt("Wie soll der männliche Nebencharakter heißen?", "John");
 
-if ((name1!=null)&&(name2!=null))
-  {
-  //continue with loading of first scene
-  ladeBilder();
-  ladeDialoge();
-  }
-  else
-  {
-	  //if incorrect or no names are set, mark as undefined and replace later with FallbackNames
-	  gP1Name = "undefined";
-	  gP2Name = "undefined";
-	  ladeBilder();
-  	  ladeDialoge();
-  }
+	if (( gP1Name == null ) || ( gP2Name == null ))
+	{
+		//if incorrect or no names are set, mark as undefined and replace with FallbackNames later
+		gP1Name = "undefined";
+		gP2Name = "undefined";
+	}
+	  
+	//continue with loading of first scene
+	ladeBilder();
+	ladeDialoge();
 }
 
 /***************
