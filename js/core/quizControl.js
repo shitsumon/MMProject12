@@ -14,51 +14,8 @@ outputDebugInfo();
 		gCurrentQuizstep++;
 		
 		applyCSSClass();
-	
-		/*
-		var canvas_id_flags;
 		
-		//get all canvas with visbility flags -> quiz relevant
-		$("canvas[id*='|']").each(function(index, canvas) {
-			//split id and flags, take flags
-			//[0] = id, [1] = visibility flags, [2] = clickable flags
-			canvas_id_flags = $(canvas).attr("id").split(":");
-			//split flags
-			canvas_id_flags[1] = canvas_id_flags[1].split("|");
-			canvas_id_flags[2] = canvas_id_flags[2].split("|");
-			
-			canvas = $(canvas);
-			
-			//remove all class attributes
-			canvas.removeClass();
-			
-			//consult visibility flag
-			if (canvas_id_flags[1][gCurrentQuizstep] === "t"){
-				//this should now be visible
-				canvas.addClass("quiz_shown");
-			}else{
-				//this should now be hidden
-				canvas.addClass("quiz_hidden");
-			}
-			
-			//consult clickable flag
-			if (canvas_id_flags[2][gCurrentQuizstep] === "t"){
-				//this should now be clickable
-				canvas.addClass("clickable");
-			}
-        });
-		*/
-		
-		/*
-		//check whether quiz has finished
-		if( typeof (checkQuizfinished()) === "undefined" )
-		{
-			//encode current savestate now as the scene isn't finished nor near finishing
-			verschluesseln();
-			
-			//else do it in advance next scene
-		}
-		*/
+		checkQuizfinished();
 		
 		//a quizstep was made
 		return true;
@@ -128,7 +85,8 @@ outputDebugInfo();
 		gcurrent_scene_counter++;
 		
 		//--------------------------
-		//loading common pictures should be enforced at the moment because picture allg_uebergang isn't available at the end of scene 1 otherwise
+		//loading common pictures should be enforced at the moment
+		//because picture allg_uebergang isn't available at the end of scene 1 otherwise
 		//--------------------------
 		ladeBilder(true);
 		ladeDialoge();
@@ -171,7 +129,7 @@ outputDebugInfo();
 
     //WORKAROUND for scene2, this must not remain here,
     //but needs a proper fix
-//    gIsSceneBeginning = true;
+	//gIsSceneBeginning = true;
     /////
 
     //Reset flags
