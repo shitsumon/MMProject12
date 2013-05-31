@@ -11,7 +11,11 @@ outputDebugInfo();
 	delimiter = String.fromCharCode(delimiter);
 	
 	//convert from number to numeral and concatenate current scene and quiz counter
-	helper = gNumberToNumeral[gcurrent_scene_counter] + delimiter + gNumberToNumeral[gCodegeneratorIndex]
+	//use previous scene_counter if loading of next scene is indicated by gUseDeprecated
+	helper =
+		gNumberToNumeral[gUseDeprecated ? gcurrent_scene_counter - 1 : gcurrent_scene_counter]
+		+ delimiter +
+		gNumberToNumeral[gCodegeneratorIndex];
 	
     for (var i = 0; i < helper.length; i++){
 		//get charcode corresponding to ascii and shift by 13
@@ -81,7 +85,8 @@ outputDebugInfo();
 	}
 	
 	//split scene number and quiz counter
-	//result will look something like "nefnz" with "f" beeing he delimiter. result.substring will return the part between the two given positions
+	//result will look something like "nefnz" with "f" beeing the delimiter.
+	//result.substring will return the part between the two given positions
 	//so '0 to delimiterPos' will be "ne" and 'delimiterPos + 1 to result.length' will be "nz"
 	result = new Array( result.substring(0, delimiterPos), result.substring(delimiterPos + 1, result.length) );
 

@@ -450,19 +450,21 @@ var gCodegeneratorIndex = 0;
 //flag to signal loading by code is going on
 var gLoadByCode = false;
 
-//array for encoding/decoding numbers to numerals in game save code
-//keep all values at the same length to not break codeGenerator->entschluesseln()
+/*
+array for encoding/decoding numbers to numerals in game save code
+keep all values at the same length to not break codeGenerator->entschluesseln()
+values are representation of the beginning letter of numbers 0-9
+10 = eins null = en
+27 = zwei sieben = zi ( i because of 6 ( sechs ) occupying the s)
+39 = drei neun = du (u because of 0 (null) and 1 (eins) occupying n and e)
+*/
 var gNumberToNumeral = new Array(
-	"nn","ne","nz",
-	"nd","nv","nf",
-	"ns","ni","na",
-	"nu","en","ee",
-	"ez","ed","ev",
-	"ef","es","ei",
-	"ea","eu","zn",
-	"ze","zz","zd",
-	"zv","zf","zs",
-	"zi","za","zu"
+	"nn","ne","nz","nd","nv","nf","ns","ni","na","nu",	/*0-9*/
+	"en","ee","ez","ed","ev","ef","es","ei","ea","eu",	/*10-19*/
+	"zn","ze","zz","zd","zv","zf","zs","zi","za","zu",	/*20-29*/
+	"dn","de","dz","dd","dv","df","ds","di","da","du",	/*30-39*/
+	"vn","ve","vz","vd","vv","vf","vs","vi","va","vu",	/*40-49*/
+	"fn","fe","fz","fd","fv","ff","fs","fi","fa","fu"	/*50-59*/
 );
 
 //array with sub array for every scene
