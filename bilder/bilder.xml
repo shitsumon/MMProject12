@@ -249,9 +249,11 @@
   <bild id="szene4_dunkel" pfad="../bilder/szene4/dunkel.png" animiert="false">
     <abmessungen height="64" width="64"/>
   </bild>
+  <!--
   <bild id="szene4_teddy" pfad="../bilder/szene4/teddy.png" animiert="false">
     <abmessungen height="63" width="102"/>
   </bild>
+  -->
     <bild id="szene4_teddy" pfad="../bilder/szene4/teddy4.png" animiert="false">
     <abmessungen height="118" width="106"/>
   </bild>
