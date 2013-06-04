@@ -143,6 +143,9 @@ outputDebugInfo();
     //create scene id
 	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
 	
+	//reset codegeneraor
+	gCodegeneratorIndex = 0;
+	
     //save number of dialogues in current scene
     gNumberOfDialogues = gDialogIDs.length;
     //Set dialog referencing counter back to zero for current scene
@@ -175,11 +178,6 @@ outputDebugInfo();
 			stoppeAnimation(animation.bild_id);
 		}
 	});
-	
-	/*
-	//encode current savestate
-	verschluesseln();
-	*/
 	
 	//remove old scene
     $("canvas[id!='uebergang']").remove();

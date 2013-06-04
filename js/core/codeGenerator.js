@@ -93,12 +93,13 @@ outputDebugInfo();
 	$(gNumberToNumeral).each(function(index, numeral) {
 		//convert back to number
 		if(result[0] === numeral){
-			
-			result[0] = index;
+			//gcurrent_scene_counter
+			//gUseDeprecated causes coding scene number 0 at the end of scene 1, take this into consideration here
+			result[0] = index == 0 ? 1 : index;
 		}
 		
 		if(result[1] === numeral){
-			
+			//gCodegeneratorIndex
 			result[1] = index;
 		}
 	});
@@ -154,19 +155,6 @@ function advanceSceneToLastSavestate(){
 	
 	//restore this value
 	gPixelProAufruf = pixelProAufruf;
-	
-	/*
-		after sceneparser is done:
-		
-			set walking speed to infinite
-			maybe hide scene
-			
-			for i=0 to gCodegeneratorIndex
-				get key=gCodegeneratorArray[gcurrent_scene_counter][i] from gClickEventValueArray
-				call clickEventHandler( corresponding value )
-		
-		this works for the steps without walking animation involved. settting gAktuellesZiel == 3 will propably fix it because there will be no walking going on then
-	*/
 	
 	/*
 	scene 1 steps:
