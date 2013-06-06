@@ -4,20 +4,23 @@ Intro:
  - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)
  - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint
  - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#
+	- dazu müssten wir den dialogparser und zeichneDialog anpassen und die xml um entsprechende tags ergänzen.
 
 Menübildschirm:
  - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
+	- normaler und gedrückter knopf sind zwei bilder die nacheinander geladen werden, manhcmal dauert das
  - "Homepage" muss noch verlinkt werden
 
 Allgemein:
  - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursib oder leicht orange anstatt gelb)
+	- gleicher punkt wie oben
 
-Szene 1:
- - Verbesserung: Laufgeschwindigkeit des Protagonisten zu niedrig
- - Verbesserung: Pfad vor dem Computerterminal ein kleines Stück weiter nach vorne in den Raum verschieben
- - Verbesserung: Pfadpunkt an der Leiter zum Bett weiter nach vorne in den Raum, Protagonist an dieser Stellevergrößern
- - Verbesserung: Protagonist steht "auf dem Papierkorb" = zu weit oben - eventuell Protagonist vergrößern und weiter nach rechts, da so zu stark vom Schrank verdeckt
- - Fehler: Ab Dialog "Ah diese herrliche Stille...", DEADLOCK, Einstellungsfenster schließt sich, aber Dialog geht nicht weiter
+Szene 1:	x erledigt
+ - Verbesserung: Laufgeschwindigkeit des Protagonisten zu niedrig	x
+ - Verbesserung: Pfad vor dem Computerterminal ein kleines Stück weiter nach vorne in den Raum verschieben x
+ - Verbesserung: Pfadpunkt an der Leiter zum Bett weiter nach vorne in den Raum, Protagonist an dieser Stellevergrößern	x
+ - Verbesserung: Protagonist steht "auf dem Papierkorb" = zu weit oben - eventuell Protagonist vergrößern und weiter nach rechts, da so zu stark vom Schrank verdeckt	x
+ - Fehler: Ab Dialog "Ah diese herrliche Stille...", DEADLOCK, Einstellungsfenster schließt sich, aber Dialog geht nicht weiter	x
 
 
 Szene 2:

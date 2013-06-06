@@ -3,10 +3,10 @@
   <szene id="Szene_1" reatselschritte="16">
   <weltall spc="false" />
     <zentralpfad>
-      <wegpunkt x="51" y="77" zoom="0.6"/>
-      <wegpunkt x="50" y="82" zoom="0.7"/>
-      <wegpunkt x="49" y="87" zoom="0.9"/>
-      <wegpunkt x="48" y="92" zoom="1.0"/>
+      <wegpunkt x="51" y="79" zoom="0.6"/>
+      <wegpunkt x="49" y="82" zoom="0.7"/>
+      <wegpunkt x="47" y="87" zoom="0.9"/>
+      <wegpunkt x="45" y="92" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
       <hg_statisch>
@@ -67,6 +67,7 @@
                             raetsel_ausloeser   ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="24" y="66" z="101"/>
           <groesse width="15" height="25"/>
+		  <laufziel x="30" y="88"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene1_schreibtisch" dialog_id="szene1.5|szene1.9"
                             klickbar            ="f|f|f|f|f|t|t|f|f|f|f|f|t|f|f|f|f"
@@ -75,6 +76,7 @@
                             raetsel_ausloeser   ="f|f|f|f|f|t|f|f|f|f|f|f|f|f|f|f|f">
           <position x="53" y="42" z="101"/>
           <groesse width="45" height="60"/>
+		  <laufziel x="68" y="82"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene1_schublade_zu" dialog_id="szene1.6"
                             klickbar            ="f|f|f|f|f|f|f|f|t|f|f|f|f|f|f|f|f"
@@ -111,7 +113,7 @@
       </hg_animiert>
       <personen>
         <person person_id="" bild_id="allg_herotileset">
-          <position x="40" y="45" z="200"/>
+          <position x="40" y="45" z="300"/>
 		<groesse width="10" height="52"/>
         </person>
       </personen>
