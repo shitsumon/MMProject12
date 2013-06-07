@@ -26,9 +26,10 @@ Szene 1:	x erledigt
 Szene 2:
  - Frage: Sollte am Anfang der Szene(Rätselschritt 1 und 2) nicht gedämpftes Licht herrschen?
  - Verbesserung: Beim Bewegen von links nach rechts, dreht der Protagonist durch die Wegpunkte kurz den Kopf zum Benutzer, was den Bewegungsfluss stört
- - Verbesserung: Auf dem Weg zum Terminal geht der Protagonist erst zu weit in den Raum und kommt dann wieder nach vorne
+ - Verbesserung: Auf dem Weg zum Terminal geht der Protagonist erst zu weit in den Raum und kommt dann wieder nach vorne	x
  - Verbesserung: Protagonist vor dem Terminal ein bisschen zu klein
- - Fehler: Nach dem Schließen des Terminalbildschirmes friert das Spiel wie in Szene 1 ein. Dialog wird nicht weitergeführt - DEADLOCK
+ - Fehler: Nach dem Schließen des Terminalbildschirmes friert das Spiel wie in Szene 1 ein. Dialog wird nicht weitergeführt - DEADLOCK	x
+ - beim Übergang zu Szene 3 werden die Objekte zu früh ausgeblendet	x
 
 
 Szene 3:
