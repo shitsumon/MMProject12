@@ -338,11 +338,11 @@ outputDebugInfo();
 
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
-				try{
+                try{
                 if( typeof( gUseDeprecatedDialogues ?
                           gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
                           gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
-				  ){
+                  ){
 					  console.log('undefined dialog in gDialoge[]!');
 					  
 					  return false;

@@ -73,6 +73,9 @@ outputDebugInfo();
     case 'scene7_blowDrChaosAway':
         scene7_blowDrChaosAway();
         break;
+    case 'scene7_enableWallButton':
+        scene7_enableWallButton();
+        break;
     default:
         break;
     }
@@ -768,4 +771,27 @@ function getScaledDimensions(arg){
     height *= z2mult(feats.position.zPos);
 
     return { 'width': width, 'height': height};
+}
+
+
+function scene7_enableWallButton(){
+
+    var canvas      = $("canvas[id*='roter_knopf_kraftfeld']");
+    canvas.addClass("clickable");
+
+    flags = canvas.attr("id").split(":");
+
+    clickableFlags = flags[2].split("|");
+
+    clickableFlags[gCurrentQuizstep] = "t";
+
+    newFlagList = clickableFlags[0];
+
+    for(var idx = 1; idx < clickableFlags.length; ++idx){
+        newFlagList += ("|" + clickableFlags[idx]);
+    }
+
+    newID = flags[0] + ":" + flags[1] + ":" + newFlagList;
+
+    canvas.attr("id", newID);
 }

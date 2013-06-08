@@ -62,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 7;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -574,7 +574,7 @@ gScene5_LayoutSettings.line_distance    = 25;
 gScene5_LayoutSettings.fixedFont        = 20;
 gScene5_LayoutSettings.qCharDivider     = 2;
 gScene5_LayoutSettings.qLeftMargin      = 9.5;
-gScene5_LayoutSettings.font_size_boost  = 1.2;
+gScene5_LayoutSettings.font_size_boost  = 1.1;
 
 function QuizObject(q, a1, a2, a3, a4){
     this.question = q;

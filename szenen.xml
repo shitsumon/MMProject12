@@ -1260,10 +1260,10 @@
   <szene id="Szene_7" reatselschritte="11">
         <weltall spc="false" />
     <zentralpfad>
-      <wegpunkt x="41" y="77" zoom="0.6"/>
-      <wegpunkt x="40" y="82" zoom="0.7"/>
-      <wegpunkt x="39" y="87" zoom="0.9"/>
-      <wegpunkt x="38" y="92" zoom="1.0"/>
+      <wegpunkt x="30" y="80" zoom="0.6"/>
+      <wegpunkt x="31" y="84" zoom="0.7"/>
+      <wegpunkt x="32" y="90" zoom="0.9"/>
+      <wegpunkt x="33" y="95" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
       <hg_statisch>
@@ -1325,7 +1325,7 @@
         </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="szene7_roter_knopf_kraftfeld"
                             dialog_id="szene7.7"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|t|t"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|t"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|t|f">
@@ -1404,7 +1404,7 @@
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
-          <position x="17.5" y="41" z="300"/>
+          <position x="17.5" y="42" z="300"/>
           <groesse width="5" height="14.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_spike_standing"
