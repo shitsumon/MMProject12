@@ -39,21 +39,27 @@ Szene 3:
 
 Szene 4:
  - Fehler: lädt insgesamt nicht
+ - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante
+ - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus
+
 
 Szene 5:
  - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen
  - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden
  - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
  - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox
+ - Fehler: Sammeln der Passwortstücke (Bücherregalrätsel) ist irgendwie verbuggt, nach einmaligem Anklicken jedes buchen geht es nicht weiter. Erst nach wildem Herumklicken
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
  - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
+ - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
- - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms
+ - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms x 
 
 
 Szene 6:
  - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate
  - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen
+ - Achtung: Bild für Raumanzug (Spike) fehlt!
  - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar
  - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts
  - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherrungskasten"
@@ -61,13 +67,18 @@ Szene 6:
  - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
  - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar
  - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar
- - Fehler: DEADLOCK nach letztem Dialog
+ - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus
+ - Fehler: DEADLOCK nach letztem Dialog x
  
  
 Szene 7:
+
+ - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene
  - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
  - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
  - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig
  - Verbesserung: Frage im Terminalfenster läuft über die Ränder der mittleren Box (Umruch notwendig) -- fertig
  - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas - Rahmen des Hover-Effektes sichtbar
  - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar
+ - Verbesserung: Sternenblinken wenn Dr. Chaos beim Drehen fast verschwindet (Wie Team Rocket aus Pokemon, falls auch das was sagt^^)
+ - Verbesserung: Credit- bzw. Ending-Fenster fehlt
