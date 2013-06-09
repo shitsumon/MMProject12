@@ -86,3 +86,7 @@ Szene 7:
  - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar
  - Verbesserung: Sternenblinken wenn Dr. Chaos beim Drehen fast verschwindet (Wie Team Rocket aus Pokemon, falls auch das was sagt^^)
  - Verbesserung: Credit- bzw. Ending-Fenster fehlt
+
+Allgemein:
+ - Zurücksetzen der Protagonistenpositionen, sowie Auswahl des zu nutzenden Tiles beim Laden der Szene
+   dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
