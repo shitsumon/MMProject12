@@ -212,7 +212,7 @@
                             walkto              ="f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar    ="t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser   ="f|f|f|f|t|f|f|t|f|f|t|f|f|f|t|f|f">
-                <position x="31" y="7" z="410"/>
+                <position x="31" y="5" z="410"/>
                 <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
       </vg_animiert>
@@ -301,7 +301,7 @@
                             walkto              ="f|f|f|f|f|f|f|f"
                             raetsel_sichtbar    ="t|t|t|t|t|t|t|f"
                             raetsel_ausloeser   ="t|f|f|f|f|f|f|f">
-          <position x="31" y="7" z="405"/>
+          <position x="31" y="5" z="405"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt> <!--Button-->
         <vg_animiert_objekt bild_id="szene2_knopf" dialog_id="szene2.2"
@@ -613,7 +613,7 @@
 		 walkto=			"f|f|f|f|f|f|f|f|f" 
 		 raetsel_sichtbar=	"t|t|t|t|t|t|t|t|t" 
 		 raetsel_ausloeser=	"f|f|f|f|f|f|f|f|f">
-          <position x="5" y="3" z="406"/>
+          <position x="31" y="5" z="406"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt
@@ -729,7 +729,7 @@
 		walkto=				"f|f|f|f|f|f|f|f" 
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
-          <position x="5" y="3" z="500"/>
+          <position x="31" y="5" z="500"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt
@@ -813,7 +813,7 @@
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="31" y="7" z="405"/>
+          <position x="31" y="5" z="405"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
@@ -1148,7 +1148,7 @@
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"f|f|f|f|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-          <position x="20" y="66" z="100"/>
+          <position x="45" y="60" z="100"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
 		
@@ -1158,7 +1158,7 @@
 		walkto=							"f|f|f|t|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|f|f|f|f|f|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-          <position x="20" y="66" z="100"/>
+          <position x="45" y="60" z="100"/>
           <groesse width="20" height="35"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene6_krebs_schein" 
@@ -1251,7 +1251,7 @@
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-          <position x="40" y="65" z="500"/>
+          <position x="31" y="5" z="500"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
       </vg_animiert>
@@ -1341,7 +1341,7 @@
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
-          <position x="31" y="7" z="406"/>
+          <position x="31" y="5" z="406"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene7_laserwand_links"

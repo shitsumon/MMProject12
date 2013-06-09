@@ -35,21 +35,24 @@ Szene 2:
 Szene 3:
  - Verbesserung: Protagonistesgröße an Szene 2 angleichen
  - Verbesserung: Bewegungspfad anpassen, Protagonist geht zu weit in den Raum an der Position des Terminals
- - Fehler: DEADLOCK nach dem Schließen des Terminalfensters
+ - Fehler: DEADLOCK nach dem Schließen des Terminalfensters x
 
 Szene 4:
- - Fehler: lädt insgesamt nicht
- - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante
+ - Fehler: lädt insgesamt nicht x
+ - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante x
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus
+ - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt)
 
 
 Szene 5:
  - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen
  - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden
  - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
- - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox
- - Fehler: Sammeln der Passwortstücke (Bücherregalrätsel) ist irgendwie verbuggt, nach einmaligem Anklicken jedes buchen geht es nicht weiter. Erst nach wildem Herumklicken
+ - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
+ - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt 
+ - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde.
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
+   Zeilenumbruch mittels "\n" ist wirkungsloss
  - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
  - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
@@ -69,11 +72,12 @@ Szene 6:
  - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar
  - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus
  - Fehler: DEADLOCK nach letztem Dialog x
+ - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig
  
  
 Szene 7:
-
- - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene
+-
+ - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde
  - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
  - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
  - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig

@@ -230,7 +230,8 @@ argument_list
   <dialog id="szene4.3" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das könnte daran liegen, dass es deine Schuhabdrücke sind.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Meine? Wie kommst du darauf?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim Sauber machen gestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. Irgendwie vergisst du das jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Vor einem halben Jahr ungefähr hast du künstliches Maschinenöl verschüttet, als du beim Sauber machen gestolpert bist und dir deinen Kopf an den Tanks gestoßen hast. </satz>
+	 <satz person_id="p1" bild_id="allg_hero_female">Irgendwie vergisst du das jedes Mal! Wobei ich mir nicht vorstellen kann, wie man eine faustgroße Beule am Kopf so schnell vergessen kann ...</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ach stimmt, da war ja was. Die Stelle schmerzt immer noch, wenn ich sie anfasse.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aber unser Weg war, glaub ich, nicht ganz umsonst. Irgendetwas passt hier nicht.</satz>
   </dialog>
@@ -367,11 +368,14 @@ argument_list
     <satz person_id="bc" bild_id="allg_bordcomputer">Ich könnte das Passwort zurücksetzen und ihr dann ein neues wählen. Doch es müsste diesmal wirklich sicher sein, damit Dr. Chaos es nicht ändern kann.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Können wir nicht wieder das alte Passwort nehmen? Ich fand "passwort" konnte man sich leicht merken.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Und vor allem konnte Dr. Chaos "passwort" leicht knacken. Gut Mäck, wie machen wir uns ein sicheres Passwort?</satz>
-    <satz person_id="bc" bild_id="allg_bordcomputer">Für ein sicheres Passwort nimmt man Buchstaben, Großbuchstaben, Zahlen und Sonderzeichen. Als Grundlage nimmt man ein komplexes Wort und ersetzt Buchstaben durch Großbuchstaben, Zahlen und Sonderzeichen. Ein Beispiel für das Wort Keks wäre "k5/S" wobei dies nur ein Beispiel ist. Ihr solltet euer Passwort möglichst lang machen, allerdings gibt es vor allem im SpaceNet Begrenzungen, was die Länge betrifft.</satz>
+    <satz person_id="bc" bild_id="allg_bordcomputer">Für ein sicheres Passwort nimmt man Buchstaben, Großbuchstaben, Zahlen und Sonderzeichen. Als Grundlage nimmt man ein komplexes Wort und ersetzt Buchstaben durch Großbuchstaben, Zahlen und Sonderzeichen.</satz>
+	<satz person_id="bc" bild_id="allg_bordcomputer">Ein Beispiel für das Wort Keks wäre "k5/S" wobei dies nur ein Beispiel ist. Ihr solltet euer Passwort möglichst lang machen, allerdings gibt es vor allem im SpaceNet Begrenzungen, was die Länge betrifft.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Klingt kompliziert, aber wenn wir einen Zettel an den Bildschirm kleben, sollte es kein Problem sein.</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Schade, deine geniale Idee von eben war wohl eine einmalige Sache. Wir müssen uns das Passwort natürlich merken, damit Dr. Chaos es nicht einfach ablesen kann. Um es uns zu merken, brauchen wir Eselsbrücken. Sag mal, stand in der Abstellkammer nicht ein Bücherregal? Vielleicht finden wir dort etwas Sinnvolles.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Schade, deine geniale Idee von eben war wohl eine einmalige Sache. Wir müssen uns das Passwort natürlich merken, damit Dr. Chaos es nicht einfach ablesen kann. Um es uns zu merken, brauchen wir Eselsbrücken.</satz>
+	<satz person_id="p1" bild_id="allg_hero_female">Sag mal, stand in der Abstellkammer nicht ein Bücherregal? Vielleicht finden wir dort etwas Sinnvolles.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Aber dort kann Dr. Chaos doch auch das Passwort nachlesen, oder nicht?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">Ich bezweifle, dass er auf die Idee kommt, sich durch den ganzen Müll durchzuwühlen, um ein paar veraltete Bücher durchzuwälzen. Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">Ich bezweifle, dass er auf die Idee kommt, sich durch den ganzen Müll durchzuwühlen, um ein paar veraltete Bücher durchzuwälzen.</satz>
+	<satz person_id="p1" bild_id="allg_hero_female">Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz>
   </dialog>
   <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
@@ -534,7 +538,8 @@ argument_list
     <satz person_id="dr" bild_id="allg_dr_chaos">Man merkt, ich sage die Wahrheit, sag ich doch. Täd hat vorhin außerdem programmiert, dass die Frachtraumklappe 1 Minute und 30 Sekunden nach dem Öffnen der Tür, aufgeht.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Ich bin natürlich hinter dem Schutzschild sicher, ihr hingegen müsst das Raumschiff gezwungenermaßen  verlassen. Das passiert in 10 ... 9 ... 8 ... 7 ... 6 ... 5 ... 4 ... 3 ... 2 ... 1 ... JETZT!</satz>
     <satz person_id="tb" bild_id="allg_teddy">Es könnte sein, dass ich statt 1 Minute und 30 Sekunden, 1 Tag und 30 Minuten eingestellt habe.</satz>
-    <satz person_id="dr" bild_id="allg_dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen…Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm. Dann warten wir eben hier, bis morgen die Frachtraumklappe aufgeht.</satz>
+    <satz person_id="dr" bild_id="allg_dr_chaos">DAS DARF DOCH NICHT WAHR SEIN! Ähm wollte sagen … Man kann es kaum glauben, ich glaub es ja nicht! Aber das ist nicht schlimm, gar nicht schlimm.</satz>
+	<satz person_id="dr" bild_id="allg_dr_chaos">Dann warten wir eben hier, bis morgen die Frachtraumklappe aufgeht.</satz>
     <satz person_id="dr" bild_id="allg_dr_chaos">Ihr könnt natürlich auch einfach den Knopf dort vorne drücken, um euch selbst hinauszubefördern.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich glaube nicht. Das ist unser Schiff! Genieß ruhig die letzten Momente in unserem Frachtraum, Dr. Chaos.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Hast du einen Plan, P1_DYN_NAME?</satz>
