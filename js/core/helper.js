@@ -639,6 +639,13 @@ function getClickableSlots(){
 
 }
 
+
+/*************************
+ *Scene 6 exceptions data*
+ *************************/
+var gScene6RiddleStepState = 0;
+
+
 /*************************
  *Scene 7 exceptions data*
  *************************/

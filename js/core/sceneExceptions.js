@@ -59,6 +59,11 @@ outputDebugInfo();
 
         scene5_hideDialogbox(arguments);
         break;
+		
+	case 'scene6_celestial_quiz':
+		scene6_celestial_quiz(arguments);
+		break;
+	
     case 'scene7_flipSpike':
         scene7_flipSpikeBackAndForth(arguments);
         break;
@@ -587,6 +592,45 @@ function scene5_hideDialogbox(arg){
         $("canvas[id*='allg_dialogbox']").removeClass("invisible");
         break;
     }
+}
+
+
+function scene6_celestial_quiz(arg){
+// simple 3 step quiz - klick three signs in the correct order otherwise start over again
+	var choice_correct = true;
+	
+	switch(arg){
+	case 'stier': 
+		if (gScene6RiddleStepState == 0){
+			gScene6RiddleStepState = 1;}
+		else {
+			gScene6RiddleStepState =0;
+			choice_correct = false;}
+		break;	
+	case 'waage': 
+		if (gScene6RiddleStepState == 1){
+			gScene6RiddleStepState = 2;}
+		else {
+			gScene6RiddleStepState =0;
+			choice_correct = false;}
+		break;	
+	case 'krebs':
+		if (gScene6RiddleStepState == 2){
+			gScene6RiddleStepState = 3;
+			gForceOtherDialog   = true;
+        	gDialogToForce      = "szene6.8.5";
+       		gIncreaseDialogStep = testIfSubDialog(gDialogToForce);}
+		else {
+			gScene6RiddleStepState =0;
+			choice_correct = false}
+		break;
+	}
+	
+	if (choice_correct == false){
+		gForceOtherDialog   = true;
+        gDialogToForce      = "szene6.8.1";
+       	gIncreaseDialogStep = testIfSubDialog(gDialogToForce);}
+	
 }
 
 /**

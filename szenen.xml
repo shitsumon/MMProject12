@@ -1163,7 +1163,7 @@
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene6_krebs_schein" 
 		dialog_id=						"szene6.8.4" 
-		klickbar=						"f|f|f|f|f|f|f|f|f|t|f" 
+		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
@@ -1181,7 +1181,7 @@
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene6_waage_schein" 
 		dialog_id=						"szene6.8.3" 
-		klickbar=						"f|f|f|f|f|f|f|f|t|f|f" 
+		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
@@ -1217,7 +1217,7 @@
 		dialog_id=						"szene6.2" 
 		klickbar=						"f|t|f|f|f|f|f|f|f|f|f" 
 		walkto=							"f|t|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|f"  
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
 		
           <position x="5.5" y="80.5" z="400"/>
@@ -1225,12 +1225,12 @@
         </vg_animiert_objekt>
 		
         <vg_animiert_objekt bild_id="szene6_luke_links_offen" 
-		dialog_id=						"szene6.9" 
-		klickbar=						"f|f|f|f|f|f|f|f|f|f|t" 
-		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"f|f|f|f|f|f|f|f|f|f|t"  
+		dialog_id=						"szene6.10" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|t|t" 
+		walkto=							"f|f|f|f|f|f|f|f|f|t|t"
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|f|f|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-          <position x="8" y="72.5" z="400"/>
+          <position x="8" y="72.5" z="401"/>
           <groesse width="18.5" height="27.5"/>
         </vg_animiert_objekt>
 		
@@ -1242,11 +1242,11 @@
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-            <position x="30" y="55" z="401"/>
+            <position x="30" y="55" z="402"/>
             <groesse width="8" height="41"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox"
-		dialog_id=						"szene6.1|szene6.3|szene6.6" 
+		dialog_id=						"szene6.1|szene6.3|szene6.6|szene6.9" 
 		klickbar=						"t|t|t|t|t|t|t|t|t|t|t" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
