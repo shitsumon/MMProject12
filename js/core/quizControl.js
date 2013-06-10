@@ -127,11 +127,6 @@ outputDebugInfo();
 function advanceNextScene(){
 outputDebugInfo();
 
-    //WORKAROUND for scene2, this must not remain here,
-    //but needs a proper fix
-	//gIsSceneBeginning = true;
-    /////
-
     //Reset flags
     gSceneHasBeenLoad       = false;
     gUseDeprecated          = false;
@@ -141,34 +136,34 @@ outputDebugInfo();
     gDeprecatedDialogues    = new Object();
 
     //create scene id
-	gcurrent_scene_id			= "Szene_" + gcurrent_scene_counter.toString();
+	gcurrent_scene_id		= "Szene_" + gcurrent_scene_counter.toString();
 	
 	//reset codegeneraor
-	gCodegeneratorIndex = 0;
+	gCodegeneratorIndex		= 0;
 	
     //save number of dialogues in current scene
-    gNumberOfDialogues = gDialogIDs.length;
+    gNumberOfDialogues		= gDialogIDs.length;
     //Set dialog referencing counter back to zero for current scene
-    gDialogCounter = 0;
+    gDialogCounter			= 0;
 
 	//reset quiz
-	gQuizsteps					= 0;
-	gCurrentQuizstep			= 0;
+	gQuizsteps				= 0;
+	gCurrentQuizstep		= 0;
 
     //reset quiz counter for quizzes in scene 5 and 7
-    gRiddleStepCounter          = 0;
+    gRiddleStepCounter		= 0;
 	
 	//prepare new zoomsteps
-	gZoomsteps					= new Array(4);
+	gZoomsteps				= new Array(4);
 
     //Clear Blacklist to avoid unnecessary search overhead
-    gSubDialogBlacklist         = new Array();
+    gSubDialogBlacklist		= new Array();
 
     //Clear quiz dialog blacklist
-    gQuizDialogBlacklist        = new Array();
+    gQuizDialogBlacklist	= new Array();
 
     //clear click event array
-    gClickEventValueArray       = new Array();
+    gClickEventValueArray	= new Array();
 
 	//clear animation
 	$(gAnimationTimer).each(function(index, animation) {
@@ -183,7 +178,7 @@ outputDebugInfo();
     $("canvas[id!='uebergang']").remove();
 
 	//reset flags
-	gdisplay_next_scene			= true;
+	gdisplay_next_scene		= true;
 //	gpictureparser_xml_geladen	= false;
 //	gdialogparser_xml_geladen	= false;
 	

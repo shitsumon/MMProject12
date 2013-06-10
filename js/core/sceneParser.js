@@ -292,7 +292,7 @@ function drawObjectsOfSameType(sharedIdString, objectsToDraw, hasSingleCanvas){
 outputDebugInfo();
 
     //faulty input error checking
-    if(sharedIdString === '' || typeof(sharedIdString) === 'undefined'){
+    if(typeof(sharedIdString) === 'undefined' || sharedIdString === ''){
         alert("Id string not set!");
         return;
     }
@@ -392,7 +392,6 @@ outputDebugInfo();
 
             //preset gTalk.canvasID for later referencing
             if(strContains(canvasID, "dialogbox")){
-                //alert(canvasID);
                 gTalk.canvas_id = canvasID;
             }
 

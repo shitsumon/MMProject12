@@ -223,35 +223,42 @@ outputDebugInfo();
     var subtext = "";
     var result  = new Array();
     var search  = 0;
+	var dummy;
 	
 	//replace commas to prevent them from beeing misinterpreted as array separator
 	text = text.replace(/,/g, "#KOMMA#");
 	
     if ( text.length > pixelSize )
 	{
-        /*falls text zu lange, nimm maximale-laenge string
-          suche nach letztem Space speichere String als Zeile
-          mach das so lange weiter bis alles rein passt*/
+		//divide sentence into smaller line chunks while it is too large to be displayed
         while(text.length > pixelSize){
 
-            subtext =	text.substr( 0, pixelSize);
-            search  =	subtext.lastIndexOf(" ") + 1;
+            subtext	= text.substr( 0, pixelSize);//take what fits pixelSize
+            search 	= subtext.lastIndexOf(" ") + 1;//search last space inside
 
-            result.push (text.substr( 0, search));
+            result.push (text.substr( 0, search));//take everything except the last word
 
-            text    =	text.substr(search,text.length);
+			dummy	= text.length;//store length before removing he computed part
+            text    = text.substr(search,text.length);//remove it from whole text
+			
+			if(text.length == dummy)
+			{
+				//nothing has changed so better leave this endless loop
+				break;
+			}
 		}
 		
         if( text.length > 0 ){
-
+			//add remaining text
             result.push(text);
-        }//fuege rest ran
+        }
 		
 		return result;
 	}
 	else
 	{
-        result.push(text); //falls text kurz genug ist, mache nichts
+		//do nohing oherwise
+        result.push(text);
 	}
 		
 	return result;
