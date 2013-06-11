@@ -50,6 +50,7 @@ Szene 5:
  - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
  - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
  - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt 
+	- bei mir siehts gut aus, machst du einen screenshot?
  - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde.
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
    Zeilenumbruch mittels "\n" ist wirkungsloss

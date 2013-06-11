@@ -145,12 +145,23 @@ function advanceSceneToLastSavestate(){
 	gPixelProAufruf = 1;
 	
 	var key;
+	var localSceneCounter;
 	
 	//step through the scene as the player would
-	for(var i = 0; i < gCodegeneratorIndex; i++){
+	for(var i = 0, j = 0; i < gCodegeneratorIndex; i++, j++){
 		
-		key = gCodegeneratorArray[ gcurrent_scene_counter - 1 ][i];
+		key = gCodegeneratorArray[ gcurrent_scene_counter - 1 ][j];
+		
+		localSceneCounter = gcurrent_scene_counter;
+		
 		startEventHandling( gClickEventValueArray[ key ].key );
+		
+		if( localSceneCounter != gcurrent_scene_counter ){
+			//the scene changed so we have to adjust the index variable
+			//-1 because it will be incremented to 0 by the loop
+			j = -1;
+			break;
+		}
 	}
 	
 	//restore this value
