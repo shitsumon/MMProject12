@@ -91,3 +91,4 @@ Szene 7:
 Allgemein:
  - Zurücksetzen der Protagonistenpositionen, sowie Auswahl des zu nutzenden Tiles beim Laden der Szene
    dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
+	- die größe stimmt wieder. die richtige ausrichtung ist so eine sache

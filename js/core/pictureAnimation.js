@@ -99,7 +99,11 @@ outputDebugInfo();
 						pxWidth,
 						pxHeight
                     );
-    }
+    }else{
+		//adjust size of old animation otherwise
+		gAnimationTimer[bild_id].anzeige_height	= pxHeight;
+		gAnimationTimer[bild_id].anzeige_width	= pxWidth;
+	}
 	
 	if(!strContains(canvas_id, 'person')){
 		//if you're not a person subtilesets should not be used
