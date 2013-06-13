@@ -224,11 +224,11 @@ color:                      #FFFF00;
 text-shadow:                -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
 opacity:                    0;
 z-index:                    4;
--webkit-animation:          logo 5s ease-out 2.5s;
--moz-animation:             logo 5s ease-out 2.5s;
--ms-animation:              logo 5s ease-out 2.5s;
--o-animation:               logo 5s ease-out 2.5s;
-animation:                  logo 5s ease-out 2.5s;
+-webkit-animation:          logo 5s ease-out 2s;
+-moz-animation:             logo 5s ease-out 2s;
+-ms-animation:              logo 5s ease-out 2s;
+-o-animation:               logo 5s ease-out 2s;
+animation:                  logo 5s ease-out 2s;
 pointer-events:             none;
 }
 
@@ -344,11 +344,11 @@ text-decoration:            underline;
 {
 position:                   absolute;
 top:                        100%;
--webkit-animation:          scroll 100s linear 4s infinite;
--moz-animation:             scroll 100s linear 4s infinite;
--ms-animation:              scroll 100s linear 4s infinite;
--o-animation:               scroll 100s linear 4s infinite;
-animation:                  scroll 100s linear 4s infinite;
+-webkit-animation:          scroll 130s linear 4s infinite;
+-moz-animation:             scroll 130s linear 4s infinite;
+-ms-animation:              scroll 130s linear 4s infinite;
+-o-animation:               scroll 130s linear 4s infinite;
+animation:                  scroll 130s linear 4s infinite;
 z-index:                    4;
 }
 

@@ -519,7 +519,7 @@ function strContains(string, substring){
 }
 
 //timer for hiding intro
-setTimeout(function() { HideElementsIntro(); },25000);
+setTimeout(function() { HideElementsIntro(); }, 33000);
 
 function HideElementsIntro(){
 outputDebugInfo();
@@ -532,6 +532,7 @@ outputDebugInfo();
 };
 
 function HideElementsMenu(){
+outputDebugInfo();
 	//hides menu elements, called in sceneparser
 	$('#bg').remove();
 	$('#menu').remove();

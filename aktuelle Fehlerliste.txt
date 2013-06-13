@@ -1,19 +1,18 @@
 Verbesserungen:
 
 Intro:
- - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)
- - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint
- - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#
-	- dazu müssten wir den dialogparser und zeichneDialog anpassen und die xml um entsprechende tags ergänzen.
+ - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)	x
+ - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint	x
+ - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#	x
 
 Menübildschirm:
  - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
-	- normaler und gedrückter knopf sind zwei bilder die nacheinander geladen werden, manhcmal dauert das
+	- normaler und gedrückter knopf sind zwei bilder die nacheinander geladen werden, manchmal dauert das
  - "Homepage" muss noch verlinkt werden
 
 Allgemein:
- - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursib oder leicht orange anstatt gelb)
-	- gleicher punkt wie oben
+ - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursiv oder leicht orange anstatt gelb)
+	- anpassung des dialogparsers und der xml. lassen wir das unsere nachfolger machen
 
 Szene 1:	x erledigt
  - Verbesserung: Laufgeschwindigkeit des Protagonisten zu niedrig	x
@@ -89,6 +88,5 @@ Szene 7:
  - Verbesserung: Credit- bzw. Ending-Fenster fehlt
 
 Allgemein:
- - Zurücksetzen der Protagonistenpositionen, sowie Auswahl des zu nutzenden Tiles beim Laden der Szene
-   dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
-	- die größe stimmt wieder. die richtige ausrichtung ist so eine sache
+ - Zurücksetzen der Protagonistenpositionen	x
+ - Auswahl des zu nutzenden Tiles beim Laden der Szene dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
