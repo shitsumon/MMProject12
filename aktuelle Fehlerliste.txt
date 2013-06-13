@@ -77,15 +77,15 @@ Szene 6:
  
 Szene 7:
 -
- - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde
+ - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- Fehler zählt zu Szene 6?
  - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
  - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
  - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig
  - Verbesserung: Frage im Terminalfenster läuft über die Ränder der mittleren Box (Umruch notwendig) -- fertig
  - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas - Rahmen des Hover-Effektes sichtbar
- - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar
- - Verbesserung: Sternenblinken wenn Dr. Chaos beim Drehen fast verschwindet (Wie Team Rocket aus Pokemon, falls auch das was sagt^^)
- - Verbesserung: Credit- bzw. Ending-Fenster fehlt
+ - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar -- fertig
+ - Verbesserung: Sternenblinken wenn Dr. Chaos beim Drehen fast verschwindet (Wie Team Rocket aus Pokemon, falls auch das was sagt^^) -- zählt als feature, und wird daher nicht berücksichtigt
+ - Verbesserung: Credit- bzw. Ending-Fenster fehlt -- gehört nicht zur Szene
 
 Allgemein:
  - Zurücksetzen der Protagonistenpositionen	x
