@@ -62,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 7;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -304,6 +304,8 @@ function Satz(_person_id, _bild_id, _inhalt){
 /*****************
  *dialogControl.js*
  *****************/
+//backup for scene dialogues
+var gBackupOfDialogs = new Object();
 //global variable to store dialogues properties
 var gPercentageFontSize	= 10;
 //prototype of dialogue object

@@ -1325,12 +1325,12 @@
         </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="szene7_roter_knopf_kraftfeld"
                             dialog_id="szene7.7"
-                            klickbar=               "f|f|f|f|f|f|f|f|f|f|t"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
-                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|t|f">
-          <position x="10" y="48" z="406"/>
-          <groesse width="7" height="12"/>
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
+          <position x="11.70" y="44.35" z="406"/>
+          <groesse width="4.95" height="10.1"/>
         </vg_statisch_objekt>
       </vg_statisch>
       <vg_animiert>
@@ -1348,11 +1348,22 @@
                             dialog_id="#none#"
                             klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|f|f"
+                            raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
+          <position x="0" y="0" z="405"/>
+          <groesse width="50" height="100"/>
+        </vg_animiert_objekt>
+
+        <vg_animiert_objekt bild_id="szene7_laserwand_links_cut_out"
+                            dialog_id="#none#"
+                            klickbar=               "f|f|f|f|f|f|f|f|f|f|f"
+                            walkto=                 "f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="405"/>
           <groesse width="50" height="100"/>
         </vg_animiert_objekt>
+
         <vg_animiert_objekt bild_id="szene7_laserwand_rechts"
                             dialog_id="#none#"
                             klickbar=               "f|f|f|f|f|f|f|f|f|f|f"

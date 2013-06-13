@@ -431,6 +431,9 @@
   <bild id="szene7_laserwand_links" pfad="../bilder/szene7/laserwand_links.png" animiert="false">
     <abmessungen height="720" width="637"/>
   </bild>
+  <bild id="szene7_laserwand_links_cut_out" pfad="../bilder/szene7/laserwand_links_cut_out.png" animiert="false">
+    <abmessungen height="720" width="637"/>
+  </bild>
   <bild id="szene7_laserwand_rechts" pfad="../bilder/szene7/laserwand_rechts.png" animiert="false">
     <abmessungen height="720" width="627"/>
   </bild>

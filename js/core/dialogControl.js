@@ -65,6 +65,10 @@ outputDebugInfo();
     //fetch dialog IDs
     var dialogIDs = fetchDialogIDs();
 
+    if(dialogIDs.length == 0){
+        dialogIDs = gBackupOfDialogs;
+    }
+
     //Check whether sentence triggers event exception
     if(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception != '#none#' &&
             parseInt(dialogIDs[gDialogCounter + gSubDialogOffset].invoke_scene_exception.split(':')[1]) == gTalk.SatzCounter){
@@ -329,6 +333,11 @@ outputDebugInfo();
     }
 
     var dialogIDs           = fetchDialogIDs();
+
+    if(dialogIDs.length == 0){
+        dialogIDs = gBackupOfDialogs;
+    }
+
     gIncreaseDialogStep     = true;
 
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){

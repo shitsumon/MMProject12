@@ -19,6 +19,7 @@ outputDebugInfo();
         gDialogIDs = new Array();
     }else{
         gDeprecatedDialogIDs = gDialogIDs;
+        gBackupOfDialogs     = gDialogIDs;
         gDialogIDs           = new Array();
 
         gUseDeprecatedDialogues = true;

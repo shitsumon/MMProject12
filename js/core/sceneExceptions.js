@@ -697,8 +697,16 @@ function flipCharacterHorizontally(arg){
  * none
  */
 function scene7_blowDrChaosAway(){
+    /*
+      This is rather hacky, but it's
+      almost friday so fuck this shit...
+    */
+    gCurrentQuizstep++;
+    applyCSSClass();
+    checkQuizfinished();
+    /*Hacky shit ends here*/
 
-     gTimerHandle = window.setInterval(applyNextTransformation, 50);
+    gTimerHandle = window.setInterval(applyNextTransformation, 50);
 }
 
 /**
@@ -776,6 +784,9 @@ function applyNextTransformation(){
     //Stop if image is small enough
     if(gDrChaosScalingFactor <= 0){
         window.clearInterval(gTimerHandle);
+
+        gDeprecatedDialogIDs = gDialogIDs;
+//        gDialogIDs = gDeprecatedDialogIDs;
     }
 }
 
