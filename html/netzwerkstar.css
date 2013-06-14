@@ -348,7 +348,7 @@ text-decoration:            underline;
 {
 position:                   absolute;
 top:                        100%;
--webkit-animation:          scroll 130s linear 4s infinite;
+-webkit-animation:          scroll 200s linear 4s infinite;
 -moz-animation:             scroll 130s linear 4s infinite;
 -ms-animation:              scroll 130s linear 4s infinite;
 -o-animation:               scroll 130s linear 4s infinite;
