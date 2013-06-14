@@ -65,7 +65,7 @@ Szene 6:
  - Achtung: Bild für Raumanzug (Spike) fehlt! x
  - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar x
  - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts x
- - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherrungskasten"
+ - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherungskasten" x
  - Verbesserung: Anpassen des Bewegungspfades
  - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
  - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar x
@@ -73,6 +73,7 @@ Szene 6:
  - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus
  - Fehler: DEADLOCK nach letztem Dialog x
  - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig x
+ - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
  
  
 Szene 7:
