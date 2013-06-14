@@ -63,6 +63,10 @@ background: url("../bilder/allgemein/credits1.png");
 background: url("../bilder/allgemein/credits2.png");
 }
 
+#codefeld{
+z-index:1000;
+}
+
 #impressum {
 visibility: hidden;
 color:#FFFFFF;

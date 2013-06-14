@@ -149,18 +149,18 @@ function advanceSceneToLastSavestate(){
 	
 	//step through the scene as the player would
 	for(var i = 0, j = 0; i < gCodegeneratorIndex; i++, j++){
+		//gUseDeprecated indicates whether we should use the current or the previous scene index
+		key = gCodegeneratorArray[ gcurrent_scene_counter - (gUseDeprecated ? 2 : 1) ][j];
 		
-		key = gCodegeneratorArray[ gcurrent_scene_counter - 1 ][j];
-		
+		//remember scene number before progressing
 		localSceneCounter = gcurrent_scene_counter;
-		
+		//progress eventually
 		startEventHandling( gClickEventValueArray[ key ].key );
 		
 		if( localSceneCounter != gcurrent_scene_counter ){
 			//the scene changed so we have to adjust the index variable
 			//-1 because it will be incremented to 0 by the loop
 			j = -1;
-			break;
 		}
 	}
 	
@@ -188,5 +188,14 @@ function advanceSceneToLastSavestate(){
 	EaRRRV
 	jaRWRN
 	CaRPRh - click bin
+	..
+	faRSMN
+	xaRkMh
+	NaRaQa
+	uaRhQR
+	MaRZQm
+	JaRWQQ
+	paRcQi
+	laRYQS
 	*/
 }
