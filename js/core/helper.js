@@ -42,7 +42,7 @@ function outputDebugInfo(){
  *Demo Mode*
  ***********/
 var gDemoMode = false;
-var gStopAtScene = 'Szene_3';
+var gStopAtScene = 'Szene_1';
 
 /*********
  *menu.js*
@@ -62,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 1;
+var gcurrent_scene_counter	= 6;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -521,7 +521,7 @@ function strContains(string, substring){
 }
 
 //timer for hiding intro
-setTimeout(function() { HideElementsIntro(); }, 33000);
+setTimeout(function() { HideElementsIntro(); }, 55000);
 
 function HideElementsIntro(){
 outputDebugInfo();
@@ -538,6 +538,11 @@ outputDebugInfo();
 	//hides menu elements, called in sceneparser
 	$('#bg').remove();
 	$('#menu').remove();
+}
+
+//go to homepage
+function GoToHomepage() {
+    location.href = 'http://www.netzwerkstar.de/';
 }
 
 /************

@@ -8,7 +8,7 @@ Intro:
 Menübildschirm:
  - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
 	- normaler und gedrückter knopf sind zwei bilder die nacheinander geladen werden, manchmal dauert das
- - "Homepage" muss noch verlinkt werden
+ - "Homepage" muss noch verlinkt werden x
 
 Allgemein:
  - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursiv oder leicht orange anstatt gelb)
