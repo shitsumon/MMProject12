@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bilder><!--Anzahl: 1-->
+  <bild id="" pfad="" animiert="">
+    <abmessungen height="" width=""/>
+    <animation fps="" tile_anzahl="" tile_width=""/>
+    <skalierung>
+      <stufe x="" y="" z=""/>
+    </skalierung>
+  </bild>
+</bilder>
