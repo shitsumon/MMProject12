@@ -62,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 6;
+var gcurrent_scene_counter	= 1;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -521,7 +521,7 @@ function strContains(string, substring){
 }
 
 //timer for hiding intro
-setTimeout(function() { HideElementsIntro(); }, 55000);
+setTimeout(function() { HideElementsIntro(); }, 33000);
 
 function HideElementsIntro(){
 outputDebugInfo();

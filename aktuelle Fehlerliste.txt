@@ -1,7 +1,9 @@
 Verbesserungen:
 
 Intro:
----
+ - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)	x
+ - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint	x
+ - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#	x
 
 Menübildschirm:
  - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
