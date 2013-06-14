@@ -63,16 +63,16 @@ Szene 6:
  - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate
  - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen
  - Achtung: Bild für Raumanzug (Spike) fehlt! x
- - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar
- - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts
+ - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar x
+ - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts x
  - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherrungskasten"
  - Verbesserung: Anpassen des Bewegungspfades
  - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
- - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar
- - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar
+ - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar x
+ - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar x
  - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus
  - Fehler: DEADLOCK nach letztem Dialog x
- - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig
+ - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig x
  
  
 Szene 7:

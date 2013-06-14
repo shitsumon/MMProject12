@@ -1120,7 +1120,7 @@
       </vg_animiert>
     </ebenen>
   </szene>
-  <szene id="Szene_6" reatselschritte="11">
+ <szene id="Szene_6" reatselschritte="11">
         <weltall spc="true" />
     <zentralpfad>
       <wegpunkt x="51" y="77" zoom="0.6"/>
@@ -1165,7 +1165,7 @@
 		dialog_id=						"szene6.8.4" 
 		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|f|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="70" y="5" z="100"/>
           <groesse width="50" height="50"/>
@@ -1174,7 +1174,7 @@
 		dialog_id=						"szene6.8.2" 
 		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|f|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="35" y="22" z="100"/>
           <groesse width="50" height="55"/>
@@ -1183,7 +1183,7 @@
 		dialog_id=						"szene6.8.3" 
 		klickbar=						"f|f|f|f|f|f|f|t|f|f|f" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|t|t|t"  
+		raetsel_sichtbar=				"f|f|f|f|f|f|f|t|f|f|f"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="1" y="0" z="100"/>
           <groesse width="50" height="70"/>
@@ -1194,7 +1194,7 @@
 
         <person person_id="" bild_id="allg_herotileset">
           <position x="50" y="45" z="404"/>
-          <groesse width="10" height="52"/>
+          <groesse width="8" height="42"/>
         </person>
 
       </personen>
@@ -1225,11 +1225,11 @@
         </vg_animiert_objekt>
 		
         <vg_animiert_objekt bild_id="szene6_luke_links_offen" 
-		dialog_id=						"szene6.10" 
-		klickbar=						"f|f|f|f|f|f|f|f|f|t|t" 
-		walkto=							"f|f|f|f|f|f|f|f|f|t|t"
+		dialog_id=						"#none#" 
+		klickbar=						"f|f|f|f|f|f|f|f|f|t|f" 
+		walkto=							"f|f|f|f|f|f|f|f|f|t|f"
 		raetsel_sichtbar=				"f|f|f|f|f|f|f|f|f|t|t"  
-		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
+		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|t|f">
           <position x="8" y="72.5" z="401"/>
           <groesse width="18.5" height="27.5"/>
         </vg_animiert_objekt>
@@ -1246,10 +1246,10 @@
             <groesse width="8" height="41"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox"
-		dialog_id=						"szene6.1|szene6.3|szene6.6|szene6.9" 
-		klickbar=						"t|t|t|t|t|t|t|t|t|t|t" 
+		dialog_id=						"szene6.1|szene6.3|szene6.6|szene6.9|szene6.10" 
+		klickbar=						"t|t|t|t|t|t|t|t|t|f|t" 
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
-		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
+		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|f|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="31" y="5" z="500"/>
           <groesse width="42.5" height="23"/>
