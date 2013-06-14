@@ -521,7 +521,8 @@ function strContains(string, substring){
 }
 
 //timer for hiding intro
-setTimeout(function() { HideElementsIntro(); }, 55000);
+//set to 33s intentionally
+setTimeout(function() { HideElementsIntro(); }, 33000);
 
 function HideElementsIntro(){
 outputDebugInfo();

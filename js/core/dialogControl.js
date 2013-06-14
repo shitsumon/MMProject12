@@ -25,7 +25,8 @@ outputDebugInfo();
     if(typeof(scene_id) == 'undefined'){
         gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
     }else{
-        gTalk.dialog_id = scene_id;
+		//hopefully the first dialog will always carry the ".1" name
+        gTalk.dialog_id = scene_id.toLowerCase().replace(/_/g,"")+".1";
     }
 
     //set canvas id
