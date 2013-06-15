@@ -37,10 +37,11 @@ Szene 3:
  - Fehler: DEADLOCK nach dem Schließen des Terminalfensters x
 
 Szene 4:
- - Fehler: lädt insgesamt nicht x
+ - Fehler: lädt insgesamt nicht x -- Laden funktioniert ohne probleme bei mir. Bitte pruefen!
  - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante x
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus
  - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt)
+ - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy
 
 
 Szene 5:

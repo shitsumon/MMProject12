@@ -640,16 +640,16 @@
     <ebenen>
       <hg_statisch>
         <hg_statisch_objekt bild_id="szene4_hg" dialog_id="#none#" 
-		klickbar=			"f|f|f|f|f|f|f|f" 
-		walkto=				"f|f|f|f|f|f|f|f" 
+                klickbar=		"f|f|f|f|f|f|f|f"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="0"/>
           <groesse width="100" height="100"/>
         </hg_statisch_objekt>
         <hg_statisch_objekt bild_id="szene4_haken" dialog_id="#none#" 
-		klickbar=			"f|f|f|f|f|f|f|f" 
-		walkto=				"f|f|f|f|f|f|f|f" 
+                klickbar=		"f|f|f|f|f|f|f|f"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="57" y="41" z="0"/>
@@ -658,12 +658,13 @@
       </hg_statisch>
       <hg_animiert>
         <hg_animiert_objekt bild_id="szene4_kabel" dialog_id="szene4.5" 
-		klickbar=			"f|f|f|f|t|f|f|f" 
-		walkto=				"f|f|f|f|t|f|f|f"
+                klickbar=		"f|f|f|f|t|f|f|f"
+                walkto=			"f|f|f|f|t|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|f|f|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
-          <position x="56.4" y="41.3" z="100"/>
+          <position x="56.4" y="41.3" z="250"/>
           <groesse width="4.5" height="21"/>
+          <laufziel x="56.4" y="80"/>
         </hg_animiert_objekt>
       </hg_animiert>
       <personen>
@@ -674,59 +675,59 @@
       </personen>
       <vg_statisch>
         <vg_statisch_objekt bild_id="szene4_fussabdruck" dialog_id="szene4.2|szene4.4.1" 
-		klickbar=			"f|t|f|t|f|f|f|f" 
-		walkto=				"f|t|f|t|f|f|f|f"
+                klickbar=		"f|t|f|t|f|f|f|f"
+                walkto=			"f|t|f|t|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="38" y="86" z="300"/>
           <groesse width="15" height="15"/>
         </vg_statisch_objekt>
         <vg_statisch_objekt bild_id="szene4_schreibtisch" dialog_id="#none#" 
-		klickbar=			"f|f|f|f|f|f|f|f" 
-		walkto=				"f|f|f|f|f|f|f|f"
+                klickbar=		"f|f|f|f|f|f|f|f"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="78.3" y="51.5" z="300"/>
           <groesse width="26" height="50"/>
         </vg_statisch_objekt>
       </vg_statisch>
-	  
       <vg_animiert>
         <vg_animiert_objekt bild_id="szene4_oelkanne" dialog_id="szene4.4.2|szene4.6" 
-		klickbar=			"f|f|f|t|f|t|f|f" 
-		walkto=				"f|f|f|t|f|t|f|f"
+                klickbar=		"f|f|f|t|f|t|f|f"
+                walkto=			"f|f|f|t|f|t|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|f|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="25" y="77" z="400"/>
           <groesse width="8" height="10"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene4_scheibe" dialog_id="szene4.4.3|szene4.7" 
-		klickbar=			"f|f|f|t|f|f|t|f" 
-		walkto=				"f|f|f|t|f|f|t|f" 
+                klickbar=		"f|f|f|t|f|f|t|f"
+                walkto=			"f|f|f|t|f|f|t|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="58" y="71" z="400"/>
           <groesse width="10" height="20"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene4_teddy" dialog_id="szene4.4.4" 
-		klickbar=			"f|f|f|t|f|f|f|f" 
-		walkto=				"f|f|f|t|f|f|f|f" 
+                klickbar=		"f|f|f|t|f|f|f|f"
+                walkto=			"f|f|f|t|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="77" y="58" z="400"/>
           <groesse width="8" height="15"/>
+          <laufziel x="77" y="95"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt bild_id="szene4_fussabdruecke_fenster" dialog_id="#none#" 
-		klickbar=			"f|f|f|f|f|f|f|f" 
-		walkto=				"f|f|f|f|f|f|f|f" 
+                klickbar=		"f|f|f|f|f|f|f|f"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"f|f|t|f|f|f|f|f" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="0" y="0" z="402"/>
           <groesse width="100" height="100"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox" dialog_id="szene4.1|szene4.3|szene4.8"
-		klickbar=			"t|t|t|t|t|t|t|t" 
-		walkto=				"f|f|f|f|f|f|f|f" 
+                klickbar=		"t|t|t|t|t|t|t|t"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
           <position x="31" y="5" z="500"/>
@@ -735,8 +736,8 @@
 		<vg_animiert_objekt
         bild_id="szene4_spike"
         dialog_id="#none#"
-		klickbar=			"f|f|f|f|f|f|f|f" 
-		walkto=				"f|f|f|f|f|f|f|f"
+                klickbar=		"f|f|f|f|f|f|f|f"
+                walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 
 		raetsel_ausloeser=	"f|f|f|f|f|f|f|f">
             <position x="66" y="55" z="401"/>
