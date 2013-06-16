@@ -37,11 +37,12 @@ Szene 3:
  - Fehler: DEADLOCK nach dem Schließen des Terminalfensters x
 
 Szene 4:
- - Fehler: lädt insgesamt nicht x -- Laden funktioniert ohne probleme bei mir. Bitte pruefen!
+ - Fehler: lädt insgesamt nicht x -- Laden funktioniert ohne probleme bei mir. Bitte pruefen! - ja funktioniert
  - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante x
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus -- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
  - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt)
  - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy -- fertig
+ - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde
 
 
 Szene 5:
@@ -49,13 +50,13 @@ Szene 5:
  - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden
  - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
  - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
- - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt 
+ - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt x
 	- bei mir siehts gut aus, machst du einen screenshot?
  - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde.
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
-   Zeilenumbruch mittels "\n" ist wirkungsloss
+   Zeilenumbruch mittels "\n" ist wirkungslos
  - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
- - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal
+ - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal x
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
  - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms x 
 
@@ -91,4 +92,5 @@ Szene 7:
 
 Allgemein:
  - Zurücksetzen der Protagonistenpositionen	x
+ - Setzen bzw.Bestimmen der Standardblickrichtung des Protagnisten am Anfang der Szene, beim Übergang von Szene 3 zu 4 schaut Kate zum Beispiel am Anfang zur Tür anstat in den Raum hinein
  - Auswahl des zu nutzenden Tiles beim Laden der Szene dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7

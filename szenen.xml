@@ -454,10 +454,10 @@
      <szene id="Szene_3" reatselschritte="8">
         <weltall spc="false" />
     <zentralpfad>
-	  <wegpunkt x="55" y="70" zoom="0.6"/>
-      <wegpunkt x="55" y="70" zoom="0.7"/>
-      <wegpunkt x="55" y="70" zoom="0.9"/>
-      <wegpunkt x="55" y="70" zoom="1.0"/>
+      <wegpunkt x="55" y="86" zoom="0.6"/>
+      <wegpunkt x="58" y="89" zoom="0.7"/>
+      <wegpunkt x="61" y="92" zoom="0.9"/>
+      <wegpunkt x="64" y="95" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
       <hg_statisch><!--Background -->
@@ -494,6 +494,7 @@
 		raetsel_ausloeser=	"f|t|f|f|f|f|f|f|f">
           <position x="20" y="44" z="100"/>
           <groesse width="100" height="60"/>
+		  <laufziel x="55" y="85"/>
         </hg_animiert_objekt><!-- Sitz vor dem Computer-Terminal -->
         <hg_animiert_objekt bild_id="szene3_sitz" dialog_id="#none#" 
 		klickbar=			"f|f|f|f|f|f|f|f|f" 
@@ -506,7 +507,7 @@
       </hg_animiert>
       <personen><!-- Hauptcharakter -->
         <person person_id="" bild_id="allg_herotileset">
-          <position x="35" y="60" z="200"/>
+          <position x="50" y="55" z="200"/>
           <groesse width="10" height="52"/>
         </person>
       </personen>
@@ -863,8 +864,8 @@
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-            <position x="75" y="42" z="402"/>
-            <groesse width="10" height="50"/>
+            <position x="85" y="50" z="402"/>
+            <groesse width="8" height="41"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
                             bild_id="szene5_dr_chaos"
@@ -893,7 +894,8 @@
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_sichtbar=   "t|t|t|t|t|t|f|f|f|f|f|f|f|f|f|f|f|f|f"
                             raetsel_ausloeser=  "f|f|f|t|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
-          <position x="60" y="40.25" z="400"/>
+          <position x="71" y="61.7" z="400"/>
+		  <!--<position x="60" y="40.25" z="400"/> auf dem Terminal-->
           <groesse width="6.5" height="12.5"/>
         </vg_animiert_objekt>
         <vg_animiert_objekt
@@ -1122,10 +1124,10 @@
  <szene id="Szene_6" reatselschritte="11">
         <weltall spc="true" />
     <zentralpfad>
-      <wegpunkt x="51" y="77" zoom="0.6"/>
-      <wegpunkt x="50" y="82" zoom="0.7"/>
-      <wegpunkt x="49" y="87" zoom="0.9"/>
-      <wegpunkt x="48" y="92" zoom="1.0"/>
+      <wegpunkt x="41" y="85" zoom="0.6"/>
+      <wegpunkt x="40" y="88" zoom="0.7"/>
+      <wegpunkt x="39" y="90" zoom="0.9"/>
+      <wegpunkt x="38" y="92" zoom="1.0"/>
     </zentralpfad>
     <ebenen>
       <hg_statisch>
@@ -1159,6 +1161,7 @@
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
           <position x="45" y="60" z="100"/>
           <groesse width="20" height="35"/>
+		  <laufziel x="47" y="90"/>
         </hg_animiert_objekt>
         <hg_animiert_objekt bild_id="szene6_krebs_schein" 
 		dialog_id=						"szene6.8.4" 
@@ -1192,8 +1195,8 @@
 	  
 
         <person person_id="" bild_id="allg_herotileset">
-          <position x="50" y="45" z="404"/>
-          <groesse width="8" height="42"/>
+          <position x="60" y="50" z="404"/>
+          <groesse width="8" height="41"/>
         </person>
 
       </personen>
@@ -1241,7 +1244,7 @@
 		walkto=							"f|f|f|f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=				"t|t|t|t|t|t|t|t|t|t|t"  
 		raetsel_ausloeser=				"f|f|f|f|f|f|f|f|f|f|f">
-            <position x="30" y="55" z="402"/>
+            <position x="70" y="48" z="402"/>
             <groesse width="8" height="41"/>
         </vg_animiert_objekt>
 		<vg_animiert_objekt bild_id="allg_dialogbox"
