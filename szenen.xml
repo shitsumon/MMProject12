@@ -733,9 +733,7 @@
           <position x="31" y="5" z="500"/>
           <groesse width="42.5" height="23"/>
         </vg_animiert_objekt>
-		<vg_animiert_objekt
-        bild_id="szene4_spike"
-        dialog_id="#none#"
+                <vg_animiert_objekt bild_id="szene4_spike" dialog_id="#none#"
                 klickbar=		"f|f|f|f|f|f|f|f"
                 walkto=			"f|f|f|f|f|f|f|f"
 		raetsel_sichtbar=	"t|t|t|t|t|t|t|t" 

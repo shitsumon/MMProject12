@@ -110,10 +110,17 @@ outputDebugInfo();
         }
     }else{
 
-        //Check whether dialog triggers quizstep
-        if((gTalk.SatzCounter == 0) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start||
-                (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) && dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep && !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start){
-            //call this with forced flag if its the last sentence
+            //Check whether dialog triggers quizstep
+            if((
+                gTalk.SatzCounter == 0) &&
+                dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep &&
+                dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start
+                ||
+                (gTalk.SatzCounter >= (gTalk.SatzMax - 1)) &&
+                dialogIDs[gDialogCounter + gSubDialogOffset].trigger_quizstep &&
+                !dialogIDs[gDialogCounter + gSubDialogOffset].enable_at_start
+            ){
+            //call this with forced flag if its the last/first sentence
             advanceQuizStep("CalledByDialogue");
         }
     }
