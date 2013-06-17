@@ -40,9 +40,9 @@ Szene 4:
  - Fehler: lädt insgesamt nicht x -- Laden funktioniert ohne probleme bei mir. Bitte pruefen! - ja funktioniert
  - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante x
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus -- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
- - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt)
+ - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt) -- Sollte gelöst sein. Fehler kam durch falschen Sub Dialog Offset zustande
  - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy -- fertig
- - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde
+ - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen!
 
 
 Szene 5:

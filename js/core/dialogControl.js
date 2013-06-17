@@ -460,7 +460,14 @@ outputDebugInfo();
 
             //enable flag to increase dialog counter (only it's the last sub-dialog)
             //this is based on the fact, that always the last sub-dialog triggers next quizstep
-            return (idx == (gSubDialogCount - 1)) ? true : false;
+            if(idx == (gSubDialogCount - 1)){
+                blackListLeftOverSubDialogues(sceneDialog);
+                return true;
+            }else{
+                return false;
+            }
+
+            //return (idx == (gSubDialogCount - 1)) ? true : false;
         }
     }
 }
@@ -532,4 +539,41 @@ outputDebugInfo();
     }
 
     return false;
+}
+
+/**
+ * blackListLeftOverSubDialogues(string)
+ *
+ * This function gets called when the last sub dialog of
+ * a group of sub dialogues is triggered. It simply checks
+ * if all sub dialogues in the same sub group have been displayed
+ * or not. Sub dialogues which weren't displayed will be
+ * blacklisted now, in order to avoid the depiction of the
+ * wrong dialogue at a later time in the scene.
+ *
+ * Input values:
+ * subDialogID (String) - ID to check for
+ *
+ * Return values:
+ * None
+ */
+function blackListLeftOverSubDialogues(subDialogID){
+
+    if( !patternTest(subDialogID) ){
+        return;
+    }
+
+    var singleColons       = subDialogID.split('.');
+    var subSceneStaticPart = singleColons[0] + '.' + singleColons[1];
+    var lastOfSubDialogues = parseInt(singleColons[2]);
+
+    for(var idx1 = 1; idx1 < lastOfSubDialogues; ++idx1){
+
+        var currentSubDialog = subSceneStaticPart + '.' + idx1.toString();
+
+        if(!idIsBlacklisted(currentSubDialog)){
+            gSubDialogBlacklist.push(new BlacklistIDObject(currentSubDialog, gDialogCounter));
+        }
+    }
+
 }
