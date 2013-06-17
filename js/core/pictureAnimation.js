@@ -82,13 +82,23 @@ outputDebugInfo();
 
 	var delimiter = '#';
 	var gBilderIDString = '';
+
+	if( typeof(pxWidth) === "undefined" ){
+		
+		pxWidth = (gUseDeprecatedImages ? gDeprecatedImages[bild_id] : gBilder[bild_id]).abmessungen.width;
+	}
+	
+	if( typeof(pxHeight) === "undefined" ){
+	
+		pxHeight = (gUseDeprecatedImages ? gDeprecatedImages[bild_id] : gBilder[bild_id]).abmessungen.height;
+	}
 	
 	if(strContains(bild_id, delimiter)){
 		
 		gBilderIDString = bild_id.split(delimiter)[0];
 	}else{
 		
-		gBilderIDString = bild_id;
+		gBilderIDString = bild_id
 	}
 	
 	if(typeof(gAnimationTimer[bild_id]) === "undefined"){
