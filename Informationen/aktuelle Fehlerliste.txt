@@ -42,7 +42,7 @@ Szene 4:
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus -- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
  - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt) -- Sollte gelöst sein. Fehler kam durch falschen Sub Dialog Offset zustande
  - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy -- fertig
- - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen!
+ - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen! - Läuft!
 
 
 Szene 5:
@@ -52,7 +52,7 @@ Szene 5:
  - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
  - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt x
 	- bei mir siehts gut aus, machst du einen screenshot?
- - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde.
+ - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde. x
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
    Zeilenumbruch mittels "\n" ist wirkungslos
  - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen

@@ -171,39 +171,18 @@ function scene1_showHeroine(){
  * Return values:
  * none
  */
+
 function scene5_bookcode(arg){
-
-    var bookIndex        = 0;
-    var rightfulClicked = 0;
-
-    for(var idx = 0; idx < gBooksClicked.length; ++idx){
-
-        if(gBooksClicked[idx].wasClicked){
-            ++rightfulClicked;
-        }
-
-        if(gBooksClicked[idx].name == arg){
-            bookIndex = idx;
-        }
-    }
-
-    var setEntryTrue = true;
-
-    for(var idx = 0; idx < bookIndex; ++idx){
-
-        if(!gBooksClicked[idx].wasClicked){
-            setEntryTrue = false;
-            break;
-        }
-    }
-
-    if(setEntryTrue){
-        gBooksClicked[bookIndex].wasClicked = true;
-        ++rightfulClicked;
-    }
-
-
-    if(rightfulClicked == gBooksClicked.length){
+	var rightfulClicked = 0;
+	for (var idx = 0; idx < gBooksClicked.length; ++idx){
+		    if(gBooksClicked[idx].name == arg){
+				gBooksClicked[idx].wasClicked = true
+			}
+			if (gBooksClicked[idx].wasClicked == true){
+				++rightfulClicked
+			}
+	}
+	if(rightfulClicked == gBooksClicked.length){
 
         //reset global array
         for(var idx = 0; idx < gBooksClicked.length; ++idx){
@@ -214,8 +193,8 @@ function scene5_bookcode(arg){
         gDialogToForce      = "szene5.7.12";
         gIncreaseDialogStep = testIfSubDialog(gDialogToForce);
     }
+	
 }
-
 /**
  * generateSecureCode()
  *
