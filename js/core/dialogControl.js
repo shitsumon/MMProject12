@@ -395,7 +395,7 @@ outputDebugInfo();
 
                     if(gIncreaseDialogStep){
                         ++gDialogCounter;
-                        gDialogCounter += gIncreaseDialogStep ? gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount : 0;
+                        gDialogCounter += gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount;
 
                         gSubDialogCount     = 0;
                     }
