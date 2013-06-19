@@ -81,6 +81,9 @@ outputDebugInfo();
     case 'scene7_enableWallButton':
         scene7_enableWallButton();
         break;
+	case 'scene7_showEnding':
+        scene7_showEnding();
+        break;
     default:
         break;
     }
@@ -484,7 +487,7 @@ function generateSecureCode(arg){
                                     perc2pix(aBoxHeight, 30) + layoutObject.line_distance);
         }else{
 
-            var text_chunks = foo(tmpQuizObject.answers[idx], answer_pixsize);
+            var text_chunks = dialog_SatzZeilenBruch(tmpQuizObject.answers[idx], answer_pixsize);
 
             for(var idx2 = 0; idx2 < text_chunks.length; ++idx2){
 
@@ -504,6 +507,7 @@ function generateSecureCode(arg){
     var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / layoutObject.qCharDivider;
 
     var text = splitTextIntoChunks(tmpQuizObject.question, 3, " ");//foo(tmpQuizObject.question, pixSize);
+    //var text = dialog_SatzZeilenBruch(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
 
@@ -620,7 +624,6 @@ function splitTextIntoChunks(text, chunksize, delimiter){
 
     return text_chunks;
 }
-
 
 function scene5_hideDialogbox(arg){
 
@@ -889,4 +892,9 @@ function scene7_enableWallButton(){
     newID = flags[0] + ":" + flags[1] + ":" + newFlagList;
 
     canvas.attr("id", newID);
+}
+
+function scene7_showEnding(){
+	 alert('Ende!');
+	showEnde();
 }

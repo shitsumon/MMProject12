@@ -64,7 +64,19 @@ outputDebugInfo();
                               top:  perc2pix(($(window).height() - $('#menu').height()), gDemoPercPosY)
                           });
         break;
+	case 'ende_page':
+        $('#'+ id).css({
+                           position:'absolute',
+                           left: perc2pix(($(window).width()  - $('#menu').width()), gEndePercPosX),
+                           top:  perc2pix(($(window).height() - $('#menu').height()), gEndePercPosY)
+                       });
+        $('#'+ id).offset({
+                              left: perc2pix(($(window).width()  - $('#menu').width()), gEndePercPosX),
+                              top:  perc2pix(($(window).height() - $('#menu').height()), gEndePercPosY)
+                          });
+        break;
     }
+	
 }
 
 function showImpressum(){
@@ -93,6 +105,14 @@ outputDebugInfo();
     $("div[id*='demo_page']").css('visibility','visible');
 }
 
+function showEnde(){
+outputDebugInfo();
+
+    $(this).css('background-color', 'black');
+    positionMenuElement('ende_page');
+    $("div[id*='ende_page']").css('visibility','visible');
+}
+
 
 function hideImpressum(){
 outputDebugInfo();
@@ -112,6 +132,13 @@ function hideDemo(){
 outputDebugInfo();
 
     $("div[id*='demo_page']").css('visibility','hidden');
+    this.document.location.href = 'http://hermes.et.hs-wismar.de/~bmt08055/netzwerkstar/html/index.html';
+}
+
+function hideEnde(){
+outputDebugInfo();
+
+    $("div[id*='ende_page']").css('visibility','hidden');
     this.document.location.href = 'http://hermes.et.hs-wismar.de/~bmt08055/netzwerkstar/html/index.html';
 }
 
