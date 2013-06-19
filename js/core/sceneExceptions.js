@@ -465,10 +465,9 @@ function generateSecureCode(arg){
         }
     }
 
-    var layoutObject = currentScene == 'scene5' ? gScene5_LayoutSettings : gScene7_LayoutSettings;
-
-    var dyn_font_answer = Math.abs((screenWidth / 100) * layoutObject.font_size_boost);
-    var answer_pixsize  = (aBoxWidth - a1_canvas.offset().left) / dyn_font_answer + layoutObject.line_distance;
+    var layoutObject        = currentScene == 'scene5' ? gScene5_LayoutSettings : gScene7_LayoutSettings;
+    var dyn_font_answer     = Math.abs((screenWidth / 100) * layoutObject.font_size_boost);
+    var answer_pixsize      = (aBoxWidth - a1_canvas.offset().left) / dyn_font_answer + layoutObject.line_distance;
 
     //Fill answer boxes
     for(var idx = 0; idx < ctx_Array.length; ++idx){
@@ -487,7 +486,7 @@ function generateSecureCode(arg){
                                     perc2pix(aBoxHeight, 30) + layoutObject.line_distance);
         }else{
 
-            var text_chunks = dialog_SatzZeilenBruch(tmpQuizObject.answers[idx], answer_pixsize);
+            var text_chunks =splitTextIntoChunks(tmpQuizObject.answers[idx], layoutObject.wordsPerChunkAnswer, " "); //dialog_SatzZeilenBruch(tmpQuizObject.answers[idx], answer_pixsize);
 
             for(var idx2 = 0; idx2 < text_chunks.length; ++idx2){
 
@@ -506,7 +505,7 @@ function generateSecureCode(arg){
 
     var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / layoutObject.qCharDivider;
 
-    var text = splitTextIntoChunks(tmpQuizObject.question, 3, " ");//foo(tmpQuizObject.question, pixSize);
+    var text = splitTextIntoChunks(tmpQuizObject.question, layoutObject.wordsPerChunkQuestion, " ");//foo(tmpQuizObject.question, pixSize);
     //var text = dialog_SatzZeilenBruch(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){

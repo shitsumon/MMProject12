@@ -64,7 +64,7 @@ var gEndePercPosY		= 40;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 6;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -590,21 +590,25 @@ var gScene5_LayoutSettings              = new Object();
 gScene5_LayoutSettings.font             = ' Arial';
 gScene5_LayoutSettings.bold             = 'bold ';
 gScene5_LayoutSettings.font_color       = 'white';
-gScene5_LayoutSettings.line_distance    = 10;
-gScene5_LayoutSettings.fixedFont        = 8;
-gScene5_LayoutSettings.qCharDivider     = 1;
-gScene5_LayoutSettings.qLeftMargin      = 12;
-gScene5_LayoutSettings.font_size_boost  = 1.0;
-
-var gScene7_LayoutSettings              = new Object();
-gScene5_LayoutSettings.font             = ' Arial';
-gScene5_LayoutSettings.bold             = 'bold ';
-gScene5_LayoutSettings.font_color       = 'white';
 gScene5_LayoutSettings.line_distance    = 25;
 gScene5_LayoutSettings.fixedFont        = 20;
 gScene5_LayoutSettings.qCharDivider     = 2;
-gScene5_LayoutSettings.qLeftMargin      = 9.5;
+gScene5_LayoutSettings.qLeftMargin      = 12;
 gScene5_LayoutSettings.font_size_boost  = 1.1;
+gScene5_LayoutSettings.wordsPerChunkAnswer   = 3;
+gScene5_LayoutSettings.wordsPerChunkQuestion = 3;
+
+var gScene7_LayoutSettings              = new Object();
+gScene7_LayoutSettings.font             = ' Arial';
+gScene7_LayoutSettings.bold             = 'bold ';
+gScene7_LayoutSettings.font_color       = 'white';
+gScene7_LayoutSettings.line_distance    = 25;
+gScene7_LayoutSettings.fixedFont        = 20;
+gScene7_LayoutSettings.qCharDivider     = 2;
+gScene7_LayoutSettings.qLeftMargin      = 9.5;
+gScene7_LayoutSettings.font_size_boost  = 1.1;
+gScene7_LayoutSettings.wordsPerChunkAnswer   = 5;
+gScene7_LayoutSettings.wordsPerChunkQuestion = 4;
 
 function QuizObject(q, a1, a2, a3, a4){
     this.question = q;
