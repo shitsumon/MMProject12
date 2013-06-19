@@ -481,15 +481,16 @@ function generateSecureCode(arg){
 
             ctx_Array[idx].fillText(tmpQuizObject.answers[idx],
                                     15,
-                                    perc2pix(aBoxHeight, 30) + (layoutObject.line_distance * idx2));
+                                    perc2pix(aBoxHeight, 30) + layoutObject.line_distance);
         }else{
 
-            var text = foo(tmpQuizObject.answers[idx], answer_pixsize);
+            var text_chunks = foo(tmpQuizObject.answers[idx], answer_pixsize);
 
-            for(var idx2 = 0; idx2 < text.length; ++idx2){
-                ctx_Array[idx].fillText(text[idx2].replace(/#KOMMA#/g, ","),
+            for(var idx2 = 0; idx2 < text_chunks.length; ++idx2){
+
+                ctx_Array[idx].fillText(text_chunks[idx2].replace(/#KOMMA#/g, ","),
                                         15,
-                                        perc2pix(aBoxHeight, 30) + (layoutObject.line_distance * idx2));
+                                        perc2pix(aBoxHeight, 30) + layoutObject.line_distance * (text_chunks.length > 1 ? idx2 : 1));
             }
         }
     }
