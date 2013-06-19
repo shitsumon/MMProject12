@@ -503,7 +503,7 @@ function generateSecureCode(arg){
 
     var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / layoutObject.qCharDivider;
 
-    var text = foo(tmpQuizObject.question, pixSize);
+    var text = splitTextIntoChunks(tmpQuizObject.question, 3, " ");//foo(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
 
@@ -565,6 +565,62 @@ function foo(text, pixelSize)
 
     return result;
 }
+
+
+/**
+ * splitTextIntoChunks()
+ *
+ * An alternative way of splitting strings into
+ * even parts. This prevents text overflow.
+ *
+ * Input values:
+ * text (String) - Text to split
+ *
+ * chunksize (Integer) - Number of words per Line
+ *
+ * delimiter (Char) - Sign at which when found the given text is split
+ *                    (This is optional, default is " ")
+ *
+ * Return values:
+ *
+ * Array with text splitted into even parts.
+ */
+function splitTextIntoChunks(text, chunksize, delimiter){
+
+    delimiter = typeof(delimiter) === 'undefined' ? " " : delimiter;
+
+    var letter_counter  = 0;
+    var word_counter    = 0;
+    var text_chunks     = new Array();
+    var current_chunk   = "";
+
+    while(letter_counter < text.length){
+
+        if(text[letter_counter] === delimiter && word_counter === chunksize - 1){
+
+            text_chunks.push(current_chunk);
+            current_chunk = "";
+            word_counter  = 0;
+
+        }else if(text[letter_counter] === delimiter && word_counter < chunksize - 1){
+
+            ++word_counter;
+            current_chunk += text[letter_counter];
+        }else{
+            current_chunk += text[letter_counter];
+        }
+
+        if(letter_counter === text.length - 1){
+
+            text_chunks.push(current_chunk);
+        }
+
+        ++letter_counter;
+    }
+
+    return text_chunks;
+}
+
 
 function scene5_hideDialogbox(arg){
 
