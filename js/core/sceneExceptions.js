@@ -307,7 +307,9 @@ function generateSecureCode(arg){
         }
     }
 
-    if(arg.split('|')[0] == 'scene5'){
+    var currentScene = arg.split('|')[0];
+
+    if(currentScene == 'scene5'){
 
         switch(arg.split('|')[1]){
         case 'question0':
@@ -364,7 +366,7 @@ function generateSecureCode(arg){
                 break;
             }
         }
-    }else if (arg.split('|')[0] == 'scene7'){
+    }else if (currentScene == 'scene7'){
 
         var parts    = arg.split('|');
         var getNext  = false;
@@ -481,15 +483,17 @@ function generateSecureCode(arg){
         }
     }
 
-    var dyn_font_answer = Math.abs((screenWidth / 100) * gScene5_LayoutSettings.font_size_boost);
-    var answer_pixsize  = (aBoxWidth - a1_canvas.offset().left) / dyn_font_answer + gScene5_LayoutSettings.line_distance;
+    var layoutObject = currentScene == 'scene5' ? gScene5_LayoutSettings : gScene7_LayoutSettings;
+
+    var dyn_font_answer = Math.abs((screenWidth / 100) * layoutObject.font_size_boost);
+    var answer_pixsize  = (aBoxWidth - a1_canvas.offset().left) / dyn_font_answer + layoutObject.line_distance;
 
     //Fill answer boxes
     for(var idx = 0; idx < ctx_Array.length; ++idx){
 
-        ctx_Array[idx].fillStyle = gScene5_LayoutSettings.font_color;
+        ctx_Array[idx].fillStyle = layoutObject.font_color;
 
-        ctx_Array[idx].font = gScene5_LayoutSettings.bold + dyn_font_answer + 'px' + gScene5_LayoutSettings.font;
+        ctx_Array[idx].font = layoutObject.bold + dyn_font_answer + 'px' + layoutObject.font;
 
         //if answer is short enough, print it to the
         //first line else, add "linebreaks" to the
@@ -498,7 +502,7 @@ function generateSecureCode(arg){
 
             ctx_Array[idx].fillText(tmpQuizObject.answers[idx],
                                     15,
-                                    perc2pix(aBoxHeight, 30) + (gScene5_LayoutSettings.line_distance * idx2));
+                                    perc2pix(aBoxHeight, 30) + (layoutObject.line_distance * idx2));
         }else{
 
             var text = foo(tmpQuizObject.answers[idx], answer_pixsize);
@@ -506,28 +510,28 @@ function generateSecureCode(arg){
             for(var idx2 = 0; idx2 < text.length; ++idx2){
                 ctx_Array[idx].fillText(text[idx2].replace(/#KOMMA#/g, ","),
                                         15,
-                                        perc2pix(aBoxHeight, 30) + (gScene5_LayoutSettings.line_distance * idx2));
+                                        perc2pix(aBoxHeight, 30) + (layoutObject.line_distance * idx2));
             }
         }
     }
 
     //Fill question box
-    ctx_q.fillStyle = gScene5_LayoutSettings.font_color;
-    ctx_q.font      = gScene5_LayoutSettings.bold
-            + gScene5_LayoutSettings.fixedFont
-            + 'px' + gScene5_LayoutSettings.font;
+    ctx_q.fillStyle = layoutObject.font_color;
+    ctx_q.font      = layoutObject.bold
+            + layoutObject.fixedFont
+            + 'px' + layoutObject.font;
 
-    var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / gScene5_LayoutSettings.qCharDivider;
+    var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / layoutObject.qCharDivider;
 
     var text = foo(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
 
-        var xStart = (qBoxWidth - (gScene5_LayoutSettings.qLeftMargin * text[idx2].length)) * 0.5;
+        var xStart = (qBoxWidth - (layoutObject.qLeftMargin * text[idx2].length)) * 0.5;
 
         ctx_q.fillText(text[idx2].replace(/#KOMMA#/g, ","),
                        xStart,
-                       perc2pix(qBoxHeight, 15) + (gScene5_LayoutSettings.line_distance * idx2));
+                       perc2pix(qBoxHeight, 15) + (layoutObject.line_distance * idx2));
     }
 }
 

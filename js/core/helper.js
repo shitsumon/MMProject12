@@ -62,7 +62,7 @@ var gDemoPercPosX       = 45;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 4;
+var gcurrent_scene_counter	= 5;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -576,6 +576,16 @@ var gBooksClicked = new Array(new bookStep('book1'),
 
 //Scene 5 2nd riddle font settings
 var gScene5_LayoutSettings              = new Object();
+gScene5_LayoutSettings.font             = ' Arial';
+gScene5_LayoutSettings.bold             = 'bold ';
+gScene5_LayoutSettings.font_color       = 'white';
+gScene5_LayoutSettings.line_distance    = 10;
+gScene5_LayoutSettings.fixedFont        = 10;
+gScene5_LayoutSettings.qCharDivider     = 1;
+gScene5_LayoutSettings.qLeftMargin      = 12;
+gScene5_LayoutSettings.font_size_boost  = 1.0;
+
+var gScene7_LayoutSettings              = new Object();
 gScene5_LayoutSettings.font             = ' Arial';
 gScene5_LayoutSettings.bold             = 'bold ';
 gScene5_LayoutSettings.font_color       = 'white';
