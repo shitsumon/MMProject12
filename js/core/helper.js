@@ -64,7 +64,7 @@ var gEndePercPosY		= 40;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 6;
+var gcurrent_scene_counter	= 5;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -606,7 +606,7 @@ gScene7_LayoutSettings.line_distance    = 25;
 gScene7_LayoutSettings.fixedFont        = 20;
 gScene7_LayoutSettings.qCharDivider     = 2;
 gScene7_LayoutSettings.qLeftMargin      = 9.5;
-gScene7_LayoutSettings.font_size_boost  = 1.1;
+gScene7_LayoutSettings.font_size_boost  = 0.9;
 gScene7_LayoutSettings.wordsPerChunkAnswer   = 5;
 gScene7_LayoutSettings.wordsPerChunkQuestion = 4;
 

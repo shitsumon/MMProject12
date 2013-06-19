@@ -46,20 +46,20 @@ Szene 4:
 
 
 Szene 5:
- - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen
- - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden
- - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben
- - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
+ - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen x
+ - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden x
+ - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben x
+ - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox x
  - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt x
 	- bei mir siehts gut aus, machst du einen screenshot?
  - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde. x
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
    Zeilenumbruch mittels "\n" ist wirkungslos
- - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
+ - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen x
  - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal x
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
  - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms x 
- - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
+ - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf - nicht reproduzierbar bei mir
 
 
 Szene 6:
