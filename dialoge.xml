@@ -521,7 +521,8 @@ argument_list
     <satz person_id="tb" bild_id="allg_teddy">Gerne, aber nur, wenn ihr in eurer Crew noch Platz für einen Teddy habt. Aber gekuschelt wird nicht.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ok, du bist dabei, du kannst mein 1. Maat sein.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Moment mal, bin ich das nicht?</satz>
-    <satz person_id="p1" bild_id="allg_hero_female">So nun lasst uns Dr. Chaos schnappen!</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">So nun lasst uns Dr. Chaos schnappen</satz>
+	<satz person_id="p1" bild_id="allg_hero_female">---Temp---</satz>
   </dialog>
   
   <!-- Beginn Szene 7 -->

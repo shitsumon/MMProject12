@@ -493,9 +493,14 @@ outputDebugInfo();
                         to deal with. Special switches are invoked to handle these tilesets, which
                         have a vertical expansion greater than one.
                     */
+					
 
-                    starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection);
+						if (gSpace==true){	// animiere (non-space)
+							starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirectionSpace);
+						}else{	//animiere (space)
+							starteAnimation(canvasID, objectsToDraw[index].imageID, pxWidth, pxHeight, true, gInitialDirection)};
 
+						
                     /*
                         For referencing the persons later, the fixed imageID part is
                         stored in a global array.
