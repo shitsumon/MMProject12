@@ -59,11 +59,15 @@ outputDebugInfo();
 
         scene5_hideDialogbox(arguments);
         break;
-		
+	case 'scene6_suit_on':
+        scene6_suit_on();
+		break;	
 	case 'scene6_celestial_quiz':
 		scene6_celestial_quiz(arguments);
 		break;
-	
+	case 'scene7_suit_off':
+        scene7_suit_off();
+		break;
     case 'scene7_flipSpike':
         scene7_flipSpikeBackAndForth(arguments);
         break;
@@ -636,6 +640,14 @@ function scene5_hideDialogbox(arg){
     }
 }
 
+/**
+ * scene6_suit_on
+ */
+
+function scene6_suit_on(){
+var hero	= $("canvas[id*='canvas_person_']");
+switchWalkingAnimation('jetpack_r', hero[0].id);
+}
 
 function scene6_celestial_quiz(arg){
 // simple 3 step quiz - klick three signs in the correct order otherwise start over again
@@ -683,6 +695,15 @@ function scene7_flipSpikeBackAndForth(arg){
     flipCharacterHorizontally(arg);
 
     setTimeout(function(){flipCharacterHorizontally(arg);}, 2000);
+}
+
+/**
+ * scene7_suit_off
+ */
+
+function scene7_suit_off(){
+var hero	= $("canvas[id*='canvas_person_']");
+switchWalkingAnimation('standing_r', hero[0].id);
 }
 
 /**

@@ -64,7 +64,7 @@ Szene 5:
 
 Szene 6:
  - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate x
- - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen x
+ - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen - Fehler immer noch vorhanden bei Übergang x
  - Achtung: Bild für Raumanzug (Spike) fehlt! x
  - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar x
  - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts x
@@ -81,7 +81,7 @@ Szene 6:
  
 Szene 7:
 -
- - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- in arbeit
+ - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- in arbeit x
  - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
  - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
  - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig
