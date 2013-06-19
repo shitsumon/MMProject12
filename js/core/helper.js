@@ -64,7 +64,7 @@ var gEndePercPosY		= 40;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 6;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
