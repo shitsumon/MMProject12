@@ -42,7 +42,7 @@ Szene 4:
  - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus -- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
  - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt) -- Sollte gelöst sein. Fehler kam durch falschen Sub Dialog Offset zustande
  - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy -- fertig
- - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen!
+ - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen! - Läuft!
 
 
 Szene 5:
@@ -52,35 +52,36 @@ Szene 5:
  - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox - teilweise behoben
  - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt x
 	- bei mir siehts gut aus, machst du einen screenshot?
- - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde.
+ - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde. x
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
    Zeilenumbruch mittels "\n" ist wirkungslos
  - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen
  - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal x
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
  - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms x 
+ - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
 
 
 Szene 6:
- - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate
- - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen
+ - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate x
+ - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen x
  - Achtung: Bild für Raumanzug (Spike) fehlt! x
  - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar x
  - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts x
  - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherungskasten" x
- - Verbesserung: Anpassen des Bewegungspfades
+ - Verbesserung: Anpassen des Bewegungspfades x
  - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
  - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar x
  - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar x
- - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus
+ - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus x
  - Fehler: DEADLOCK nach letztem Dialog x
  - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig x
- - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
+ - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt - in arbeit/temporäre Lösung, nicht sicher woran das Probem liegt
  
  
 Szene 7:
 -
- - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- Fehler zählt zu Szene 6?
+ - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- in arbeit
  - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
  - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
  - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig

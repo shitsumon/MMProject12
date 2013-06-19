@@ -22,7 +22,7 @@ outputDebugInfo();
     var dialogIDs = fetchDialogIDs();
 
     //set dialog id
-    if(typeof(scene_id) == 'undefined'){
+    if(typeof(scene_id) === "undefined"){
         gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter].scene_id;
     }else{
 		//hopefully the first dialog will always carry the ".1" name
@@ -153,18 +153,13 @@ outputDebugInfo();
 	
 	changeFontSize(dimensions.height / gPercentageFontSize);
 	
-    var pixSize = Math.round((dimensions.width - textXPos) / gTalk.font_style.split(" ")[1].substring(0,2)) + gTalk.line_distance;
+    var pixSize = Math.round((dimensions.width - textXPos) / gTalk.font_style.split(" ")[1].replace(/px/g, "")) + gTalk.line_distance;
 
     //get dialogbox canvas
     var canvas = $("canvas[id*='" + gTalk.canvas_id + "']");
 
     canvas.width  = dimensions.width;
     canvas.height = dimensions.height;
-
-    var realXPos = perc2pix(screenWidth,  gTalk.TBPercPosX) - (canvas.width * 0.5);
-
-    var percPosX = pix2perc(screenWidth, realXPos);
-    var percPosY = pix2perc(screenHeight, perc2pix(screenHeight, gTalk.TBPercPosY));
 
     //get canvas context
     var ctx = canvas[0].getContext("2d");
@@ -192,18 +187,18 @@ outputDebugInfo();
     ctx.font      =	gTalk.font_style;
 
     //split text into lines if necessary
-    var text = dialog_SatzZeilenBruch(Text, pixSize);
+    Text = dialog_SatzZeilenBruch(Text, pixSize);
 
-    //fill dialogbox letterwise
-    for( var i = 0; i < text.length; i++ ){
-        ctx.fillText(text[i].replace(/#KOMMA#/g, ","), textXPos, textYOffset + ( gTalk.line_distance * i ));
+    //fill dialogbox linewise
+    for( var i = 0; i < Text.length; i++ ){
+        ctx.fillText(Text[i].replace(/#KOMMA#/g, ","), textXPos, textYOffset + ( gTalk.line_distance * i ));
     };
 
     //increment sentence counter
     ++gTalk.SatzCounter;
 
     //if last sentence is reached, restore start state
-    if( gTalk.SatzCounter === gTalk.SatzMax ){
+    if( gTalk.SatzCounter == gTalk.SatzMax ){
 
         gTalk.currentDialog = 'undefined';
         gTalk.isInitialized = false;
@@ -250,7 +245,7 @@ outputDebugInfo();
 
             result.push (text.substr( 0, search));//take everything except the last word
 
-			dummy	= text.length;//store length before removing he computed part
+			dummy	= text.length;//store length before removing the computed part
             text    = text.substr(search,text.length);//remove it from whole text
 			
 			if(text.length == dummy)
@@ -269,7 +264,7 @@ outputDebugInfo();
 	}
 	else
 	{
-		//do nohing oherwise
+		//do nohing otherwise
         result.push(text);
 	}
 		
@@ -395,7 +390,7 @@ outputDebugInfo();
 
                     if(gIncreaseDialogStep){
                         ++gDialogCounter;
-                        gDialogCounter += gIncreaseDialogStep ? gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount : 0;
+                        gDialogCounter += gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount;
 
                         gSubDialogCount     = 0;
                     }

@@ -1,4 +1,4 @@
-/*
+﻿/*
     helper.js - a file for structs, helper functions and global variables
 
     When programming for Netzwerkstar project, please keep this simple rules in mind
@@ -250,18 +250,27 @@ gAnimationTimer.anzahl	= 0;
 function Animation(_canvas_id, _bild_id, _anzeige_width, _anzeige_height){
 
 
-	this.bild_nr	= 0;			//index of currently displayed frame	-> int
-	this.canvas_id	= _canvas_id;	//id of targeted canvas					-> string
-	this.bild_id	= _bild_id;		//used picture id						-> string
-	this.timer		= null;			//animation timer id set when creating	-> Timer (int)
-	this.running	= true;			//flag if animation is active			-> bool
-	this.anzeige_width	= _anzeige_width;	//pixel picture dimensions
-	this.anzeige_height	= _anzeige_height;	//determines dimensions inside canvas
-    this.subtileset	= gInitialDirection;	//defines current subtileset
+		this.bild_nr	= 0;						//index of currently displayed frame	-> int
+		this.canvas_id	= _canvas_id;				//id of targeted canvas					-> string
+		this.bild_id	= _bild_id;					//used picture id						-> string
+		this.timer		= null;						//animation timer id set when creating	-> Timer (int)
+		this.running	= true;						//flag if animation is active			-> bool
+		this.anzeige_width	= _anzeige_width;		//pixel picture dimensions
+		this.anzeige_height	= _anzeige_height;		//determines dimensions inside canvas
+		
+		if (gSpace==true){
+			this.subtileset	= gInitialDirectionSpace;		//defines current subtileset - nonSpace
+		}else{
+			this.subtileset	= gInitialDirection;	//defines current subtileset - Space
+		};
 }
 
 //Sets initial direction of a person object to 'standing'
 var gInitialDirection = 6;
+//Sets initial direction of a person object to 'jetpack_left'
+var gInitialDirectionSpace = 5;
+
+
 
 /*****************
  *dialogParser.js*
