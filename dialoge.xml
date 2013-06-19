@@ -592,7 +592,7 @@ argument_list
     <satz person_id="tb" bild_id="allg_teddy">Wenn ich an die Zeit denke, will ich dich nur noch schneller loswerden .</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Das war es Dr. Chaos, auf nimmer Wiedersehen!</satz>
   </dialog>
-  <dialog id="szene7.7" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene7_blowDrChaosAway:0" argument_list="#none#">
+  <dialog id="szene7.7" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="scene7_blowDrChaosAway:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das war's!</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Endlich, das wäre geschafft.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Da haben wir ja heute einiges gelernt.</satz>
@@ -601,7 +601,7 @@ argument_list
     <satz person_id="tb" bild_id="allg_teddy">Was denn?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ich geh wieder schlafen, bis morgen.</satz>
   </dialog>
-  <dialog id="szene7.8" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.8" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene7_showEnding:0" argument_list="#none#">
       <satz person_id="tb" bild_id="allg_teddy">ENDE</satz>
   </dialog>
 

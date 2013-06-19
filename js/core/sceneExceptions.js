@@ -81,6 +81,9 @@ outputDebugInfo();
     case 'scene7_enableWallButton':
         scene7_enableWallButton();
         break;
+	case 'scene7_showEnding':
+        scene7_showEnding();
+        break;
     default:
         break;
     }
@@ -794,4 +797,9 @@ function scene7_enableWallButton(){
     newID = flags[0] + ":" + flags[1] + ":" + newFlagList;
 
     canvas.attr("id", newID);
+}
+
+function scene7_showEnding(){
+	 alert('Ende!');
+	showEnde();
 }
