@@ -484,7 +484,7 @@ function generateSecureCode(arg){
                                     perc2pix(aBoxHeight, 30) + layoutObject.line_distance);
         }else{
 
-            var text_chunks = foo(tmpQuizObject.answers[idx], answer_pixsize);
+            var text_chunks = dialog_SatzZeilenBruch(tmpQuizObject.answers[idx], answer_pixsize);
 
             for(var idx2 = 0; idx2 < text_chunks.length; ++idx2){
 
@@ -503,7 +503,7 @@ function generateSecureCode(arg){
 
     var pixSize = Math.abs(qBoxWidth - q_canvas.offset().left) / layoutObject.qCharDivider;
 
-    var text = foo(tmpQuizObject.question, pixSize);
+    var text = dialog_SatzZeilenBruch(tmpQuizObject.question, pixSize);
 
     for(var idx2 = 0; idx2 < text.length; ++idx2){
 
@@ -525,45 +525,6 @@ function displayErrorDialog(){
     gDialogToForce           = gcurrent_scene_counter == 5 ? "szene5.9.1" : "szene7.5.1";
     gIncreaseDialogStep      = testIfSubDialog(gDialogToForce);
     return true;
-}
-
-function foo(text, pixelSize)
-{
-    var subtext = "";
-    var result  = new Array();
-    var search  = 0;
-
-    //replace commas to prevent them from beeing misinterpreted as array separator
-    text = text.replace(/,/g, "#KOMMA#");
-
-    if ( text.length > pixelSize )
-    {
-        /*falls text zu lange, nimm maximale-länge string
-          suche nach letztem Space speichere String als Zeile
-          mach das so lange weiter bis alles rein passt*/
-        while(text.length > pixelSize){
-
-            subtext =	text.substr( 0, pixelSize);
-            search  =	subtext.lastIndexOf(" ") + 1;
-
-            result.push (text.substr( 0, search));
-
-            text    =	text.substr(search,text.length);
-        }
-
-        if( text.length > 0 ){
-
-            result.push(text);
-        }//füge rest ran
-
-        return result;
-    }
-    else
-    {
-        result.push(text); //falls text kurz genug ist, mache nichts
-    }
-
-    return result;
 }
 
 function scene5_hideDialogbox(arg){
