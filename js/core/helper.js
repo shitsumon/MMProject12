@@ -64,7 +64,7 @@ var gEndePercPosY		= 10;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 7;
+var gcurrent_scene_counter	= 1;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -487,8 +487,17 @@ sub array for scene n containing all index entries of the correctly, in order, c
 see the console output to get the corresponding values. it will display "key" for every clicked canvas. these go in here.
 "LUT" represents the just clicked canvas identifier, "Code" will be the encoded value of scenenumber and gClickEventValueArray-index which are displayed after the = sign
 */
+var gaa=new Array();
+
 gCodegeneratorArray[0] = new Array(1, 18, 18, 18, 18, 18, 18, 18, 18, 3, 18, 4, 18, 18, 8, 18, 18, 18, 2, 18, 18, 18, 3, 18, 18, 18, 11, 18, 18, 18, 18, 18, 18, 18, 18);//scene 1
 gCodegeneratorArray[1] = new Array(4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 7, 4, 10, 4, 4, 4, 18, 4, 4, 4, 4, 4);//scene 2
+gCodegeneratorArray[2] = new Array(14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 0, 14, 14, 14, 14, 14, 14, 14, 14, 5, 9, 12, 3, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14);//scene 3
+gCodegeneratorArray[3] = new Array(7, 1, 7, 7, 7, 7, 7, 7, 5, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 0, 7, 3, 4, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7);//scene 4
+gCodegeneratorArray[4] = new Array(2, 2, 2, 2, 8, 2, 2, 8, 2, 2, 2, 2, 2, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 11, 30, 31, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 11, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 0, 17, 15, 18, 16, 2, 3, 4, 5, 6, 2, 2, 2, 2, 2, 2);//scene 5
+gCodegeneratorArray[5] = new Array(9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 6, 9, 9, 9, 9, 9, 9, 1, 9, 9, 9, 0, 9, 9, 9, 9, 9, 9, 9, 9, 8, 9, 9, 9, 9, 3, 4, 2, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9);//scene 6
+gCodegeneratorArray[6] = new Array(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 13, 1, 17, 18, 19, 17, 20, 10, 10, 10, 4, 5, 5, 5, 5, 5, 5);//scene 7
+
+
 
 /***********
  *Utilities*
