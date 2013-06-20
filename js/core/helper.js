@@ -55,8 +55,8 @@ var gCreditsPercPosY    = 60;
 var gCreditsPercPosX    = 50;
 var gDemoPercPosY       = 50;
 var gDemoPercPosX       = 45;
-var gEndePercPosX		= 40;
-var gEndePercPosY		= 40;
+var gEndePercPosX		= 10;
+var gEndePercPosY		= 10;
 
 /****************
  *sceneParser.js*
