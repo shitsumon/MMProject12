@@ -71,8 +71,8 @@ argument_list
     <satz person_id="p1" bild_id="allg_hero_female">Zuerst sollte ich diesen Lärm loswerden ... manuell. Hmm ... wie macht man das doch gleich? Na klar, mit dem Computer sollte das machbar sein.</satz>
   </dialog>
   <dialog id="szene1.5" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
-    <satz person_id="p1" bild_id="allg_hero_female">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann?
-      Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
+    <satz person_id="p1" bild_id="allg_hero_female">An ist der Computer schon ... Wie komm ich denn jetzt zur Privatsphären-Einstellung, damit ich diesen Lärm abschalten kann?</satz>
+	<satz person_id="p1" bild_id="allg_hero_female">Hatte ich mir nicht mal eine Anleitung ausgedruckt? Wo könnte die stecken?</satz>
   </dialog>
   <dialog id="szene1.6" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
     <satz person_id="u1" bild_id="allg_anonym">Zeitschriften? Die sollten mal lieber ein ordentliches Buch lesen.</satz>
@@ -220,7 +220,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 4 -->
-  <dialog id="szene4.1" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene4.1" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene4_lookRight:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So P2_DYN_NAME, dann zeig mir mal deine heiße Spur.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte, dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
   </dialog>

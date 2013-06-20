@@ -33,6 +33,9 @@ outputDebugInfo();
 	case 'scene1_showHeroine':
 		scene1_showHeroine();
 		break;
+	case 'scene4_lookRight':
+		scene4_lookRight();
+		break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -163,6 +166,11 @@ function scene1_hideHeroine(){
 function scene1_showHeroine(){
 
 	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
+}
+
+function scene4_lookRight(){
+	var hero	= $("canvas[id*='canvas_person_']");
+	switchWalkingAnimation('standing_r', hero[0].id);
 }
 
 /**

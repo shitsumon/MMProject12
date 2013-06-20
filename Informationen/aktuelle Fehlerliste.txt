@@ -15,12 +15,8 @@ Szene 1:
 Szene 2:
  - Frage: Sollte am Anfang der Szene(Rätselschritt 1 und 2) nicht gedämpftes Licht herrschen?
 	- war mal so geplant, hats aber irgendwie nie geschafft. eventuell ein overlay aber wie schaffen wir es, dass es nicht klickbar wird und die anderen dahingehend nicht überdeckt?
- - Verbesserung: Beim Bewegen von links nach rechts, dreht der Protagonist durch die Wegpunkte kurz den Kopf zum Benutzer, was den Bewegungsfluss stört
- - Verbesserung: Protagonist vor dem Terminal ein bisschen zu klein
 
 Szene 3:
- - Verbesserung: Protagonistengröße an Szene 2 angleichen
- - Verbesserung: Bewegungspfad anpassen, Protagonist geht zu weit in den Raum an der Position des Terminals
 
 Szene 4:
 
