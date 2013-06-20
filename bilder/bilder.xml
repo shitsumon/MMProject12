@@ -398,9 +398,6 @@
   <bild id="szene6_waage_schein" pfad="../bilder/szene6/waage_schein.png" animiert="false">
     <abmessungen height="272" width="288"/>
   </bild>
-    <bild id="szene6_spike" pfad="../bilder/szene6/spike_6.png" animiert="false">
-    <abmessungen height="272" width="288"/>
-  </bild>
   <!--szene7-->
   <bild id="szene7_spike_standing" pfad="../bilder/szene7/spike_standing.png" animiert="false">
     <abmessungen height="415" width="125"/>
