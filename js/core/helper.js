@@ -487,7 +487,6 @@ sub array for scene n containing all index entries of the correctly, in order, c
 see the console output to get the corresponding values. it will display "key" for every clicked canvas. these go in here.
 "LUT" represents the just clicked canvas identifier, "Code" will be the encoded value of scenenumber and gClickEventValueArray-index which are displayed after the = sign
 */
-var gaa=new Array();
 
 gCodegeneratorArray[0] = new Array(1, 18, 18, 18, 18, 18, 18, 18, 18, 3, 18, 4, 18, 18, 8, 18, 18, 18, 2, 18, 18, 18, 3, 18, 18, 18, 11, 18, 18, 18, 18, 18, 18, 18, 18);//scene 1
 gCodegeneratorArray[1] = new Array(4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 7, 4, 10, 4, 4, 4, 18, 4, 4, 4, 4, 4);//scene 2
