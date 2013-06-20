@@ -19,48 +19,48 @@ left:40%;*/
 background-repeat: no-repeat;
 background-color: transparent;
 border: 0px;
-height: 72px;
+height: 74px;
 width: 448px;
 }
 
 #new_game{
-background: url("../bilder/allgemein/newGame1.png");
+background: url("../bilder/allgemein/b1_new.png") 0 0;
 }
 
 #new_game:hover{
-background: url("../bilder/allgemein/newGame2.png");
+background-position: 0 -97px;
 }
 
 #continue_game{
-background: url("../bilder/allgemein/continue1.png");
+background: url("../bilder/allgemein/b2_continue.png") 0 0;
 }
 
 #continue_game:hover{
-background: url("../bilder/allgemein/continue2.png");
+background-position: 0 -97px;
 }
 
 #about_game{
-background: url("../bilder/allgemein/about1.png");
+background: url("../bilder/allgemein/b3_about.png") 0 0;
 }
 
 #about_game:hover{
-background: url("../bilder/allgemein/about2.png");
+background-position: 0 -97px;
 }
 
 #back_to_HP{
-background: url("../bilder/allgemein/backToHP1.png");
+background: url("../bilder/allgemein/b4_credits.png") 0 0;
 }
 
 #back_to_HP:hover{
-background: url("../bilder/allgemein/backToHP2.png");
+background-position: 0 -97px;
 }
 
 #credits{
-background: url("../bilder/allgemein/credits1.png");
+background: url("../bilder/allgemein/b5_home.png") 0 0;
 }
 
 #credits:hover{
-background: url("../bilder/allgemein/credits2.png");
+background-position: 0 -97px;
 }
 
 form{
@@ -109,6 +109,7 @@ position:relative;
 top:0px;
 left:0px;
 }
+
 
 #bg {
 height:100%;
