@@ -104,6 +104,10 @@ font-family: arial;
 font-size: 20;
 font-weight: bold;
 line-height: 60%;
+z-index:1001;
+position:relative;
+top:0px;
+left:0px;
 }
 
 #bg {

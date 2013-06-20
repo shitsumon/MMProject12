@@ -111,6 +111,10 @@ outputDebugInfo();
     $(this).css('background-color', 'black');
     positionMenuElement('ende_page');
     $("div[id*='ende_page']").css('visibility','visible');
+    $("div[id*='ende_page']").css('top','0px');
+    $("div[id*='ende_page']").css('left','0px');
+	//reloads this same page
+	window.setTimeout(function(){location.replace(location.href)}, 30000);
 }
 
 
