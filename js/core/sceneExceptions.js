@@ -36,6 +36,9 @@ outputDebugInfo();
 	case 'scene4_lookRight':
 		scene4_lookRight();
 		break;
+	case 'scene4_darkenRoom':
+		scene4_darkenRoom();
+		break;
     case 'scene5_bookcode':
     {
         if(!/book\d{1,2}/.test(arguments)){
@@ -168,11 +171,46 @@ function scene1_showHeroine(){
 	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
 }
 
+/**
+* scene4_lookRight()
+*
+* ensures that the heroine is looking to the right side at the beginning of the scene
+*
+* Input values:
+* none
+*
+* return values:
+* none
+**/
 function scene4_lookRight(){
 	var hero	= $("canvas[id*='canvas_person_']");
 	switchWalkingAnimation('standing_r', hero[0].id);
 }
 
+/**
+* scene4_darkenRoom()
+*
+* darkens the room for letting Teddy escape while it's dark
+*
+* Input values:
+* none
+*
+* return values:
+* none
+**/
+function scene4_darkenRoom(){
+     $('body').append($('<canvas/>', {
+            id: 'uebergang'
+        }));
+		
+    starteAnimation("uebergang", "allg_uebergang", $(window).width(), $(window).height(), false, "");
+
+    var frametime	= 1000 / gBilder["allg_uebergang"].animationsmerkmale.fps;
+    var framecount	= gBilder["allg_uebergang"].animationsmerkmale.tile_anzahl;
+
+    window.setTimeout(function(){stoppeAnimation("allg_uebergang");$("canvas[id*='uebergang']").remove();}, frametime * framecount);
+		
+}
 /**
  * scene5_bookcode()
  *
