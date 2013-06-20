@@ -1,97 +1,49 @@
 Verbesserungen:
 
 Intro:
- - Verbesserung: Geschwindigkeit reduzieren (ca 30-40%)	x
- - Verbesserung: das Ende des Intro weiter herauszögern, d.h. den Text etwas länger sichtbar lassen, bevor der Menübildschirm erscheint	x
- - Optional: Schlagworte, wie z.B. der Name des Raumschiffes, innerhalb des Textes mit Großbuchstaben hervorheben#	x
 
 Menübildschirm:
  - Ich habe bei mir das Problem des "Blinken" von Menübuttons, d.h. wenn ich das erste Mal über einen Button fahre verschwindet er kurz und erscheint danach sofort wieder
 	- normaler und gedrückter knopf sind zwei bilder die nacheinander geladen werden, manchmal dauert das
- - "Homepage" muss noch verlinkt werden x
 
 Allgemein:
  - Optional: Besondere Schlagworte innerhalb der Dialoge mit leicht anderer Schrift andeuten (Kursiv oder leicht orange anstatt gelb)
 	- anpassung des dialogparsers und der xml. lassen wir das unsere nachfolger machen
 
-Szene 1:	x erledigt
- - Verbesserung: Laufgeschwindigkeit des Protagonisten zu niedrig	x
- - Verbesserung: Pfad vor dem Computerterminal ein kleines Stück weiter nach vorne in den Raum verschieben x
- - Verbesserung: Pfadpunkt an der Leiter zum Bett weiter nach vorne in den Raum, Protagonist an dieser Stellevergrößern	x
- - Verbesserung: Protagonist steht "auf dem Papierkorb" = zu weit oben - eventuell Protagonist vergrößern und weiter nach rechts, da so zu stark vom Schrank verdeckt	x
- - Fehler: Ab Dialog "Ah diese herrliche Stille...", DEADLOCK, Einstellungsfenster schließt sich, aber Dialog geht nicht weiter	x
-
+Szene 1:
 
 Szene 2:
  - Frage: Sollte am Anfang der Szene(Rätselschritt 1 und 2) nicht gedämpftes Licht herrschen?
+	- war mal so geplant, hats aber irgendwie nie geschafft. eventuell ein overlay aber wie schaffen wir es, dass es nicht klickbar wird und die anderen dahingehend nicht überdeckt?
  - Verbesserung: Beim Bewegen von links nach rechts, dreht der Protagonist durch die Wegpunkte kurz den Kopf zum Benutzer, was den Bewegungsfluss stört
- - Verbesserung: Auf dem Weg zum Terminal geht der Protagonist erst zu weit in den Raum und kommt dann wieder nach vorne	x
  - Verbesserung: Protagonist vor dem Terminal ein bisschen zu klein
- - Fehler: Nach dem Schließen des Terminalbildschirmes friert das Spiel wie in Szene 1 ein. Dialog wird nicht weitergeführt - DEADLOCK	x
- - beim Übergang zu Szene 3 werden die Objekte zu früh ausgeblendet	x
-
 
 Szene 3:
- - Verbesserung: Protagonistesgröße an Szene 2 angleichen
+ - Verbesserung: Protagonistengröße an Szene 2 angleichen
  - Verbesserung: Bewegungspfad anpassen, Protagonist geht zu weit in den Raum an der Position des Terminals
- - Fehler: DEADLOCK nach dem Schließen des Terminalfensters x
 
 Szene 4:
- - Fehler: lädt insgesamt nicht x -- Laden funktioniert ohne probleme bei mir. Bitte pruefen! - ja funktioniert
- - Verbesserung: Schatten der Ölkanne verbessern, da zu harte, untere Kante x
- - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus -- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
- - Fehler: Unter bestimmten Umständen bleibt das Spiel beim Aufsammeln der Glasscheibe hängen (genaue Abhängigkeit noch unbekannt) -- Sollte gelöst sein. Fehler kam durch falschen Sub Dialog Offset zustande
- - Verbesserung: Held brauch angepasste Laufpunkte fuer das Kabel an der Wand sowie den Teddy -- fertig
- - Fehler: Szene hängt sich nach Anklicken der Ölkanne im 2.Rätsel auf, wenn die Ölkanne nicht vorher schon einmal angeklickt wurde -- Selber Fehler wie oben, daher gelöst. Bitte nochmal prüfen! - Läuft!
-
+ - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus 
+	- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
 
 Szene 5:
- - Verbesserung: Protagonistesgröße an Szene 2 und 3 anpassen x
- - Verbesserung: Protagonist sollte direkt von der Bildmitte zur Tür (rechts laufen), Bewegungspfad muss angepasst werden x
- - Verbesserung: Protagonist sollte vor Spike langlaufen => Spike weiter in Hintergrund verschieben x
- - Verbesserung: Dialog 5.6 anpassen, da einige Sätze zu lang für Dialogbox x
- - Fehler: Dialogsätze von Dr. Chaos hängen immer zsuammen, auch wenn durch <satz>-tags getrennt x
-	- bei mir siehts gut aus, machst du einen screenshot?
- - Verbesserung: Sammeln der Passwortstücke (Bücherregalrätsel) ist Reihenfolgen unabghängig machen. Es geht erst weiter nachdem das Buch am weitesten rechts als letztes angeklickt wurde. x
- - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus
-   Zeilenumbruch mittels "\n" ist wirkungslos
- - Fehler: Passwortbausteine werden nicht angezeigt, bei den ersten 3 Fragen x
- - Vorschlag: Setzen von Ted I. Bär auf den Stuhl anstatt aufs Terminal x
+ - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus Zeilenumbruch mittels "\n" ist wirkungslos
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
- - Fehler: DEADLOCK im letzen Schritt des Terminalbildschirms x 
- - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf - nicht reproduzierbar bei mir
+ - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
+	- nicht reproduzierbar bei mir
 
 
 Szene 6:
- - Verbesserung: Protagonistengröße angleichen - Spike ist kleiner als Kate x
- - Fehler: Protagonisten sollte auch am Anfang die Raumanzüge tragen - Tileset schon vorher austauschen - Fehler immer noch vorhanden bei Übergang x
- - Achtung: Bild für Raumanzug (Spike) fehlt! x
- - Fehler: im Rätselschritt 1 ist die Dialogbox klickbar aber nicht sichtbar x
- - Verbesserung: der "Sicherheitskasten" mit Täd I. Ber befindet sich nicht in der Mitte sondern zu weit rechts x
- - Vorschlag: Umbennen von "Sicherheitskasten" in "Sicherungskasten" x
- - Verbesserung: Anpassen des Bewegungspfades x
- - Verbesserung: Spike soll den Sicheheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
- - Verbesserung: Transparenz des Sicherheitskasten an den Rändern verbessern - quadratischer Umriss erkennbar x
- - Verbesserung: Fehlerhaftes anklicken der Sternenbilder sollte möglich sein - im Moment nur eine (richtige) Sequenz anklickbar x
- - Verbesserung: Objekte blenden beim Wechsel der Szene zu früh aus x
- - Fehler: DEADLOCK nach letztem Dialog x
- - Fehler: Letze Dialogzeilen erscheinen in Szene 7. Dialog 6.9 triggert nicht rechtzeitig x
- - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt - in arbeit/temporäre Lösung, nicht sicher woran das Probem liegt
- 
- 
+ - Verbesserung: Spike soll den Sicherheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
+	- schwierig, da wir nur eine figur für die bewegung vorgesehen haben. ließe sich per exception und den austausch der beiden lösen. tileset für spike vollständig?
+ - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
+	- in arbeit/temporäre Lösung, nicht sicher woran das Probem liegt
+  
 Szene 7:
--
- - Verbesserung: Protagonist trägt noch Raumanzug beim Laden der Szene, falls vorher Szene 6 gespielt wurde -- in arbeit x
- - Verbesserung: Täd I. Ber ein kleines Stück nach unten verschieben -- fertig
- - Verbesserung: Dialog 7.3 enthält zu lange Sätze, Dialog anpassen -- fertig
- - Verbesserung: Bewegungspfad anpassen (von mitte-vorn nach links-mitte) -- fertig
- - Verbesserung: Frage im Terminalfenster läuft über die Ränder der mittleren Box (Umruch notwendig) -- fertig
- - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas - Rahmen des Hover-Effektes sichtbar
- - Fehler: Nach Klick auf den Schalter öffnet sich die Schleuse, danach aber DEADLOCK. Dr. Chaos dreht sich nicht, Schalter weiter anklickbar -- fertig
- - Verbesserung: Sternenblinken wenn Dr. Chaos beim Drehen fast verschwindet (Wie Team Rocket aus Pokemon, falls auch das was sagt^^) -- zählt als feature, und wird daher nicht berücksichtigt
- - Verbesserung: Credit- bzw. Ending-Fenster fehlt -- gehört nicht zur Szene
+ - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas, Rahmen des Hover-Effektes sichtbar
+ - Verbesserung: Credit- bzw. Ending-Fenster fehlt
+	- gehört nicht zur Szene
 
 Allgemein:
- - Zurücksetzen der Protagonistenpositionen	x
  - Setzen bzw.Bestimmen der Standardblickrichtung des Protagnisten am Anfang der Szene, beim Übergang von Szene 3 zu 4 schaut Kate zum Beispiel am Anfang zur Tür anstat in den Raum hinein
- - Auswahl des zu nutzenden Tiles beim Laden der Szene dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
+ - Auswahl des zu nutzenden Tiles beim Laden der Szene. dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
