@@ -63,8 +63,11 @@ background: url("../bilder/allgemein/credits1.png");
 background: url("../bilder/allgemein/credits2.png");
 }
 
-#codefeld{
-z-index:1000;
+form{
+	position:relative;
+	background-color:white;
+	display:none;
+	z-index:1000;
 }
 
 #impressum {

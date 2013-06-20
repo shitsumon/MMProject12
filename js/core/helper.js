@@ -64,7 +64,7 @@ var gEndePercPosY		= 40;
 //szenen.xml path
 var sceneXML				= "../szenen.xml";
 //index of current scene
-var gcurrent_scene_counter	= 6;
+var gcurrent_scene_counter	= 1;
 //enables space movement animations. false=off, true=on
 var gSpace = false;
 //id of current scene
@@ -537,7 +537,6 @@ setTimeout(function() { HideElementsIntro(); }, 33000);
 
 function HideElementsIntro(){
 outputDebugInfo();
-
 	//hides intro elements
 	$('h1').remove();
 	$("#titles").remove();
@@ -550,6 +549,7 @@ outputDebugInfo();
 	//hides menu elements, called in sceneparser
 	$('#bg').remove();
 	$('#menu').remove();
+	$('form').css("display","inline-block");
 }
 
 //go to homepage
