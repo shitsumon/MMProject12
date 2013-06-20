@@ -5,6 +5,10 @@
     <abmessungen height="3120" width="1152"/>
     <animation fps="6" tile_anzahl="8" tile_width="144" tile_height="390"/>
   </bild>
+  <bild id="allg_heroMaleFullTileset" pfad="../bilder/allgemein/heroMaleFullTileset.png" animiert="true">
+    <abmessungen height="3289" width="1121"/>
+    <animation fps="6" tile_anzahl="7" tile_width="160" tile_height="411"/>
+  </bild>
   <bild id="allg_dialogbox" pfad="../bilder/allgemein/dialogbox.png" animiert="false">
     <abmessungen height="223" width="811"/>
   </bild>

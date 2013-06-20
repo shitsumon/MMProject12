@@ -603,8 +603,13 @@ function scene5_hideDialogbox(arg){
  */
 
 function scene6_suit_on(){
-var hero	= $("canvas[id*='canvas_person_']");
-switchWalkingAnimation('jetpack_r', hero[0].id);
+	//handle her
+	var hero	= $("canvas[id*='canvas_person_']");
+	switchWalkingAnimation('jetpack_r', hero[0].id);
+	//handle him
+//	hero		= $("canvas[id*='allg_heroMaleFullTileset']");
+//	hero[0].id	= "canvas_person_allg_heroMaleFullTileset";
+	switchWalkingAnimation('jetpack_l', "canvas_person_allg_heroMaleFullTileset");
 }
 
 function scene6_celestial_quiz(arg){

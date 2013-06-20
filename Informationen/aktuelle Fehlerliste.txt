@@ -23,15 +23,12 @@ Szene 3:
  - Verbesserung: Bewegungspfad anpassen, Protagonist geht zu weit in den Raum an der Position des Terminals
 
 Szene 4:
- - Verbesserung: Spike und das Computerterminal blenden beim Wechsel zu Szene 5 zu früh aus 
-	- Ist das wichtig? Sichtbarkeit ist bis zum letzen Schritt eingestellt. Scheint ein design fehler zu ein.
 
 Szene 5:
  - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus Zeilenumbruch mittels "\n" ist wirkungslos
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
  - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
 	- nicht reproduzierbar bei mir
-
 
 Szene 6:
  - Verbesserung: Spike soll den Sicherheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
