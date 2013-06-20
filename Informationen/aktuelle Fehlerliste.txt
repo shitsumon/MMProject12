@@ -22,8 +22,6 @@ Szene 4:
 
 Szene 5:
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
- - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
-	- nicht reproduzierbar bei mir
 
 Szene 6:
  - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
@@ -31,9 +29,6 @@ Szene 6:
   
 Szene 7:
  - Verbesserung: nach Umkehrung des Schutzschildes ist der Mouse-Over-Effekt des Schalters vor allen anderen Canvas, Rahmen des Hover-Effektes sichtbar
- - Verbesserung: Credit- bzw. Ending-Fenster fehlt
-	- gehört nicht zur Szene
+	- Problem ist die Exception "scene7_enableWallButton" der die sichtbar-Flags auf "t" setzt, muss danach wieder ausgeschaltet werden
 
 Allgemein:
- - Setzen bzw.Bestimmen der Standardblickrichtung des Protagnisten am Anfang der Szene, beim Übergang von Szene 3 zu 4 schaut Kate zum Beispiel am Anfang zur Tür anstat in den Raum hinein
- - Auswahl des zu nutzenden Tiles beim Laden der Szene. dies ist besonders wichtig beim Übergang von Szene 5 zu 6 und von Szene 6 zu 7
