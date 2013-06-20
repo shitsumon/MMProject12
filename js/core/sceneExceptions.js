@@ -924,6 +924,5 @@ function scene7_enableWallButton(){
 }
 
 function scene7_showEnding(){
-	 alert('Ende!');
 	showEnde();
 }

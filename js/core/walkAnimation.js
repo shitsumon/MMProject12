@@ -412,7 +412,7 @@ function determineWalkingDirection(hero){
     }
 
     //compare to up <> down movement
-    if(diffX > 0 && diffY > 0){
+    if(diffX > 0.0 && diffY > 0.0){
         if(diffY > diffX){
             if(diffY > 0.0){
                 direction = 'front';
@@ -420,7 +420,7 @@ function determineWalkingDirection(hero){
                 direction = 'back';
             }
         }
-    }else if(diffX > 0 && diffY > 0){
+    }else if(diffX > 0.0 && diffY > 0.0){
         if(diffY < diffX){
             if(diffY > 0.0){
                 direction = 'front';
