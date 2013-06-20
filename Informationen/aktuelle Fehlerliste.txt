@@ -21,14 +21,11 @@ Szene 3:
 Szene 4:
 
 Szene 5:
- - Verbesserung: Passwortgenerierung: Text in der Mitte läuft aus Box heraus Zeilenumbruch mittels "\n" ist wirkungslos
  - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
  - Fehler: Falls der Dialog 5.6 mit Klicken auf das Computerterminal vorangetrieben wird, hängt sich das Spiel beim Satz "Ja ja" auf
 	- nicht reproduzierbar bei mir
 
 Szene 6:
- - Verbesserung: Spike soll den Sicherheitskasten aufmachen, aber beim Klicken darauf bewegt sich Kate
-	- schwierig, da wir nur eine figur für die bewegung vorgesehen haben. ließe sich per exception und den austausch der beiden lösen. tileset für spike vollständig?
  - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
 	- in arbeit/temporäre Lösung, nicht sicher woran das Probem liegt
   
