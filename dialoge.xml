@@ -184,17 +184,16 @@ argument_list
     <satz person_id="p2" bild_id="allg_hero_male">Ich bin doch kein Sicherheitsproblem! Obwohl es logisch ist, was du sagst ... was tun wir jetzt?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Ganz einfach, erst mal versuchen wir, das Antiviren-Programm wieder zu aktivieren.</satz>
   </dialog>
-  <dialog id="szene3.3.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.3.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Die unendlichen Weiten des SpaceNets.</satz>
   </dialog>
-  <dialog id="szene3.3.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.3.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Als ob einem bei dem Programm keine Zweifel kommen können ...</satz>
   </dialog>
   <dialog id="szene3.3.3" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
-    <!--<satz person_id="p1" bild_id="allg_hero_female">Den Schlaf muss ich nachholen!</satz>-->
 	<satz person_id="p1" bild_id="allg_hero_female">Aha! Da liegt wohl unser Problem!</satz>
   </dialog>
-  <dialog id="szene3.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene3.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre ein riesiger Fehler. Wir sollten unsere Wahl nochmal überdenken.</satz>
   </dialog>
   <dialog id="szene3.4.2" trigger_at_start="false" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
@@ -235,13 +234,13 @@ argument_list
     <satz person_id="p2" bild_id="allg_hero_male">Ach stimmt, da war ja was. Die Stelle schmerzt immer noch, wenn ich sie anfasse.</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aber unser Weg war, glaub ich, nicht ganz umsonst. Irgendetwas passt hier nicht.</satz>
   </dialog>
-  <dialog id="szene4.4.1" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene4.4.1" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Nein, ich bin mir sicher, irgendetwas stimmt hier nicht.</satz>
   </dialog>
-  <dialog id="szene4.4.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene4.4.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Nicht mehr ganz neu, aber verlässlich und robust.</satz>
   </dialog>
-  <dialog id="szene4.4.3" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene4.4.3" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p2" bild_id="allg_hero_male">Irgendwie hab ich Kopfschmerzen ...</satz>
   </dialog>
   <dialog id="szene4.4.4" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="#none#" argument_list="#none#">
@@ -379,7 +378,7 @@ argument_list
 	<satz person_id="p1" bild_id="allg_hero_female">Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz>
   </dialog>
-  <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_ignoreClick:0" argument_list="">
+  <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="bc" bild_id="allg_bordcomputer">Bisher habt ihr keine Ideen gesammelt, sucht erst mal weiter.</satz>
   </dialog>
   <dialog id="szene5.7.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_bookcode:0" argument_list="book1">
@@ -496,7 +495,7 @@ argument_list
     <satz person_id="tb" bild_id="allg_teddy">Ihr seht drei Sternbilder. Er hat erst geradeaus, dann nach links und anschließend nach rechts geschaut, bevor er das Passwort eingegeben hat, vielleicht hilft euch das.</satz>
   </dialog>
   
-  <dialog id="szene6.8.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene6.8.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="tb" bild_id="allg_teddy">Nein, das war falsch. Nochmal von vorne.</satz>
   </dialog>
   <dialog id="szene6.8.2" trigger_at_start="false" increase_quiz_step="false" invoke_scene_exception="scene6_celestial_quiz:0" argument_list="stier">
@@ -556,20 +555,20 @@ argument_list
     <satz person_id="dr" bild_id="allg_dr_chaos">Man sollte nicht voreilig handeln, lasst das! Wollen wir nicht nochmal darüber reden?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Aha, daran hat der ach so schlaue Doktor also nicht gedacht.</satz>
   </dialog>
-  <dialog id="szene7.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.4.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="dr" bild_id="allg_dr_chaos">Bitte, bitte! Überlegt es euch nochmal!</satz>
   </dialog>
-  <dialog id="szene7.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.4.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Das wäre jetzt keine so gute Idee!</satz>
   </dialog>
-  <dialog id="szene7.4.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.4.3" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="tb" bild_id="allg_teddy">Um das Passwort zu umgehen, müsst ihr ein paar Fragen beantworten. Die dürften aber nach euren Erlebnissen heute kein Problem sein.</satz>
   </dialog>
   <dialog id="szene7.4.4" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question0">
     <satz person_id="tb" bild_id="allg_hero_female">Na dann wollen wir mal.</satz>
   </dialog>
 
-  <dialog id="szene7.5.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene7.5.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="ignoreClick:0" argument_list="#none#">
     <satz person_id="tb" bild_id="allg_teddy">Das ist leider falsch. Probier es noch einmal!</satz>
   </dialog>
   <dialog id="szene7.5.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene7_quizInput:0" argument_list="scene7|question1|question4">
