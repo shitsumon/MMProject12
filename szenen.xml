@@ -1310,7 +1310,7 @@
                             dialog_id="szene7.4.2"
                             klickbar=               "f|f|f|t|t|f|f|f|t|f|f|f|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "t|t|t|t|t|f|f|f|f|f|f|f|f"
+                            raetsel_sichtbar=       "t|t|t|t|t|f|f|f|f|f|f|t|t"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|t|f|f|f|f">
           <position x="10" y="48" z="300"/>
           <groesse width="7" height="12"/>
@@ -1319,7 +1319,7 @@
                             dialog_id="szene7.7"
                             klickbar=               "f|f|f|f|f|f|f|f|f|f|f|f|f"
                             walkto=                 "f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t|t|f"
+                            raetsel_sichtbar=       "f|f|f|f|f|f|f|f|f|t|t|f|f"
                             raetsel_ausloeser=      "f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="11.70" y="44.35" z="406"/>
           <groesse width="4.95" height="10.1"/>

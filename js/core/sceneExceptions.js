@@ -91,9 +91,6 @@ outputDebugInfo();
     case 'scene7_enableWallButton':
         scene7_enableWallButton();
         break;
-	case 'scene7_disableWallButton':
-		scene7_disableWallButton();
-		break;
 	case 'scene7_showEnding':
         scene7_showEnding();
         break;
@@ -928,13 +925,6 @@ function scene7_enableWallButton(){
     newID = flags[0] + ":" + flags[1] + ":" + newFlagList;
 
     canvas.attr("id", newID);
-}
-
-function scene7_disableWallButton(){
-	var canvas      = $("canvas[id*='roter_knopf_kraftfeld']");
-	/**
-	* INSERT CODE FOR LETTING "roter_knopf_kraftfeld" DISAPPEAR
-	**/
 }
 
 function scene7_showEnding(){
