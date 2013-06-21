@@ -812,7 +812,7 @@
                             dialog_id="szene5.1|szene5.6"
                             klickbar=           "t|t|t|t|t|t|f|t|t|t|f|f|f|f|t|t|f|f|t|f"
                             walkto=             "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f"
-                            raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|t"
+                            raetsel_sichtbar=   "t|t|t|t|t|t|t|t|t|t|t|t|t|t|t|f|f|f|t|t"
                             raetsel_ausloeser=  "f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f|f">
           <position x="31" y="5" z="405"/>
           <groesse width="42.5" height="23"/>
