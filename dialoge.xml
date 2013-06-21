@@ -114,7 +114,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 2 -->
-  <dialog id="szene2.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene2.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="sceneBeginning_lookRight:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">Mäck, könntest du bitte das Licht auf der Brücke anmachen? Ich wusste nicht mal, dass man es ausmachen kann ...</satz>
     <satz person_id="bc" bild_id="allg_bordcomputer">Leider kann ich dir nicht weiterhelfen. Aus unbekannten Gründen kann ich nicht auf die Beleuchtung zugreifen. Soll ich nach einer Problemlösung im Spacenet suchen?</satz>
     <satz person_id="p1" bild_id="allg_hero_female">Nein danke, ich nehme das Problem selbst in Angriff. Hier gibt es sicher ein Beleuchtungsregulierungsmodul, oder?</satz>
@@ -220,7 +220,7 @@ argument_list
   </dialog>
   
   <!-- Beginn Szene 4 -->
-  <dialog id="szene4.1" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="scene4_lookRight:0" argument_list="#none#">
+  <dialog id="szene4.1" trigger_at_start="true" increase_quiz_step="true" invoke_scene_exception="sceneBeginning_lookRight:0" argument_list="#none#">
     <satz person_id="p1" bild_id="allg_hero_female">So P2_DYN_NAME, dann zeig mir mal deine heiße Spur.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja, also ich wollte den wöchentlichen Maschinencheck machen, doch bevor ich am Computerterminal eintragen konnte, dass alles ok ist, hab ich da diese Entdeckung gemacht. Hier vorne auf dem Boden.</satz>
   </dialog>

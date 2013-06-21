@@ -24,6 +24,9 @@ function triggerException(exceptionName, arguments) {
 outputDebugInfo();    
 
     switch(exceptionName){
+	case 'sceneBeginning_lookRight':
+		sceneBeginning_lookRight();
+		break;
 	case 'scene1_hideDrawer':
 		scene1_hideDrawer();
 	break;
@@ -32,9 +35,6 @@ outputDebugInfo();
 	break;
 	case 'scene1_showHeroine':
 		scene1_showHeroine();
-		break;
-	case 'scene4_lookRight':
-		scene4_lookRight();
 		break;
 	case 'scene4_darkenRoom':
 		scene4_darkenRoom();
@@ -91,6 +91,9 @@ outputDebugInfo();
     case 'scene7_enableWallButton':
         scene7_enableWallButton();
         break;
+	case 'scene7_disableWallButton':
+		scene7_disableWallButton();
+		break;
 	case 'scene7_showEnding':
         scene7_showEnding();
         break;
@@ -98,6 +101,25 @@ outputDebugInfo();
         break;
     }
 }
+
+
+/**
+* sceneBeginnning_lookRight()
+*
+* ensures that the heroine is looking to the right side at the beginning of the scene
+*
+* Input values:
+* none
+*
+* return values:
+* none
+**/
+function sceneBeginning_lookRight(){
+	var hero	= $("canvas[id*='canvas_person_']");
+	switchWalkingAnimation('standing_r', hero[0].id);
+}
+
+
 
 /**
 *scene1_hideDrawer()
@@ -171,21 +193,6 @@ function scene1_showHeroine(){
 	$("canvas[id*='canvas_person_allg_herotileset']").css("display", "inline");
 }
 
-/**
-* scene4_lookRight()
-*
-* ensures that the heroine is looking to the right side at the beginning of the scene
-*
-* Input values:
-* none
-*
-* return values:
-* none
-**/
-function scene4_lookRight(){
-	var hero	= $("canvas[id*='canvas_person_']");
-	switchWalkingAnimation('standing_r', hero[0].id);
-}
 
 /**
 * scene4_darkenRoom()
@@ -921,6 +928,13 @@ function scene7_enableWallButton(){
     newID = flags[0] + ":" + flags[1] + ":" + newFlagList;
 
     canvas.attr("id", newID);
+}
+
+function scene7_disableWallButton(){
+	var canvas      = $("canvas[id*='roter_knopf_kraftfeld']");
+	/**
+	* INSERT CODE FOR LETTING "roter_knopf_kraftfeld" DISAPPEAR
+	**/
 }
 
 function scene7_showEnding(){
