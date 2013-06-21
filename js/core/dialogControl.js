@@ -1,5 +1,8 @@
 /**
- * Function set to display the text of the game inside the dialogbox.
+ * This file contains any logic related to in game dialogues.
+ * It provides functionality for dialogrendering, -formatting and exception
+ * parsing. The external interface call for the clickEventHandler is defined
+ * here as well.
  */
 
 /**
@@ -141,7 +144,7 @@ outputDebugInfo();
 
     var dimensions = getScaledDimensions(gTalk.bild_id);
 
-    //Textbox protagonist bild dimensionen
+    //Dialogbox hero image dimensions
     var ProtImgXPos        = perc2pix(dimensions.width,  gTalk.TBPercImagePosX);   //xPos text Bild
     var ProtImgYPos        = perc2pix(dimensions.height, gTalk.TBPercImagePosY);   //yPos text Bild
     var ProtImgWidth       = perc2pix(dimensions.width,  gTalk.TBPercImageWidth);  //width text Bild
@@ -153,6 +156,8 @@ outputDebugInfo();
 	
 	changeFontSize(dimensions.height / gPercentageFontSize);
 	
+    //compute the font size to be used for
+    //chunking oversized strings
     var pixSize = Math.round((dimensions.width - textXPos) / gTalk.font_style.split(" ")[1].replace(/px/g, "")) + gTalk.line_distance;
 
     //get dialogbox canvas
@@ -305,13 +310,13 @@ outputDebugInfo();
 /**
  * advanceDialogStep(string imgID)
  *
- * Every object's got an onclick method anyway. So
+ * Every object has an onclick method anyway. So
  * it is utilized, to mark the just clicked image.
  * When the image gets clicked this function is invoked.
- * The function checks whether the just clicked image.
- * Is the next object to be clicked in the dialog chain.
+ * The function checks whether the latest clicked image
+ * is the next object to be clicked in the dialog chain.
  *
- * This done by comparing the imageID with gImageToObjectSceneReferrer
+ * This is done by comparing the imageID with gImageToObjectSceneReferrer
  * saved up imageIDs. IF the image id is found within the array and IF
  * gDialogCounter points to a dialog id mapped with the just clicked
  * image id, the next dialog piece is triggerd to show up in the
@@ -330,24 +335,32 @@ outputDebugInfo();
     var rawID = $("canvas[id*='" + canvasID + "']").attr("id").split(":")[2];
 
 
+    //Check if the scene.xml defines a dialog in this step
     if(rawID.split('|')[gCurrentQuizstep] === 'f'){
 		//nothing was displayed
         return false;
     }
 
-    var dialogIDs           = fetchDialogIDs();
+    //Get current dialogues
+    var dialogIDs = fetchDialogIDs();
 
+    //Use fallback if there is
+    //trouble in paradise ;)
     if(dialogIDs.length == 0){
         dialogIDs = gBackupOfDialogs;
     }
 
+    //Now it's safe to raise the dialog counter
     gIncreaseDialogStep     = true;
 
+    //Traverse image to object reference list
     for(var idx = 0; idx < gImageToObjectSceneReferrer.length; ++idx){
 
+        //Check for a matching image id
         if(imgID === gImageToObjectSceneReferrer[idx].bildID){
             var sceneDialogues = gImageToObjectSceneReferrer[idx].scenes;
 
+            //Traverse through all dialogues of found object
             for(var idx2 = 0; idx2 < sceneDialogues.length; ++idx2){
 
                 //Check if clicked object is linked to a sub-dialog
@@ -358,17 +371,19 @@ outputDebugInfo();
                 //stop if gDialog is not defined...something
                 //really wrong is going on then!
                 try{
-                if( typeof( gUseDeprecatedDialogues ?
-                          gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
-                          gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]) === 'undefined'
-                  ){
-					  console.log('undefined dialog in gDialoge[]!');
-					  
-					  return false;
-				  }
+                    if(
+                            typeof(
+                                gUseDeprecatedDialogues ?
+                                gDeprecatedDialogues[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id] :
+                                gDialoge[dialogIDs[gDialogCounter + gSubDialogOffset].scene_id]
+                                ) === 'undefined'
+                            )
+                    {
+                        console.log('undefined dialog in gDialoge[]!');
+                        return false;
+                    }
 				}catch(e){
                     console.log(e);
-					
                     return false;
                 }
 
@@ -380,14 +395,18 @@ outputDebugInfo();
                     continue;
                 }
 
+                //get right dialog id
                 gTalk.dialog_id = gTalk.isInitialized ? gTalk.dialog_id : dialogIDs[gDialogCounter + gSubDialogOffset].scene_id;
 
+                //start dialog rendering
                 dialog_zeichneDialog();
 
-                //Only increment if current dialog chunk is
-                //at it's end
+                //Post handling depending
+                //dialog state.
                 if(!gTalk.isInitialized){
 
+                    //Only if we're at the end
+                    //of one dialog
                     if(gIncreaseDialogStep){
                         ++gDialogCounter;
                         gDialogCounter += gSubDialogCount > 0 ? (gSubDialogCount - 1) : gSubDialogCount;
@@ -400,11 +419,7 @@ outputDebugInfo();
 				
 				//the dialogue should have been displayed by now
 				return true;
-
-                //break; //When current dialog was displayed stop looping
             }
-
-            //break; //When current dialog was displayed stop looping
         }
     }
 }

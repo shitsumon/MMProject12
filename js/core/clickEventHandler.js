@@ -37,10 +37,12 @@ outputDebugInfo();
 	var dialogue_advanced = false;
 	var moving = false;
 	
+    //save for later referencing
     gMostRecentlyClickedIdentifier = LUT_Identifier;
 
     var parsedStringObject = new Object();
 
+    //Search for the just clicked event object
     for(var idx = 0; idx < gClickEventValueArray.length; ++idx){
 
         if(gClickEventValueArray[idx]['key'] == LUT_Identifier){
@@ -50,13 +52,24 @@ outputDebugInfo();
         }
     }
 
+    //Check if we're in the middle
+    //of a dialog
     if(!gTalk.isInitialized){
 
+        /*
+          Check if something is
+          going on now, if not
+          start hero movement, if any.
+        */
         if(!gEventHandlerBusy){
             gTargetIdentifier = parsedStringObject.targetIdentifier;
             moving = bewegePerson();
         }
 
+        /*
+          Start quiz routine if handler is idle and
+          hero is not moving, else keep for it later
+        */
         if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
             gQuizFlags = parsedStringObject.quizFlags;
         }else{
@@ -64,6 +77,10 @@ outputDebugInfo();
         }
     }
 
+    /*
+      Start dialog routine if handler is idle and
+      hero is not moving, else keep for it later
+    */
     if(gEventHandlerBusy && !gQuizAndDialogArgumentsLocked){
 		gDialogValue1 = parsedStringObject.dialogValue1;
         gDialogValue2 = parsedStringObject.dialogValue2;

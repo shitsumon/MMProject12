@@ -31,3 +31,4 @@ Szene 7:
 	- Problem ist die Exception "scene7_enableWallButton" der die sichtbar-Flags auf "t" setzt, muss danach wieder ausgeschaltet werden
 
 Allgemein:
+- Aufräumen und kommentieren
