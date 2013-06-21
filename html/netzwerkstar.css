@@ -47,21 +47,23 @@ background: url("../bilder/allgemein/b3_about.png") 0 0;
 background-position: 0 -97px;
 }
 
-#back_to_HP{
+#credits{
 background: url("../bilder/allgemein/b4_credits.png") 0 0;
+}
+
+#credits:hover{
+background-position: 0 -97px;
+}
+
+#back_to_HP{
+background: url("../bilder/allgemein/b5_home.png") 0 0;
 }
 
 #back_to_HP:hover{
 background-position: 0 -97px;
 }
 
-#credits{
-background: url("../bilder/allgemein/b5_home.png") 0 0;
-}
 
-#credits:hover{
-background-position: 0 -97px;
-}
 
 form{
 	position:relative;
