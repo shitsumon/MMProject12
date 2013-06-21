@@ -379,7 +379,7 @@ argument_list
 	<satz person_id="p1" bild_id="allg_hero_female">Ich hab dir doch gesagt, es würde sich auszahlen meine alten Bücher zu behalten, statt alles als ebooks erneut zu kaufen.</satz>
     <satz person_id="p2" bild_id="allg_hero_male">Ja ja.</satz>
   </dialog>
-  <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="#none#" argument_list="#none#">
+  <dialog id="szene5.7.1" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_ignoreClick:0" argument_list="">
     <satz person_id="bc" bild_id="allg_bordcomputer">Bisher habt ihr keine Ideen gesammelt, sucht erst mal weiter.</satz>
   </dialog>
   <dialog id="szene5.7.2" trigger_at_start="true" increase_quiz_step="false" invoke_scene_exception="scene5_bookcode:0" argument_list="book1">

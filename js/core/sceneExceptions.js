@@ -65,6 +65,9 @@ outputDebugInfo();
 
         scene5_hideDialogbox(arguments);
         break;
+	case 'scene5_ignoreClick':
+		scene5_ignoreClick(arguments);
+		break;
 	case 'scene6_suit_on':
         scene6_suit_on();
 		break;	
@@ -94,6 +97,9 @@ outputDebugInfo();
 	case 'scene7_showEnding':
         scene7_showEnding();
         break;
+	case 'scene7_ignoreClick':
+		scene7_ignoreClick(arguments);
+	break;
     default:
         break;
     }
@@ -255,6 +261,23 @@ function scene5_bookcode(arg){
 	}
 	
 }
+
+ /**
+ * scene5_ignoreClick
+ *
+ * ignores the click at the terminal in scene 5 to prevent gCodegeneratorIndex to go wild
+ *
+ * Input values:
+ * arg (String) - Name of the clicked book
+ *
+ * Return values:
+ * none
+ */
+function scene5_ignoreClick(arg)
+{
+	gCodegeneratorIndex--;
+}
+
 /**
  * generateSecureCode()
  *
@@ -909,7 +932,6 @@ function getScaledDimensions(arg){
     return { 'width': width, 'height': height};
 }
 
-
 function scene7_enableWallButton(){
 
     var canvas      = $("canvas[id*='roter_knopf_kraftfeld']");
@@ -934,4 +956,20 @@ function scene7_enableWallButton(){
 
 function scene7_showEnding(){
 	window.setTimeout(function(){showEnde()},5000);
+}
+
+/**
+ * scene7_ignoreClick
+ *
+ * ignores the click at dr chaos in scene 7 to prevent gCodegeneratorIndex to go wild
+ *
+ * Input values:
+ * arg (String) - Name of the clicked book
+ *
+ * Return values:
+ * none
+ */
+function scene7_ignoreClick(arg)
+{
+	gCodegeneratorIndex--;
 }
