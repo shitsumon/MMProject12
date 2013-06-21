@@ -25,16 +25,6 @@ function animiereCanvas(canvas_id, bild_id){
     //delete content
     ctx.clearRect ( 0, 0, canvas.width, canvas.height);
 
-    //WORKAROUND for scene2, this must not remain here,
-    //but needs a proper fix
-//    if(gIsSceneBeginning && strContains(canvas_id, "allg_herotileset")){
-
-//        //remove all scalings etc from canvas
-//        canvas.width = canvas.width;
-//        ctx.scale(1.7,1.7);
-//    }
-    ///////
-
     /*draws frame following this scheme
 		img the picture itself					-> Image,
 		sx, sy start coordinates of frame		-> Pixel int,
@@ -42,7 +32,6 @@ function animiereCanvas(canvas_id, bild_id){
 		x, y upper left corner inside canvas	-> Pixel int,
 		width, height dimensions inside canvas	-> Pixel int
     */
-
     var imageObject = gUseDeprecatedImages ? gDeprecatedImages[bild_id] : gBilder[bild_id];
 
     ctx.drawImage(

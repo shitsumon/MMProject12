@@ -79,6 +79,7 @@ outputDebugInfo();
 	
 }
 
+//Displays the games 'about' page
 function showImpressum(){
 outputDebugInfo();
 
@@ -88,6 +89,7 @@ outputDebugInfo();
 //    $("div[id*='credits_page']").css('visibility','hidden');
 }
 
+//Displays the games credits
 function showCredits(){
 outputDebugInfo();
 
@@ -97,6 +99,7 @@ outputDebugInfo();
 //    $("div[id*='impressum']").css('visibility','hidden');
 }
 
+//Displays the demo page
 function showDemo(){
 outputDebugInfo();
 
@@ -105,6 +108,10 @@ outputDebugInfo();
     $("div[id*='demo_page']").css('visibility','visible');
 }
 
+/*
+    Displays the final page, after the
+    game has been played through.
+*/
 function showEnde(){
 outputDebugInfo();
 
@@ -117,7 +124,7 @@ outputDebugInfo();
 	window.setTimeout(function(){location.replace(location.href)}, 30000);
 }
 
-
+//Hides 'about' page
 function hideImpressum(){
 outputDebugInfo();
 
@@ -125,6 +132,7 @@ outputDebugInfo();
     $("div[id*='menu']").css('visibility','visible');
 }
 
+//Hides credit page
 function hideCredits(){
 outputDebugInfo();
 
@@ -132,6 +140,7 @@ outputDebugInfo();
     $("div[id*='menu']").css('visibility','visible');
 }
 
+//Hides demo page
 function hideDemo(){
 outputDebugInfo();
 
@@ -139,6 +148,7 @@ outputDebugInfo();
     this.document.location.href = 'http://hermes.et.hs-wismar.de/~bmt08055/netzwerkstar/html/index.html';
 }
 
+//Hides final page
 function hideEnde(){
 outputDebugInfo();
 

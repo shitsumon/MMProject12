@@ -1,8 +1,23 @@
 /*
-loads dialogues from xml file
-one dialogue consists of one or more sentences between different person
-all dialogues will be stored in gDialoge and contain persons id and his/her picture id
+    This the parser which loads the scene dialogoues from the xml file.
+    One dialogue consists of one or more sentences between different persons.
+    all dialogues will be stored in gDialoge (helper.js) and contain persons id
+    and his/her picture id. For further info on dialogues see gDialoge data structure
+    and dialoge.xml.
 */
+
+/**
+ * ladeDialoge()
+ *
+ * Wrapper function for asynchronous processing of
+ * XML dialog data.
+ *
+ * Input values:
+ * none
+ *
+ * Return values:
+ * none
+ */
 function ladeDialoge(){
 outputDebugInfo();
 
@@ -11,6 +26,19 @@ outputDebugInfo();
     },"xml");
 }
 
+/**
+ * verarbeiteDialogXML()()
+ *
+ * Parser logic for processing the dialog.xml file.
+ * Reads in the file and creates appropriate datastructures,
+ * which hold all dialogues of a game scene.
+ *
+ * Input values:
+ * daten (XML Object)
+ *
+ * Return values:
+ * none
+ */
 function verarbeiteDialogXML(daten){
 outputDebugInfo();
 	
@@ -84,10 +112,9 @@ outputDebugInfo();
         gDeprecatedNumberOfDialogues = gNumberOfDialogues;
         gNumberOfDialogues = gDialogIDs.length;
     }
-
-//    //Set dialog referencing counter back to zero for current scene
-//    gDialogCounter = 0;
 }
+
+/*Debugging helper functions*/
 
 //loading progressbar hook called in new Dialog()
 function aktualisiereLadebalken_Dialoge(){
@@ -96,8 +123,8 @@ function aktualisiereLadebalken_Dialoge(){
 
 //hook called after loading all pictures from new Dialog()
 function statusPruefen_Dialoge(){
-	//compares count of loaded to count of to be loaded dialogues
-	if(gDialoge.geladen==gDialoge.anzahl){
-//		alert("Alle Dialoge geladen!");
-	}
+    //compares count of loaded to count of to be loaded dialogues
+    if(gDialoge.geladen==gDialoge.anzahl){
+    //	alert("Alle Dialoge geladen!");
+    }
 }

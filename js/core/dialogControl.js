@@ -585,5 +585,33 @@ function blackListLeftOverSubDialogues(subDialogID){
             gSubDialogBlacklist.push(new BlacklistIDObject(currentSubDialog, gDialogCounter));
         }
     }
+}
 
+/**
+ * changeFontSize()
+ *
+ * Recomputes the font size to be used in dialogbox, to avoid textoverflow.
+ *
+ * Input values:
+ * size_in_px (Integer) - Some sane pixel value
+ *
+ * Return values:
+ * None
+ */
+function changeFontSize(size_in_px){
+    //get font style which should look sth like "bold 22px Arial"
+    var font_style = gTalk.font_style.split(" ");
+    //take "22px" from the array and remove "px"
+    font_style[1]=size_in_px+"px";
+    //reset current font_style
+    gTalk.font_style="";
+    //rebuild font_style from all elements of the array
+    for(var index in font_style){
+
+        gTalk.font_style += font_style[index];
+        //put a space between all elements but not at the beginning or end of the resulting string
+        gTalk.font_style += (index >= 0) && (index < (font_style.length - 1)) ? " ":"";
+    }
+    //set line distance to roughly fit font size
+    gTalk.line_distance = 0.9 * size_in_px;
 }
