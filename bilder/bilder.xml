@@ -97,9 +97,6 @@
   <bild id="szene1_raetsel_fenster" pfad="../bilder/szene1/raetsel_fenster.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene1_schlafen" pfad="../bilder/szene1/schlafen.png" animiert="false">
-    <abmessungen height="137" width="281"/>
-  </bild>
   <!--szene2-->
   <bild id="szene2_hg" pfad="../bilder/allgemein/hintergrund_bruecke.jpg" animiert="false">
     <abmessungen height="720" width="1280"/>
