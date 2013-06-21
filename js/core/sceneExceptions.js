@@ -249,7 +249,10 @@ function scene5_bookcode(arg){
         gForceOtherDialog   = true;
         gDialogToForce      = "szene5.7.12";
         gIncreaseDialogStep = testIfSubDialog(gDialogToForce);
-    }
+    }else{
+		//decrease gCodegeneratorIndex because this step didn't contribute to the riddle
+		gCodegeneratorIndex--;
+	}
 	
 }
 /**
@@ -632,6 +635,8 @@ function displayErrorDialog(){
     gForceOtherDialog        = true;
     gDialogToForce           = gcurrent_scene_counter == 5 ? "szene5.9.1" : "szene7.5.1";
     gIncreaseDialogStep      = testIfSubDialog(gDialogToForce);
+	//decrease gCodegeneratorIndex because this step didn't contribute to the riddle in the end
+	gCodegeneratorIndex--;
     return true;
 }
 

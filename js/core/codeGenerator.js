@@ -10,6 +10,11 @@ outputDebugInfo();
 	delimiter = Math.round( Math.random() * 25 ) + 97;
 	delimiter = String.fromCharCode(delimiter);
 	
+	if( typeof(gNumberToNumeral[gCodegeneratorIndex]) === "undefined" ){
+		//return old code if gNumberToNumeral is not defined
+		return $("#codefeld").val();
+	}
+	
 	//convert from number to numeral and concatenate current scene and quiz counter
 	//use previous scene_counter if loading of next scene is indicated by gUseDeprecated
 	helper =

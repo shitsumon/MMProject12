@@ -1,4 +1,4 @@
-﻿/*
+/*
     helper.js - a file for structs, helper functions and global variables
 
     When programming for Netzwerkstar project, please keep this simple rules in mind
@@ -477,7 +477,11 @@ var gNumberToNumeral = new Array(
 	"zn","ze","zz","zd","zv","zf","zs","zi","za","zu",	/*20-29*/
 	"dn","de","dz","dd","dv","df","ds","di","da","du",	/*30-39*/
 	"vn","ve","vz","vd","vv","vf","vs","vi","va","vu",	/*40-49*/
-	"fn","fe","fz","fd","fv","ff","fs","fi","fa","fu"	/*50-59*/
+	"fn","fe","fz","fd","fv","ff","fs","fi","fa","fu",	/*50-59*/
+	"sn","se","sz","sd","sv","sf","ss","si","sa","su",	/*60-69*/
+	"in","ie","iz","id","iv","if","is","ii","ia","iu",	/*70-79*/
+	"an","ae","az","ad","av","af","as","ai","aa","au",	/*80-89*/
+	"un","ue","uz","ud","uv","uf","us","ui","ua","uu"	/*90-99*/
 );
 
 //array with sub array for every scene
