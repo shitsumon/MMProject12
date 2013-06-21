@@ -152,10 +152,10 @@
   <bild id="szene2_mannschaftsquartiere_auswahl" pfad="../bilder/szene2/mannschaftsquartiere_auswahl.png" animiert="false">
     <abmessungen height="63" width="541"/>
   </bild>
-  <bild id="szene2_raetsel_fenster_i" pfad="../bilder/szene2/raetsel_fenster_I.png" animiert="false">
+  <bild id="szene2_raetsel_fenster_i" pfad="../bilder/szene2/raetsel_fenster_i.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
-  <bild id="szene2_raetsel_fenster_ii" pfad="../bilder/szene2/raetsel_fenster_II.png" animiert="false">
+  <bild id="szene2_raetsel_fenster_ii" pfad="../bilder/szene2/raetsel_fenster_ii.png" animiert="false">
     <abmessungen height="720" width="1280"/>
   </bild>
   <bild id="szene2_spacenet_auswahl" pfad="../bilder/szene2/spacenet_auswahl.png" animiert="false">
