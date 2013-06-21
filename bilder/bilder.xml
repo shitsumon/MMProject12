@@ -85,9 +85,6 @@
   <bild id="szene1_kreuz" pfad="../bilder/szene1/kreuz.png" animiert="false">
     <abmessungen height="50" width="42"/>
   </bild>
-  <bild id="szene1_muelleimer_fenster" pfad="../bilder/szene1/muelleimer_fenster.png" animiert="false">
-    <abmessungen height="720" width="1280"/>
-  </bild>
   <bild id="szene1_oeffentlich" pfad="../bilder/szene1/oeffentlich.png" animiert="false">
     <abmessungen height="39" width="168"/>
   </bild>
