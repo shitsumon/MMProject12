@@ -21,7 +21,6 @@ Szene 3:
 Szene 4:
 
 Szene 5:
- - Verbesserung: Ab "Sehr gut! Ich generiere nun das sichere Passwort" sollte Dialogbox ausgeblendet werden, da sie z.T. den Text im Bild überlagert
 
 Szene 6:
  - Fehler: Letzter Satz des letzten Dialoges wird vor Szenenwechsel nicht angezeigt
